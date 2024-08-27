@@ -1,0 +1,130 @@
+using Terraria;
+using ssm.Content.Projectiles.Minions;
+using Microsoft.Xna.Framework;
+using ssm.Content.Buffs;
+using ssm;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using System;
+using Terraria.Audio;
+using Terraria.Localization;
+using ssm.Content.Projectiles.Weapons;
+using ssm.Content.Projectiles;
+using Microsoft.Xna.Framework;
+using ssm.Content.Buffs.Minions;
+using System.Collections.Generic;
+using CalamityMod.CalPlayer;
+using Terraria.DataStructures;
+using Terraria.Graphics.Shaders;
+using Terraria.ID;
+using Terraria.ModLoader;
+using System.Linq;
+using ssm.Content.Projectiles.Deathrays;
+using FargowiltasSouls;
+
+
+namespace ssm.Content.Items.Weapons
+{
+	public class ShtuxibusSpear : ModItem
+	{
+		private readonly Mod fargosouls = ModLoader.GetMod("FargowiltasSouls");
+		private readonly Mod calamity = ModLoader.GetMod("CalamityMod");
+		private bool ammoConsumed;
+		private int currentSwing;
+		private Vector2 vector32;
+		private int rightClick;
+		private int swapCooldown;
+		private int form;
+		private int attackCooldown;
+		private int chargeCooldown;
+		private bool chargeFinishMsg;
+		private int starSpawnTimer;
+		private int pulsingRings = 250;
+
+		//public override void SetStaticDefaults(){	
+		//	Main.RegisterItemAnimation(Item.type, new DrawAnimationVertical(3, 30));
+        //    ItemID.Sets.AnimatesAsSoul[Item.type] = true;}
+		public override void SetDefaults()
+		{
+			Item.damage = 7450;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 160;
+			Item.height = 160;
+			Item.useTime = 27;
+			Item.useStyle = 1;
+			Item.knockBack = 7;
+			Item.value = int.MaxValue;
+			Item.rare = 11;
+			Item.useTurn = true;;
+			Item.UseSound = SoundID.Item113;
+			Item.shoot = ModContent.ProjectileType<ShtuxibusSwordSwing>();
+            Item.shootSpeed = 30f;
+		}
+		public override bool CanUseItem(Player player)
+		{
+			Item.useTurn = false;
+			if (player.altFunctionUse == 2)
+			{
+				if (player.controlUp)
+				{
+					Item.noMelee = true;
+					Item.useAnimation = 62;
+					Item.DamageType = DamageClass.Summon;
+					Item.shoot = ModContent.ProjectileType<ShtuxibusSoulMinion>();
+					Item.useStyle = 1;
+					Item.noUseGraphic = true;
+					Item.useTime = 22;
+				}
+				else
+				{
+					Item.noMelee = true;
+					Item.DamageType = DamageClass.Ranged;
+					Item.shootSpeed = 10f;
+					Item.useTime = 26;
+					Item.shoot = ModContent.ProjectileType<ShtuxibusSwordSwing>();
+					Item.noUseGraphic = true;
+					Item.useTurn = false;
+				}
+			}
+			else
+			{
+				if (player.controlUp)
+				{
+					Item.noMelee = true;
+					Item.DamageType = DamageClass.Magic;
+					Item.shootSpeed = 10f;
+					Item.useTime = 26;
+					Item.shoot = ModContent.ProjectileType<ShtuxibusSwordSwing>();
+					Item.noUseGraphic = true;
+					Item.useTurn = false;
+				}
+				else
+				{
+					Item.noMelee = false;
+					Item.DamageType = DamageClass.Melee;
+					Item.shoot = ModContent.ProjectileType<ShtuxibusSoulMinion>();
+					Item.useStyle = 1;
+					Item.noUseGraphic = true;
+					Item.useTime = 22;
+				}
+			}
+			return true;}	
+		public override bool CanHitPvp(Player player, Player target){
+			if (((Entity)player).active && !player.dead)
+			{
+				player.ResetEffects();
+				player.KillMe(PlayerDeathReason.ByCustomReason(player.name + " was splitted by holder of Shtuxian Weapony."), 7777777.0, 0, false);
+				player.DropItems();
+				player.ghost = true;
+			}
+			return true;}
+	public override bool AltFunctionUse(Player player)
+		{
+			return true;
+		}
+	  public override void AddRecipes()
+        {
+            
+        }
+	}
+}

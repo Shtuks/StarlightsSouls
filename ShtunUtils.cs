@@ -1,0 +1,479 @@
+using Terraria.ModLoader;
+using ssm.Content.Buffs;
+using ssm;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using ReLogic.Content;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
+using Terraria;
+using Terraria.Chat;
+using Terraria.DataStructures;
+using Terraria.GameContent.Creative;
+using Terraria.GameContent.ItemDropRules;
+using Terraria.Graphics.Shaders;
+using Terraria.ID;
+using Terraria.Localization;
+using Terraria.ModLoader;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using System;
+using System.Collections.Generic;
+using Terraria;
+using Terraria.ID;
+using Terraria.ModLoader;
+using System;
+using FargowiltasSouls.Content.Projectiles;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using Terraria;
+using Terraria.DataStructures;
+using Terraria;
+using Terraria.ID;
+using Terraria.Localization;
+using Terraria.ModLoader;
+using Microsoft.Xna.Framework;
+using CalamityMod;
+using System;
+using System.Collections.Generic;
+using System.Text;
+using static Terraria.ModLoader.ModContent;
+using CalamityMod.CalPlayer;
+using Microsoft.Xna.Framework.Graphics;
+using Terraria.ID;
+using Terraria.ModLoader;
+using System;
+using FargowiltasSouls.Content.Projectiles;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using Terraria;
+using Terraria.ID;
+using Terraria.ModLoader;
+using ssm.Content.NPCs;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using ReLogic.Content;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
+using Terraria;
+using Terraria.Chat;
+using Terraria.DataStructures;
+using Terraria.GameContent.Creative;
+using Terraria.GameContent.ItemDropRules;
+using Terraria.Graphics.Shaders;
+using Terraria.ID;
+using Terraria.Localization;
+using Terraria.ModLoader;
+using Terraria.Audio;
+using Terraria.GameContent;
+using Terraria.ID;
+using Terraria.ModLoader;
+
+namespace ssm
+{
+	public static class ShtunUtils 
+	{
+        public static bool HostCheck => Main.netMode != NetmodeID.MultiplayerClient;
+        public static bool EternityMode = true;
+        public static Vector2 RandomRotate => Vector2.UnitX.RotatedByRandom(MathHelper.TwoPi);
+        public static Color GetAdditiveColor(Color Color) => new Color(Color.R, Color.G, Color.B, 0);
+		public static int NewSummonProjectile(IEntitySource source, Vector2 spawn, Vector2 velocity, int type, int rawBaseDamage, float knockback, int owner = 255, float ai0 = 0, float ai1 = 0)
+        {
+            int p = Projectile.NewProjectile(source, spawn, velocity, type, rawBaseDamage, knockback, owner, ai0, ai1);
+            if (p != Main.maxProjectiles)
+            {
+                Main.projectile[p].originalDamage = rawBaseDamage;
+                Main.projectile[p].ContinuouslyUpdateDamageStats = true;
+            }
+            return p;
+        }
+        public static Vector2 ClosestPointInHitbox(Rectangle hitboxOfTarget, Vector2 desiredLocation)
+        {
+            Vector2 offset = desiredLocation - hitboxOfTarget.Center.ToVector2();
+            offset.X = Math.Min(Math.Abs(offset.X), hitboxOfTarget.Width / 2) * Math.Sign(offset.X);
+            offset.Y = Math.Min(Math.Abs(offset.Y), hitboxOfTarget.Height / 2) * Math.Sign(offset.Y);
+            return hitboxOfTarget.Center.ToVector2() + offset;
+        }
+        public static void CirculateOldpos(this Projectile projectile)
+        {
+            for (int i = projectile.oldPos.Length - 1; i > 0; i--)
+            {
+                projectile.oldPos[i] = projectile.oldPos[i - 1];
+                projectile.oldRot[i] = projectile.oldRot[i - 1];
+            }
+            projectile.oldPos[0] = projectile.Center;
+            projectile.oldRot[0] = projectile.rotation;
+        }
+        public static Vector2 ToDegreesVector2(this float num, float mult = 1, float add = 0) => MathHelper.ToRadians(num * mult + add).ToRotationVector2();
+        public static Vector2 DirectionToSafe(this Vector2 pos1, Vector2 pos2)
+        {
+            pos1 = Vector2.Normalize(-pos1 + pos2);
+            if (pos1.HasNaNs()) pos1 = Vector2.Zero;
+            return pos1;
+        }
+        public static Vector2 SafeDirectionTo(this Entity entity, Vector2 destination, Vector2? fallback = null)
+		{
+			if (!fallback.HasValue)
+			{
+				fallback = Vector2.Zero;
+			}
+			return Utils.SafeNormalize(destination - entity.Center, fallback.Value);
+		}
+        public static bool WithinBounds(this int index, int cap)
+		{
+			if (index >= 0)
+			{
+				return index < cap;
+			}
+			return false;
+		}
+        public static NPC MinionHoming(this Vector2 origin, float maxDistanceToCheck, Player owner, bool ignoreTiles = true, bool checksRange = false)
+		{
+			if (owner == null || !((Entity)owner).whoAmI.WithinBounds(255) || !owner.MinionAttackTargetNPC.WithinBounds(200))
+			{
+				return origin.ClosestNPCAt(maxDistanceToCheck, ignoreTiles);
+			}
+			NPC val = Main.npc[owner.MinionAttackTargetNPC];
+			bool flag = true;
+			if (!ignoreTiles)
+			{
+				flag = Collision.CanHit(origin, 1, 1, ((Entity)val).Center, 1, 1);
+			}
+			float num = ((Entity)val).width / 2 + ((Entity)val).height / 2;
+			bool flag2 = Vector2.Distance(origin, ((Entity)val).Center) < maxDistanceToCheck + num || !checksRange;
+			if (owner.HasMinionAttackTargetNPC && flag && flag2)
+			{
+				return val;
+			}
+			return origin.ClosestNPCAt(maxDistanceToCheck, ignoreTiles);
+		}
+        public static float AngleToSafe(this Vector2 pos1, Vector2 pos2) => DirectionToSafe(pos1, pos2).ToRotation();
+        public static Vector2 DirectionFromSafe(this Entity entity,Vector2 pos)
+        {
+            pos = entity.DirectionFrom(pos);
+            if (pos.HasNaNs()) pos = Vector2.Zero;
+            return pos;
+        }
+        public static Vector2 DirectionToSafe(this Entity entity,Vector2 pos)
+        {
+            pos = entity.DirectionTo(pos);
+            if (pos.HasNaNs()) pos = Vector2.Zero;
+            return pos;
+        }
+        public static int ClosetNPC(this Projectile projectile, float maxDist) => projectile.Center.ClosetNPC(maxDist, !projectile.tileCollide);
+        public static int ClosetNPC(this Vector2 pos, float maxDist, bool ignoreTile = true)
+        {
+            int index = -1;
+            for (int i = 0; i < Main.npc.Length; i++)
+            {
+                NPC n = Main.npc[i];
+                if (n.active && !n.friendly && n.CanBeChasedBy() && (maxDist == -1 || n.Hitbox.Distance(pos) < maxDist))
+                {
+                    if (ignoreTile || Collision.CanHit(pos, 1, 1, n.position, n.width, n.height))
+                    {
+                        index = i;
+                        maxDist = n.Hitbox.Distance(pos);
+                    }
+                }
+            }
+            return index;
+        }
+        public static int TransFloatToInt(this float num)
+        {
+            int low = (int)num;
+            int chance = (int)((num - low) * 100);
+            if (Main.rand.Next(100) < chance) low++;
+            return low;
+        }
+        public static Projectile[] XWay(int num, IEntitySource spawnSource, Vector2 pos, int type, float speed, int damage, float knockback)
+        {
+            Projectile[] projs = new Projectile[num];
+            double spread = 2 * Math.PI / num;
+            for (int i = 0; i < num; i++)
+                projs[i] = NewProjectileDirectSafe(spawnSource, pos, new Vector2(speed, speed).RotatedBy(spread * i), type, damage, knockback, Main.myPlayer);
+            return projs;
+        }
+        public static Projectile NewProjectileDirectSafe(IEntitySource spawnSource, Vector2 pos, Vector2 vel, int type, int damage, float knockback, int owner = 255, float ai0 = 0f, float ai1 = 0f)
+        {
+            int p = Projectile.NewProjectile(spawnSource, pos, vel, type, damage, knockback, owner, ai0, ai1);
+            return p < Main.maxProjectiles ? Main.projectile[p] : null;
+        }
+        public static int GetProjectileByIdentity(int player, float projectileIdentity, params int[] projectileType)
+        {
+            return GetProjectileByIdentity(player, (int)projectileIdentity, projectileType);
+        }
+        public static int GetProjectileByIdentity(int player, int projectileIdentity, params int[] projectileType)
+        {
+            for (int i = 0; i < Main.maxProjectiles; i++)
+            {
+                if (Main.projectile[i].active && Main.projectile[i].identity == projectileIdentity && Main.projectile[i].owner == player
+                    && (projectileType.Length == 0 || projectileType.Contains(Main.projectile[i].type)))
+                {
+                    return i;
+                }
+            }
+            return -1;
+        }
+        public static bool OtherBossAlive(int npcID)
+        {
+            if (npcID > -1 && npcID < Main.maxNPCs)
+            {
+                for (int i = 0; i < Main.maxNPCs; i++)
+                {
+                    if (Main.npc[i].active && Main.npc[i].boss && i != npcID)
+                        return true;
+                }
+            }
+            return false;
+        }
+        public static void DisplayLocalizedText(string key, Color? textColor = null)
+		{
+			if (!textColor.HasValue)
+			{
+				textColor = Color.White;
+			}
+			if (Main.netMode == 0)
+			{
+				Main.NewText((object)Language.GetTextValue(key), (Color?)textColor.Value);
+			}
+			else if (Main.netMode == 2 || Main.netMode == 1)
+			{
+				ChatHelper.BroadcastChatMessage(NetworkText.FromKey(key, Array.Empty<object>()), textColor.Value, -1);
+			}
+		}
+        public static void ClearFriendlyProjectiles(int deletionRank = 0, int bossNpc = -1, bool clearSummonProjs = false)
+        {
+            ClearProjectiles(false, true, deletionRank, bossNpc, clearSummonProjs);
+        }
+        public static void ClearHostileProjectiles(int deletionRank = 0, int bossNpc = -1)
+        {
+            ClearProjectiles(true, false, deletionRank, bossNpc);
+        }
+        public static void ClearAllProjectiles(int deletionRank = 0, int bossNpc = -1, bool clearSummonProjs = false)
+        {
+            ClearProjectiles(true, true, deletionRank, bossNpc, clearSummonProjs);
+        }
+        private static void ClearProjectiles(bool clearHostile, bool clearFriendly, int deletionRank = 0, int bossNpc = -1, bool clearSummonProjs = false)
+        {
+            if (Main.netMode == NetmodeID.MultiplayerClient)
+                return;
+
+            if (OtherBossAlive(bossNpc))
+                clearHostile = false;
+
+            for (int j = 0; j < 2; j++)
+            {
+                for (int i = 0; i < Main.maxProjectiles; i++)
+                {
+                    Projectile projectile = Main.projectile[i];
+                    if (projectile.active && ((projectile.hostile && clearHostile) || (projectile.friendly && clearFriendly)) && CanDeleteProjectile(projectile, deletionRank, clearSummonProjs))
+                    {
+                        projectile.Kill();
+                    }
+                }
+            }
+        }
+        public static string GetModItemText(int ItemID, string color = "", string itemname = "")
+		{
+			Item val = new Item();
+			val.SetDefaults(ItemID, false);
+			string text = val.Name;
+			if (itemname != "")
+			{
+				text = itemname;
+			}
+			if (color == "")
+			{
+				return "[i:" + ItemID + "]「" + text + "」";
+			}
+			return "[i:" + ItemID + "]「[c/" + color + ":" + text + "]」";
+		}
+        public static int ScaledProjectileDamage(int npcDamage, float modifier = 1, int npcDamageCalculationsOffset = 2)
+        {
+            const float inherentHostileProjMultiplier = 2;
+            float worldDamage = ProjWorldDamage;
+            return (int)(modifier * npcDamage / inherentHostileProjMultiplier / Math.Max(npcDamageCalculationsOffset, worldDamage));
+        }
+        public static bool IsSummonDamage(Projectile projectile, bool includeMinionShot = true, bool includeWhips = true)
+        {
+            if (!includeWhips && ProjectileID.Sets.IsAWhip[projectile.type])
+                return false;
+
+            if (!includeMinionShot && (ProjectileID.Sets.MinionShot[projectile.type] || ProjectileID.Sets.SentryShot[projectile.type]))
+                return false;
+
+            return projectile.CountsAsClass(DamageClass.Summon) || projectile.minion || projectile.sentry || projectile.minionSlots > 0 || ProjectileID.Sets.MinionSacrificable[projectile.type]
+                || (includeMinionShot && (ProjectileID.Sets.MinionShot[projectile.type] || ProjectileID.Sets.SentryShot[projectile.type]))
+                || (includeWhips && ProjectileID.Sets.IsAWhip[projectile.type]);
+        }
+        public static bool CanDeleteProjectile(Projectile projectile, int deletionRank = 0, bool clearSummonProjs = false)
+        {
+            if (!projectile.active)
+                return false;
+            if (projectile.damage <= 0)
+                return false;
+            if (projectile.GetGlobalProjectile<FargoSoulsGlobalProjectile>().DeletionImmuneRank > deletionRank)
+                return false;
+            if (projectile.friendly)
+            {
+                if (projectile.whoAmI == Main.player[projectile.owner].heldProj)
+                    return false;
+                if (IsSummonDamage(projectile, false) && !clearSummonProjs)
+                    return false;
+            }
+            return true;
+        }
+        public static Vector2 ClosestPointInHitbox(Entity entity, Vector2 desiredLocation)
+        {
+            return ClosestPointInHitbox(entity.Hitbox, desiredLocation);
+        }
+        public static float ProjWorldDamage => Main.GameModeInfo.IsJourneyMode
+            ? CreativePowerManager.Instance.GetPower<CreativePowers.DifficultySliderPower>().StrengthMultiplierToGiveNPCs
+            : Main.GameModeInfo.EnemyDamageMultiplier;
+        public static Projectile ProjectileExists(int whoAmI, params int[] types)
+        {
+            return whoAmI > -1 && whoAmI < Main.maxProjectiles && Main.projectile[whoAmI].active && (types.Length == 0 || types.Contains(Main.projectile[whoAmI].type)) ? Main.projectile[whoAmI] : null;
+        }
+        public static Projectile ProjectileExists(float whoAmI, params int[] types)
+        {
+            return ProjectileExists((int)whoAmI, types);
+        }
+		public static int FindClosestHostileNPC(Vector2 location, float detectionRange, bool lineCheck = false)
+        {
+            NPC closestNpc = null;
+            foreach (NPC n in Main.npc)
+            {
+                if (n.CanBeChasedBy() && n.Distance(location) < detectionRange && (!lineCheck || Collision.CanHitLine(location, 0, 0, n.Center, 0, 0)))
+                {
+                    detectionRange = n.Distance(location);
+                    closestNpc = n;
+                }
+            }
+            return closestNpc == null ? -1 : closestNpc.whoAmI;
+        }
+        public static bool BossIsAlive(ref int bossID, int bossType)
+        {
+            if (bossID != -1)
+            {
+                if (Main.npc[bossID].active && Main.npc[bossID].type == bossType)
+                {
+                    return true;
+                }
+                else
+                {
+                    bossID = -1;
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public static bool AnyBossAlive()
+        {
+            if (ShtunNpcs.boss == -1)
+                return false;
+            if (Main.npc[ShtunNpcs.boss].active && (Main.npc[ShtunNpcs.boss].boss))
+                return true;
+            ShtunNpcs.boss = -1;
+            return false;
+        }
+        public static int FindClosestHostileNPCPrioritizingMinionFocus(Projectile projectile, float detectionRange, bool lineCheck = false, Vector2 center = default)
+        {
+            if (center == default)
+                center = projectile.Center;
+
+            NPC minionAttackTargetNpc = projectile.OwnerMinionAttackTargetNPC;
+            if (minionAttackTargetNpc != null && minionAttackTargetNpc.CanBeChasedBy() && minionAttackTargetNpc.Distance(center) < detectionRange
+                && (!lineCheck || Collision.CanHitLine(center, 0, 0, minionAttackTargetNpc.Center, 0, 0)))
+            {
+                return minionAttackTargetNpc.whoAmI;
+            }
+            return FindClosestHostileNPC(center, detectionRange, lineCheck);
+        }
+        public static NPC NPCExists(int whoAmI, params int[] types)
+        {
+            return whoAmI > -1 && whoAmI < Main.maxNPCs && Main.npc[whoAmI].active && (types.Length == 0 || types.Contains(Main.npc[whoAmI].type)) ? Main.npc[whoAmI] : null;
+        }
+        public static int NewNPCEasy(IEntitySource source, Vector2 spawnPos, int type, int start = 0, float ai0 = 0, float ai1 = 0, float ai2 = 0, float ai3 = 0, int target = 255, Vector2 velocity = default)
+        {
+            if (Main.netMode == NetmodeID.MultiplayerClient)
+                return Main.maxNPCs;
+
+            int n = NPC.NewNPC(source, (int)spawnPos.X, (int)spawnPos.Y, type, start, ai0, ai1, ai2, ai3, target);
+            if (n != Main.maxNPCs)
+            {
+                if (velocity != default)
+                {
+                    Main.npc[n].velocity = velocity;
+                }
+
+                if (Main.netMode == NetmodeID.Server)
+                    NetMessage.SendData(MessageID.SyncNPC, -1, -1, null, n);
+            }
+
+            return n;
+        }
+        public static NPC NPCExists(float whoAmI, params int[] types)
+        {
+            return NPCExists((int)whoAmI, types);
+        }
+        
+        #region Shader Utils
+        
+        private static readonly FieldInfo shaderTextureField = typeof(MiscShaderData).GetField("_uImage1", BindingFlags.NonPublic | BindingFlags.Instance);
+        private static readonly FieldInfo shaderTextureField2 = typeof(MiscShaderData).GetField("_uImage2", BindingFlags.NonPublic | BindingFlags.Instance);
+
+        /// <summary>
+        /// Uses reflection to set uImage1. Its underlying data is private and the only way to change it publicly
+        /// is via a method that only accepts paths to vanilla textures.
+        /// </summary>
+        /// <param name="shader">The shader</param>
+        /// <param name="texture">The texture to set</param>
+        public static void SetShaderTexture(this MiscShaderData shader, Asset<Texture2D> texture) => shaderTextureField.SetValue(shader, texture);
+
+        /// <summary>
+        /// Uses reflection to set uImage2. Its underlying data is private and the only way to change it publicly
+        /// is via a method that only accepts paths to vanilla textures.
+        /// </summary>
+        /// <param name="shader">The shader</param>
+        /// <param name="texture">The texture to set</param>
+        public static void SetShaderTexture2(this MiscShaderData shader, Asset<Texture2D> texture) => shaderTextureField2.SetValue(shader, texture);
+
+        /// <summary>
+        /// Prepares a <see cref="SpriteBatch"/> for shader-based drawing.
+        /// </summary>
+        /// <param name="spriteBatch">The sprite batch.</param>
+        public static void EnterShaderRegion(this SpriteBatch spriteBatch)
+        {
+            spriteBatch.End();
+            spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend, Main.DefaultSamplerState, DepthStencilState.None, Main.Rasterizer, null, Main.GameViewMatrix.TransformationMatrix);
+        }
+
+        /// <summary>
+        /// Ends changes to a <see cref="SpriteBatch"/> based on shader-based drawing in favor of typical draw begin states.
+        /// </summary>
+        /// <param name="spriteBatch">The sprite batch.</param>
+        public static void ExitShaderRegion(this SpriteBatch spriteBatch)
+        {
+            spriteBatch.End();
+            spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, Main.DefaultSamplerState, DepthStencilState.None, Main.Rasterizer, null, Main.GameViewMatrix.TransformationMatrix);
+        }
+        #endregion
+        public static float ActualClassDamage(this Player player, DamageClass damageClass)
+            => player.GetTotalDamage(damageClass).Additive * player.GetTotalDamage(damageClass).Multiplicative;
+		public static int HighestDamageTypeScaling(Player player, int dmg)
+        {
+            List<float> types = new List<float> {
+                player.ActualClassDamage(DamageClass.Melee),
+                player.ActualClassDamage(DamageClass.Ranged),
+                player.ActualClassDamage(DamageClass.Magic),
+                player.ActualClassDamage(DamageClass.Summon)
+            };
+            return (int)(types.Max() * dmg);}
+}}

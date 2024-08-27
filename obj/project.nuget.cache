@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "dgSpecHash": "dJqm4DjayzQ=",
+  "success": false,
+  "projectFilePath": "C:\\Users\\kolot\\OneDrive\\Документы\\My Games\\Terraria\\tModLoader\\ModSources\\ssm\\ssm.csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1100",
+      "level": "Error",
+      "message": "Не удалось разрешить \"tModLoader.CodeAssist (>= 0.1.0)\" для \"net8.0\".",
+      "libraryId": "tModLoader.CodeAssist",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
+}

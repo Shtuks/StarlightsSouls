@@ -1,0 +1,792 @@
+Items: {
+	Lore: {
+		ShtuxibusLore: {
+			Lore:
+				'''
+				[c/004D00:The multiversal terror. Eraser of worlds. Shtuxian shard of Chtux'Lag'Or.]
+				The deities of other world turned out to be way more powerful than auric gods. 
+				He is clearest confirmation of this statement. I have no idea why he is here or where he came from.
+				The only thing is clear is that you didn't defeat him. He never fights seriously even with gods.
+				'''
+			DisplayName: Lore - Shtuxibus
+		}
+	}
+
+	AdamantiteSingularity: {
+		DisplayName: Adamantite Singularity
+		Tooltip: ""
+	}
+
+	AeraliteSingularity: {
+		DisplayName: Aeralite Singularity
+		Tooltip: ""
+	}
+
+	ShtuxianSoul: {
+		DisplayName: Soul of Shtundex
+		Tooltip:
+			'''
+			Effects of [i:FargowiltasSouls/EternitySoul], [i:ssm/CalamitySoul], [i:ssm/NekomiEnchant], [i:ssm/StyxEnchant], [i:ssm/PhantaplazmalEnchant], [i:ssm/DemonshadeHelmetCat], [i:ssm/DemonshadeBreastplateCat], [i:ssm/DemonshadeLegginsCat]
+			Your attacks inflict Abominable Fang, Mutant Fang, God Eater
+			Grants immunity to all debuffs except "Chtux'lag'or Inferno" and "Shtuxibus Curse"
+			'God or whatever, all things acknowledge your claim to omnipotence.'
+			'''
+	}
+
+	AstralSingularity: {
+		DisplayName: Astral Singularity
+		Tooltip: ""
+	}
+
+	AuricSingularity: {
+		DisplayName: Auric Singularity
+		Tooltip: ""
+	}
+
+	ChlorophyteSingularity: {
+		DisplayName: Chlorophyte Singularity
+		Tooltip: ""
+	}
+
+	CobaltSingularity: {
+		DisplayName: Cobalt Singularity
+		Tooltip: ""
+	}
+
+	CopperSingularity: {
+		DisplayName: Copper Singularity
+		Tooltip: ""
+	}
+
+	CosmiliteSingularity: {
+		DisplayName: Cosmilite Singularity
+		Tooltip: ""
+	}
+
+	CrimtaneSingularity: {
+		DisplayName: Crimtane Singularity
+		Tooltip: ""
+	}
+
+	CryoniteSingularity: {
+		DisplayName: Cryonite Singularity
+		Tooltip: ""
+	}
+
+	DemoniteSingularity: {
+		DisplayName: Demonite Singularity
+		Tooltip: ""
+	}
+
+	GoldSingularity: {
+		DisplayName: Gold Singularity
+		Tooltip: ""
+	}
+
+	HallowSingularity: {
+		DisplayName: Hallow Singularity
+		Tooltip: ""
+	}
+
+	HellstoneSingularity: {
+		DisplayName: Hellstone Singularity
+		Tooltip: ""
+	}
+
+	LeadSingularity: {
+		DisplayName: Lead Singularity
+		Tooltip: ""
+	}
+
+	MeteoriteSingularity: {
+		DisplayName: Meteorite Singularity
+		Tooltip: ""
+	}
+
+	MythrillSingularity: {
+		DisplayName: Mythrill Singularity
+		Tooltip: ""
+	}
+
+	OrichalcumSingularity: {
+		DisplayName: Orichalcum Singularity
+		Tooltip: ""
+	}
+
+	PalladiumSingularity: {
+		DisplayName: Palladium Singularity
+		Tooltip: ""
+	}
+
+	PerenialSingularity: {
+		DisplayName: Perenial Singularity
+		Tooltip: ""
+	}
+
+	PlatinumSingularity: {
+		DisplayName: Platinum Singularity
+		Tooltip: ""
+	}
+
+	ScoriaSingularity: {
+		DisplayName: Scoria Singularity
+		Tooltip: ""
+	}
+
+	SilverSingularity: {
+		DisplayName: Silver Singularity
+		Tooltip: ""
+	}
+
+	SpectreSingularity: {
+		DisplayName: Spectre Singularity
+		Tooltip: ""
+	}
+
+	TinSingularity: {
+		DisplayName: Tin Singularity
+		Tooltip: ""
+	}
+
+	TitaniumSingularity: {
+		DisplayName: Titanium Singularity
+		Tooltip: ""
+	}
+
+	TungstenSingularity: {
+		DisplayName: Tungsten Singularity
+		Tooltip: ""
+	}
+
+	UelibloomSingularity: {
+		DisplayName: Uelibloom Singularity
+		Tooltip: ""
+	}
+
+	UltimateHealingPotion: {
+		DisplayName: Ultimate Healing Potion
+		Tooltip: ""
+	}
+
+	LuminiteSingularity: {
+		DisplayName: Luminite Singularity
+		Tooltip: ""
+	}
+
+	AuricBullet: {
+		DisplayName: Auric Bullet
+		Tooltip: ""
+	}
+
+	ShroomiteSingularity: {
+		DisplayName: Shroomite Singularity
+		Tooltip: ""
+	}
+
+	CalamitySoul: {
+		DisplayName: Calamity Soul
+		Tooltip:
+			'''
+			[i:CalamityMod/TheEvolution] You reflect projectiles when they hit you, reflected projectiles deal no damage to you, projectiles that deal less than 5% of your max life in damage will not be reflected
+			Reflect has a cooldown that ranges between 15 and 90 seconds depending on the reflected projectile's damage, this cooldown is shared with all other dodges and reflects
+			After reflecting, grants +1 life regen and accelerated life regen for 5 seconds, if the same enemy projectile type hits you again you will resist its damage by 15%
+			[i:CalamityMod/HideofAstrumDeus] Taking damage / inflicting a true melee strike, drops an immense amount of astral stars from the sky, taking damage boosts true melee damage by 30%, boost duration scales with the amount of damage you took, up to 10 seconds
+			immunity to the astral infection, cursed inferno, on fire, and frostburn, enemies take damage when they hit you and inflicted with the astral infection
+			[i:CalamityMod/BlazingCore] Pressing activate accessory parry key will activate a parry, encasing you in profaned crystal, being hit shortly after encasement will shatter the crystal
+			Upon shattering, waves of holy stars spiral outwards and the damage you would have taken is reduced to 1, after shattering, this damage reduction effect goes on cooldown
+			If another encasement is shattered whilst on cooldown, healing stars will be interspersed throughout the waves of stars, the damage of a hit is not reduced whilst on cooldown, provides a moderate amount of light in the Abyss
+			[i:CalamityMod/PhantomicArtifact] Whenever your minions hit an enemy you will gain a random phantomic buff, does not stack with downgrades, phantomic Empowerment increases summon damage by 10% and makes minion hits spawn phantomic knives
+			Phantomic Shield increases defense by 10 and damage reduction by 5% and spawns a phantomic bulwark which absorbs 20% of the next projectile's damage that touches it
+			Phantomic Regen grants +2 life regen and spawns a phantomic heart which grants an additional 2 life regen when touched, [I:ssm/CalamitySoul] grants immunity to Calamitous Presence
+			[i:CalamityMod/BloodflareCore] Taking defense damage heals you over time, you gain 1 health for every 1 defense damage recovered, taking damage always deals at least half of your total defense in defense damage
+			[i:CalamityMod/EldritchSoulArtifact] Boosts melee speed by 10%, ranged velocity by 25%, rogue stealth regen by 15%, max minions by 1, reduces mana cost by 25%, grants immunity to whispering death
+			[i:CalamityMod/AuricSoulArtifact] For each Fiery Draconid you have summoned, you gain 1 minion slot, effects of [i:CalamityMod/TheCommunity] The Community, [i:CalamityMod/ShatteredCommunity] Shattered Community, [i:CalamityMod/DimensionalSoulArtifact] multiplies all damage by 1.2x, but at the cost of increasing damage taken by 15%
+			[i:CalamityMod/TheAbsorber] 12% increased movement and jump speed, grants immunity to knockback, enemies take immense damage when they touch you and are afflicted with a damaging sickness debuff that reduces damage reduction significantly
+			Using a healing potion will spawn a cleansing aura, aura removes all debuffs one time, aura grants +3 life regen, +8% damage, and +5% damage reduction for all players inside for 10 seconds, 5% of the damage from enemy attacks is absorbed and converted into healing
+			[i:CalamityMod/Affliction] Grants you and all other players on your team +0.5 life regen, +10% max life, 7% damage reduction, 13 defense and +10% damage
+			[i:CalamityMod/DarkSunRing] 12% increase to damage, +0.5 life regen and +2 max minions, increases minion knockback, during the day, grants +2 life regen, during the night, grants +20 defense, during an eclipse, grants +1 life regen and +10 defense
+			[i:FargowiltasCrossmod/BrandoftheBrimstoneWitch] Effects of [i:CalamityMod/HeartoftheElements] Heart of the Elements, [i:CalamityMod/OccultSkullCrown] Occult Skull Crown, [i:CalamityMod/Radiance] Radiance, [i:CalamityMod/TheSponge] The Sponge, [i:CalamityMod/ChaliceOfTheBloodGod] Chalice of the Blood God, [i:CalamityMod/NebulousCore] Nebulous Core, [i:CalamityMod/YharimsGift] Yharim's Gift, [i:CalamityMod/DraedonsHeart] Draedon's heart and [i:CalamityMod/Calamity] Calamity
+			[i:FargowiltasCrossmod/MarniteEnchant] 25% increased placement speed and +10 placement range, lasers strike nearby enemies when building and mining, effects of [i:CalamityMod/MarniteRepulsionShield] Marnite Repulsion Shield, [i:FargowiltasCrossmod/WulfrumEnchant] wulfrum drone tells you enemy debuff weaknesses and makes enemies take extra debuff damage
+			[i:FargowiltasCrossmod/DesertProwlerEnchant] Replaces jumping boot hovering with a charged sand jump that boosts you horizontally, [i:FargowiltasCrossmod/AerospecEnchant] jumping and using double jumps increase critical strike chance and summon damage
+			[i:FargowiltasCrossmod/SulphurEnchant] Grants an extra jump that spawns a bubble, shooting the bubble releases toxic gas, [i:FargowiltasCrossmod/VictideEnchant] gives you urchin spikes, which after attacking for a short time and releasing attack, launch outward
+			'The ruler of the jungle'
+			'''
+	}
+
+	ShtuxibusSword: {
+		DisplayName: Shtuxian Spear
+		Tooltip:
+			'''
+			Set life of attacked entity to 0.
+			♎ Chtux'Lag'Or Item ♎
+			'''
+	}
+
+	InfinityCatalyst: {
+		DisplayName: Infinity Catalyst
+		Tooltip: All strength of universe in your palm.
+	}
+
+	InfinityIngot: {
+		DisplayName: Awakened shtuxium bar
+		Tooltip: True essense of Chtux'Lag'Or shard.
+	}
+
+	ShtuxianCurse: {
+		DisplayName: Shtuxian Curse
+		Tooltip: ""
+	}
+
+	chtuxmantle: {
+		DisplayName: Chtuxlagor Mantle
+		Tooltip: Effects of all armor sets and accessories.
+	}
+
+	DemonshadeBreastplateCat: {
+		DisplayName: Demonshade C.A.T Breastplate
+		Tooltip:
+			'''
+			+ 700 Max life
+			x2 all damage for all classes
+			Godly regeneration
+			+ 500 armor penetration for all classes
+			Effect of [i:FargowiltasSouls/MutantBody], [i:CalamityMod/DemonshadeBreastplate], [i:CalamityMod/AuricTeslaBodyArmor], [i:CalamityMod/GemTechBodyArmor].
+			'''
+	}
+
+	DemonshadeHelmetCat: {
+		DisplayName: Demonshade C.A.T Helmet
+		Tooltip:
+			'''
+			+ 700 Max mana
+			+ 60% damage to all classes and 80% crit chance
+			+ 10 Max minion slots
+			Effect of [i:FargowiltasSouls/MutantMask], [i:CalamityMod/DemonshadeHelm], [i:CalamityMod/AuricTeslaHoodedFacemask], [i:CalamityMod/AuricTeslaWireHemmedVisage], [i:CalamityMod/AuricTeslaRoyalHelm], [i:CalamityMod/AuricTeslaPlumedHelm], [i:CalamityMod/GemTechHeadgear].
+			'''
+	}
+
+	DemonshadeLegginsCat: {
+		DisplayName: Demonshade C.A.T Leggins
+		Tooltip:
+			'''
+			+ 30% movement speed
+			+ 50% damage to all clases
+			Effect of [i:FargowiltasSouls/MutantPants], [i:CalamityMod/DemonshadeGreaves], [i:CalamityMod/AuricTeslaCuisses], [i:CalamityMod/GemTechSchynbaulds].
+			'''
+	}
+
+	ShtuxiumOre: {
+		Tooltip: ""
+		DisplayName: Shtuxium Ore
+	}
+
+	ShtuxiumBar: {
+		Tooltip: Ingot of Chtux'Lag'Or shard's essense.
+		DisplayName: Shtuxium Bar
+	}
+
+	ShtuxiumSoulShard: {
+		Tooltip: ""
+		DisplayName: Shtuxium Soul Shard
+	}
+
+	ShtuxibusBag: {
+		Tooltip: ""
+		DisplayName: Shtuxibus Bag
+	}
+
+	ShtuxibusSpear: {
+		Tooltip: ""
+		DisplayName: Shtuxibus Spear
+	}
+
+	NekomiEnchant: {
+		DisplayName: Nekomi Enchant
+		Tooltip:
+			'''
+			[i:FargowiltasSouls/SparklingAdoration] Graze attacks to gain up to x1.25 increased damage
+			Damage bonus decreases over time and is fully lost on hit
+			Your attacks periodically summon life draining heart
+			[i:FargowiltasSouls/NekomiHood][i:FargowiltasSouls/NekomiHoodie][i:FargowiltasSouls/NekomiLeggings] 7% increased damage & critical strike chance for your current weapon class
+			Increases Sparkling Adoration graze radius, graze attacks to temporarily charge energy
+			Increases life regeneration when damaged at the cost of some energy
+			Double tap down key to release energy as life draining heart
+			Wield a demon axe of love and justice when fully charged
+			'''
+	}
+
+	PhantaplazmalEnchant: {
+		DisplayName: Phantasmal Enchant
+		Tooltip:
+			'''
+			[i:FargowiltasSouls/MutantEye] 25% increased graze bonus damage cap
+			Converts Sparkling Adoration hearts to love rays, Increases damage gained per graze
+			Increases Spectral Abominationn respawn rate & damage
+			Press the bomb key to unleash a wave of spheres and destroy most hostile projectiles, it has 60 second cooldown
+			[i:FargowiltasSouls/MutantMask][i:FargowiltasSouls/MutantBody][i:FargowiltasSouls/MutantPants] Phantasmal eyes will shoot phantasmal deathray at nearby enemies
+			Summons spectral abomination, you erupt into a massive deathray when revived, 20% increased weapon use speed
+			'''
+	}
+
+	StyxEnchant: {
+		DisplayName: Styx Enchant
+		Tooltip:
+			'''
+			[i:FargowiltasSouls/AbominableWand] Can endure any attack and survive with one life, endurance recovers when you reach max life
+			Increased damage gained Sparkling Adoration graze, halves heart cooldown, Abominationn periodically manifests to support your critical hits
+			[i:FargowiltasSouls/StyxCrown][i:FargowiltasSouls/StyxChestplate][i:FargowiltasSouls/StyxLeggings] 20% Increased damage for current weapon class
+			Attack enemies to charge energy, reduces damage taken for energy, Your attacks inflict Abominable Fang
+			Double tap down key to release energy as homing shots & brandish a blade of infernal magic when fully charged
+			'''
+	}
+
+	ShtuxibusTrophy: {
+		DisplayName: Shtuxibus Trophy
+		Tooltip: ""
+	}
+
+	ShtuxibusRelic: {
+		DisplayName: Shtuxibus Relic
+		Tooltip: ""
+	}
+
+	AnnihilationAshSingularity: {
+		DisplayName: Annihilation Ash Singularity
+		Tooltip: ""
+	}
+
+	AscendantSingularity: {
+		DisplayName: Ascendant Singularity
+		Tooltip: ""
+	}
+
+	BloodSampleSingularity: {
+		DisplayName: Blood Sample Singularity
+		Tooltip: ""
+	}
+
+	BloodstoneSingularity: {
+		DisplayName: Bloodstone Singularity
+		Tooltip: ""
+	}
+
+	CalamityAshSingularity: {
+		DisplayName: Calamity Ash Singularity
+		Tooltip: ""
+	}
+
+	CalamitySingularity: {
+		DisplayName: Calamity Singularity
+		Tooltip: ""
+	}
+
+	CorrodedSingularity: {
+		DisplayName: Corroded Singularity
+		Tooltip: ""
+	}
+
+	DepthSingularity: {
+		DisplayName: Depth Singularity
+		Tooltip: ""
+	}
+
+	ExoSingularity: {
+		DisplayName: Exo Singularity
+		Tooltip: ""
+	}
+
+	MeldSingularity: {
+		DisplayName: Meld Singularity
+		Tooltip: ""
+	}
+
+	NecroplasmSingularity: {
+		DisplayName: Necroplasm Singularity
+		Tooltip: ""
+	}
+
+	PlagueCanisterSingularity: {
+		DisplayName: Plague Canister Singularity
+		Tooltip: ""
+	}
+
+	PurifiedGelSingularity: {
+		DisplayName: Purified Gel Singularity
+		Tooltip: ""
+	}
+
+	RottenMatterSingularity: {
+		DisplayName: Rotten Matter Singularity
+		Tooltip: ""
+	}
+
+	SeaRemainsSingularity: {
+		DisplayName: Sea Remains Singularity
+		Tooltip: ""
+	}
+
+	SolarVeilSingularity: {
+		DisplayName: Solar Veil Singularity
+		Tooltip: ""
+	}
+
+	TerrariaSingularity: {
+		DisplayName: Terraria Singularity
+		Tooltip: ""
+	}
+
+	WulfrumSingularity: {
+		DisplayName: Wulfrum Singularity
+		Tooltip: ""
+	}
+
+	UltimateFargoWeapon: {
+		Tooltip: ""
+		DisplayName: Ultimate Fargo Weapon
+	}
+
+	MutantsForge: {
+		DisplayName: Mutants Forge
+		Tooltip: ""
+	}
+
+	ShtuxibusForge: {
+		Tooltip: Allow you creating Chtuxlagor Items and Items from Shtuxium
+		DisplayName: Shtuxibus Forge
+	}
+
+	MonstrosityMask: {
+		DisplayName: Monstrosity Mask
+		Tooltip: Vanity
+	}
+
+	MonstrosityPants: {
+		DisplayName: Monstrosity Pants
+		Tooltip: Vanity
+	}
+
+	MonstrositySuit: {
+		DisplayName: Monstrosity Suit
+		Tooltip: Vanity
+	}
+
+	ShtuxibusHeadgear: {
+		DisplayName: Shtuxibus Headgear
+		Tooltip: Vanity
+	}
+
+	ShtuxibusPants: {
+		DisplayName: Shtuxibus Pants
+		Tooltip: Vanity
+	}
+
+	ShtuxibusSuit: {
+		DisplayName: Shtuxibus Suit
+		Tooltip: Vanity
+	}
+
+	TrueMonstrosityMask: {
+		DisplayName: True Monstrosity Mask
+		Tooltip:
+			'''
+			60% increased damage and 50% increased critical strike chance
+			Drastically increases life regen, also increases armor penetration to 70.
+			'''
+	}
+
+	TrueMonstrosityPants: {
+		DisplayName: True Monstrosity Pants
+		Tooltip:
+			'''
+			40% increased damage and 20% increased critical strike chance
+			50% increased movement and 20% increased attack speed
+			Also increases armor penetration to 70.
+			'''
+	}
+
+	TrueMonstrositySuit: {
+		DisplayName: True Monstrosity Suit
+		Tooltip:
+			'''
+			50% increased damage and 20% increased critical strike chance 
+			Increases max number of minions and sentries by 20
+			Increases damage reduction by 50%, Increases max life and mana by 1000
+			40% reduced mana usage, 25% chance not to consume ammo, also increases armor penetration to 70.
+			'''
+	}
+
+	Sadism: {
+		DisplayName: Sadism
+		Tooltip: True escence of eternity.
+	}
+
+	TrueAuricTeslaBody: {
+		DisplayName: True Auric Tesla Body
+		Tooltip:
+			'''
+			40% increased damage and 20% increased critical strike chance 
+			Increases max number of minions and sentries by 10
+			Increases damage reduction by 50%, Increases max life and mana by 300
+			50% reduced mana usage, 25% chance not to consume ammo.
+			'''
+	}
+
+	TrueAuricTeslaHelm: {
+		DisplayName: True Auric Tesla Helm
+		Tooltip:
+			'''
+			50% increased damage and 50% increased critical strike chance
+			Godly increases life regen, also increases armor penetration to 60.
+			Effect of [i:CalamityMod/AuricTeslaHoodedFacemask], [i:CalamityMod/AuricTeslaWireHemmedVisage], [i:CalamityMod/AuricTeslaRoyalHelm], [i:CalamityMod/AuricTeslaPlumedHelm]
+			'''
+	}
+
+	TrueAuricTeslaLegs: {
+		DisplayName: True Auric Tesla Legs
+		Tooltip:
+			'''
+			40% increased damage and 20% increased critical strike chance
+			50% increased movement
+			'''
+	}
+
+	ShtuxibusBagGfb: {
+		DisplayName: Shtuxibus Bag Gfb
+		Tooltip: ""
+	}
+}
+
+Buffs: {
+	ShtuxibusCurse: {
+		DisplayName: Shtuxibus Curse
+		Description: You are gradually disappearing from this reality.
+	}
+
+	ChtuxlagorBuff: {
+		DisplayName: Chtuxlagor Buff
+		Description: Strength of omniversal creator with you.
+	}
+
+	ShtuxibusMinionBuff: {
+		DisplayName: Shtuxibus Minion Buff
+		Description: Shtuxibus's spectral image protect you.
+	}
+
+	AntiCollision: {
+		DisplayName: Anti Collision
+		Description: You can't get hit.
+	}
+
+	AntiDeath: {
+		DisplayName: Anti Death
+		Description: You can't die.
+	}
+
+	AntiDebuff: {
+		DisplayName: Anti Debuff
+		Description: You immune to all debuffs.
+	}
+
+	ChtuxlagorInferno: {
+		DisplayName: Chtuxlagor Inferno
+		Description: OOOHHHH NOOOO YOU'RE ded
+	}
+
+	SadismEX: {
+		DisplayName: Sadism EX
+		Description: You immune to all debuffs.
+	}
+
+	YharimBuff: {
+		DisplayName: Yharim Buff
+		Description: Your power rival with Jungle Tyrant
+	}
+}
+
+NPCs: {
+	ShtuxianHarbringer: {
+		DisplayName: Shtuxian Harbringer
+
+		TownNPCMood: {
+			Content: I am satisfied.
+			NoHome: Terrible that i don't have place to stay. I will go back to my world if will not get one.
+			FarFromHome: I am far from home.
+			LoveSpace: I like how spacious it is here. Just like in my palace in Shtundex.
+			DislikeCrowded: I don't like that there are a lot of people here.
+			HateCrowded: I hate all this people. I feel like gonna erase everything around.
+			LikeBiome: I like {BiomeName}. It's very similar to my home world
+			DislikeBiome: I hate {BiomeName}.
+			HateBiome: I hate {BiomeName}.
+			LoveNPC: I love {NPCName}. Do you think she like me?
+			LikeNPC: I like spending time with {NPCName}.
+			LikeNPC_Princess: Мне нравится {NPCName}.
+			Princess_LovesNPC: Мне нравится {NPCName}.
+		}
+	}
+
+	ShtuxibusGFB.DisplayName: The eldrich multiversal horror of Chtux'Lag'Or
+
+	Shtuxibus: {
+		DisplayName: Shtuxibus
+
+		BossChecklistIntegration: {
+			SpawnInfo: Spawned with an [i:ssm/ShtuxianCurse] anytime anywhere.
+			DespawnMessage: "[c/008000:Chtuxlagorian Shard erased every alife human in this universe.]"
+		}
+	}
+
+	ShtuxibusIllusion.DisplayName: Shtuxibus
+}
+
+Dialogues: {
+	Shtuxibus: {
+		MutantDialogue: Mutant is so strange. Anyway. I like spending time with it.
+		StandardDialogue1: Hm. It's interesting to observe your progress. But you will never reach my level of power.
+		StandardDialogue2: Can i jump? Jeah. I have that thing you call 'space'.
+		StandardDialogue3: Have you ever seen shtuxian before? I bet no!
+		StandardDialogue4: Hey, do you know about 3d dimension? No? Disappointing. My home world in 3d dimension.
+		StandardDialogue5: Who is Yharim? How many years you waiting for him to be added in game?
+		StandartDialogue6: Do you know about 'Сhtux'Lag'Or'? Hm. I thought that people study about highest.
+		StandartDialogue7: Heh. Gods of this world so pathetic. Kill dragon and consume his soul? Don't make me laugh!
+		CommonDialogue: Sometimes I feel that I'm too different from everyone else here.
+		RareDialogue: Do you think that Calamitas will reciprocate my feelings? She look nice...
+		TalkALot: I'm getting tired of talking to you.
+	}
+}
+
+Tiles: {
+	ShtuxiumOreTile.MapEntry: Shtuxium Ore
+	ShtuxibusForgeTile.MapEntry: Shtuxibus Forge Tile
+	MutantsForgeTile.MapEntry: Mutants Forge Tile
+}
+
+ItemClass.Chtuxlagor: ∞ Chtux'Lag'Or Item ∞
+
+WorldGen: {
+	BlessedWithShtuxiumOreMessage: Defeat of Chtux'lag'or shard vented concentrated shtuxian energy in this world.
+	ShtuxiumOrePassMessage: Mods.ssm.WorldGen.ShtuxiumOrePassMessage
+}
+
+Projectiles: {
+	GiantDeathrayULTRA.DisplayName: Giant Deathray U L T R A
+	GiantDeathrayULTRA100.DisplayName: Giant Deathray U L T R A100
+	WillDeathrayBig.DisplayName: Will Deathray Big
+	WillDeathrayBig20.DisplayName: Will Deathray Big20
+	WillDeathraySmall.DisplayName: Will Deathray Small
+	WillDeathraySmall20.DisplayName: Will Deathray Small20
+	ProtoProjectileAimButOP.DisplayName: Proto Projectile Aim But O P
+	ProtoProjectile.DisplayName: Proto Projectile
+	AbomFlocko.DisplayName: Abom Flocko
+	AbomFlocko2.DisplayName: Abom Flocko2
+	AbomFlocko3.DisplayName: Abom Flocko3
+	AbomFrostShard.DisplayName: Abom Frost Shard
+	AbomFrostWave.DisplayName: Abom Frost Wave
+	AbomLaser.DisplayName: Abom Laser
+	AbomRocket.DisplayName: Abom Rocket
+	AbomSword.DisplayName: Abom Sword
+	AbomSwordHandle.DisplayName: Abom Sword Handle
+	BossRush.DisplayName: Boss Rush
+	Boss.MutantYharonVortex.DisplayName: Mutant Yharon Vortex
+	ChampionBeetle.DisplayName: Champion Beetle
+	CosmosDeathray.DisplayName: Cosmos Deathray
+	CosmosDeathray2.DisplayName: Cosmos Deathray2
+	CosmosSphere.DisplayName: Cosmos Sphere
+	DeviAxe.DisplayName: Devi Axe
+	DeviBigDeathray.DisplayName: Devi Big Deathray
+	DeviDeathray.DisplayName: Devi Deathray
+	DeviEnergyHeart.DisplayName: Devi Energy Heart
+	DeviHammer.DisplayName: Devi Hammer
+	DeviHammerHeld.DisplayName: Devi Hammer Held
+	DeviHeart.DisplayName: Devi Heart
+	DeviSparklingLove.DisplayName: Devi Sparkling Love
+	LifeFireball.DisplayName: Life Fireball
+	MutantBomb.DisplayName: Mutant Bomb
+	MutantBombSmall.DisplayName: Mutant Bomb Small
+	MutantDeathray2.DisplayName: Mutant Deathray2
+	MutantEye.DisplayName: Mutant Eye
+	MutantEyeWavy.DisplayName: Mutant Eye Wavy
+	MutantFishron.DisplayName: Mutant Fishron
+	MutantGiantDeathray2.DisplayName: Mutant Giant Deathray2
+	MutantNuke.DisplayName: Mutant Nuke
+	MutantReticle.DisplayName: Mutant Reticle
+	MutantRitual.DisplayName: Mutant Ritual
+	MutantRitual2.DisplayName: Mutant Ritual2
+	MutantRitual3.DisplayName: Mutant Ritual3
+	MutantRitual4.DisplayName: Mutant Ritual4
+	MutantRitual5.DisplayName: Mutant Ritual5
+	MutantRitualwiththing.DisplayName: Mutant Ritualwiththing
+	MutantSlimeBall.DisplayName: Mutant Slime Ball
+	MutantSlimeRain.DisplayName: Mutant Slime Rain
+	MutantSpearAim.DisplayName: Mutant Spear Aim
+	MutantSpearThrown.DisplayName: Mutant Spear Thrown
+	MutantSphereRing.DisplayName: Mutant Sphere Ring
+	MutantSphereSmall.DisplayName: Mutant Sphere Small
+	MutantSword.DisplayName: Mutant Sword
+	PhantasmalBlast.DisplayName: Phantasmal Blast
+	PhantasmalBlastTS.DisplayName: Phantasmal Blast T S
+	Shtuxibus.DisplayName: Shtuxibus
+	WillJavelin.DisplayName: Will Javelin
+	ShtuxibusSoulMinion.DisplayName: Shtuxibus Soul Minion
+	ShtuxibusMiniSword.DisplayName: Shtuxibus Mini Sword
+	ShtuxibusSoulAttack.DisplayName: Shtuxibus Soul Attack
+	ShtuxibusSpearThrow.DisplayName: Shtuxibus Spear Throw
+	ShtuxibusSwordSwing.DisplayName: Shtuxibus Sword Swing
+	MutantAureusSpawn.DisplayName: Mutant Aureus Spawn
+	MutantHolyRay.DisplayName: Mutant Holy Ray
+	MutantPBG.DisplayName: Mutant P B G
+	MutantPolter.DisplayName: Mutant Polter
+	MutantSlimeGod.DisplayName: Mutant Slime God
+}
+
+Biomes: {
+	ShtuxibusSurfaceBiome: {
+		DisplayName: Shtuxibus Surface Biome
+		TownNPCDialogueName: Shtuxibus Surface Biome
+	}
+}
+
+Configs: {
+	ShtunConfig: {
+		ShtuxibusRayOneshot: {
+			Label: Shtuxibus Ray Oneshot
+			Tooltip: ""
+		}
+
+		ShtuxibusMultiversalHorrorOfChtuxlagorOnGFB: {
+			Tooltip: ""
+			Label: Shtuxibus Multiversal Horror Of Chtuxlagor On G F B
+		}
+
+		Headers: {
+			Bosses: Bosses Header
+			Crafting: Crafting Header
+		}
+
+		ItemsUsedInSingularity: {
+			Tooltip: ""
+			Label: Items Used In Singularity
+		}
+
+		DisplayName: Shtun Config
+
+		ShtuxibusBreakRodOfHarmony: {
+			Tooltip: ""
+			Label: Shtuxibus Break Rod Of Harmony
+		}
+
+		SoulOfShtundexCraftable: {
+			Label: Soul Of Shtundex Craftable
+			Tooltip: ""
+		}
+
+		MultiversalHorrorOfChtuxlagorOnGetfixedboi: {
+			Label: Multiversal Horror Of Chtuxlagor On Getfixedboi
+			Tooltip: ""
+		}
+
+		ShtuxibusKillInGodmode: {
+			Label: Shtuxibus Kill In Godmode
+			Tooltip: ""
+		}
+	}
+}

@@ -1,0 +1,255 @@
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using ReLogic.Content;
+using System;
+using System.IO;
+using System.Linq;
+using Terraria;
+using Terraria.Audio;
+using Terraria.Graphics.Shaders;
+using Terraria.ID;
+using Terraria.ModLoader;
+using FargowiltasSouls;
+using FargowiltasSouls.Content.Projectiles;
+using System;
+using FargowiltasSouls.Content.Projectiles;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using Terraria;
+using Terraria.DataStructures;
+using Terraria.ID;
+using Terraria.ModLoader;
+using System;
+using FargowiltasSouls.Core.ModPlayers;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using Terraria;
+using Terraria.ID;
+using Terraria.ModLoader;
+using Terraria.Audio;
+using Terraria.GameContent;
+using Terraria.ID;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using Terraria;
+using Terraria.Audio;
+using Terraria.GameContent.Bestiary;
+using Terraria.GameContent.Creative;
+using Terraria.GameContent.ItemDropRules;
+using Terraria.Graphics.Effects;
+using Terraria.ID;
+using Terraria.Localization;
+using Terraria.ModLoader;
+using Terraria;
+using Terraria.ID;
+using Terraria.ModLoader;
+using Microsoft.Xna.Framework;
+using Terraria;
+using Terraria.ModLoader;
+using System.Collections.Generic;
+using CalamityMod.CalPlayer;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using Terraria;
+using Terraria.DataStructures;
+using Terraria.Graphics.Shaders;
+using Terraria.ID;
+using Terraria.ModLoader;
+using FargowiltasSouls;
+using FargowiltasSouls.Content.Projectiles;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using System;
+using System.Collections.Generic;
+using ssm.Render.Primitives;
+using ssm;
+
+namespace ssm.Content.Projectiles.Shtuxibus
+{
+    public class MutantGiantDeathray2 : Deathrays.MutantSpecialDeathray
+    {
+     public MutantGiantDeathray2() : base(600) { }
+
+        public int dustTimer;
+        public bool stall;
+        public bool BeBrighter => Projectile.ai[0] > 0f;
+
+        public PrimDrawer LaserDrawer { get; private set; } = null;
+        public override void SetStaticDefaults()
+        {
+            base.SetStaticDefaults();
+            ProjectileID.Sets.DismountsPlayersOnHit[Projectile.type] = true;
+        }
+
+        public override void SetDefaults()
+        {
+            base.SetDefaults();
+            Projectile.netImportant = true;
+            Projectile.GetGlobalProjectile<FargoSoulsGlobalProjectile>().TimeFreezeImmune = true;
+            Projectile.GetGlobalProjectile<FargoSoulsGlobalProjectile>().DeletionImmuneRank = 2;
+            maxTime += 700;
+        }
+
+        public override bool? CanDamage()
+        {
+            return Projectile.scale >= 5f;
+        }
+
+        public override void SendExtraAI(BinaryWriter writer)
+        {
+            base.SendExtraAI(writer);
+
+            writer.Write(Projectile.localAI[0]);
+        }
+
+        public override void ReceiveExtraAI(BinaryReader reader)
+        {
+            base.ReceiveExtraAI(reader);
+
+            Projectile.localAI[0] = reader.ReadSingle();
+        }
+
+        public override void AI()
+        {
+            base.AI();
+
+            if (!Main.dedServ && Main.LocalPlayer.active)
+            Projectile.timeLeft = 2;
+            Vector2? vector78 = null;
+            if (Projectile.velocity.HasNaNs() || Projectile.velocity == Vector2.Zero)
+            {
+                Projectile.velocity = -Vector2.UnitY;
+            }
+            NPC npc = ShtunUtils.NPCExists(Projectile.ai[1], ModContent.NPCType<NPCs.Shtuxibus.Shtuxibus>());
+            if (npc != null)
+            {
+                Projectile.Center = npc.Center + Main.rand.NextVector2Circular(5, 5) + Vector2.UnitX.RotatedBy(npc.ai[3]) * (npc.ai[0] == -7 ? 100 : 175) * Projectile.scale / 10f;
+                if (npc.ai[0] == -7) //death animation, not actual attack
+                {
+                    maxTime = 700;
+                }
+                else if (npc.ai[0] == -5) //final spark
+                {
+                    if (npc.localAI[2] > 30) //mutant is forcing a despawn
+                    {
+                        //so this should disappear too
+                        if (Projectile.localAI[0] < maxTime - 300)
+                            Projectile.localAI[0] = maxTime - 300;
+                    }
+                    else if (stall)
+                    {
+                        stall = false;
+
+                        Projectile.localAI[0] -= 1;
+                        Projectile.netUpdate = true;
+
+                        npc.ai[2] -= 1;
+                        npc.netUpdate = true;
+                    }
+                }
+            }
+            else
+            {
+                Projectile.Kill();
+                return;
+            }
+            if (Projectile.velocity.HasNaNs() || Projectile.velocity == Vector2.Zero)
+            {
+                Projectile.velocity = -Vector2.UnitY;
+            }
+            if (Projectile.localAI[0] == 0f)
+            {
+                SoundEngine.PlaySound(new SoundStyle("Terraria/Sounds/Zombie_104") with { Volume = 1.5f }, Main.player[Main.myPlayer].Center);
+            }
+            float num801 = 20f;
+            Projectile.localAI[0] += 1f;
+            if (Projectile.localAI[0] >= maxTime)
+            {
+                Projectile.Kill();
+                return;
+            }
+
+            Projectile.scale = (float)Math.Sin(Projectile.localAI[0] * 3.14159274f / maxTime) * 20f * num801;
+          
+                Projectile.scale *= 20f;
+
+            if (Projectile.scale > num801)
+                Projectile.scale = num801;
+            float num804 = npc.ai[3] - 1.57079637f;
+            float oldRot = Projectile.rotation;
+            Projectile.rotation = num804;
+            num804 += 1.57079637f;
+            Projectile.velocity = num804.ToRotationVector2();
+            float num805 = 3f;
+            float num806 = (float)Projectile.width;
+            Vector2 samplingPoint = Projectile.Center;
+            if (vector78.HasValue)
+            {
+                samplingPoint = vector78.Value;
+            }
+            float[] array3 = new float[(int)num805];
+            for (int i = 0; i < array3.Length; i++)
+                array3[i] = 3000f;
+            float num807 = 0f;
+            int num3;
+            for (int num808 = 0; num808 < array3.Length; num808 = num3 + 1)
+            {
+                num807 += array3[num808];
+                num3 = num808;
+            }
+            num807 /= num805;
+            float amount = 0.5f;
+            Projectile.localAI[1] = MathHelper.Lerp(Projectile.localAI[1], num807, amount);
+            if (Projectile.damage > 0 && Main.LocalPlayer.active && Projectile.Colliding(Projectile.Hitbox, Main.LocalPlayer.Hitbox))
+            {
+                Main.LocalPlayer.immune = false;
+                Main.LocalPlayer.immuneTime = 0;
+                Main.LocalPlayer.hurtCooldowns[0] = 0;
+                Main.LocalPlayer.hurtCooldowns[1] = 0;
+            }
+        }
+        private int hits;
+        private void DamageRampup(ref int damage)
+        {
+            int tempHits = hits - 90;
+            if (tempHits > 0)
+            {
+                double modifier = Math.Min(1.0 + tempHits / 6.0, 100.0);
+                damage = (int)(damage * modifier);
+            }
+            else
+            {
+                damage = (int)(hits / 90.0 * damage);
+            }
+        }
+
+        public override void OnHitPlayer(Player target, Player.HurtInfo info)
+        {
+            hits++;
+
+            stall = true;
+
+            target.immune = false;
+            target.immuneTime = 0;
+            target.hurtCooldowns[0] = 0;
+            target.hurtCooldowns[1] = 0;
+            target.velocity = -0.4f * Vector2.UnitY;
+        }
+
+        public float WidthFunction(float trailInterpolant)
+        {
+            // Grow rapidly from the start to full length. Any more than this notably distorts the texture.
+            float baseWidth = Projectile.scale * Projectile.width;
+            //if (trailInterpolant < 0.05f)
+                return baseWidth;
+
+            // Grow to 2x width by the end. Any more than this distorts the texture too much.
+            return MathHelper.Lerp(baseWidth, baseWidth * 2, trailInterpolant);
+        }
+
+        public Color ColorFunction(float trailInterpolant) => Color.Lerp(new(31, 187, 192), new(51, 255, 191), trailInterpolant) * Projectile.Opacity;
+    }
+}

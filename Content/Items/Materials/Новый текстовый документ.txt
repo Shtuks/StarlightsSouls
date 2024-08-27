@@ -1,0 +1,80 @@
+/*
+using ssm;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using System;
+using Terraria;
+using Terraria.Audio;
+using Terraria.DataStructures;
+using Terraria.GameContent;
+using Terraria.Graphics;
+using Terraria.ID;
+using Terraria.ModLoader;
+
+namespace ssm.Content.Items.Materials
+{
+  public class AuricSoul : ModItem
+  {
+    public override void SetStaticDefaults()
+    {
+      ItemID.Sets.ItemNoGravity[this.Type] = true;
+      ItemID.Sets.ItemsThatShouldNotBeInInventory[this.Type] = true;
+      ItemID.Sets.IgnoresEncumberingStone[this.Type] = true;
+      Main.RegisterItemAnimation(this.Type, (DrawAnimation) new DrawAnimationVertical(5, 4, false));
+      ItemID.Sets.AnimatesAsSoul[this.Type] = true;
+      ItemID.Sets.ItemIconPulse[this.Type] = true;
+      ItemID.Sets.IsLavaImmuneRegardlessOfRarity[this.Type] = true;
+    }
+
+    public override void SetDefaults()
+    {
+      ((Entity) this.Item).width = 16;
+      ((Entity) this.Item).height = 16;
+      this.Item.rare = 11;
+    }
+
+    public override bool OnPickup(Player player)
+    {
+      for (int index = 0; index < 150; ++index)
+      {
+        Color color = Color.Lerp(base.GetAlpha(Color.White).Value, Color.OrangeRed, Utils.NextFloat(Main.rand, 0.5f) + 0.3f);
+        ((Color) ref color).A = (byte) 0;
+        Dust.NewDustPerfect(((Entity) this.Item).Center, 264, new Vector2?(Utils.NextVector2Circular(Main.rand, 10f, 10f)), 0, color, Utils.NextFloat(Main.rand, 2f)).noGravity = true;
+      }
+      player.GetModPlayer<AuricSoulPlayer>().Soul = true;
+      return false;
+    }
+
+    public override Color? GetAlpha(Color lightColor)
+    {
+      return new Color?(new GradientColor(new Color[6]
+      {
+        new Color((int) byte.MaxValue, 120, 20),
+        new Color((int) byte.MaxValue, 180, 60),
+        new Color((int) byte.MaxValue, 120, 20),
+        new Color((int) byte.MaxValue, 80, 60),
+        new Color((int) byte.MaxValue, 160, 20),
+        new Color((int) byte.MaxValue, 80, 60)
+      }, 0.15f, 0.5f).ValueAt(Main.GlobalTimeWrappedHourly * 25f));
+    }
+
+    public override bool PreDrawInInventory(
+      SpriteBatch spriteBatch,
+      Vector2 position,
+      Rectangle frame,
+      Color drawColor,
+      Color itemColor,
+      Vector2 origin,
+      float scale)
+    {
+      Texture2D texture2D1 = TextureAssets.Item[this.Type].Value;
+      Texture2D texture2D2 = AssetDirectory.Textures.Glow[1].Value;
+      Color color = base.GetAlpha(Color.White).Value;
+      ((Color) color).A = (byte) 0;
+      spriteBatch.Draw(texture2D1, position, new Rectangle?(frame), base.GetAlpha(Color.White).Value, 0.0f, Vector2.op_Multiply(Utils.Size(frame), 0.5f), scale + 0.2f, (SpriteEffects) 0, 0.0f);
+      spriteBatch.Draw(texture2D1, position, new Rectangle?(frame), new Color((int) byte.MaxValue, (int) byte.MaxValue, (int) byte.MaxValue, 0), 0.0f, Vector2.op_Multiply(Utils.Size(frame), 0.5f), scale + 0.2f, (SpriteEffects) 0, 0.0f);
+      spriteBatch.Draw(texture2D2, position, new Rectangle?(Utils.Frame(texture2D2, 1, 1, 0, 0, 0, 0)), Color.op_Multiply(color, 0.7f), 0.0f, Vector2.op_Multiply(Utils.Size(texture2D2), 0.5f), scale * 0.2f, (SpriteEffects) 0, 0.0f);
+      return false;
+    }
+  }
+}*/

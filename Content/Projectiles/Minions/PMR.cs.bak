@@ -1,0 +1,162 @@
+using System;
+using FargowiltasSouls.Content.Projectiles;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using Terraria;
+using Terraria.ModLoader;
+
+namespace ssm.Content.Projectiles.Minions
+{
+	public class PMR : ModProjectile
+	{
+		private const float PI = (float)Math.PI;
+
+		private const float rotationPerTick = (float)Math.PI / 140f;
+
+		private const float threshold = 1000f;
+
+			public override void SetStaticDefaults()
+		{
+            Main.projFrames[Projectile.type] = 3;
+		}
+
+		public override void SetDefaults()
+		{
+			Projectile.width = 42;
+			Projectile.height = 42;
+			Projectile.ignoreWater = true;
+			Projectile.tileCollide = false;
+			Projectile.alpha = 255;
+			Projectile.penetrate = -1;
+			Projectile.friendly = true;
+			Projectile.minion = true;
+            Projectile.netImportant = true;
+			Projectile.usesLocalNPCImmunity = true;
+			Projectile.localNPCHitCooldown = -1;
+			Projectile.GetGlobalProjectile<FargoSoulsGlobalProjectile>().TimeFreezeImmune = true;
+		}
+
+		public override void AI(){
+			Player val = Main.player[Projectile.owner];
+			if (val.active && !val.dead && val.GetModPlayer<ShtunPlayer>().ShtuxibusMinionBuff){
+				if (Projectile.damage == 0){
+					Projectile.damage = (int)(3000f);}
+				Projectile projectile = Projectile;
+				projectile.alpha -= 2;
+				if (Projectile.alpha < 0){
+					Projectile.alpha = 0;}
+				((Entity)Projectile).Center = (((Entity)Main.player[Projectile.owner]).Center);
+				if (Projectile.alpha == 0)
+				{
+					Vector2 val2 = new Vector2((float)Main.rand.Next(-10, 11), (float)Main.rand.Next(-10, 11));
+					for (int i = 0; i < 2; i++)
+					{
+						float num = Main.rand.Next(2, 4);
+						float num2 = Projectile.scale * 1f;
+						if (i == 1)
+						{
+							num2 *= 0.52f;
+							num *= -0.75f;
+						}
+						val2.Normalize();
+					}
+				}
+			}
+			else
+			{
+				((Entity)Projectile).velocity = Vector2.Zero;
+				Projectile projectile2 = Projectile;
+				projectile2.alpha += 2;
+				if (Projectile.alpha > 255)
+				{
+					Projectile.Kill();
+					return;
+				}
+			}
+			Projectile.timeLeft = 2;
+			Projectile.scale = (1f - (float)Projectile.alpha / 255f) * 2f;
+			Projectile.ai[0] -= (float)Math.PI / 140f;
+			if (Projectile.ai[0] < -(float)Math.PI)
+			{
+				Projectile.ai[0] = (float)Math.PI * 2f;
+				Projectile.netUpdate = true;
+			}
+			Projectile projectile3 = Projectile;
+			if (++projectile3.frameCounter > 6)
+			{
+				Projectile.frameCounter = 0;
+				Projectile projectile4 = Projectile;
+				if (++projectile4.frame >= Main.projFrames[Projectile.type])
+				{
+					Projectile.frame = 0;
+				}
+			}
+		}
+
+		// public override void ModifyHitNPC(NPC target, ref int damage, ref float knockback, ref bool crit, ref int hitDirection)
+		// {
+		// 	damage *= 2;
+		// }
+
+		// public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+		// {
+		// 	target.AddBuff(ModLoader.GetMod("FargowiltasSouls").BuffType("GodEater"), 118300, false);
+		// 	target.AddBuff(ModLoader.GetMod("FargowiltasSouls").BuffType("HellFire"), 118300, false);
+		// 	target.AddBuff(ModLoader.GetMod("FargowiltasSouls").BuffType("FlamesoftheUniverse"), 118300, false);
+		// 	target.AddBuff(ModLoader.GetMod("FargowiltasSouls").BuffType("MutantPresence"), 11300, false);
+		// 	target.AddBuff(ModLoader.GetMod("FargowiltasSouls").BuffType("AbomPresence"), 111300, false);
+		// 	target.AddBuff(ModLoader.GetMod("FargowiltasSouls").BuffType("Lethargic"), 111300, false);
+		// 	target.AddBuff(ModLoader.GetMod("FargowiltasSouls").BuffType("MutantNibble"), 111300, false);
+		// 	target.AddBuff(ModLoader.GetMod("FargowiltasSouls").BuffType("AbomFang"), 111300, false);
+		// 	target.AddBuff(ModLoader.GetMod("FargowiltasSouls").BuffType("MutantFang"), 111300, false);
+		// 	target.AddBuff(ModLoader.GetMod("FargowiltasSouls").BuffType("Defenseless"), 111300, false);
+		// 	target.AddBuff(ModLoader.GetMod("FargowiltasSouls").BuffType("OceanicMaul"), 111300, false);
+		// 	target.AddBuff(ModLoader.GetMod("FargowiltasSouls").BuffType("OceanicSeal"), 111300, false);
+		// 	target.AddBuff(ModLoader.GetMod("FargowiltasSouls").BuffType("MarkedforDeath"), 118300, false);
+		// 	target.AddBuff(ModLoader.GetMod("FargowiltasSouls").BuffType("CurseOfTheMoon"), 118300, false);
+		// 	target.AddBuff(ModLoader.GetMod("FargowiltasSouls").BuffType("LivingWasteland"), 118300, false);
+		// 	target.AddBuff(ModLoader.GetMod("CalamityMod").BuffType("AbyssalFlames"), 118300, false);
+		// 	target.AddBuff(ModLoader.GetMod("CalamityMod").BuffType("ExoFreeze"), 111300, false);
+		// 	target.AddBuff(ModLoader.GetMod("CalamityMod").BuffType("GlacialState"), 111300, false);
+		// 	target.AddBuff(ModLoader.GetMod("CalamityMod").BuffType("SilvaStun"), 111300, false);
+		// 	target.AddBuff(ModLoader.GetMod("CalamityMod").BuffType("VulnerabilityHex"), 118300, false);
+		// 	target.AddBuff(ModLoader.GetMod("CalamityMod").BuffType("DemonFlames"), 118300, false);
+		// 	target.AddBuff(ModLoader.GetMod("CalamityMod").BuffType("MarkedForDeath"), 118300, false);
+		// 	target.AddBuff(ModLoader.GetMod("CalamityMod").BuffType("ArmorCrunch"), 118300, false);
+		// 	target.AddBuff(ModLoader.GetMod("CalamityMod").BuffType("WhisperingDeath"), 118300, false);
+		// 	target.AddBuff(ModLoader.GetMod("CalamityMod").BuffType("ProfanedWeakness"), 118300, false);
+		// 	target.AddBuff(68, 118000, false);
+		// 	target.AddBuff(46, 118000, false);
+		// 	target.AddBuff(24, 118000, false);
+		// 	target.AddBuff(37, 188000, false);
+		// 	target.AddBuff(21, 188000, false);
+		// 	target.AddBuff(47, 188000, false);
+		// 	target.AddBuff(94, 188000, false);
+		// }
+
+		public override bool PreDraw(ref Color lightColor)
+		{
+			Texture2D val = Terraria.GameContent.TextureAssets.Projectile[Projectile.type].Value;
+			int num = Terraria.GameContent.TextureAssets.Projectile[Projectile.type].Value.Height / Main.projFrames[Projectile.type];
+			int num2 = num * Projectile.frame;
+			Rectangle val2 = new Rectangle(0, num2, val.Width, num);
+			Vector2 val3 = Utils.Size(val2) / 2f;
+			Color alpha = Projectile.GetAlpha(lightColor);
+			for (int i = 0; i < 32; i++)
+			{
+				Vector2 val4 = Utils.RotatedBy(new Vector2(1000f * Projectile.scale / 2f, 0f), (double)Projectile.ai[0], default(Vector2));
+				val4 = Utils.RotatedBy(val4, (double)((float)Math.PI / 16f * (float)i), default(Vector2));
+				for (int j = 0; j < 4; j++)
+				{
+					Color val5 = alpha;
+					val5 *= (float)(4 - j) / 4f;
+					Vector2 val6 = ((Entity)Projectile).Center + Utils.RotatedBy(val4, (double)((float)Math.PI / 140f * (float)j), default(Vector2));
+					float rotation = Projectile.rotation;
+					Main.spriteBatch.Draw(val, val6 - Main.screenPosition + new Vector2(0f, Projectile.gfxOffY), (Rectangle?)val2, val5, rotation, val3, Projectile.scale, (SpriteEffects)0, 0f);
+				}
+				Main.spriteBatch.Draw(val, ((Entity)Projectile).Center + val4 - Main.screenPosition + new Vector2(0f, Projectile.gfxOffY), (Rectangle?)val2, alpha, Projectile.rotation, val3, Projectile.scale, (SpriteEffects)0, 0f);
+			}
+			return false;
+		}
+	}
+}
