@@ -79,7 +79,7 @@ namespace ssm.Content.Projectiles.Shtuxibus
         {
             
             base.AI();
-              NPC npc = ShtunUtils.NPCExists(Projectile.ai[1], npcType);
+            NPC npc = ShtunUtils.NPCExists(Projectile.ai[1], npcType);
             Projectile.frameCounter++;
             if (Projectile.frameCounter >= 6)
             {
@@ -112,7 +112,7 @@ namespace ssm.Content.Projectiles.Shtuxibus
             }
             else
             {
-                            return Color.White * Projectile.Opacity * 0f;
+                return Color.White * Projectile.Opacity * 0f;
             }
         }
 

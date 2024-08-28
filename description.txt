@@ -1,8 +1,9 @@
 The addon for Fargos's souls mod.
 The content:
-- 35 new itmes
-- 3 new tiles
-- 2 new armor sets
+- 54 new itmes
+- 4 new tiles
+- 2 weapons
+- 5 new armor sets
 - 1 new ore
 - 1 new NPC
-- Shtuxibus Boss. He combine all attcks from Mutant, Abomination and most of champions.
+- Shtuxibus Boss. Сombine all attcks from maso Mutant, Abomination and most of champions.

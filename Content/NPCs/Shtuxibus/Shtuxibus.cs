@@ -887,7 +887,6 @@ namespace ssm.Content.NPCs.Shtuxibus
             else if (NPC.localAI[3] == 1)
             {
                 ShouldDrawAura = true;
-                // -1 means no dust is drawn, as it looks ugly.
                 EModeGlobalNPC.Aura(NPC, 2000f, true, -1, default, ModContent.BuffType<GodEaterBuff>(), ModContent.BuffType<MutantFangBuff>());
             }
             else
@@ -6267,7 +6266,6 @@ namespace ssm.Content.NPCs.Shtuxibus
             else if (NPC.ai[2] == 420)
             {
                 NPC.netUpdate = true;
-
                 //bias it in one direction
                 NPC.ai[3] += MathHelper.ToRadians(20) * (1);
 
