@@ -554,6 +554,221 @@ Items: {
 		// DisplayName: Shtuxibus Bag Gfb
 		// Tooltip: ""
 	}
+
+	CrabulonEnergizer: {
+		// DisplayName: Crabulon Energizer
+		// Tooltip: ""
+	}
+
+	OverloadSprout: {
+		// DisplayName: Overload Sprout
+		// Tooltip: ""
+	}
+
+	DesertEnergizer: {
+		// DisplayName: Desert Energizer
+		// Tooltip: ""
+	}
+
+	HiveEnergizer: {
+		// DisplayName: Hive Energizer
+		// Tooltip: ""
+	}
+
+	PerforatorEnergizer: {
+		// DisplayName: Perforator Energizer
+		// Tooltip: ""
+	}
+
+	SlimeGodEnergizer: {
+		// DisplayName: Slime God Energizer
+		// Tooltip: ""
+	}
+
+	BunchOfMedalions: {
+		// DisplayName: Bunch Of Medalions
+		// Tooltip: ""
+	}
+
+	AnahitaEnergizer: {
+		// DisplayName: Anahita Energizer
+		// Tooltip: ""
+	}
+
+	AstralEnergizer: {
+		// DisplayName: Astral Energizer
+		// Tooltip: ""
+	}
+
+	AureusEnergizer: {
+		// DisplayName: Aureus Energizer
+		// Tooltip: ""
+	}
+
+	AuricEnergizer: {
+		// DisplayName: Auric Energizer
+		// Tooltip: ""
+	}
+
+	BrimstoneEnergizer: {
+		// DisplayName: Brimstone Energizer
+		// Tooltip: ""
+	}
+
+	CalamitousEnergizer: {
+		// DisplayName: Calamitous Energizer
+		// Tooltip: ""
+	}
+
+	CryoEnergizer: {
+		// DisplayName: Cryo Energizer
+		// Tooltip: ""
+	}
+
+	DevouringEnergizer: {
+		// DisplayName: Devouring Energizer
+		// Tooltip: ""
+	}
+
+	FleshyEnergizer: {
+		// DisplayName: Fleshy Energizer
+		// Tooltip: ""
+	}
+
+	FollyEnergizer: {
+		// DisplayName: Folly Energizer
+		// Tooltip: ""
+	}
+
+	PlagueEnergizer: {
+		// DisplayName: Plague Energizer
+		// Tooltip: ""
+	}
+
+	ProfandedEnergizer: {
+		// DisplayName: Profanded Energizer
+		// Tooltip: ""
+	}
+
+	TerraEnergizer: {
+		// DisplayName: Terra Energizer
+		// Tooltip: ""
+	}
+
+	ToxicEnergizer: {
+		// DisplayName: Toxic Energizer
+		// Tooltip: ""
+	}
+
+	WaifuCloneEnergizer: {
+		// DisplayName: Waifu Clone Energizer
+		// Tooltip: ""
+	}
+
+	WaifuEnergizer: {
+		// DisplayName: Waifu Energizer
+		// Tooltip: ""
+	}
+
+	AstralLump: {
+		// DisplayName: Astral Lump
+		// Tooltip: ""
+	}
+
+	BloodyWormChicken: {
+		// DisplayName: Bloody Worm Chicken
+		// Tooltip: ""
+	}
+
+	CosmicAmalgamation: {
+		// DisplayName: Cosmic Amalgamation
+		// Tooltip: ""
+	}
+
+	CryonicCore: {
+		// DisplayName: Cryonic Core
+		// Tooltip: ""
+	}
+
+	DeepFriedIdol: {
+		// DisplayName: Deep Fried Idol
+		// Tooltip: ""
+	}
+
+	EyeofExtintion: {
+		// DisplayName: Eyeof Extintion
+		// Tooltip: ""
+	}
+
+	OverloadedWaifu: {
+		// DisplayName: Overloaded Waifu
+		// Tooltip: ""
+	}
+
+	OverloadPheromones: {
+		// DisplayName: Overload Pheromones
+		// Tooltip: ""
+	}
+
+	OverloadSeafood: {
+		// DisplayName: Overload Seafood
+		// Tooltip: ""
+	}
+
+	OverloadStarcore: {
+		// DisplayName: Overload Starcore
+		// Tooltip: ""
+	}
+
+	OverloadTeratoma: {
+		// DisplayName: Overload Teratoma
+		// Tooltip: ""
+	}
+
+	OverloadWhistle: {
+		// DisplayName: Overload Whistle
+		// Tooltip: ""
+	}
+
+	PhantasmalBeacon: {
+		// DisplayName: Phantasmal Beacon
+		// Tooltip: ""
+	}
+
+	PileOfBloodWorms: {
+		// DisplayName: Pile Of Blood Worms
+		// Tooltip: ""
+	}
+
+	PlagueTerminal: {
+		// DisplayName: Plague Terminal
+		// Tooltip: ""
+	}
+
+	ProfandedCluster: {
+		// DisplayName: Profanded Cluster
+		// Tooltip: ""
+	}
+
+	TrueOverloadedSludge: {
+		// DisplayName: True Overloaded Sludge
+		// Tooltip: ""
+	}
+
+	YharonEggsBox: {
+		// DisplayName: Yharon Eggs Box
+		// Tooltip: ""
+	}
+
+	SwarmDeactivatorDebug: {
+		// Tooltip: ""
+		// DisplayName: Swarm Deactivator Debug
+	}
+
+	OverloadedSirenPearl: {
+		// DisplayName: Overloaded Siren Pearl
+		// Tooltip: ""
+	}
 }
 
 Buffs: {
@@ -736,6 +951,7 @@ Projectiles: {
 	// MutantPBG.DisplayName: Mutant P B G
 	// MutantPolter.DisplayName: Mutant Polter
 	// MutantSlimeGod.DisplayName: Mutant Slime God
+	// MutantHeal.DisplayName: Mutant Heal
 }
 
 Biomes: {

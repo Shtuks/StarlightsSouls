@@ -21,7 +21,7 @@ namespace ssm.Content.Buffs
 
     public override void Update(Player player, ref int buffIndex)
     {
-        player.statLife = player.statLife - 745;
+        player.statLife -= 745;
         player.endurance = 0.0f;
         player.GetDamage(DamageClass.Generic) *= 0.05f;
         player.GetCritChance(DamageClass.Generic) *= 0.05f;

@@ -13,9 +13,11 @@ using FargowiltasCrossmod.Core;
 using FargowiltasCrossmod.Core.Common;
 using FargowiltasSouls;
 using FargowiltasSouls.Common.Graphics.Particles;
+using FargowiltasSouls.Content.Buffs.Boss;
 using FargowiltasSouls.Content.Buffs.Masomode;
-using FargowiltasSouls.Content.Buffs;
+//using FargowiltasSouls.Content.Projectiles.BossWeapons;
 using FargowiltasSouls.Content.Buffs.Souls;
+using FargowiltasSouls;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
@@ -39,6 +41,7 @@ using ssm.Content.Projectiles.Shtuxibus;
 using FargowiltasSouls.Core.Systems;
 using Luminance.Core.Graphics;
 using CalamityMod.CalPlayer;
+//using FargowiltasSouls.Content.Bosses.MutantBoss;
 using FargowiltasCrossmod.Content.Common.Bosses.Mutant;
 using Terraria.DataStructures;
 using Terraria.Graphics.Shaders;
@@ -845,6 +848,28 @@ namespace ssm.Content.NPCs.Shtuxibus
 
     #region help functions
     bool spawned;
+
+    void TryLifeSteal(Vector2 pos, int playerWhoAmI)
+        {
+            int totalHealPerHit = NPC.lifeMax / 100 * 10;
+
+            const int max = 20;
+            for (int i = 0; i < max; i++)
+            {
+                Vector2 vel = Main.rand.NextFloat(2f, 9f) * -Vector2.UnitY.RotatedByRandom(MathHelper.TwoPi);
+                float ai0 = NPC.whoAmI;
+                float ai1 = vel.Length() / Main.rand.Next(30, 90); //window in which they begin homing in
+
+                int healPerOrb = (int)(totalHealPerHit / max * Main.rand.NextFloat(0.95f, 1.05f));
+
+                if (playerWhoAmI == Main.myPlayer && Main.player[playerWhoAmI].ownedProjectileCounts[ModContent.ProjectileType<MutantHeal>()] < 10)
+                {
+                    Projectile.NewProjectile(NPC.GetSource_FromThis(), pos, vel, ModContent.ProjectileType<MutantHeal>(), healPerOrb, 0f, Main.myPlayer, ai0, ai1);
+
+                    SoundEngine.PlaySound(SoundID.Item27, pos);
+                }
+            }
+        }
     void ManageAurasAndPreSpawn()
         {
             if (!spawned)
@@ -857,7 +882,7 @@ namespace ssm.Content.NPCs.Shtuxibus
                 (object) "death",
                 (object) true
                 }) && Main.masterMode)
-                this.NPC.lifeMax = 1745000064;
+                this.NPC.lifeMax = 1745000000;
                 this.NPC.damage = 15000;
                 if (Main.zenithWorld){
                 this.NPC.damage = 745745;
@@ -6358,7 +6383,6 @@ namespace ssm.Content.NPCs.Shtuxibus
         }
     void DyingAnimationAndHandling()
         {
-            //SkyManager.Instance.Deactivate("ssm:StardustShtuxibus");
             NPC.velocity = Vector2.Zero;
             for (int i = 0; i < 5; i++)
             {
@@ -6381,22 +6405,32 @@ namespace ssm.Content.NPCs.Shtuxibus
               
             if (++NPC.ai[1] % 3 == 0 && Main.netMode != NetmodeID.MultiplayerClient)
             {
-               
                 Projectile.NewProjectile(NPC.GetSource_FromThis(), NPC.Center, 24f * Vector2.UnitX.RotatedBy(NPC.ai[3]),ModContent.ProjectileType<MutantEyeWavy>(), 0, 0f, Main.myPlayer,
                     Main.rand.NextFloat(0.75f, 1.5f) * (Main.rand.NextBool() ? -1 : 1), Main.rand.Next(10, 90));
             }
             if (++NPC.alpha > 255){
             NPC.life = 0;
             NPC.dontTakeDamage = false;
-            NPC.checkDead();}}
+            NPC.life = 0;
+            NPC.checkDead();
+            }
+            }
 
 #endregion
+
+    //public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
+    //    {
+    //        if (Main.zenithWorld){
+    //        target.statLife = 0;}
+    //        TryLifeSteal(target.Center, Main.myPlayer);
+    //        target.AddBuff(ModContent.BuffType<ChtuxlagorInferno>(), 5400);
+    //    }
 
     public override void OnHitPlayer(Player target, Player.HurtInfo hurtInfo)
         {
             if (Main.zenithWorld){
-            target.statLife = 1;
-            this.NPC.life += this.NPC.lifeMax / 100 * 10;
+            target.statLife = 0;
+            TryLifeSteal(target.Center, target.whoAmI);
             target.AddBuff(ModContent.BuffType<ChtuxlagorInferno>(), 5400);}
             else {
             target.GetModPlayer<FargoSoulsPlayer>().MaxLifeReduction += 100;
@@ -6438,7 +6472,7 @@ namespace ssm.Content.NPCs.Shtuxibus
     {
         if (Main.zenithWorld){
         ref StatModifier local = ref modifiers.FinalDamage;
-        local *= 0.01f;}
+        local *= 0.05f;}
         else {
         ref StatModifier local = ref modifiers.FinalDamage;
         local *= 0.5f;}
