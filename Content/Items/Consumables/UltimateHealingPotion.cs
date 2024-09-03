@@ -32,8 +32,7 @@ namespace ssm.Content.Items.Consumables
 			Item.potion = true; // Makes it so this item applies potion sickness on use and allows it to be used with quick heal
 		}
 		public override void GetHealLife(Player player, bool quickHeal, ref int healValue) {
-			// Make the item heal half the player's max health normally, or one fourth if used with quick heal
-			healValue = player.statLifeMax2 / (quickHeal ? 4 : 2);
+			healValue = player.statLifeMax2;
 		}
 	}
 }

@@ -1,4 +1,5 @@
 using Fargowiltas.NPCs;
+using FargowiltasSouls.Core.Systems;
 using CalamityMod.NPCs.TownNPCs;
 using System.Collections.Generic;
 using ssm.Systems;
@@ -6,11 +7,14 @@ using ssm.Content.NPCs.Shtuxibus;
 using Terraria;
 using Terraria.GameContent;
 using Terraria.GameContent.Bestiary;
+using Terraria.GameContent.Events;
+using static Terraria.ModLoader.ModContent;
 using Terraria.GameContent.Personalities;
 using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.Utilities;
+using FargowiltasSouls.Content.Items.Weapons.FinalUpgrades;
 
 namespace ssm.Content.NPCs
 {
@@ -42,8 +46,6 @@ namespace ssm.Content.NPCs
 				.SetBiomeAffection<JungleBiome>(AffectionLevel.Hate)
 				.SetBiomeAffection<HallowBiome>(AffectionLevel.Hate);}
 
-
-
 		public override void SetDefaults() {
 			NPC.townNPC = true;
 			NPC.friendly = true;
@@ -60,23 +62,78 @@ namespace ssm.Content.NPCs
       	return WorldSaveSystem.downedShtuxibus && !NPC.AnyNPCs(ModContent.NPCType<Shtuxibus.Shtuxibus>());}
 		public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry) {
 			bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[] {
-			BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Surface,
-			new FlavorTextBestiaryInfoElement("Shtuxibus is being came from other world called Shtundex. The shard of omnipotent Chtux'Lag'or and embodiment of energy concept.")});}
+			BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Sky,
+			new FlavorTextBestiaryInfoElement("Mods.ssm.Bestiary.Shtuxibus")});}
 		public override ITownNPCProfile TownNPCProfile() {return NPCProfile;}
 		public override List<string> SetNPCNameList() {return new List<string>() {"Shtuxibus"};}
 		public override string GetChat() {
 			WeightedRandom<string> chat = new WeightedRandom<string>();
-			chat.Add(Language.GetTextValue("Hm. It's interesting to observe your progress. But you will never reach my level of power."));
-			chat.Add(Language.GetTextValue("Can i jump? Jeah. I have that thing you call 'space'."));
-			chat.Add(Language.GetTextValue("Have you ever seen shtuxian before? I bet no!"));
-			chat.Add(Language.GetTextValue("Who is Yharim? How many years you waiting for him to be added in game?"));
-			chat.Add(Language.GetTextValue("Heh. Gods of this world so pathetic. Kill dragon and consume his soul? Don't make me laugh!"));
-			chat.Add(Language.GetTextValue("Do you know about 'Сhtux'Lag'Or'? Hm. I thought that people study about highest."));
-			chat.Add(Language.GetTextValue("Hey, do you know about 3d dimension? No? Disappointing. My home world in 3d dimension."));
-			chat.Add(Language.GetTextValue("Sometimes I feel that I'm too different from everyone else here."), 2.0);
-			chat.Add(Language.GetTextValue("Do you think that Calamitas will reciprocate my feelings? She look nice..."), 0.01);
+			chat.Add(Language.GetTextValue("Mods.ssm.NPCs.ShtuxianHarbringer.Chat.Normal0"));
+			chat.Add(Language.GetTextValue("Mods.ssm.NPCs.ShtuxianHarbringer.Chat.Normal1"));
+			chat.Add(Language.GetTextValue("Mods.ssm.NPCs.ShtuxianHarbringer.Chat.Normal2"));
+			chat.Add(Language.GetTextValue("Mods.ssm.NPCs.ShtuxianHarbringer.Chat.Normal3"));
+			chat.Add(Language.GetTextValue("Mods.ssm.NPCs.ShtuxianHarbringer.Chat.Normal4"));
+			chat.Add(Language.GetTextValue("Mods.ssm.NPCs.ShtuxianHarbringer.Chat.Normal5"));
+			chat.Add(Language.GetTextValue("Mods.ssm.NPCs.ShtuxianHarbringer.Chat.Normal6"));
+			chat.Add(Language.GetTextValue("Mods.ssm.NPCs.ShtuxianHarbringer.Chat.Normal7"));
+			chat.Add(Language.GetTextValue("Mods.ssm.NPCs.ShtuxianHarbringer.Chat.Normal8"));
+			chat.Add(Language.GetTextValue("Mods.ssm.NPCs.ShtuxianHarbringer.Chat.Normal9"));
+			chat.Add(Language.GetTextValue("Mods.ssm.NPCs.ShtuxianHarbringer.Chat.Normal10"));
+			chat.Add(Language.GetTextValue("Mods.ssm.NPCs.ShtuxianHarbringer.Chat.Normal11"));
+			chat.Add(Language.GetTextValue("Mods.ssm.NPCs.ShtuxianHarbringer.Chat.Normal12"));
+			chat.Add(Language.GetTextValue("Mods.ssm.NPCs.ShtuxianHarbringer.Chat.Normal13"));
+			chat.Add(Language.GetTextValue("Mods.ssm.NPCs.ShtuxianHarbringer.Chat.Normal14"));
+
+			if (NPC.AnyNPCs(NPCType<WITCH>()))
+                chat.Add(Language.GetTextValue("Mods.ssm.NPCs.ShtuxianHarbringer.Chat.Calamitas"), 1.45);
+			if (NPC.AnyNPCs(NPCType<Mutant>()))
+                chat.Add(Language.GetTextValue("Mods.ssm.NPCs.ShtuxianHarbringer.Chat.Mutant"), 2);
+
+            if (WorldSavingSystem.MasochistModeReal)
+                chat.Add(Language.GetTextValue("Mods.ssm.NPCs.ShtuxianHarbringer.Chat.MasoMode"), 1);
+			if (Main.zenithWorld)
+                chat.Add(Language.GetTextValue("Mods.ssm.NPCs.ShtuxianHarbringer.Chat.ZenithSeed"), 1.45);
+
+			if (Main.rand.NextBool(745))return this.GetLocalizedValue("Mods.ssm.NPCs.ShtuxianHarbringer.Chat.Easter");
+
 		string chosenChat = chat;
 		return chosenChat;}
+
+		/*public override string GetChat()
+        {
+			WeightedRandom<string> dialogue = new WeightedRandom<string>();
+
+			dialogue.Add(this.GetLocalizedValue("Mods.ssm.NPCs.ShtuxianHarbringer.Chat.Normal0"));
+			dialogue.Add(this.GetLocalizedValue("Mods.ssm.NPCs.ShtuxianHarbringer.Chat.Normal1"));
+			dialogue.Add(this.GetLocalizedValue("Mods.ssm.NPCs.ShtuxianHarbringer.Chat.Normal2"));
+			dialogue.Add(this.GetLocalizedValue("Mods.ssm.NPCs.ShtuxianHarbringer.Chat.Normal3"));
+			dialogue.Add(this.GetLocalizedValue("Mods.ssm.NPCs.ShtuxianHarbringer.Chat.Normal4"));
+			dialogue.Add(this.GetLocalizedValue("Mods.ssm.NPCs.ShtuxianHarbringer.Chat.Normal5"));
+			dialogue.Add(this.GetLocalizedValue("Mods.ssm.NPCs.ShtuxianHarbringer.Chat.Normal6"));
+			dialogue.Add(this.GetLocalizedValue("Mods.ssm.NPCs.ShtuxianHarbringer.Chat.Normal7"));
+			dialogue.Add(this.GetLocalizedValue("Mods.ssm.NPCs.ShtuxianHarbringer.Chat.Normal8"));
+			dialogue.Add(this.GetLocalizedValue("Mods.ssm.NPCs.ShtuxianHarbringer.Chat.Normal9"));
+			dialogue.Add(this.GetLocalizedValue("Mods.ssm.NPCs.ShtuxianHarbringer.Chat.Normal10"));
+			dialogue.Add(this.GetLocalizedValue("Mods.ssm.NPCs.ShtuxianHarbringer.Chat.Normal11"));
+			dialogue.Add(this.GetLocalizedValue("Mods.ssm.NPCs.ShtuxianHarbringer.Chat.Normal12"));
+			dialogue.Add(this.GetLocalizedValue("Mods.ssm.NPCs.ShtuxianHarbringer.Chat.Normal13"));
+			dialogue.Add(this.GetLocalizedValue("Mods.ssm.NPCs.ShtuxianHarbringer.Chat.Normal14"));
+
+			if (NPC.AnyNPCs(NPCType<WITCH>()))
+                dialogue.Add(this.GetLocalizedValue("Mods.ssm.NPCs.ShtuxianHarbringer.Chat.Calamitas"), 1.45);
+			if (NPC.AnyNPCs(NPCType<Mutant>()))
+                dialogue.Add(this.GetLocalizedValue("Mods.ssm.NPCs.ShtuxianHarbringer.Chat.Mutant"), 2);
+
+            if (WorldSavingSystem.MasochistModeReal)
+                dialogue.Add(this.GetLocalizedValue("Mods.ssm.NPCs.ShtuxianHarbringer.Chat.MasoMode"), 1);
+			if (Main.zenithWorld)
+                dialogue.Add(this.GetLocalizedValue("Mods.ssm.NPCs.ShtuxianHarbringer.Chat.ZenithSeed"), 1.45);
+
+			if (Main.rand.NextBool(745))
+                return this.GetLocalizedValue("Mods.ssm.NPCs.ShtuxianHarbringer.Chat.Easter");
+
+            return dialogue;
+        }*/
 
 		public override bool PreAI(){
       	if (!NPC.AnyNPCs(ModContent.NPCType<Shtuxibus.Shtuxibus>()))
@@ -84,6 +141,14 @@ namespace ssm.Content.NPCs
       	((Entity) this.NPC).active = false;
       	this.NPC.netUpdate = true;
       	return false;}
+
+		public override void AddShops()
+        {
+            var npcShop = new NPCShop(Type, ShopName)
+                .Add(new Item(ItemType<HentaiSpear>()) { shopCustomPrice = Item.buyPrice(copper: 1000000) })
+            ;
+            npcShop.Register();
+        }
 		public override void SetChatButtons(ref string button, ref string button2){button = Language.GetTextValue("LegacyInterface.28");}
 		public override void OnChatButtonClicked(bool firstButton, ref string shop){if (firstButton){shop = ShopName;}}
         public override bool CanGoToStatue(bool toKingStatue) => toKingStatue;

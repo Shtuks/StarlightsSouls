@@ -885,8 +885,7 @@ namespace ssm.Content.NPCs.Shtuxibus
                 this.NPC.lifeMax = 1745000000;
                 this.NPC.damage = 15000;
                 if (Main.zenithWorld){
-                this.NPC.damage = 745745;
-                this.NPC.defense = 745745;
+                this.NPC.damage = 74500;
                 this.NPC.GivenName = Language.GetTextValue("Mods.ssm.NPCs.ShtuxibusGFB.DisplayName");
                 this.NPC.lifeMax = int.MaxValue;
                 }
@@ -6479,11 +6478,11 @@ namespace ssm.Content.NPCs.Shtuxibus
     }
     public override void ModifyNPCLoot(NPCLoot npcLoot){
         base.ModifyNPCLoot(npcLoot);
-        if (!WorldSaveSystem.downedShtuxibus) {npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<ShtuxibusLore>()));}
-        if (Main.zenithWorld){npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<ShtuxibusBagGfb>()));}
-        else{npcLoot.Add(ItemDropRule.BossBag(ModContent.ItemType<ShtuxibusBag>()));}
+        npcLoot.AddConditionalPerPlayer(() => Main.zenithWorld, ModContent.ItemType<ShtuxibusBagGfb>());
+        npcLoot.AddConditionalPerPlayer(() => !Main.zenithWorld, ModContent.ItemType<ShtuxibusBag>());
         npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<Items.Placeable.ShtuxibusTrophy>(), 10));
         npcLoot.Add(ItemDropRule.MasterModeCommonDrop(ModContent.ItemType<Items.Placeable.ShtuxibusRelic>()));
+        npcLoot.AddConditionalPerPlayer(() => !WorldSaveSystem.downedShtuxibus, ModContent.ItemType<ShtuxibusLore>());
         }
     public override void BossLoot(ref string name, ref int potionType) {potionType = ModContent.ItemType<Items.Consumables.UltimateHealingPotion>();}
     public override void FindFrame(int frameHeight)

@@ -804,7 +804,7 @@ Buffs: {
 
 	ChtuxlagorInferno: {
 		DisplayName: Chtuxlagor Inferno
-		Description: OOOHHHH NOOOO YOU'RE ded
+		Description: OOOHHHH NOOOO YOU dAed
 	}
 
 	SadismEX: {
@@ -829,13 +829,39 @@ NPCs: {
 			LoveSpace: I like how spacious it is here. Just like in my palace in Shtundex.
 			DislikeCrowded: I don't like that there are a lot of people here.
 			HateCrowded: I hate all this people. I feel like gonna erase everything around.
-			LikeBiome: I like {BiomeName}. It's very similar to my home world
+			LikeBiome: I like {BiomeName}. It's very similar to my home world.
+			LoveBiome: The {BiomeName} is amazing place to live.
 			DislikeBiome: I hate {BiomeName}.
-			HateBiome: I hate {BiomeName}.
-			LoveNPC: I love {NPCName}. Do you think she like me?
+			HateBiome: I can live anywhere but not in {BiomeName}.
+			LoveNPC: I adore {NPCName}. Do you think she like me?
 			LikeNPC: I like spending time with {NPCName}.
-			LikeNPC_Princess: Мне нравится {NPCName}.
-			Princess_LovesNPC: Мне нравится {NPCName}.
+			DislikeNPC: "{NPCName} is getting on my nerves. I would prefer not to exist near him"
+			HateNPC: GET {NPCName} AWAY FROM ME! I HATE IT.
+			LikeNPC_Princess: I don't understand why everyone likes {NPCName}. What so special about her?
+			Princess_LovesNPC: Ugh. {NPCName} annoy me
+		}
+
+		Chat: {
+			ZenithSeed: What the hell is going on here? This world act abnormaly.
+			Defeat: ShtuxiumSuit: So you used shtuxian tech for your equipment? This look awful. You could use AA-7 capacitor instead of AA-4. Also this pieces absolutely impractical. Are you really have no engeneering education?
+			Calamitas: Do you think that Calamitas will once come to me and... Nevermind.
+			Mutant: Mutant is so strange. Anyway. I like drinking with him.
+			MasoMode: Is it the hardest difficulty of tml? I heard about Satanist mode and Maso EX.
+			Normal0: Hm. It's interesting to observe your progress. But you will never reach my level of power.
+			Normal1: Can i jump? Jeah. I have that thing you call 'space'.
+			Normal2: Have you ever seen shtuxian before? I bet no!
+			Normal3: Who is Yharim? How many years you waiting for him to be added in game?
+			Normal4: Heh. Gods of this world so pathetic. Kill dragon and consume his soul? Don't make me laugh!
+			Normal5: Do you know about 'Сhtux'Lag'Or'? No? I thought that people study cosmology.
+			Normal6: Sometimes I feel that I'm too different from everyone else here.
+			Normal7: Hey, do you know about 3d dimension? No? Disappointing. My home world in 3d dimension.
+			Normal8: What i was doing in my world? Hmm... Just sitting on sofa and making some machines out of sticks and shit.
+			Normal9: Why does Mutant, Deviantt and Abomination call themselfes siblings? Who are they even?
+			Normal10: Only Chtux'lag'or and other shards can rival my power.
+			Normal11: How old i am? I don't really know. But anyway i look like i am sixteen. I never age.
+			Normal12: Echdeath? It look it have something in common with Chtux'Lag'Or.
+			Normal13: What will happen if I will use itemss with 'Overload' in name?
+			Normal14: Who is Fargowilta?
 		}
 	}
 
@@ -846,27 +872,70 @@ NPCs: {
 
 		BossChecklistIntegration: {
 			SpawnInfo: Spawned with an [i:ssm/ShtuxianCurse] anytime anywhere.
-			DespawnMessage: "[c/008000:Chtuxlagorian Shard erased every alife human in this universe.]"
+			DespawnMessage: "[c/008000:Shtuxibus return to the space rift.]"
+			KilledAllMessage: "[c/008000:Chtuxlagorian Shard erased every alife human in this universe.]"
 		}
 	}
 
 	ShtuxibusIllusion.DisplayName: Shtuxibus
+
+	Monstrocity: {
+		TownNPCMood: {
+			Content: I am content.
+			NoHome: I hate not having a home.
+			FarFromHome: I am too far from home.
+			LoveSpace: I love having so much space.
+			DislikeCrowded: I dislike how crowded I am.
+			HateCrowded: I hate how crowded I am.
+			LikeNPC_Princess: I like {NPCName}.
+			Princess_LovesNPC: I like {NPCName}.
+			LikeNPC: I like {NPCName}.
+			DislikeNPC: I like {NPCName}.
+		}
+
+		Chat: {
+			Normal0: You know the rules! And you will die. Im not going to rickroll you, that's only 0,00001% chance
+			Normal1: Yippe!
+			Normal2: Yharim? that huge army maybe it's just huge to disguise something small
+			Normal3: Soul of eternity is not enough to face me, let alone 2 of it
+			Normal4: Why would i be afraid of a cat? Well, it is long story.
+			Normal5: Devourer of Gods don't come face me because I'm above god's standard
+			Normal6: It would be a calamity for you not to buy my products
+			Normal7: How old am i? I'm some Eternity years old
+			Normal8: When abomination went to register at the registry office they put an extra 'N' in his name
+			Normal9: You don't want to see me in boss form
+			Normal10: My creator? Don't mention it if you don't want to see me angry
+			Normal11: I'm the reason why Seth got his face covered with that bandana
+			Normal12: 1.4.5? maybe in a few years
+			Normal13: There's an imposter among us, he's me! I don't really belong anywhere
+			Normal14: Galactica has a friend of mine, you should visit him
+			Normal15: I heard rumors about a creature with 'Ex' in its name, that doesn't sound so good
+			Normal16: Deviantt likes my look
+			Normal17: I am the real evil presence that watches you
+			Normal18: Split me? nah that would be a calamity , imagine if some Elements awoken from my dead body, that would be a cataclysm, and this world would not be worthy to witness this
+			Normal19: You are in a deep sleep for 52 years, please wake up
+			Normal20: I heard about Whips, they boost your damage, I don't like it.
+			Normal21: Why don't I attack? Ah that's a nice question, I don't think it's necessary.
+			Normal22: My hp is limited to this world, but i would prob get 22^22^22^22 times this
+			Normal23: Eternity doesn't last that long when you are old enough.
+			Normal24: This white-haired cat-eared child scares me.
+			Normal25: Sunflowers are cool, not for your health tho
+			Normal26: Turip ip ip ip
+			Normal27: Are you approaching me? Can't but my stuff if you don't get closer
+			Normal28: There is a pipe bomb inside your walls
+			Normal29: A lot of things explode for no reason
+			Normal30: Megalovania isn't funny
+			Normal31: I may be in love with the Forbotten one, don't search her up on Google please
+			Normal32: Did you know that market got inflated prices bc of some sonic books? Don't trust me? Search up Sonic inflation on google to learn more ab it!
+		}
+
+		DisplayName: Monstrocity
+	}
 }
 
-Dialogues: {
-	Shtuxibus: {
-		MutantDialogue: Mutant is so strange. Anyway. I like spending time with it.
-		StandardDialogue1: Hm. It's interesting to observe your progress. But you will never reach my level of power.
-		StandardDialogue2: Can i jump? Jeah. I have that thing you call 'space'.
-		StandardDialogue3: Have you ever seen shtuxian before? I bet no!
-		StandardDialogue4: Hey, do you know about 3d dimension? No? Disappointing. My home world in 3d dimension.
-		StandardDialogue5: Who is Yharim? How many years you waiting for him to be added in game?
-		StandartDialogue6: Do you know about 'Сhtux'Lag'Or'? Hm. I thought that people study about highest.
-		StandartDialogue7: Heh. Gods of this world so pathetic. Kill dragon and consume his soul? Don't make me laugh!
-		CommonDialogue: Sometimes I feel that I'm too different from everyone else here.
-		RareDialogue: Do you think that Calamitas will reciprocate my feelings? She look nice...
-		TalkALot: I'm getting tired of talking to you.
-	}
+Toggler: {
+	CalamitySoulHeader: Calamity Soul
+	ShatteredCommunityEffect: Shattered Community
 }
 
 Tiles: {
@@ -960,6 +1029,8 @@ Biomes: {
 		TownNPCDialogueName: Shtuxibus Surface Biome
 	}
 }
+
+Bestiary.Monstrocity: Shtuxibus: Shtuxibus is being came from other world called Shtundex. The shard of omnipotent Chtux'Lag'or and embodiment of energy concept.
 
 Configs: {
 	ShtunConfig: {

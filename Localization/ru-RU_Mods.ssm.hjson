@@ -456,37 +456,37 @@ Items: {
 	}
 
 	MonstrosityMask: {
-		// DisplayName: Monstrosity Mask
-		// Tooltip: Vanity
+		DisplayName: Monstrosity Mask
+		Tooltip: Vanity
 	}
 
 	MonstrosityPants: {
-		// DisplayName: Monstrosity Pants
-		// Tooltip: Vanity
+		DisplayName: Monstrosity Pants
+		Tooltip: Vanity
 	}
 
 	MonstrositySuit: {
-		// DisplayName: Monstrosity Suit
-		// Tooltip: Vanity
+		DisplayName: Monstrosity Suit
+		Tooltip: Vanity
 	}
 
 	ShtuxibusHeadgear: {
-		// DisplayName: Shtuxibus Headgear
-		// Tooltip: Vanity
+		DisplayName: Shtuxibus Headgear
+		Tooltip: Vanity
 	}
 
 	ShtuxibusPants: {
-		// DisplayName: Shtuxibus Pants
-		// Tooltip: Vanity
+		DisplayName: Shtuxibus Pants
+		Tooltip: Vanity
 	}
 
 	ShtuxibusSuit: {
-		// DisplayName: Shtuxibus Suit
-		// Tooltip: Vanity
+		DisplayName: Shtuxibus Suit
+		Tooltip: Vanity
 	}
 
 	TrueMonstrosityMask: {
-		// DisplayName: True Monstrosity Mask
+		DisplayName: True Monstrosity Mask
 		/* Tooltip:
 			'''
 			60% increased damage and 50% increased critical strike chance
@@ -495,7 +495,7 @@ Items: {
 	}
 
 	TrueMonstrosityPants: {
-		// DisplayName: True Monstrosity Pants
+		DisplayName: True Monstrosity Pants
 		/* Tooltip:
 			'''
 			40% increased damage and 20% increased critical strike chance
@@ -505,7 +505,7 @@ Items: {
 	}
 
 	TrueMonstrositySuit: {
-		// DisplayName: True Monstrosity Suit
+		DisplayName: True Monstrosity Suit
 		/* Tooltip:
 			'''
 			50% increased damage and 20% increased critical strike chance 
@@ -516,12 +516,12 @@ Items: {
 	}
 
 	Sadism: {
-		// DisplayName: Sadism
-		// Tooltip: True escence of eternity.
+		DisplayName: Sadism
+		Tooltip: True escence of eternity.
 	}
 
 	TrueAuricTeslaBody: {
-		// DisplayName: True Auric Tesla Body
+		DisplayName: True Auric Tesla Body
 		/* Tooltip:
 			'''
 			40% increased damage and 20% increased critical strike chance 
@@ -532,7 +532,7 @@ Items: {
 	}
 
 	TrueAuricTeslaHelm: {
-		// DisplayName: True Auric Tesla Helm
+		DisplayName: True Auric Tesla Helm
 		/* Tooltip:
 			'''
 			50% increased damage and 50% increased critical strike chance
@@ -542,7 +542,7 @@ Items: {
 	}
 
 	TrueAuricTeslaLegs: {
-		// DisplayName: True Auric Tesla Legs
+		DisplayName: True Auric Tesla Legs
 		/* Tooltip:
 			'''
 			40% increased damage and 20% increased critical strike chance
@@ -551,335 +551,405 @@ Items: {
 	}
 
 	ShtuxibusBagGfb: {
-		// DisplayName: Shtuxibus Bag Gfb
-		// Tooltip: ""
+		DisplayName: Shtuxibus Bag Gfb
+		Tooltip: ""
 	}
 
 	CrabulonEnergizer: {
-		// DisplayName: Crabulon Energizer
-		// Tooltip: ""
+		DisplayName: Crabulon Energizer
+		Tooltip: ""
 	}
 
 	OverloadSprout: {
-		// DisplayName: Overload Sprout
-		// Tooltip: ""
+		DisplayName: Overload Sprout
+		Tooltip: ""
 	}
 
 	DesertEnergizer: {
-		// DisplayName: Desert Energizer
-		// Tooltip: ""
+		DisplayName: Desert Energizer
+		Tooltip: ""
 	}
 
 	HiveEnergizer: {
-		// DisplayName: Hive Energizer
-		// Tooltip: ""
+		DisplayName: Hive Energizer
+		Tooltip: ""
 	}
 
 	PerforatorEnergizer: {
-		// DisplayName: Perforator Energizer
-		// Tooltip: ""
+		DisplayName: Perforator Energizer
+		Tooltip: ""
 	}
 
 	SlimeGodEnergizer: {
-		// DisplayName: Slime God Energizer
-		// Tooltip: ""
+		DisplayName: Slime God Energizer
+		Tooltip: ""
 	}
 
 	BunchOfMedalions: {
-		// DisplayName: Bunch Of Medalions
-		// Tooltip: ""
+		DisplayName: Bunch Of Medalions
+		Tooltip: ""
 	}
 
 	AnahitaEnergizer: {
-		// DisplayName: Anahita Energizer
-		// Tooltip: ""
+		DisplayName: Anahita Energizer
+		Tooltip: ""
 	}
 
 	AstralEnergizer: {
-		// DisplayName: Astral Energizer
-		// Tooltip: ""
+		DisplayName: Astral Energizer
+		Tooltip: ""
 	}
 
 	AureusEnergizer: {
-		// DisplayName: Aureus Energizer
-		// Tooltip: ""
+		DisplayName: Aureus Energizer
+		Tooltip: ""
 	}
 
 	AuricEnergizer: {
-		// DisplayName: Auric Energizer
-		// Tooltip: ""
+		DisplayName: Auric Energizer
+		Tooltip: ""
 	}
 
 	BrimstoneEnergizer: {
-		// DisplayName: Brimstone Energizer
-		// Tooltip: ""
+		DisplayName: Brimstone Energizer
+		Tooltip: ""
 	}
 
 	CalamitousEnergizer: {
-		// DisplayName: Calamitous Energizer
-		// Tooltip: ""
+		DisplayName: Calamitous Energizer
+		Tooltip: ""
 	}
 
 	CryoEnergizer: {
-		// DisplayName: Cryo Energizer
-		// Tooltip: ""
+		DisplayName: Cryo Energizer
+		Tooltip: ""
 	}
 
 	DevouringEnergizer: {
-		// DisplayName: Devouring Energizer
-		// Tooltip: ""
+		DisplayName: Devouring Energizer
+		Tooltip: ""
 	}
 
 	FleshyEnergizer: {
-		// DisplayName: Fleshy Energizer
-		// Tooltip: ""
+		DisplayName: Fleshy Energizer
+		Tooltip: ""
 	}
 
 	FollyEnergizer: {
-		// DisplayName: Folly Energizer
-		// Tooltip: ""
+		DisplayName: Folly Energizer
+		Tooltip: ""
 	}
 
 	PlagueEnergizer: {
-		// DisplayName: Plague Energizer
-		// Tooltip: ""
+		DisplayName: Plague Energizer
+		Tooltip: ""
 	}
 
 	ProfandedEnergizer: {
-		// DisplayName: Profanded Energizer
-		// Tooltip: ""
+		DisplayName: Profanded Energizer
+		Tooltip: ""
 	}
 
 	TerraEnergizer: {
-		// DisplayName: Terra Energizer
-		// Tooltip: ""
+		DisplayName: Terra Energizer
+		Tooltip: ""
 	}
 
 	ToxicEnergizer: {
-		// DisplayName: Toxic Energizer
-		// Tooltip: ""
+		DisplayName: Toxic Energizer
+		Tooltip: ""
 	}
 
 	WaifuCloneEnergizer: {
-		// DisplayName: Waifu Clone Energizer
-		// Tooltip: ""
+		DisplayName: Waifu Clone Energizer
+		Tooltip: ""
 	}
 
 	WaifuEnergizer: {
-		// DisplayName: Waifu Energizer
-		// Tooltip: ""
+		DisplayName: Waifu Energizer
+		Tooltip: ""
 	}
 
 	AstralLump: {
-		// DisplayName: Astral Lump
-		// Tooltip: ""
+		DisplayName: Astral Lump
+		Tooltip: ""
 	}
 
 	BloodyWormChicken: {
-		// DisplayName: Bloody Worm Chicken
-		// Tooltip: ""
+		DisplayName: Bloody Worm Chicken
+		Tooltip: ""
 	}
 
 	CosmicAmalgamation: {
-		// DisplayName: Cosmic Amalgamation
-		// Tooltip: ""
+		DisplayName: Cosmic Amalgamation
+		Tooltip: ""
 	}
 
 	CryonicCore: {
-		// DisplayName: Cryonic Core
-		// Tooltip: ""
+		DisplayName: Cryonic Core
+		Tooltip: ""
 	}
 
 	DeepFriedIdol: {
-		// DisplayName: Deep Fried Idol
-		// Tooltip: ""
+		DisplayName: Deep Fried Idol
+		Tooltip: ""
 	}
 
 	EyeofExtintion: {
-		// DisplayName: Eyeof Extintion
-		// Tooltip: ""
+		DisplayName: Eyeof Extintion
+		Tooltip: ""
 	}
 
 	OverloadedWaifu: {
-		// DisplayName: Overloaded Waifu
-		// Tooltip: ""
+		DisplayName: Overloaded Waifu
+		Tooltip: ""
 	}
 
 	OverloadPheromones: {
-		// DisplayName: Overload Pheromones
-		// Tooltip: ""
+		DisplayName: Overload Pheromones
+		Tooltip: ""
 	}
 
 	OverloadSeafood: {
-		// DisplayName: Overload Seafood
-		// Tooltip: ""
+		DisplayName: Overload Seafood
+		Tooltip: ""
 	}
 
 	OverloadStarcore: {
-		// DisplayName: Overload Starcore
-		// Tooltip: ""
+		DisplayName: Overload Starcore
+		Tooltip: ""
 	}
 
 	OverloadTeratoma: {
-		// DisplayName: Overload Teratoma
-		// Tooltip: ""
+		DisplayName: Overload Teratoma
+		Tooltip: ""
 	}
 
 	OverloadWhistle: {
-		// DisplayName: Overload Whistle
-		// Tooltip: ""
+		DisplayName: Overload Whistle
+		Tooltip: ""
 	}
 
 	PhantasmalBeacon: {
-		// DisplayName: Phantasmal Beacon
-		// Tooltip: ""
+		DisplayName: Phantasmal Beacon
+		Tooltip: ""
 	}
 
 	PileOfBloodWorms: {
-		// DisplayName: Pile Of Blood Worms
-		// Tooltip: ""
+		DisplayName: Pile Of Blood Worms
+		Tooltip: ""
 	}
 
 	PlagueTerminal: {
-		// DisplayName: Plague Terminal
-		// Tooltip: ""
+		DisplayName: Plague Terminal
+		Tooltip: ""
 	}
 
 	ProfandedCluster: {
-		// DisplayName: Profanded Cluster
-		// Tooltip: ""
+		DisplayName: Profanded Cluster
+		Tooltip: ""
 	}
 
 	TrueOverloadedSludge: {
-		// DisplayName: True Overloaded Sludge
-		// Tooltip: ""
+		DisplayName: True Overloaded Sludge
+		Tooltip: ""
 	}
 
 	YharonEggsBox: {
-		// DisplayName: Yharon Eggs Box
-		// Tooltip: ""
+		DisplayName: Yharon Eggs Box
+		Tooltip: ""
 	}
 
 	SwarmDeactivatorDebug: {
-		// Tooltip: ""
-		// DisplayName: Swarm Deactivator Debug
+		Tooltip: ""
+		DisplayName: Swarm Deactivator Debug
 	}
 
 	OverloadedSirenPearl: {
-		// DisplayName: Overloaded Siren Pearl
-		// Tooltip: ""
+		DisplayName: Overloaded Siren Pearl
+		Tooltip: ""
 	}
 }
 
 Buffs: {
 	ShtuxibusCurse: {
-		DisplayName: Shtuxibus Curse
-		Description: You are gradually disappearing from this reality.
+		DisplayName: Присутствие Штуксибуса
+		Description: Осколок Штукс'Лг'Ора подавляет реальность вокруг.
 	}
 
 	ChtuxlagorBuff: {
-		DisplayName: Chtuxlagor Buff
-		Description: Strength of omniversal creator with you.
+		DisplayName: Штукс'Лг'Ор
+		Description: Сила всемогущего творца с тобой.
 	}
 
 	ShtuxibusMinionBuff: {
-		DisplayName: Shtuxibus Minion Buff
-		Description: Shtuxibus's spectral image protect you.
+		DisplayName: Спектральный Штуксибус
+		Description: Спектральное изображение Штуксибуса защищает тебя.
 	}
 
 	AntiCollision: {
-		DisplayName: Anti Collision
-		Description: Mods.ssm.Buffs.AntiCollision.Description
+		DisplayName: Анти-столкновения
+		Description: Ты не можешь получить удар.
 	}
 
 	AntiDeath: {
-		DisplayName: Anti Death
-		Description: Mods.ssm.Buffs.AntiDeath.Description
+		DisplayName: Анти-смерть
+		Description: Ты не можешь умереть.
 	}
 
 	AntiDebuff: {
-		DisplayName: Anti Debuff
-		Description: Mods.ssm.Buffs.AntiDebuff.Description
+		DisplayName: Анти-дебафф
+		Description: Ты не можешь получить дебафф.
 	}
 
 	ChtuxlagorInferno: {
-		// DisplayName: Chtuxlagor Inferno
-		// Description: OOOHHHH NOOOO YOU'RE ded
+		DisplayName: Инферно Штукс'Лаг'Ора
+		Description: .ООООООО НЕт ТЫ здоХ
 	}
 
 	SadismEX: {
-		// DisplayName: Sadism EX
-		// Description: You immune to all debuffs.
+		DisplayName: Садизм EX
+		Description: Ты не можешь получить дебафф
 	}
 
 	YharimBuff: {
-		// DisplayName: Yharim Buff
-		// Description: Your power rival with Jungle Tyrant
+		DisplayName: Сила Ярима
+		Description: Твоя сила соперничает с Тираном Джунглей
 	}
 }
 
 NPCs: {
 	ShtuxianHarbringer: {
-		DisplayName: Shtuxian Harbringer
+		DisplayName: Осколок Штукс'Лг'Ора
 
 		TownNPCMood: {
-			Content: I am satisfied.
-			NoHome: Terrible that i don't have place to stay. I will go back to my world if will not get one.
-			FarFromHome: I am far from home.
-			LoveSpace: I like how spacious it is here. Just like in my palace in Shtundex.
-			DislikeCrowded: I don't like that there are a lot of people here.
-			HateCrowded: I hate all this people. I feel like gonna erase everything around.
-			LikeBiome: I like {BiomeName}. It's very similar to my home world
-			DislikeBiome: I hate {BiomeName}.
-			HateBiome: I hate {BiomeName}.
-			LoveNPC: I love {NPCName}. Do you think she like me?
-			LikeNPC: I like spending time with {NPCName}.
-			LikeNPC_Princess: Мне нравится {NPCName}.
-			Princess_LovesNPC: Мне нравится {NPCName}.
+			Content: Я удовлетворен.
+			NoHome: Похоже мне негде остатся. Тогда я вернусь себе в мир.
+			FarFromHome: Я бы мог бы телепортироватся себе домой но почему то эта игра не позволяет мне этого делать в твоем присутствии.
+			LoveSpace: Мне нравится как тут свободно. Прямо как в моем дворце в Штундексе.
+			DislikeCrowded: Мне не особо нравится так много людей вокруг. Это бесит. Я не могу сосредоточится на исследованиях.
+			HateCrowded: Я ненавижу всех этих людей. Я чувствую что готов стереть всех вокруг если ты не уберешь их отсюда.
+			LikeBiome: Мне нравися {BiomeName}. Это очень похоже на мой мир.
+			LoveBiome: "{BiomeName} это замечательное место для жизни"
+			DislikeBiome: Определенно на этой планете есть места и получше чем {BiomeName}.
+			HateBiome: Ненавижу {BiomeName}.
+			LoveNPC: Мне нравится {NPCName}. Думаешь я ей тоже нравлюсь?
+			LikeNPC: Мне нравится с {NPCName}.
+			HateNPC: УБЕРИ {NPCName} ОТ МЕНЯ! Я НЕНАВИЖУ ЕГО.
+			LikeNPC_Princess: Я не понимаю почему всем нравится {NPCName}. Чего в ней такого особенного
+			Princess_LovesNPC: Блять.
+		}
+
+		Chat: {
+			Easter: Слушай а ты нигде не видел странного кота. Он выглядел как бананчик из измерения би. Я пока не понял кто он. Еврей или гений раз смог перемещаться по измерениям. Ну если что то из этого прада ты всё равно не пройдёшь пучеглазика на мазахисте.
+			ZenithSeed: Что происходит с этим миром? Почему все перевернуто и я чувствую прилив сил?
+			Defeat: Ну что же. Да. Да да. Да да да да да. А ну и поздравляю. Ты прошел модовую террарию.
+			ShtuxiumSuit: Ты исспользовал штуксийские технологии для своего снаряжения? Какой ужас. Я бы сделал все гораздо лучше. У тебя действительно нет инжинерного образования?
+			Calamitas: Как ты думаешь может ли Каламитас подойти ко мне и... Забудь.
+			Mutant: Мутант такой странный. В любом случае с ним забавно пить.
+			MasoMode: И это сложнейшая сложность из всех модов? Я слышал о режиме Сатаниста и Мазохизме EX
+			Normal0: За твоим прогрессом забавно наблюдать. Вот только тебе никогда не доститчь моего уровня силы.
+			Normal1: Могу ли я прыгать? Да у меня есть то что ты называешь пробел.
+			Normal2: Ты когда нибудь видел штуксианца до этого? Я думаю нет!
+			Normal3: Кто такой Ярим? Сколько времени ты ждешь что бы его добавили в игру?
+			Normal4: Боги этого мира такие жалкие. Убить аурического дракона и поглотить его душу? Не смешите меня!
+			Normal5: Знаешь кто такой Штукс'Лаг'Ор? Я думал что космологию изучают везде.
+			Normal6: Иногда я чувствую что слишком отличаюсь от всех сдесь.
+			Normal7: Знаешь ли что нибудь о третьем измерении? Нет? Печально. Я пришел из трехмерного мира.
+			Normal8: Что я делал в своем мире? Нуу.. Сидел на диване и собирал механизмы из говна и палок.
+			Normal9: Почему Мутант, Мерзостть и Девиантт называют себя родственниками? Кто они вообще такие?
+			Normal10: Лишь Штукс'Лаг'Ор и другие соколки могут противостоять мне.
+			Normal11: Сколько мне лет? Я не знаю. Но всегда буду выглядеть на шестнадцать. Я не старею.
+			Normal12: Echdeath? У него есть что то общее с Штукс'Лаг'Ором.
+			Normal13: Что будет если я исспользую предмет с 'перегруженный' в названии?
+			Normal14: Кто такой Фарговилта?
 		}
 	}
 
-	ShtuxibusGFB.DisplayName: The eldrich multiversal horror of Chtux'Lag'Or
+	ShtuxibusGFB.DisplayName: Древний мультивселенский ужас Штукс'Лг'Ора
 
 	Shtuxibus: {
 		DisplayName: Shtuxibus
 
 		BossChecklistIntegration: {
-			SpawnInfo: Spawned with an [i:ssm/ShtuxianCurse] anytime anywhere.
-			DespawnMessage: "[c/008000:Chtuxlagorian Shard erased every alife human in this universe.]"
+			SpawnInfo: Исспользуйте [i:ssm/ShtuxianCurse] где угодно в любое время.
+			DespawnMessage: "[c/008000:Штуксибус возвращается к разлому...]"
+			KilledAllMessage: "[c/008000:Осколок Штукс'лаг'ора стер всех людей в этом мире.]"
 		}
 	}
 
 	ShtuxibusIllusion.DisplayName: Shtuxibus
-}
 
-Dialogues: {
-	Shtuxibus: {
-		MutantDialogue: Mutant is so strange. Anyway. I like spending time with it.
-		StandardDialogue1: Hm. It's interesting to observe your progress. But you will never reach my level of power.
-		StandardDialogue2: Can i jump? Jeah. I have that thing you call 'space'.
-		StandardDialogue3: Have you ever seen shtuxian before? I bet no!
-		StandardDialogue4: Hey, do you know about 3d dimension? No? Disappointing. My home world in 3d dimension.
-		StandardDialogue5: Who is Yharim? How many years you waiting for him to be added in game?
-		StandartDialogue6: Do you know about 'Сhtux'Lag'Or'? Hm. I thought that people study about highest.
-		StandartDialogue7: Heh. Gods of this world so pathetic. Kill dragon and consume his soul? Don't make me laugh!
-		CommonDialogue: Sometimes I feel that I'm too different from everyone else here.
-		RareDialogue: Do you think that Calamitas will reciprocate my feelings? She look nice...
-		TalkALot: I'm getting tired of talking to you.
+	Monstrocity: {
+		TownNPCMood: {
+			Content: I am content.
+			NoHome: I hate not having a home.
+			FarFromHome: I am too far from home.
+			LoveSpace: I love having so much space.
+			DislikeCrowded: I dislike how crowded I am.
+			HateCrowded: I hate how crowded I am.
+			LikeNPC_Princess: I like {NPCName}.
+			Princess_LovesNPC: I like {NPCName}.
+			LikeNPC: Мне нравится {NPCName}.
+			DislikeNPC: Мне не нравится {NPCName}.
+		}
+
+		Chat: {
+			Normal0: You know the rules! And you will die. Im not going to rickroll you, that's only 0,00001% chance
+			Normal1: Yippe!
+			Normal2: Yharim? that huge army maybe it's just huge to disguise something small
+			Normal3: Soul of eternity is not enough to face me, let alone 2 of it
+			Normal4: Why would i be afraid of a cat? Well, it is long story.
+			Normal5: Devourer of Gods don't come face me because I'm above god's standard
+			Normal6: It would be a calamity for you not to buy my products
+			Normal7: How old am i? I'm some Eternity years old
+			Normal8: When abomination went to register at the registry office they put an extra 'N' in his name
+			Normal9: You don't want to see me in boss form
+			Normal10: My creator? Don't mention it if you don't want to see me angry
+			Normal11: I'm the reason why Seth got his face covered with that bandana
+			Normal12: 1.4.5? maybe in a few years
+			Normal13: There's an imposter among us, he's me! I don't really belong anywhere
+			Normal14: Galactica has a friend of mine, you should visit him
+			Normal15: I heard rumors about a creature with 'Ex' in its name, that doesn't sound so good
+			Normal16: Deviantt likes my look
+			Normal17: I am the real evil presence that watches you
+			Normal18: Split me? nah that would be a calamity , imagine if some Elements awoken from my dead body, that would be a cataclysm, and this world would not be worthy to witness this
+			Normal19: You are in a deep sleep for 52 years, please wake up
+			Normal20: I heard about Whips, they boost your damage, I don't like it.
+			Normal21: Why don't I attack? Ah that's a nice question, I don't think it's necessary.
+			Normal22: My hp is limited to this world, but i would prob get 22^22^22^22 times this
+			Normal23: Eternity doesn't last that long when you are old enough.
+			Normal24: This white-haired cat-eared child scares me.
+			Normal25: Sunflowers are cool, not for your health tho
+			Normal26: Turip ip ip ip
+			Normal27: Are you approaching me? Can't but my stuff if you don't get closer
+			Normal28: There is a pipe bomb inside your walls
+			Normal29: A lot of things explode for no reason
+			Normal30: Megalovania isn't funny
+			Normal31: I may be in love with the Forbotten one, don't search her up on Google please
+			Normal32: Did you know that market got inflated prices bc of some sonic books? Don't trust me? Search up Sonic inflation on google to learn more ab it!
+		}
+
+		DisplayName: Monstrocity
 	}
 }
 
-Tiles: {
-	ShtuxiumOreTile.MapEntry: Shtuxium Ore
-	ShtuxibusForgeTile.MapEntry: Shtuxibus Forge Tile
-	MutantsForgeTile.MapEntry: Mutants Forge Tile
+Toggler: {
+	CalamitySoulHeader: Душа Бедствия
+	ShatteredCommunityEffect: Раздолбаное сообщество
 }
 
-ItemClass.Chtuxlagor: ∞ Chtux'Lag'Or Item ∞
+Tiles: {
+	ShtuxiumOreTile.MapEntry: Штуксиевая руда
+	ShtuxibusForgeTile.MapEntry: Кузня Штуксибуса
+	MutantsForgeTile.MapEntry: Кузня Мутанта
+}
+
+ItemClass.Chtuxlagor: ∞ Предмет Штукс'лаг'ора ∞
 
 WorldGen: {
-	BlessedWithShtuxiumOreMessage: Defeat of Chtux'lag'or shard vented concentrated shtuxian energy in this world.
-	ShtuxiumOrePassMessage: Mods.ssm.WorldGen.ShtuxiumOrePassMessage
+	BlessedWithShtuxiumOreMessage:Концентрированная штуксийская энергия выпущена в глубине мира.
+	ShtuxiumOrePassMessage: А тут типа что то писать надо было?
 }
 
 Projectiles: {
@@ -901,7 +971,7 @@ Projectiles: {
 	AbomSword.DisplayName: Abom Sword
 	AbomSwordHandle.DisplayName: Abom Sword Handle
 	BossRush.DisplayName: Boss Rush
-	// Boss.MutantYharonVortex.DisplayName: Mutant Yharon Vortex
+	Boss.MutantYharonVortex.DisplayName: Mutant Yharon Vortex
 	ChampionBeetle.DisplayName: Champion Beetle
 	CosmosDeathray.DisplayName: Cosmos Deathray
 	CosmosDeathray2.DisplayName: Cosmos Deathray2
@@ -946,12 +1016,12 @@ Projectiles: {
 	ShtuxibusSoulAttack.DisplayName: Shtuxibus Soul Attack
 	ShtuxibusSpearThrow.DisplayName: Shtuxibus Spear Throw
 	ShtuxibusSwordSwing.DisplayName: Shtuxibus Sword Swing
-	// MutantAureusSpawn.DisplayName: Mutant Aureus Spawn
-	// MutantHolyRay.DisplayName: Mutant Holy Ray
-	// MutantPBG.DisplayName: Mutant P B G
-	// MutantPolter.DisplayName: Mutant Polter
-	// MutantSlimeGod.DisplayName: Mutant Slime God
-	// MutantHeal.DisplayName: Mutant Heal
+	MutantAureusSpawn.DisplayName: Mutant Aureus Spawn
+	MutantHolyRay.DisplayName: Mutant Holy Ray
+	MutantPBG.DisplayName: Mutant P B G
+	MutantPolter.DisplayName: Mutant Polter
+	MutantSlimeGod.DisplayName: Mutant Slime God
+	MutantHeal.DisplayName: Mutant Heal
 }
 
 Biomes: {
@@ -960,6 +1030,9 @@ Biomes: {
 		TownNPCDialogueName: Shtuxibus Surface Biome
 	}
 }
+
+Bestiary.Monstrocity: 
+Shtuxibus: Shtuxibus is being came from other world called Shtundex. The shard of omnipotent Chtux'Lag'or and embodiment of energy concept.
 
 Configs: {
 	ShtunConfig: {

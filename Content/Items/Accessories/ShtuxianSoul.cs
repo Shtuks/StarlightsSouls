@@ -59,23 +59,22 @@ namespace ssm.Content.Items.Accessories
     
     public override void UpdateAccessory(Player player, bool hideVisual){
 		if (player.GetModPlayer<FargoSoulsPlayer>().MutantEyeCD > 0){player.GetModPlayer<FargoSoulsPlayer>().MutantEyeCD--;}
-    	player.buffImmune[ModContent.Find<ModBuff>(this.fargosouls.Name, "MutantRebirthBuff").Type] = true;
-    	player.buffImmune[ModContent.Find<ModBuff>(this.fargosouls.Name, "MutantPresenceBuff").Type] = true;
     	ModContent.Find<ModItem>(this.fargosouls.Name, "EternitySoul").UpdateAccessory(player, hideVisual);
 		ModContent.Find<ModItem>(((ModType) this).Mod.Name, "CalamitySoul").UpdateAccessory(player, false);
 		ModContent.Find<ModItem>(((ModType) this).Mod.Name, "StyxEnchant").UpdateAccessory(player, false);
 		ModContent.Find<ModItem>(((ModType) this).Mod.Name, "NekomiEnchant").UpdateAccessory(player, false);
 		ModContent.Find<ModItem>(((ModType) this).Mod.Name, "PhantaplazmalEnchant").UpdateAccessory(player, false);
 		if (!Main.zenithWorld){player.buffImmune[ModContent.Find<ModBuff>(((ModType) this).Mod.Name, "ShtuxibusCurse").Type] = true;}
-		player.buffImmune[ModContent.Find<ModBuff>(this.FargoSoul.Name, "TimeFrozenBuff").Type] = true;
+		if (!Main.zenithWorld){player.buffImmune[ModContent.Find<ModBuff>(this.FargoSoul.Name, "TimeFrozenBuff").Type] = true;}
     	player.buffImmune[ModContent.Find<ModBuff>(this.FargoSoul.Name, "MutantPresenceBuff").Type] = true;
     	player.buffImmune[ModContent.Find<ModBuff>(this.FargoSoul.Name, "CoffinTossBuff").Type] = true;
-    	player.buffImmune[ModContent.Find<ModBuff>(this.FargoSoul.Name, "MutantRebirthBuff").Type] = true;
+    	if (!Main.zenithWorld){player.buffImmune[ModContent.Find<ModBuff>(this.FargoSoul.Name, "MutantRebirthBuff").Type] = true;}
     	player.buffImmune[ModContent.Find<ModBuff>(this.FargoSoul.Name, "GodEaterBuff").Type] = true;
-		player.buffImmune[ModContent.Find<ModBuff>(this.FargoSoul.Name, "FossilReviveCDBuff").Type] = true;
+		if (!Main.zenithWorld){player.buffImmune[ModContent.Find<ModBuff>(this.FargoSoul.Name, "FossilReviveCDBuff").Type] = true;}
     	player.buffImmune[ModContent.Find<ModBuff>(this.FargoSoul.Name, "BerserkerInstallCDBuff").Type] = true;
-    	player.buffImmune[ModContent.Find<ModBuff>(this.FargoSoul.Name, "TimeStopCDBuff").Type] = true;
-    	player.buffImmune[ModContent.Find<ModBuff>(this.FargoSoul.Name, "AbomCooldownBuff").Type] = true;
+    	if (!Main.zenithWorld){player.buffImmune[ModContent.Find<ModBuff>(this.FargoSoul.Name, "TimeStopCDBuff").Type] = true;}
+    	if (!Main.zenithWorld){player.buffImmune[ModContent.Find<ModBuff>(this.FargoSoul.Name, "AbomRebirthBuff").Type] = true;}
+		if (!Main.zenithWorld){player.buffImmune[ModContent.Find<ModBuff>(this.FargoSoul.Name, "AbomCooldownBuff").Type] = true;}
 		player.accWatch = 3;
 		player.GetDamage(DamageClass.Generic) += 1000 / 100f;
 		player.buffImmune[194] = true;
@@ -128,7 +127,6 @@ namespace ssm.Content.Items.Accessories
 		player.lifeRegen *= 2;
 		player.palladiumRegen = true;
 		player.crimsonRegen = true;
-		player.endurance += 0.5f;
 		player.GetAttackSpeed(DamageClass.Generic) += 10f;
 		player.accFishingLine = true;
 		player.arcticDivingGear = true;
@@ -147,7 +145,6 @@ namespace ssm.Content.Items.Accessories
 		player.waterWalk = true;
 		player.lavaRose = true;
 		player.goldRing = true;
-		player.endurance += 10f;
 		player.lifeRegen *= 10;}
 
 	public override void AddRecipes() {

@@ -18,10 +18,16 @@ namespace ssm.Content.Buffs
 
     public override void Update(Player player, ref int buffIndex)
     {
+      if(Main.zenithWorld){
+        player.endurance = 0.0f;
+        player.immuneTime = 0;
+        player.immune = false;
+        player.immuneNoBlink = false;
+      }
+      player.creativeGodMode = false;
       player.endurance /= 10f;
       player.statDefense = player.statDefense *= 0.5f;
-      player.moonLeech = true;
-      player.chaosState = true;
+      if(!Main.zenithWorld){player.chaosState = true;}
       player.buffImmune[ModContent.Find<ModBuff>(this.FargoSoul.Name, "BerserkerInstallBuff").Type] = true;
       player.buffImmune[ModContent.Find<ModBuff>(this.FargoSoul.Name, "SouloftheMasochistBuff").Type] = true;
       player.carpet = false;

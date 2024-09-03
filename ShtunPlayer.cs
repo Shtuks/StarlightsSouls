@@ -49,6 +49,7 @@ namespace ssm
 		    private readonly Mod calamity = ModLoader.GetMod("CalamityMod");
         public bool ShtuxibusMinionBuff;
         public bool ChtuxlagorBuff;
+        public bool ChtuxlagorInferno;
         public bool equippedPhantasmalEnchantment;
         public bool equippedAbominableEnchantment;
         public bool equippedDeviatingEnchantment;
@@ -148,7 +149,7 @@ namespace ssm
                 else if (Player.velocity.Y < -0.1f)
                     Player.velocity.Y = -0.1f;}}
         public override void ResetEffects(){}
-		public override void UpdateDead(){}
+		    public override void UpdateDead(){}
       	public void WingStats(){Player.wingTimeMax = 999999;Player.wingTime = Player.wingTimeMax;Player.ignoreWater = true;}
         public override bool ImmuneTo(
         PlayerDeathReason damageSource,

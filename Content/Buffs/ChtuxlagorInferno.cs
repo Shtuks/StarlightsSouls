@@ -46,11 +46,6 @@ namespace ssm.Content.Buffs
         player.rocketTime = 0;
         player.slow = true;
         player.moonLeech = true;
-        //player.Calamity().bFlames = true;
-        //player.Calamity().cDepth = true;
-        //player.Calamity().gsInferno = true;
-        //player.Calamity().hFlames = true;
-        //player.Calamity().pFlames = true;
         player.FargoSouls().FlamesoftheUniverse = true;
         player.FargoSouls().Shadowflame = true;
         player.FargoSouls().Asocial = true;
@@ -64,7 +59,6 @@ namespace ssm.Content.Buffs
         player.FargoSouls().MutantPresence = true;
         player.FargoSouls().Hexed = true;
         player.FargoSouls().noDodge = true;
-        //player.FargoSouls().HolyPrice = true;
         player.FargoSouls().Infested = true;
         player.FargoSouls().Jammed = true;
         player.FargoSouls().DeathMarked = true;
