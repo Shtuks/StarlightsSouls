@@ -45,15 +45,20 @@ namespace ssm
         public bool antiDeath;
         public bool antiDebuff;
         public bool antiImmunity;
+        public bool MutantSoul;
+        public bool DevianttSoul;
+        public bool CelestialPower;
         private readonly Mod FargoSoul = Terraria.ModLoader.ModLoader.GetMod("FargowiltasSouls");
 		    private readonly Mod calamity = ModLoader.GetMod("CalamityMod");
         public bool ShtuxibusMinionBuff;
         public bool ChtuxlagorBuff;
+        public bool ChtuxlagorHeart;
         public bool ChtuxlagorInferno;
+        public int Screenshake;
         public bool equippedPhantasmalEnchantment;
         public bool equippedAbominableEnchantment;
         public bool equippedDeviatingEnchantment;
-        public bool ShtuxibusPower;
+        public bool ShtuxibusSoul;
         int timeru = 0;
 		    public bool DeviGraze;
         public bool Graze;
@@ -135,6 +140,12 @@ namespace ssm
         if (!this.equippedAbominableEnchantment)
             return;
             target.AddBuff(ModContent.Find<ModBuff>(this.FargoSoul.Name, "AbomFangBuff").Type, 1000, false);}
+
+        public override void ModifyScreenPosition()
+        {
+            if (Screenshake > 0)
+                Main.screenPosition += Main.rand.NextVector2Circular(7, 7);
+        }
 		public void FlightMasterySoul()
         {
             Player.wingTimeMax = 999999;
@@ -148,7 +159,19 @@ namespace ssm
                     Player.velocity.Y = 0.1f;
                 else if (Player.velocity.Y < -0.1f)
                     Player.velocity.Y = -0.1f;}}
-        public override void ResetEffects(){}
+        public override void ResetEffects(){
+            if (Screenshake > 0)
+                Screenshake--;
+            
+            DevianttSoul = false;
+            MutantSoul = false;
+            ShtuxibusSoul = false;
+            ChtuxlagorBuff = false;
+            CelestialPower = false;
+
+            //if (NoUsingItems > 0)
+            //    NoUsingItems--;
+        }
 		    public override void UpdateDead(){}
       	public void WingStats(){Player.wingTimeMax = 999999;Player.wingTime = Player.wingTimeMax;Player.ignoreWater = true;}
         public override bool ImmuneTo(

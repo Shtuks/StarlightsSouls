@@ -5,11 +5,14 @@ using CalamityMod.NPCs.ProfanedGuardians;
 using CalamityMod.NPCs.Yharon;
 using CalamityMod.Projectiles.Boss;
 using System.Linq;
-using FargowiltasCrossmod.Content.Common.Bosses.Mutant;
+//using FargowiltasCrossmod.Content.Common.Bosses.Mutant;
 using FargowiltasCrossmod.Content.Calamity.Bosses.SlimeGod;
 using FargowiltasCrossmod.Content.Calamity.Buffs;
 using FargowiltasCrossmod.Content.Common.Projectiles;
 using FargowiltasCrossmod.Core;
+using FargowiltasCrossmod.Core.Calamity;
+using FargowiltasCrossmod.Core.Calamity.Globals;
+using FargowiltasCrossmod.Core.Calamity.Systems;
 using FargowiltasCrossmod.Core.Common;
 using FargowiltasSouls;
 using FargowiltasSouls.Common.Graphics.Particles;
@@ -36,15 +39,16 @@ using ssm;
 using ssm.Content.Tiles;
 using ssm.Systems;
 using ssm.Content.NPCs;
+using ssm.Content.Items.Accessories;
 using FargowiltasSouls.Content.Buffs.Boss;
 using ssm.Content.Projectiles.Shtuxibus;
 using FargowiltasSouls.Core.Systems;
 using Luminance.Core.Graphics;
 using CalamityMod.CalPlayer;
-//using FargowiltasSouls.Content.Bosses.MutantBoss;
-using FargowiltasCrossmod.Content.Common.Bosses.Mutant;
+//using FargowiltasSouls.Content.Bosses.MutantBoss; ssm.Content.NPCs.Shtuxibus
 using Terraria.DataStructures;
 using Terraria.Graphics.Shaders;
+using ssm.Content.NPCs.Shtuxibus.CalAttacks;
 using Terraria.ID;
 using FargowiltasSouls.Content.Projectiles;
 using System;
@@ -63,6 +67,8 @@ namespace ssm.Content.NPCs.Shtuxibus
         Player player => Main.player[NPC.target];
         public bool playerInvulTriggered;
         public bool Aura;
+        private int damageTotal = 0;
+        internal int dpsCap = WorldSaveSystem.downedShtuxibus ? 700000 : 500000;
         public int ritualProj, spriteProj, ringProj;
         private bool droppedSummon = false;
         public bool SparkAtaackUsing;
@@ -201,6 +207,9 @@ namespace ssm.Content.NPCs.Shtuxibus
     float epicMe;
     public override void AI()
         {
+            this.damageTotal -= this.dpsCap;
+            if (this.damageTotal < 0){
+                this.damageTotal = 0;}
             ShtunNpcs.Shtuxibus = NPC.whoAmI;
             NPC.dontTakeDamage = NPC.ai[0] < 0; //invul in p3
             ShouldDrawAura = false;
@@ -1455,78 +1464,6 @@ namespace ssm.Content.NPCs.Shtuxibus
                         Vector2 vel = pos.DirectionTo(player.Center);
                         Projectile.NewProjectile(NPC.GetSource_FromThis(), pos, vel, ModContent.ProjectileType<MutantPBG>(), FargoSoulsUtil.ScaledProjectileDamage(NPC.damage), 0f, Main.myPlayer);
                     }}}   
-    void BumbleDrift2()
-            {
-                if (!AliveCheck(player))
-                    return;
-                const int StartupTimeOtherwiseItKindaTelefragsYouSometimes = 45;
-                const int WindupTime = 180;
-                if (Timer == StartupTimeOtherwiseItKindaTelefragsYouSometimes)
-                {
-                    if (ShtunUtils.HostCheck)
-                        Projectile.NewProjectile(NPC.GetSource_FromThis(), NPC.Center, Vector2.Zero, ModContent.ProjectileType<DLCMutantSpearSpin>(), FargoSoulsUtil.ScaledProjectileDamage(NPC.damage), 0f, Main.myPlayer, NPC.whoAmI, WindupTime - StartupTimeOtherwiseItKindaTelefragsYouSometimes);
-                }
-
-                Vector2 targetPos = player.Center;
-                targetPos.Y += 450f * Math.Sign(NPC.Center.Y - player.Center.Y); //can be above or below
-                Movement(targetPos, 0.7f, fastX: false);
-                if (NPC.Distance(player.Center) < 200)
-                    Movement(NPC.Center + NPC.DirectionFrom(player.Center), 1.4f);
-
-                if (Timer > WindupTime)
-                {
-                    Timer = 0;
-                    BumbleDash2();
-                    NPC.netUpdate = true;
-                    return;
-                }
-                Timer++;
-            }  
-    void BumbleDash2()
-            {
-                if (!AliveCheck(player))
-                    return;
-                const int WindupTime = 30;
-
-                if (Timer < WindupTime)
-                {
-                    NPC.velocity *= 0.9f;
-                }
-                if (Timer == WindupTime)
-                {
-
-                    foreach (Projectile projectile in Main.projectile.Where(p => p != null && p.active && p.type == ModContent.ProjectileType<DLCMutantSpearDash>()))
-                    {
-                        projectile.Kill();
-                    }
-
-                    NPC.netUpdate = true;
-                    float speed = 45f;
-                    NPC.velocity = speed * NPC.DirectionTo(player.Center).RotatedBy(MathHelper.PiOver2 * 0.7f);
-                    if (ShtunUtils.HostCheck)
-                    {
-                        Projectile.NewProjectile(NPC.GetSource_FromThis(), NPC.Center, Vector2.Zero, ModContent.ProjectileType<DLCMutantSpearDash>(), FargoSoulsUtil.ScaledProjectileDamage(NPC.damage), 0f, Main.myPlayer, NPC.whoAmI);
-                        Projectile.NewProjectile(NPC.GetSource_FromThis(), NPC.Center, Vector2.Normalize(NPC.velocity), ModContent.ProjectileType<MutantDeathray2>(), FargoSoulsUtil.ScaledProjectileDamage(NPC.damage), 0f, Main.myPlayer);
-                        Projectile.NewProjectile(NPC.GetSource_FromThis(), NPC.Center, -Vector2.Normalize(NPC.velocity), ModContent.ProjectileType<MutantDeathray2>(), FargoSoulsUtil.ScaledProjectileDamage(NPC.damage), 0f, Main.myPlayer);
-                    }
-                }
-                if (Timer > WindupTime && Timer % 6 == 0 && ShtunUtils.HostCheck)
-                {
-                    Projectile.NewProjectile(NPC.GetSource_FromThis(), NPC.Center, -Vector2.Normalize(NPC.velocity).RotatedByRandom(MathHelper.PiOver4), ModContent.ProjectileType<FrostMist>(), FargoSoulsUtil.ScaledProjectileDamage(NPC.damage), 0f, Main.myPlayer, ai1: 55);
-                }
-                if (Timer >= WindupTime + 15)
-                {
-                    if (Counter > 7)
-                    {
-                        ChooseNextAttack(13, 21, 24, 29, 31, 33, 37, 41, 42, 44, 46, 47, 52, 55, 56, 58, 59, 60, 61, 62, 63, 64, 65);
-                        return;
-                    }
-                    Timer = WindupTime - 5;
-                    Counter++;
-                    NPC.netUpdate = true;
-                }
-                Timer++;
-            }   
     void Providence()
             {
                 if (!AliveCheck(player))
@@ -3485,7 +3422,7 @@ namespace ssm.Content.NPCs.Shtuxibus
             if (NPC.ai[1] > (120 ))
             {
                 if (!Main.dedServ && Main.LocalPlayer.active)
-                   // Main.LocalPlayer.GetModPlayer<FargoSoulsPlayer>().Screenshake = 2;
+                   Main.LocalPlayer.GetModPlayer<ShtunPlayer>().Screenshake = 2;
 
                 if (Main.netMode != NetmodeID.MultiplayerClient)
                 {
@@ -5430,7 +5367,7 @@ namespace ssm.Content.NPCs.Shtuxibus
                 DramaticTransition(true);
             }
             if (NPC.ai[1] < 60 && !Main.dedServ && Main.LocalPlayer.active)
-            // Main.LocalPlayer.GetModPlayer<FargoSoulsPlayer>().Screenshake = 2;
+            Main.LocalPlayer.GetModPlayer<ShtunPlayer>().Screenshake = 2;
 
             if (NPC.ai[1] == 360)
             {
@@ -6239,7 +6176,7 @@ namespace ssm.Content.NPCs.Shtuxibus
                     {
                            
                         Projectile.NewProjectile(NPC.GetSource_FromThis(), NPC.Center, Vector2.UnitX.RotatedBy(NPC.ai[3]),
-                       ModContent.ProjectileType<MutantGiantDeathray2>(), ShtunUtils.ScaledProjectileDamage(NPC.damage, 0.5f), 0f, Main.myPlayer, 0, NPC.whoAmI); 
+                        ModContent.ProjectileType<MutantGiantDeathray2>(), ShtunUtils.ScaledProjectileDamage(NPC.damage, 0.5f), 0f, Main.myPlayer, 0, NPC.whoAmI); 
                         Projectile.NewProjectile(NPC.GetSource_FromThis(), NPC.Center, 24f * Vector2.UnitX.RotatedBy(NPC.ai[3]), ModContent.ProjectileType<MutantEyeWavy>(), 0, 0f, Main.myPlayer,
                         Main.rand.NextFloat(0.5f, 1.25f) * (Main.rand.NextBool() ? -1 : 1), Main.rand.Next(10, 60));
                     }
@@ -6269,6 +6206,15 @@ namespace ssm.Content.NPCs.Shtuxibus
             }
             else
             {
+                if (!Main.dedServ)
+                {
+                    if (ShaderManager.TryGetFilter("FargowiltasSouls.FinalSpark", out ManagedScreenFilter filter))
+                    {
+                        filter.Activate();
+                        if (ShtunConfig.Instance.ForcedFilters && Main.WaveQuality == 0)
+                            Main.WaveQuality = 1;
+                    }
+                }
                 if (NPC.ai[1] % 3 == 0 && Main.netMode != NetmodeID.MultiplayerClient)
                 {
                     Projectile.NewProjectile(NPC.GetSource_FromThis(), NPC.Center, 24f * Vector2.UnitX.RotatedBy(NPC.ai[3]), ModContent.Find<ModProjectile>(fargosouls.Name, "MutantEyeWavy").Type, 0, 0f, Main.myPlayer,
@@ -6277,8 +6223,7 @@ namespace ssm.Content.NPCs.Shtuxibus
             }
             
             int endTime = 1520;
-           
-                endTime += 180;
+            if(Main.zenithWorld) {endTime += 4000;}
             if (++NPC.ai[2] > endTime)
             {
                 NPC.netUpdate = true;
@@ -6470,14 +6415,24 @@ namespace ssm.Content.NPCs.Shtuxibus
     public override void ModifyIncomingHit(ref NPC.HitModifiers modifiers)
     {
         if (Main.zenithWorld){
-        ref StatModifier local = ref modifiers.FinalDamage;
-        local *= 0.05f;}
+            ref StatModifier local = ref modifiers.FinalDamage;
+            local *= 0.05f;}
         else {
-        ref StatModifier local = ref modifiers.FinalDamage;
-        local *= 0.5f;}
+            ref StatModifier local = ref modifiers.FinalDamage;
+            local *= 0.5f;}
+        
+        if(modifiers.FinalDamage.Base > this.NPC.lifeMax / 10){
+            ShtunUtils.DisplayLocalizedText("USELESS! USELESS! USELESS! USELESS!", textColor);
+            modifiers.FinalDamage.Base = 1;
+        }
+
+        if (this.damageTotal < this.dpsCap * 60){
+            return;
+            modifiers.FinalDamage.Base = 0.0f;}
     }
     public override void ModifyNPCLoot(NPCLoot npcLoot){
         base.ModifyNPCLoot(npcLoot);
+        npcLoot.AddConditionalPerPlayer(() => CalDLCWorldSavingSystem.EternityRev, ModContent.ItemType<ChtuxlagorHeart>());
         npcLoot.AddConditionalPerPlayer(() => Main.zenithWorld, ModContent.ItemType<ShtuxibusBagGfb>());
         npcLoot.AddConditionalPerPlayer(() => !Main.zenithWorld, ModContent.ItemType<ShtuxibusBag>());
         npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<Items.Placeable.ShtuxibusTrophy>(), 10));
@@ -6520,5 +6475,10 @@ namespace ssm.Content.NPCs.Shtuxibus
     {
         hit.Crit = false;
         hit.InstantKill = false;
+    }
+
+    private void OnHit(float damage)
+    {
+      this.damageTotal += (int) damage * 60;
     }
 }}

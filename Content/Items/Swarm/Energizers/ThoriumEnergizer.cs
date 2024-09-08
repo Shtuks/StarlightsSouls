@@ -10,7 +10,8 @@ namespace ssm.Content.Items.Swarm.Energizers
     public class ThoriumEnergizer : ModItem
     {
         public override bool IsLoadingEnabled(Mod mod) {
-            return ModLoader.GetMod("ThoriumMod") != null;
+            //return ModLoader.GetMod("ThoriumMod") != null;
+            return false;
         }
 
         public override void SetDefaults()

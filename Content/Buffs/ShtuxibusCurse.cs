@@ -1,7 +1,12 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Terraria.Graphics.Effects;
 using FargowiltasSouls;
+using FargowiltasSouls.Core.Globals;
+using FargowiltasSouls.Core.Systems;
+using Luminance.Core.Graphics;
+using CalamityMod.CalPlayer;
 
 namespace ssm.Content.Buffs
 {
@@ -18,6 +23,15 @@ namespace ssm.Content.Buffs
 
     public override void Update(Player player, ref int buffIndex)
     {
+      if (!Main.dedServ)
+        {
+          if (ShaderManager.TryGetFilter("FargowiltasSouls.FinalSpark", out ManagedScreenFilter filter))
+            {
+              filter.Activate();
+              if (ShtunConfig.Instance.ForcedFilters && Main.WaveQuality == 0)
+              Main.WaveQuality = 1;
+            }
+        }
       if(Main.zenithWorld){
         player.endurance = 0.0f;
         player.immuneTime = 0;

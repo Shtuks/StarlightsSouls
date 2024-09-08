@@ -29,10 +29,10 @@ namespace ssm.Content.NPCs
 			Main.npcFrameCount[Type] = 25; // The total amount of frames the NPC has
 			NPCID.Sets.ExtraFramesCount[Type] = 9; // Generally for Town NPCs, but this is how the NPC does extra things such as sitting in a chair and talking to other NPCs. This is the remaining frames after the walking frames.
 			NPCID.Sets.AttackFrameCount[Type] = 4; // The amount of frames in the attacking animation.
-			NPCID.Sets.DangerDetectRange[Type] = 10000; // The amount of pixels away from the center of the NPC that it tries to attack enemies.
+			NPCID.Sets.DangerDetectRange[Type] = 100000; // The amount of pixels away from the center of the NPC that it tries to attack enemies.
 			NPCID.Sets.AttackType[Type] = 1; // The type of attack the Town NPC performs. 0 = throwing, 1 = shooting, 2 = magic, 3 = melee
 			NPCID.Sets.AttackTime[Type] = 10; 	// The amount of time it takes for the NPC's attack animation to be over once it starts.
-			NPCID.Sets.AttackAverageChance[Type] = 5; // The denominator for the chance for a Town NPC to attack. Lower numbers make the Town NPC appear more aggressive.
+			NPCID.Sets.AttackAverageChance[Type] = 1; // The denominator for the chance for a Town NPC to attack. Lower numbers make the Town NPC appear more aggressive.
 			NPCID.Sets.HatOffsetY[Type] = 4;
 			NPCID.Sets.ShimmerTownTransform[NPC.type] = false;
 			NPCID.Sets.ShimmerTownTransform[Type] = false;
@@ -99,42 +99,6 @@ namespace ssm.Content.NPCs
 		string chosenChat = chat;
 		return chosenChat;}
 
-		/*public override string GetChat()
-        {
-			WeightedRandom<string> dialogue = new WeightedRandom<string>();
-
-			dialogue.Add(this.GetLocalizedValue("Mods.ssm.NPCs.ShtuxianHarbringer.Chat.Normal0"));
-			dialogue.Add(this.GetLocalizedValue("Mods.ssm.NPCs.ShtuxianHarbringer.Chat.Normal1"));
-			dialogue.Add(this.GetLocalizedValue("Mods.ssm.NPCs.ShtuxianHarbringer.Chat.Normal2"));
-			dialogue.Add(this.GetLocalizedValue("Mods.ssm.NPCs.ShtuxianHarbringer.Chat.Normal3"));
-			dialogue.Add(this.GetLocalizedValue("Mods.ssm.NPCs.ShtuxianHarbringer.Chat.Normal4"));
-			dialogue.Add(this.GetLocalizedValue("Mods.ssm.NPCs.ShtuxianHarbringer.Chat.Normal5"));
-			dialogue.Add(this.GetLocalizedValue("Mods.ssm.NPCs.ShtuxianHarbringer.Chat.Normal6"));
-			dialogue.Add(this.GetLocalizedValue("Mods.ssm.NPCs.ShtuxianHarbringer.Chat.Normal7"));
-			dialogue.Add(this.GetLocalizedValue("Mods.ssm.NPCs.ShtuxianHarbringer.Chat.Normal8"));
-			dialogue.Add(this.GetLocalizedValue("Mods.ssm.NPCs.ShtuxianHarbringer.Chat.Normal9"));
-			dialogue.Add(this.GetLocalizedValue("Mods.ssm.NPCs.ShtuxianHarbringer.Chat.Normal10"));
-			dialogue.Add(this.GetLocalizedValue("Mods.ssm.NPCs.ShtuxianHarbringer.Chat.Normal11"));
-			dialogue.Add(this.GetLocalizedValue("Mods.ssm.NPCs.ShtuxianHarbringer.Chat.Normal12"));
-			dialogue.Add(this.GetLocalizedValue("Mods.ssm.NPCs.ShtuxianHarbringer.Chat.Normal13"));
-			dialogue.Add(this.GetLocalizedValue("Mods.ssm.NPCs.ShtuxianHarbringer.Chat.Normal14"));
-
-			if (NPC.AnyNPCs(NPCType<WITCH>()))
-                dialogue.Add(this.GetLocalizedValue("Mods.ssm.NPCs.ShtuxianHarbringer.Chat.Calamitas"), 1.45);
-			if (NPC.AnyNPCs(NPCType<Mutant>()))
-                dialogue.Add(this.GetLocalizedValue("Mods.ssm.NPCs.ShtuxianHarbringer.Chat.Mutant"), 2);
-
-            if (WorldSavingSystem.MasochistModeReal)
-                dialogue.Add(this.GetLocalizedValue("Mods.ssm.NPCs.ShtuxianHarbringer.Chat.MasoMode"), 1);
-			if (Main.zenithWorld)
-                dialogue.Add(this.GetLocalizedValue("Mods.ssm.NPCs.ShtuxianHarbringer.Chat.ZenithSeed"), 1.45);
-
-			if (Main.rand.NextBool(745))
-                return this.GetLocalizedValue("Mods.ssm.NPCs.ShtuxianHarbringer.Chat.Easter");
-
-            return dialogue;
-        }*/
-
 		public override bool PreAI(){
       	if (!NPC.AnyNPCs(ModContent.NPCType<Shtuxibus.Shtuxibus>()))
       	return true;
@@ -145,7 +109,8 @@ namespace ssm.Content.NPCs
 		public override void AddShops()
         {
             var npcShop = new NPCShop(Type, ShopName)
-                .Add(new Item(ItemType<HentaiSpear>()) { shopCustomPrice = Item.buyPrice(copper: 1000000) })
+                .Add(new Item(ItemType<HentaiSpear>()) { shopCustomPrice = Item.buyPrice(copper: 10000000) })
+				.Add(new Item(ItemType<ShtuxianCurse>()) { shopCustomPrice = Item.buyPrice(copper: 1000000) })
             ;
             npcShop.Register();
         }

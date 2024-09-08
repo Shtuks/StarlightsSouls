@@ -21,12 +21,9 @@ namespace ssm.Content.Buffs
         if (Main.debuff[index])
         {
           player.buffImmune[index] = true;
-          if (this.calamity != null)
-          {
-            player.buffImmune[ModContent.Find<ModBuff>(this.calamity.Name, "RageMode").Type] = true;
-            player.buffImmune[ModContent.Find<ModBuff>(this.calamity.Name, "AdrenalineMode").Type] = true;
-            //player.buffImmune[this.mod.BuffType("ChtuxlagorInferno")] = false;
-          }
+          player.buffImmune[ModContent.Find<ModBuff>(this.calamity.Name, "RageMode").Type] = false;
+          player.buffImmune[ModContent.Find<ModBuff>(this.calamity.Name, "AdrenalineMode").Type] = false;
+          //player.buffImmune[this.mod.BuffType("ChtuxlagorInferno")] = false;
         }
       }
     }

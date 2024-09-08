@@ -42,5 +42,11 @@ namespace ssm
     [BackgroundColor(60, 200, 60, 192)]
     [DefaultValue(true)]
     public bool ShtuxibusBreakRodOfHarmony { get; set; }
+
+    [Header("Visual")]
+
+    [BackgroundColor(60, 200, 60, 192)]
+    [DefaultValue(true)]
+    public bool ForcedFilters;
   }
 }

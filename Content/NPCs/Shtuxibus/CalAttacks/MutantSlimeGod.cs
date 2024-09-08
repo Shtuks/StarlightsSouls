@@ -75,13 +75,11 @@ namespace ssm.Content.NPCs.Shtuxibus.CalAttacks
 
         public override void OnHitPlayer(Player target, Player.HurtInfo info)
         {
-            if (WorldSavingSystem.EternityMode)
-                target.AddBuff(ModContent.BuffType<MutantFangBuff>(), 180);
+            target.AddBuff(ModContent.BuffType<MutantFangBuff>(), 180);
             base.OnHitPlayer(target, info);
         }
         public override void OnKill(int timeLeft)
         {
-
             Color dustColor = Crimson ? Color.Crimson : Color.Lavender;
             dustColor.A = 150;
             for (int i = 0; i < 20; i++)

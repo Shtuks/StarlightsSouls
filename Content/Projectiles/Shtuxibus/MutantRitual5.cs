@@ -19,10 +19,7 @@ namespace ssm.Content.Projectiles.Shtuxibus
 
         public override void SetStaticDefaults()
         {
-            // DisplayName.SetDefault("Mutant Seal");
             base.SetStaticDefaults();
-            Main.projFrames[Projectile.type] = 1;
-            Terraria.ID.ProjectileID.Sets.DrawScreenCheckFluff[Projectile.type] = 2400;
         }
 
         public override void SetDefaults()

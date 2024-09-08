@@ -18,15 +18,15 @@ using Terraria.DataStructures;
 using CalamityMod.Items.Materials;
 using FargowiltasSouls.Core.Toggler;
 using Fargowiltas.Items.Tiles;
-using FargowiltasSouls.Content.Items;
 using FargowiltasSouls.Core.AccessoryEffectSystem;
 using ssm.Content.SoulToggles;
+using ssm.Content.Items.Accessories;
 using ssm.Core;
 
 
 namespace ssm.Content.Items.Accessories
 {
-  public class CalamitySoul : SoulsItem
+  public class CalamitySoul : BaseSoul
   {
     private readonly Mod FargoCross = Terraria.ModLoader.ModLoader.GetMod("FargowiltasCrossmod");
     private readonly Mod FargoSoul = Terraria.ModLoader.ModLoader.GetMod("FargowiltasSouls");

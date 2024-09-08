@@ -1,15 +1,34 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Terraria;
+using Terraria.ModLoader;
+using Terraria.DataStructures;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Terraria;
-using Terraria.DataStructures;
+using Terraria.GameContent;
 using Terraria.Graphics.Shaders;
+using FargowiltasSouls.Content.Items.Materials;
 using Terraria.ID;
-using Terraria.ModLoader;
-using ssm;
+using FargowiltasSouls.Content.Items;
+using FargowiltasSouls.Content.Items.Armor;
+using FargowiltasSouls.Content.Items.Accessories.Souls;
+using Fargowiltas.Items.Tiles;
+using Terraria.Localization;
+using Terraria.DataStructures;
+using FargowiltasSouls.Core.Toggler;
+using Fargowiltas.Items.Tiles;
+using FargowiltasSouls.Core.AccessoryEffectSystem;
+using ssm.Content.SoulToggles;
+using ssm.Content.Items.Accessories;
+using ssm.Core;
+using FargowiltasSouls.Content.Items.Accessories.Enchantments;
 
 namespace ssm.Content.Items.Accessories
 {
-  public class NekomiEnchant : ModItem
+  public class NekomiEnchant : BaseEnchant
   {
     private readonly Mod FargoSoul = Terraria.ModLoader.ModLoader.GetMod("FargowiltasSouls");
 
@@ -21,6 +40,8 @@ namespace ssm.Content.Items.Accessories
       this.Item.rare = 10;
       this.Item.accessory = true;
     }
+
+    public override Color nameColor => new(200, 20, 250);
 
     public override bool PreDrawTooltipLine(DrawableTooltipLine line, ref int yOffset)
     {
@@ -37,11 +58,12 @@ namespace ssm.Content.Items.Accessories
 
     public override void UpdateAccessory(Player player, bool hideVisual)
     {
+      if(player.AddEffect<NekomiEffect>(Item)){
       //player.GetModPlayer<ShtunPlayer>().equippedNekomiEnchantment = true;
       ModContent.Find<ModItem>(this.FargoSoul.Name, "SparklingAdoration").UpdateAccessory(player, false);
       ModContent.Find<ModItem>(this.FargoSoul.Name, "NekomiHood").UpdateArmorSet(player);
       ModContent.Find<ModItem>(this.FargoSoul.Name, "NekomiHoodie").UpdateArmorSet(player);
-      ModContent.Find<ModItem>(this.FargoSoul.Name, "NekomiLeggings").UpdateArmorSet(player);
+      ModContent.Find<ModItem>(this.FargoSoul.Name, "NekomiLeggings").UpdateArmorSet(player);}
       player.buffImmune[ModContent.Find<ModBuff>(this.FargoSoul.Name, "DeviPresenceBuff").Type] = true;
     }
 
@@ -56,6 +78,12 @@ namespace ssm.Content.Items.Accessories
       recipe.AddIngredient(this.FargoSoul, "NekomiLeggings", 1);
       recipe.AddTile(ModContent.Find<ModTile>("Fargowiltas", "CrucibleCosmosSheet"));
       recipe.Register();
+    }
+
+    public class NekomiEffect : AccessoryEffect
+    {
+      public override Header ToggleHeader => Header.GetHeader<EternityForceHeader>();
+      public override int ToggleItemType => ModContent.ItemType<NekomiHood>();
     }
   }
 }

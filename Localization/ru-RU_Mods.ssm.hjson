@@ -769,6 +769,100 @@ Items: {
 		DisplayName: Overloaded Siren Pearl
 		Tooltip: ""
 	}
+
+	DemonshadeHelmMagic: {
+		DisplayName: Demonshade Helm Magic
+		Tooltip: ""
+	}
+
+	DemonshadeHelmRanged: {
+		DisplayName: Demonshade Helm Ranged
+		Tooltip: ""
+	}
+
+	DemonshadeHelmRogue: {
+		DisplayName: Demonshade Helm Rogue
+		Tooltip: ""
+	}
+
+	DemonshadeHelmSummon: {
+		DisplayName: Demonshade Helm Summon
+		Tooltip: ""
+	}
+
+	EridanusEnchant: {
+		DisplayName: Eridanus Enchant
+		/* Tooltip:
+			'''
+			[i:FargowiltasSouls/EridanusHat] [i:FargowiltasSouls/EridanusBattleplate] [i:FargowiltasSouls/EridanusLegwear]
+			20% damage increace for current class20% damage increace for current class
+			10% crit chance increace for current class
+			10% attack speed increace for current class
+			Press DOWN double times activate Eridanus' blessing
+			''' */
+	}
+
+	EternityForce: {
+		DisplayName: Eternity Force
+		/* Tooltip:
+			'''
+			Massive increacement to all offencive stats.
+			[i:ssm/GaiaEnchant] Press DOWN double times activate Attacking mode which have following effects:
+			30% damage and 15% crit chance increace for current class
+			Increace armor penetration by 20
+			Decreace defence by 30, endurance by 15% and max life by 10%
+			[i:ssm/EridanusEnchant] Press DOWN double times activate Eridanus' blessing
+			[i:ssm/StyxEnchant] Can endure any attack and survive with one life, endurance recovers when you reach max life
+			Increased damage gained Sparkling Adoration graze, halves heart cooldown, Abominationn periodically manifests to support your critical hits
+			Attack enemies to charge energy, reduces damage taken for energy, Your attacks inflict Abominable Fang
+			Double tap down key to release energy as homing shots & brandish a blade of infernal magic when fully charged
+			[i:ssm/PhantaplazmalEnchant] 25% increased graze bonus damage cap
+			Converts Sparkling Adoration hearts to love rays, Increases damage gained per graze
+			Increases Spectral Abominationn respawn rate & damage
+			Press the bomb key to unleash a wave of spheres and destroy most hostile projectiles, it has 60 second cooldown
+			Phantasmal eyes will shoot phantasmal deathray at nearby enemies
+			Summons spectral abomination, you erupt into a massive deathray when revived
+			[i:ssm/NekomiEnchant] Graze attacks to gain up to x1.25 increased damage
+			Damage bonus decreases over time and is fully lost on hit
+			Your attacks periodically summon life draining heart
+			Graze attacks to temporarily charge energy
+			Increases life regeneration when damaged at the cost of some energy
+			Double tap down key to release energy as life draining heart
+			Wield a demon axe of love and justice when fully charged
+			''' */
+	}
+
+	GaiaEnchant: {
+		DisplayName: Gaia Enchant
+		/* Tooltip:
+			'''
+			[i:FargowiltasSouls/GaiaHelmet] [i:FargowiltasSouls/GaiaPlate] [i:FargowiltasSouls/GaiaGreaves]
+			10% decreace mana usage and increace chance not to consume ammo
+			10% mele attack speed increacement
+			4 additional minion slots
+			Press DOWN double times activate Attacking mode which have following effects:
+			30% damage and 15% crit chance increace for current class
+			Increace armor penetration by 20
+			Decreace defence by 30, endurance by 15% and max life by 10%
+			''' */
+	}
+
+	CelestialEnchant: {
+		DisplayName: Celestial Enchant
+		Tooltip: ""
+	}
+
+	ChtuxlagorHeart: {
+		// DisplayName: Chtux'Lag'Or heart
+		/* Tooltip:
+			'''
+			Set Mutant Bomb CD to 30 seconds instead of 60.
+			Grants immunity to "Shtuxibus Curse", Debuff "Chtux'lag'or inferno" deal lower damage
+			100% increace graze bonus damage cap, Increace damage of spectral siblings.
+			You can't take more than 1000 damage.
+			'The mechanical heart of a puppet of an incomprehensible being'
+			''' */
+	}
 }
 
 Buffs: {
@@ -816,6 +910,21 @@ Buffs: {
 		DisplayName: Сила Ярима
 		Description: Твоя сила соперничает с Тираном Джунглей
 	}
+
+	CelestialPowerBuff: {
+		DisplayName: Celestial Power Buff
+		Description: Mods.ssm.Buffs.CelestialPowerBuff.Description
+	}
+
+	DeviSoulBuff: {
+		DisplayName: Devi Soul Buff
+		Description: Mods.ssm.Buffs.DeviSoulBuff.Description
+	}
+
+	MutantSoulBuff: {
+		DisplayName: Mutant Soul Buff
+		Description: Mods.ssm.Buffs.MutantSoulBuff.Description
+	}
 }
 
 NPCs: {
@@ -835,16 +944,15 @@ NPCs: {
 			HateBiome: Ненавижу {BiomeName}.
 			LoveNPC: Мне нравится {NPCName}. Думаешь я ей тоже нравлюсь?
 			LikeNPC: Мне нравится с {NPCName}.
+			DislikeNPC: "{NPCName} is getting on my nerves. I would prefer not to exist near him"
 			HateNPC: УБЕРИ {NPCName} ОТ МЕНЯ! Я НЕНАВИЖУ ЕГО.
 			LikeNPC_Princess: Я не понимаю почему всем нравится {NPCName}. Чего в ней такого особенного
 			Princess_LovesNPC: Блять.
 		}
 
 		Chat: {
-			Easter: Слушай а ты нигде не видел странного кота. Он выглядел как бананчик из измерения би. Я пока не понял кто он. Еврей или гений раз смог перемещаться по измерениям. Ну если что то из этого прада ты всё равно не пройдёшь пучеглазика на мазахисте.
 			ZenithSeed: Что происходит с этим миром? Почему все перевернуто и я чувствую прилив сил?
 			Defeat: Ну что же. Да. Да да. Да да да да да. А ну и поздравляю. Ты прошел модовую террарию.
-			ShtuxiumSuit: Ты исспользовал штуксийские технологии для своего снаряжения? Какой ужас. Я бы сделал все гораздо лучше. У тебя действительно нет инжинерного образования?
 			Calamitas: Как ты думаешь может ли Каламитас подойти ко мне и... Забудь.
 			Mutant: Мутант такой странный. В любом случае с ним забавно пить.
 			MasoMode: И это сложнейшая сложность из всех модов? Я слышал о режиме Сатаниста и Мазохизме EX
@@ -937,6 +1045,16 @@ NPCs: {
 Toggler: {
 	CalamitySoulHeader: Душа Бедствия
 	ShatteredCommunityEffect: Раздолбаное сообщество
+	EridanusEffect: Благославление Эридана
+	GaiaEffect: Атакующий режим
+	NekomiEffect: Некоми сет
+	PhantaplazmalEffect: Сет Мутанта
+	StyxEffect: Зарядка энергии
+	MutantSoulEffect: Спектральный Мутант
+	DeviEffect: Спектральная Девиантт
+	// EternityForceHeader: Eternity Force
+	// ChtuxlagorHeartHeader: Chtux'lag'or Heart
+	// ChtuxlagorHeartEffect: Chtux'lag'or's Wrath
 }
 
 Tiles: {
@@ -948,7 +1066,7 @@ Tiles: {
 ItemClass.Chtuxlagor: ∞ Предмет Штукс'лаг'ора ∞
 
 WorldGen: {
-	BlessedWithShtuxiumOreMessage:Концентрированная штуксийская энергия выпущена в глубине мира.
+	BlessedWithShtuxiumOreMessage: Концентрированная штуксийская энергия выпущена в глубине мира.
 	ShtuxiumOrePassMessage: А тут типа что то писать надо было?
 }
 
@@ -1022,6 +1140,18 @@ Projectiles: {
 	MutantPolter.DisplayName: Mutant Polter
 	MutantSlimeGod.DisplayName: Mutant Slime God
 	MutantHeal.DisplayName: Mutant Heal
+	ShtuxibusSwordAttack.DisplayName: Shtuxibus Sword Attack
+	MutantDoGBody.DisplayName: Mutant Do G Body
+	MutantDoGHead.DisplayName: Mutant Do G Head
+	MutantDoGTail.DisplayName: Mutant Do G Tail
+	MutantOldDuke.DisplayName: Mutant Old Duke
+	MutantSCal.DisplayName: Mutant S Cal
+	DevianttSoul.DisplayName: Deviantt Soul
+	MutantSoul.DisplayName: Mutant Soul
+	NebulaP.DisplayName: Nebula P
+	SolarP.DisplayName: Solar P
+	StardustP.DisplayName: Stardust P
+	VortexP.DisplayName: Vortex P
 }
 
 Biomes: {
@@ -1031,8 +1161,10 @@ Biomes: {
 	}
 }
 
-Bestiary.Monstrocity: 
-Shtuxibus: Shtuxibus is being came from other world called Shtundex. The shard of omnipotent Chtux'Lag'or and embodiment of energy concept.
+Bestiary: {
+	Monstrocity: TEST
+	Shtuxibus: Shtuxibus is being came from other world called Shtundex. The shard of omnipotent Chtux'Lag'or and embodiment of energy concept.
+}
 
 Configs: {
 	ShtunConfig: {
@@ -1043,12 +1175,13 @@ Configs: {
 
 		ShtuxibusMultiversalHorrorOfChtuxlagorOnGFB: {
 			Tooltip: ""
-			Label: Shtuxibus Multiversal Horror Of Chtuxlagor On G F B
+			Label: Shtuxibus Multiversal Horror Of Chtuxlagor On GFB
 		}
 
 		Headers: {
 			Bosses: Bosses Header
 			Crafting: Crafting Header
+			Visual: Visual Header
 		}
 
 		ItemsUsedInSingularity: {
@@ -1076,6 +1209,11 @@ Configs: {
 		ShtuxibusKillInGodmode: {
 			Label: Shtuxibus Kill In Godmode
 			Tooltip: ""
+		}
+
+		ForcedFilters: {
+			Tooltip: ""
+			Label: Forced Filters
 		}
 	}
 }

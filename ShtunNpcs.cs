@@ -75,6 +75,7 @@ namespace ssm
         public int BeetleTimer;
         public bool PaladinsShield;
         public bool isWaterEnemy;
+        public bool CelestialPower;
         internal bool SwarmActive;
         internal bool NoLoot = false;
         public bool HasWhipDebuff;

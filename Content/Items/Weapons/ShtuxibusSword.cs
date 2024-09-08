@@ -73,7 +73,7 @@ namespace ssm.Content.Items.Weapons
 
             if (forceSwordTimer > 0)
             {
-                Item.shoot = ModContent.ProjectileType<HentaiSword>();
+                Item.shoot = ModContent.ProjectileType<ShtuxibusSwordAttack>();
                 Item.shootSpeed = 6f;
 
                 Item.useAnimation = 16;
@@ -126,7 +126,7 @@ namespace ssm.Content.Items.Weapons
                 }
                 else
                 {
-                    Item.shoot = ModContent.ProjectileType<HentaiSword>();
+                    Item.shoot = ModContent.ProjectileType<ShtuxibusSwordAttack>();
                     Item.shootSpeed = 6f;
                     Item.useStyle = ItemUseStyleID.Swing;
                 }
