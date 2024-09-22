@@ -4,6 +4,7 @@ using CalamityMod.NPCs.TownNPCs;
 using System.Collections.Generic;
 using ssm.Systems;
 using ssm.Content.NPCs.Shtuxibus;
+using ssm.Content.Items.Consumables;
 using Terraria;
 using Terraria.GameContent;
 using Terraria.GameContent.Bestiary;
@@ -109,7 +110,7 @@ namespace ssm.Content.NPCs
 		public override void AddShops()
         {
             var npcShop = new NPCShop(Type, ShopName)
-                .Add(new Item(ItemType<HentaiSpear>()) { shopCustomPrice = Item.buyPrice(copper: 10000000) })
+                .Add(new Item(ItemType<StarlightVodka>()) { shopCustomPrice = Item.buyPrice(copper: 1000000) })
 				.Add(new Item(ItemType<ShtuxianCurse>()) { shopCustomPrice = Item.buyPrice(copper: 1000000) })
             ;
             npcShop.Register();

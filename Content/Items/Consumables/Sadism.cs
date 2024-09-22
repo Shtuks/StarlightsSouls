@@ -21,7 +21,7 @@ namespace ssm.Content.Items.Consumables
       this.Item.buffType = ModContent.BuffType<SadismEX>();
       this.Item.buffTime = 25200;
       this.Item.UseSound = SoundID.Item3;
-      this.Item.value = Item.sellPrice(0, 5, 0, 0);
+      this.Item.value = Item.sellPrice(10, 0, 0, 0);
     }
   }
 }

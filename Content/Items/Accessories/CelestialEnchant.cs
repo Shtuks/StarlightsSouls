@@ -25,9 +25,11 @@ using ssm.Content.Items.Accessories;
 using ssm.Core;
 using ssm;
 using ssm.Content.Buffs.Minions;
+using FargowiltasSouls.Core.Toggler.Content;
 using FargowiltasSouls.Content.Items.Armor;
 using FargowiltasSouls.Content.Items.Accessories.Masomode;
 using FargowiltasSouls.Content.Items.Accessories.Enchantments;
+using CalamityMod.Items.Materials;
 
 namespace ssm.Content.Items.Accessories
 {
@@ -56,13 +58,16 @@ namespace ssm.Content.Items.Accessories
     public override void AddRecipes()
     {
       Recipe recipe = this.CreateRecipe(1);
+      recipe.AddIngredient<GalacticaSingularity>(10);
+      recipe.AddIngredient(3467, 10);
+      recipe.AddIngredient<AstralBar>(20);
       recipe.AddTile(ModContent.Find<ModTile>("Fargowiltas", "CrucibleCosmosSheet"));
       recipe.Register();
     }
 
     public class CelestialEffect : AccessoryEffect
     {
-      public override Header ToggleHeader => Header.GetHeader<EternityForceHeader>();
+      public override Header ToggleHeader => Header.GetHeader<CosmoHeader>();
       public override int ToggleItemType => ModContent.ItemType<CelestialEnchant>();
     }
   }

@@ -90,7 +90,8 @@ namespace ssm.Sky
 
         private Color ColorToUse(ref float opacity)
         {
-            Color color = Main.zenithWorld ? Color.Black : new(50, 250, 50);
+
+            Color color = new(50, 250, 50);
             opacity = intensity * 0.5f + lifeIntensity * 0.5f;
 
             if (specialColorLerp > 0 && specialColor != null)

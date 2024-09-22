@@ -7,6 +7,8 @@ using Terraria;
 using Terraria.ModLoader;
 using Terraria.GameContent;
 using FargowiltasSouls.Content.Items.Materials;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using Terraria.ID;
 using FargowiltasSouls.Content.Items;
 using FargowiltasSouls.Content.Items.Accessories.Souls;
@@ -20,25 +22,18 @@ using FargowiltasSouls.Core.AccessoryEffectSystem;
 using ssm.Content.SoulToggles;
 using ssm.Content.Items.Accessories;
 using ssm.Core;
+using FargowiltasSouls.Content.Items.Accessories.Enchantments;
 using ssm.Content.Buffs.Minions;
 using FargowiltasSouls.Content.Items.Accessories.Forces;
 
 namespace ssm.Content.Items.Accessories
 {
-  public class EternityForce : BaseForce
+  public class EternityForce : BaseEnchant
   {
     private readonly Mod FargoSoul = Terraria.ModLoader.ModLoader.GetMod("FargowiltasSouls");
 
     public override void SetStaticDefaults() {
-      ItemID.Sets.ItemNoGravity[this.Type] = true;
-      Enchants[Type] = new int[]
-        {
-          ModContent.ItemType<StyxEnchant>(),
-          ModContent.ItemType<PhantaplazmalEnchant>(),
-          ModContent.ItemType<NekomiEnchant>(),
-          ModContent.ItemType<EridanusEnchant>(),
-          ModContent.ItemType<GaiaEnchant>(),
-        };}
+      ItemID.Sets.ItemNoGravity[this.Type] = true;}
 
     public override void SetDefaults()
     {
@@ -46,6 +41,8 @@ namespace ssm.Content.Items.Accessories
       this.Item.rare = 10;
       this.Item.accessory = true;
     }
+
+    public override Color nameColor => new(255, 255, 255);
 
     public override void UpdateAccessory(Player player, bool hideVisual)
     {
@@ -62,6 +59,11 @@ namespace ssm.Content.Items.Accessories
     public override void AddRecipes()
     {
       Recipe recipe = this.CreateRecipe(1);
+      recipe.AddIngredient<GaiaEnchant>(1);
+      recipe.AddIngredient<EridanusEnchant>(1);
+      recipe.AddIngredient<StyxEnchant>(1);
+      recipe.AddIngredient<PhantaplazmalEnchant>(1);
+      recipe.AddIngredient<NekomiEnchant>(1);
       recipe.AddTile(ModContent.Find<ModTile>("Fargowiltas", "CrucibleCosmosSheet"));
       recipe.Register();
     }

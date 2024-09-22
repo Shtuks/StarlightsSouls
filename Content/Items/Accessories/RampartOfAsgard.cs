@@ -1,4 +1,4 @@
-/*using CalamityMod;
+using CalamityMod;
 using CalamityMod.Buffs.DamageOverTime;
 using CalamityMod.CalPlayer;
 using CalamityMod.CalPlayer.Dashes;
@@ -9,6 +9,7 @@ using CalamityMod.Tiles.Furniture.CraftingStations;
 using Microsoft.Xna.Framework;
 using System;
 using Terraria;
+using ssm;
 using Terraria.ModLoader;
 
 namespace ssm.Content.Items.Accessories
@@ -17,9 +18,9 @@ namespace ssm.Content.Items.Accessories
   {
     private const double ContactDamageReduction = 0.15;
     public const double DefenseDamageMultiplier = 0.5;
-    internal static readonly int NanomachinesDuration = 120;
-    internal static readonly int NanomachinesHealPerFrame = 3;
-    internal static readonly int NanomachinePauseAfterDamage = 60;
+    private readonly int NanomachinesDuration = 120;
+    private readonly int NanomachinesHealPerFrame = 3;
+    private readonly int NanomachinePauseAfterDamage = 60;
 
     public override void SetStaticDefaults() => this.Item.ResearchUnlockCount = 1;
 
@@ -36,20 +37,19 @@ namespace ssm.Content.Items.Accessories
     public override void UpdateAccessory(Player player, bool hideVisual)
     {
       CalamityPlayer calamityPlayer = player.Calamity();
-      ShtunPlayer ShtunPlayer = player.ShtunPlayer();
       calamityPlayer.sponge = true;
       calamityPlayer.spongeShieldVisible = !hideVisual;
         if (calamityPlayer.SpongeShieldDurability > 0)
         {
         Player player1 = player;
-        player1.statDefense = Player.DefenseStat.op_Addition(player1.statDefense, TheSponge.ShieldActiveDefense);
+        player1.statDefense = player.statDefense += TheSponge.ShieldActiveDefense;
         player.endurance += TheSponge.ShieldActiveDamageReduction;
         }
-        if (!ShtunPlayer.hadNanomachinesLastFrame)
+        if (!player.GetModPlayer<ShtunPlayer>().hadNanomachinesLastFrame)
         calamityPlayer.adrenaline = 0.0f;
         calamityPlayer.draedonsHeart = true;
-        ShtunPlayer.hadNanomachinesLastFrame = true;
-        calamityPlayer.AdrenalineDuration = RampartofSoteria.NanomachinesDuration;
+        player.GetModPlayer<ShtunPlayer>().hadNanomachinesLastFrame = true;
+        calamityPlayer.AdrenalineDuration = this.NanomachinesDuration;
         calamityPlayer.contactDamageReduction += 0.15;
         calamityPlayer.absorber = true;
         calamityPlayer.dAmulet = true;
@@ -104,8 +104,6 @@ namespace ssm.Content.Items.Accessories
         player.buffImmune[ModContent.BuffType<GodSlayerInferno>()] = true;
         if (!Collision.DrownCollision(((Entity) player).position, ((Entity) player).width, ((Entity) player).height, player.gravDir, false))
           return;
-        Player player3 = player;
-        player3.statDefense = Player.DefenseStat.op_Addition(player3.statDefense, 20);
     }
 
     public override void AddRecipes()
@@ -113,4 +111,4 @@ namespace ssm.Content.Items.Accessories
         this.CreateRecipe(1).AddIngredient<AsgardianAegis>(1).AddIngredient<RampartofDeities>(1).AddIngredient<Radiance>(1).AddIngredient<TheSponge>(1).AddIngredient<TheAbsorber>(1).AddIngredient<DraedonsHeart>(1).AddIngredient<ShadowspecBar>(20).AddTile<DraedonsForge>().Register();
     }
     }
-}*/
+}

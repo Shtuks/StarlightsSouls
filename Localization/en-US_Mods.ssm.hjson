@@ -856,12 +856,23 @@ Items: {
 		DisplayName: Chtux'Lag'Or heart
 		Tooltip:
 			'''
+			Your attacks inflict "Chtux'lag'or inferno".
 			Set Mutant Bomb CD to 30 seconds instead of 60.
 			Grants immunity to "Shtuxibus Curse", Debuff "Chtux'lag'or inferno" deal lower damage
 			100% increace graze bonus damage cap, Increace damage of spectral siblings.
 			You can't take more than 1000 damage.
 			'The mechanical heart of a puppet of an incomprehensible being'
 			'''
+	}
+
+	RampartOfAsgard: {
+		DisplayName: Rampart Of Asgard
+		Tooltip: ""
+	}
+
+	StarlightVodka: {
+		DisplayName: Starlight Vodka
+		Tooltip: ""
 	}
 }
 
@@ -913,17 +924,27 @@ Buffs: {
 
 	CelestialPowerBuff: {
 		DisplayName: Celestial Power Buff
-		Description: Mods.ssm.Buffs.CelestialPowerBuff.Description
+		Description: Celestial pillars protect you
 	}
 
 	DeviSoulBuff: {
-		DisplayName: Devi Soul Buff
-		Description: Mods.ssm.Buffs.DeviSoulBuff.Description
+		DisplayName: Deviantt Soul Buff
+		Description: Spectral Deviantt protect you
 	}
 
 	MutantSoulBuff: {
 		DisplayName: Mutant Soul Buff
-		Description: Mods.ssm.Buffs.MutantSoulBuff.Description
+		Description: Spectral Mutant protect you
+	}
+
+	StarlightVodkaBuff: {
+		DisplayName: Starlight Vodka Buff
+		Description: Mods.ssm.Buffs.StarlightVodkaBuff.Description
+	}
+
+	ChtuxlagorInfernoEX: {
+		Description: Mods.ssm.Buffs.ChtuxlagorInfernoEX.Description
+		DisplayName: Chtuxlagor Inferno E X
 	}
 }
 
@@ -957,7 +978,7 @@ NPCs: {
 			Mutant: Mutant is so strange. Anyway. I like drinking with him.
 			MasoMode: Is it the hardest difficulty of tml? I heard about Satanist mode and Maso EX.
 			Normal0: Hm. It's interesting to observe your progress. But you will never reach my level of power.
-			Normal1: Can i jump? Jeah. I have that thing you call 'space'.
+			Normal1: Can i jump? Yeah. I have that thing you call 'space'.
 			Normal2: Have you ever seen shtuxian before? I bet no!
 			Normal3: Who is Yharim? How many years you waiting for him to be added in game?
 			Normal4: Heh. Gods of this world so pathetic. Kill dragon and consume his soul? Don't make me laugh!
@@ -974,7 +995,7 @@ NPCs: {
 		}
 	}
 
-	ShtuxibusGFB.DisplayName: The eldrich multiversal horror of Chtux'Lag'Or
+	ShtuxibusGFB.DisplayName: The true eldrich multiversal horror of Chtux'Lag'Or EX
 
 	Shtuxibus: {
 		DisplayName: Shtuxibus
@@ -1071,13 +1092,13 @@ WorldGen: {
 }
 
 Projectiles: {
-	GiantDeathrayULTRA.DisplayName: Giant Deathray U L T R A
-	GiantDeathrayULTRA100.DisplayName: Giant Deathray U L T R A100
+	GiantDeathrayULTRA.DisplayName: Giant Deathray
+	GiantDeathrayULTRA100.DisplayName: Giant Deathray
 	WillDeathrayBig.DisplayName: Will Deathray Big
 	WillDeathrayBig20.DisplayName: Will Deathray Big20
 	WillDeathraySmall.DisplayName: Will Deathray Small
 	WillDeathraySmall20.DisplayName: Will Deathray Small20
-	ProtoProjectileAimButOP.DisplayName: Proto Projectile Aim But O P
+	ProtoProjectileAimButOP.DisplayName: Proto Projectile
 	ProtoProjectile.DisplayName: Proto Projectile
 	AbomFlocko.DisplayName: Abom Flocko
 	AbomFlocko2.DisplayName: Abom Flocko2
@@ -1126,7 +1147,7 @@ Projectiles: {
 	MutantSphereSmall.DisplayName: Mutant Sphere Small
 	MutantSword.DisplayName: Mutant Sword
 	PhantasmalBlast.DisplayName: Phantasmal Blast
-	PhantasmalBlastTS.DisplayName: Phantasmal Blast T S
+	PhantasmalBlastTS.DisplayName: Phantasmal Blast TS
 	Shtuxibus.DisplayName: Shtuxibus
 	WillJavelin.DisplayName: Will Javelin
 	ShtuxibusSoulMinion.DisplayName: Shtuxibus Soul Minion
@@ -1136,16 +1157,16 @@ Projectiles: {
 	ShtuxibusSwordSwing.DisplayName: Shtuxibus Sword Swing
 	MutantAureusSpawn.DisplayName: Mutant Aureus Spawn
 	MutantHolyRay.DisplayName: Mutant Holy Ray
-	MutantPBG.DisplayName: Mutant P B G
+	MutantPBG.DisplayName: Mutant PBG
 	MutantPolter.DisplayName: Mutant Polter
 	MutantSlimeGod.DisplayName: Mutant Slime God
 	MutantHeal.DisplayName: Mutant Heal
 	ShtuxibusSwordAttack.DisplayName: Shtuxibus Sword Attack
-	MutantDoGBody.DisplayName: Mutant Do G Body
-	MutantDoGHead.DisplayName: Mutant Do G Head
-	MutantDoGTail.DisplayName: Mutant Do G Tail
+	MutantDoGBody.DisplayName: Mutant DoG Body
+	MutantDoGHead.DisplayName: Mutant DoG Head
+	MutantDoGTail.DisplayName: Mutant DoG Tail
 	MutantOldDuke.DisplayName: Mutant Old Duke
-	MutantSCal.DisplayName: Mutant S Cal
+	MutantSCal.DisplayName: Mutant SCal
 	DevianttSoul.DisplayName: Deviantt Soul
 	MutantSoul.DisplayName: Mutant Soul
 	NebulaP.DisplayName: Nebula P
@@ -1182,6 +1203,7 @@ Configs: {
 			Bosses: Bosses Header
 			Crafting: Crafting Header
 			Visual: Visual Header
+			Shtuxibus: Shtuxibus Header
 		}
 
 		ItemsUsedInSingularity: {
@@ -1214,6 +1236,11 @@ Configs: {
 		ForcedFilters: {
 			Tooltip: ""
 			Label: Forced Filters
+		}
+
+		Stalin: {
+			Label: Stalin
+			Tooltip: ""
 		}
 	}
 }

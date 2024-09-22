@@ -69,12 +69,11 @@ namespace ssm
 		public override uint ExtraPlayerBuffSlots => 300u;
         public override void Load(){
         SkyManager.Instance["ssm:Shtuxibus"] = new ShtuxibusSky();
+        //SkyManager.Instance["ssm:Shtuxibus"] = new ShtuxibusSky2();
         //CaughtNPCItem.Add("Shtuxibus", ModContent.NPCType<ShtuxianHarbringer>(), "'AND GODS WILL FALL!'");
         ModLoader.TryGetMod("BossChecklist", out Mod bossChecklist);
         furgus = ModLoader.GetMod("FargowiltasSouls");
         Instance = this;
-        //SkyManager.Instance["ssm:ShtuxibusSky2"] = new ShtuxibusSky2();
-        //SkyManager.Instance["ssm:ShtuxibusSky"] = new ShtuxibusSky();
             if (Main.netMode != NetmodeID.Server)
             {
                 #region shaders

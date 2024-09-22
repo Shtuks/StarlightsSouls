@@ -75,17 +75,10 @@ namespace ssm.Content.Buffs
 
     public override void Update(NPC npc, ref int buffIndex)
     {
-        npc.life = npc.life - 745745;
+        npc.life = npc.life - 745;
+        npc.lifeRegen -= 745;
         npc.defense = 0;
         npc.defDefense = 0;
-        npc.ichor = true;
-        npc.onFire = true;
-        npc.onFire2 = true;
-        npc.onFrostBurn = true;
-        npc.poisoned = true;
-        npc.shadowFlame = true;
-        npc.venom = true;
-        npc.betsysCurse = true;
         for (int index = 0; index < BuffLoader.BuffCount; ++index)
         {
             if (Main.debuff[index])

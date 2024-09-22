@@ -8,183 +8,183 @@ Items: {
 				He is clearest confirmation of this statement. I have no idea why he is here or where he came from.
 				The only thing is clear is that you didn't defeat him. He never fights seriously even with gods.
 				'''
-			DisplayName: Lore - Shtuxibus
+			DisplayName: История - Штуксибус
 		}
 	}
 
 	AdamantiteSingularity: {
-		DisplayName: Adamantite Singularity
+		DisplayName: Адамантитовая сингулярность
 		Tooltip: ""
 	}
 
 	AeraliteSingularity: {
-		DisplayName: Aeralite Singularity
+		DisplayName: Аэриалитовая сингулярность
 		Tooltip: ""
 	}
 
 	ShtuxianSoul: {
-		DisplayName: Soul of Shtundex
+		DisplayName: Душа Штукс'лаг'ора
 		Tooltip:
 			'''
-			Effects of [i:FargowiltasSouls/EternitySoul], [i:ssm/CalamitySoul], [i:ssm/NekomiEnchant], [i:ssm/StyxEnchant], [i:ssm/PhantaplazmalEnchant], [i:ssm/DemonshadeHelmetCat], [i:ssm/DemonshadeBreastplateCat], [i:ssm/DemonshadeLegginsCat]
-			Your attacks inflict Abominable Fang, Mutant Fang, God Eater
-			Grants immunity to all debuffs except "Chtux'lag'or Inferno" and "Shtuxibus Curse"
+			Эввекты [i:FargowiltasSouls/EternitySoul], [i:ssm/CalamitySoul], [i:ssm/EternityForce]
+			Ваши атаки наносят все дебаффы.
+			Имунитет ко всем дебаффам кроме "Инферно Штукс'лаг'ора" и "Проклятие Штуксибуса"
 			'God or whatever, all things acknowledge your claim to omnipotence.'
 			'''
 	}
 
 	AstralSingularity: {
-		DisplayName: Astral Singularity
+		DisplayName: Астральная сингулярность
 		Tooltip: ""
 	}
 
 	AuricSingularity: {
-		DisplayName: Auric Singularity
+		DisplayName: Ауритовая сингулярность
 		Tooltip: ""
 	}
 
 	ChlorophyteSingularity: {
-		DisplayName: Chlorophyte Singularity
+		DisplayName: Хлорофитовая сингулярность
 		Tooltip: ""
 	}
 
 	CobaltSingularity: {
-		DisplayName: Cobalt Singularity
+		DisplayName: Кобальтовая сингулярность
 		Tooltip: ""
 	}
 
 	CopperSingularity: {
-		DisplayName: Copper Singularity
+		DisplayName: Медная сингулярность
 		Tooltip: ""
 	}
 
 	CosmiliteSingularity: {
-		DisplayName: Cosmilite Singularity
+		DisplayName: Космилитовая сингулярность
 		Tooltip: ""
 	}
 
 	CrimtaneSingularity: {
-		DisplayName: Crimtane Singularity
+		DisplayName: Багротановая сингулярность
 		Tooltip: ""
 	}
 
 	CryoniteSingularity: {
-		DisplayName: Cryonite Singularity
+		DisplayName: Крионитовая сингулярность
 		Tooltip: ""
 	}
 
 	DemoniteSingularity: {
-		DisplayName: Demonite Singularity
+		DisplayName: Демонитовая сингулярность
 		Tooltip: ""
 	}
 
 	GoldSingularity: {
-		DisplayName: Gold Singularity
+		DisplayName: Золотая сингулярность
 		Tooltip: ""
 	}
 
 	HallowSingularity: {
-		DisplayName: Hallow Singularity
+		DisplayName: Осященная сингулярность
 		Tooltip: ""
 	}
 
 	HellstoneSingularity: {
-		DisplayName: Hellstone Singularity
+		DisplayName: Адская сингулярность
 		Tooltip: ""
 	}
 
 	LeadSingularity: {
-		DisplayName: Lead Singularity
+		DisplayName: Свинцовая сингулярность
 		Tooltip: ""
 	}
 
 	MeteoriteSingularity: {
-		DisplayName: Meteorite Singularity
+		DisplayName: Метеоритная сингулярность
 		Tooltip: ""
 	}
 
 	MythrillSingularity: {
-		DisplayName: Mythrill Singularity
+		DisplayName: Мифриловая сингулярность
 		Tooltip: ""
 	}
 
 	OrichalcumSingularity: {
-		DisplayName: Orichalcum Singularity
+		DisplayName: Орихалковая сингулярность
 		Tooltip: ""
 	}
 
 	PalladiumSingularity: {
-		DisplayName: Palladium Singularity
+		DisplayName: Паладиевая сингулярность
 		Tooltip: ""
 	}
 
 	PerenialSingularity: {
-		DisplayName: Perenial Singularity
+		DisplayName: Многолетняя сингулярность
 		Tooltip: ""
 	}
 
 	PlatinumSingularity: {
-		DisplayName: Platinum Singularity
+		DisplayName: Платиновая сингулярность
 		Tooltip: ""
 	}
 
 	ScoriaSingularity: {
-		DisplayName: Scoria Singularity
+		DisplayName: Магматическая сингулярность
 		Tooltip: ""
 	}
 
 	SilverSingularity: {
-		DisplayName: Silver Singularity
+		DisplayName: Серебряная сингулярность
 		Tooltip: ""
 	}
 
 	SpectreSingularity: {
-		DisplayName: Spectre Singularity
+		DisplayName: Спектральная сингулярность
 		Tooltip: ""
 	}
 
 	TinSingularity: {
-		DisplayName: Tin Singularity
+		DisplayName: Оловянная сингулярность
 		Tooltip: ""
 	}
 
 	TitaniumSingularity: {
-		DisplayName: Titanium Singularity
+		DisplayName: Титановая сингулярность
 		Tooltip: ""
 	}
 
 	TungstenSingularity: {
-		DisplayName: Tungsten Singularity
+		DisplayName: Вольфрамовая сингулярность
 		Tooltip: ""
 	}
 
 	UelibloomSingularity: {
-		DisplayName: Uelibloom Singularity
+		DisplayName: Цветонитовая сингулярность
 		Tooltip: ""
 	}
 
 	UltimateHealingPotion: {
-		DisplayName: Ultimate Healing Potion
+		DisplayName: Ультимативное зелье лечения
 		Tooltip: ""
 	}
 
 	LuminiteSingularity: {
-		DisplayName: Luminite Singularity
+		DisplayName: Люминитовая сингулярность
 		Tooltip: ""
 	}
 
 	AuricBullet: {
-		DisplayName: Auric Bullet
-		Tooltip: ""
+		// DisplayName: Auric Bullet
+		// Tooltip: ""
 	}
 
 	ShroomiteSingularity: {
-		DisplayName: Shroomite Singularity
+		DisplayName: Грибнитовая сингулярность
 		Tooltip: ""
 	}
 
 	CalamitySoul: {
-		DisplayName: Calamity Soul
+		DisplayName: Душа бедствия
 		Tooltip:
 			'''
 			[i:CalamityMod/TheEvolution] You reflect projectiles when they hit you, reflected projectiles deal no damage to you, projectiles that deal less than 5% of your max life in damage will not be reflected
@@ -214,32 +214,32 @@ Items: {
 	}
 
 	ShtuxibusSword: {
-		DisplayName: Shtuxian Spear
+		DisplayName: Тыкалка
 		Tooltip:
 			'''
-			Set life of attacked entity to 0.
+			Имеет разные атаки от комбинаций клавиш и кнопок мыши
 			♎ Chtux'Lag'Or Item ♎
 			'''
 	}
 
 	InfinityCatalyst: {
-		DisplayName: Infinity Catalyst
-		Tooltip: All strength of universe in your palm.
+		DisplayName: Катализатор бесконечности
+		Tooltip: Вся мощ вселенной в твоей руке
 	}
 
 	InfinityIngot: {
-		DisplayName: Awakened shtuxium bar
-		Tooltip: True essense of Chtux'Lag'Or shard.
+		DisplayName: Слиток пробужденного штуксия
+		Tooltip: Истиная эссенция осколка Штукс'лаг'ора
 	}
 
 	ShtuxianCurse: {
-		DisplayName: Shtuxian Curse
+		DisplayName: Штуксийское проклятие
 		Tooltip: ""
 	}
 
 	chtuxmantle: {
-		DisplayName: Chtuxlagor Mantle
-		Tooltip: Effects of all armor sets and accessories.
+		DisplayName: Мания Штукс'лаг'ора
+		Tooltip: Эффекты всех баффов, сетов брони, аксессуаров и предметов.
 	}
 
 	DemonshadeBreastplateCat: {
@@ -341,102 +341,102 @@ Items: {
 	}
 
 	ShtuxibusTrophy: {
-		DisplayName: Shtuxibus Trophy
+		DisplayName: Трофей Штуксибуса
 		Tooltip: ""
 	}
 
 	ShtuxibusRelic: {
-		DisplayName: Shtuxibus Relic
+		DisplayName: Реликвия Штуксибуса
 		Tooltip: ""
 	}
 
 	AnnihilationAshSingularity: {
-		DisplayName: Annihilation Ash Singularity
+		DisplayName: Аннигилирующая сингулярность
 		Tooltip: ""
 	}
 
 	AscendantSingularity: {
-		DisplayName: Ascendant Singularity
+		DisplayName: Вознесенная сингулярность
 		Tooltip: ""
 	}
 
 	BloodSampleSingularity: {
-		DisplayName: Blood Sample Singularity
+		DisplayName: Кровавая сингулярность
 		Tooltip: ""
 	}
 
 	BloodstoneSingularity: {
-		DisplayName: Bloodstone Singularity
+		DisplayName: Крововокаменная сингулярность
 		Tooltip: ""
 	}
 
 	CalamityAshSingularity: {
-		DisplayName: Calamity Ash Singularity
+		DisplayName: Бедственно-пепельная сингулярность
 		Tooltip: ""
 	}
 
 	CalamitySingularity: {
-		DisplayName: Calamity Singularity
+		DisplayName: Бедственная сингулярность
 		Tooltip: ""
 	}
 
 	CorrodedSingularity: {
-		DisplayName: Corroded Singularity
+		DisplayName: Коррозийная сингулярность
 		Tooltip: ""
 	}
 
 	DepthSingularity: {
-		DisplayName: Depth Singularity
+		DisplayName: Глубинная сингулярность
 		Tooltip: ""
 	}
 
 	ExoSingularity: {
-		DisplayName: Exo Singularity
+		DisplayName: Экзо сингулярность
 		Tooltip: ""
 	}
 
 	MeldSingularity: {
-		DisplayName: Meld Singularity
+		DisplayName: Литая сингулярность
 		Tooltip: ""
 	}
 
 	NecroplasmSingularity: {
-		DisplayName: Necroplasm Singularity
+		DisplayName: Некроплазмическая сингулярность
 		Tooltip: ""
 	}
 
 	PlagueCanisterSingularity: {
-		DisplayName: Plague Canister Singularity
+		DisplayName: Чумная сингулярность
 		Tooltip: ""
 	}
 
 	PurifiedGelSingularity: {
-		DisplayName: Purified Gel Singularity
+		DisplayName: Очищеная сингулярность
 		Tooltip: ""
 	}
 
 	RottenMatterSingularity: {
-		DisplayName: Rotten Matter Singularity
+		DisplayName: Гниющая сингулярность
 		Tooltip: ""
 	}
 
 	SeaRemainsSingularity: {
-		DisplayName: Sea Remains Singularity
+		DisplayName: Морская сингулярность
 		Tooltip: ""
 	}
 
 	SolarVeilSingularity: {
-		DisplayName: Solar Veil Singularity
+		DisplayName: Солнечная сингулярность
 		Tooltip: ""
 	}
 
 	TerrariaSingularity: {
-		DisplayName: Terraria Singularity
+		DisplayName: Сингулярность Террарии
 		Tooltip: ""
 	}
 
 	WulfrumSingularity: {
-		DisplayName: Wulfrum Singularity
+		DisplayName: Вульфрумовая сингулярность
 		Tooltip: ""
 	}
 
@@ -446,13 +446,13 @@ Items: {
 	}
 
 	MutantsForge: {
-		DisplayName: Mutants Forge
+		DisplayName: Кузня Мутанта
 		Tooltip: ""
 	}
 
 	ShtuxibusForge: {
 		Tooltip: ""
-		DisplayName: Shtuxibus Forge
+		DisplayName: Кузня Штуксибуса
 	}
 
 	MonstrosityMask: {
@@ -856,12 +856,23 @@ Items: {
 		// DisplayName: Chtux'Lag'Or heart
 		/* Tooltip:
 			'''
+			Your attacks inflict "Chtux'lag'or inferno".
 			Set Mutant Bomb CD to 30 seconds instead of 60.
 			Grants immunity to "Shtuxibus Curse", Debuff "Chtux'lag'or inferno" deal lower damage
 			100% increace graze bonus damage cap, Increace damage of spectral siblings.
 			You can't take more than 1000 damage.
 			'The mechanical heart of a puppet of an incomprehensible being'
 			''' */
+	}
+
+	RampartOfAsgard: {
+		// DisplayName: Rampart Of Asgard
+		// Tooltip: ""
+	}
+
+	StarlightVodka: {
+		// DisplayName: Starlight Vodka
+		// Tooltip: ""
 	}
 }
 
@@ -924,6 +935,16 @@ Buffs: {
 	MutantSoulBuff: {
 		DisplayName: Mutant Soul Buff
 		Description: Mods.ssm.Buffs.MutantSoulBuff.Description
+	}
+
+	StarlightVodkaBuff: {
+		// DisplayName: Starlight Vodka Buff
+		// Description: Mods.ssm.Buffs.StarlightVodkaBuff.Description
+	}
+
+	ChtuxlagorInfernoEX: {
+		// Description: Mods.ssm.Buffs.ChtuxlagorInfernoEX.Description
+		// DisplayName: Chtuxlagor Inferno E X
 	}
 }
 
@@ -1182,11 +1203,12 @@ Configs: {
 			Bosses: Bosses Header
 			Crafting: Crafting Header
 			Visual: Visual Header
+			// Shtuxibus: Shtuxibus Header
 		}
 
 		ItemsUsedInSingularity: {
 			Tooltip: ""
-			Label: Items Used In Singularity
+			Label: Items Used In сингулярность
 		}
 
 		DisplayName: Shtun Config
@@ -1214,6 +1236,11 @@ Configs: {
 		ForcedFilters: {
 			Tooltip: ""
 			Label: Forced Filters
+		}
+
+		Stalin: {
+			// Label: Stalin
+			// Tooltip: ""
 		}
 	}
 }

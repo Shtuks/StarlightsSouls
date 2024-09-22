@@ -1,0 +1,35 @@
+using FargowiltasSouls.;
+using System.Collections.Generic;
+using Terraria;
+using Terraria.ModLoader;
+using ssm;
+
+namespace ssm.Reworks
+{
+  public class SCalSet : GlobalItem
+  {
+    public override string IsArmorSet(Item head, Item body, Item legs)
+    {
+      return head.type == ModContent.ItemType<StyxCrown>() && body.type == ModContent.ItemType<StyxChestplate>() && legs.type == ModContent.ItemType<StyxLeggins>() ? "NewStyx" : "";
+    }
+
+    public override void UpdateEquip(Item item, Player player)
+    {
+      if (item.type == ModContent.ItemType<StyxCrown>())
+      {
+        player.statDefense = player.statDefense += 10;
+        player.GetDamage(DamageClass.Generic) += 10 / 100f;
+        player.maxMinions += 10;
+      }
+      if (item.type == ModContent.ItemType<StyxChestplate>())
+      {
+        player.statDefense = player.statDefense += 10;
+        player.GetDamage(DamageClass.Generic) += 10 / 100f;
+      }
+      if (item.type != ModContent.ItemType<StyxLeggins>())
+        return;
+      player.statDefense = player.statDefense += 10;
+      player.GetDamage(DamageClass.Generic) += 10 / 100f;
+    }
+  }
+}

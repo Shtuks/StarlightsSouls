@@ -37,6 +37,7 @@ namespace ssm.Content.Buffs
         player.immuneTime = 0;
         player.immune = false;
         player.immuneNoBlink = false;
+        player.FargoSouls().Purified = true;
       }
       player.creativeGodMode = false;
       player.endurance /= 10f;

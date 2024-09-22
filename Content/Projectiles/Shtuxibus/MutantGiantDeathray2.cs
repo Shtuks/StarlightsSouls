@@ -40,6 +40,8 @@ namespace ssm.Content.NPCs.Shtuxibus
         public override void SetDefaults()
         {
             base.SetDefaults();
+            Projectile.width *= 2;
+            Projectile.height *= 2;
             Projectile.netImportant = true;
             Projectile.GetGlobalProjectile<FargoSoulsGlobalProjectile>().TimeFreezeImmune = true;
             Projectile.GetGlobalProjectile<FargoSoulsGlobalProjectile>().DeletionImmuneRank = 2;

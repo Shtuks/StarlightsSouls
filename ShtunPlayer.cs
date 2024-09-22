@@ -46,8 +46,10 @@ namespace ssm
         public bool antiDebuff;
         public bool antiImmunity;
         public bool MutantSoul;
+        public bool hadNanomachinesLastFrame;
         public bool DevianttSoul;
         public bool CelestialPower;
+        public int ShtuxibusDeaths;
         private readonly Mod FargoSoul = Terraria.ModLoader.ModLoader.GetMod("FargowiltasSouls");
 		    private readonly Mod calamity = ModLoader.GetMod("CalamityMod");
         public bool ShtuxibusMinionBuff;
@@ -87,40 +89,45 @@ namespace ssm
             this.Player.dead = false;
           }}
         public virtual void PostUpdateMiscEffects()
-    {
-      if (this.antiCollision)
-        this.Player.AddBuff(ModContent.BuffType<AntiCollision>(), 2, true, false);
-      if (this.antiDeath)
-        this.Player.AddBuff(ModContent.BuffType<AntiDeath>(), 2, true, false);
-      if (this.antiDebuff)
-      {
-        this.Player.AddBuff(ModContent.BuffType<AntiDebuff>(), 2, true, false);
-        for (int index = 0; index < BuffLoader.BuffCount; ++index)
         {
-          if (Main.debuff[index])
-          {
-            this.Player.buffImmune[index] = true;
-            this.Player.buffImmune[28] = false;
-            this.Player.buffImmune[34] = false;
-            this.Player.buffImmune[146] = false;
-            this.Player.buffImmune[87] = false;
-            this.Player.buffImmune[89] = false;
-            this.Player.buffImmune[48] = false;
-            this.Player.buffImmune[158] = false;
-            this.Player.buffImmune[215] = false;
-          }
-        }
-        if (this.Player.potionDelay > 0)
-        this.Player.potionDelay = 0;
+          if (Player.GetModPlayer<CalamityPlayer>().draedonsHeart || !this.hadNanomachinesLastFrame)
+              return;
+            this.hadNanomachinesLastFrame = false;
+            Player.GetModPlayer<CalamityPlayer>().adrenaline = 0.0f;
+          if (this.antiCollision)
+            this.Player.AddBuff(ModContent.BuffType<AntiCollision>(), 2, true, false);
+          if (this.antiDeath)
+            this.Player.AddBuff(ModContent.BuffType<AntiDeath>(), 2, true, false);
+          if (this.antiDebuff){
+            this.Player.AddBuff(ModContent.BuffType<AntiDebuff>(), 2, true, false);
+            for (int index = 0; index < BuffLoader.BuffCount; ++index)
+            {
+              if (Main.debuff[index])
+                {
+                  this.Player.buffImmune[index] = true;
+                  this.Player.buffImmune[28] = false;
+                  this.Player.buffImmune[34] = false;
+                  this.Player.buffImmune[146] = false;
+                  this.Player.buffImmune[87] = false;
+                  this.Player.buffImmune[89] = false;
+                  this.Player.buffImmune[48] = false;
+                  this.Player.buffImmune[158] = false;
+                  this.Player.buffImmune[215] = false;
+                }
+                }
+            if (this.Player.potionDelay > 0)
+            this.Player.potionDelay = 0;
     }}
         public override void SaveData(TagCompound tag){
         tag.Add("antiCollision", (object) this.antiCollision);
         tag.Add("antiDeath", (object) this.antiDeath);
-        tag.Add("antiDebuff", (object) this.antiDebuff);}
+        tag.Add("antiDebuff", (object) this.antiDebuff);
+        tag["ShtuxibusDeaths"] = ShtuxibusDeaths;}
         public override void LoadData(TagCompound tag){
         this.antiCollision = tag.GetBool("antiCollision");
         this.antiDeath = tag.GetBool("antiDeath");
-        this.antiDebuff = tag.GetBool("antiDebuff");}
+        this.antiDebuff = tag.GetBool("antiDebuff");
+        ShtuxibusDeaths = tag.GetInt("ShtuxibusDeaths");}
 	      private void OnHitNPCEither(NPC target, int damage, float knockback, bool crit, DamageClass damageClass, Projectile projectile = null, Item item = null){
             //doing this so that damage-inheriting effects dont double dip or explode due to taking on crit boost
             int GetBaseDamage()
@@ -132,6 +139,7 @@ namespace ssm
                     baseDamage = (int)(item.damage * Player.ActualClassDamage(item.DamageType));
                 return baseDamage; 
             }}
+
         public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone){
         if (this.equippedPhantasmalEnchantment)
             target.AddBuff(ModContent.Find<ModBuff>(this.FargoSoul.Name, "MutantFangBuff").Type, 1000, false);

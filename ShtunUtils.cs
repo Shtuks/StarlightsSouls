@@ -1,77 +1,47 @@
 using Terraria.ModLoader;
 using ssm.Content.Buffs;
 using ssm;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using ReLogic.Content;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
 using Terraria;
 using Terraria.Chat;
-using Terraria.DataStructures;
 using Terraria.GameContent.Creative;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.Graphics.Shaders;
-using Terraria.ID;
-using Terraria.Localization;
-using Terraria.ModLoader;
+using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
-using System;
-using FargowiltasSouls.Content.Projectiles;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using Terraria;
-using Terraria.DataStructures;
-using Terraria;
-using Terraria.ID;
-using Terraria.Localization;
-using Terraria.ModLoader;
+using Terraria.GameContent.Bestiary;
+using Terraria.GameContent.Creative;
+using Terraria.GameContent.ItemDropRules;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using Microsoft.Xna.Framework;
 using CalamityMod;
-using System;
 using System.Collections.Generic;
 using System.Text;
+using FargowiltasSouls.Core.Globals;
+using FargowiltasSouls.Core.Systems;
+using Luminance.Core.Graphics;
+using CalamityMod.CalPlayer;
+using CalamityMod;
 using static Terraria.ModLoader.ModContent;
 using CalamityMod.CalPlayer;
-using Microsoft.Xna.Framework.Graphics;
-using Terraria.ID;
 using Terraria.ModLoader;
-using System;
+using Terraria.Audio;
 using FargowiltasSouls.Content.Projectiles;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 using Terraria;
+using System.IO;
 using Terraria.ID;
-using Terraria.ModLoader;
 using ssm.Content.NPCs;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 using ReLogic.Content;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
-using Terraria;
-using Terraria.Chat;
 using Terraria.DataStructures;
 using Terraria.GameContent.Creative;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.Graphics.Shaders;
-using Terraria.ID;
 using Terraria.Localization;
-using Terraria.ModLoader;
-using Terraria.Audio;
 using Terraria.GameContent;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace ssm
 {
@@ -131,6 +101,9 @@ namespace ssm
 			}
 			return false;
 		}
+
+        public static bool Stalin => ShtunConfig.Instance.Stalin;
+        public static string TryStalinTexture => Stalin ? "_Stalin" : "";
         public static NPC MinionHoming(this Vector2 origin, float maxDistanceToCheck, Player owner, bool ignoreTiles = true, bool checksRange = false)
 		{
 			if (owner == null || !((Entity)owner).whoAmI.WithinBounds(255) || !owner.MinionAttackTargetNPC.WithinBounds(200))
@@ -234,7 +207,7 @@ namespace ssm
 		{
 			if (!textColor.HasValue)
 			{
-				textColor = Color.White;
+				textColor = Color.Green;
 			}
 			if (Main.netMode == 0)
 			{

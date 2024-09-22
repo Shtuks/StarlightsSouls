@@ -25,7 +25,7 @@ namespace ssm
     [DefaultValue(true)]
     public bool SoulOfShtundexCraftable { get; set; }
 
-    [Header("Bosses")]
+    [Header("Shtuxibus")]
 
     [BackgroundColor(60, 200, 60, 192)]
     [DefaultValue(true)]
@@ -42,6 +42,10 @@ namespace ssm
     [BackgroundColor(60, 200, 60, 192)]
     [DefaultValue(true)]
     public bool ShtuxibusBreakRodOfHarmony { get; set; }
+
+    [BackgroundColor(60, 200, 60, 192)]
+    [DefaultValue(true)]
+    public bool Stalin { get; set; }
 
     [Header("Visual")]
 
