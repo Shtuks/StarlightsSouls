@@ -42,7 +42,7 @@ namespace ssm.Content.Items.Accessories
     {
       //ModContent.Find<ModItem>(this.Calamity.Name, "VoidofExtinction").UpdateAccessory(player, false);
       ModContent.Find<ModItem>(this.FargoCross.Name, "ExplorationForce").UpdateAccessory(player, false);
-      //ModContent.Find<ModItem>(this.FargoCross.Name, "BrandoftheBrimstoneWitch").UpdateAccessory(player, false);
+      ModContent.Find<ModItem>(this.FargoCross.Name, "BrandoftheBrimstoneWitch").UpdateAccessory(player, false);
       //ModContent.Find<ModItem>(this.Calamity.Name, "TheEvolution").UpdateAccessory(player, false);
       //ModContent.Find<ModItem>(this.Calamity.Name, "HideofAstrumDeus").UpdateAccessory(player, false);
       //ModContent.Find<ModItem>(this.Calamity.Name, "BlazingCore").UpdateAccessory(player, false);
