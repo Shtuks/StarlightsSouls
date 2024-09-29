@@ -1,0 +1,8 @@
+﻿namespace ssm.Content
+{
+    public static class ToastyQoLRequirementRegistry
+    {
+        public static readonly ToastyQoLRequirement PostShtuxibus = new("Shtuxibus", () => WorldSaveSystem.downedShtuxibus);
+
+    }
+}

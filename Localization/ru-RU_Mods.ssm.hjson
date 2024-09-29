@@ -872,6 +872,11 @@ Items: {
 		// DisplayName: Starlight Vodka
 		// Tooltip: ""
 	}
+
+	ProfandedSomething: {
+		// DisplayName: Profanded Something
+		// Tooltip: ""
+	}
 }
 
 Buffs: {

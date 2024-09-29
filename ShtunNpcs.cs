@@ -111,7 +111,7 @@ namespace ssm
         internal static int[] Bosses = { 
             NPCID.KingSlime,
             NPCID.EyeofCthulhu,
-            //NPCID.EaterofWorldsHead,
+            NPCID.EaterofWorldsHead,
             NPCID.BrainofCthulhu,
             NPCID.QueenBee,
             NPCID.SkeletronHead,
@@ -238,9 +238,9 @@ namespace ssm
                 {
                     Swarm(npc, ModContent.NPCType<Providence>(), ModContent.ItemType<ProvidenceBag>(), ModContent.ItemType<ProvidenceTrophy>(), ModContent.ItemType<ProfandedEnergizer>());
                 }
-                else if (npc.type == ModContent.NPCType<Ravager>())
+                else if (npc.type == ModContent.NPCType<RavagerBody>())
                 {
-                    Swarm(npc, ModContent.NPCType<Ravager>(), ModContent.ItemType<RavagerBag>(), ModContent.ItemType<RavagerTrophy>(), ModContent.ItemType<FleshyEnergizer>());
+                    Swarm(npc, ModContent.NPCType<RavagerBody>(), ModContent.ItemType<RavagerBag>(), ModContent.ItemType<RavagerTrophy>(), ModContent.ItemType<FleshyEnergizer>());
                 }
                 return false;
             }
@@ -260,8 +260,6 @@ namespace ssm
                 npc.dontTakeDamage = false;
             }
         }
-
-        
         private void SpawnBoss(NPC npc, int boss)
         {
             int spawn;
