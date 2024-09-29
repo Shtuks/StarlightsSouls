@@ -11,7 +11,7 @@ namespace ssm.Content.Items.Swarm.Summons
 {
     public class PlagueTerminal : SwarmSummonBase
     {
-        public PlagueTerminal() : base(ModContent.NPCType<PlaguebringerGoliath>(), "The sunken sea shifts from the sands!", 25)
+        public PlagueTerminal() : base(ModContent.NPCType<PlaguebringerGoliath>(), 25)
         {
         }
 

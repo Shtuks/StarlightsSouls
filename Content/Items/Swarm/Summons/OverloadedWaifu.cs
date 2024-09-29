@@ -11,7 +11,7 @@ namespace ssm.Content.Items.Swarm.Summons
 {
     public class OverloadedWaifu : SwarmSummonBase
     {
-        public OverloadedWaifu() : base(ModContent.NPCType<SupremeCalamitas>(), "Die.", 25)
+        public OverloadedWaifu() : base(ModContent.NPCType<SupremeCalamitas>(), 25)
         {
         }
 

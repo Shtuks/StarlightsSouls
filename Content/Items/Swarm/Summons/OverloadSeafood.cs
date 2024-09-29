@@ -11,7 +11,7 @@ namespace ssm.Content.Items.Swarm.Summons
 {
     public class OverloadSeafood : SwarmSummonBase
     {
-        public OverloadSeafood() : base(ModContent.NPCType<AquaticScourgeHead>(), "The underground mushrom fields trembling!", 25)
+        public OverloadSeafood() : base(ModContent.NPCType<AquaticScourgeHead>(), 25)
         {
         }
 

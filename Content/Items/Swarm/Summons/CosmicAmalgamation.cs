@@ -11,7 +11,7 @@ namespace ssm.Content.Items.Swarm.Summons
 {
     public class CosmicAmalgamation : SwarmSummonBase
     {
-        public CosmicAmalgamation() : base(ModContent.NPCType<DevourerofGodsHead>(), "The underground mushrom fields trembling!", 25)
+        public CosmicAmalgamation() : base(ModContent.NPCType<DevourerofGodsHead>(), 25)
         {
         }
 

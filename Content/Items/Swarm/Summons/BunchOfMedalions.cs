@@ -11,7 +11,7 @@ namespace ssm.Content.Items.Swarm.Summons
 {
     public class BunchOfMedalions : SwarmSummonBase
     {
-        public BunchOfMedalions() : base(ModContent.NPCType<DesertScourgeHead>(), "The sunken sea shifts from the sands!", 25)
+        public BunchOfMedalions() : base(ModContent.NPCType<DesertScourgeHead>(), 25)
         {
         }
 

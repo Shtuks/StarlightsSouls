@@ -11,7 +11,7 @@ namespace ssm.Content.Items.Swarm.Summons
 {
     public class BloodyWormChicken : SwarmSummonBase
     {
-        public BloodyWormChicken() : base(ModContent.NPCType<PerforatorHive>(), "The sunken sea shifts from the sands!", 25)
+        public BloodyWormChicken() : base(ModContent.NPCType<PerforatorHive>(), 25)
         {
         }
 

@@ -11,7 +11,7 @@ namespace ssm.Content.Items.Swarm.Summons
 {
     public class OverloadStarcore : SwarmSummonBase
     {
-        public OverloadStarcore() : base(ModContent.NPCType<AstrumDeusHead>(), "Die.", 25)
+        public OverloadStarcore() : base(ModContent.NPCType<AstrumDeusHead>(), 25)
         {
         }
 

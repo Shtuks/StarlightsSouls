@@ -991,6 +991,8 @@ NPCs: {
 			Normal13: What will happen if I will use itemss with 'Overload' in name?
 			Normal14: Who is Fargowilta?
 		}
+
+		Census.SpawnCondition: Conditions unknown
 	}
 
 	ShtuxibusGFB.DisplayName: The true eldrich multiversal horror of Chtux'Lag'Or EX
@@ -1058,6 +1060,7 @@ NPCs: {
 		}
 
 		DisplayName: Monstrocity
+		Census.SpawnCondition: Conditions unknown
 	}
 }
 

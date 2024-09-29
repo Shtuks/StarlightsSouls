@@ -11,7 +11,7 @@ namespace ssm.Content.Items.Swarm.Summons
 {
     public class OverloadSprout : SwarmSummonBase
     {
-        public OverloadSprout() : base(ModContent.NPCType<Crabulon>(), "The underground mushrom fields trembling!", 25)
+        public OverloadSprout() : base(ModContent.NPCType<Crabulon>(), 25)
         {
         }
 

@@ -2,4 +2,4 @@ displayName = [c/128900:Starlight's Souls]
 author = StarlightCat
 version = 0.0.3
 modReferences = CalamityMod, FargowiltasSouls, FargowiltasCrossmod
-buildIgnore = *.csproj, *.user, obj\*, bin\*, .vs\*, lib\*, .git\*, lib\*, Fargowiltas.dll, Core.rar, Swarm.rar, SpecialEffectManagers.rar Luminance.dll, CalamityMod.dll, FargowiltasSouls.dll
+buildIgnore = *.csproj, *.user, obj\*, bin\*, .vs\*, Libraries\*, .git\*, lib\*, Fargowiltas.dll, Core.rar, Swarm.rar, SpecialEffectManagers.rar Luminance.dll, CalamityMod.dll, FargowiltasSouls.dll

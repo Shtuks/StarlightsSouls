@@ -11,7 +11,7 @@ namespace ssm.Content.Items.Swarm.Summons
 {
     public class PileOfBloodWorms : SwarmSummonBase
     {
-        public PileOfBloodWorms() : base(ModContent.NPCType<OldDuke>(), "The underground mushrom fields trembling!", 25)
+        public PileOfBloodWorms() : base(ModContent.NPCType<OldDuke>(), 25)
         {
         }
 

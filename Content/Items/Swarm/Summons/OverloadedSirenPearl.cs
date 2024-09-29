@@ -11,7 +11,7 @@ namespace ssm.Content.Items.Swarm.Summons
 {
     public class OverloadedSirenPearl : SwarmSummonBase
     {
-        public OverloadedSirenPearl() : base(ModContent.NPCType<Anahita>(), "The underground mushrom fields trembling!", 25)
+        public OverloadedSirenPearl() : base(ModContent.NPCType<Anahita>(), 25)
         {
         }
 

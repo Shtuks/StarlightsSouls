@@ -991,6 +991,8 @@ NPCs: {
 			Normal13: Что будет если я исспользую предмет с 'перегруженный' в названии?
 			Normal14: Кто такой Фарговилта?
 		}
+
+		// Census.SpawnCondition: Conditions unknown
 	}
 
 	ShtuxibusGFB.DisplayName: Древний мультивселенский ужас Штукс'Лг'Ора
@@ -1058,6 +1060,7 @@ NPCs: {
 		}
 
 		DisplayName: Monstrocity
+		// Census.SpawnCondition: Conditions unknown
 	}
 }
 

@@ -17,12 +17,10 @@ namespace ssm.Content.Items.Swarm.Summons
 
         private int npcType;
         private readonly int maxSpawn; //energizer swarms are this size
-        private readonly string spawnMessage;
         
         protected SwarmSummonBase(int npcType, string spawnMessage, int maxSpawn)
         {
             this.npcType = npcType;
-            this.spawnMessage = spawnMessage;
             this.maxSpawn = maxSpawn;
         }
 
@@ -71,16 +69,6 @@ namespace ssm.Content.Items.Swarm.Summons
 
             // Kill whole stack
             player.inventory[player.selectedItem].stack = 0;
-
-            if (Main.netMode == NetmodeID.Server)
-            {
-                ChatHelper.BroadcastChatMessage(NetworkText.FromLiteral(spawnMessage), new Color(175, 75, 255));
-                NetMessage.SendData(MessageID.WorldData);
-            }
-            else if (Main.netMode == NetmodeID.SinglePlayer)
-            {
-                Main.NewText(spawnMessage, 175, 75, 255);
-            }
 
             SoundEngine.PlaySound(SoundID.Roar, player.position);
             return true;

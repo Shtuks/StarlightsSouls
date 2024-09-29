@@ -11,7 +11,7 @@ namespace ssm.Content.Items.Swarm.Summons
 {
     public class AstralLump : SwarmSummonBase
     {
-        public AstralLump() : base(ModContent.NPCType<AstrumAureus>(), "The sunken sea shifts from the sands!", 25)
+        public AstralLump() : base(ModContent.NPCType<AstrumAureus>(), 25)
         {
         }
 

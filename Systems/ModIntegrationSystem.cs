@@ -15,6 +15,27 @@ namespace ssm.Systems
 {
 	public class ModIntegrationsSystem : ModSystem
 	{
+		public static class SoulsMod
+    	{
+        public const string Name = "FargowiltasSouls";
+        public static bool Loaded => ModLoader.HasMod(Name);
+        public static FargowiltasSouls.FargowiltasSouls Mod => ModLoader.GetMod(Name) as FargowiltasSouls.FargowiltasSouls;
+    	}
+
+		public static class Redemption
+    	{
+        public const string Name = "Redemption";
+        public static bool Loaded => ModLoader.HasMod(Name);
+		public static Mod Mod => ModLoader.GetMod(Name);
+    	}
+
+		public static class SoA
+    	{
+        public const string Name = "SacredTools";
+        public static bool Loaded => ModLoader.HasMod(Name);
+		public static Mod Mod => ModLoader.GetMod(Name);
+    	}
+
 		public override void PostSetupContent() {
 			DoBossChecklistIntegration();}
 
@@ -43,5 +64,17 @@ namespace ssm.Systems
 				}
 			);
 		}
+
+		public static class BossChecklist
+    	{
+        	public static void AdjustValues()
+        	{
+            	SoulsMod.Mod.BossChecklistValues["MutantBoss"] = 29f;
+				//if (Redemption.Loaded){
+				//	Redemption.Mod.BossChecklistValues["Nebuleus"] = 20f;}
+				//if (SoA.Loaded){
+				//  SoA.Mod.BossChecklistValues["Nihilus"] = 24f;}
+        	}
+    	}
 	}
 }

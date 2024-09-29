@@ -9,23 +9,14 @@ using FargowiltasSouls.Content.Items.Accessories.Masomode;
 using FargowiltasSouls.Content.Items.Accessories.Souls;
 using FargowiltasSouls.Content.Items.Materials;
 using Terraria.ModLoader;
+//using Redemption.Items.Materials.PostML;
+//using SacredTools.Content.Items.Materials;
 using ssm.Content.Items.Accessories;
 
 namespace ssm
 {
   public class Recipes : ModSystem
   {
-    /*public virtual void PostAddRecipes()
-    {
-      for (int index = 0; index < Recipe.numRecipes; ++index)
-      {
-        Recipe recipe = Main.recipe[index];
-        Item obj;
-        if (recipe.TryGetResult(ModContent.ItemType<ElementalShiv>(), ref obj))
-          recipe.AddIngredient(ModContent.ItemType<TerraShiv>(), 1);
-      }
-    }*/
-
     public override void AddRecipes()
     {
       Recipe.Create(ModContent.ItemType<SCalMask>(), 1).AddIngredient<AshesofAnnihilation>(10).AddIngredient<CoreofHavoc>(8).AddIngredient<GalacticaSingularity>(5).AddIngredient<BrimflameScowl>(1).AddTile<CosmicAnvil>().Register();
@@ -36,13 +27,54 @@ namespace ssm
     public override void PostAddRecipes()
     {
       for (int i = 0; i < Recipe.numRecipes; i++)
-            {
-              Recipe recipe = Main.recipe[i];
-              if (recipe.HasResult<TerrariaSoul>())
-                {
-                  recipe.AddIngredient<CelestialEnchant>();
-                }
-            }
+        {
+          Recipe recipe = Main.recipe[i];
+          if (recipe.HasResult<TerrariaSoul>())
+          {
+              recipe.AddIngredient<CelestialEnchant>();
+          }
+
+          // SoA Recipies
+          /*if (recipe.HasResult<ShadowspecBar>())
+          {
+            recipe.AddIngredient<EmberOfOmen>();
+          }
+          if (recipe.HasResult<CollosusSoul>())
+          {
+            recipe.AddIngredient<ReflectionShield>();
+          }
+
+          // Redemption Recipies
+          if (recipe.HasResult<AuricBar>())
+          {
+            recipe.AddIngredient<LifeFragment>();
+          }
+          if (recipe.HasResult<MutagenMelee>())
+          {
+            recipe.AddIngredient<LifeFragment>(5);
+          }
+          if (recipe.HasResult<MutagenRanged>())
+          {
+            recipe.AddIngredient<LifeFragment>(5);
+          }
+          if (recipe.HasResult<MutagenMagic>())
+          {
+            recipe.AddIngredient<LifeFragment>(5);
+          }
+          if (recipe.HasResult<MutagenMelee>())
+          {
+            recipe.AddIngredient<LifeFragment>(5);
+          }
+          if (recipe.HasResult<MutagenRitualist>())
+          {
+            recipe.AddIngredient<LifeFragment>(5);
+          }
+          if (recipe.HasResult<FlightMasterySoul>())
+          {
+            recipe.AddIngredient<NebWings>();
+            recipe.AddIngredient<XenomiteJetpack>();
+          }*/
+        }
     }
   }
 }

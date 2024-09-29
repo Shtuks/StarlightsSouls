@@ -11,7 +11,7 @@ namespace ssm.Content.Items.Swarm.Summons
 {
     public class CryonicCore : SwarmSummonBase
     {
-        public CryonicCore() : base(ModContent.NPCType<Cryogen>(), "The sunken sea shifts from the sands!", 25)
+        public CryonicCore() : base(ModContent.NPCType<Cryogen>(), 25)
         {
         }
 

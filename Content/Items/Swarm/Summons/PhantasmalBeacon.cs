@@ -11,7 +11,7 @@ namespace ssm.Content.Items.Swarm.Summons
 {
     public class PhantasmalBeacon : SwarmSummonBase
     {
-        public PhantasmalBeacon() : base(ModContent.NPCType<Polterghast>(), "Die.", 25)
+        public PhantasmalBeacon() : base(ModContent.NPCType<Polterghast>(), 25)
         {
         }
 

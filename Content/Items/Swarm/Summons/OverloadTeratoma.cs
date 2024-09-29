@@ -11,7 +11,7 @@ namespace ssm.Content.Items.Swarm.Summons
 {
     public class OverloadTeratoma : SwarmSummonBase
     {
-        public OverloadTeratoma() : base(ModContent.NPCType<HiveMind>(), "Die.", 25)
+        public OverloadTeratoma() : base(ModContent.NPCType<HiveMind>(), 25)
         {
         }
 

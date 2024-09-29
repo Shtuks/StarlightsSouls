@@ -11,7 +11,7 @@ namespace ssm.Content.Items.Swarm.Summons
 {
     public class ProfandedCluster : SwarmSummonBase
     {
-        public ProfandedCluster() : base(ModContent.NPCType<Providence>(), "Die.", 25)
+        public ProfandedCluster() : base(ModContent.NPCType<Providence>(), 25)
         {
         }
 

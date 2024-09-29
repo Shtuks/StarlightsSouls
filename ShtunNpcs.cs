@@ -16,7 +16,9 @@ using ssm.Content.Items.Accessories;
 using ssm.Content.Items.Consumables;
 using ssm.Content.Items.Materials;
 using ssm.Content.Items.Singularities;
-//using ssm.Content.Items.Swarm.Energizers;
+using ssm.Content.NPCs;
+using ssm.Content.NPCs.Shtuxibus;
+using ssm.Content.Items.Swarm.Energizers;
 using Terraria.ID;
 using Fargowiltas;
 using CalamityMod.Items.TreasureBags;
@@ -152,14 +154,16 @@ namespace ssm
             }
         }
 
-        /*public override bool PreKill(NPC npc)
+        public override bool PreKill(NPC npc)
         {
+            if (!NPC.AnyNPCs(ModContent.NPCType<Shtuxibus>())){
+
             if (NoLoot)
             {
                 return false;
             }
 
-            if (Fargowiltas.SwarmActive && (npc.type == NPCID.BlueSlime || npc.type == NPCID.EaterofWorldsBody || npc.type == NPCID.EaterofWorldsTail || npc.type == NPCID.Creeper || (npc.type >= NPCID.PirateCorsair && npc.type <= NPCID.PirateCrossbower)))
+            if (ssm.SwarmActive && (npc.type == NPCID.BlueSlime || npc.type == NPCID.EaterofWorldsBody || npc.type == NPCID.EaterofWorldsTail || npc.type == NPCID.Creeper || (npc.type >= NPCID.PirateCorsair && npc.type <= NPCID.PirateCrossbower)))
             {
                 return false;
             }
@@ -226,17 +230,22 @@ namespace ssm
                 {
                     Swarm(npc, ModContent.NPCType<HiveMind>(), ModContent.ItemType<HiveMindBag>(), ModContent.ItemType<HiveMindTrophy>(), ModContent.ItemType<HiveEnergizer>());
                 }
-                else if (npc.type == ModContent.NPCType<HiveMind>())
+                else if (npc.type == ModContent.NPCType<Yharon>())
                 {
-                    Swarm(npc, ModContent.NPCType<HiveMind>(), ModContent.ItemType<HiveMindBag>(), ModContent.ItemType<HiveMindTrophy>(), ModContent.ItemType<HiveEnergizer>());
+                    Swarm(npc, ModContent.NPCType<Yharon>(), ModContent.ItemType<YharonBag>(), ModContent.ItemType<YharonTrophy>(), ModContent.ItemType<AuricEnergizer>());
                 }
                 else if (npc.type == ModContent.NPCType<Providence>())
                 {
                     Swarm(npc, ModContent.NPCType<Providence>(), ModContent.ItemType<ProvidenceBag>(), ModContent.ItemType<ProvidenceTrophy>(), ModContent.ItemType<ProfandedEnergizer>());
                 }
+                else if (npc.type == ModContent.NPCType<Ravager>())
+                {
+                    Swarm(npc, ModContent.NPCType<Ravager>(), ModContent.ItemType<RavagerBag>(), ModContent.ItemType<RavagerTrophy>(), ModContent.ItemType<FleshyEnergizer>());
+                }
                 return false;
             }
-            return false;
+            return false;}
+            return true;
         }
 
         public override void PostAI(NPC npc)
@@ -250,7 +259,7 @@ namespace ssm
             {
                 npc.dontTakeDamage = false;
             }
-        }*/
+        }
 
         
         private void SpawnBoss(NPC npc, int boss)
@@ -275,6 +284,7 @@ namespace ssm
                 {
                     random = Main.rand.Next(Bosses);
                 }
+
                 while (NPC.CountNPCS(random) >= 4);
 
                 spawn = NPC.NewNPC(NPC.GetBossSpawnSource(Main.myPlayer), (int)npc.position.X + Main.rand.Next(-1000, 1000), (int)npc.position.Y + Main.rand.Next(-400, -100), random);

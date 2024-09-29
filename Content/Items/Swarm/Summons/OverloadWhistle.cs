@@ -11,7 +11,7 @@ namespace ssm.Content.Items.Swarm.Summons
 {
     public class OverloadWhistle : SwarmSummonBase
     {
-        public OverloadWhistle() : base(ModContent.NPCType<RavagerBody>(), "The sunken sea shifts from the sands!", 25)
+        public OverloadWhistle() : base(ModContent.NPCType<RavagerBody>(), 25)
         {
         }
 

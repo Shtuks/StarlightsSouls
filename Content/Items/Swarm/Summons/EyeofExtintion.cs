@@ -11,7 +11,7 @@ namespace ssm.Content.Items.Swarm.Summons
 {
     public class EyeofExtintion : SwarmSummonBase
     {
-        public EyeofExtintion() : base(ModContent.NPCType<CalamitasClone>(), "The sunken sea shifts from the sands!", 25)
+        public EyeofExtintion() : base(ModContent.NPCType<CalamitasClone>(), 25)
         {
         }
 

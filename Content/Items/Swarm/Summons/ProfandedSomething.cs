@@ -4,14 +4,14 @@ using ssm.Content.Items.Swarm.Summons;
 using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
-using CalamityMod.NPCs.Yharon;
+using CalamityMod.NPCs.ProfandedGuardians;
 using CalamityMod.Items.SummonItems;
 
 namespace ssm.Content.Items.Swarm.Summons
 {
-    public class YharonEggsBox : SwarmSummonBase
+    public class ProfandedSomething : SwarmSummonBase
     {
-        public YharonEggsBox() : base(ModContent.NPCType<Yharon>(), 25)
+        public ProfandedSomething() : base(ModContent.NPCType<ProfandedGuardianCommander>(), 25)
         {
         }
 

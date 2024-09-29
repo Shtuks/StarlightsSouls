@@ -11,7 +11,7 @@ namespace ssm.Content.Items.Swarm.Summons
 {
     public class DeepFriedIdol : SwarmSummonBase
     {
-        public DeepFriedIdol() : base(ModContent.NPCType<BrimstoneElemental>(), "The underground mushrom fields trembling!", 25)
+        public DeepFriedIdol() : base(ModContent.NPCType<BrimstoneElemental>(), 25)
         {
         }
 

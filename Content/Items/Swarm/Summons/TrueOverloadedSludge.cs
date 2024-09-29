@@ -11,7 +11,7 @@ namespace ssm.Content.Items.Swarm.Summons
 {
     public class TrueOverloadedSludge : SwarmSummonBase
     {
-        public TrueOverloadedSludge() : base(ModContent.NPCType<SlimeGodCore>(), "The underground mushrom fields trembling!", 25)
+        public TrueOverloadedSludge() : base(ModContent.NPCType<SlimeGodCore>(), 25)
         {
         }
 
