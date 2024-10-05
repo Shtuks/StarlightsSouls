@@ -16,7 +16,7 @@ namespace ssm.Content.Projectiles.Shtuxibus
     public class MutantRitual : BaseArena
     {
         private readonly Mod fargosouls = ModLoader.GetMod("FargowiltasSouls");
-		private readonly Mod calamity = ModLoader.GetMod("CalamityMod");
+        private readonly Mod calamity = ModLoader.GetMod("CalamityMod");
         public override string Texture => "ssm/Content/Projectiles/Shtuxibus/ShtuxibusRitualProj";
         public int npcType => ModContent.NPCType<NPCs.Shtuxibus.Shtuxibus>();
         private const float realRotation = MathHelper.Pi / 140f;
@@ -77,7 +77,7 @@ namespace ssm.Content.Projectiles.Shtuxibus
 
         public override void AI()
         {
-            
+
             base.AI();
             NPC npc = ShtunUtils.NPCExists(Projectile.ai[1], npcType);
             Projectile.frameCounter++;
@@ -88,27 +88,27 @@ namespace ssm.Content.Projectiles.Shtuxibus
                 if (Projectile.frame > 1)
                     Projectile.frame = 0;
             }
-        
+
         }
 
         public override void OnHitPlayer(Player target, Player.HurtInfo info)
         {
             //base.OnHitPlayer(target, damage, crit);
             // target.AddBuff(BuffID.Stoned, 300);
-                    if (ssm.amiactive)
+            if (ssm.amiactive)
             {
-            //if (!target.HasBuff(ModContent.Find<ModBuff>(fargosouls.Name, "TimeFrozenBuff").Type))
-            //target.AddBuff(ModContent.Find<ModBuff>(fargosouls.Name, "TimeFrozenBuff").Type, 300);
+                //if (!target.HasBuff(ModContent.Find<ModBuff>(fargosouls.Name, "TimeFrozenBuff").Type))
+                //target.AddBuff(ModContent.Find<ModBuff>(fargosouls.Name, "TimeFrozenBuff").Type, 300);
             }
-            
-              
+
+
         }
 
         public override Color? GetAlpha(Color lightColor)
         {
             if (ssm.amiactive)
             {
-            return Color.White * Projectile.Opacity * (targetPlayer == Main.myPlayer && !MutantDead ? 1f : 0.15f);
+                return Color.White * Projectile.Opacity * (targetPlayer == Main.myPlayer && !MutantDead ? 1f : 0.15f);
             }
             else
             {
@@ -144,12 +144,12 @@ namespace ssm.Content.Projectiles.Shtuxibus
                     Vector2 value4 = Projectile.oldPos[i] + Projectile.Hitbox.Size() / 2 + drawOffset.RotatedBy(rotationPerTick * -i);
                     float num165 = Projectile.rotation;
                     Main.EntitySpriteDraw(texture2D13, value4 - Main.screenPosition + new Vector2(0, Projectile.gfxOffY), new Microsoft.Xna.Framework.Rectangle?(rectangle), color27, num165, origin2, Projectile.scale, SpriteEffects.None, 0);
-                 //   Main.EntitySpriteDraw(glow, value4 - Main.screenPosition + new Vector2(0, Projectile.gfxOffY), new Microsoft.Xna.Framework.Rectangle?(glowrectangle), glowcolor * ((float)(max - i) / max),
-                       // Projectile.rotation, gloworigin2, Projectile.scale * 1.4f, SpriteEffects.None, 0);
+                    //   Main.EntitySpriteDraw(glow, value4 - Main.screenPosition + new Vector2(0, Projectile.gfxOffY), new Microsoft.Xna.Framework.Rectangle?(glowrectangle), glowcolor * ((float)(max - i) / max),
+                    // Projectile.rotation, gloworigin2, Projectile.scale * 1.4f, SpriteEffects.None, 0);
                 }
                 Main.EntitySpriteDraw(texture2D13, Projectile.Center + drawOffset - Main.screenPosition + new Vector2(0f, Projectile.gfxOffY), new Microsoft.Xna.Framework.Rectangle?(rectangle), color26, Projectile.rotation, origin2, Projectile.scale, SpriteEffects.None, 0);
-             //   Main.EntitySpriteDraw(glow, Projectile.Center + drawOffset - Main.screenPosition + new Vector2(0f, Projectile.gfxOffY), new Microsoft.Xna.Framework.Rectangle?(glowrectangle), glowcolor,
-         //           Projectile.rotation, gloworigin2, Projectile.scale * 1.3f, SpriteEffects.None, 0);
+                //   Main.EntitySpriteDraw(glow, Projectile.Center + drawOffset - Main.screenPosition + new Vector2(0f, Projectile.gfxOffY), new Microsoft.Xna.Framework.Rectangle?(glowrectangle), glowcolor,
+                //           Projectile.rotation, gloworigin2, Projectile.scale * 1.3f, SpriteEffects.None, 0);
             }
             return false;
         }

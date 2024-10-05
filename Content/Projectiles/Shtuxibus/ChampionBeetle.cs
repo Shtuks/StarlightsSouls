@@ -115,7 +115,7 @@ namespace ssm.Content.Projectiles.Shtuxibus
         {
             target.AddBuff(BuffID.BrokenArmor, 300);
             target.AddBuff(BuffID.WitheredArmor, 300);
-            
+
         }
 
         public override bool PreDraw(ref Color lightColor)

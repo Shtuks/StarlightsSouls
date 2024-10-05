@@ -9,6 +9,8 @@ using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 using FargowiltasSouls.Content.Items;
+using ssm.Content.Items.Materials;
+using ssm.Content.Tiles;
 
 namespace ssm.Content.Items.Swarm.Energizers
 {
@@ -25,16 +27,24 @@ namespace ssm.Content.Items.Swarm.Energizers
 
         public override void SafeModifyTooltips(List<TooltipLine> list)
         {
-        foreach (TooltipLine tooltipLine in list)
+            foreach (TooltipLine tooltipLine in list)
             {
                 if (tooltipLine.Mod == "Terraria" && tooltipLine.Name == "ItemName")
-                tooltipLine.OverrideColor = new Color?(Main.DiscoColor);
+                    tooltipLine.OverrideColor = new Color?(Main.DiscoColor);
             }
         }
 
         public override Color? GetAlpha(Color lightColor)
         {
             return new Color?(new Color(Main.DiscoR, Main.DiscoG, Main.DiscoB));
+        }
+
+        public override void AddRecipes()
+        {
+            this.CreateRecipe(1)
+            .AddIngredient<InfinityCatalyst>()
+            .AddTile<MutantsForgeTile>()
+            .Register();
         }
     }
 }

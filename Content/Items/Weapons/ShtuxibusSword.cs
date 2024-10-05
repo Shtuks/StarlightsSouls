@@ -30,7 +30,7 @@ using Luminance.Core.Graphics;
 
 namespace ssm.Content.Items.Weapons
 {
-	public class ShtuxibusSword : SoulsItem
+    public class ShtuxibusSword : SoulsItem
     {
         private readonly Mod fargosouls = ModLoader.GetMod("FargowiltasSouls");
         public override void SetStaticDefaults()
@@ -159,7 +159,8 @@ namespace ssm.Content.Items.Weapons
                 Projectile.NewProjectile(source, position, velocity, type, damage, knockback, player.whoAmI, -Math.Sign(velocity.X));
                 return false;
             }
-            else{return true;}}
+            else { return true; }
+        }
 
         public override bool PreDrawTooltipLine(DrawableTooltipLine line, ref int yOffset)
         {

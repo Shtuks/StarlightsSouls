@@ -36,9 +36,9 @@ namespace ssm.Content.Projectiles.Deathrays
             base.SetStaticDefaults();
             Main.projFrames[Projectile.type] = 5;
         }
-    public override void SetDefaults()
+        public override void SetDefaults()
         {
-        Projectile.netImportant = true;  
+            Projectile.netImportant = true;
         }
         public override bool? CanDamage()
         {
@@ -57,7 +57,7 @@ namespace ssm.Content.Projectiles.Deathrays
             }
             if (Projectile.localAI[0] == 0f)
             {
-               
+
             }
             float num801 = 10f;
             Projectile.localAI[0] += 1f;

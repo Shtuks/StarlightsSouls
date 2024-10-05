@@ -126,7 +126,7 @@ namespace ssm.Content.Projectiles.Shtuxibus
 
         public override void OnHitPlayer(Player target, Player.HurtInfo info)
         {
-         //   target.AddBuff(ModContent.BuffType<Buffs.Masomode.Lovestruck>(), 240);
+            //   target.AddBuff(ModContent.BuffType<Buffs.Masomode.Lovestruck>(), 240);
         }
 
         public float WidthFunction(float _) => Projectile.width * Projectile.scale * 1.2f;

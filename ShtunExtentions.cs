@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace ssm
 {
-    public static class ShtunExtintion
+    public static class ShtunExtentions
     {
         /// <summary>
         /// Adjusts a TooltipLine to account for prefixes. <br />

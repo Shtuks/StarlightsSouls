@@ -136,7 +136,7 @@ namespace ssm.Content.Projectiles.Shtuxibus
 
         public override void OnHitPlayer(Player target, Player.HurtInfo info)
         {
-           
+
         }
 
         public override void OnKill(int timeleft)

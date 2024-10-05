@@ -877,6 +877,273 @@ Items: {
 		DisplayName: Profanded Something
 		Tooltip: ""
 	}
+
+	AsthraltiteEnchant: {
+		DisplayName: Asthraltite Enchant
+		Tooltip:
+			'''
+			'Asph-... Asthath-... How are you meant to pronounce this?'
+			Press [Ability (Primary)] to deploy one of 4 spells
+			Press [Ability (Primary)] and Up/Down to cycle between the spells
+			Deploying a spell will initiate a cooldown of 1 minute
+			Effects of Ring of the Fallen, Memento Mori, and Arcanum of the Caster
+			'''
+	}
+
+	BismuthEnchant: {
+		DisplayName: Bismuth Enchant
+		Tooltip:
+			'''
+			'It takes every color to make a rainbow'
+			Hitting enemies has a chance to summon a bismuth hammer for extra damage
+			'''
+	}
+
+	BlazingBruteEnchant: {
+		DisplayName: Blazing Brute Enchant
+		Tooltip:
+			'''
+			'Your spirit ignites like the brightest flame. Soon, your enemies will too'
+			Standing still for 5 seconds charges a shield that increases damage reduction by 25% per level (max of 4) 
+			Getting hit or moving resets the counter
+			'''
+	}
+
+	BlightboneEnchant: {
+		DisplayName: Blightbone Enchant
+		Tooltip:
+			'''
+			'Your spooks and scares will send shivers down your enemies' spines'
+			Empowers certain bone-related weapons
+			Effects of Dreadflame Emblem
+			'''
+	}
+
+	CosmicCommanderEnchant: {
+		DisplayName: Cosmic Commander Enchant
+		Tooltip:
+			'''
+			'Make Soran great again'
+			Pressing [Ability] puts you in 'Sniper State' 
+			Your damage is upped in this state however you are frozen in place and have reduced defense 
+			State is toggled upon button press and has a cooldown of 5 seconds after switching
+			'''
+	}
+
+	DreadfireEnchant: {
+		DisplayName: Dreadfire Enchant
+		Tooltip:
+			'''
+			'Ralnek's spirit guides you'
+			Pressing [Ability] will activate 'Dreadfire Aura'.
+			'Dreadfire Aura' increases minion damage greatly for a minute. 
+			3 minute cooldown
+			Effects of Pumpkin Amulet
+			'''
+	}
+
+	EerieEnchant: {
+		DisplayName: Eerie Enchant
+		Tooltip:
+			'''
+			'Creeper? Aw man…'
+			Minion damage grants increased life regeneration
+			'''
+	}
+
+	ExitumLuxEnchant: {
+		DisplayName: Exitum Lux Enchant
+		Tooltip:
+			'''
+			'Does something soon'TM
+			Effects of Stone of Resonance
+			'''
+	}
+
+	FallenPrinceEnchant: {
+		DisplayName: Fallen Prince Enchant
+		Tooltip:
+			'''
+			'Give up your heritage, gain power'
+			Hitting enemies has a chance to summon an energy blade behind you (Max of 5).
+			Every newly acquired blade increases the damage of pre-existing ones by 20%
+			Pressing [Ability] will launch the blades at nearby enemies
+			Effects of Novaniel's Resolve
+			'''
+	}
+
+	FlariumEnchant: {
+		DisplayName: Flarium Enchant
+		Tooltip:
+			'''
+			'Raze your enemies with Araghur's flames'
+			Taking fatal damage will revive you with 1/3rd of your max health
+			You will have one minute of increased strength after rebirth
+			5 minute cooldown
+			'''
+	}
+
+	FrosthunterEnchant: {
+		DisplayName: Frosthunter Enchant
+		Tooltip:
+			'''
+			'The hunter now hunted, the prey now predator'
+			15% increased ranged damage while in the snow biome
+			Ranged projectiles frostburn enemies
+			Effects of Frigid Pendant
+			'''
+	}
+
+	LapisEnchant: {
+		DisplayName: Lapis Enchant
+		Tooltip:
+			'''
+			'Gotta go fast'
+			20% increased movement speed
+			Effects of Lapis Pendant
+			'''
+	}
+
+	MarstechEnchant: {
+		DisplayName: Marstech Enchant
+		Tooltip:
+			'''
+			'Who needs magic when you have technology?'
+			Dealing damage charges up an energy forcefield around you that damages enemies and decays over time 
+			Can be instantly discharged by pressing [Ability], which will cause a shockwave to damage all nearby enemies 
+			Damage, range and debuff duration are increased by forcefield strength 
+			Has a cooldown of 1 minute
+			Damaging enemies will occasionally call upon a meteor to fall from the sky
+			'''
+	}
+
+	NebulousApprenticeEnchant: {
+		DisplayName: Nebulous Apprentice Enchant
+		Tooltip:
+			'''
+			'Nuba would be proud'
+			Attacking enemies may sometimes release buff wisps which can be picked up for different stacking buffs
+			Effects of Nuba's Blessing
+			'''
+	}
+
+	PrairieEnchant: {
+		DisplayName: Prairie Enchant
+		Tooltip:
+			'''
+			'Subdued Serenity'
+			5% increased kinetic damage
+			'''
+	}
+
+	QuasarEnchant: {
+		DisplayName: Quasar Enchant
+		Tooltip:
+			'''
+			'It's time to shine'
+			Throwing damage creates surges of energy around you
+			Energy surges attempt to home into enemies
+			'''
+	}
+
+	SpaceJunkEnchant: {
+		DisplayName: Space Junk Enchant
+		Tooltip:
+			'''
+			'I'm da spaceman!'
+			33% chance to not consume thrown items
+			Damaging enemies will occasionally call upon a meteor to fall from the sky
+			'''
+	}
+
+	StellarPriestEnchant: {
+		DisplayName: Stellar Priest Enchant
+		Tooltip:
+			'''
+			'Stand proud'
+			Summons a Stellar Guardian behind you that attacks enemies
+			'''
+	}
+
+	VoidWardenEnchant: {
+		DisplayName: Void Warden Enchant
+		Tooltip:
+			'''
+			'The ride never ends'
+			Taking damage has a chance to freeze all enemies nearby
+			Bosses and enemies with over 8000 HP are unaffected 
+			Attacking has a 5% chance to make nearby enemies take double damage
+			'''
+	}
+
+	VulcanReaperEnchant: {
+		DisplayName: Vulcan Reaper Enchant
+		Tooltip:
+			'''
+			'Reap the rewards of your near-endless grind'
+			Provides immunity to Flarium Inferno and Obsidian Curse
+			'''
+	}
+
+	FoundationsForce: {
+		DisplayName: Foundations Force
+		Tooltip:
+			'''
+			':HeyMF:'
+			All armor bonuses from Prairie, Frosthunter, Lapis, and Blightbone
+			Effects of Frigid Pendant, Lapis Pendant, and Dreadflame Emblem
+			'''
+	}
+
+	GenerationsForce: {
+		DisplayName: Generations Force
+		Tooltip:
+			'''
+			Through all this world's years, none have seen anything quite like you'
+			All armor bonuses from Eerie, Bismuth, and Dreadfire
+			All armor bonuses from Space Junk and Marstech
+			Effects of Pumpkin Amulet
+			'''
+	}
+
+	SoranForce: {
+		DisplayName: Soran Force
+		Tooltip:
+			'''
+			'The true power of the Soraniti'
+			All armor bonuses from Blazing Brute, Cosmic Commander, and Nebulous Apprentice
+			All armor bonuses from Stellar Priest, Quasar, and Fallen Prince
+			Effects of Nuba's Blessing, Novaniel's Resolve, and Celestial Ring
+			'''
+	}
+
+	SyranForce: {
+		DisplayName: Syran Force
+		Tooltip:
+			'''
+			'Dragon Rage empowers you, and encourages you to go on'
+			All armor bonuses from Void Warden, Vulcan Reaper, and Flarium
+			All armor bonuses from Asthraltite
+			Effects of Ring of the Fallen, Memento Mori, and Arcanum of the Caster
+			'''
+	}
+
+	SoASoul: {
+		DisplayName: Soul of Two Realms
+		Tooltip:
+			'''
+			'Two worlds, now embodied as one'
+			All armor bonuses from Bismuth, Frosthunter, and Blightbone
+			All armor bonuses from Dreadfire, Space Junk, and Marstech
+			All armor bonuses from Blazing Brute, Cosmic Commander, and Nebulous Apprentice
+			All armor bonuses from Stellar Priest and Fallen Prince
+			All armor bonuses from Void Warden, Vulcan Reaper, and Flarium
+			All armor bonuses from Asthraltite
+			Effects of Dreadflame Emblem, Lapis Pendant, Frigid Pendant, and Pumpkin Amulet
+			Effects of Nuba's Blessing, Novaniel's Resolve, and Celestial Ring
+			Effects of Ring of the Fallen, Memento Mori, and Arcanum of the Caster
+			'''
+	}
 }
 
 Buffs: {
@@ -948,6 +1215,11 @@ Buffs: {
 	ChtuxlagorInfernoEX: {
 		Description: Mods.ssm.Buffs.ChtuxlagorInfernoEX.Description
 		DisplayName: Chtuxlagor Inferno E X
+	}
+
+	StellarGuardianBuff: {
+		DisplayName: Stellar Guardian Buff
+		Description: Mods.ssm.Buffs.StellarGuardianBuff.Description
 	}
 }
 
@@ -1070,6 +1342,16 @@ NPCs: {
 }
 
 Toggler: {
+	GenerationsForceHeader: Generations Force
+	SoranForceHeader: Soran Force
+	BlazingBruteEffect: Blazing Shield
+	FallenPrinceEffect: Energy Blades
+	NebulousApprenticeEffect: Nebulous Flames
+	QuasarEffect: Energy Surges
+	StellarPriestEffect: Stallar Guardian
+	BismuthEffect: Bismuth Hammers
+	DreadfireEffect: Pumpkin Amulet
+	MarstechEffect: Force Fields
 	CalamitySoulHeader: Calamity Soul
 	ShatteredCommunityEffect: Shattered Community
 	EridanusEffect: Eridanus blessing

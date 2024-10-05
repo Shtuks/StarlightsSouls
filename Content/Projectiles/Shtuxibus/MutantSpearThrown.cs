@@ -15,8 +15,8 @@ namespace ssm.Content.Projectiles.Shtuxibus
     public class MutantSpearThrown : ModProjectile
     {
         public override string Texture => "ssm/Content/Projectiles/Shtuxibus/MutantSpear";
-	    private readonly Mod fargosouls = ModLoader.GetMod("FargowiltasSouls");
-		private readonly Mod calamity = ModLoader.GetMod("CalamityMod");
+        private readonly Mod fargosouls = ModLoader.GetMod("FargowiltasSouls");
+        private readonly Mod calamity = ModLoader.GetMod("CalamityMod");
         public override void SetStaticDefaults()
         {
             ProjectileID.Sets.TrailCacheLength[Projectile.type] = 10;
@@ -78,21 +78,21 @@ namespace ssm.Content.Projectiles.Shtuxibus
         {
             if (--Projectile.localAI[0] < 0)
             {
-        
-                    Projectile.localAI[0] = 3;
 
-                    for (int i = -1; i <= 1; i += 2)
+                Projectile.localAI[0] = 3;
+
+                for (int i = -1; i <= 1; i += 2)
+                {
+                    if (Main.netMode != NetmodeID.MultiplayerClient)
                     {
-                        if (Main.netMode != NetmodeID.MultiplayerClient)
-                        {
-                            int p = Projectile.NewProjectile(Projectile.InheritSource(Projectile), Projectile.Center, 16f / 2f * Vector2.Normalize(Projectile.velocity).RotatedBy(MathHelper.PiOver2 * i),
-                              ModContent.ProjectileType<MutantSphereSmall>(), Projectile.damage, 0f, Projectile.owner, -1);
-                            if (p != Main.maxProjectiles)
-                                Main.projectile[p].timeLeft = 15;
-                        }
+                        int p = Projectile.NewProjectile(Projectile.InheritSource(Projectile), Projectile.Center, 16f / 2f * Vector2.Normalize(Projectile.velocity).RotatedBy(MathHelper.PiOver2 * i),
+                          ModContent.ProjectileType<MutantSphereSmall>(), Projectile.damage, 0f, Projectile.owner, -1);
+                        if (p != Main.maxProjectiles)
+                            Main.projectile[p].timeLeft = 15;
                     }
-                
-              
+                }
+
+
             }
 
             if (Projectile.localAI[1] == 0f)
@@ -108,26 +108,26 @@ namespace ssm.Content.Projectiles.Shtuxibus
 
         public override void OnHitPlayer(Player target, Player.HurtInfo info)
         {
-           
-                int totalHealPerHit = npc.lifeMax / 100 * 5;
 
-                const int max = 20;
-                for (int i = 0; i < max; i++)
+            int totalHealPerHit = npc.lifeMax / 100 * 5;
+
+            const int max = 20;
+            for (int i = 0; i < max; i++)
+            {
+                Vector2 vel = Main.rand.NextFloat(2f, 9f) * -Vector2.UnitY.RotatedByRandom(MathHelper.TwoPi);
+                float ai0 = npc.whoAmI;
+                float ai1 = vel.Length() / Main.rand.Next(30, 90); //window in which they begin homing in
+
+                int healPerOrb = (int)(totalHealPerHit / max * Main.rand.NextFloat(0.95f, 1.05f));
+
+                if (target.whoAmI == Main.myPlayer && target.ownedProjectileCounts[ModContent.Find<ModProjectile>(fargosouls.Name, "MutantHeal").Type] < 10)
                 {
-                    Vector2 vel = Main.rand.NextFloat(2f, 9f) * -Vector2.UnitY.RotatedByRandom(MathHelper.TwoPi);
-                    float ai0 = npc.whoAmI;
-                    float ai1 = vel.Length() / Main.rand.Next(30, 90); //window in which they begin homing in
+                    Projectile.NewProjectile(Projectile.InheritSource(Projectile), target.Center, vel, ModContent.Find<ModProjectile>(fargosouls.Name, "MutantHeal").Type, healPerOrb, 0f, Main.myPlayer, ai0, ai1);
 
-                    int healPerOrb = (int)(totalHealPerHit / max * Main.rand.NextFloat(0.95f, 1.05f));
-
-                    if (target.whoAmI == Main.myPlayer && target.ownedProjectileCounts[ModContent.Find<ModProjectile>(fargosouls.Name, "MutantHeal").Type] < 10)
-                    {
-                        Projectile.NewProjectile(Projectile.InheritSource(Projectile), target.Center, vel,ModContent.Find<ModProjectile>(fargosouls.Name, "MutantHeal").Type, healPerOrb, 0f, Main.myPlayer, ai0, ai1);
-
-                        SoundEngine.PlaySound(SoundID.Item27, target.Center);
-                    }
+                    SoundEngine.PlaySound(SoundID.Item27, target.Center);
                 }
-            
+            }
+
         }
 
         public override Color? GetAlpha(Color lightColor)

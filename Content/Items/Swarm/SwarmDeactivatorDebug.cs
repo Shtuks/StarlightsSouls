@@ -7,6 +7,7 @@ using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
 using Fargowiltas.Items.Summons.SwarmSummons;
+using ssm.Content.Items.Swarm.Summons;
 
 namespace ssm.Content.Items.Swarm
 {
@@ -19,7 +20,6 @@ namespace ssm.Content.Items.Swarm
             Item.height = 20;
             Item.maxStack = 100;
             Item.value = 10000;
-            Item.rare = ItemRarityID.Blue;
             Item.useAnimation = 30;
             Item.useTime = 30;
             Item.useStyle = ItemUseStyleID.Shoot;
@@ -32,6 +32,13 @@ namespace ssm.Content.Items.Swarm
             ssm.SwarmTotal = 0;
             ssm.SwarmKills = 0;
             return true;
+        }
+
+        public override void AddRecipes()
+        {
+            this.CreateRecipe(1)
+            .AddIngredient<AstralLump>()
+            .Register();
         }
     }
 }

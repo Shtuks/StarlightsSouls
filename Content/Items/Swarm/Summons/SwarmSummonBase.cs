@@ -17,7 +17,7 @@ namespace ssm.Content.Items.Swarm.Summons
 
         private int npcType;
         private readonly int maxSpawn; //energizer swarms are this size
-        
+
         protected SwarmSummonBase(int npcType, int maxSpawn)
         {
             this.npcType = npcType;

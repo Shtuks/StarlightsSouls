@@ -16,14 +16,12 @@ namespace ssm
             private set;
         }
 
-        // Goozma mod.
         public static Mod CalamityHunt
         {
             get;
             private set;
         }
 
-        // Chaotic evil mod.
         public static Mod CalamityRemix
         {
             get;

@@ -104,7 +104,7 @@ namespace ssm.Content.Projectiles.Shtuxibus
 
         public override void ModifyHitNPC(NPC target, ref NPC.HitModifiers modifiers)
         {
-          
+
         }
 
         public override void OnHitPlayer(Player target, Player.HurtInfo info)

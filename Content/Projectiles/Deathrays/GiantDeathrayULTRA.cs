@@ -32,12 +32,12 @@ namespace ssm.Content.Projectiles.Deathrays
             Projectile.usesIDStaticNPCImmunity = true;
             Projectile.idStaticNPCHitCooldown = 0;
             Projectile.GetGlobalProjectile<FargoSoulsGlobalProjectile>().TimeFreezeImmune = true;
-		//	Projectile.GetGlobalProjectile<FargoSoulsGlobalProjectile>().ImmuneToMutantBomb = true;
-		//	Projectile.GetGlobalProjectile<FargoSoulsGlobalProjectile>().ImmuneToGuttedHeart = true;
-			Projectile.GetGlobalProjectile<FargoSoulsGlobalProjectile>().CanSplit = false;
-		//	Projectile.GetGlobalProjectile<FargoGlobalProjectile>().TimeFreezeImmune = true;
-		//	Projectile.GetGlobalProjectile<FargoGlobalProjectile>().ImmuneToMutantBomb = true;
-		    Projectile.GetGlobalProjectile<FargoSoulsGlobalProjectile>().CanSplit = false;
+            //	Projectile.GetGlobalProjectile<FargoSoulsGlobalProjectile>().ImmuneToMutantBomb = true;
+            //	Projectile.GetGlobalProjectile<FargoSoulsGlobalProjectile>().ImmuneToGuttedHeart = true;
+            Projectile.GetGlobalProjectile<FargoSoulsGlobalProjectile>().CanSplit = false;
+            //	Projectile.GetGlobalProjectile<FargoGlobalProjectile>().TimeFreezeImmune = true;
+            //	Projectile.GetGlobalProjectile<FargoGlobalProjectile>().ImmuneToMutantBomb = true;
+            Projectile.GetGlobalProjectile<FargoSoulsGlobalProjectile>().CanSplit = false;
             Projectile.GetGlobalProjectile<FargoSoulsGlobalProjectile>().noInteractionWithNPCImmunityFrames = true;
             Projectile.GetGlobalProjectile<FargoSoulsGlobalProjectile>().DeletionImmuneRank = 2;
             CooldownSlot = -1;
@@ -60,7 +60,7 @@ namespace ssm.Content.Projectiles.Deathrays
             {
                 Projectile.velocity = -Vector2.UnitY;
             }
-           
+
             float num801 = 30f;
             Projectile.localAI[0] += 1f;
             if (Projectile.localAI[0] >= maxTime)
@@ -96,28 +96,28 @@ namespace ssm.Content.Projectiles.Deathrays
             float amount = 0.5f;
             Projectile.localAI[1] = MathHelper.Lerp(Projectile.localAI[1], num807, amount);
         }
-        	public override Color? GetAlpha(Color lightColor)
-		{
-			//IL_000f: Unknown result type (might be due to invalid IL or missing references)
-			return new Color(Main.DiscoR, Main.DiscoG, Main.DiscoB);
-		}
+        public override Color? GetAlpha(Color lightColor)
+        {
+            //IL_000f: Unknown result type (might be due to invalid IL or missing references)
+            return new Color(Main.DiscoR, Main.DiscoG, Main.DiscoB);
+        }
 
-    public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
-		{
-			target.immune[Projectile.owner] = 0;
-			if (Projectile.owner == Main.myPlayer)
-			{
-				//int num = Projectile.NewProjectile(Projectile.GetSource_FromThis(), ((Entity)target).position + new Vector2((float)Main.rand.Next(((Entity)target).width), (float)Main.rand.Next(((Entity)target).height)), Vector2.Zero, ModContent.ProjectileType<ProtoProjectileAimButOP>(), Projectile.damage, 0f, Projectile.owner, 0f, 0f);
-				//if (num < 1000)
-				//{
-				//	  Projectile.DamageType = DamageClass.Melee;
-				//}
-			}
-			target.life = 0;
-			target.HitEffect(0, 10.0);
-			target.checkDead();
-			((Entity)target).active = false;
-			target.NPCLoot();
-		}
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
+        {
+            target.immune[Projectile.owner] = 0;
+            if (Projectile.owner == Main.myPlayer)
+            {
+                //int num = Projectile.NewProjectile(Projectile.GetSource_FromThis(), ((Entity)target).position + new Vector2((float)Main.rand.Next(((Entity)target).width), (float)Main.rand.Next(((Entity)target).height)), Vector2.Zero, ModContent.ProjectileType<ProtoProjectileAimButOP>(), Projectile.damage, 0f, Projectile.owner, 0f, 0f);
+                //if (num < 1000)
+                //{
+                //	  Projectile.DamageType = DamageClass.Melee;
+                //}
+            }
+            target.life = 0;
+            target.HitEffect(0, 10.0);
+            target.checkDead();
+            ((Entity)target).active = false;
+            target.NPCLoot();
+        }
     }
 }

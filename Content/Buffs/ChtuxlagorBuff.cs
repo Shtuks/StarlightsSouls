@@ -6,17 +6,17 @@ using FargowiltasSouls;
 #nullable disable
 namespace ssm.Content.Buffs
 {
-  public class ChtuxlagorBuff : ModBuff
-  {
-    public virtual void SetStaticDefaults()
+    public class ChtuxlagorBuff : ModBuff
     {
-      Main.buffNoSave[this.Type] = true;
-      Main.buffNoTimeDisplay[this.Type] = true;
-      BuffID.Sets.NurseCannotRemoveDebuff[this.Type] = true;
-    }
+        public virtual void SetStaticDefaults()
+        {
+            Main.buffNoSave[this.Type] = true;
+            Main.buffNoTimeDisplay[this.Type] = true;
+            BuffID.Sets.NurseCannotRemoveDebuff[this.Type] = true;
+        }
 
-    public virtual void Update(Player player, ref int buffIndex)
-    {
+        public virtual void Update(Player player, ref int buffIndex)
+        {
+        }
     }
-  }
 }

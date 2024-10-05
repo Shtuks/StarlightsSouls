@@ -108,7 +108,7 @@ namespace ssm.Content.Projectiles.Minions
             Projectile.rotation = (float)Math.Atan2(angle.Y, angle.X) + (float)Math.PI / 2f;
         }
 
-       
+
 
         public override bool PreDraw(ref Color lightColor)
         {

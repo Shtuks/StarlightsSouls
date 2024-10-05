@@ -7,10 +7,45 @@
 	<PropertyGroup>
 		
 	</PropertyGroup>
+	<ItemGroup>
+	  <Reference Include="CalamityHunt">
+	    <HintPath>Libraries\CalamityHunt_v1.1.3.dll</HintPath>
+	  </Reference>
+	  <Reference Include="CalamityMod">
+	    <HintPath>Libraries\CalamityMod.dll</HintPath>
+	  </Reference>
+	  <Reference Include="CatalystMod">
+	    <HintPath>Libraries\CatalystMod_v1.1.2.3.dll</HintPath>
+	  </Reference>
+	  <Reference Include="FargoMoreSoulsCompat">
+	    <HintPath>Libraries\FargoMoreSoulsCompat_v0.4.2.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Fargowiltas">
+	    <HintPath>Libraries\Fargowiltas.dll</HintPath>
+	  </Reference>
+	  <Reference Include="FargowiltasCrossmod">
+	    <HintPath>Libraries\FargowiltasCrossmod_v1.1.0.8.dll</HintPath>
+	  </Reference>
+	  <Reference Include="FargowiltasSouls">
+	    <HintPath>Libraries\FargowiltasSouls.dll</HintPath>
+	  </Reference>
+	  <Reference Include="MMHOOK_CalamityMod">
+	    <HintPath>Libraries\MMHOOK_CalamityMod.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Redemption">
+	    <HintPath>Libraries\Redemption.dll</HintPath>
+	  </Reference>
+	  <Reference Include="SacredTools">
+	    <HintPath>Libraries\SacredTools.dll</HintPath>
+	  </Reference>
+	  <Reference Include="SubworldLibrary">
+	    <HintPath>Libraries\SubworldLibrary.dll</HintPath>
+	  </Reference>
+	  <Reference Include="ThoriumMod">
+	    <HintPath>Libraries\ThoriumMod_v1.7.1.6.dll</HintPath>
+	  </Reference>
+	</ItemGroup>
 
 	<!-- References -->
-	<ItemGroup>
-		
-	</ItemGroup>
 
 </Project>

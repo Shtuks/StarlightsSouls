@@ -19,7 +19,6 @@ using ssm.Content.Items.Singularities;
 using ssm.Content.NPCs;
 using ssm.Content.NPCs.Shtuxibus;
 using ssm.Content.Items.Swarm.Energizers;
-using Terraria.ID;
 using Fargowiltas;
 using CalamityMod.Items.TreasureBags;
 using CalamityMod.Items.Placeables.Furniture.Trophies;
@@ -40,15 +39,12 @@ using CalamityMod.NPCs.Cryogen;
 using CalamityMod.NPCs.CalClone;
 using CalamityMod.NPCs.AstrumAureus;
 using CalamityMod.NPCs.BrimstoneElemental;
-using CalamityMod.NPCs.Crabulon;
 using CalamityMod.NPCs.Crags;
 using CalamityMod.NPCs.DesertScourge;
 using CalamityMod.NPCs.NormalNPCs;
 using CalamityMod.NPCs.PlaguebringerGoliath;
-using CalamityMod.NPCs.AstrumAureus;
 using CalamityMod.NPCs.AstrumDeus;
 using CalamityMod.NPCs.Yharon;
-using CalamityMod.NPCs.NormalNPCs;
 using CalamityMod.NPCs.PlagueEnemies;
 using CalamityMod.NPCs.PrimordialWyrm;
 using CalamityMod.NPCs.Providence;
@@ -63,13 +59,14 @@ using CalamityMod.NPCs.DevourerofGods;
 using CalamityMod.NPCs.SulphurousSea;
 using CalamityMod.NPCs.SupremeCalamitas;
 using CalamityMod.NPCs.TownNPCs;
+using Fargowiltas.Items.Summons.SwarmSummons.Energizers;
 
 namespace ssm
 {
     public partial class ShtunNpcs : GlobalNPC
     {
         private readonly Mod fargosouls = ModLoader.GetMod("FargowiltasSouls");
-		private readonly Mod calamity = ModLoader.GetMod("CalamityMod");
+        private readonly Mod calamity = ModLoader.GetMod("CalamityMod");
         public override bool InstancePerEntity => true;
         public bool BeetleOffenseAura;
         public bool BeetleDefenseAura;
@@ -79,6 +76,7 @@ namespace ssm
         public bool isWaterEnemy;
         public bool CelestialPower;
         internal bool SwarmActive;
+        internal bool PandoraActive;
         internal bool NoLoot = false;
         public bool HasWhipDebuff;
         public static int boss = -1;
@@ -108,7 +106,7 @@ namespace ssm
         public static int mutantBoss = -1;
         public static int Shtuxibus = -1;
         public static int championBoss = -1;
-        internal static int[] Bosses = { 
+        internal static int[] Bosses = {
             NPCID.KingSlime,
             NPCID.EyeofCthulhu,
             NPCID.EaterofWorldsHead,
@@ -138,7 +136,7 @@ namespace ssm
             NPCID.MourningWood,
             NPCID.SantaNK1,
             NPCID.HeadlessHorseman,
-            NPCID.PirateShip 
+            NPCID.PirateShip
         };
         public static bool Revengeance => CalamityMod.World.CalamityWorld.revenge;
         public static int eaterTimer;
@@ -156,18 +154,10 @@ namespace ssm
 
         public override bool PreKill(NPC npc)
         {
-            if (!NPC.AnyNPCs(ModContent.NPCType<Shtuxibus>())){
-
             if (NoLoot)
             {
                 return false;
             }
-
-            if (ssm.SwarmActive && (npc.type == NPCID.BlueSlime || npc.type == NPCID.EaterofWorldsBody || npc.type == NPCID.EaterofWorldsTail || npc.type == NPCID.Creeper || (npc.type >= NPCID.PirateCorsair && npc.type <= NPCID.PirateCrossbower)))
-            {
-                return false;
-            }
-
             if (SwarmActive && ssm.SwarmActive && Main.netMode != NetmodeID.MultiplayerClient)
             {
                 if (npc.type == ModContent.NPCType<Crabulon>())
@@ -244,10 +234,12 @@ namespace ssm
                 }
                 return false;
             }
-            return false;}
-            return true;
-        }
 
+            else
+            {
+                return true;
+            }
+        }
         public override void PostAI(NPC npc)
         {
             //always vulnerable in swarm
@@ -295,40 +287,40 @@ namespace ssm
 
 
         public override void ModifyShop(NPCShop shop)
-		{
-        void AddItem(int itemID, int customPrice = -1, Condition condition = null, Condition[] conditions = null)
-			{
-				if (condition != (Condition)null)
-				{
-					conditions = (Condition[])(object)new Condition[1] { condition };
-				}
-				if (conditions != null)
-				{
-					if (customPrice != -1)
-					{
-						shop.Add(new Item(itemID, 1, 0)
-						{
-							shopCustomPrice = customPrice
-						}, conditions);
-					}
-					else
-					{
-						shop.Add(itemID, conditions);
-					}
-				}
-				else if (customPrice != -1)
-				{
-					shop.Add(new Item(itemID, 1, 0)
-					{
-						shopCustomPrice = customPrice
-					}, Array.Empty<Condition>());
-				}
-				else
-				{
-					shop.Add(itemID, Array.Empty<Condition>());
-				}
-			}
-		}
+        {
+            void AddItem(int itemID, int customPrice = -1, Condition condition = null, Condition[] conditions = null)
+            {
+                if (condition != (Condition)null)
+                {
+                    conditions = (Condition[])(object)new Condition[1] { condition };
+                }
+                if (conditions != null)
+                {
+                    if (customPrice != -1)
+                    {
+                        shop.Add(new Item(itemID, 1, 0)
+                        {
+                            shopCustomPrice = customPrice
+                        }, conditions);
+                    }
+                    else
+                    {
+                        shop.Add(itemID, conditions);
+                    }
+                }
+                else if (customPrice != -1)
+                {
+                    shop.Add(new Item(itemID, 1, 0)
+                    {
+                        shopCustomPrice = customPrice
+                    }, Array.Empty<Condition>());
+                }
+                else
+                {
+                    shop.Add(itemID, Array.Empty<Condition>());
+                }
+            }
+        }
         private void Swarm(NPC npc, int boss, int bossbag, int trophy, int reward)
         {
             if (bossbag >= 0 && bossbag != ItemID.DefenderMedal)
@@ -474,4 +466,3 @@ namespace ssm
         }
     }
 }
-     

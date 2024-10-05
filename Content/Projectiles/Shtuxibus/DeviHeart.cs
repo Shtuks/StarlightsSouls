@@ -10,7 +10,7 @@ namespace ssm.Content.Projectiles.Shtuxibus
 {
     public class DeviHeart : ModProjectile
     {
-       
+
 
         public override void SetStaticDefaults()
         {
@@ -38,7 +38,7 @@ namespace ssm.Content.Projectiles.Shtuxibus
             return !target.stoned;
         }
 
-      
+
         public override Color? GetAlpha(Color lightColor)
         {
             return Color.White * Projectile.Opacity;

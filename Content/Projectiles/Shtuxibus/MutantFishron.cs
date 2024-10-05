@@ -14,7 +14,7 @@ namespace ssm.Content.Projectiles.Shtuxibus
     public class MutantFishron : ModProjectile
     {
         private bool spawned;
-           public override string Texture => "ssm/Content/Projectiles/Shtuxibus/OldDuke";
+        public override string Texture => "ssm/Content/Projectiles/Shtuxibus/OldDuke";
         int p = -1;
 
         public override void SetStaticDefaults()
@@ -77,7 +77,7 @@ namespace ssm.Content.Projectiles.Shtuxibus
 
         public override void AI()
         {
-             if (!spawned)
+            if (!spawned)
             {
                 spawned = true;
                 Projectile.frame = Main.rand.Next(11);

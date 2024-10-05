@@ -31,17 +31,17 @@ namespace ssm.Content.Projectiles.Minions
     public class DevianttSoul : ModProjectile
     {
 
-		 private readonly Mod fargosouls = ModLoader.GetMod("FargowiltasSouls");
+        private readonly Mod fargosouls = ModLoader.GetMod("FargowiltasSouls");
         public override void SetStaticDefaults()
         {
-          
+
             Main.projFrames[Projectile.type] = 4;
             ProjectileID.Sets.TrailCacheLength[Projectile.type] = 6;
             ProjectileID.Sets.TrailingMode[Projectile.type] = 2;
             ProjectileID.Sets.CultistIsResistantTo[Projectile.type] = true;
         }
 
-       public override void SetDefaults()
+        public override void SetDefaults()
         {
             Projectile.width = 34;
             Projectile.height = 50;

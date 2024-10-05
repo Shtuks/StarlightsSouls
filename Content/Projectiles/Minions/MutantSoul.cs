@@ -26,8 +26,8 @@ namespace ssm.Content.Projectiles.Minions
     public class MutantSoul : ModProjectile
     {
         public override string Texture => "ssm/Content/Projectiles/Minions/MutantSoul";
-		 private readonly Mod fargosouls = ModLoader.GetMod("FargowiltasSouls");
-		 private readonly Mod calamity = ModLoader.GetMod("CalamityMod");
+        private readonly Mod fargosouls = ModLoader.GetMod("FargowiltasSouls");
+        private readonly Mod calamity = ModLoader.GetMod("CalamityMod");
         public override void SetStaticDefaults()
         {
             Main.projFrames[Projectile.type] = 4;
@@ -36,7 +36,7 @@ namespace ssm.Content.Projectiles.Minions
             ProjectileID.Sets.CultistIsResistantTo[Projectile.type] = true;
         }
 
-       public override void SetDefaults()
+        public override void SetDefaults()
         {
             Projectile.width = 34;
             Projectile.height = 50;
@@ -80,7 +80,7 @@ namespace ssm.Content.Projectiles.Minions
                     {
                         Projectile.localAI[0] = 0;
                         if (Projectile.owner == Main.myPlayer)
-                            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Projectile.Center, Projectile.velocity + Projectile.DirectionTo(npc.Center) * 30f,  ModContent.Find<ModProjectile>(fargosouls.Name, "HentaiSpearThrown").Type, 300, Projectile.knockBack / 2, Projectile.owner, npc.whoAmI);
+                            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Projectile.Center, Projectile.velocity + Projectile.DirectionTo(npc.Center) * 30f, ModContent.Find<ModProjectile>(fargosouls.Name, "HentaiSpearThrown").Type, 300, Projectile.knockBack / 2, Projectile.owner, npc.whoAmI);
                     }
                 }
                 else //forget target
@@ -124,7 +124,7 @@ namespace ssm.Content.Projectiles.Minions
             }
         }
 
-    private void Movement(Vector2 targetPos, float speedModifier)
+        private void Movement(Vector2 targetPos, float speedModifier)
         {
             if (Projectile.Center.X < targetPos.X)
             {

@@ -10,8 +10,8 @@ namespace ssm.Content.Projectiles.Shtuxibus
 {
     public class WillJavelin : ModProjectile
     {
-          private bool spawned;
-       
+        private bool spawned;
+
 
         public override void SetStaticDefaults()
         {
@@ -34,7 +34,7 @@ namespace ssm.Content.Projectiles.Shtuxibus
 
         public override void AI()
         {
-             if (!spawned)
+            if (!spawned)
             {
                 spawned = true;
                 Projectile.frame = Main.rand.Next(3);
@@ -68,7 +68,7 @@ namespace ssm.Content.Projectiles.Shtuxibus
             }
         }
 
-     
+
 
         public override bool PreDraw(ref Color lightColor)
         {

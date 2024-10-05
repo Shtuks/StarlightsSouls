@@ -11,7 +11,7 @@ namespace ssm.Content.NPCs.Shtuxibus
     public class ShtuxibusIllusion : ModNPC
     {
         private readonly Mod fargosouls = ModLoader.GetMod("FargowiltasSouls");
-		private readonly Mod calamity = ModLoader.GetMod("CalamityMod");
+        private readonly Mod calamity = ModLoader.GetMod("CalamityMod");
         public override string Texture => "ssm/Content/NPCs/Shtuxibus/Shtuxibus";
 
         public override void SetStaticDefaults()
@@ -20,7 +20,7 @@ namespace ssm.Content.NPCs.Shtuxibus
             Main.npcFrameCount[NPC.type] = 4;
             NPCID.Sets.CantTakeLunchMoney[Type] = true;
 
-          
+
 
             NPCID.Sets.NPCBestiaryDrawOffset.Add(NPC.type, new NPCID.Sets.NPCBestiaryDrawModifiers(0)
             {
@@ -62,7 +62,7 @@ namespace ssm.Content.NPCs.Shtuxibus
             {
                 NPC.life = 0;
                 NPC.HitEffect();
-               // NPC.StrikeNPCNoInteraction(9999, 0f, 0);
+                // NPC.StrikeNPCNoInteraction(9999, 0f, 0);
                 NPC.active = false;
                 for (int i = 0; i < 40; i++)
                 {

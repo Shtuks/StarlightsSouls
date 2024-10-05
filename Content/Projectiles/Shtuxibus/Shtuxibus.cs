@@ -31,8 +31,8 @@ namespace ssm.Content.Projectiles.Shtuxibus
     public class Shtuxibus : ModProjectile
     {
         public override string Texture => "ssm/Content/NPCs/Shtuxibus/Shtuxibus";
-	    private readonly Mod fargosouls = ModLoader.GetMod("FargowiltasSouls");
-		private readonly Mod calamity = ModLoader.GetMod("CalamityMod");
+        private readonly Mod fargosouls = ModLoader.GetMod("FargowiltasSouls");
+        private readonly Mod calamity = ModLoader.GetMod("CalamityMod");
         public string trailTexture => "Content/NPCs/Shtuxibus/ShtuxibusSoul";
         public int npcType => ModContent.NPCType<NPCs.Shtuxibus.Shtuxibus>();
         public bool auraTrail;

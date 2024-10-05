@@ -41,9 +41,9 @@ namespace ssm.Content.Projectiles.Deathrays
             if (Main.rand.NextBool(10))
                 Projectile.spriteDirection *= -1;
         }
-        	public override Color? GetAlpha(Color lightColor)
-		{
-			return new Color(Main.DiscoR, Main.DiscoG, Main.DiscoB);
-		}
+        public override Color? GetAlpha(Color lightColor)
+        {
+            return new Color(Main.DiscoR, Main.DiscoG, Main.DiscoB);
+        }
     }
 }

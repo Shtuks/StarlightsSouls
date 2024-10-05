@@ -117,11 +117,11 @@ namespace ssm.Content.Projectiles.Deathrays
             }
         }
 
-       
+
         public float WidthFunction(float _) => Projectile.width * Projectile.scale * 3;
 
         public Color ColorFunction(float _) => new Color(253, 254, 32);
 
-      
+
     }
 }

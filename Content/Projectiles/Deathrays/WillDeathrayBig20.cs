@@ -46,9 +46,9 @@ namespace ssm.Content.Projectiles.Deathrays
         }
         public override void SetDefaults()
         {
-           
-                        Projectile.netImportant = true;
-           
+
+            Projectile.netImportant = true;
+
         }
         public override void AI()
         {
@@ -63,7 +63,7 @@ namespace ssm.Content.Projectiles.Deathrays
             }
             if (Projectile.localAI[0] == 0f)
             {
-               
+
             }
             float num801 = 10f;
             Projectile.localAI[0] += 1f;
@@ -149,6 +149,6 @@ namespace ssm.Content.Projectiles.Deathrays
 
         public Color ColorFunction(float _) => new(253, 254, 32);
 
-    
+
     }
 }

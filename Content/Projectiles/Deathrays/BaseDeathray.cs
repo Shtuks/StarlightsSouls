@@ -55,10 +55,10 @@ namespace ssm.Content.Projectiles.Deathrays
             Projectile.tileCollide = false;
             Projectile.timeLeft = 3600;
             Projectile.GetGlobalProjectile<FargoSoulsGlobalProjectile>().TimeFreezeImmune = true;
-			//Projectile.GetGlobalProjectile<FargoSoulsGlobalProjectile>().ImmuneToGuttedHeart = true;
-			Projectile.GetGlobalProjectile<FargoSoulsGlobalProjectile>().CanSplit = false;
-			//Projectile.GetGlobalProjectile<FargoSoulsGlobalProjectile>().ImmuneToMutantBomb = true;
-		    Projectile.GetGlobalProjectile<FargoSoulsGlobalProjectile>().CanSplit = false;
+            //Projectile.GetGlobalProjectile<FargoSoulsGlobalProjectile>().ImmuneToGuttedHeart = true;
+            Projectile.GetGlobalProjectile<FargoSoulsGlobalProjectile>().CanSplit = false;
+            //Projectile.GetGlobalProjectile<FargoSoulsGlobalProjectile>().ImmuneToMutantBomb = true;
+            Projectile.GetGlobalProjectile<FargoSoulsGlobalProjectile>().CanSplit = false;
             Projectile.GetGlobalProjectile<FargoSoulsGlobalProjectile>().noInteractionWithNPCImmunityFrames = true;
             Projectile.GetGlobalProjectile<FargoSoulsGlobalProjectile>().DeletionImmuneRank = 2;
             CooldownSlot = 1; //not in warning line, test?

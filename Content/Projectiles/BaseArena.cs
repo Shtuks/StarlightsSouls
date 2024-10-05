@@ -28,8 +28,8 @@ namespace ssm.Content.Projectiles
         protected float targetPlayer;
         public bool amiactive = false;
         private bool bruhusok;
-    public void amIactivus(bool whga)
-    {amiactive = whga;  }
+        public void amIactivus(bool whga)
+        { amiactive = whga; }
         protected BaseArena(float rotationPerTick, float threshold, int npcType, int dustType = 135, int increment = 2)
         {
             this.rotationPerTick = rotationPerTick;
@@ -75,15 +75,15 @@ namespace ssm.Content.Projectiles
 
         public override bool CanHitPlayer(Player target)
         {
-           
+
             return targetPlayer == target.whoAmI && target.hurtCooldowns[CooldownSlot] == 0;
         }
 
         public override bool? Colliding(Rectangle projHitbox, Rectangle targetHitbox)
         {
             if (ssm.amiactive)
-            {     
-            return Math.Abs((targetHitbox.Center.ToVector2() - projHitbox.Center.ToVector2()).Length() - threshold) < Projectile.width / 2 * Projectile.scale;
+            {
+                return Math.Abs((targetHitbox.Center.ToVector2() - projHitbox.Center.ToVector2()).Length() - threshold) < Projectile.width / 2 * Projectile.scale;
             }
             else
             {
@@ -185,7 +185,7 @@ namespace ssm.Content.Projectiles
         public override void OnHitPlayer(Player target, Player.HurtInfo info)
         {
             if (ssm.amiactive)
-            target.velocity = target.DirectionTo(Projectile.Center) * 4f;
+                target.velocity = target.DirectionTo(Projectile.Center) * 4f;
         }
 
         public override void OnKill(int timeLeft)

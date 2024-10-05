@@ -150,11 +150,11 @@ namespace ssm.Content.Projectiles.Shtuxibus
 
         // public override void OnHitPlayer(Player target, Player.HurtInfo info)
         // {
-          
+
         //    //     target.GetModPlayer<FargoSoulsPlayer>().MaxLifeReduction += 100;
         //         target.AddBuff(ModContent.BuffType<OceanicMaul>(), 5400);
         //         target.AddBuff(ModContent.BuffType<MutantFang>(), 180);
-            
+
         //     target.AddBuff(ModContent.BuffType<MutantNibble>(), 900);
         //     target.AddBuff(ModContent.BuffType<CurseoftheMoon>(), 900);
         // }

@@ -46,10 +46,10 @@ namespace ssm.Content.Projectiles.Shtuxibus
         public override void AI()
         {
             if (!Main.dedServ && Main.LocalPlayer.active)
-            if (Projectile.velocity.HasNaNs() || Projectile.velocity == Vector2.Zero)
-            {
-                Projectile.velocity = -Vector2.UnitY;
-            }
+                if (Projectile.velocity.HasNaNs() || Projectile.velocity == Vector2.Zero)
+                {
+                    Projectile.velocity = -Vector2.UnitY;
+                }
             NPC npc = ShtunUtils.NPCExists(Projectile.ai[1], ModContent.NPCType<NPCs.Shtuxibus.Shtuxibus>());
             if (npc != null)
             {
@@ -158,18 +158,18 @@ namespace ssm.Content.Projectiles.Shtuxibus
             target.velocity.X = 0;
             target.velocity.Y = -0.4f;
         }
-public override Color? GetAlpha(Color lightColor)
-		{
-			//IL_000f: Unknown result type (might be due to invalid IL or missing references)
-			return new Color(Main.DiscoR, Main.DiscoG, Main.DiscoB);
-		}
+        public override Color? GetAlpha(Color lightColor)
+        {
+            //IL_000f: Unknown result type (might be due to invalid IL or missing references)
+            return new Color(Main.DiscoR, Main.DiscoG, Main.DiscoB);
+        }
         public float WidthFunction(float trailInterpolant)
         {
             float baseWidth = Projectile.scale * Projectile.width;
 
             return baseWidth * 0.7f;
         }
-        public static Color[] DeviColors => new Color[] { new(Main.DiscoR, Main.DiscoG, Main.DiscoB), new(Main.DiscoR, Main.DiscoG, Main.DiscoB), new(Main.DiscoR, Main.DiscoG, Main.DiscoB), new(Main.DiscoR, Main.DiscoG, Main.DiscoB)};
+        public static Color[] DeviColors => new Color[] { new(Main.DiscoR, Main.DiscoG, Main.DiscoB), new(Main.DiscoR, Main.DiscoG, Main.DiscoB), new(Main.DiscoR, Main.DiscoG, Main.DiscoB), new(Main.DiscoR, Main.DiscoG, Main.DiscoB) };
         public Color ColorFunction(float trailInterpolant)
         {
             float time = (float)(0.5 * (1 + Math.Sin(1.5f * Main.GlobalTimeWrappedHourly % 1)));
@@ -177,7 +177,7 @@ public override Color? GetAlpha(Color lightColor)
             return Color.Lerp(Color.MediumVioletRed, Color.Purple, localInterpolant) * 2;
         }
 
-      //  public override bool PreDraw(ref Color lightColor) => false;
+        //  public override bool PreDraw(ref Color lightColor) => false;
 
         public void DrawPixelPrimitives(SpriteBatch spriteBatch)
         {
@@ -186,7 +186,7 @@ public override Color? GetAlpha(Color lightColor)
                 return;
 
             // Initialize the drawers.
-         
+
 
             // Get the laser end position.
             Vector2 laserEnd = Projectile.Center + Projectile.velocity.SafeNormalize(Vector2.UnitY) * drawDistance;
@@ -205,7 +205,7 @@ public override Color? GetAlpha(Color lightColor)
             #region MainLaser
 
             // Set shader parameters. This one takes two lots of fademaps and colors for two different overlayed textures.
-           
+
             #endregion
 
             // Draw the foreground rings.
@@ -278,9 +278,9 @@ public override Color? GetAlpha(Color lightColor)
                         ringDrawPoints[j] -= Projectile.velocity * offsetStrength * 100;
                 }
 
-           
-             
-           
+
+
+
                 iterator++;
             }
         }

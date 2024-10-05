@@ -48,32 +48,33 @@ using Terraria.Localization;
 
 namespace ssm
 {
-	public class ssm : Mod
-	{
+    public class ssm : Mod
+    {
         // Swarms
         internal static bool SwarmActive;
         internal static int SwarmKills;
         internal static int SwarmTotal;
         internal static int SwarmSpawned;
-        
+
         //wtf
-		internal static ssm Instance;
-		internal bool CalamityLoaded;
-		internal bool FargoLoaded;
-		internal bool SoulsLoaded;
-		internal Mod bossChecklist;
-		public static Mod furgus;
-	    internal Mod calamity;
-	    internal Mod fargosouls;
+        internal static ssm Instance;
+        internal bool CalamityLoaded;
+        internal bool FargoLoaded;
+        internal bool SoulsLoaded;
+        internal Mod bossChecklist;
+        public static Mod furgus;
+        internal Mod calamity;
+        internal Mod fargosouls;
         public static bool amiactive;
-		public override uint ExtraPlayerBuffSlots => 300u;
-        public override void Load(){
-        SkyManager.Instance["ssm:Shtuxibus"] = new ShtuxibusSky();
-        //SkyManager.Instance["ssm:Shtuxibus"] = new ShtuxibusSky2();
-        //CaughtNPCItem.Add("Shtuxibus", ModContent.NPCType<ShtuxianHarbringer>(), "'AND GODS WILL FALL!'");
-        ModLoader.TryGetMod("BossChecklist", out Mod bossChecklist);
-        furgus = ModLoader.GetMod("FargowiltasSouls");
-        Instance = this;
+        public override uint ExtraPlayerBuffSlots => 300u;
+        public override void Load()
+        {
+            SkyManager.Instance["ssm:Shtuxibus"] = new ShtuxibusSky();
+            //SkyManager.Instance["ssm:Shtuxibus"] = new ShtuxibusSky2();
+            //CaughtNPCItem.Add("Shtuxibus", ModContent.NPCType<ShtuxianHarbringer>(), "'AND GODS WILL FALL!'");
+            ModLoader.TryGetMod("BossChecklist", out Mod bossChecklist);
+            furgus = ModLoader.GetMod("FargowiltasSouls");
+            Instance = this;
             if (Main.netMode != NetmodeID.Server)
             {
                 #region shaders
@@ -106,28 +107,31 @@ namespace ssm
                 Filters.Scene["ssm:Nebula"] = new Filter(Filters.Scene["MonolithNebula"].GetShader(), EffectPriority.Medium);
                 Filters.Scene["ssm:Stardust"] = new Filter(Filters.Scene["MonolithStardust"].GetShader(), EffectPriority.Medium);
                 #endregion shaders
-            }}
-    public override void Unload()
-		{
+            }
+        }
+        public override void Unload()
+        {
             bossChecklist = null;
-			furgus = null;
-		}
-	public override void PostSetupContent()
-		{
-			try{
-			CalamityLoaded = ModLoader.GetMod("CalamityMod") != null;
-			SoulsLoaded = ModLoader.GetMod("FargowiltasSouls") != null;
-			FargoLoaded = ModLoader.GetMod("Fargowiltas") != null;
-			calamity = ModLoader.GetMod("CalamityMod");
-			fargosouls = ModLoader.GetMod("FargowiltasSouls");}
-    		catch (Exception e)
+            furgus = null;
+        }
+        public override void PostSetupContent()
+        {
+            try
+            {
+                CalamityLoaded = ModLoader.GetMod("CalamityMod") != null;
+                SoulsLoaded = ModLoader.GetMod("FargowiltasSouls") != null;
+                FargoLoaded = ModLoader.GetMod("Fargowiltas") != null;
+                calamity = ModLoader.GetMod("CalamityMod");
+                fargosouls = ModLoader.GetMod("FargowiltasSouls");
+            }
+            catch (Exception e)
             {
                 Logger.Warn("ssm PostSetupContent Error: " + e.StackTrace + e.Message);
             }
-		}
-    static float ColorTimer;
-    static float ColorTimer2;
-    public static Color ShtuxibusColor()
+        }
+        static float ColorTimer;
+        static float ColorTimer2;
+        public static Color ShtuxibusColor()
         {
             Color mutantColor = new Color(28, 222, 152);
             Color abomColor = new Color(255, 224, 53);
@@ -145,7 +149,7 @@ namespace ssm
             else
                 return Color.Lerp(deviColor, mutantColor, (ColorTimer2 - 200) / 100);
         }
-    public static Color ChtuxlagorColor()
+        public static Color ChtuxlagorColor()
         {
             Color mutantColor = new Color(28, 222, 152);
             Color abomColor = new Color(255, 224, 53);
@@ -163,7 +167,7 @@ namespace ssm
             else
                 return Color.Lerp(deviColor, mutantColor, (ColorTimer2 - 200) / 100);
         }
-    public static Color ShtuxibusSkyColor()
+        public static Color ShtuxibusSkyColor()
         {
             Color Green = new Color(173, 247, 125);
             Color Yellow = new Color(233, 214, 94);
@@ -187,16 +191,16 @@ namespace ssm
                 return Color.Lerp(Orange, Red, (ColorTimer2 - 200) / 100);
             else if (ColorTimer2 < 400)
                 return Color.Lerp(Red, Pink, (ColorTimer2 - 300) / 100);
-			else if (ColorTimer2 < 500)
+            else if (ColorTimer2 < 500)
                 return Color.Lerp(Pink, Magenta, (ColorTimer2 - 400) / 100);
             else if (ColorTimer2 < 600)
                 return Color.Lerp(Magenta, Blue, (ColorTimer2 - 500) / 100);
             else if (ColorTimer2 < 700)
                 return Color.Lerp(Blue, Cyean, (ColorTimer2 - 600) / 100);
-            else 
+            else
                 return Color.Lerp(Cyean, Green, (ColorTimer2 - 700) / 100);
         }
-    public static Color ChtuxlagorSkyColor()
+        public static Color ChtuxlagorSkyColor()
         {
             Color mutantColor = new Color(255, 0, 0);
             Color abomColor = new Color(0, 255, 0);
@@ -214,7 +218,7 @@ namespace ssm
             else
                 return Color.Lerp(deviColor, mutantColor, (ColorTimer2 - 200) / 100);
         }
-	public static int FindClosestHostileNPC(Vector2 location, float detectionRange, bool lineCheck = false)
+        public static int FindClosestHostileNPC(Vector2 location, float detectionRange, bool lineCheck = false)
         {
             NPC closestNpc = null;
             foreach (NPC n in Main.npc)
@@ -227,7 +231,7 @@ namespace ssm
             }
             return closestNpc == null ? -1 : closestNpc.whoAmI;
         }
-    public static int FindClosestHostileNPCPrioritizingMinionFocus(Projectile projectile, float detectionRange, bool lineCheck = false, Vector2 center = default)
+        public static int FindClosestHostileNPCPrioritizingMinionFocus(Projectile projectile, float detectionRange, bool lineCheck = false, Vector2 center = default)
         {
             if (center == default)
                 center = projectile.Center;
@@ -241,5 +245,5 @@ namespace ssm
             return FindClosestHostileNPC(center, detectionRange, lineCheck);
         }
 
-	}
+    }
 }

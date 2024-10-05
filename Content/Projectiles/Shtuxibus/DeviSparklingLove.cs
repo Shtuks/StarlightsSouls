@@ -13,9 +13,9 @@ using FargowiltasSouls.Content.Projectiles;
 namespace ssm.Content.Projectiles.Shtuxibus
 {
     public class DeviSparklingLove : ModProjectile
-    {        	
+    {
         private readonly Mod fargosouls = ModLoader.GetMod("FargowiltasSouls");
-		private readonly Mod calamity = ModLoader.GetMod("CalamityMod");
+        private readonly Mod calamity = ModLoader.GetMod("CalamityMod");
         public int scaleCounter;
         public override void SetStaticDefaults()
         {
@@ -52,7 +52,7 @@ namespace ssm.Content.Projectiles.Shtuxibus
                     Projectile.localAI[0] = 1;
                     Projectile.localAI[1] = Projectile.DirectionFrom(npc.Center).ToRotation();
                     if (Main.netMode != NetmodeID.MultiplayerClient)
-                        Projectile.NewProjectile(Projectile.InheritSource(Projectile), Projectile.Center, Vector2.Zero,ModContent.Find<ModProjectile>(fargosouls.Name, "GlowRing").Type, 0, 0f, Main.myPlayer, -1, -17);
+                        Projectile.NewProjectile(Projectile.InheritSource(Projectile), Projectile.Center, Vector2.Zero, ModContent.Find<ModProjectile>(fargosouls.Name, "GlowRing").Type, 0, 0f, Main.myPlayer, -1, -17);
                 }
 
                 if (Projectile.alpha > 0)
@@ -78,7 +78,7 @@ namespace ssm.Content.Projectiles.Shtuxibus
                         MakeDust();
 
                         if (Main.netMode != NetmodeID.MultiplayerClient)
-                            Projectile.NewProjectile(Projectile.InheritSource(Projectile), Projectile.Center, Vector2.Zero,ModContent.Find<ModProjectile>(fargosouls.Name, "GlowRing").Type, 0, 0f, Main.myPlayer, -1, -16 + scaleCounter);
+                            Projectile.NewProjectile(Projectile.InheritSource(Projectile), Projectile.Center, Vector2.Zero, ModContent.Find<ModProjectile>(fargosouls.Name, "GlowRing").Type, 0, 0f, Main.myPlayer, -1, -16 + scaleCounter);
 
                         SoundEngine.PlaySound(SoundID.Item92, Projectile.Center);
                     }
@@ -102,13 +102,13 @@ namespace ssm.Content.Projectiles.Shtuxibus
                     Projectile.NewProjectile(Projectile.InheritSource(Projectile), Projectile.Center, Vector2.Zero, ModContent.Find<ModProjectile>(fargosouls.Name, "GlowRing").Type, 0, 0f, Main.myPlayer, -1, -14);
 
                 if (!Main.dedServ && Main.LocalPlayer.active)
-               //     Main.LocalPlayer.GetModPlayer<FargoSoulsPlayer>().Screenshake = 30;
+                    //     Main.LocalPlayer.GetModPlayer<FargoSoulsPlayer>().Screenshake = 30;
 
-                if (Main.netMode != NetmodeID.MultiplayerClient)
-                {
-                    float baseRotation = Main.rand.NextFloat(MathHelper.TwoPi);
-	                float num = (Utils.NextFloat(Main.rand, (float)Math.PI * 2f));
-                    int max = 12;
+                    if (Main.netMode != NetmodeID.MultiplayerClient)
+                    {
+                        float baseRotation = Main.rand.NextFloat(MathHelper.TwoPi);
+                        float num = (Utils.NextFloat(Main.rand, (float)Math.PI * 2f));
+                        int max = 12;
                         for (int i = 0; i < max; i++)
                         {
                             Vector2 target = 300 * Vector2.UnitX.RotatedBy(MathHelper.TwoPi / max * (i + 0.5f) + baseRotation);
@@ -125,9 +125,9 @@ namespace ssm.Content.Projectiles.Shtuxibus
                         for (int z = 0; z < max; z++)
                         {
                             Vector2 target = 300 * Vector2.UnitX.RotatedBy(MathHelper.TwoPi / max * (z + 0.5f) + baseRotation);
-                            Vector2 val13 = Projectile.Center + Utils.RotatedBy(target -Projectile.Center, 2.0943334102630615, default(Vector2));
+                            Vector2 val13 = Projectile.Center + Utils.RotatedBy(target - Projectile.Center, 2.0943334102630615, default(Vector2));
                             Vector2 speed = 2 * target / 90;
-                            
+
                             float acceleration = -speed.Length() / 90;
                             float rotation = speed.ToRotation();
                             Projectile.NewProjectile(Projectile.InheritSource(Projectile), Projectile.Center, val13, ModContent.ProjectileType<DeviEnergyHeart>(),
@@ -137,13 +137,13 @@ namespace ssm.Content.Projectiles.Shtuxibus
                             Projectile.NewProjectile(Projectile.InheritSource(Projectile), Projectile.Center, speed, ModContent.Find<ModProjectile>(fargosouls.Name, "GlowLine").Type, Projectile.damage, 0f, Main.myPlayer, 2, rotation + MathHelper.PiOver2);
                             Projectile.NewProjectile(Projectile.InheritSource(Projectile), Projectile.Center, speed, ModContent.Find<ModProjectile>(fargosouls.Name, "GlowLine").Type, Projectile.damage, 0f, Main.myPlayer, 2, rotation - MathHelper.PiOver2);
                         }
-                                               for (int t = 0; t < max; t++)
+                        for (int t = 0; t < max; t++)
                         {
                             Vector2 target = 300 * Vector2.UnitX.RotatedBy(MathHelper.TwoPi / max * (t + 0.5f) + baseRotation);
                             Vector2 speed = 2 * target / 90;
                             float acceleration = -speed.Length() / 90;
                             float rotation = speed.ToRotation();
-                            	Vector2 val16 = Projectile.Center + Utils.RotatedBy(target -Projectile.Center, 4.188666820526123, default(Vector2));
+                            Vector2 val16 = Projectile.Center + Utils.RotatedBy(target - Projectile.Center, 4.188666820526123, default(Vector2));
                             Projectile.NewProjectile(Projectile.InheritSource(Projectile), Projectile.Center, val16, ModContent.ProjectileType<DeviEnergyHeart>(),
                                 (int)(Projectile.damage * 0.75), 0f, Main.myPlayer, rotation + MathHelper.PiOver2, acceleration);
 
@@ -152,70 +152,70 @@ namespace ssm.Content.Projectiles.Shtuxibus
                             Projectile.NewProjectile(Projectile.InheritSource(Projectile), Projectile.Center, speed, ModContent.Find<ModProjectile>(fargosouls.Name, "GlowLine").Type, Projectile.damage, 0f, Main.myPlayer, 2, rotation - MathHelper.PiOver2);
                         }
                         for (int l = 0; l < max; l++)
-							{
-								Vector2 val11 = 300f * Utils.RotatedBy(Vector2.UnitX, (double)((float)Math.PI * 2f / (float)max * ((float)l + 0.5f) + num), default(Vector2));
-								Vector2 val12 = 2f * val11 / 90f;
-								float num9 = (0f - val12.Length()) / 90f;
-								float num10 = Utils.ToRotation(val12);
-								Projectile.NewProjectile(Projectile.InheritSource(Projectile), Projectile.Center, val12, ModContent.ProjectileType<DeviEnergyHeart>(), Projectile.damage, 0f, Main.myPlayer, num10 + (float)Math.PI / 2f, num9);
-								Projectile.NewProjectile(Projectile.InheritSource(Projectile), Projectile.Center, Vector2.Zero, ModContent.ProjectileType<GlowLine>(), Projectile.damage, 0f, Main.myPlayer, 2f, num10);
-								Projectile.NewProjectile(Projectile.InheritSource(Projectile), Projectile.Center, val12, ModContent.ProjectileType<GlowLine>(), Projectile.damage, 0f, Main.myPlayer, 2f, num10 + (float)Math.PI / 2f);
-								Projectile.NewProjectile(Projectile.InheritSource(Projectile), Projectile.Center, val12, ModContent.ProjectileType<GlowLine>(), Projectile.damage, 0f, Main.myPlayer, 2f, num10 - (float)Math.PI / 2f);
-							}
-							for (int m = 0; m < max; m++)
-							{
-                                                            Vector2 target = 300 * Vector2.UnitX.RotatedBy(MathHelper.TwoPi / max * (m + 0.5f) + baseRotation);
-								Vector2 val13 = Projectile.Center + Utils.RotatedBy(target - Projectile.Center, 2.0943334102630615, default(Vector2));
-								Vector2 val14 = 300f * Utils.RotatedBy(Vector2.UnitX, (double)((float)Math.PI * 2f / (float)max * ((float)m + 0.5f) + num), default(Vector2));
-								Vector2 val15 = 2f * val14 / 90f;
-								float num11 = (0f - val15.Length()) / 90f;
-								float num12 = Utils.ToRotation(val15);
-								Projectile.NewProjectile(Projectile.InheritSource(Projectile), val13, val15, ModContent.ProjectileType<DeviEnergyHeart>(), Projectile.damage, 0f, Main.myPlayer, num12 + (float)Math.PI / 2f, num11);
-								Projectile.NewProjectile(Projectile.InheritSource(Projectile), val13, Vector2.Zero, ModContent.ProjectileType<GlowLine>(), Projectile.damage, 0f, Main.myPlayer, 2f, num12);
-								Projectile.NewProjectile(Projectile.InheritSource(Projectile), val13, val15, ModContent.ProjectileType<GlowLine>(), Projectile.damage, 0f, Main.myPlayer, 2f, num12 + (float)Math.PI / 2f);
-								Projectile.NewProjectile(Projectile.InheritSource(Projectile), val13, val15, ModContent.ProjectileType<GlowLine>(), Projectile.damage, 0f, Main.myPlayer, 2f, num12 - (float)Math.PI / 2f);
-							}
-							for (int n = 0; n < max; n++)
-							{
-                                                            Vector2 target = 300 * Vector2.UnitX.RotatedBy(MathHelper.TwoPi / max * (n + 0.5f) + baseRotation);
-								Vector2 val16 = Projectile.Center + Utils.RotatedBy(target - Projectile.Center, 4.188666820526123, default(Vector2));
-								Vector2 val17 = 300f * Utils.RotatedBy(Vector2.UnitX, (double)((float)Math.PI * 2f / (float)max * ((float)n + 0.5f) + num), default(Vector2));
-								Vector2 val18 = 2f * val17 / 90f;
-								float num13 = (0f - val18.Length()) / 90f;
-								float num14 = Utils.ToRotation(val18);
-								Projectile.NewProjectile(Projectile.InheritSource(Projectile), val16, val18, ModContent.ProjectileType<DeviEnergyHeart>(),Projectile.damage, 0f, Main.myPlayer, num14 + (float)Math.PI / 2f, num13);
-								Projectile.NewProjectile(Projectile.InheritSource(Projectile), val16, Vector2.Zero, ModContent.ProjectileType<GlowLine>(), Projectile.damage, 0f, Main.myPlayer, 2f, num14);
-								Projectile.NewProjectile(Projectile.InheritSource(Projectile), val16, val18, ModContent.ProjectileType<GlowLine>(), Projectile.damage, 0f, Main.myPlayer, 2f, num14 + (float)Math.PI / 2f);
-								Projectile.NewProjectile(Projectile.InheritSource(Projectile), val16, val18, ModContent.ProjectileType<GlowLine>(), Projectile.damage, 0f, Main.myPlayer, 2f, num14 - (float)Math.PI / 2f);
-							}
-                            for (int itu = 0; itu < max; itu++)
-							{
-                                                            Vector2 target = 300 * Vector2.UnitX.RotatedBy(MathHelper.TwoPi / max * (itu + 0.5f) + baseRotation);
-								Vector2 val16 = Projectile.Center + Utils.RotatedBy(target - Projectile.Center, 10.188666820526123, default(Vector2));
-								Vector2 val17 = 300f * Utils.RotatedBy(Vector2.UnitX, (double)((float)Math.PI * 2f / (float)max * ((float)itu + 0.5f) + num), default(Vector2));
-								Vector2 val18 = 2f * val17 / 90f;
-								float num13 = (0f - val18.Length()) / 90f;
-								float num14 = Utils.ToRotation(val18);
-								Projectile.NewProjectile(Projectile.InheritSource(Projectile), val16, val18, ModContent.ProjectileType<DeviEnergyHeart>(),Projectile.damage, 0f, Main.myPlayer, num14 + (float)Math.PI / 2f, num13);
-								Projectile.NewProjectile(Projectile.InheritSource(Projectile), val16, Vector2.Zero, ModContent.ProjectileType<GlowLine>(), Projectile.damage, 0f, Main.myPlayer, 2f, num14);
-								Projectile.NewProjectile(Projectile.InheritSource(Projectile), val16, val18, ModContent.ProjectileType<GlowLine>(), Projectile.damage, 0f, Main.myPlayer, 2f, num14 + (float)Math.PI / 2f);
-								Projectile.NewProjectile(Projectile.InheritSource(Projectile), val16, val18, ModContent.ProjectileType<GlowLine>(), Projectile.damage, 0f, Main.myPlayer, 2f, num14 - (float)Math.PI / 2f);
-							}
-                            for (int fife = 0; fife < max; fife++)
-							{
-                                                            Vector2 target = 300 * Vector2.UnitX.RotatedBy(MathHelper.TwoPi / max * (fife + 0.5f) + baseRotation);
-								Vector2 val16 = Projectile.Center + Utils.RotatedBy(target - Projectile.Center, 15.188666820526123, default(Vector2));
-								Vector2 val17 = 300f * Utils.RotatedBy(Vector2.UnitX, (double)((float)Math.PI * 2f / (float)max * ((float)fife + 0.5f) + num), default(Vector2));
-								Vector2 val18 = 2f * val17 / 90f;
-								float num13 = (0f - val18.Length()) / 90f;
-								float num14 = Utils.ToRotation(val18);
-								Projectile.NewProjectile(Projectile.InheritSource(Projectile), val16, val18, ModContent.ProjectileType<DeviEnergyHeart>(),Projectile.damage, 0f, Main.myPlayer, num14 + (float)Math.PI / 2f, num13);
-								Projectile.NewProjectile(Projectile.InheritSource(Projectile), val16, Vector2.Zero, ModContent.ProjectileType<GlowLine>(), Projectile.damage, 0f, Main.myPlayer, 2f, num14);
-								Projectile.NewProjectile(Projectile.InheritSource(Projectile), val16, val18, ModContent.ProjectileType<GlowLine>(), Projectile.damage, 0f, Main.myPlayer, 2f, num14 + (float)Math.PI / 2f);
-								Projectile.NewProjectile(Projectile.InheritSource(Projectile), val16, val18, ModContent.ProjectileType<GlowLine>(), Projectile.damage, 0f, Main.myPlayer, 2f, num14 - (float)Math.PI / 2f);
-							}
-                    
-                }
+                        {
+                            Vector2 val11 = 300f * Utils.RotatedBy(Vector2.UnitX, (double)((float)Math.PI * 2f / (float)max * ((float)l + 0.5f) + num), default(Vector2));
+                            Vector2 val12 = 2f * val11 / 90f;
+                            float num9 = (0f - val12.Length()) / 90f;
+                            float num10 = Utils.ToRotation(val12);
+                            Projectile.NewProjectile(Projectile.InheritSource(Projectile), Projectile.Center, val12, ModContent.ProjectileType<DeviEnergyHeart>(), Projectile.damage, 0f, Main.myPlayer, num10 + (float)Math.PI / 2f, num9);
+                            Projectile.NewProjectile(Projectile.InheritSource(Projectile), Projectile.Center, Vector2.Zero, ModContent.ProjectileType<GlowLine>(), Projectile.damage, 0f, Main.myPlayer, 2f, num10);
+                            Projectile.NewProjectile(Projectile.InheritSource(Projectile), Projectile.Center, val12, ModContent.ProjectileType<GlowLine>(), Projectile.damage, 0f, Main.myPlayer, 2f, num10 + (float)Math.PI / 2f);
+                            Projectile.NewProjectile(Projectile.InheritSource(Projectile), Projectile.Center, val12, ModContent.ProjectileType<GlowLine>(), Projectile.damage, 0f, Main.myPlayer, 2f, num10 - (float)Math.PI / 2f);
+                        }
+                        for (int m = 0; m < max; m++)
+                        {
+                            Vector2 target = 300 * Vector2.UnitX.RotatedBy(MathHelper.TwoPi / max * (m + 0.5f) + baseRotation);
+                            Vector2 val13 = Projectile.Center + Utils.RotatedBy(target - Projectile.Center, 2.0943334102630615, default(Vector2));
+                            Vector2 val14 = 300f * Utils.RotatedBy(Vector2.UnitX, (double)((float)Math.PI * 2f / (float)max * ((float)m + 0.5f) + num), default(Vector2));
+                            Vector2 val15 = 2f * val14 / 90f;
+                            float num11 = (0f - val15.Length()) / 90f;
+                            float num12 = Utils.ToRotation(val15);
+                            Projectile.NewProjectile(Projectile.InheritSource(Projectile), val13, val15, ModContent.ProjectileType<DeviEnergyHeart>(), Projectile.damage, 0f, Main.myPlayer, num12 + (float)Math.PI / 2f, num11);
+                            Projectile.NewProjectile(Projectile.InheritSource(Projectile), val13, Vector2.Zero, ModContent.ProjectileType<GlowLine>(), Projectile.damage, 0f, Main.myPlayer, 2f, num12);
+                            Projectile.NewProjectile(Projectile.InheritSource(Projectile), val13, val15, ModContent.ProjectileType<GlowLine>(), Projectile.damage, 0f, Main.myPlayer, 2f, num12 + (float)Math.PI / 2f);
+                            Projectile.NewProjectile(Projectile.InheritSource(Projectile), val13, val15, ModContent.ProjectileType<GlowLine>(), Projectile.damage, 0f, Main.myPlayer, 2f, num12 - (float)Math.PI / 2f);
+                        }
+                        for (int n = 0; n < max; n++)
+                        {
+                            Vector2 target = 300 * Vector2.UnitX.RotatedBy(MathHelper.TwoPi / max * (n + 0.5f) + baseRotation);
+                            Vector2 val16 = Projectile.Center + Utils.RotatedBy(target - Projectile.Center, 4.188666820526123, default(Vector2));
+                            Vector2 val17 = 300f * Utils.RotatedBy(Vector2.UnitX, (double)((float)Math.PI * 2f / (float)max * ((float)n + 0.5f) + num), default(Vector2));
+                            Vector2 val18 = 2f * val17 / 90f;
+                            float num13 = (0f - val18.Length()) / 90f;
+                            float num14 = Utils.ToRotation(val18);
+                            Projectile.NewProjectile(Projectile.InheritSource(Projectile), val16, val18, ModContent.ProjectileType<DeviEnergyHeart>(), Projectile.damage, 0f, Main.myPlayer, num14 + (float)Math.PI / 2f, num13);
+                            Projectile.NewProjectile(Projectile.InheritSource(Projectile), val16, Vector2.Zero, ModContent.ProjectileType<GlowLine>(), Projectile.damage, 0f, Main.myPlayer, 2f, num14);
+                            Projectile.NewProjectile(Projectile.InheritSource(Projectile), val16, val18, ModContent.ProjectileType<GlowLine>(), Projectile.damage, 0f, Main.myPlayer, 2f, num14 + (float)Math.PI / 2f);
+                            Projectile.NewProjectile(Projectile.InheritSource(Projectile), val16, val18, ModContent.ProjectileType<GlowLine>(), Projectile.damage, 0f, Main.myPlayer, 2f, num14 - (float)Math.PI / 2f);
+                        }
+                        for (int itu = 0; itu < max; itu++)
+                        {
+                            Vector2 target = 300 * Vector2.UnitX.RotatedBy(MathHelper.TwoPi / max * (itu + 0.5f) + baseRotation);
+                            Vector2 val16 = Projectile.Center + Utils.RotatedBy(target - Projectile.Center, 10.188666820526123, default(Vector2));
+                            Vector2 val17 = 300f * Utils.RotatedBy(Vector2.UnitX, (double)((float)Math.PI * 2f / (float)max * ((float)itu + 0.5f) + num), default(Vector2));
+                            Vector2 val18 = 2f * val17 / 90f;
+                            float num13 = (0f - val18.Length()) / 90f;
+                            float num14 = Utils.ToRotation(val18);
+                            Projectile.NewProjectile(Projectile.InheritSource(Projectile), val16, val18, ModContent.ProjectileType<DeviEnergyHeart>(), Projectile.damage, 0f, Main.myPlayer, num14 + (float)Math.PI / 2f, num13);
+                            Projectile.NewProjectile(Projectile.InheritSource(Projectile), val16, Vector2.Zero, ModContent.ProjectileType<GlowLine>(), Projectile.damage, 0f, Main.myPlayer, 2f, num14);
+                            Projectile.NewProjectile(Projectile.InheritSource(Projectile), val16, val18, ModContent.ProjectileType<GlowLine>(), Projectile.damage, 0f, Main.myPlayer, 2f, num14 + (float)Math.PI / 2f);
+                            Projectile.NewProjectile(Projectile.InheritSource(Projectile), val16, val18, ModContent.ProjectileType<GlowLine>(), Projectile.damage, 0f, Main.myPlayer, 2f, num14 - (float)Math.PI / 2f);
+                        }
+                        for (int fife = 0; fife < max; fife++)
+                        {
+                            Vector2 target = 300 * Vector2.UnitX.RotatedBy(MathHelper.TwoPi / max * (fife + 0.5f) + baseRotation);
+                            Vector2 val16 = Projectile.Center + Utils.RotatedBy(target - Projectile.Center, 15.188666820526123, default(Vector2));
+                            Vector2 val17 = 300f * Utils.RotatedBy(Vector2.UnitX, (double)((float)Math.PI * 2f / (float)max * ((float)fife + 0.5f) + num), default(Vector2));
+                            Vector2 val18 = 2f * val17 / 90f;
+                            float num13 = (0f - val18.Length()) / 90f;
+                            float num14 = Utils.ToRotation(val18);
+                            Projectile.NewProjectile(Projectile.InheritSource(Projectile), val16, val18, ModContent.ProjectileType<DeviEnergyHeart>(), Projectile.damage, 0f, Main.myPlayer, num14 + (float)Math.PI / 2f, num13);
+                            Projectile.NewProjectile(Projectile.InheritSource(Projectile), val16, Vector2.Zero, ModContent.ProjectileType<GlowLine>(), Projectile.damage, 0f, Main.myPlayer, 2f, num14);
+                            Projectile.NewProjectile(Projectile.InheritSource(Projectile), val16, val18, ModContent.ProjectileType<GlowLine>(), Projectile.damage, 0f, Main.myPlayer, 2f, num14 + (float)Math.PI / 2f);
+                            Projectile.NewProjectile(Projectile.InheritSource(Projectile), val16, val18, ModContent.ProjectileType<GlowLine>(), Projectile.damage, 0f, Main.myPlayer, 2f, num14 - (float)Math.PI / 2f);
+                        }
+
+                    }
             }
 
             Projectile.direction = Projectile.spriteDirection = npc.direction;

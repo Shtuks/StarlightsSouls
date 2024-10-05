@@ -7,11 +7,11 @@ using Terraria.ModLoader;
 
 namespace ssm.Content.SoulToggles
 {
-  [JITWhenModsEnabled(new string[] {"CalamityMod"})]
-  [ExtendsFromMod(new string[] {"CalamityMod"})]
-  public class CalamitySoulHeader : SoulHeader
-  {
-    public override float Priority => 6.2f;
-    public override int Item => ModContent.ItemType<CalamitySoul>();
-  }
+    [JITWhenModsEnabled(new string[] { "CalamityMod" })]
+    [ExtendsFromMod(new string[] { "CalamityMod" })]
+    public class CalamitySoulHeader : SoulHeader
+    {
+        public override float Priority => 6.2f;
+        public override int Item => ModContent.ItemType<CalamitySoul>();
+    }
 }

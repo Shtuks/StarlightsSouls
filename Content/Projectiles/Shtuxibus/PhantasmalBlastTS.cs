@@ -67,7 +67,7 @@ namespace ssm.Content.Projectiles.Shtuxibus
     public class PhantasmalBlastTS : ModProjectile
     {
         private readonly Mod fargosouls = ModLoader.GetMod("FargowiltasSouls");
-		private readonly Mod calamity = ModLoader.GetMod("CalamityMod");
+        private readonly Mod calamity = ModLoader.GetMod("CalamityMod");
         public override string Texture => "Terraria/Images/Projectile_645";
 
         public override void SetStaticDefaults()
@@ -125,17 +125,17 @@ namespace ssm.Content.Projectiles.Shtuxibus
             return Projectile.frame < 4;
         }
 
-           public override void OnHitPlayer(Player target, Player.HurtInfo info)
+        public override void OnHitPlayer(Player target, Player.HurtInfo info)
         {
-       target.AddBuff(ModContent.Find<ModBuff>(fargosouls.Name, "TimeFrozenBuff").Type, 240);
+            target.AddBuff(ModContent.Find<ModBuff>(fargosouls.Name, "TimeFrozenBuff").Type, 240);
         }
 
         public override void OnKill(int timeLeft)
         {
         }
 
-   
-      public override Color? GetAlpha(Color lightColor)
+
+        public override Color? GetAlpha(Color lightColor)
         {
             return Color.Orange * Projectile.Opacity;
         }

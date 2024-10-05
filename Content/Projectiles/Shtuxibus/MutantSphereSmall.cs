@@ -10,8 +10,8 @@ namespace ssm.Content.Projectiles.Shtuxibus
     public class MutantSphereSmall : ModProjectile
     {
         public override string Texture => "Terraria/Images/Projectile_454";
-	 private readonly Mod fargosouls = ModLoader.GetMod("FargowiltasSouls");
-		 private readonly Mod calamity = ModLoader.GetMod("CalamityMod");
+        private readonly Mod fargosouls = ModLoader.GetMod("FargowiltasSouls");
+        private readonly Mod calamity = ModLoader.GetMod("CalamityMod");
         public override void SetStaticDefaults()
         {
             Main.projFrames[Projectile.type] = 2;
@@ -71,7 +71,7 @@ namespace ssm.Content.Projectiles.Shtuxibus
             }
         }
 
-   
+
 
         public override void OnKill(int timeleft)
         {

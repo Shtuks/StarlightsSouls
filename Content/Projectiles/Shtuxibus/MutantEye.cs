@@ -77,7 +77,7 @@ namespace ssm.Content.Projectiles.Shtuxibus
 
         public override void OnHitPlayer(Player target, Player.HurtInfo info)
         {
-            
+
             Projectile.timeLeft = 0;
         }
 
@@ -103,11 +103,11 @@ namespace ssm.Content.Projectiles.Shtuxibus
             }
         }
 
-       public override Color? GetAlpha(Color lightColor)
-		{
-			//IL_000f: Unknown result type (might be due to invalid IL or missing references)
-			return new Color(Main.DiscoR, Main.DiscoG, Main.DiscoB);
-		}
+        public override Color? GetAlpha(Color lightColor)
+        {
+            //IL_000f: Unknown result type (might be due to invalid IL or missing references)
+            return new Color(Main.DiscoR, Main.DiscoG, Main.DiscoB);
+        }
 
         public float WidthFunction(float completionRatio)
         {

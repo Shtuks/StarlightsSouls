@@ -19,10 +19,10 @@ namespace ssm.Content.Projectiles
         public bool Rainbow;
         public int GrazeCD;
         public int DeletionImmuneRank;
-    public Func<Projectile, bool> GrazeCheck = projectile =>
-            projectile.Distance(Main.LocalPlayer.Center) < Math.Min(projectile.width, projectile.height) / 2 + Player.defaultHeight + Main.LocalPlayer.GetModPlayer<ShtunPlayer>().GrazeRadius
-            && (projectile.ModProjectile == null ? true : projectile.ModProjectile.CanDamage() != false)
-            && Collision.CanHit(projectile.Center, 0, 0, Main.LocalPlayer.Center, 0, 0);
+        public Func<Projectile, bool> GrazeCheck = projectile =>
+                projectile.Distance(Main.LocalPlayer.Center) < Math.Min(projectile.width, projectile.height) / 2 + Player.defaultHeight + Main.LocalPlayer.GetModPlayer<ShtunPlayer>().GrazeRadius
+                && (projectile.ModProjectile == null ? true : projectile.ModProjectile.CanDamage() != false)
+                && Collision.CanHit(projectile.Center, 0, 0, Main.LocalPlayer.Center, 0, 0);
     }
 }
 

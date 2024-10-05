@@ -13,7 +13,7 @@ namespace ssm.Content.Projectiles.Shtuxibus
     public class AbomSwordHandle : Deathrays.BaseDeathray
     {
         private readonly Mod fargosouls = ModLoader.GetMod("FargowiltasSouls");
-		private readonly Mod calamity = ModLoader.GetMod("CalamityMod");
+        private readonly Mod calamity = ModLoader.GetMod("CalamityMod");
         public override string Texture => "ssm/Content/Projectiles/Deathrays/AbomDeathray";
         public AbomSwordHandle() : base(150) { }
         public int counter;
@@ -91,7 +91,7 @@ namespace ssm.Content.Projectiles.Shtuxibus
         {
             target.velocity.X = target.Center.X < Main.projectile[(int)Projectile.ai[1]].Center.X ? -15f : 15f;
             target.velocity.Y = -10f;
-            target.AddBuff(BuffID.Burning, 180);         
+            target.AddBuff(BuffID.Burning, 180);
             target.AddBuff(BuffID.WitheredArmor, 600);
             target.AddBuff(BuffID.WitheredWeapon, 600);
         }

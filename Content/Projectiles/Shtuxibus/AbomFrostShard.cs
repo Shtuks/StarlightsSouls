@@ -68,14 +68,14 @@ namespace ssm.Content.Projectiles.Shtuxibus
 
         public override void OnHitPlayer(Player target, Player.HurtInfo info)
         {
-           
+
             target.AddBuff(BuffID.Frostburn, 120);
         }
 
-       	public override Color? GetAlpha(Color lightColor)
-		{
-			return new Color(Main.DiscoR, Main.DiscoG, Main.DiscoB);
-		}
+        public override Color? GetAlpha(Color lightColor)
+        {
+            return new Color(Main.DiscoR, Main.DiscoG, Main.DiscoB);
+        }
 
 
         public override bool PreDraw(ref Color lightColor)

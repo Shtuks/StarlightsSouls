@@ -16,7 +16,7 @@ namespace ssm.Content.Projectiles.Shtuxibus
     public class MutantSphereRing : ModProjectile
     {
         private readonly Mod fargosouls = ModLoader.GetMod("FargowiltasSouls");
-		private readonly Mod calamity = ModLoader.GetMod("CalamityMod");
+        private readonly Mod calamity = ModLoader.GetMod("CalamityMod");
         public override string Texture => "Terraria/Images/Projectile_454";
         protected bool DieOutsideArena;
         public override void SetStaticDefaults()
@@ -111,18 +111,18 @@ namespace ssm.Content.Projectiles.Shtuxibus
                     && Projectile.Colliding(Projectile.Hitbox, Main.LocalPlayer.GetModPlayer<FargoSoulsPlayer>().GetPrecisionHurtbox()))
                 {
                     if (!Main.LocalPlayer.HasBuff(ModContent.Find<ModBuff>(fargosouls.Name, "TimeFrozenBuff").Type))
-                     //   SoundEngine.PlaySound(new SoundStyle("almazikmod/Sounds/ZaWarudo"), Main.LocalPlayer.Center);
-                    Main.LocalPlayer.AddBuff(ModContent.Find<ModBuff>(fargosouls.Name, "TimeFrozenBuff").Type, 300);
-                    
+                        //   SoundEngine.PlaySound(new SoundStyle("almazikmod/Sounds/ZaWarudo"), Main.LocalPlayer.Center);
+                        Main.LocalPlayer.AddBuff(ModContent.Find<ModBuff>(fargosouls.Name, "TimeFrozenBuff").Type, 300);
+
                 }
             }
         }
 
         public override void OnHitPlayer(Player target, Player.HurtInfo info)
         {
-         
-              
-            
+
+
+
         }
 
         public override void OnKill(int timeleft)

@@ -1,14 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "dJqm4DjayzQ=",
+  "dgSpecHash": "+dWYut5CNU0=",
   "success": false,
   "projectFilePath": "C:\\Users\\kolot\\OneDrive\\Документы\\My Games\\Terraria\\tModLoader\\ModSources\\ssm\\ssm.csproj",
   "expectedPackageFiles": [],
   "logs": [
     {
-      "code": "NU1100",
+      "code": "NU1101",
       "level": "Error",
-      "message": "Не удалось разрешить \"tModLoader.CodeAssist (>= 0.1.0)\" для \"net8.0\".",
+      "message": "Не удалось найти пакет tModLoader.CodeAssist. Пакеты с таким идентификатором отсутствуют в следующих источниках пакетов: Microsoft Visual Studio Offline Packages",
       "libraryId": "tModLoader.CodeAssist",
       "targetGraphs": [
         "net8.0"

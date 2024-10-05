@@ -43,7 +43,7 @@ namespace ssm.Content.Projectiles.Shtuxibus
 
         public override void OnHitPlayer(Player target, Player.HurtInfo info)
         {
-           
+
             target.AddBuff(BuffID.Electrified, 180);
         }
 

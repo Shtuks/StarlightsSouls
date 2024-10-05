@@ -75,7 +75,7 @@ namespace ssm.Content.Items
                 // If this item is exclusive to e-mode, give it a custom item "rarity" (not an actual rarity, wait for 1.4).
                 // This is often overridden.
                 // if (Chtuxlagor)
-                  itemNameLine.OverrideColor = ssm.ChtuxlagorColor();
+                itemNameLine.OverrideColor = ssm.ChtuxlagorColor();
 
                 // Call the artcle-prefix adjustment method.
                 // This automatically handles fixing item names that begin with an article.
@@ -85,8 +85,8 @@ namespace ssm.Content.Items
             SafeModifyTooltips(tooltips);
 
             // Add the Chtuxlagor toolip after tooltip modification in order to be displayed underneath any manual tooltips (i.e. SoE cycling).
-     
-                tooltips.Add(new TooltipLine(Mod, $"{Mod.Name}:Chtuxlagor", Language.GetTextValue($"Mods.ssm.Tooltip.Chtuxlagor")));
+
+            tooltips.Add(new TooltipLine(Mod, $"{Mod.Name}:Chtuxlagor", Language.GetTextValue($"Mods.ssm.Tooltip.Chtuxlagor")));
         }
     }
 }

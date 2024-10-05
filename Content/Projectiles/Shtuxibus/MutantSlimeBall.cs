@@ -9,7 +9,7 @@ namespace ssm.Content.Projectiles.Shtuxibus
 {
     public class MutantSlimeBall : ModProjectile
     {
-       public override string Texture => "Terraria/Images/Projectile_9";
+        public override string Texture => "Terraria/Images/Projectile_9";
         public override void SetStaticDefaults()
         {
             ProjectileID.Sets.TrailCacheLength[Projectile.type] = 8;
@@ -71,7 +71,7 @@ namespace ssm.Content.Projectiles.Shtuxibus
             }
         }
 
-      
+
 
         public override Color? GetAlpha(Color lightColor)
         {

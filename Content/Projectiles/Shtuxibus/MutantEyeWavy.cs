@@ -31,9 +31,9 @@ namespace ssm.Content.Projectiles.Shtuxibus
 
         public float oldRot;
         public override Color? GetAlpha(Color lightColor)
-		{
-			return new Color(Main.DiscoR, Main.DiscoG, Main.DiscoB);
-		}
+        {
+            return new Color(Main.DiscoR, Main.DiscoG, Main.DiscoB);
+        }
         public override void AI()
         {
             NPC mutant = ShtunUtils.NPCExists(ShtunNpcs.Shtuxibus);

@@ -28,37 +28,37 @@ using FargowiltasSouls.Content.Items.Accessories.Enchantments;
 
 namespace ssm.Content.Items.Accessories
 {
-  public class ChtuxlagorHeart : SoulsItem
-  {
-    private readonly Mod FargoSoul = Terraria.ModLoader.ModLoader.GetMod("FargowiltasSouls");
-
-    public override void SetStaticDefaults() => ItemID.Sets.ItemNoGravity[this.Type] = true;
-
-    public override void SetDefaults()
+    public class ChtuxlagorHeart : SoulsItem
     {
-      this.Item.value = Item.buyPrice(1000, 0, 0, 0);
-      this.Item.rare = ItemRarityID.Purple;
-      this.Item.accessory = true;
-    }
+        private readonly Mod FargoSoul = Terraria.ModLoader.ModLoader.GetMod("FargowiltasSouls");
 
-    public override void UpdateAccessory(Player player, bool hideVisual)
-    {
-      if (player.GetModPlayer<FargoSoulsPlayer>().MutantEyeCD > 0){player.GetModPlayer<FargoSoulsPlayer>().MutantEyeCD--;}
-      player.GetModPlayer<ShtunPlayer>().ChtuxlagorHeart = true;
-      player.buffImmune[ModContent.BuffType<Buffs.ShtuxibusCurse>()] = true;
-      if (player.AddEffect<ChtuxlagorHeartEffect>(Item)){}
-    }
+        public override void SetStaticDefaults() => ItemID.Sets.ItemNoGravity[this.Type] = true;
 
-    public class ChtuxlagorHeartHead : AccessoryEffect
-    {
-      public override Header ToggleHeader => Header.GetHeader<ChtuxlagorHeartHeader>();
-      public override int ToggleItemType => ModContent.ItemType<ChtuxlagorHeart>();
-    }
+        public override void SetDefaults()
+        {
+            this.Item.value = Item.buyPrice(1000, 0, 0, 0);
+            this.Item.rare = ItemRarityID.Purple;
+            this.Item.accessory = true;
+        }
 
-    public class ChtuxlagorHeartEffect : ChtuxlagorHeartHead
-    {
-        public override int ToggleItemType => ModContent.ItemType<ChtuxlagorHeart>();
-        public override bool IgnoresMutantPresence => true;
+        public override void UpdateAccessory(Player player, bool hideVisual)
+        {
+            if (player.GetModPlayer<FargoSoulsPlayer>().MutantEyeCD > 0) { player.GetModPlayer<FargoSoulsPlayer>().MutantEyeCD--; }
+            player.GetModPlayer<ShtunPlayer>().ChtuxlagorHeart = true;
+            player.buffImmune[ModContent.BuffType<Buffs.ShtuxibusCurse>()] = true;
+            if (player.AddEffect<ChtuxlagorHeartEffect>(Item)) { }
+        }
+
+        public class ChtuxlagorHeartHead : AccessoryEffect
+        {
+            public override Header ToggleHeader => Header.GetHeader<ChtuxlagorHeartHeader>();
+            public override int ToggleItemType => ModContent.ItemType<ChtuxlagorHeart>();
+        }
+
+        public class ChtuxlagorHeartEffect : ChtuxlagorHeartHead
+        {
+            public override int ToggleItemType => ModContent.ItemType<ChtuxlagorHeart>();
+            public override bool IgnoresMutantPresence => true;
+        }
     }
-  }
 }

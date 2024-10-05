@@ -33,7 +33,7 @@ namespace ssm.Content.Projectiles.Shtuxibus
     public class DeviEnergyHeart : ModProjectile
     {
         private readonly Mod fargosouls = ModLoader.GetMod("FargowiltasSouls");
-		private readonly Mod calamity = ModLoader.GetMod("CalamityMod");
+        private readonly Mod calamity = ModLoader.GetMod("CalamityMod");
         public override void SetStaticDefaults()
         {
         }
@@ -74,9 +74,9 @@ namespace ssm.Content.Projectiles.Shtuxibus
             Projectile.velocity = Vector2.Normalize(Projectile.velocity) * speed;
         }
         public override Color? GetAlpha(Color lightColor)
-		{
-			return new Color(Main.DiscoR, Main.DiscoG, Main.DiscoB);
-		}
+        {
+            return new Color(Main.DiscoR, Main.DiscoG, Main.DiscoB);
+        }
         public override void OnKill(int timeLeft)
         {
             for (int i = 0; i < 5; i++)
@@ -95,7 +95,7 @@ namespace ssm.Content.Projectiles.Shtuxibus
                 }
             }
         }
- 
+
         // public override void OnHitPlayer(Player target, Player.HurtInfo info)
         // {
         //     target.AddBuff(ModContent.BuffType<Buffs.Masomode.Lovestruck>(), 240);

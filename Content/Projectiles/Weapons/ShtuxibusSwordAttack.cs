@@ -155,8 +155,8 @@ namespace ssm.Content.Projectiles.Weapons
                     if (!Main.dedServ && Main.LocalPlayer.active)
                         //Main.LocalPlayer.ShtunPlayer().Screenshake = 30;
 
-                    if (!Main.dedServ)
-                        SoundEngine.PlaySound(new SoundStyle("FargowiltasSouls/Assets/Sounds/Thunder"), spawnPos);
+                        if (!Main.dedServ)
+                            SoundEngine.PlaySound(new SoundStyle("FargowiltasSouls/Assets/Sounds/Thunder"), spawnPos);
 
                     Vector2 baseDirection = Main.rand.NextVector2Unit();
                     const int max = 8; //spread

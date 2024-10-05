@@ -53,7 +53,7 @@ namespace ssm.Content.Projectiles.Shtuxibus
     public class AbomSword : Deathrays.AbomSpecialDeathray
     {
         private readonly Mod fargosouls = ModLoader.GetMod("FargowiltasSouls");
-		private readonly Mod calamity = ModLoader.GetMod("CalamityMod");
+        private readonly Mod calamity = ModLoader.GetMod("CalamityMod");
         public AbomSword() : base(300) { }
         public int counter;
         public bool spawnedHandle;
@@ -179,7 +179,7 @@ namespace ssm.Content.Projectiles.Shtuxibus
 
             Projectile.NewProjectile(Projectile.InheritSource(Projectile), target.Center + Main.rand.NextVector2Circular(100, 100), Vector2.Zero, ModContent.Find<ModProjectile>(fargosouls.Name, "AbomBlast").Type, 0, 0f, Projectile.owner);
 
-          
+
             target.AddBuff(BuffID.WitheredArmor, 600);
             target.AddBuff(BuffID.WitheredWeapon, 600);
         }

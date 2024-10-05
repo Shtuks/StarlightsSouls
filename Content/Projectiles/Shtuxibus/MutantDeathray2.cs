@@ -141,7 +141,7 @@ namespace ssm.Content.Projectiles.Shtuxibus
             // Set shader parameters. This one takes a fademap and a color.
 
             // GameShaders.Misc["FargoswiltasSouls:MutantDeathray"].UseImage1(); cannot be used due to only accepting vanilla paths.
-          //  GameShaders.Misc["FargowiltasSouls:GenericDeathray"].SetShaderTexture(almazikreg.MutantStreak);
+            //  GameShaders.Misc["FargowiltasSouls:GenericDeathray"].SetShaderTexture(almazikreg.MutantStreak);
             // The laser should fade to this in the middle.
             GameShaders.Misc["FargowiltasSouls:GenericDeathray"].UseColor(new Color(Main.DiscoR, Main.DiscoG, Main.DiscoB));
             GameShaders.Misc["FargowiltasSouls:GenericDeathray"].Shader.Parameters["stretchAmount"].SetValue(3);

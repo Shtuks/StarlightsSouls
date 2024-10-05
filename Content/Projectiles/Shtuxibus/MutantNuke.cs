@@ -150,8 +150,8 @@ namespace ssm.Content.Projectiles.Shtuxibus
             }
         }
 
-      
-      public override Color? GetAlpha(Color lightColor)
+
+        public override Color? GetAlpha(Color lightColor)
         {
             return Color.Orange * Projectile.Opacity;
         }

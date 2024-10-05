@@ -24,7 +24,7 @@ namespace ssm.Content.Buffs.Minions
 
         public override void Update(Player player, ref int buffIndex)
         {
-          
+
             if (player.whoAmI == Main.myPlayer)
             {
                 player.GetModPlayer<ShtunPlayer>().CelestialPower = true;

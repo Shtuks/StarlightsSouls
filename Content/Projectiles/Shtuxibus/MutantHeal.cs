@@ -16,7 +16,7 @@ using ssm;
 
 namespace ssm.Content.Projectiles.Shtuxibus
 {
-	public class MutantHeal : ModProjectile
+    public class MutantHeal : ModProjectile
     {
 
         public override void SetStaticDefaults()

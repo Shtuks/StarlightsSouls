@@ -7,9 +7,9 @@ using Terraria.ModLoader;
 
 namespace ssm.Content.SoulToggles
 {
-  public class EternityForceHeader : SoulHeader
-  {
-    public override float Priority => 6.3f;
-    public override int Item => ModContent.ItemType<EternityForce>();
-  }
+    public class EternityForceHeader : SoulHeader
+    {
+        public override float Priority => 6.3f;
+        public override int Item => ModContent.ItemType<EternityForce>();
+    }
 }

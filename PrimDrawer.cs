@@ -142,7 +142,7 @@ namespace ssm
                 TextureEnabled = false
             };
             UpdateBaseEffect(out _, out _);
-        } 
+        }
 
         private void UpdateBaseEffect(out Matrix effectProjection, out Matrix effectView)
         {

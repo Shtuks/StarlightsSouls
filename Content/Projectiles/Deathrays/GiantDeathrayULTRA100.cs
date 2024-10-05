@@ -33,12 +33,12 @@ namespace ssm.Content.Projectiles.Deathrays
             Projectile.idStaticNPCHitCooldown = 0;
             Projectile.netImportant = true;
             Projectile.GetGlobalProjectile<FargoSoulsGlobalProjectile>().TimeFreezeImmune = true;
-		//	Projectile.GetGlobalProjectile<FargoSoulsGlobalProjectile>().ImmuneToMutantBomb = true;
-		//	Projectile.GetGlobalProjectile<FargoSoulsGlobalProjectile>().ImmuneToGuttedHeart = true;
-			Projectile.GetGlobalProjectile<FargoSoulsGlobalProjectile>().CanSplit = false;
-		//	Projectile.GetGlobalProjectile<FargoGlobalProjectile>().TimeFreezeImmune = true;
-		//	Projectile.GetGlobalProjectile<FargoGlobalProjectile>().ImmuneToMutantBomb = true;
-		    Projectile.GetGlobalProjectile<FargoSoulsGlobalProjectile>().CanSplit = false;
+            //	Projectile.GetGlobalProjectile<FargoSoulsGlobalProjectile>().ImmuneToMutantBomb = true;
+            //	Projectile.GetGlobalProjectile<FargoSoulsGlobalProjectile>().ImmuneToGuttedHeart = true;
+            Projectile.GetGlobalProjectile<FargoSoulsGlobalProjectile>().CanSplit = false;
+            //	Projectile.GetGlobalProjectile<FargoGlobalProjectile>().TimeFreezeImmune = true;
+            //	Projectile.GetGlobalProjectile<FargoGlobalProjectile>().ImmuneToMutantBomb = true;
+            Projectile.GetGlobalProjectile<FargoSoulsGlobalProjectile>().CanSplit = false;
             Projectile.GetGlobalProjectile<FargoSoulsGlobalProjectile>().noInteractionWithNPCImmunityFrames = true;
             Projectile.GetGlobalProjectile<FargoSoulsGlobalProjectile>().DeletionImmuneRank = 2;
             CooldownSlot = -1;
@@ -59,7 +59,7 @@ namespace ssm.Content.Projectiles.Deathrays
             {
                 Projectile.velocity = -Vector2.UnitY;
             }
-           
+
             float num801 = 20f;
             Projectile.localAI[0] += 1f;
             if (Projectile.localAI[0] >= maxTime)
@@ -96,10 +96,10 @@ namespace ssm.Content.Projectiles.Deathrays
             Projectile.localAI[1] = MathHelper.Lerp(Projectile.localAI[1], num807, amount);
         }
 
-    	public override Color? GetAlpha(Color lightColor)
-		{
-			return new Color(Main.DiscoR, Main.DiscoG, Main.DiscoB);
-		}
-      
+        public override Color? GetAlpha(Color lightColor)
+        {
+            return new Color(Main.DiscoR, Main.DiscoG, Main.DiscoB);
+        }
+
     }
 }

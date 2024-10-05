@@ -28,7 +28,7 @@ namespace ssm.Content.Projectiles.Shtuxibus
             Projectile.tileCollide = false;
             Projectile.penetrate = -1;
             CooldownSlot = 1;
-           // Projectile.GetGlobalProjectile<FargoSoulsGlobalProjectile>().DeletionImmuneRank = 2;
+            // Projectile.GetGlobalProjectile<FargoSoulsGlobalProjectile>().DeletionImmuneRank = 2;
         }
 
         public override bool? CanDamage() => false;
@@ -54,7 +54,7 @@ namespace ssm.Content.Projectiles.Shtuxibus
         public override void OnHitPlayer(Player target, Player.HurtInfo info)
         {
             target.AddBuff(BuffID.Slimed, 300);
-            
+
         }
 
         public override bool PreDraw(ref Color lightColor)

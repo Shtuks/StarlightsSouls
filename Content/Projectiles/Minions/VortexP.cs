@@ -103,12 +103,12 @@ namespace ssm.Content.Projectiles.Minions
             }
 
             Vector2 angle = player.Center - Projectile.Center;
-          angle.X += 200f;
+            angle.X += 200f;
             angle.Y = 480f;
             Projectile.rotation = (float)Math.Atan2(angle.Y, angle.X) + (float)Math.PI / 2f;
         }
 
-      
+
         public override bool PreDraw(ref Color lightColor)
         {
             Texture2D texture2D13 = Terraria.GameContent.TextureAssets.Projectile[Projectile.type].Value;

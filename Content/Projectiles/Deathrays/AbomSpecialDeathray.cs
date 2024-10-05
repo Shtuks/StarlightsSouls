@@ -12,7 +12,7 @@ namespace ssm.Content.Projectiles.Deathrays
     public abstract class AbomSpecialDeathray : BaseDeathray
     {
         private readonly Mod fargosouls = ModLoader.GetMod("FargowiltasSouls");
-		private readonly Mod calamity = ModLoader.GetMod("CalamityMod");
+        private readonly Mod calamity = ModLoader.GetMod("CalamityMod");
         public override string Texture => "ssm/Content/Projectiles/Deathrays/AbomSpecialDeathray";
         public AbomSpecialDeathray(int maxTime) : base(maxTime, sheeting: TextureSheeting.Horizontal) { }
         public override void SetStaticDefaults()

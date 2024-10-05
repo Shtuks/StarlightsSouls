@@ -40,7 +40,8 @@ public class Monstrocity : ModNPC
         "Spamton"
     };
 
-    public override void SetStaticDefaults() {
+    public override void SetStaticDefaults()
+    {
         Main.npcFrameCount[NPC.type] = 26;
 
         NPCID.Sets.ExtraFramesCount[NPC.type] = 9;
@@ -52,12 +53,15 @@ public class Monstrocity : ModNPC
         NPCID.Sets.HatOffsetY[NPC.type] = 4;
     }
 
-    public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry) {
-			bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[] {
-			BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Sky,
-			new FlavorTextBestiaryInfoElement("Mods.ssm.Bestiary.Monstrocity")});}
+    public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
+    {
+        bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[] {
+            BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Sky,
+            new FlavorTextBestiaryInfoElement("Mods.ssm.Bestiary.Monstrocity")});
+    }
 
-    public override void SetDefaults() {
+    public override void SetDefaults()
+    {
         NPC.townNPC = true;
         NPC.friendly = true;
         NPC.width = 40;
@@ -72,22 +76,28 @@ public class Monstrocity : ModNPC
         NPC.dontTakeDamage = true;
         AnimationType = 22;
         NPC.Happiness
-				.SetNPCAffection<ShtuxianHarbringer>(AffectionLevel.Dislike)
-				.SetNPCAffection<Mutant>(AffectionLevel.Like);}
+                .SetNPCAffection<ShtuxianHarbringer>(AffectionLevel.Dislike)
+                .SetNPCAffection<Mutant>(AffectionLevel.Like);
+    }
 
-    public override bool CanTownNPCSpawn(int numTownNPCs) {
-        if (WorldSavingSystem.EternityMode) {
+    public override bool CanTownNPCSpawn(int numTownNPCs)
+    {
+        if (WorldSavingSystem.EternityMode)
+        {
             return Main.hardMode;
         }
         return false;
     }
 
-    public override List<string> SetNPCNameList() {
+    public override List<string> SetNPCNameList()
+    {
         return Names;
     }
 
-    public override string GetChat() {
-        return Main.rand.Next(32) switch {
+    public override string GetChat()
+    {
+        return Main.rand.Next(32) switch
+        {
             0 => "Mods.ssm.NPCs.Monstrocity.Chat.Normal1",
             1 => "Mods.ssm.NPCs.Monstrocity.Chat.Normal2",
             2 => "Mods.ssm.NPCs.Monstrocity.Chat.Normal3",
@@ -124,12 +134,15 @@ public class Monstrocity : ModNPC
         };
     }
 
-    public override void SetChatButtons(ref string button, ref string button2) {
+    public override void SetChatButtons(ref string button, ref string button2)
+    {
         button = Language.GetTextValue("LegacyInterface.28");
     }
 
-    public override void OnChatButtonClicked(bool firstButton, ref string shopName) {
-        if (firstButton) {
+    public override void OnChatButtonClicked(bool firstButton, ref string shopName)
+    {
+        if (firstButton)
+        {
             shopName = "Shop";
         }
     }

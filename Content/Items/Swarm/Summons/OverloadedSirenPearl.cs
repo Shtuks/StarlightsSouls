@@ -6,6 +6,8 @@ using Terraria.Localization;
 using Terraria.ModLoader;
 using CalamityMod.NPCs.Leviathan;
 using CalamityMod.Items.SummonItems;
+using Fargowiltas.Items.Summons.SwarmSummons;
+using FargowiltasCrossmod.Content.Calamity.Items.Summons;
 
 namespace ssm.Content.Items.Swarm.Summons
 {
@@ -18,6 +20,13 @@ namespace ssm.Content.Items.Swarm.Summons
         public override bool CanUseItem(Player player)
         {
             return !ssm.SwarmActive;
+        }
+        public override void AddRecipes()
+        {
+            this.CreateRecipe(1)
+            .AddIngredient<Overloader>()
+            .AddIngredient<SirensPearl>()
+            .Register();
         }
     }
 }

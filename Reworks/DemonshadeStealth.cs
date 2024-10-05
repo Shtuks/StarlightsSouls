@@ -5,15 +5,15 @@ using Terraria.ModLoader;
 
 namespace ssm.Reworks
 {
-  public class DemonshadeStealth : GlobalBuff
-  {
-    public virtual void Update(int type, Player player, ref int buffIndex)
+    public class DemonshadeStealth : GlobalBuff
     {
-      if (!player.HasBuff(ModContent.BuffType<DemonshadeSetDevilBuff>()))
-        return;
-      player.Calamity().rogueStealthMax += 200f;
-      player.Calamity().wearingRogueArmor = true;
-      player.Calamity().stealthStrikeHalfCost = true;
+        public override void Update(int type, Player player, ref int buffIndex)
+        {
+            if (!player.HasBuff(ModContent.BuffType<DemonshadeSetDevilBuff>()))
+                return;
+            player.Calamity().rogueStealthMax += 200f;
+            player.Calamity().wearingRogueArmor = true;
+            player.Calamity().stealthStrikeHalfCost = true;
+        }
     }
-  }
 }

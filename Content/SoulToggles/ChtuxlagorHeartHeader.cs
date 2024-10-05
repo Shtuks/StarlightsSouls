@@ -7,9 +7,9 @@ using Terraria.ModLoader;
 
 namespace ssm.Content.SoulToggles
 {
-  public class ChtuxlagorHeartHeader : SoulHeader
-  {
-    public override float Priority => 745745f;
-    public override int Item => ModContent.ItemType<ChtuxlagorHeart>();
-  }
+    public class ChtuxlagorHeartHeader : SoulHeader
+    {
+        public override float Priority => 745745f;
+        public override int Item => ModContent.ItemType<ChtuxlagorHeart>();
+    }
 }

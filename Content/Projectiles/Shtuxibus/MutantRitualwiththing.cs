@@ -14,7 +14,7 @@ namespace ssm.Content.Projectiles.Shtuxibus
     public class MutantRitualwiththing : BaseArena
     {
         private readonly Mod fargosouls = ModLoader.GetMod("FargowiltasSouls");
-		private readonly Mod calamity = ModLoader.GetMod("CalamityMod");
+        private readonly Mod calamity = ModLoader.GetMod("CalamityMod");
         public override string Texture => "ssm/Content/Projectiles/Shtuxibus/ShtuxibusRitualProj";
 
         private const float realRotation = MathHelper.Pi / 140f;
@@ -45,7 +45,7 @@ namespace ssm.Content.Projectiles.Shtuxibus
                     Projectile.velocity /= 40f;
 
                 rotationPerTick = realRotation;
-             }
+            }
             else //remains still in higher AIs
             {
                 Projectile.velocity = Vector2.Zero;
@@ -58,11 +58,11 @@ namespace ssm.Content.Projectiles.Shtuxibus
 
         public override void AI()
         {
-             
-           
+
+
             base.AI();
             Projectile.frameCounter++;
-             Projectile.rotation += 1f;
+            Projectile.rotation += 1f;
             if (Projectile.frameCounter >= 6)
             {
                 Projectile.frameCounter = 0;
@@ -75,12 +75,12 @@ namespace ssm.Content.Projectiles.Shtuxibus
         public override void OnHitPlayer(Player target, Player.HurtInfo info)
         {
             //base.OnHitPlayer(target, damage, crit);
-                if (Main.npc[ShtunNpcs.Shtuxibus].ai[0] == -5)
-                {
-                    if (!target.HasBuff(ModContent.Find<ModBuff>(fargosouls.Name, "TimeFrozenBuff").Type))
-                      //  SoundEngine.PlaySound(new SoundStyle("almazikmod/Sounds/ZaWarudo"), target.Center);
+            if (Main.npc[ShtunNpcs.Shtuxibus].ai[0] == -5)
+            {
+                if (!target.HasBuff(ModContent.Find<ModBuff>(fargosouls.Name, "TimeFrozenBuff").Type))
+                    //  SoundEngine.PlaySound(new SoundStyle("almazikmod/Sounds/ZaWarudo"), target.Center);
                     target.AddBuff(ModContent.Find<ModBuff>(fargosouls.Name, "TimeFrozenBuff").Type, 300);
-                }
+            }
         }
 
         public override Color? GetAlpha(Color lightColor)

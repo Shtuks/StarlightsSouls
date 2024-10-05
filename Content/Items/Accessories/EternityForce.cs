@@ -28,56 +28,59 @@ using FargowiltasSouls.Content.Items.Accessories.Forces;
 
 namespace ssm.Content.Items.Accessories
 {
-  public class EternityForce : BaseEnchant
-  {
-    private readonly Mod FargoSoul = Terraria.ModLoader.ModLoader.GetMod("FargowiltasSouls");
-
-    public override void SetStaticDefaults() {
-      ItemID.Sets.ItemNoGravity[this.Type] = true;}
-
-    public override void SetDefaults()
+    public class EternityForce : BaseEnchant
     {
-      this.Item.value = Item.buyPrice(10, 0, 0, 0);
-      this.Item.rare = 10;
-      this.Item.accessory = true;
-    }
+        private readonly Mod FargoSoul = Terraria.ModLoader.ModLoader.GetMod("FargowiltasSouls");
 
-    public override Color nameColor => new(255, 255, 255);
+        public override void SetStaticDefaults()
+        {
+            ItemID.Sets.ItemNoGravity[this.Type] = true;
+        }
 
-    public override void UpdateAccessory(Player player, bool hideVisual)
-    {
-      if(player.AddEffect<MutantSoulEffect>(Item)){
-        player.AddBuff(ModContent.BuffType<MutantSoulBuff>(), 2);
-      }
-      ModContent.Find<ModItem>(((ModType) this).Mod.Name, "StyxEnchant").UpdateAccessory(player, false);
-      ModContent.Find<ModItem>(((ModType) this).Mod.Name, "PhantaplazmalEnchant").UpdateAccessory(player, false);
-      ModContent.Find<ModItem>(((ModType) this).Mod.Name, "NekomiEnchant").UpdateAccessory(player, false);
-      ModContent.Find<ModItem>(((ModType) this).Mod.Name, "EridanusEnchant").UpdateAccessory(player, false);
-      ModContent.Find<ModItem>(((ModType) this).Mod.Name, "GaiaEnchant").UpdateAccessory(player, false);
-    }
+        public override void SetDefaults()
+        {
+            this.Item.value = Item.buyPrice(10, 0, 0, 0);
+            this.Item.rare = 10;
+            this.Item.accessory = true;
+        }
 
-    public override void AddRecipes()
-    {
-      Recipe recipe = this.CreateRecipe(1);
-      recipe.AddIngredient<GaiaEnchant>(1);
-      recipe.AddIngredient<EridanusEnchant>(1);
-      recipe.AddIngredient<StyxEnchant>(1);
-      recipe.AddIngredient<PhantaplazmalEnchant>(1);
-      recipe.AddIngredient<NekomiEnchant>(1);
-      recipe.AddTile(ModContent.Find<ModTile>("Fargowiltas", "CrucibleCosmosSheet"));
-      recipe.Register();
-    }
+        public override Color nameColor => new(255, 255, 255);
 
-    public abstract class EternityForceEffect : AccessoryEffect
-    {
-      public override Header ToggleHeader => Header.GetHeader<EternityForceHeader>();
-    }
+        public override void UpdateAccessory(Player player, bool hideVisual)
+        {
+            if (player.AddEffect<MutantSoulEffect>(Item))
+            {
+                player.AddBuff(ModContent.BuffType<MutantSoulBuff>(), 2);
+            }
+            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "StyxEnchant").UpdateAccessory(player, false);
+            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "PhantaplazmalEnchant").UpdateAccessory(player, false);
+            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "NekomiEnchant").UpdateAccessory(player, false);
+            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "EridanusEnchant").UpdateAccessory(player, false);
+            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "GaiaEnchant").UpdateAccessory(player, false);
+        }
 
-    public class MutantSoulEffect : AccessoryEffect
-    {
-      public override Header ToggleHeader => Header.GetHeader<EternityForceHeader>();
-      public override int ToggleItemType => ModContent.ItemType<EternityForce>();
-      public override bool MinionEffect => true;
+        public override void AddRecipes()
+        {
+            Recipe recipe = this.CreateRecipe(1);
+            recipe.AddIngredient<GaiaEnchant>(1);
+            recipe.AddIngredient<EridanusEnchant>(1);
+            recipe.AddIngredient<StyxEnchant>(1);
+            recipe.AddIngredient<PhantaplazmalEnchant>(1);
+            recipe.AddIngredient<NekomiEnchant>(1);
+            recipe.AddTile(ModContent.Find<ModTile>("Fargowiltas", "CrucibleCosmosSheet"));
+            recipe.Register();
+        }
+
+        public abstract class EternityForceEffect : AccessoryEffect
+        {
+            public override Header ToggleHeader => Header.GetHeader<EternityForceHeader>();
+        }
+
+        public class MutantSoulEffect : AccessoryEffect
+        {
+            public override Header ToggleHeader => Header.GetHeader<EternityForceHeader>();
+            public override int ToggleItemType => ModContent.ItemType<EternityForce>();
+            public override bool MinionEffect => true;
+        }
     }
-  }
 }

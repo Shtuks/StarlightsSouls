@@ -33,42 +33,44 @@ using CalamityMod.Items.Materials;
 
 namespace ssm.Content.Items.Accessories
 {
-  public class CelestialEnchant : BaseEnchant
-  {
-    private readonly Mod FargoSoul = Terraria.ModLoader.ModLoader.GetMod("FargowiltasSouls");
-
-    public override void SetStaticDefaults() => ItemID.Sets.ItemNoGravity[this.Type] = true;
-
-    public override void SetDefaults()
+    public class CelestialEnchant : BaseEnchant
     {
-      this.Item.value = Item.buyPrice(1, 0, 0, 0);
-      this.Item.rare = 10;
-      this.Item.accessory = true;
-    }
+        private readonly Mod FargoSoul = Terraria.ModLoader.ModLoader.GetMod("FargowiltasSouls");
 
-    public override Color nameColor => new(255, 255, 255);
+        public override void SetStaticDefaults() => ItemID.Sets.ItemNoGravity[this.Type] = true;
 
-    public override void UpdateAccessory(Player player, bool hideVisual)
-    {
-      if(player.AddEffect<CelestialEffect>(Item)){
-        player.GetModPlayer<ShtunPlayer>().CelestialPower = true;
-        player.AddBuff(ModContent.BuffType<CelestialPowerBuff>(), 2);}
-    }
+        public override void SetDefaults()
+        {
+            this.Item.value = Item.buyPrice(1, 0, 0, 0);
+            this.Item.rare = 10;
+            this.Item.accessory = true;
+        }
 
-    public override void AddRecipes()
-    {
-      Recipe recipe = this.CreateRecipe(1);
-      recipe.AddIngredient<GalacticaSingularity>(10);
-      recipe.AddIngredient(3467, 10);
-      recipe.AddIngredient<AstralBar>(20);
-      recipe.AddTile(ModContent.Find<ModTile>("Fargowiltas", "CrucibleCosmosSheet"));
-      recipe.Register();
-    }
+        public override Color nameColor => new(255, 255, 255);
 
-    public class CelestialEffect : AccessoryEffect
-    {
-      public override Header ToggleHeader => Header.GetHeader<CosmoHeader>();
-      public override int ToggleItemType => ModContent.ItemType<CelestialEnchant>();
+        public override void UpdateAccessory(Player player, bool hideVisual)
+        {
+            if (player.AddEffect<CelestialEffect>(Item))
+            {
+                player.GetModPlayer<ShtunPlayer>().CelestialPower = true;
+                player.AddBuff(ModContent.BuffType<CelestialPowerBuff>(), 2);
+            }
+        }
+
+        public override void AddRecipes()
+        {
+            Recipe recipe = this.CreateRecipe(1);
+            recipe.AddIngredient<GalacticaSingularity>(10);
+            recipe.AddIngredient(3467, 10);
+            recipe.AddIngredient<AstralBar>(20);
+            recipe.AddTile(ModContent.Find<ModTile>("Fargowiltas", "CrucibleCosmosSheet"));
+            recipe.Register();
+        }
+
+        public class CelestialEffect : AccessoryEffect
+        {
+            public override Header ToggleHeader => Header.GetHeader<CosmoHeader>();
+            public override int ToggleItemType => ModContent.ItemType<CelestialEnchant>();
+        }
     }
-  }
 }

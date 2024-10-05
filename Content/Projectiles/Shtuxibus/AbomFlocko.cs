@@ -113,7 +113,7 @@ namespace ssm.Content.Projectiles.Shtuxibus
 
         public override Color? GetAlpha(Color lightColor)
         {
-           			return new Color(Main.DiscoR, Main.DiscoG, Main.DiscoB);
+            return new Color(Main.DiscoR, Main.DiscoG, Main.DiscoB);
         }
 
         public override bool PreDraw(ref Color lightColor)

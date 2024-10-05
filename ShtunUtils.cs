@@ -45,13 +45,13 @@ using Terraria.GameContent;
 
 namespace ssm
 {
-	public static class ShtunUtils 
-	{
+    public static class ShtunUtils
+    {
         public static bool HostCheck => Main.netMode != NetmodeID.MultiplayerClient;
         public static bool EternityMode = true;
         public static Vector2 RandomRotate => Vector2.UnitX.RotatedByRandom(MathHelper.TwoPi);
         public static Color GetAdditiveColor(Color Color) => new Color(Color.R, Color.G, Color.B, 0);
-		public static int NewSummonProjectile(IEntitySource source, Vector2 spawn, Vector2 velocity, int type, int rawBaseDamage, float knockback, int owner = 255, float ai0 = 0, float ai1 = 0)
+        public static int NewSummonProjectile(IEntitySource source, Vector2 spawn, Vector2 velocity, int type, int rawBaseDamage, float knockback, int owner = 255, float ai0 = 0, float ai1 = 0)
         {
             int p = Projectile.NewProjectile(source, spawn, velocity, type, rawBaseDamage, knockback, owner, ai0, ai1);
             if (p != Main.maxProjectiles)
@@ -86,52 +86,52 @@ namespace ssm
             return pos1;
         }
         public static Vector2 SafeDirectionTo(this Entity entity, Vector2 destination, Vector2? fallback = null)
-		{
-			if (!fallback.HasValue)
-			{
-				fallback = Vector2.Zero;
-			}
-			return Utils.SafeNormalize(destination - entity.Center, fallback.Value);
-		}
+        {
+            if (!fallback.HasValue)
+            {
+                fallback = Vector2.Zero;
+            }
+            return Utils.SafeNormalize(destination - entity.Center, fallback.Value);
+        }
         public static bool WithinBounds(this int index, int cap)
-		{
-			if (index >= 0)
-			{
-				return index < cap;
-			}
-			return false;
-		}
+        {
+            if (index >= 0)
+            {
+                return index < cap;
+            }
+            return false;
+        }
 
         public static bool Stalin => ShtunConfig.Instance.Stalin;
         public static string TryStalinTexture => Stalin ? "_Stalin" : "";
         public static NPC MinionHoming(this Vector2 origin, float maxDistanceToCheck, Player owner, bool ignoreTiles = true, bool checksRange = false)
-		{
-			if (owner == null || !((Entity)owner).whoAmI.WithinBounds(255) || !owner.MinionAttackTargetNPC.WithinBounds(200))
-			{
-				return origin.ClosestNPCAt(maxDistanceToCheck, ignoreTiles);
-			}
-			NPC val = Main.npc[owner.MinionAttackTargetNPC];
-			bool flag = true;
-			if (!ignoreTiles)
-			{
-				flag = Collision.CanHit(origin, 1, 1, ((Entity)val).Center, 1, 1);
-			}
-			float num = ((Entity)val).width / 2 + ((Entity)val).height / 2;
-			bool flag2 = Vector2.Distance(origin, ((Entity)val).Center) < maxDistanceToCheck + num || !checksRange;
-			if (owner.HasMinionAttackTargetNPC && flag && flag2)
-			{
-				return val;
-			}
-			return origin.ClosestNPCAt(maxDistanceToCheck, ignoreTiles);
-		}
+        {
+            if (owner == null || !((Entity)owner).whoAmI.WithinBounds(255) || !owner.MinionAttackTargetNPC.WithinBounds(200))
+            {
+                return origin.ClosestNPCAt(maxDistanceToCheck, ignoreTiles);
+            }
+            NPC val = Main.npc[owner.MinionAttackTargetNPC];
+            bool flag = true;
+            if (!ignoreTiles)
+            {
+                flag = Collision.CanHit(origin, 1, 1, ((Entity)val).Center, 1, 1);
+            }
+            float num = ((Entity)val).width / 2 + ((Entity)val).height / 2;
+            bool flag2 = Vector2.Distance(origin, ((Entity)val).Center) < maxDistanceToCheck + num || !checksRange;
+            if (owner.HasMinionAttackTargetNPC && flag && flag2)
+            {
+                return val;
+            }
+            return origin.ClosestNPCAt(maxDistanceToCheck, ignoreTiles);
+        }
         public static float AngleToSafe(this Vector2 pos1, Vector2 pos2) => DirectionToSafe(pos1, pos2).ToRotation();
-        public static Vector2 DirectionFromSafe(this Entity entity,Vector2 pos)
+        public static Vector2 DirectionFromSafe(this Entity entity, Vector2 pos)
         {
             pos = entity.DirectionFrom(pos);
             if (pos.HasNaNs()) pos = Vector2.Zero;
             return pos;
         }
-        public static Vector2 DirectionToSafe(this Entity entity,Vector2 pos)
+        public static Vector2 DirectionToSafe(this Entity entity, Vector2 pos)
         {
             pos = entity.DirectionTo(pos);
             if (pos.HasNaNs()) pos = Vector2.Zero;
@@ -204,20 +204,20 @@ namespace ssm
             return false;
         }
         public static void DisplayLocalizedText(string key, Color? textColor = null)
-		{
-			if (!textColor.HasValue)
-			{
-				textColor = Color.Green;
-			}
-			if (Main.netMode == 0)
-			{
-				Main.NewText((object)Language.GetTextValue(key), (Color?)textColor.Value);
-			}
-			else if (Main.netMode == 2 || Main.netMode == 1)
-			{
-				ChatHelper.BroadcastChatMessage(NetworkText.FromKey(key, Array.Empty<object>()), textColor.Value, -1);
-			}
-		}
+        {
+            if (!textColor.HasValue)
+            {
+                textColor = Color.Green;
+            }
+            if (Main.netMode == 0)
+            {
+                Main.NewText((object)Language.GetTextValue(key), (Color?)textColor.Value);
+            }
+            else if (Main.netMode == 2 || Main.netMode == 1)
+            {
+                ChatHelper.BroadcastChatMessage(NetworkText.FromKey(key, Array.Empty<object>()), textColor.Value, -1);
+            }
+        }
         public static void ClearFriendlyProjectiles(int deletionRank = 0, int bossNpc = -1, bool clearSummonProjs = false)
         {
             ClearProjectiles(false, true, deletionRank, bossNpc, clearSummonProjs);
@@ -251,20 +251,20 @@ namespace ssm
             }
         }
         public static string GetModItemText(int ItemID, string color = "", string itemname = "")
-		{
-			Item val = new Item();
-			val.SetDefaults(ItemID, false);
-			string text = val.Name;
-			if (itemname != "")
-			{
-				text = itemname;
-			}
-			if (color == "")
-			{
-				return "[i:" + ItemID + "]「" + text + "」";
-			}
-			return "[i:" + ItemID + "]「[c/" + color + ":" + text + "]」";
-		}
+        {
+            Item val = new Item();
+            val.SetDefaults(ItemID, false);
+            string text = val.Name;
+            if (itemname != "")
+            {
+                text = itemname;
+            }
+            if (color == "")
+            {
+                return "[i:" + ItemID + "]「" + text + "」";
+            }
+            return "[i:" + ItemID + "]「[c/" + color + ":" + text + "]」";
+        }
         public static int ScaledProjectileDamage(int npcDamage, float modifier = 1, int npcDamageCalculationsOffset = 2)
         {
             const float inherentHostileProjMultiplier = 2;
@@ -315,7 +315,7 @@ namespace ssm
         {
             return ProjectileExists((int)whoAmI, types);
         }
-		public static int FindClosestHostileNPC(Vector2 location, float detectionRange, bool lineCheck = false)
+        public static int FindClosestHostileNPC(Vector2 location, float detectionRange, bool lineCheck = false)
         {
             NPC closestNpc = null;
             foreach (NPC n in Main.npc)
@@ -396,9 +396,9 @@ namespace ssm
         {
             return NPCExists((int)whoAmI, types);
         }
-        
+
         #region Shader Utils
-        
+
         private static readonly FieldInfo shaderTextureField = typeof(MiscShaderData).GetField("_uImage1", BindingFlags.NonPublic | BindingFlags.Instance);
         private static readonly FieldInfo shaderTextureField2 = typeof(MiscShaderData).GetField("_uImage2", BindingFlags.NonPublic | BindingFlags.Instance);
 
@@ -440,7 +440,7 @@ namespace ssm
         #endregion
         public static float ActualClassDamage(this Player player, DamageClass damageClass)
             => player.GetTotalDamage(damageClass).Additive * player.GetTotalDamage(damageClass).Multiplicative;
-		public static int HighestDamageTypeScaling(Player player, int dmg)
+        public static int HighestDamageTypeScaling(Player player, int dmg)
         {
             List<float> types = new List<float> {
                 player.ActualClassDamage(DamageClass.Melee),
@@ -448,5 +448,7 @@ namespace ssm
                 player.ActualClassDamage(DamageClass.Magic),
                 player.ActualClassDamage(DamageClass.Summon)
             };
-            return (int)(types.Max() * dmg);}
-}}
+            return (int)(types.Max() * dmg);
+        }
+    }
+}

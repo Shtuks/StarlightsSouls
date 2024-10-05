@@ -23,7 +23,7 @@ namespace ssm.Content.Projectiles.Shtuxibus
     public class MutantSword : ModProjectile
     {
         private readonly Mod fargosouls = ModLoader.GetMod("FargowiltasSouls");
-		private readonly Mod calamity = ModLoader.GetMod("CalamityMod");
+        private readonly Mod calamity = ModLoader.GetMod("CalamityMod");
         public override string Texture => "Terraria/Images/Projectile_454";
 
         public override void SetStaticDefaults()
@@ -91,11 +91,11 @@ namespace ssm.Content.Projectiles.Shtuxibus
         {
             target.velocity.X = target.Center.X < Main.npc[(int)Projectile.ai[0]].Center.X ? -15f : 15f;
             target.velocity.Y = -10f;
-          
-                target.GetModPlayer<FargoSoulsPlayer>().MaxLifeReduction += 100;
-                target.AddBuff(ModContent.Find<ModBuff>(fargosouls.Name, "OceanicMaul").Type, 5400);
-                target.AddBuff(ModContent.Find<ModBuff>(fargosouls.Name, "MutantFang").Type, 180);
-                target.AddBuff(ModContent.Find<ModBuff>(fargosouls.Name, "CurseoftheMoon").Type, 360);
+
+            target.GetModPlayer<FargoSoulsPlayer>().MaxLifeReduction += 100;
+            target.AddBuff(ModContent.Find<ModBuff>(fargosouls.Name, "OceanicMaul").Type, 5400);
+            target.AddBuff(ModContent.Find<ModBuff>(fargosouls.Name, "MutantFang").Type, 180);
+            target.AddBuff(ModContent.Find<ModBuff>(fargosouls.Name, "CurseoftheMoon").Type, 360);
         }
 
         public override void OnKill(int timeleft)

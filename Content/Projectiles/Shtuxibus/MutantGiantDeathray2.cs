@@ -20,7 +20,7 @@ using Terraria.ModLoader;
 
 namespace ssm.Content.NPCs.Shtuxibus
 {
-	public class MutantGiantDeathray2 : MutantSpecialDeathray
+    public class MutantGiantDeathray2 : MutantSpecialDeathray
     {
         public MutantGiantDeathray2() : base(600) { }
 
@@ -187,7 +187,7 @@ namespace ssm.Content.NPCs.Shtuxibus
             modifiers.FinalDamage *= DamageRampup();
             if (hits > 180)
                 target.endurance = 0;
-                target.lifeRegen -= 10000;
+            target.lifeRegen -= 10000;
         }
 
         public override void ModifyHitNPC(NPC target, ref NPC.HitModifiers modifiers)
