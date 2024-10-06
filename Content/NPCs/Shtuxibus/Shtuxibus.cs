@@ -173,7 +173,7 @@ namespace ssm.Content.NPCs.Shtuxibus
                             this.NPC.damage = 10000;
                         }
             }
-            NPC.HitSound = SoundID.NPCHit57;
+            NPC.HitSound = SoundID.NPCHit1;
             NPC.noGravity = true;
             NPC.noTileCollide = true;
             NPC.npcSlots = 50f;

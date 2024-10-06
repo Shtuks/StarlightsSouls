@@ -80,7 +80,8 @@ namespace ssm.Content.Items.Accessories
             //ModContent.Find<ModItem>(this.FargoMoreSoulsCompat.Name, "SoulOfTmod").UpdateAccessory(player, false);
 
             if (ModLoader.TryGetMod("Redemption", out Mod Redemption)){
-                //ModContent.Find<ModItem>(((ModType)this).Mod.Name, "RedemptionSoul").UpdateAccessory(player, false);}
+                //ModContent.Find<ModItem>(((ModType)this).Mod.Name, "RedemptionSoul").UpdateAccessory(player, false);
+                }
             if (ModLoader.TryGetMod("SacredTools", out Mod SoA)){
                 ModContent.Find<ModItem>(((ModType)this).Mod.Name, "SoASoul").UpdateAccessory(player, false);}
             if (ModLoader.TryGetMod("CalamityMod", out Mod kal)){
