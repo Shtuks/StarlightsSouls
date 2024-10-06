@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework;
 using FargowiltasSouls.Content.Items.Accessories.Enchantments;
 using FargowiltasSouls.Core.AccessoryEffectSystem;
 using ssm.Content.SoulToggles;
-using static ssm.SoA.Enchantments.FrosthunterEnchant;
+using ssm.Core;
 using SacredTools.Content.Items.Accessories;
 using SacredTools.Content.Items.Armor.Dreadfire;
 using SacredTools.Content.Items.Weapons.Dreadfire;
@@ -18,6 +18,8 @@ using SacredTools.Items.Weapons.Luxite;
 
 namespace ssm.SoA.Enchantments
 {
+    [ExtendsFromMod(ModCompatibility.SacredTools.Name)]
+    [JITWhenModsEnabled(ModCompatibility.SacredTools.Name)]
     public class ExitumLuxEnchant : BaseEnchant
     {
         private readonly Mod soa = ModLoader.GetMod("SacredTools");

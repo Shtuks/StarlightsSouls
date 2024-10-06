@@ -14,9 +14,12 @@ using SacredTools.Items.Weapons.Herbs;
 using SacredTools.Items.Weapons;
 using SacredTools.Content.Items.Armor.Lunar.Solar;
 using SacredTools.Items.Weapons.Lunatic;
+using ssm.Core;
 
 namespace ssm.SoA.Enchantments
 {
+    [ExtendsFromMod(ModCompatibility.SacredTools.Name)]
+    [JITWhenModsEnabled(ModCompatibility.SacredTools.Name)]
     public class BlazingBruteEnchant : BaseEnchant
     {
         private readonly Mod soa = ModLoader.GetMod("SacredTools");

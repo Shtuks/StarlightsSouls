@@ -4,10 +4,7 @@ using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
-using CalamityMod.Tiles.Furniture.CraftingStations;
 using Fargowiltas.Items.Tiles;
-using ThoriumMod.Tiles;
-using Redemption.Tiles.Furniture.Lab;
 using Fargowiltas;
 
 namespace ssm.Content.Tiles
@@ -22,6 +19,9 @@ namespace ssm.Content.Tiles
             Main.tileLavaDeath[(int)((ModBlockType)this).Type] = false;
             TileObjectData.newTile.CopyFrom(TileObjectData.Style5x4);
             TileObjectData.newTile.LavaDeath = false;
+            TileID.Sets.CountsAsHoneySource[Type] = true;
+            TileID.Sets.CountsAsLavaSource[Type] = true;
+            TileID.Sets.CountsAsWaterSource[Type] = true;
             TileObjectData.newTile.Height = 3;
             TileObjectData.newTile.CoordinateHeights = new int[3]
             {
@@ -35,7 +35,57 @@ namespace ssm.Content.Tiles
             this.AnimationFrameHeight = 54;
             TileID.Sets.DisableSmartCursor[(int)((ModBlockType)this).Type] = true;
             ((ModBlockType)this).DustType = 84;
-            AdjTiles = new int[] { TileID.WorkBenches, TileID.HeavyWorkBench, TileID.Furnaces, TileID.Anvils, TileID.Bottles, TileID.Sawmill, TileID.Loom, TileID.Tables, TileID.Chairs, TileID.CookingPots, TileID.Sinks, TileID.Kegs, TileID.Hellforge, TileID.AlchemyTable, TileID.TinkerersWorkbench, TileID.ImbuingStation, TileID.DyeVat, TileID.LivingLoom, TileID.GlassKiln, TileID.IceMachine, TileID.HoneyDispenser, TileID.SkyMill, TileID.Solidifier, TileID.BoneWelder, TileID.MythrilAnvil, TileID.AdamantiteForge, TileID.DemonAltar, TileID.Bookcases, TileID.CrystalBall, TileID.Autohammer, TileID.LunarCraftingStation, TileID.LesionStation, TileID.FleshCloningVat, TileID.LihzahrdFurnace, TileID.SteampunkBoiler, TileID.Blendomatic, TileID.MeatGrinder, TileID.Tombstones, ModContent.TileType<GoldenDippingVatSheet>(), ModContent.TileType<DraedonsForge>(), ModContent.TileType<CrucibleCosmosSheet>(), ModContent.TileType<StaticRefiner>(), ModContent.TileType<CosmicAnvil>(), ModContent.TileType<ThoriumAnvil>(), ModContent.TileType<ArcaneArmorFabricator>(), ModContent.TileType<SoulForge>(), ModContent.TileType<XeniumRefineryTile>(), ModContent.TileType<XeniumSmelterTile>(), ModContent.TileType<GirusCorruptorTile>() };
+            AdjTiles = new int[] {
+                TileID.WorkBenches,
+                TileID.HeavyWorkBench,
+                TileID.Furnaces,
+                TileID.Anvils,
+                TileID.Bottles,
+                TileID.Sawmill,
+                TileID.Loom,
+                TileID.Tables,
+                TileID.Chairs,
+                TileID.CookingPots,
+                TileID.Sinks,
+                TileID.Kegs,
+                TileID.Hellforge,
+                TileID.AlchemyTable,
+                TileID.TinkerersWorkbench,
+                TileID.ImbuingStation,
+                TileID.DyeVat,
+                TileID.LivingLoom,
+                TileID.GlassKiln,
+                TileID.IceMachine,
+                TileID.HoneyDispenser,
+                TileID.SkyMill,
+                TileID.Solidifier,
+                TileID.BoneWelder,
+                TileID.MythrilAnvil,
+                TileID.AdamantiteForge,
+                TileID.DemonAltar,
+                TileID.Bookcases,
+                TileID.CrystalBall,
+                TileID.Autohammer,
+                TileID.LunarCraftingStation,
+                TileID.LesionStation,
+                TileID.FleshCloningVat,
+                TileID.LihzahrdFurnace,
+                TileID.SteampunkBoiler,
+                TileID.Blendomatic,
+                TileID.MeatGrinder,
+                TileID.Tombstones,
+                //ModContent.TileType<GoldenDippingVatSheet>(),
+                //ModContent.TileType<DraedonsForge>(),
+                ModContent.TileType<CrucibleCosmosSheet>(),
+                //ModContent.TileType<StaticRefiner>(),
+                //ModContent.TileType<CosmicAnvil>(),
+                //ModContent.TileType<ThoriumAnvil>(),
+                //ModContent.TileType<ArcaneArmorFabricator>(),
+                //ModContent.TileType<SoulForge>(),
+                //ModContent.TileType<XeniumRefineryTile>(),
+                //ModContent.TileType<XeniumSmelterTile>(),
+                //ModContent.TileType<GirusCorruptorTile>()
+                };
         }
 
         public override void AnimateTile(ref int frame, ref int frameCounter)

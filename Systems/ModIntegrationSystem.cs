@@ -15,11 +15,18 @@ namespace ssm.Systems
 {
     public class ModIntegrationsSystem : ModSystem
     {
-        public static class SoulsMod
+        public static class Souls
         {
             public const string Name = "FargowiltasSouls";
             public static bool Loaded => ModLoader.HasMod(Name);
             public static FargowiltasSouls.FargowiltasSouls Mod => ModLoader.GetMod(Name) as FargowiltasSouls.FargowiltasSouls;
+        }
+
+        public static class Mutant
+        {
+            public const string Name = "SacredTools";
+            public static bool Loaded => ModLoader.HasMod(Name);
+            public static Mod Mod => ModLoader.GetMod(Name);
         }
 
         public static class Redemption
@@ -30,6 +37,13 @@ namespace ssm.Systems
         }
 
         public static class SacredTools
+        {
+            public const string Name = "SacredTools";
+            public static bool Loaded => ModLoader.HasMod(Name);
+            public static Mod Mod => ModLoader.GetMod(Name);
+        }
+
+        public static class Calamity
         {
             public const string Name = "SacredTools";
             public static bool Loaded => ModLoader.HasMod(Name);
@@ -73,7 +87,7 @@ namespace ssm.Systems
         {
             public static void AdjustValues()
             {
-                SoulsMod.Mod.BossChecklistValues["MutantBoss"] = 29f;
+                Souls.Mod.BossChecklistValues["MutantBoss"] = 29f;
                 /*if (Redemption.Loaded){
                 	Redemption.Mod.BossChecklistValues["Nebuleus"] = 20f;}
                 if (SacredTools.Loaded){

@@ -4,11 +4,10 @@ using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
-using CalamityMod.Tiles.Furniture.CraftingStations;
 using Fargowiltas.Items.Tiles;
 using ssm.Content.Tiles;
-using Redemption.Tiles.Furniture.Lab;
-using ThoriumMod.Tiles;
+using System;
+using Terraria.Localization;
 
 namespace ssm.Content.Tiles
 {
@@ -35,8 +34,62 @@ namespace ssm.Content.Tiles
             this.AnimationFrameHeight = 54;
             TileID.Sets.DisableSmartCursor[(int)((ModBlockType)this).Type] = true;
             ((ModBlockType)this).DustType = 84;
-            AdjTiles = new int[] { TileID.WorkBenches, TileID.HeavyWorkBench, TileID.Furnaces, TileID.Anvils, TileID.Bottles, TileID.Sawmill, TileID.Loom, TileID.Tables, TileID.Chairs, TileID.CookingPots, TileID.Sinks, TileID.Kegs, TileID.Hellforge, TileID.AlchemyTable, TileID.TinkerersWorkbench, TileID.ImbuingStation, TileID.DyeVat, TileID.LivingLoom, TileID.GlassKiln, TileID.IceMachine, TileID.HoneyDispenser, TileID.SkyMill, TileID.Solidifier, TileID.BoneWelder, TileID.MythrilAnvil, TileID.AdamantiteForge, TileID.DemonAltar, TileID.Bookcases, TileID.CrystalBall, TileID.Autohammer, TileID.LunarCraftingStation, TileID.LesionStation, TileID.FleshCloningVat, TileID.LihzahrdFurnace, TileID.SteampunkBoiler, TileID.Blendomatic, TileID.MeatGrinder, TileID.Tombstones, ModContent.TileType<GoldenDippingVatSheet>(), ModContent.TileType<DraedonsForge>(), ModContent.TileType<CrucibleCosmosSheet>(), ModContent.TileType<StaticRefiner>(), ModContent.TileType<CosmicAnvil>(), ModContent.TileType<ThoriumAnvil>(), ModContent.TileType<ArcaneArmorFabricator>(), ModContent.TileType<SoulForge>(), ModContent.TileType<XeniumRefineryTile>(), ModContent.TileType<XeniumSmelterTile>(), ModContent.TileType<GirusCorruptorTile>(), ModContent.TileType<MutantsForgeTile>() };
+            TileID.Sets.CountsAsHoneySource[Type] = true;
+            TileID.Sets.CountsAsLavaSource[Type] = true;
+            TileID.Sets.CountsAsWaterSource[Type] = true;
+            AdjTiles = new int[] {
+                TileID.WorkBenches,
+                TileID.HeavyWorkBench,
+                TileID.Furnaces,
+                TileID.Anvils,
+                TileID.Bottles,
+                TileID.Sawmill,
+                TileID.Loom,
+                TileID.Tables,
+                TileID.Chairs,
+                TileID.CookingPots,
+                TileID.Sinks,
+                TileID.Kegs,
+                TileID.Hellforge,
+                TileID.AlchemyTable,
+                TileID.TinkerersWorkbench,
+                TileID.ImbuingStation,
+                TileID.DyeVat,
+                TileID.LivingLoom,
+                TileID.GlassKiln,
+                TileID.IceMachine,
+                TileID.HoneyDispenser,
+                TileID.SkyMill,
+                TileID.Solidifier,
+                TileID.BoneWelder,
+                TileID.MythrilAnvil,
+                TileID.AdamantiteForge,
+                TileID.DemonAltar,
+                TileID.Bookcases,
+                TileID.CrystalBall,
+                TileID.Autohammer,
+                TileID.LunarCraftingStation,
+                TileID.LesionStation,
+                TileID.FleshCloningVat, 
+                TileID.LihzahrdFurnace,
+                TileID.SteampunkBoiler,
+                TileID.Blendomatic,
+                TileID.MeatGrinder,
+                TileID.Tombstones,
+                //ModContent.TileType<GoldenDippingVatSheet>(),
+                //ModContent.TileType<DraedonsForge>(),
+                ModContent.TileType<CrucibleCosmosSheet>(),
+                //ModContent.TileType<StaticRefiner>(),
+                //ModContent.TileType<CosmicAnvil>(),
+                //ModContent.TileType<ThoriumAnvil>(),
+                //ModContent.TileType<XeniumRefineryTile>(),
+                //ModContent.TileType<XeniumSmelterTile>(),
+                //ModContent.TileType<GirusCorruptorTile>(),
+                //ModContent.TileType<ArcaneArmorFabricator>(),
+                //ModContent.TileType<SoulForge>(),
+                ModContent.TileType<MutantsForgeTile>()};
         }
+            
 
         public override void AnimateTile(ref int frame, ref int frameCounter)
         {

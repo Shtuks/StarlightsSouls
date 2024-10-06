@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework;
 using FargowiltasSouls.Content.Items.Accessories.Enchantments;
 using FargowiltasSouls.Core.AccessoryEffectSystem;
 using ssm.Content.SoulToggles;
-using static ssm.SoA.Enchantments.FrosthunterEnchant;
+using ssm.Core;
 using SacredTools.Content.Items.Armor.Lunar.Vortex;
 using SacredTools.Content.Items.Weapons.Oblivion;
 using SacredTools.Items.Weapons.Lunatic;
@@ -18,6 +18,8 @@ using SacredTools.Content.Items.Weapons.Dreadfire;
 
 namespace ssm.SoA.Enchantments
 {
+    [ExtendsFromMod(ModCompatibility.SacredTools.Name)]
+    [JITWhenModsEnabled(ModCompatibility.SacredTools.Name)]
     public class DreadfireEnchant : BaseEnchant
     {
         private readonly Mod soa = ModLoader.GetMod("SacredTools");

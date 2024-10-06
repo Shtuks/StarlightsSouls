@@ -9,7 +9,7 @@ using FargowiltasSouls.Content.Items.Accessories.Enchantments;
 using FargowiltasSouls.Core.AccessoryEffectSystem;
 using ssm.Content.SoulToggles;
 using ssm.Content.Buffs.Minions;
-using static ssm.SoA.Enchantments.StellarPriestEnchant;
+using ssm.Core;
 using Microsoft.Xna.Framework.Graphics;
 using SacredTools.Content.Items.Armor.Asthraltite;
 using SacredTools.Content.Items.Accessories;
@@ -17,6 +17,8 @@ using SacredTools.Content.Items.Accessories.Sigils;
 
 namespace ssm.SoA.Enchantments
 {
+    [ExtendsFromMod(ModCompatibility.SacredTools.Name)]
+    [JITWhenModsEnabled(ModCompatibility.SacredTools.Name)]
     public class AsthraltiteEnchant : BaseEnchant
     {
         private readonly Mod soa = ModLoader.GetMod("SacredTools");

@@ -1,14 +1,15 @@
-using ssm.Content.Items.Accessories;
+using ssm.Calamity.Souls;
 using FargowiltasSouls.Content.Items;
 using FargowiltasSouls.Content.Items.Accessories.Souls;
 using FargowiltasSouls.Core.Toggler;
 using FargowiltasSouls.Core.Toggler.Content;
 using Terraria.ModLoader;
+using ssm.Core;
 
 namespace ssm.Content.SoulToggles
 {
-    [JITWhenModsEnabled(new string[] { "CalamityMod" })]
-    [ExtendsFromMod(new string[] { "CalamityMod" })]
+    [ExtendsFromMod(ModCompatibility.Calamity.Name)]
+    [JITWhenModsEnabled(ModCompatibility.Calamity.Name)]
     public class CalamitySoulHeader : SoulHeader
     {
         public override float Priority => 6.2f;

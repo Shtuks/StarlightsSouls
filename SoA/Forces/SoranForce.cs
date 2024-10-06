@@ -7,9 +7,12 @@ using Microsoft.Xna.Framework;
 using FargowiltasSouls.Content.Items.Accessories.Forces;
 using Fargowiltas.Items.Tiles;
 using ssm.SoA.Enchantments;
+using ssm.Core;
 
 namespace ssm.SoA.Forces
 {
+    [ExtendsFromMod(ModCompatibility.SacredTools.Name)]
+    [JITWhenModsEnabled(ModCompatibility.SacredTools.Name)]
     public class SoranForce : BaseForce
     {
         private readonly Mod soa = ModLoader.GetMod("SacredTools");

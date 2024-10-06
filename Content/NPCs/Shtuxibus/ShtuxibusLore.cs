@@ -2,9 +2,12 @@ using CalamityMod.Items.LoreItems;
 using ssm.Content.Items.Placeable;
 using Terraria;
 using Terraria.ModLoader;
+using ssm.Core;
 
 namespace ssm.Content.NPCs.Shtuxibus
 {
+    [ExtendsFromMod(ModCompatibility.Calamity.Name)]
+    [JITWhenModsEnabled(ModCompatibility.Calamity.Name)]
     [LegacyName(new string[] { "KnowledgeShtuxibus" })]
     public class ShtuxibusLore : LoreItem
     {

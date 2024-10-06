@@ -7,9 +7,13 @@ using FargowiltasSouls.Content.Items.Accessories.Souls;
 using Fargowiltas.Items.Tiles;
 using ssm.SoA.Enchantments;
 using ssm.SoA.Forces;
+using ssm.Systems;
+using ssm.Core;
 
 namespace ssm.SoA.Souls
 {
+    [ExtendsFromMod(ModCompatibility.SacredTools.Name)]
+    [JITWhenModsEnabled(ModCompatibility.SacredTools.Name)]
     public class SoASoul : BaseSoul
     {
         public override void SetDefaults()

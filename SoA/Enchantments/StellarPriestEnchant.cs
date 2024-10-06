@@ -12,15 +12,18 @@ using ssm.Content.Projectiles.Minions;
 using ThoriumMod.Empowerments;
 using SacredTools.Projectiles.Lunar;
 using ssm.Content.Buffs.Minions;
-using static ssm.Content.Items.Accessories.CelestialEnchant;
+using ssm.Core;
 using SacredTools.Content.Items.Armor.Quasar;
 using SacredTools.Items.Weapons;
 using SacredTools.Content.Items.Armor.Lunar.Stardust;
 using SacredTools.Items.Weapons.Lunatic;
 using SacredTools.Items.Weapons.Oblivion;
 
+
 namespace ssm.SoA.Enchantments
 {
+    [ExtendsFromMod(ModCompatibility.SacredTools.Name)]
+    [JITWhenModsEnabled(ModCompatibility.SacredTools.Name)]
     public class StellarPriestEnchant : BaseEnchant
     {
         private readonly Mod soa = ModLoader.GetMod("SacredTools");

@@ -10,10 +10,13 @@ using Terraria.Graphics.Shaders;
 using Terraria.ID;
 using Terraria.ModLoader;
 using FargowiltasSouls;
+using ssm.Core;
 using SacredTools.Projectiles.Lunar;
 
 namespace ssm.Content.Buffs.Minions
 {
+    [ExtendsFromMod(ModCompatibility.SacredTools.Name)]
+    [JITWhenModsEnabled(ModCompatibility.SacredTools.Name)]
     public class StellarGuardianBuff : ModBuff
     {
         public override void SetStaticDefaults()

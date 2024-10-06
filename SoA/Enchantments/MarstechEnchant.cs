@@ -16,9 +16,12 @@ using SacredTools.Items.Weapons;
 using SacredTools.Items.Weapons.Marstech;
 using SacredTools.Content.Items.Armor.Marstech;
 using SacredTools.Items.Claymarine;
+using ssm.Core;
 
 namespace ssm.SoA.Enchantments
 {
+    [ExtendsFromMod(ModCompatibility.SacredTools.Name)]
+    [JITWhenModsEnabled(ModCompatibility.SacredTools.Name)]
     public class MarstechEnchant : BaseEnchant
     {
         private readonly Mod soa = ModLoader.GetMod("SacredTools");

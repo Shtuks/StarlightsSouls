@@ -14,9 +14,12 @@ using SacredTools.Content.Items.Weapons.Dreadfire;
 using SacredTools.Content.Items.Armor.Lunar.Quasar;
 using SacredTools.Content.Items.Accessories.ChallengeItems;
 using SacredTools.Items.Weapons.Lunatic;
+using ssm.Core;
 
 namespace ssm.SoA.Enchantments
 {
+    [ExtendsFromMod(ModCompatibility.SacredTools.Name)]
+    [JITWhenModsEnabled(ModCompatibility.SacredTools.Name)]
     public class FallenPrinceEnchant : BaseEnchant
     {
         private readonly Mod soa = ModLoader.GetMod("SacredTools");

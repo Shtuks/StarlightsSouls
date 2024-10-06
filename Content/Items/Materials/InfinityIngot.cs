@@ -3,12 +3,9 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
-using CalamityMod.Items.Materials;
-using CalamityMod.Tiles.Furniture.CraftingStations;
 using ssm.Content.Items.Singularities;
 using ssm.Content.Items.Materials;
 using ssm.Content.Tiles;
-using ssm.Content.Items.Swarm.Energizers;
 
 namespace ssm.Content.Items.Materials
 {

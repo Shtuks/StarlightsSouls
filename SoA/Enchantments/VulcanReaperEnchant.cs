@@ -15,9 +15,12 @@ using SacredTools.Content.Items.Armor.Vulcan;
 using SacredTools.Items.Potions;
 using SacredTools.Items.Weapons.Flarium;
 using SacredTools.Items.Placeable.Paintings;
+using ssm.Core;
 
 namespace ssm.SoA.Enchantments
 {
+    [ExtendsFromMod(ModCompatibility.SacredTools.Name)]
+    [JITWhenModsEnabled(ModCompatibility.SacredTools.Name)]
     public class VulcanReaperEnchant : BaseEnchant
     {
         private readonly Mod soa = ModLoader.GetMod("SacredTools");

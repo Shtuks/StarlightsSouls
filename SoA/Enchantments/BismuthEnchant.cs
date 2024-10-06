@@ -8,6 +8,7 @@ using Microsoft.Xna.Framework;
 using FargowiltasSouls.Content.Items.Accessories.Enchantments;
 using FargowiltasSouls.Core.AccessoryEffectSystem;
 using ssm.Content.SoulToggles;
+using ssm.Core;
 using SacredTools.Content.Items.Accessories.Sigils;
 using SacredTools.Content.Items.Accessories;
 using SacredTools.Content.Items.Armor.Asthraltite;
@@ -18,6 +19,8 @@ using SacredTools.Items.Weapons;
 
 namespace ssm.SoA.Enchantments
 {
+    [ExtendsFromMod(ModCompatibility.SacredTools.Name)]
+    [JITWhenModsEnabled(ModCompatibility.SacredTools.Name)]
     public class BismuthEnchant : BaseEnchant
     {
         private readonly Mod soa = ModLoader.GetMod("SacredTools");

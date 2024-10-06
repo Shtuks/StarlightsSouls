@@ -9,19 +9,18 @@ using FargowiltasSouls.Content.Items.Accessories.Enchantments;
 using FargowiltasSouls.Core.AccessoryEffectSystem;
 using ssm.Content.SoulToggles;
 using Microsoft.Xna.Framework.Graphics;
-using SacredTools.Content.Items.Armor.Dragon;
-using SacredTools.Content.Items.Pets;
-using SacredTools.Items.Mount;
-using SacredTools.Items.Weapons.Flarium;
-using SacredTools.Items.Weapons.Special;
+using ssm.Core;
 using SacredTools.Content.Items.Armor.Decree;
 using SacredTools.Content.Items.Accessories;
 using CalamityMod.Items.VanillaArmorChanges;
 using SacredTools.Items.Weapons.Decree;
 using SacredTools.Items.Weapons;
+using ssm.Core;
 
 namespace ssm.SoA.Enchantments
 {
+    [ExtendsFromMod(ModCompatibility.SacredTools.Name)]
+    [JITWhenModsEnabled(ModCompatibility.SacredTools.Name)]
     public class FrosthunterEnchant : BaseEnchant
     {
         private readonly Mod soa = ModLoader.GetMod("SacredTools");

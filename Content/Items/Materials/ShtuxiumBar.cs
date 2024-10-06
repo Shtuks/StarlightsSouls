@@ -2,7 +2,6 @@
 using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
-using CalamityMod.Tiles.Furniture.CraftingStations;
 using ssm.Content.Items.Materials;
 using ssm.Content.Tiles;
 

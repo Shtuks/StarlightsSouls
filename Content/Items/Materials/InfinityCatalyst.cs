@@ -3,11 +3,15 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
-using CalamityMod.Items.Materials;
-using CalamityMod.Tiles.Furniture.CraftingStations;
 using ssm.Content.Items.Singularities;
+using ssm.Content.Items.Materials;
 using ssm.Content.Tiles;
-using ssm.Content.Items.Swarm.Energizers;
+using ssm.Calamity.Swarm.Energizers;
+using ssm.Thorium.Swarm.Energizers;
+using ssm.Content.Items.Materials;
+//using ssm.SoA.Swarm.Energizers;
+//using ssm.Redemption.Swarm.Energizers;
+//using ssm.Homeward.Swarm.Energizers;
 
 
 namespace ssm.Content.Items.Materials
@@ -44,8 +48,8 @@ namespace ssm.Content.Items.Materials
             .AddIngredient<RedemptionSingularity>()
             .AddIngredient<SoASingularity>()
             .AddIngredient<ThoriumEnergizer>()
-            */
             .AddIngredient<CalamitousEnergizer>()
+            */
             .AddIngredient<TerraEnergizer>()
             .AddIngredient<TerrariaSingularity>()
             .AddIngredient<CalamitySingularity>()

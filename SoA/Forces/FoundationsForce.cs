@@ -2,13 +2,16 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.Localization;
-using SacredTools;
 using FargowiltasSouls.Content.Items.Accessories.Forces;
 using Fargowiltas.Items.Tiles;
 using ssm.SoA.Enchantments;
+using ssm.Systems;
+using ssm.Core;
 
 namespace ssm.SoA.Forces
 {
+    [ExtendsFromMod(ModCompatibility.SacredTools.Name)]
+    [JITWhenModsEnabled(ModCompatibility.SacredTools.Name)]
     public class FoundationsForce : BaseForce
     {
         private readonly Mod soa = ModLoader.GetMod("SacredTools");

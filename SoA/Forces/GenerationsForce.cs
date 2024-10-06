@@ -6,9 +6,12 @@ using SacredTools;
 using FargowiltasSouls.Content.Items.Accessories.Forces;
 using Fargowiltas.Items.Tiles;
 using ssm.SoA.Enchantments;
+using ssm.Core;
 
 namespace ssm.SoA.Forces
 {
+    [ExtendsFromMod(ModCompatibility.SacredTools.Name)]
+    [JITWhenModsEnabled(ModCompatibility.SacredTools.Name)]
     public class GenerationsForce : BaseForce
     {
         private readonly Mod soa = ModLoader.GetMod("SacredTools");

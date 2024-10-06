@@ -16,9 +16,12 @@ using SacredTools.Items.Weapons.Flarium;
 using SacredTools.Items.Weapons.Special;
 using SacredTools.Items.Mount;
 using SacredTools.Content.Items.Pets;
+using ssm.Core;
 
 namespace ssm.SoA.Enchantments
 {
+    [ExtendsFromMod(ModCompatibility.SacredTools.Name)]
+    [JITWhenModsEnabled(ModCompatibility.SacredTools.Name)]
     public class FlariumEnchant : BaseEnchant
     {
         private readonly Mod soa = ModLoader.GetMod("SacredTools");

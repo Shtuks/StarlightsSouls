@@ -1,7 +1,6 @@
 using Terraria.ID;
 using Terraria.Audio;
 using System.Collections.Generic;
-using CalamityMod.CalPlayer;
 using ssm.Content.Projectiles.Deathrays;
 using Terraria.GameContent;
 using Terraria.Localization;
@@ -28,11 +27,9 @@ using Terraria.Graphics.Effects;
 //using ssm.Content.Buffs.Minions;
 using ssm.Content.Items;
 using ssm.Content.Buffs.Anti;
-using CalamityMod.Buffs;
 using Terraria;
 using System.Linq;
 using Terraria.GameContent.Creative;
-using FargowiltasSouls;
 using FargowiltasSouls.Core.ModPlayers;
 using FargowiltasSouls.Content.Projectiles;
 
@@ -45,12 +42,10 @@ namespace ssm
         public bool antiDebuff;
         public bool antiImmunity;
         public bool MutantSoul;
-        public bool hadNanomachinesLastFrame;
         public bool DevianttSoul;
         public bool CelestialPower;
         public int ShtuxibusDeaths;
         private readonly Mod FargoSoul = Terraria.ModLoader.ModLoader.GetMod("FargowiltasSouls");
-        private readonly Mod calamity = ModLoader.GetMod("CalamityMod");
         public bool ShtuxibusMinionBuff;
         public bool ChtuxlagorBuff;
         public bool ChtuxlagorHeart;
@@ -89,7 +84,9 @@ namespace ssm
         {
             return !ChtuxlagorBuff;
         }
+
         List<int> prevDyes = null;
+
         public virtual void PreUpdate()
         {
             if (this.antiDeath)
@@ -100,10 +97,6 @@ namespace ssm
         }
         public virtual void PostUpdateMiscEffects()
         {
-            if (Player.GetModPlayer<CalamityPlayer>().draedonsHeart || !this.hadNanomachinesLastFrame)
-                return;
-            this.hadNanomachinesLastFrame = false;
-            Player.GetModPlayer<CalamityPlayer>().adrenaline = 0.0f;
             if (this.antiCollision)
                 this.Player.AddBuff(ModContent.BuffType<AntiCollision>(), 2, true, false);
             if (this.antiDeath)

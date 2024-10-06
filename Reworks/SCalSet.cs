@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using Terraria;
 using Terraria.ModLoader;
 using ssm;
+using ssm.Core;
 
 namespace ssm.Reworks
 {
+    [ExtendsFromMod(ModCompatibility.Calamity.Name)]
+    [JITWhenModsEnabled(ModCompatibility.Calamity.Name)]
     public class SCalSet : GlobalItem
     {
         public override string IsArmorSet(Item head, Item body, Item legs)

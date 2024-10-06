@@ -4,6 +4,7 @@ using CalamityMod.NPCs.PlaguebringerGoliath;
 using CalamityMod.NPCs.ProfanedGuardians;
 using CalamityMod.NPCs.Yharon;
 using CalamityMod.Projectiles.Boss;
+
 using System.Linq;
 using FargowiltasCrossmod.Content.Calamity.Bosses.SlimeGod;
 using FargowiltasCrossmod.Content.Calamity.Buffs;
@@ -18,7 +19,6 @@ using FargowiltasSouls.Common.Graphics.Particles;
 using FargowiltasSouls.Content.Buffs.Boss;
 using FargowiltasSouls.Content.Buffs.Masomode;
 using FargowiltasSouls.Content.Buffs.Souls;
-using FargowiltasSouls;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
@@ -38,7 +38,6 @@ using ssm.Content.Tiles;
 using ssm.Systems;
 using ssm.Content.NPCs;
 using ssm.Content.Items.Accessories;
-using FargowiltasSouls.Content.Buffs.Boss;
 using ssm.Content.Projectiles.Shtuxibus;
 using FargowiltasSouls.Core.Systems;
 using Luminance.Core.Graphics;
@@ -91,9 +90,6 @@ namespace ssm.Content.NPCs.Shtuxibus
             NPCID.Sets.NoMultiplayerSmoothingByType[NPC.type] = true;
             NPCID.Sets.MPAllowedEnemies[Type] = true;
             NPCID.Sets.BossBestiaryPriority.Add(NPC.type);
-            //for (int index = 0; index < BuffLoader.BuffCount; ++index){
-            //if (Main.debuff[index]){
-            //NPCID.buffImmune[index] = true;}}
             List<int> intList = new List<int>();
             CollectionsMarshal.SetCount<int>(intList, 13);
             Span<int> span = CollectionsMarshal.AsSpan<int>(intList);
@@ -130,38 +126,53 @@ namespace ssm.Content.NPCs.Shtuxibus
         public override void SetDefaults()
         {
             NPC.BossBar = ModContent.GetInstance<ShtuxibusBar>();
-            Mod mod1 = Terraria.ModLoader.ModLoader.GetMod("CalamityMod");
             NPC.width = 120;
             NPC.height = 120;
             NPC.damage = 5000;
             NPC.defense = 745;
-            NPC.value = Item.buyPrice(99999);
+            NPC.value = Item.buyPrice(999999);
             NPC.lifeMax = 450000000;
             if (Main.expertMode)
-                this.NPC.lifeMax = 540000000;
-            if (Main.masterMode)
+            {
+                this.NPC.damage = 7000;
                 this.NPC.lifeMax = 570000000;
-            if ((bool)mod1.Call(new object[3]{
-            (object) "GetDifficultyActive",
-            (object) "revengeance",
-            (object) true
-            }) && Main.expertMode)
+            }
+            if (Main.masterMode)
+            {
+                this.NPC.damage = 10000;
                 this.NPC.lifeMax = 745000000;
-            this.NPC.damage = 7000;
-            if ((bool)mod1.Call(new object[3]{
-            (object) "GetDifficultyActive",
-            (object) "death",
-            (object) true
-            }) && Main.expertMode)
-                this.NPC.lifeMax = 1450000000;
-            this.NPC.damage = 10000;
-            if ((bool)mod1.Call(new object[3]{
-            (object) "GetDifficultyActive",
-            (object) "revengeance",
-            (object) true
-            }) && Main.masterMode)
-                this.NPC.lifeMax = 1570000000;
-            this.NPC.damage = 10000;
+            }
+
+            if (ModLoader.TryGetMod("CalamityMod", out Mod kal))
+            {
+                if ((bool)kal.Call(new object[3]{
+                    (object) "GetDifficultyActive",
+                    (object) "revengeance",
+                    (object) true
+                    }) && Main.expertMode)
+                        {
+                            this.NPC.lifeMax = 745000000;
+                            this.NPC.damage = 7000;
+                        }
+                        if ((bool)kal.Call(new object[3]{
+                    (object) "GetDifficultyActive",
+                    (object) "death",
+                    (object) true
+                    }) && Main.expertMode)
+                        {
+                            this.NPC.lifeMax = 1450000000;
+                            this.NPC.damage = 10000;
+                        }
+                        if ((bool)kal.Call(new object[3]{
+                    (object) "GetDifficultyActive",
+                    (object) "revengeance",
+                    (object) true
+                    }) && Main.masterMode)
+                        {
+                            this.NPC.lifeMax = 1570000000;
+                            this.NPC.damage = 10000;
+                        }
+            }
             NPC.HitSound = SoundID.NPCHit57;
             NPC.noGravity = true;
             NPC.noTileCollide = true;
@@ -1328,6 +1339,7 @@ namespace ssm.Content.NPCs.Shtuxibus
         #endregion
 
         #region calphaze2
+        [JITWhenModsEnabled(ModCompatibility.Calamity.Name)]
         void CalamityFishron()
         {
             const int fishronDelay = 3;
@@ -1345,6 +1357,7 @@ namespace ssm.Content.NPCs.Shtuxibus
                 }
             }
         }
+        [JITWhenModsEnabled(ModCompatibility.Calamity.Name)]
         void Calamitas()
         {
             //
@@ -1433,6 +1446,7 @@ namespace ssm.Content.NPCs.Shtuxibus
             }
             Timer++;
         }
+        [JITWhenModsEnabled(ModCompatibility.Calamity.Name)]
         void SlimeGodSlam()
         {
             //
@@ -1495,6 +1509,7 @@ namespace ssm.Content.NPCs.Shtuxibus
                 NPC.netUpdate = true;
             }
         }
+        [JITWhenModsEnabled(ModCompatibility.Calamity.Name)]
         void CalamityMechRayFan()
         {
             //
@@ -1512,6 +1527,7 @@ namespace ssm.Content.NPCs.Shtuxibus
                 }
             }
         }
+        [JITWhenModsEnabled(ModCompatibility.Calamity.Name)]
         void Providence()
         {
             //
@@ -1631,6 +1647,7 @@ namespace ssm.Content.NPCs.Shtuxibus
             }
             Timer++;
         }
+        [JITWhenModsEnabled(ModCompatibility.Calamity.Name)]
         void YharonBH()
         {
             //
@@ -1723,6 +1740,7 @@ namespace ssm.Content.NPCs.Shtuxibus
                 return;
             }
         }
+        [JITWhenModsEnabled(ModCompatibility.Calamity.Name)]
         void SpawnDoG()
         {
             //
@@ -1782,6 +1800,7 @@ namespace ssm.Content.NPCs.Shtuxibus
                 }
             }
         }
+        [JITWhenModsEnabled(ModCompatibility.Calamity.Name)]
         void Polterghast()
         {
             //

@@ -11,35 +11,23 @@ using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria.GameContent.Bestiary;
-using Terraria.GameContent.Creative;
-using Terraria.GameContent.ItemDropRules;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using Microsoft.Xna.Framework;
-using CalamityMod;
+//using CalamityMod;
 using System.Collections.Generic;
 using System.Text;
 using FargowiltasSouls.Core.Globals;
 using FargowiltasSouls.Core.Systems;
 using Luminance.Core.Graphics;
-using CalamityMod.CalPlayer;
-using CalamityMod;
 using static Terraria.ModLoader.ModContent;
-using CalamityMod.CalPlayer;
-using Terraria.ModLoader;
 using Terraria.Audio;
 using FargowiltasSouls.Content.Projectiles;
-using Terraria;
 using System.IO;
 using Terraria.ID;
 using ssm.Content.NPCs;
 using ReLogic.Content;
-using System.Collections.Generic;
 using System.Linq;
 using Terraria.DataStructures;
-using Terraria.GameContent.Creative;
-using Terraria.GameContent.ItemDropRules;
-using Terraria.Graphics.Shaders;
 using Terraria.Localization;
 using Terraria.GameContent;
 
@@ -104,6 +92,62 @@ namespace ssm
 
         public static bool Stalin => ShtunConfig.Instance.Stalin;
         public static string TryStalinTexture => Stalin ? "_Stalin" : "";
+
+        public static NPC ClosestNPCAt(this Vector2 origin, float maxDistanceToCheck, bool ignoreTiles = true, bool bossPriority = false)
+        {
+            NPC closestTarget = null;
+            float distance = maxDistanceToCheck;
+            if (bossPriority)
+            {
+                bool bossFound = false;
+                for (int index = 0; index < Main.npc.Length; index++)
+                {
+                    // If we've found a valid boss target, ignore ALL targets which aren't bosses.
+                    if (bossFound && !(Main.npc[index].boss || Main.npc[index].type == NPCID.WallofFleshEye))
+                        continue;
+
+                    if (Main.npc[index].CanBeChasedBy(null, false))
+                    {
+                        float extraDistance = (Main.npc[index].width / 2) + (Main.npc[index].height / 2);
+
+                        bool canHit = true;
+                        if (extraDistance < distance && !ignoreTiles)
+                            canHit = Collision.CanHit(origin, 1, 1, Main.npc[index].Center, 1, 1);
+
+                        if (Vector2.Distance(origin, Main.npc[index].Center) < distance && canHit)
+                        {
+                            if (Main.npc[index].boss || Main.npc[index].type == NPCID.WallofFleshEye)
+                                bossFound = true;
+
+                            distance = Vector2.Distance(origin, Main.npc[index].Center);
+                            closestTarget = Main.npc[index];
+                        }
+                    }
+                }
+            }
+            else
+            {
+                for (int index = 0; index < Main.npc.Length; index++)
+                {
+                    if (Main.npc[index].CanBeChasedBy(null, false))
+                    {
+                        float extraDistance = (Main.npc[index].width / 2) + (Main.npc[index].height / 2);
+
+                        bool canHit = true;
+                        if (extraDistance < distance && !ignoreTiles)
+                            canHit = Collision.CanHit(origin, 1, 1, Main.npc[index].Center, 1, 1);
+
+                        if (Vector2.Distance(origin, Main.npc[index].Center) < distance && canHit)
+                        {
+                            distance = Vector2.Distance(origin, Main.npc[index].Center);
+                            closestTarget = Main.npc[index];
+                        }
+                    }
+                }
+            }
+            return closestTarget;
+        }
+
         public static NPC MinionHoming(this Vector2 origin, float maxDistanceToCheck, Player owner, bool ignoreTiles = true, bool checksRange = false)
         {
             if (owner == null || !((Entity)owner).whoAmI.WithinBounds(255) || !owner.MinionAttackTargetNPC.WithinBounds(200))

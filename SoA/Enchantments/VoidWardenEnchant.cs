@@ -15,9 +15,12 @@ using SacredTools.Items.Weapons;
 using SacredTools.Content.Items.Armor.Oblivion;
 using SacredTools.Items.Weapons.Special;
 using SacredTools.Items.Weapons.Oblivion;
+using ssm.Core;
 
 namespace ssm.SoA.Enchantments
 {
+    [ExtendsFromMod(ModCompatibility.SacredTools.Name)]
+    [JITWhenModsEnabled(ModCompatibility.SacredTools.Name)]
     public class VoidWardenEnchant : BaseEnchant
     {
         private readonly Mod soa = ModLoader.GetMod("SacredTools");

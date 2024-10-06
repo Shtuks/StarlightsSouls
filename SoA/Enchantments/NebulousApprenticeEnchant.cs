@@ -16,9 +16,12 @@ using SacredTools.Content.Items.Armor.Lunar.Nebula;
 using SacredTools.Content.Items.Accessories;
 using SacredTools.Items.Weapons.Lunatic;
 using SacredTools.Content.Items.Weapons.Asthraltite;
+using ssm.Core;
 
 namespace ssm.SoA.Enchantments
 {
+    [ExtendsFromMod(ModCompatibility.SacredTools.Name)]
+    [JITWhenModsEnabled(ModCompatibility.SacredTools.Name)]
     public class NebulousApprenticeEnchant : BaseEnchant
     {
         private readonly Mod soa = ModLoader.GetMod("SacredTools");

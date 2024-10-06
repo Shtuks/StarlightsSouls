@@ -9,12 +9,15 @@ using Terraria.Localization;
 using Terraria.ModLoader;
 using ssm.Content.NPCs;
 using Fargowiltas.NPCs;
+using ssm.Core;
 
 namespace ssm.Content.NPCs;
 
 [AutoloadHead]
 public class Monstrocity : ModNPC
 {
+    //[ExtendsFromMod(ModCompatibility.Calamity.Name)]
+    //[JITWhenModsEnabled(ModCompatibility.Calamity.Name)]
     public static List<string> Names = new() {
         "Fardus",
         "Sussyus",
@@ -84,7 +87,7 @@ public class Monstrocity : ModNPC
     {
         if (WorldSavingSystem.EternityMode)
         {
-            return Main.hardMode;
+            //return Main.hardMode;
         }
         return false;
     }

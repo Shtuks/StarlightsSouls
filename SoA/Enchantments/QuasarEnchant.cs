@@ -13,9 +13,12 @@ using SacredTools.Content.Items.Armor.Prairie;
 using SacredTools.Items.Weapons;
 using SacredTools.Content.Items.Armor.Quasar;
 using SacredTools.Items.Weapons.Primordia;
+using ssm.Core;
 
 namespace ssm.SoA.Enchantments
 {
+    [ExtendsFromMod(ModCompatibility.SacredTools.Name)]
+    [JITWhenModsEnabled(ModCompatibility.SacredTools.Name)]
     public class QuasarEnchant : BaseEnchant
     {
         private readonly Mod soa = ModLoader.GetMod("SacredTools");

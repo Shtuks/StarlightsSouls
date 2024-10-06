@@ -73,11 +73,19 @@ namespace ssm.Content.Items.Accessories
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
             if (player.GetModPlayer<FargoSoulsPlayer>().MutantEyeCD > 0) { player.GetModPlayer<FargoSoulsPlayer>().MutantEyeCD--; }
+
             ModContent.Find<ModItem>(this.fargosouls.Name, "EternitySoul").UpdateAccessory(player, hideVisual);
             ModContent.Find<ModItem>(((ModType)this).Mod.Name, "EternityForce").UpdateAccessory(player, false);
+
             //ModContent.Find<ModItem>(this.FargoMoreSoulsCompat.Name, "SoulOfTmod").UpdateAccessory(player, false);
-            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "SoASoul").UpdateAccessory(player, false);
-            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "ÑalamitySoul").UpdateAccessory(player, false);
+
+            if (ModLoader.TryGetMod("Redemption", out Mod Redemption)){
+                //ModContent.Find<ModItem>(((ModType)this).Mod.Name, "RedemptionSoul").UpdateAccessory(player, false);}
+            if (ModLoader.TryGetMod("SacredTools", out Mod SoA)){
+                ModContent.Find<ModItem>(((ModType)this).Mod.Name, "SoASoul").UpdateAccessory(player, false);}
+            if (ModLoader.TryGetMod("CalamityMod", out Mod kal)){
+                ModContent.Find<ModItem>(((ModType)this).Mod.Name, "CalamitySoul").UpdateAccessory(player, false);}
+
             if (!Main.zenithWorld) { player.buffImmune[ModContent.Find<ModBuff>(this.FargoSoul.Name, "TimeFrozenBuff").Type] = true; }
             player.buffImmune[ModContent.Find<ModBuff>(this.FargoSoul.Name, "MutantPresenceBuff").Type] = true;
             player.buffImmune[ModContent.Find<ModBuff>(this.FargoSoul.Name, "CoffinTossBuff").Type] = true;
@@ -88,7 +96,9 @@ namespace ssm.Content.Items.Accessories
             if (!Main.zenithWorld) { player.buffImmune[ModContent.Find<ModBuff>(this.FargoSoul.Name, "TimeStopCDBuff").Type] = true; }
             if (!Main.zenithWorld) { player.buffImmune[ModContent.Find<ModBuff>(this.FargoSoul.Name, "AbomRebirthBuff").Type] = true; }
             if (!Main.zenithWorld) { player.buffImmune[ModContent.Find<ModBuff>(this.FargoSoul.Name, "AbomCooldownBuff").Type] = true; }
+
             player.AddBuff(ModContent.BuffType<SadismBuff>(), 2);
+
             player.accWatch = 3;
             player.GetDamage(DamageClass.Generic) += 1000 / 100f;
             player.buffImmune[194] = true;

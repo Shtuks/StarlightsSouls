@@ -1144,6 +1144,51 @@ Items: {
 			Effects of Ring of the Fallen, Memento Mori, and Arcanum of the Caster
 			''' */
 	}
+
+	OverloadCoznix: {
+		// Tooltip: ""
+		// DisplayName: Overload Coznix
+	}
+
+	ThunderEnergizer: {
+		// Tooltip: ""
+		// DisplayName: Thunder Energizer
+	}
+
+	ThoriumEnergizer: {
+		// Tooltip: ""
+		// DisplayName: Thorium Energizer
+	}
+
+	LichEnergizer: {
+		// Tooltip: ""
+		// DisplayName: Lich Energizer
+	}
+
+	JellyfishEnergizer: {
+		// Tooltip: ""
+		// DisplayName: Jellyfish Energizer
+	}
+
+	GraniteEnergizer: {
+		// Tooltip: ""
+		// DisplayName: Granite Energizer
+	}
+
+	FallenEnergizer: {
+		// Tooltip: ""
+		// DisplayName: Fallen Energizer
+	}
+
+	BuriedEnergizer: {
+		// Tooltip: ""
+		// DisplayName: Buried Energizer
+	}
+
+	BoreanEnergizer: {
+		// Tooltip: ""
+		// DisplayName: Borean Energizer
+	}
 }
 
 Buffs: {

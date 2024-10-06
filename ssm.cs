@@ -9,7 +9,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Terraria;
-using CalamityMod.Systems;
 using Terraria.Graphics.Effects;
 using Terraria.Graphics.Shaders;
 using Terraria.ID;
@@ -38,12 +37,10 @@ using Terraria.GameContent.Creative;
 using Terraria.GameContent.ItemDropRules;
 //using ssm.Sky;
 using Microsoft.Xna.Framework.Graphics;
-using ReLogic.Content;
 using System;
 using Terraria.UI;
 using Terraria.Chat;
 using Terraria.GameContent;
-using Terraria.GameContent.ItemDropRules;
 using Terraria.Localization;
 
 namespace ssm

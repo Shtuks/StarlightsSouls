@@ -13,9 +13,12 @@ using SacredTools.Content.Items.Weapons.Asthraltite;
 using SacredTools.Items.Weapons.Lunatic;
 using SacredTools.Content.Items.Armor.Prairie;
 using SacredTools.Items.Weapons;
+using ssm.Core;
 
 namespace ssm.SoA.Enchantments
 {
+    [ExtendsFromMod(ModCompatibility.SacredTools.Name)]
+    [JITWhenModsEnabled(ModCompatibility.SacredTools.Name)]
     public class PrairieEnchant : BaseEnchant
     {
         private readonly Mod soa = ModLoader.GetMod("SacredTools");

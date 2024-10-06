@@ -16,9 +16,12 @@ using SacredTools.Items.Weapons.Decree;
 using SacredTools.Content.Items.Armor.Lapis;
 using SacredTools.Items.Weapons;
 using SacredTools.Items.Weapons.Special;
+using ssm.Core;
 
 namespace ssm.SoA.Enchantments
 {
+    [ExtendsFromMod(ModCompatibility.SacredTools.Name)]
+    [JITWhenModsEnabled(ModCompatibility.SacredTools.Name)]
     public class LapisEnchant : BaseEnchant
     {
         private readonly Mod soa = ModLoader.GetMod("SacredTools");
