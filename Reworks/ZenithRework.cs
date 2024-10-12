@@ -10,10 +10,10 @@ namespace ssm.Reworks
     {
         public override bool InstancePerEntity => true;
 
-        public override void ModifyWeaponDamage(Item item, Player player, ref StatModifier damage)
+        public override void ModifyWeaponDamage(Item Item, Player player, ref StatModifier damage)
         {
-            if (item.type == 4956)
-                item.damage = 260;
+            if (Item.type == 4956)
+                Item.damage = 260;
         }
     }
 }

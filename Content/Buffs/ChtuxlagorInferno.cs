@@ -1,4 +1,3 @@
-using CalamityMod.CalPlayer;
 using FargowiltasSouls;
 using FargowiltasSouls.Content.NPCs;
 using Terraria;
@@ -11,7 +10,6 @@ namespace ssm.Content.Buffs
     public class ChtuxlagorInferno : ModBuff
     {
         private readonly Mod Fargos = Terraria.ModLoader.ModLoader.GetMod("FargowiltasSouls");
-        private readonly Mod Calamity = Terraria.ModLoader.ModLoader.GetMod("CalamityMod");
         public override void SetStaticDefaults()
         {
             Main.buffNoSave[this.Type] = true;

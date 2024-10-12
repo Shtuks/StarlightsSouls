@@ -52,8 +52,6 @@ namespace ssm
         internal static int SwarmKills;
         internal static int SwarmTotal;
         internal static int SwarmSpawned;
-
-        //wtf
         internal static ssm Instance;
         internal bool CalamityLoaded;
         internal bool FargoLoaded;

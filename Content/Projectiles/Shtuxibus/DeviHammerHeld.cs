@@ -3,24 +3,12 @@ using Microsoft.Xna.Framework.Graphics;
 using System;
 using Terraria;
 using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
-using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
-using Terraria;
-using Terraria.Audio;
-using Terraria.ID;
-using Terraria.ModLoader;
 using FargowiltasSouls;
 using FargowiltasSouls.Content.Projectiles;
 using FargowiltasSouls.Core.ModPlayers;
 using FargowiltasSouls.Content.Buffs;
-using FargowiltasSouls.Content.Projectiles;
 
 namespace ssm.Content.Projectiles.Shtuxibus
 {

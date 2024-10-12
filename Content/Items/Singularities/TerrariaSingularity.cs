@@ -9,9 +9,8 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
-using CalamityMod.Items.Materials;
-using CalamityMod.Tiles.Furniture.CraftingStations;
 using FargowiltasSouls.Content.Items;
+using Fargowiltas.Items.Tiles;
 
 namespace ssm.Content.Items.Singularities
 {
@@ -21,8 +20,8 @@ namespace ssm.Content.Items.Singularities
         public override void SetDefaults()
         {
             Main.RegisterItemAnimation(Item.type, new DrawAnimationVertical(5, 6));
-            ItemID.Sets.AnimatesAsSoul[Item.type] = true; // Makes the item have an animation while in world (not held.). Use in combination with RegisterItemAnimation
-            ItemID.Sets.ItemNoGravity[Item.type] = true; // Makes the item have no gravity
+            ItemID.Sets.AnimatesAsSoul[Item.type] = true; // Makes the Item have an animation while in world (not held.). Use in combination with RegisterItemAnimation
+            ItemID.Sets.ItemNoGravity[Item.type] = true; // Makes the Item have no gravity
             Item.rare = 12;
         }
 
@@ -62,7 +61,7 @@ namespace ssm.Content.Items.Singularities
               .AddIngredient<TinSingularity>()
               .AddIngredient<TitaniumSingularity>()
               .AddIngredient<TungstenSingularity>()
-              .AddTile<DraedonsForge>().Register();
+              .AddTile<CrucibleCosmosSheet>().Register();
         }
     }
 }

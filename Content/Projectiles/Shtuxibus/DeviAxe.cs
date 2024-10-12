@@ -6,7 +6,6 @@ using Terraria.ModLoader;
 using FargowiltasSouls;
 using FargowiltasSouls.Content.Projectiles;
 using FargowiltasSouls.Core.ModPlayers;
-using FargowiltasSouls.Content.Projectiles;
 
 namespace ssm.Content.Projectiles.Shtuxibus
 {

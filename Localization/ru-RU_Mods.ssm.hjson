@@ -1051,7 +1051,7 @@ Items: {
 		/* Tooltip:
 			'''
 			'I'm da spaceman!'
-			33% chance to not consume thrown items
+			33% chance to not consume thrown Items
 			Damaging enemies will occasionally call upon a meteor to fall from the sky
 			''' */
 	}
@@ -1188,6 +1188,391 @@ Items: {
 	BoreanEnergizer: {
 		// Tooltip: ""
 		// DisplayName: Borean Energizer
+	}
+
+	BardEssence: {
+		// DisplayName: Bard Essence
+		// Tooltip: ""
+	}
+
+	HealerEssence: {
+		// DisplayName: Healer Essence
+		// Tooltip: ""
+	}
+
+	BardSoul: {
+		// DisplayName: Bard Soul
+		// Tooltip: ""
+	}
+
+	GuardianAngelsSoul: {
+		// DisplayName: Guardian Angels Soul
+		// Tooltip: ""
+	}
+
+	AssassinEnchant: {
+		// DisplayName: Assassin Enchant
+		// Tooltip: ""
+	}
+
+	BerserkerEnchant: {
+		// DisplayName: Berserker Enchant
+		// Tooltip: ""
+	}
+
+	BiotechEnchant: {
+		// DisplayName: Biotech Enchant
+		// Tooltip: ""
+	}
+
+	BronzeEnchant: {
+		// DisplayName: Bronze Enchant
+		// Tooltip: ""
+	}
+
+	BulbEnchant: {
+		// DisplayName: Bulb Enchant
+		// Tooltip: ""
+	}
+
+	CelestiaEnchant: {
+		// DisplayName: Celestia Enchant
+		// Tooltip: ""
+	}
+
+	ConduitEnchant: {
+		// DisplayName: Conduit Enchant
+		// Tooltip: ""
+	}
+
+	CrierEnchant: {
+		// DisplayName: Crier Enchant
+		// Tooltip: ""
+	}
+
+	CryomancerEnchant: {
+		// DisplayName: Cryomancer Enchant
+		// Tooltip: ""
+	}
+
+	CyberPunkEnchant: {
+		// DisplayName: Cyber Punk Enchant
+		// Tooltip: ""
+	}
+
+	DarksteelEnchant: {
+		// DisplayName: Darksteel Enchant
+		// Tooltip: ""
+	}
+
+	DemonBloodEnchant: {
+		// DisplayName: Demon Blood Enchant
+		// Tooltip: ""
+	}
+
+	DepthDiverEnchant: {
+		// DisplayName: Depth Diver Enchant
+		// Tooltip: ""
+	}
+
+	DragonEnchant: {
+		// DisplayName: Dragon Enchant
+		// Tooltip: ""
+	}
+
+	DreadEnchant: {
+		// DisplayName: Dread Enchant
+		// Tooltip: ""
+	}
+
+	DreamWeaverEnchant: {
+		// DisplayName: Dream Weaver Enchant
+		// Tooltip: ""
+	}
+
+	DurasteelEnchant: {
+		// DisplayName: Durasteel Enchant
+		// Tooltip: ""
+	}
+
+	EbonEnchant: {
+		// DisplayName: Ebon Enchant
+		// Tooltip: ""
+	}
+
+	FallenPaladinEnchant: {
+		// DisplayName: Fallen Paladin Enchant
+		// Tooltip: ""
+	}
+
+	FleshEnchant: {
+		// DisplayName: Flesh Enchant
+		// Tooltip: ""
+	}
+
+	FlightEnchant: {
+		// DisplayName: Flight Enchant
+		// Tooltip: ""
+	}
+
+	FungusEnchant: {
+		// DisplayName: Fungus Enchant
+		// Tooltip: ""
+	}
+
+	GeodeEnchant: {
+		// DisplayName: Geode Enchant
+		// Tooltip: ""
+	}
+
+	GraniteEnchant: {
+		// DisplayName: Granite Enchant
+		// Tooltip: ""
+	}
+
+	IcyEnchant: {
+		// DisplayName: Icy Enchant
+		// Tooltip: ""
+	}
+
+	IllumiteEnchant: {
+		// DisplayName: Illumite Enchant
+		// Tooltip: ""
+	}
+
+	IridescentEnchant: {
+		// DisplayName: Iridescent Enchant
+		// Tooltip: ""
+	}
+
+	JesterEnchant: {
+		// DisplayName: Jester Enchant
+		// Tooltip: ""
+	}
+
+	LichEnchant: {
+		// DisplayName: Lich Enchant
+		// Tooltip: ""
+	}
+
+	LifeBinderEnchant: {
+		// DisplayName: Life Binder Enchant
+		// Tooltip: ""
+	}
+
+	LifeBloomEnchant: {
+		// DisplayName: Life Bloom Enchant
+		// Tooltip: ""
+	}
+
+	LivingWoodEnchant: {
+		// DisplayName: Living Wood Enchant
+		// Tooltip: ""
+	}
+
+	LodestoneEnchant: {
+		// DisplayName: Lodestone Enchant
+		// Tooltip: ""
+	}
+
+	MaestroEnchant: {
+		// DisplayName: Maestro Enchant
+		// Tooltip: ""
+	}
+
+	MagmaEnchant: {
+		// DisplayName: Magma Enchant
+		// Tooltip: ""
+	}
+
+	MarchingBandEnchant: {
+		// DisplayName: Marching Band Enchant
+		// Tooltip: ""
+	}
+
+	NagaSkinEnchant: {
+		// DisplayName: Naga Skin Enchant
+		// Tooltip: ""
+	}
+
+	NobleEnchant: {
+		// DisplayName: Noble Enchant
+		// Tooltip: ""
+	}
+
+	NoviceClericEnchant: {
+		// DisplayName: Novice Cleric Enchant
+		// Tooltip: ""
+	}
+
+	OceanEnchant: {
+		// DisplayName: Ocean Enchant
+		// Tooltip: ""
+	}
+
+	OrnateEnchant: {
+		// DisplayName: Ornate Enchant
+		// Tooltip: ""
+	}
+
+	PlagueDoctorEnchant: {
+		// DisplayName: Plague Doctor Enchant
+		// Tooltip: ""
+	}
+
+	PyromancerEnchant: {
+		// DisplayName: Pyromancer Enchant
+		// Tooltip: ""
+	}
+
+	RhapsodistEnchant: {
+		// DisplayName: Rhapsodist Enchant
+		// Tooltip: ""
+	}
+
+	SacredEnchant: {
+		// DisplayName: Sacred Enchant
+		// Tooltip: ""
+	}
+
+	SandstoneEnchant: {
+		// DisplayName: Sandstone Enchant
+		// Tooltip: ""
+	}
+
+	ShadeMasterEnchant: {
+		// DisplayName: Shade Master Enchant
+		// Tooltip: ""
+	}
+
+	ShootingStarEnchant: {
+		// DisplayName: Shooting Star Enchant
+		// Tooltip: ""
+	}
+
+	SilkEnchant: {
+		// DisplayName: Silk Enchant
+		// Tooltip: ""
+	}
+
+	SpiritTrapperEnchant: {
+		// DisplayName: Spirit Trapper Enchant
+		// Tooltip: ""
+	}
+
+	SteelEnchant: {
+		// DisplayName: Steel Enchant
+		// Tooltip: ""
+	}
+
+	TemplarEnchant: {
+		// DisplayName: Templar Enchant
+		// Tooltip: ""
+	}
+
+	TerrariumEnchant: {
+		// DisplayName: Terrarium Enchant
+		// Tooltip: ""
+	}
+
+	ThoriumEnchant: {
+		// DisplayName: Thorium Enchant
+		// Tooltip: ""
+	}
+
+	TideHunterEnchant: {
+		// DisplayName: Tide Hunter Enchant
+		// Tooltip: ""
+	}
+
+	TideTurnerEnchant: {
+		// DisplayName: Tide Turner Enchant
+		// Tooltip: ""
+	}
+
+	TitanEnchant: {
+		// DisplayName: Titan Enchant
+		// Tooltip: ""
+	}
+
+	ValadiumEnchant: {
+		// DisplayName: Valadium Enchant
+		// Tooltip: ""
+	}
+
+	WarlockEnchant: {
+		// DisplayName: Warlock Enchant
+		// Tooltip: ""
+	}
+
+	WhisperingEnchant: {
+		// DisplayName: Whispering Enchant
+		// Tooltip: ""
+	}
+
+	WhiteDwarfEnchant: {
+		// DisplayName: White Dwarf Enchant
+		// Tooltip: ""
+	}
+
+	WhiteKnightEnchant: {
+		// DisplayName: White Knight Enchant
+		// Tooltip: ""
+	}
+
+	YewWoodEnchant: {
+		// DisplayName: Yew Wood Enchant
+		// Tooltip: ""
+	}
+
+	AlfheimForce: {
+		// DisplayName: Alfheim Force
+		// Tooltip: ""
+	}
+
+	AsgardForce: {
+		// DisplayName: Asgard Force
+		// Tooltip: ""
+	}
+
+	HelheimForce: {
+		// DisplayName: Helheim Force
+		// Tooltip: ""
+	}
+
+	JotunheimForce: {
+		// DisplayName: Jotunheim Force
+		// Tooltip: ""
+	}
+
+	MidgardForce: {
+		// DisplayName: Midgard Force
+		// Tooltip: ""
+	}
+
+	MuspelheimForce: {
+		// DisplayName: Muspelheim Force
+		// Tooltip: ""
+	}
+
+	NiflheimForce: {
+		// DisplayName: Niflheim Force
+		// Tooltip: ""
+	}
+
+	SvartalfheimForce: {
+		// DisplayName: Svartalfheim Force
+		// Tooltip: ""
+	}
+
+	VanaheimForce: {
+		// DisplayName: Vanaheim Force
+		// Tooltip: ""
+	}
+
+	ThoriumSoul: {
+		// DisplayName: Thorium Soul
+		// Tooltip: ""
 	}
 }
 
@@ -1384,6 +1769,8 @@ NPCs: {
 		DisplayName: Monstrocity
 		// Census.SpawnCondition: Conditions unknown
 	}
+
+	// DukeFishronEX.DisplayName: Duke Fishron E X
 }
 
 Toggler: {

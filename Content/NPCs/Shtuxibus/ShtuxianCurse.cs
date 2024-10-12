@@ -3,12 +3,12 @@ using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
-using CalamityMod.Items.Materials;
 using FargowiltasSouls.Content.Items.Materials;
+using ssm.Core;
+using ssm.Content.Items.Singularities.Calamity;
 
 namespace ssm.Content.NPCs.Shtuxibus
 {
-    // This is the item used to summon a boss, in this case the modded Minion Boss from Example Mod. For vanilla boss summons, see comments in SetStaticDefaults
     public class ShtuxianCurse : ModItem
     {
         public override void SetStaticDefaults()
@@ -30,16 +30,13 @@ namespace ssm.Content.NPCs.Shtuxibus
             Item.consumable = true;
         }
 
-        public override void ModifyResearchSorting(ref ContentSamples.CreativeHelper.ItemGroup itemGroup)
+        public override void ModifyResearchSorting(ref ContentSamples.CreativeHelper.ItemGroup ItemGroup)
         {
-            itemGroup = ContentSamples.CreativeHelper.ItemGroup.BossSpawners;
+            ItemGroup = ContentSamples.CreativeHelper.ItemGroup.BossSpawners;
         }
 
         public override bool CanUseItem(Player player)
         {
-            // If you decide to use the below UseItem code, you have to include !NPC.AnyNPCs(id), as this is also the check the server does when receiving MessageID.SpawnBoss.
-            // If you want more constraints for the summon item, combine them as boolean expressions:
-            //    return !Main.dayTime && !NPC.AnyNPCs(ModContent.NPCType<MinionBossBody>()); would mean "not daytime and no MinionBossBody currently alive"
             return !NPC.AnyNPCs(ModContent.NPCType<Shtuxibus>());
         }
 
@@ -51,13 +48,10 @@ namespace ssm.Content.NPCs.Shtuxibus
 
                 if (Main.netMode != NetmodeID.MultiplayerClient)
                 {
-                    // If the player is not in multiplayer, spawn directly
                     NPC.SpawnOnPlayer(player.whoAmI, type);
                 }
                 else
                 {
-                    // If the player is in multiplayer, request a spawn
-                    // This will only work if NPCID.Sets.MPAllowedEnemies[type] is true, which we set in MinionBossBody
                     NetMessage.SendData(MessageID.SpawnBossUseLicenseStartEvent, number: player.whoAmI, number2: type);
                 }
             }
@@ -66,11 +60,32 @@ namespace ssm.Content.NPCs.Shtuxibus
 
         public override void AddRecipes()
         {
-            this.CreateRecipe(1)
-            .AddIngredient<ShadowspecBar>(10)
-          .AddIngredient<MiracleMatter>(10)
-          .AddIngredient<EternalEnergy>(10)
-          .AddTile(ModContent.Find<ModTile>("Fargowiltas", "CrucibleCosmosSheet"));
+            if (ModLoader.TryGetMod("CalamityMod", out Mod kal))
+            {
+                CreateRecipe()
+                    .AddIngredient(kal.Find<ModItem>("ShadowspecBar").Type, 30)
+                    .AddIngredient<EternalEnergy>(10)
+                    .AddTile(ModContent.Find<ModTile>("Fargowiltas", "CrucibleCosmosSheet"))
+                    .Register();
+            }
+
+            if (ModLoader.TryGetMod("SacredTools", out Mod soa))
+            {
+                CreateRecipe()
+                    .AddIngredient(soa.Find<ModItem>("EmberOfOmen").Type, 30)
+                    .AddIngredient<EternalEnergy>(10)
+                    .AddTile(ModContent.Find<ModTile>("Fargowiltas", "CrucibleCosmosSheet"))
+                    .Register();
+            }
+
+            if (ModLoader.TryGetMod("Redemption", out Mod red))
+            {
+                CreateRecipe()
+                    .AddIngredient(red.Find<ModItem>("LifeFragment").Type, 30)
+                    .AddIngredient<EternalEnergy>(10)
+                    .AddTile(ModContent.Find<ModTile>("Fargowiltas", "CrucibleCosmosSheet"))
+                    .Register();
+            }
         }
     }
 }

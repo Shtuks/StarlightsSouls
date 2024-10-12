@@ -1,14 +1,11 @@
 using FargowiltasSouls.Content.Projectiles;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
-using FargowiltasSouls.Content.Projectiles;
 using Terraria;
 using Terraria.ID;
 using Terraria.DataStructures;
 using ssm.Content.Buffs;
 using System;
-using CalamityMod;
-using CalamityMod.Buffs.DamageOverTime;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria.Audio;
 using Terraria.GameContent;

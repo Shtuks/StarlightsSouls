@@ -70,7 +70,7 @@ namespace ssm.Content.Tiles
                 TileID.Autohammer,
                 TileID.LunarCraftingStation,
                 TileID.LesionStation,
-                TileID.FleshCloningVat, 
+                TileID.FleshCloningVat,
                 TileID.LihzahrdFurnace,
                 TileID.SteampunkBoiler,
                 TileID.Blendomatic,
@@ -89,7 +89,7 @@ namespace ssm.Content.Tiles
                 //ModContent.TileType<SoulForge>(),
                 ModContent.TileType<MutantsForgeTile>()};
         }
-            
+
 
         public override void AnimateTile(ref int frame, ref int frameCounter)
         {

@@ -1,6 +1,5 @@
 using Fargowiltas.NPCs;
 using FargowiltasSouls.Core.Systems;
-using CalamityMod.NPCs.TownNPCs;
 using System.Collections.Generic;
 using ssm.Systems;
 using ssm.Content.NPCs.Shtuxibus;
@@ -13,12 +12,18 @@ using static Terraria.ModLoader.ModContent;
 using Terraria.GameContent.Personalities;
 using Terraria.ID;
 using Terraria.Localization;
+using ssm.Core;
 using Terraria.ModLoader;
 using Terraria.Utilities;
 using FargowiltasSouls.Content.Items.Weapons.FinalUpgrades;
+using CalamityMod.NPCs.TownNPCs;
 
 namespace ssm.Content.NPCs
 {
+    [ExtendsFromMod(ModCompatibility.Calamity.Name//, ModCompatibility.Redemption.Name, ModCompatibility.SacredTools.Name, ModCompatibility.Thorium.Name
+                                                  )]
+    [JITWhenModsEnabled(ModCompatibility.Calamity.Name//, ModCompatibility.Redemption.Name, ModCompatibility.SacredTools.Name, ModCompatibility.Thorium.Name
+                                                      )]
     [AutoloadHead]
     public class ShtuxianHarbringer : ModNPC
     {
@@ -40,8 +45,9 @@ namespace ssm.Content.NPCs
             NPCID.Sets.ShimmerTownTransform[Type] = false;
             NPCID.Sets.NPCBestiaryDrawModifiers drawModifiers = new NPCID.Sets.NPCBestiaryDrawModifiers() { Velocity = 1f, Direction = 1 };
             NPCID.Sets.NPCBestiaryDrawOffset.Add(Type, drawModifiers);
+
             NPC.Happiness
-                .SetNPCAffection<WITCH>(AffectionLevel.Love)
+                .SetNPCAffection<WITCH>(AffectionLevel.Like)
                 .SetNPCAffection<Mutant>(AffectionLevel.Like)
                 .SetBiomeAffection<SnowBiome>(AffectionLevel.Like)
                 .SetBiomeAffection<DesertBiome>(AffectionLevel.Dislike)

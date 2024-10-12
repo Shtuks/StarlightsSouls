@@ -23,15 +23,21 @@ public static class ModCompatibility
         public static bool Loaded => ModLoader.HasMod(Name);
         public static Mod Mod => ModLoader.GetMod(Name);
     }
-    public static class Calamity
+    public static class Spirit
     {
-        public const string Name = "CalamityMod";
+        public const string Name = "SpititMod";
         public static bool Loaded => ModLoader.HasMod(Name);
         public static Mod Mod => ModLoader.GetMod(Name);
     }
-    public static class ThoriumMod
+    public static class Homeward
     {
-        public const string Name = "ThoriumMod";
+        public const string Name = "ContinentOfJourney";
+        public static bool Loaded => ModLoader.HasMod(Name);
+        public static Mod Mod => ModLoader.GetMod(Name);
+    }
+    public static class Calamity
+    {
+        public const string Name = "CalamityMod";
         public static bool Loaded => ModLoader.HasMod(Name);
         public static Mod Mod => ModLoader.GetMod(Name);
     }

@@ -14,7 +14,6 @@ namespace ssm.Content.Buffs
 
         public override void Update(Player player, ref int buffIndex)
         {
-            Mod mod = Terraria.ModLoader.ModLoader.GetMod("CalamityMod");
             player.statDefense = player.statDefense += 100;
             player.GetDamage(DamageClass.Generic) += 100 / 100f;
             player.statLifeMax2 += 10;
@@ -32,13 +31,6 @@ namespace ssm.Content.Buffs
             player.ammoBox = true;
             player.dash += 10;
             player.GetCritChance(DamageClass.Generic) *= 10f;
-            object[] objArray = new object[3]
-            {
-        (object) "AddMaxStealth",
-        (object) ((Entity) player).whoAmI,
-        (object) 100f
-            };
-            mod.Call(objArray);
         }
     }
 }

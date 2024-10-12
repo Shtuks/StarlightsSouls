@@ -6469,7 +6469,7 @@ namespace ssm.Content.NPCs.Shtuxibus
             if (!SkyManager.Instance["ssm:Shtuxibus"].IsActive())
                 SkyManager.Instance.Activate("ssm:Shtuxibus");
         }
-    public override void OnHitByItem(Player player, Item item, NPC.HitInfo hit, int damageDone)
+    public override void OnHitByItem(Player player, Item Item, NPC.HitInfo hit, int damageDone)
     {
         hit.Crit = false;
         hit.InstantKill = false;

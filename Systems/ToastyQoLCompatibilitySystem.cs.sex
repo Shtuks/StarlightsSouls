@@ -13,7 +13,7 @@ namespace ssm.Systems
             if (ToastyQoL is null)
                 return;
 
-            // Load item support.
+            // Load Item support.
             LoadItemSupport();
 
             // Load boss support.
@@ -22,7 +22,7 @@ namespace ssm.Systems
 
         public void LoadItemSupport()
         {
-            // Collect all items that should adhere to Toasty's QoL.
+            // Collect all Items that should adhere to Toasty's QoL.
             var modItemsWithQoLSupport = Mod.LoadInterfacesFromContent<ModItem, IToastyQoLChecklistItemSupport>(content =>
             {
                 return AutoloadAttribute.GetValue(content.GetType()).NeedsAutoloading;

@@ -1,3 +1,4 @@
+using System.Security.Cryptography.X509Certificates;
 using Terraria;
 using Terraria.ModLoader;
 
@@ -5,8 +6,6 @@ namespace ssm.Content.Buffs
 {
     public class SadismEX : ModBuff
     {
-        private readonly Mod calamity = Terraria.ModLoader.ModLoader.GetMod("CalamityMod");
-
         public override void SetStaticDefaults()
         {
             Main.buffNoTimeDisplay[this.Type] = true;
@@ -21,8 +20,11 @@ namespace ssm.Content.Buffs
                 if (Main.debuff[index])
                 {
                     player.buffImmune[index] = true;
-                    player.buffImmune[ModContent.Find<ModBuff>(this.calamity.Name, "RageMode").Type] = false;
-                    player.buffImmune[ModContent.Find<ModBuff>(this.calamity.Name, "AdrenalineMode").Type] = false;
+                    if (ModLoader.TryGetMod("CalamityMod", out Mod kal))
+                    {
+                        player.buffImmune[ModContent.Find<ModBuff>("CalamityMod", "RageMode").Type] = false;
+                        player.buffImmune[ModContent.Find<ModBuff>("CalamityMod", "AdrenalineMode").Type] = false;
+                    }
                     //player.buffImmune[this.mod.BuffType("ChtuxlagorInferno")] = false;
                 }
             }

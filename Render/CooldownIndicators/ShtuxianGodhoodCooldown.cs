@@ -1,9 +1,13 @@
 using CalamityMod.Cooldowns;
 using Microsoft.Xna.Framework;
+using Terraria.ModLoader;
+using ssm.Core;
 
 
 namespace ssm.CooldownIndicators
 {
+    [ExtendsFromMod(ModCompatibility.Calamity.Name)]
+    [JITWhenModsEnabled(ModCompatibility.Calamity.Name)]
     public class ShtuxianGodhoodCooldown : CooldownHandler
     {
         public new static string ID => "ShtuxianGodhood";

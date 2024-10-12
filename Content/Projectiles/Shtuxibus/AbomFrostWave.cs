@@ -8,7 +8,7 @@ namespace ssm.Content.Projectiles.Shtuxibus
 {
     public class AbomFrostWave : ModProjectile
     {
-        public override string Texture => "ssm/Content/Projectiles/Shtuxibus/BruhMoment2";
+        public override string Texture => "Terraria/Images/Projectile_348";
 
         public override void SetStaticDefaults()
         {

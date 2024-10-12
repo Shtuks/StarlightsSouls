@@ -8,12 +8,12 @@ namespace ssm
     {
         /// <summary>
         /// Adjusts a TooltipLine to account for prefixes. <br />
-        /// Inteded to be used specifically for item names. <br />
+        /// Inteded to be used specifically for Item names. <br />
         /// This only modifies it in the inventory.
         /// </summary>
-        public static TooltipLine ArticlePrefixAdjustment(this TooltipLine itemName, int prefixID, string[] localizationArticles)
+        public static TooltipLine ArticlePrefixAdjustment(this TooltipLine ItemName, int prefixID, string[] localizationArticles)
         {
-            List<string> splitName = itemName.Text.Split(' ').ToList();
+            List<string> splitName = ItemName.Text.Split(' ').ToList();
 
             for (int i = 0; i < localizationArticles.Length; i++)
                 if (splitName.Remove(localizationArticles[i]))
@@ -22,8 +22,8 @@ namespace ssm
                     break;
                 }
 
-            itemName.Text = string.Join(" ", splitName);
-            return itemName;
+            ItemName.Text = string.Join(" ", splitName);
+            return ItemName;
         }
 
         /// <summary>

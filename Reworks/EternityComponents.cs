@@ -1,3 +1,4 @@
+using FargowiltasSouls.Content.Items.Accessories.Forces;
 using FargowiltasSouls.Content.Items.Accessories.Souls;
 using Terraria;
 using Terraria.ModLoader;
@@ -8,11 +9,11 @@ namespace ssm.Reworks
     {
         public override bool InstancePerEntity => true;
 
-        public override void UpdateAccessory(Item item, Player player, bool hideVisual)
+        public override void UpdateAccessory(Item Item, Player player, bool hideVisual)
         {
-            if (item.type == ModContent.ItemType<EternitySoul>())
+            if (Item.type == ModContent.ItemType<EternitySoul>())
             {
-                if(ModLoader.TryGetMod("Redemption", out Mod Redemption))
+                if (ModLoader.TryGetMod("Redemption", out Mod Redemption))
                 {
                     //ModContent.Find<ModItem>(((ModType)this).Mod.Name, "RedemptionSoul").UpdateAccessory(player, false);
                 }
@@ -25,6 +26,11 @@ namespace ssm.Reworks
                 if (ModLoader.TryGetMod("CalamityMod", out Mod kal))
                 {
                     ModContent.Find<ModItem>(((ModType)this).Mod.Name, "CalamitySoul").UpdateAccessory(player, false);
+                }
+
+                if (ModLoader.TryGetMod("ThoriumMod", out Mod tor))
+                {
+                    ModContent.Find<ModItem>(((ModType)this).Mod.Name, "ThoriumSoul").UpdateAccessory(player, false);
                 }
 
                 //if (ModLoader.TryGetMod("ContinentOfJourney", out Mod Homeward))
@@ -41,6 +47,11 @@ namespace ssm.Reworks
                 //{
                 //    ModContent.Find<ModItem>(((ModType)this).Mod.Name, "SotsSoul").UpdateAccessory(player, false);
                 //}
+            }
+
+            if (Item.type == ModContent.ItemType<CosmoForce>())
+            {
+                ModContent.Find<ModItem>(((ModType)this).Mod.Name, "CelestialEnchant").UpdateAccessory(player, false);
             }
         }
     }

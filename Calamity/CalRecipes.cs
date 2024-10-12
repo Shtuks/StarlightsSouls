@@ -14,6 +14,7 @@ using CalamityMod.Items.Materials;
 using CalamityMod.Items.Armor.Brimflame;
 using CalamityMod.Tiles.Furniture.CraftingStations;
 using ssm.Core;
+using ssm.Calamity.Souls;
 
 namespace ssm.Calamity
 {
@@ -41,7 +42,14 @@ namespace ssm.Calamity
             for (int i = 0; i < Recipe.numRecipes; i++)
             {
                 Recipe recipe = Main.recipe[i];
+                if (recipe.HasResult<EternitySoul>() && !recipe.HasIngredient<CalamitySoul>() && recipe.HasIngredient<BrandoftheBrimstoneWitch>())
+                {
+                    if (recipe.RemoveIngredient(ModContent.ItemType<BrandoftheBrimstoneWitch>()))
+                        recipe.AddIngredient<CalamitySoul>();
+                }
             }
         }
     }
 }
+
+

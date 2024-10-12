@@ -9,9 +9,12 @@ using CalamityMod.Items.Placeables.Furniture.CraftingStations;
 using ssm.Content.Tiles;
 using ssm.Content.Items.Placeable;
 using ssm.Content.Items.Materials;
+using ssm.Core;
 
 namespace ssm.Content.Items.Placeable
 {
+    [ExtendsFromMod(ModCompatibility.Calamity.Name, ModCompatibility.Redemption.Name, ModCompatibility.SacredTools.Name, ModCompatibility.Thorium.Name)]
+    [JITWhenModsEnabled(ModCompatibility.Calamity.Name, ModCompatibility.Redemption.Name, ModCompatibility.SacredTools.Name, ModCompatibility.Thorium.Name)]
     public class ShtuxibusForge : ModItem
     {
         public override void SetStaticDefaults()

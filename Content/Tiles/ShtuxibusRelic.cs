@@ -95,7 +95,7 @@ namespace ssm.Content.Tiles
             // Get the initial draw parameters
             Texture2D texture = RelicTexture.Value;
 
-            int frameY = tile.TileFrameX / FrameWidth; // Picks the frame on the sheet based on the placeStyle of the item
+            int frameY = tile.TileFrameX / FrameWidth; // Picks the frame on the sheet based on the placeStyle of the Item
             Rectangle frame = texture.Frame(HorizontalFrames, VerticalFrames, 0, frameY);
 
             Vector2 origin = frame.Size() / 2f;

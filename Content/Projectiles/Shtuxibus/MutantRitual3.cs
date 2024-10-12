@@ -11,7 +11,6 @@ namespace ssm.Content.Projectiles.Shtuxibus
     public class MutantRitual3 : ModProjectile
     {
         private readonly Mod fargosouls = ModLoader.GetMod("FargowiltasSouls");
-        private readonly Mod calamity = ModLoader.GetMod("CalamityMod");
         public override string Texture => "ssm/Content/Projectiles/Shtuxibus/ShtuxibusRitualProj";
         private const float PI = (float)Math.PI;
         private const float rotationPerTick = PI / 100f;

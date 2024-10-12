@@ -44,6 +44,9 @@ namespace ssm
         public bool MutantSoul;
         public bool DevianttSoul;
         public bool CelestialPower;
+        public int frameShtuxibusAura;
+        public int ShtuxibusSetBonusItem;
+        public int frameCounter;
         public int ShtuxibusDeaths;
         private readonly Mod FargoSoul = Terraria.ModLoader.ModLoader.GetMod("FargowiltasSouls");
         public bool ShtuxibusMinionBuff;
@@ -137,7 +140,7 @@ namespace ssm
             this.antiDebuff = tag.GetBool("antiDebuff");
             ShtuxibusDeaths = tag.GetInt("ShtuxibusDeaths");
         }
-        private void OnHitNPCEither(NPC target, int damage, float knockback, bool crit, DamageClass damageClass, Projectile projectile = null, Item item = null)
+        private void OnHitNPCEither(NPC target, int damage, float knockback, bool crit, DamageClass damageClass, Projectile projectile = null, Item Item = null)
         {
             //doing this so that damage-inheriting effects dont double dip or explode due to taking on crit boost
             int GetBaseDamage()
@@ -145,8 +148,8 @@ namespace ssm
                 int baseDamage = damage;
                 if (projectile != null)
                     baseDamage = (int)(projectile.damage * Player.ActualClassDamage(projectile.DamageType));
-                else if (item != null)
-                    baseDamage = (int)(item.damage * Player.ActualClassDamage(item.DamageType));
+                else if (Item != null)
+                    baseDamage = (int)(Item.damage * Player.ActualClassDamage(Item.DamageType));
                 return baseDamage;
             }
         }

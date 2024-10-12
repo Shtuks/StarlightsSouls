@@ -23,7 +23,7 @@ namespace ssm.Content.Items.Consumables
             Item.width = 24;
             Item.height = 24;
             Item.rare = -12;
-            Item.expert = true; // This makes sure that "Expert" displays in the tooltip and the item name color changes
+            Item.expert = true; // This makes sure that "Expert" displays in the tooltip and the Item name color changes
         }
 
         public override bool CanRightClick()
@@ -31,9 +31,9 @@ namespace ssm.Content.Items.Consumables
             return true;
         }
 
-        public override void ModifyItemLoot(ItemLoot itemLoot)
+        public override void ModifyItemLoot(ItemLoot ItemLoot)
         {
-            itemLoot.Add(ItemDropRule.NotScalingWithLuck(ModContent.ItemType<ShtuxiumSoulShard>(), 1, 30, 40));
+            ItemLoot.Add(ItemDropRule.NotScalingWithLuck(ModContent.ItemType<ShtuxiumSoulShard>(), 1, 30, 40));
         }
     }
 }

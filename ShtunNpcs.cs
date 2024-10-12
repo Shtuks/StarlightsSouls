@@ -28,13 +28,14 @@ namespace ssm
         public override bool InstancePerEntity => true;
         public bool isWaterEnemy;
         public static int Shtuxibus = -1;
+        public static int DukeEX = -1;
         public static int boss = -1;
         public static int championBoss = -1;
         public bool CelestialPower;
 
         public override void ModifyShop(NPCShop shop)
         {
-            void AddItem(int itemID, int customPrice = -1, Condition condition = null, Condition[] conditions = null)
+            void AddItem(int ItemID, int customPrice = -1, Condition condition = null, Condition[] conditions = null)
             {
                 if (condition != (Condition)null)
                 {
@@ -44,26 +45,26 @@ namespace ssm
                 {
                     if (customPrice != -1)
                     {
-                        shop.Add(new Item(itemID, 1, 0)
+                        shop.Add(new Item(ItemID, 1, 0)
                         {
                             shopCustomPrice = customPrice
                         }, conditions);
                     }
                     else
                     {
-                        shop.Add(itemID, conditions);
+                        shop.Add(ItemID, conditions);
                     }
                 }
                 else if (customPrice != -1)
                 {
-                    shop.Add(new Item(itemID, 1, 0)
+                    shop.Add(new Item(ItemID, 1, 0)
                     {
                         shopCustomPrice = customPrice
                     }, Array.Empty<Condition>());
                 }
                 else
                 {
-                    shop.Add(itemID, Array.Empty<Condition>());
+                    shop.Add(ItemID, Array.Empty<Condition>());
                 }
             }
         }

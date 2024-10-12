@@ -1,9 +1,14 @@
 The addon for Fargos's souls mod.
+
+Source code: https://github.com/Shtuks/StarlightsSouls
+
+Discord Server: https://discord.gg/xB9s8SyQJr
+
 The content:
-- 54 new itmes
-- 4 new tiles
-- 2 weapons
-- 5 new armor sets
-- 1 new ore
-- 1 new NPC
+- Shaddows of Abaddon enchantments, forces, souls
+
+- Redemption/Calamity/Thorium compatibility (Work in progress)
+
+- Post-Mutant content
+
 - Shtuxibus Boss. Сombine all attcks from maso Mutant, Abomination and most of champions.

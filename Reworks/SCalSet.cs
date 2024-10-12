@@ -33,49 +33,49 @@ namespace ssm.Reworks
             }
         }
 
-        public override void UpdateEquip(Item item, Player player)
+        public override void UpdateEquip(Item Item, Player player)
         {
-            if (item.type == ModContent.ItemType<SCalMask>())
+            if (Item.type == ModContent.ItemType<SCalMask>())
             {
                 player.statDefense = player.statDefense += 30;
                 player.GetDamage(DamageClass.Magic) += 10 / 100f;
                 player.GetDamage(DamageClass.Summon) += 10 / 100f;
                 player.GetCritChance<MagicDamageClass>() += 7f;
                 ++player.maxMinions;
-                item.vanity = false;
+                Item.vanity = false;
             }
-            if (item.type == ModContent.ItemType<SCalRobes>())
+            if (Item.type == ModContent.ItemType<SCalRobes>())
             {
                 player.statDefense = player.statDefense += 40;
                 player.GetDamage(DamageClass.Magic) += 15 / 100f;
                 player.GetDamage(DamageClass.Summon) += 15 / 100f;
                 player.GetCritChance<MagicDamageClass>() += 10f;
                 player.maxMinions += 2;
-                item.vanity = false;
+                Item.vanity = false;
             }
-            if (item.type != ModContent.ItemType<SCalBoots>())
+            if (Item.type != ModContent.ItemType<SCalBoots>())
                 return;
             player.statDefense = player.statDefense += 35;
             player.GetDamage(DamageClass.Magic) += 10 / 100f;
             player.GetDamage(DamageClass.Summon) += 10 / 100f;
             player.GetCritChance<MagicDamageClass>() += 8f;
             ++player.maxMinions;
-            item.vanity = false;
+            Item.vanity = false;
         }
 
-        public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
+        public override void ModifyTooltips(Item Item, List<TooltipLine> tooltips)
         {
-            if (item.type == ModContent.ItemType<SCalMask>())
+            if (Item.type == ModContent.ItemType<SCalMask>())
             {
                 TooltipLine tooltipLine = new TooltipLine(((ModType)this).Mod, "ScalMaskThing", "30 Defense\nIncreases minion and magic damage by 10%\nIncreases magic crit chance by 7%\nIncreases max minions by 1");
                 tooltips.Add(tooltipLine);
             }
-            if (item.type == ModContent.ItemType<SCalRobes>())
+            if (Item.type == ModContent.ItemType<SCalRobes>())
             {
                 TooltipLine tooltipLine = new TooltipLine(((ModType)this).Mod, "ScalRobesThing", "40 Defense\nIncreases minion and magic damage by 15%\nIncreases magic crit chance by 10%\nIncreases max minions by 2");
                 tooltips.Add(tooltipLine);
             }
-            if (item.type != ModContent.ItemType<SCalBoots>())
+            if (Item.type != ModContent.ItemType<SCalBoots>())
                 return;
             TooltipLine tooltipLine1 = new TooltipLine(((ModType)this).Mod, "ScalBootsThing", "20 Defense\nIncreases minion and magic damage by 10%\nIncreases magic crit chance by 8%\nIncreases max minions by 1");
             tooltips.Add(tooltipLine1);

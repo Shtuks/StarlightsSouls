@@ -10,7 +10,6 @@ using System.IO;
 using System.Linq;
 using Terraria;
 using Terraria.Graphics.Effects;
-using Terraria.Graphics.Shaders;
 using Terraria.ID;
 using System.Reflection;
 using Terraria.DataStructures;
@@ -20,7 +19,6 @@ using System;
 using Terraria.UI;
 using Terraria.Chat;
 using Terraria.GameContent;
-using Terraria.GameContent.ItemDropRules;
 using Terraria.Localization;
 
 namespace ssm.Content.Projectiles.Deathrays

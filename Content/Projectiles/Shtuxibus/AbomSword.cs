@@ -7,53 +7,22 @@ using Terraria.ModLoader;
 using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
 using System.IO;
-using Terraria;
-using Terraria.Audio;
 using Terraria.GameContent.Bestiary;
 using Terraria.GameContent.Creative;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.Graphics.Effects;
-using Terraria.ID;
 using Terraria.Localization;
-using Terraria.ModLoader;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
-using Terraria;
-using Terraria.ModLoader;
-using System.Collections.Generic;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using Terraria;
 using Terraria.DataStructures;
 using Terraria.Graphics.Shaders;
-using Terraria.ID;
-using Terraria.ModLoader;
 using FargowiltasSouls;
 using FargowiltasSouls.Content.Projectiles;
 using FargowiltasSouls.Core.ModPlayers;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using Terraria;
-using Terraria.Audio;
-using Terraria.GameContent.Bestiary;
-using Terraria.GameContent.Creative;
-using Terraria.GameContent.ItemDropRules;
-using Terraria.Graphics.Effects;
-using Terraria.ID;
-using Terraria.Localization;
-using Terraria.ModLoader;
 
 namespace ssm.Content.Projectiles.Shtuxibus
 {
     public class AbomSword : Deathrays.AbomSpecialDeathray
     {
         private readonly Mod fargosouls = ModLoader.GetMod("FargowiltasSouls");
-        private readonly Mod calamity = ModLoader.GetMod("CalamityMod");
         public AbomSword() : base(300) { }
         public int counter;
         public bool spawnedHandle;

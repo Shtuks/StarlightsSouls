@@ -4,7 +4,6 @@ using CalamityMod.NPCs.PlaguebringerGoliath;
 using CalamityMod.NPCs.ProfanedGuardians;
 using CalamityMod.NPCs.Yharon;
 using CalamityMod.Projectiles.Boss;
-
 using System.Linq;
 using FargowiltasCrossmod.Content.Calamity.Bosses.SlimeGod;
 using FargowiltasCrossmod.Content.Calamity.Buffs;
@@ -52,9 +51,14 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using Terraria.Audio;
 using ssm.Content.Items.Consumables;
+using ModCompatibility = ssm.Core.ModCompatibility;
 
 namespace ssm.Content.NPCs.Shtuxibus
 {
+    [ExtendsFromMod(ModCompatibility.Calamity.Name//, ModCompatibility.Redemption.Name, ModCompatibility.SacredTools.Name, ModCompatibility.Thorium.Name
+                                                  )]
+    [JITWhenModsEnabled(ModCompatibility.Calamity.Name//, ModCompatibility.Redemption.Name, ModCompatibility.SacredTools.Name, ModCompatibility.Thorium.Name
+                                                    )]
     [AutoloadBossHead]
     public class Shtuxibus : ModNPC
     {
@@ -63,7 +67,7 @@ namespace ssm.Content.NPCs.Shtuxibus
         public bool playerInvulTriggered;
         public bool Aura;
         private int damageTotal = 0;
-        internal int dpsCap = WorldSaveSystem.downedShtuxibus ? 700000 : 500000;
+        internal int dpsCap = WorldSaveSystem.downedShtuxibus ? 5000000 : 3500000;
         public int ritualProj, spriteProj, ringProj;
         private bool droppedSummon = false;
         public bool SparkAtaackUsing;
@@ -90,37 +94,7 @@ namespace ssm.Content.NPCs.Shtuxibus
             NPCID.Sets.NoMultiplayerSmoothingByType[NPC.type] = true;
             NPCID.Sets.MPAllowedEnemies[Type] = true;
             NPCID.Sets.BossBestiaryPriority.Add(NPC.type);
-            List<int> intList = new List<int>();
-            CollectionsMarshal.SetCount<int>(intList, 13);
-            Span<int> span = CollectionsMarshal.AsSpan<int>(intList);
-            int index1 = 0;
-            span[index1] = 31;
-            int index2 = index1 + 1;
-            span[index2] = 46;
-            int index3 = index2 + 1;
-            span[index3] = 24;
-            int index4 = index3 + 1;
-            span[index4] = 68;
-            int index5 = index4 + 1;
-            span[index5] = ModContent.BuffType<LethargicBuff>();
-            int index6 = index5 + 1;
-            span[index6] = ModContent.BuffType<ClippedWingsBuff>();
-            int index7 = index6 + 1;
-            span[index7] = ModContent.BuffType<MutantNibbleBuff>();
-            int index8 = index7 + 1;
-            span[index8] = ModContent.BuffType<OceanicMaulBuff>();
-            int index9 = index8 + 1;
-            span[index9] = ModContent.BuffType<LightningRodBuff>();
-            int index10 = index9 + 1;
-            span[index10] = ModContent.BuffType<SadismBuff>();
-            int index11 = index10 + 1;
-            span[index11] = ModContent.BuffType<GodEaterBuff>();
-            int index12 = index11 + 1;
-            span[index12] = ModContent.BuffType<TimeFrozenBuff>();
-            int index13 = index12 + 1;
-            span[index13] = ModContent.BuffType<LeadPoisonBuff>();
-            int num = index13 + 1;
-            NPC.AddDebuffImmunities(intList);
+            NPCID.Sets.ImmuneToRegularBuffs[Type] = true;
         }
 
         public override void SetDefaults()
@@ -150,28 +124,28 @@ namespace ssm.Content.NPCs.Shtuxibus
                     (object) "revengeance",
                     (object) true
                     }) && Main.expertMode)
-                        {
-                            this.NPC.lifeMax = 745000000;
-                            this.NPC.damage = 7000;
-                        }
-                        if ((bool)kal.Call(new object[3]{
+                {
+                    this.NPC.lifeMax = 745000000;
+                    this.NPC.damage = 7000;
+                }
+                if ((bool)kal.Call(new object[3]{
                     (object) "GetDifficultyActive",
                     (object) "death",
                     (object) true
                     }) && Main.expertMode)
-                        {
-                            this.NPC.lifeMax = 1450000000;
-                            this.NPC.damage = 10000;
-                        }
-                        if ((bool)kal.Call(new object[3]{
+                {
+                    this.NPC.lifeMax = 1450000000;
+                    this.NPC.damage = 10000;
+                }
+                if ((bool)kal.Call(new object[3]{
                     (object) "GetDifficultyActive",
                     (object) "revengeance",
                     (object) true
                     }) && Main.masterMode)
-                        {
-                            this.NPC.lifeMax = 1570000000;
-                            this.NPC.damage = 10000;
-                        }
+                {
+                    this.NPC.lifeMax = 1570000000;
+                    this.NPC.damage = 10000;
+                }
             }
             NPC.HitSound = SoundID.NPCHit1;
             NPC.noGravity = true;
@@ -873,7 +847,8 @@ namespace ssm.Content.NPCs.Shtuxibus
         {
             for (int j = 0; j < Main.player[Main.myPlayer].inventory.Length; j++)
             {
-                if (ModLoader.TryGetMod("almazikmod", out Mod almazikmod) || ModLoader.TryGetMod("PowerfulSword", out Mod PowerfulSword))
+
+                if (ModLoader.TryGetMod("PowerfulSword", out Mod PowerfulSword))
                 {
                     ShtunUtils.DisplayLocalizedText("fuck yourself", textColor);
                     player.AddBuff(ModContent.BuffType<ChtuxlagorInfernoEX>(), 2);
@@ -1938,7 +1913,6 @@ namespace ssm.Content.NPCs.Shtuxibus
                         }
                     }
                 }
-                Projectile.NewProjectile(NPC.GetSource_FromThis(), new Vector2(player.Center.X, Math.Max(600f, player.Center.Y - 2000f)), Vector2.UnitY, ModContent.ProjectileType<WillDeathraySmall20>(), ShtunUtils.ScaledProjectileDamage(NPC.damage, 4f / 3), 0f, Main.myPlayer, player.Center.X, NPC.whoAmI);
                 Projectile.NewProjectile(NPC.GetSource_FromThis(), NPC.Center, NPC.DirectionTo(player.Center + player.velocity * 30f), ModContent.Find<ModProjectile>(fargosouls.Name, "MutantDeathrayAim").Type, 0, 0f, Main.myPlayer, 85f, NPC.whoAmI);
                 Projectile.NewProjectile(NPC.GetSource_FromThis(), NPC.Center, Vector2.Zero, ModContent.ProjectileType<MutantSpearAim>(), ShtunUtils.ScaledProjectileDamage(NPC.damage), 0f, Main.myPlayer, NPC.whoAmI, 3);
 
@@ -2082,7 +2056,6 @@ namespace ssm.Content.NPCs.Shtuxibus
                             type = ModContent.Find<ModProjectile>(fargosouls.Name, "MutantTrueEyeS").Type;
                         else
                             type = ModContent.Find<ModProjectile>(fargosouls.Name, "MutantTrueEyeR").Type;
-                        Projectile.NewProjectile(NPC.GetSource_FromThis(), new Vector2(player.Center.X + Main.rand.NextFloat(700f, -700f), Math.Max(600f, player.Center.Y - 2000f)), Vector2.UnitY, ModContent.ProjectileType<WillDeathraySmall20>(), ShtunUtils.ScaledProjectileDamage(NPC.damage, 4f / 3), 0f, Main.myPlayer, player.Center.X + Main.rand.NextFloat(700f, -700f), NPC.whoAmI);
                         int p = Projectile.NewProjectile(NPC.GetSource_FromThis(), NPC.Center, Vector2.Zero, type, ShtunUtils.ScaledProjectileDamage(NPC.damage, 0.8f), 0f, Main.myPlayer, NPC.target);
                         if (p != Main.maxProjectiles) //inform them which side attack began on
                         {
@@ -2382,7 +2355,6 @@ namespace ssm.Content.NPCs.Shtuxibus
         }
 
         #endregion
-
         #region phaze2
 
         void Phase2Transition()
@@ -2863,9 +2835,6 @@ namespace ssm.Content.NPCs.Shtuxibus
 
                 if (Main.netMode != NetmodeID.MultiplayerClient)
                 {
-                    Projectile.NewProjectile(NPC.GetSource_FromThis(), new Vector2(player.Center.X + 700f, Math.Max(600f, player.Center.Y - 2000f)), Vector2.UnitY, ModContent.ProjectileType<WillDeathraySmall20>(), ShtunUtils.ScaledProjectileDamage(NPC.damage, 4f / 3), 0f, Main.myPlayer, player.Center.X - 700f, NPC.whoAmI);
-                    Projectile.NewProjectile(NPC.GetSource_FromThis(), new Vector2(player.Center.X - 700f, Math.Max(600f, player.Center.Y - 2000f)), Vector2.UnitY, ModContent.ProjectileType<WillDeathraySmall20>(), ShtunUtils.ScaledProjectileDamage(NPC.damage, 4f / 3), 0f, Main.myPlayer, player.Center.X + 700f, NPC.whoAmI);
-                    Projectile.NewProjectile(NPC.GetSource_FromThis(), new Vector2(player.Center.X, Math.Max(600f, player.Center.Y - 2000f)), Vector2.UnitY, ModContent.ProjectileType<WillDeathraySmall20>(), ShtunUtils.ScaledProjectileDamage(NPC.damage, 4f / 3), 0f, Main.myPlayer, player.Center.X, NPC.whoAmI);
                     int p = Projectile.NewProjectile(NPC.GetSource_FromThis(), NPC.Center, -Vector2.UnitY, ModContent.Find<ModProjectile>(fargosouls.Name, "MutantEyeOfCthulhu").Type, ShtunUtils.ScaledProjectileDamage(NPC.damage), 0f, Main.myPlayer, NPC.target, ai1);
                     if (p != Main.maxProjectiles)
                         Main.projectile[p].timeLeft -= 30;
@@ -3377,7 +3346,6 @@ namespace ssm.Content.NPCs.Shtuxibus
                                 continue;
                             float spread = MathHelper.Pi / 3 / (maxFishronSets + 1);
                             Vector2 offset = NPC.ai[2] == 0 ? Vector2.UnitY.RotatedBy(spread * i) * -450f * j : Vector2.UnitX.RotatedBy(spread * i) * 475f * j;
-                            Projectile.NewProjectile(NPC.GetSource_FromThis(), new Vector2(player.Center.X, Math.Max(600f, player.Center.Y - 2000f)), Vector2.UnitY, ModContent.ProjectileType<WillDeathraySmall20>(), ShtunUtils.ScaledProjectileDamage(NPC.damage, 4f / 3), 0f, Main.myPlayer, player.Center.X, NPC.whoAmI);
                             Projectile.NewProjectile(NPC.GetSource_FromThis(), NPC.Center, Vector2.Zero, ModContent.ProjectileType<MutantFishron>(), ShtunUtils.ScaledProjectileDamage(NPC.damage), 0f, Main.myPlayer, offset.X, offset.Y);
                         }
                     }
@@ -3950,10 +3918,7 @@ namespace ssm.Content.NPCs.Shtuxibus
                 NPC.ai[3] = Main.rand.NextFloat((float)Math.PI * 2);
                 SoundEngine.PlaySound(SoundID.Roar, NPC.Center);
                 if (Main.netMode != NetmodeID.MultiplayerClient)
-                    Projectile.NewProjectile(NPC.GetSource_FromThis(), new Vector2(player.Center.X + 700f, Math.Max(600f, player.Center.Y - 2000f)), Vector2.UnitY, ModContent.ProjectileType<WillDeathraySmall20>(), ShtunUtils.ScaledProjectileDamage(NPC.damage, 4f / 3), 0f, Main.myPlayer, player.Center.X, NPC.whoAmI);
-                Projectile.NewProjectile(NPC.GetSource_FromThis(), new Vector2(player.Center.X - 700f, Math.Max(600f, player.Center.Y - 2000f)), Vector2.UnitY, ModContent.ProjectileType<WillDeathraySmall20>(), ShtunUtils.ScaledProjectileDamage(NPC.damage, 4f / 3), 0f, Main.myPlayer, player.Center.X, NPC.whoAmI);
-                Projectile.NewProjectile(NPC.GetSource_FromThis(), new Vector2(player.Center.X, Math.Max(600f, player.Center.Y - 2000f)), Vector2.UnitY, ModContent.ProjectileType<WillDeathraySmall20>(), ShtunUtils.ScaledProjectileDamage(NPC.damage, 4f / 3), 0f, Main.myPlayer, player.Center.X, NPC.whoAmI);
-                Projectile.NewProjectile(NPC.GetSource_FromThis(), NPC.Center, Vector2.Zero, ModContent.Find<ModProjectile>(fargosouls.Name, "GlowRing").Type, 0, 0f, Main.myPlayer, NPC.whoAmI, -2);
+                    Projectile.NewProjectile(NPC.GetSource_FromThis(), NPC.Center, Vector2.Zero, ModContent.Find<ModProjectile>(fargosouls.Name, "GlowRing").Type, 0, 0f, Main.myPlayer, NPC.whoAmI, -2);
             }
 
             if (++NPC.ai[3] > endTime)
@@ -4139,7 +4104,6 @@ namespace ssm.Content.NPCs.Shtuxibus
                             float speed = Main.rand.NextFloat(240, 720) / time * 2f;
                             Vector2 velocity = speed * NPC.DirectionFrom(player.Center).RotatedByRandom(MathHelper.PiOver2);
                             float ai1 = speed / time;
-                            Projectile.NewProjectile(NPC.GetSource_FromThis(), new Vector2(NPC.Center.X, Math.Max(600f, NPC.Center.X)), Vector2.UnitY, ModContent.ProjectileType<WillDeathraySmall20>(), ShtunUtils.ScaledProjectileDamage(NPC.damage, 4f / 3), 0f, Main.myPlayer, NPC.Center.X, NPC.whoAmI);
                         }
                     }
                 }
@@ -5145,9 +5109,6 @@ namespace ssm.Content.NPCs.Shtuxibus
 
                     Sword(spawnPos, attackAngle + MathHelper.PiOver4, Ai1, randomOffset);
                     Sword(spawnPos, attackAngle - MathHelper.PiOver4, Ai1, randomOffset);
-
-                    //   Projectile.NewProjectile(NPC.GetSource_FromThis(), new Vector2(player.Center.X, Math.Max(600f, player.Center.Y - 2000f)), Vector2.UnitY, ModContent.ProjectileType<WillDeathraySmall20>(), ShtunUtils.ScaledProjectileDamage(NPC.damage, 4f / 3), 0f, Main.myPlayer, player.Center.X, NPC.whoAmI);
-                    Sword(spawnPos + mirrorLength * (attackAngle + MathHelper.PiOver4).ToRotationVector2(), attackAngle + MathHelper.PiOver4 + MathHelper.Pi, Ai1, randomOffset);
                     Sword(spawnPos + mirrorLength * (attackAngle - MathHelper.PiOver4).ToRotationVector2(), attackAngle - MathHelper.PiOver4 + MathHelper.Pi, Ai1, randomOffset);
 
                 }
@@ -5251,8 +5212,6 @@ namespace ssm.Content.NPCs.Shtuxibus
 
                     Sword(spawnPos, attackAngle + MathHelper.PiOver4, Ai1, randomOffset);
                     Sword(spawnPos, attackAngle - MathHelper.PiOver4, Ai1, randomOffset);
-
-                    //   Projectile.NewProjectile(NPC.GetSource_FromThis(), new Vector2(player.Center.X, Math.Max(600f, player.Center.Y - 2000f)), Vector2.UnitY, ModContent.ProjectileType<WillDeathraySmall20>(), ShtunUtils.ScaledProjectileDamage(NPC.damage, 4f / 3), 0f, Main.myPlayer, player.Center.X, NPC.whoAmI);
                     Sword(spawnPos + mirrorLength * (attackAngle + MathHelper.PiOver4).ToRotationVector2(), attackAngle + MathHelper.PiOver4 + MathHelper.Pi, Ai1, randomOffset);
                     Sword(spawnPos + mirrorLength * (attackAngle - MathHelper.PiOver4).ToRotationVector2(), attackAngle - MathHelper.PiOver4 + MathHelper.Pi, Ai1, randomOffset);
 
@@ -5967,7 +5926,6 @@ namespace ssm.Content.NPCs.Shtuxibus
                             float speed = Main.rand.NextFloat(240, 720) / time * 2f;
                             Vector2 velocity = speed * NPC.DirectionFrom(player.Center).RotatedByRandom(MathHelper.PiOver2);
                             float ai1 = speed / time;
-                            Projectile.NewProjectile(NPC.GetSource_FromThis(), new Vector2(player.Center.X, Math.Max(600f, player.Center.Y - 2000f)), Vector2.UnitY, ModContent.ProjectileType<WillDeathraySmall20>(), ShtunUtils.ScaledProjectileDamage(NPC.damage, 4f / 3), 0f, Main.myPlayer, player.Center.X, NPC.whoAmI);
                         }
                     }
                 }
@@ -6414,13 +6372,14 @@ namespace ssm.Content.NPCs.Shtuxibus
 
         #endregion
 
-        //public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
-        //    {
-        //        if (Main.zenithWorld){
-        //        target.statLife = 0;}
-        //        TryLifeSteal(target.Center, Main.myPlayer);
-        //        target.AddBuff(ModContent.BuffType<ChtuxlagorInferno>(), 5400);
-        //    }
+        public override bool PreKill()
+        {
+            if (ModLoader.TryGetMod("almazikmod", out Mod alm) || (ModLoader.TryGetMod("PowerfulSword", out Mod sex)))
+            {
+                return false;
+            }
+            return true;
+        }
 
         public override void OnHitPlayer(Player target, Player.HurtInfo hurtInfo)
         {
@@ -6493,9 +6452,9 @@ namespace ssm.Content.NPCs.Shtuxibus
                 modifiers.FinalDamage.Base = 1;
             }
 
-            if (this.damageTotal < this.dpsCap * 60)
+            if (damageTotal < dpsCap * 60)
             {
-                return;
+                //return;
                 modifiers.FinalDamage.Base = 0.0f;
             }
         }
@@ -6541,7 +6500,7 @@ namespace ssm.Content.NPCs.Shtuxibus
             if (!SkyManager.Instance["ssm:Shtuxibus"].IsActive())
                 SkyManager.Instance.Activate("ssm:Shtuxibus");
         }
-        public override void OnHitByItem(Player player, Item item, NPC.HitInfo hit, int damageDone)
+        public override void OnHitByItem(Player player, Item Item, NPC.HitInfo hit, int damageDone)
         {
             hit.Crit = false;
             hit.InstantKill = false;
@@ -6549,7 +6508,7 @@ namespace ssm.Content.NPCs.Shtuxibus
 
         private void OnHit(float damage)
         {
-            this.damageTotal += (int)damage * 60;
+            damageTotal += (int)damage * 60;
         }
     }
 }

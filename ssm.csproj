@@ -8,6 +8,18 @@
 		
 	</PropertyGroup>
 	<ItemGroup>
+	  <Compile Remove="Reworks\StyxArmor.cs" />
+	</ItemGroup>
+	<ItemGroup>
+	  <None Remove="Thorium\ShtunThoriumNpcs.cs.sex" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Compile Include="Thorium\ShtunThoriumNpcs.cs.sex" />
+	</ItemGroup>
+	<ItemGroup>
+	  <None Include="Reworks\StyxArmor.cs" />
+	</ItemGroup>
+	<ItemGroup>
 	  <Reference Include="CalamityHunt">
 	    <HintPath>Libraries\CalamityHunt_v1.1.3.dll</HintPath>
 	  </Reference>

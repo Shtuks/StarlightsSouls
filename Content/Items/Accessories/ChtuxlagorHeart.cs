@@ -28,6 +28,8 @@ using FargowiltasSouls.Content.Items.Accessories.Enchantments;
 
 namespace ssm.Content.Items.Accessories
 {
+    [ExtendsFromMod(ModCompatibility.Calamity.Name, ModCompatibility.Redemption.Name, ModCompatibility.SacredTools.Name, ModCompatibility.Thorium.Name)]
+    [JITWhenModsEnabled(ModCompatibility.Calamity.Name, ModCompatibility.Redemption.Name, ModCompatibility.SacredTools.Name, ModCompatibility.Thorium.Name)]
     public class ChtuxlagorHeart : SoulsItem
     {
         private readonly Mod FargoSoul = Terraria.ModLoader.ModLoader.GetMod("FargowiltasSouls");

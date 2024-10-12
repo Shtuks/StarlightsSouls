@@ -3,7 +3,6 @@ using System;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
 using ssm.Content.Projectiles.Shtuxibus;
 using FargowiltasSouls;
 using ssm;
@@ -13,7 +12,6 @@ namespace ssm.Content.Projectiles.Shtuxibus
     public class AbomSwordHandle : Deathrays.BaseDeathray
     {
         private readonly Mod fargosouls = ModLoader.GetMod("FargowiltasSouls");
-        private readonly Mod calamity = ModLoader.GetMod("CalamityMod");
         public override string Texture => "ssm/Content/Projectiles/Deathrays/AbomDeathray";
         public AbomSwordHandle() : base(150) { }
         public int counter;

@@ -4,22 +4,12 @@ using Terraria;
 using Terraria.ModLoader;
 using ssm.Content.Buffs;
 using ssm;
-using Terraria;
 using Terraria.ID;
-using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
-using Terraria;
-using Terraria.ModLoader;
 using ssm.Content.Buffs.Minions;
 using System.Collections.Generic;
-using CalamityMod.CalPlayer;
-using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Terraria;
 using Terraria.DataStructures;
 using Terraria.Graphics.Shaders;
-using Terraria.ID;
-using Terraria.ModLoader;
 using FargowiltasSouls;
 
 namespace ssm.Content.Buffs.Minions
@@ -27,7 +17,6 @@ namespace ssm.Content.Buffs.Minions
     public class ShtuxibusMinionBuff : ModBuff
     {
         private readonly Mod fargosouls = ModLoader.GetMod("FargowiltasSouls");
-        private readonly Mod calamity = ModLoader.GetMod("CalamityMod");
         public override void SetStaticDefaults()
         {
             Main.buffNoTimeDisplay[Type] = true;

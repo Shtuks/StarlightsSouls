@@ -8,8 +8,6 @@ using ssm.Core;
 
 namespace ssm.Content.SoulToggles
 {
-    [ExtendsFromMod(ModCompatibility.Calamity.Name)]
-    [JITWhenModsEnabled(ModCompatibility.Calamity.Name)]
     public class CalamitySoulHeader : SoulHeader
     {
         public override float Priority => 6.2f;

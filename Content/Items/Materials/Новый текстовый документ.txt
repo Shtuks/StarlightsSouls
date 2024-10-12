@@ -63,7 +63,7 @@ namespace ssm.Content.Items.Materials
       Vector2 position,
       Rectangle frame,
       Color drawColor,
-      Color itemColor,
+      Color ItemColor,
       Vector2 origin,
       float scale)
     {

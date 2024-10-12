@@ -16,7 +16,6 @@ namespace ssm.Content.Projectiles.Shtuxibus
     {
         public override string Texture => "ssm/Content/Projectiles/Shtuxibus/MutantSpear";
         private readonly Mod fargosouls = ModLoader.GetMod("FargowiltasSouls");
-        private readonly Mod calamity = ModLoader.GetMod("CalamityMod");
         public override void SetStaticDefaults()
         {
             ProjectileID.Sets.TrailCacheLength[Projectile.type] = 10;

@@ -6,7 +6,6 @@ using FargowiltasSouls;
 using FargowiltasSouls.Core.Globals;
 using FargowiltasSouls.Core.Systems;
 using Luminance.Core.Graphics;
-using CalamityMod.CalPlayer;
 
 namespace ssm.Content.Buffs
 {

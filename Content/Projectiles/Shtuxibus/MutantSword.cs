@@ -5,25 +5,17 @@ using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
-using Terraria;
-using Terraria.Audio;
-using Terraria.ID;
-using Terraria.ModLoader;
 using FargowiltasSouls;
 using FargowiltasSouls.Content.Projectiles;
 using FargowiltasSouls.Core.ModPlayers;
 using FargowiltasSouls.Content.Buffs;
-using FargowiltasSouls.Content.Projectiles;
 
 namespace ssm.Content.Projectiles.Shtuxibus
 {
     public class MutantSword : ModProjectile
     {
         private readonly Mod fargosouls = ModLoader.GetMod("FargowiltasSouls");
-        private readonly Mod calamity = ModLoader.GetMod("CalamityMod");
+
         public override string Texture => "Terraria/Images/Projectile_454";
 
         public override void SetStaticDefaults()

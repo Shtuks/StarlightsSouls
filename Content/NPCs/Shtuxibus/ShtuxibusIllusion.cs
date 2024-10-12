@@ -11,7 +11,6 @@ namespace ssm.Content.NPCs.Shtuxibus
     public class ShtuxibusIllusion : ModNPC
     {
         private readonly Mod fargosouls = ModLoader.GetMod("FargowiltasSouls");
-        private readonly Mod calamity = ModLoader.GetMod("CalamityMod");
         public override string Texture => "ssm/Content/NPCs/Shtuxibus/Shtuxibus";
 
         public override void SetStaticDefaults()

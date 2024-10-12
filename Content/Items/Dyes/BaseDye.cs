@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace ssm.Content.Items.Dyes
 {
-    public abstract class BaseDye : ModItem, ILocalizedModType, IModType
+    public abstract class BaseDye : ModItem
     {
         public string LocalizationCategory => "Items.Dyes";
 

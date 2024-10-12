@@ -14,7 +14,7 @@ namespace ssm.Reworks
         {
             if (!player.HasBuff(ModContent.BuffType<DemonshadeSetDevilBuff>()))
                 return;
-            player.Calamity().rogueStealthMax += 200f;
+            player.Calamity().rogueStealthMax += 2f;
             player.Calamity().wearingRogueArmor = true;
             player.Calamity().stealthStrikeHalfCost = true;
         }

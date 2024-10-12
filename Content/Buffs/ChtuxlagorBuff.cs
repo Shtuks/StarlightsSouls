@@ -3,7 +3,6 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using FargowiltasSouls;
 
-#nullable disable
 namespace ssm.Content.Buffs
 {
     public class ChtuxlagorBuff : ModBuff

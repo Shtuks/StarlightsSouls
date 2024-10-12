@@ -2,14 +2,15 @@ using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.ModLoader;
+using ssm.Core;
 
 namespace ssm.Content.Items.Armor
 {
+    [ExtendsFromMod(ModCompatibility.Calamity.Name)]
+    [JITWhenModsEnabled(ModCompatibility.Calamity.Name)]
     [AutoloadEquip(EquipType.Body)]
     public class TrueMonstrositySuit : ModItem
     {
-        private readonly Mod calamity = Terraria.ModLoader.ModLoader.GetMod("CalamityMod");
-
         public override void SetDefaults()
         {
             ((Entity)this.Item).width = 18;

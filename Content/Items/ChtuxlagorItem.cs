@@ -10,24 +10,24 @@ using Terraria.ModLoader;
 namespace ssm.Content.Items
 {
     /// <summary>
-    /// Abstract class extended by the items of this mod. <br />
+    /// Abstract class extended by the Items of this mod. <br />
     /// Contains useful code for boilerplate reduction.
     /// </summary>
     public abstract class ChtuxlagorItem : ModItem
     {
         /// <summary>
-        /// If it is, the item's text color will automatically be set to a custom color (can manually be overriden) and "Chtuxlagor" will be added to the end of the item's tooltips. <br />
+        /// If it is, the Item's text color will automatically be set to a custom color (can manually be overriden) and "Chtuxlagor" will be added to the end of the Item's tooltips. <br />
         /// </summary>
         //public virtual bool Infinity => false;
 
         /// <summary>
-        /// A list of articles that this item may begin with depending on localization. <br />
+        /// A list of articles that this Item may begin with depending on localization. <br />
         /// Used for the prefix-article fix.
         /// </summary>
         public virtual List<string> Articles => new List<string> { "The" };
 
         /// <summary>
-        /// Allows you to modify all the tooltips that display for this item. <br />
+        /// Allows you to modify all the tooltips that display for this Item. <br />
         /// Called directly after the code in <see cref="SafeModifyTooltips(List{TooltipLine})"/>.
         /// </summary>
         /// <param name="tooltips"></param>
@@ -36,17 +36,17 @@ namespace ssm.Content.Items
         }
 
         /// <summary>
-        /// The location of the item's glowmask texture, defaults to the item's internal texture name with _glow
+        /// The location of the Item's glowmask texture, defaults to the Item's internal texture name with _glow
         /// </summary>
         public virtual string glowmaskstring => Texture.Remove(0, "ssm/".Length) + "_glow";
 
         /// <summary>
-        /// The amount of frames in the item's animation. <br />
+        /// The amount of frames in the Item's animation. <br />
         /// </summary>
         public virtual int NumFrames => 1;
 
         /// <summary>
-        /// Allows you to draw things in front of this item. This method is called even if PreDrawInWorld returns false. <br />
+        /// Allows you to draw things in front of this Item. This method is called even if PreDrawInWorld returns false. <br />
         /// Runs directly after the code for PostDrawInWorld in SoulsItem.
         /// </summary>
         public virtual void SafePostDrawInWorld(SpriteBatch spriteBatch, Color lightColor, Color alphaColor, float rotation, float scale, int whoAmI) { }
@@ -72,13 +72,13 @@ namespace ssm.Content.Items
         {
             if (tooltips.TryFindTooltipLine("ItemName", out TooltipLine itemNameLine))
             {
-                // If this item is exclusive to e-mode, give it a custom item "rarity" (not an actual rarity, wait for 1.4).
+                // If this Item is exclusive to e-mode, give it a custom Item "rarity" (not an actual rarity, wait for 1.4).
                 // This is often overridden.
                 // if (Chtuxlagor)
                 itemNameLine.OverrideColor = ssm.ChtuxlagorColor();
 
                 // Call the artcle-prefix adjustment method.
-                // This automatically handles fixing item names that begin with an article.
+                // This automatically handles fixing Item names that begin with an article.
                 itemNameLine.ArticlePrefixAdjustment(Item.prefix, Articles.ToArray());
             }
 

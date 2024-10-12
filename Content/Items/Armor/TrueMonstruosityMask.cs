@@ -2,24 +2,24 @@ using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.ModLoader;
+using ssm.Core;
+using Terraria.Localization;
 
 namespace ssm.Content.Items.Armor
 {
+    [ExtendsFromMod(ModCompatibility.Calamity.Name)]
+    [JITWhenModsEnabled(ModCompatibility.Calamity.Name)]
     [AutoloadEquip(EquipType.Head)]
     public class TrueMonstrosityMask : ModItem
     {
-        private readonly Mod FargoCross = Terraria.ModLoader.ModLoader.GetMod("FargowiltasCrossmod");
-        private readonly Mod FargoSoul = Terraria.ModLoader.ModLoader.GetMod("FargowiltasSouls");
-        private readonly Mod Calamity = Terraria.ModLoader.ModLoader.GetMod("CalamityMod");
-
         public override void SetDefaults()
         {
-            ((Entity)this.Item).width = 18;
-            ((Entity)this.Item).height = 18;
-            this.Item.rare = 11;
-            this.Item.expert = true;
-            this.Item.value = Item.sellPrice(10, 0, 0, 0);
-            this.Item.defense = 60;
+            Item.width = 18;
+            Item.height = 18;
+            Item.rare = 11;
+            Item.expert = true;
+            Item.value = Item.sellPrice(10, 0, 0, 0);
+            Item.defense = 60;
         }
 
         public override void UpdateEquip(Player player)
@@ -31,6 +31,11 @@ namespace ssm.Content.Items.Armor
             player.maxTurrets += 20;
             player.manaCost -= 0.4f;
             player.ammoCost75 = true;
+        }
+
+        public static string GetSetBonusString()
+        {
+            return Language.GetTextValue($"Mods.ssm.SetBonus.Monstrosity");
         }
 
         public override bool IsArmorSet(Item head, Item body, Item legs)
@@ -74,8 +79,8 @@ namespace ssm.Content.Items.Armor
             player.AddBuff(Terraria.ModLoader.ModLoader.GetMod("CalamityMod").BuffType("Revivify"), 2, true);*/
             if (Terraria.ModLoader.ModLoader.GetMod("CalamityMod") != null)
             {
-                ModContent.Find<ModItem>(this.Calamity.Name, "DemonshadeHelm").UpdateArmorSet(player);
-                ModContent.Find<ModItem>(this.Calamity.Name, "DemonshadeBreastplate").UpdateArmorSet(player);
+                ModContent.Find<ModItem>("CalamityMod", "DemonshadeHelm").UpdateArmorSet(player);
+                ModContent.Find<ModItem>("CalamityMod", "DemonshadeBreastplate").UpdateArmorSet(player);
             }
         }
 

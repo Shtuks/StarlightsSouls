@@ -7,14 +7,12 @@ using Terraria.ModLoader;
 using FargowiltasSouls;
 using FargowiltasSouls.Content.Projectiles;
 using FargowiltasSouls.Core.ModPlayers;
-using FargowiltasSouls.Content.Projectiles;
 
 namespace ssm.Content.Projectiles.Shtuxibus
 {
     public class MutantRitualwiththing : BaseArena
     {
         private readonly Mod fargosouls = ModLoader.GetMod("FargowiltasSouls");
-        private readonly Mod calamity = ModLoader.GetMod("CalamityMod");
         public override string Texture => "ssm/Content/Projectiles/Shtuxibus/ShtuxibusRitualProj";
 
         private const float realRotation = MathHelper.Pi / 140f;

@@ -2,10 +2,14 @@ using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.ModLoader;
+using ssm.Core;
 using ssm.Content.Buffs;
+using Terraria.Localization;
 
 namespace ssm.Content.Items.Armor
 {
+    [ExtendsFromMod(ModCompatibility.Calamity.Name)]
+    [JITWhenModsEnabled(ModCompatibility.Calamity.Name)]
     [AutoloadEquip(EquipType.Head)]
     public class TrueAuricTeslaHelm : ModItem
     {
@@ -21,6 +25,11 @@ namespace ssm.Content.Items.Armor
             this.Item.expert = true;
             this.Item.value = Item.sellPrice(10, 0, 0, 0);
             this.Item.defense = 45;
+        }
+
+        public static string GetSetBonusString()
+        {
+            return Language.GetTextValue($"Mods.ssm.SetBonus.TrueAuric");
         }
 
         public override void UpdateEquip(Player player)

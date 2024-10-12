@@ -16,9 +16,7 @@ using FargowiltasSouls.Content.Items;
 using FargowiltasSouls.Content.Items.Accessories.Souls;
 using Fargowiltas.Items.Tiles;
 using Terraria.Localization;
-using Terraria.DataStructures;
 using FargowiltasSouls.Core.Toggler;
-using Fargowiltas.Items.Tiles;
 using FargowiltasSouls.Core.AccessoryEffectSystem;
 using ssm.Content.SoulToggles;
 using ssm.Content.Items.Accessories;
@@ -29,7 +27,6 @@ using FargowiltasSouls.Core.Toggler.Content;
 using FargowiltasSouls.Content.Items.Armor;
 using FargowiltasSouls.Content.Items.Accessories.Masomode;
 using FargowiltasSouls.Content.Items.Accessories.Enchantments;
-using CalamityMod.Items.Materials;
 
 namespace ssm.Content.Items.Accessories
 {
@@ -60,11 +57,24 @@ namespace ssm.Content.Items.Accessories
         public override void AddRecipes()
         {
             Recipe recipe = this.CreateRecipe(1);
-            recipe.AddIngredient<GalacticaSingularity>(10);
+            recipe.AddIngredient(3456, 15);
+            recipe.AddIngredient(3457, 15);
+            recipe.AddIngredient(3458, 15);
+            recipe.AddIngredient(3459, 15);
             recipe.AddIngredient(3467, 10);
-            recipe.AddIngredient<AstralBar>(20);
+
             recipe.AddTile(ModContent.Find<ModTile>("Fargowiltas", "CrucibleCosmosSheet"));
             recipe.Register();
+
+            if (ModLoader.TryGetMod("CalamityMod", out Mod kal))
+            {
+                CreateRecipe()
+                    .AddIngredient(kal.Find<ModItem>("GalacticaSingularity").Type, 10)
+                    .AddIngredient(kal.Find<ModItem>("AstralBar").Type, 10)
+                    .AddIngredient(3467, 25)
+                    .AddTile(ModContent.Find<ModTile>("Fargowiltas", "CrucibleCosmosSheet"))
+                    .Register();
+            }
         }
 
         public class CelestialEffect : AccessoryEffect

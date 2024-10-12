@@ -14,7 +14,6 @@ using Terraria.GameContent.ItemDropRules;
 using Terraria.Graphics.Shaders;
 using Terraria.Localization;
 using System;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using ssm.Content.Items;
@@ -27,7 +26,6 @@ namespace ssm.Content.Projectiles.Minions
     {
         public override string Texture => "ssm/Content/Projectiles/Minions/MutantSoul";
         private readonly Mod fargosouls = ModLoader.GetMod("FargowiltasSouls");
-        private readonly Mod calamity = ModLoader.GetMod("CalamityMod");
         public override void SetStaticDefaults()
         {
             Main.projFrames[Projectile.type] = 4;

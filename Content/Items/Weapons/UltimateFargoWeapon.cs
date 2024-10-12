@@ -12,7 +12,6 @@ using ssm.Content.Projectiles;
 using Microsoft.Xna.Framework;
 using ssm.Content.Buffs.Minions;
 using System.Collections.Generic;
-using CalamityMod.CalPlayer;
 using Terraria.DataStructures;
 using Terraria.Graphics.Shaders;
 using Terraria.ID;
@@ -30,7 +29,6 @@ namespace ssm.Content.Items.Weapons
     public class UltimateFargoWeapon : ModItem
     {
         private readonly Mod fargosouls = ModLoader.GetMod("FargowiltasSouls");
-        private readonly Mod calamity = ModLoader.GetMod("CalamityMod");
         private int forceSwordTimer;
         public bool flip;
         public override void SetDefaults()

@@ -13,7 +13,6 @@ using ssm.Render.Primitives;
 using FargowiltasSouls;
 using FargowiltasSouls.Content.Projectiles;
 using FargowiltasSouls.Core.ModPlayers;
-using FargowiltasSouls.Content.Projectiles;
 using ssm.Content.Projectiles.Deathrays;
 
 namespace ssm.Content.Projectiles.Shtuxibus

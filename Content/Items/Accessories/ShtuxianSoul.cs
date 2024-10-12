@@ -13,6 +13,8 @@ using FargowiltasSouls.Core.AccessoryEffectSystem;
 using FargowiltasSouls.Content.Items.Accessories.Souls;
 using FargowiltasSouls.Content.Buffs.Masomode;
 using ssm.Content.Items.Accessories;
+using ssm.Calamity.Souls;
+using ssm.SoA.Souls;
 using ssm.Core;
 using ssm.Content.Items;
 using ssm.Content.Items.Materials;
@@ -27,7 +29,6 @@ namespace ssm.Content.Items.Accessories
     {
         private readonly Mod fargosouls = Terraria.ModLoader.ModLoader.GetMod("FargowiltasSouls");
         private readonly Mod FargoSoul = Terraria.ModLoader.ModLoader.GetMod("FargowiltasSouls");
-        private readonly Mod FargoMoreSoulsCompat = Terraria.ModLoader.ModLoader.GetMod("FargoMoreSoulsCompat");
         public override void VerticalWingSpeeds(Player player, ref float ascentWhenFalling, ref float ascentWhenRising,
             ref float maxCanAscendMultiplier, ref float maxAscentMultiplier, ref float constantAscend)
         {
@@ -77,15 +78,18 @@ namespace ssm.Content.Items.Accessories
             ModContent.Find<ModItem>(this.fargosouls.Name, "EternitySoul").UpdateAccessory(player, hideVisual);
             ModContent.Find<ModItem>(((ModType)this).Mod.Name, "EternityForce").UpdateAccessory(player, false);
 
-            //ModContent.Find<ModItem>(this.FargoMoreSoulsCompat.Name, "SoulOfTmod").UpdateAccessory(player, false);
-
-            if (ModLoader.TryGetMod("Redemption", out Mod Redemption)){
+            if (ModLoader.TryGetMod("Redemption", out Mod Redemption))
+            {
                 //ModContent.Find<ModItem>(((ModType)this).Mod.Name, "RedemptionSoul").UpdateAccessory(player, false);
-                }
-            if (ModLoader.TryGetMod("SacredTools", out Mod SoA)){
-                ModContent.Find<ModItem>(((ModType)this).Mod.Name, "SoASoul").UpdateAccessory(player, false);}
-            if (ModLoader.TryGetMod("CalamityMod", out Mod kal)){
-                ModContent.Find<ModItem>(((ModType)this).Mod.Name, "CalamitySoul").UpdateAccessory(player, false);}
+            }
+            if (ModLoader.TryGetMod("SacredTools", out Mod SoA))
+            {
+                ModContent.Find<ModItem>(((ModType)this).Mod.Name, "SoASoul").UpdateAccessory(player, false);
+            }
+            if (ModLoader.TryGetMod("CalamityMod", out Mod kal))
+            {
+                ModContent.Find<ModItem>(((ModType)this).Mod.Name, "CalamitySoul").UpdateAccessory(player, false);
+            }
 
             if (!Main.zenithWorld) { player.buffImmune[ModContent.Find<ModBuff>(this.FargoSoul.Name, "TimeFrozenBuff").Type] = true; }
             player.buffImmune[ModContent.Find<ModBuff>(this.FargoSoul.Name, "MutantPresenceBuff").Type] = true;

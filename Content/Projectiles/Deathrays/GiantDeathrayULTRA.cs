@@ -3,12 +3,9 @@ using Microsoft.Xna.Framework.Graphics;
 using System;
 using Terraria.ModLoader;
 using FargowiltasSouls.Content.Projectiles;
-using Microsoft.Xna.Framework.Graphics;
 using Terraria.GameContent;
-using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.Audio;
-using Terraria.GameContent;
 using Terraria.ID;
 
 namespace ssm.Content.Projectiles.Deathrays

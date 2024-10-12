@@ -11,7 +11,6 @@ namespace ssm.Content.Projectiles.Shtuxibus
     {
         public override string Texture => "Terraria/Images/Projectile_454";
         private readonly Mod fargosouls = ModLoader.GetMod("FargowiltasSouls");
-        private readonly Mod calamity = ModLoader.GetMod("CalamityMod");
         public override void SetStaticDefaults()
         {
             Main.projFrames[Projectile.type] = 2;

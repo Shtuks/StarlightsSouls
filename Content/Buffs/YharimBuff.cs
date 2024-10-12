@@ -1,8 +1,11 @@
 using Terraria;
 using Terraria.ModLoader;
+using ssm.Core;
 
 namespace ssm.Content.Buffs
 {
+    [ExtendsFromMod(ModCompatibility.Calamity.Name)]
+    [JITWhenModsEnabled(ModCompatibility.Calamity.Name)]
     public class YharimBuff : ModBuff
     {
         public override void SetStaticDefaults()

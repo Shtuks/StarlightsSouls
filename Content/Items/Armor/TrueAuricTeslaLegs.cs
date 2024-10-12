@@ -2,9 +2,12 @@ using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.ModLoader;
+using ssm.Core;
 
 namespace ssm.Content.Items.Armor
 {
+    [ExtendsFromMod(ModCompatibility.Calamity.Name)]
+    [JITWhenModsEnabled(ModCompatibility.Calamity.Name)]
     [AutoloadEquip(EquipType.Legs)]
     public class TrueAuricTeslaLegs : ModItem
     {

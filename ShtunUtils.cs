@@ -294,14 +294,14 @@ namespace ssm
                 }
             }
         }
-        public static string GetModItemText(int ItemID, string color = "", string itemname = "")
+        public static string GetModItemText(int ItemID, string color = "", string Itemname = "")
         {
             Item val = new Item();
             val.SetDefaults(ItemID, false);
             string text = val.Name;
-            if (itemname != "")
+            if (Itemname != "")
             {
-                text = itemname;
+                text = Itemname;
             }
             if (color == "")
             {
