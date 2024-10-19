@@ -6,6 +6,9 @@ using Microsoft.Xna.Framework;
 using Terraria.Localization;
 using ssm.Core;
 using ThoriumMod.Projectiles.Bard;
+using Fargowiltas.Items.Tiles;
+using FargowiltasSouls.Content.Items.Materials;
+using ThoriumMod.Items.BardItems;
 
 namespace ssm.Thorium.Souls
 {
@@ -33,10 +36,15 @@ namespace ssm.Thorium.Souls
             //general
             ThoriumPlayer thoriumPlayer = player.GetModPlayer<ThoriumPlayer>();
 
-            //player.GetDamage(DamageClass.Symp) += 0.3f;
-            //thoriumPlayer.symphonicSpeed += .2f;
-            //thoriumPlayer.symphonicCrit += 15;
-            //thoriumPlayer.bardResourceMax2 += 20;
+            player.GetDamage<BardDamage>() += 0.30f;
+            player.GetCritChance<BardDamage>() += 0.15f;
+            player.GetAttackSpeed<BardDamage>() += 0.20f;
+            player.GetModPlayer<ThoriumPlayer>().bardBuffDuration += 3000;
+            player.GetModPlayer<ThoriumPlayer>().inspirationRegenBonus += 1;
+            player.GetModPlayer<ThoriumPlayer>().bardResourceDropBoost += 1;
+            player.GetModPlayer<ThoriumPlayer>().bardResource += 20;
+            player.GetModPlayer<ThoriumPlayer>().bardHomingSpeedBonus += 10;
+            player.GetModPlayer<ThoriumPlayer>().bardHomingRangeBonus += 10;
 
             //epic mouthpiece
             thoriumPlayer.accWindHoming = true;
@@ -47,7 +55,31 @@ namespace ssm.Thorium.Souls
             //digital tuner
             thoriumPlayer.accPercussionTuner2 = true;
             //guitar pick claw
-            thoriumPlayer.bardBounceBonus = 5;
+            thoriumPlayer.bardBounceBonus = 10;
+        }
+        public override void AddRecipes()
+        {
+            Recipe recipe = this.CreateRecipe();
+
+            recipe.AddIngredient(null, "BardEssence");
+            recipe.AddIngredient<AbomEnergy>(10);
+            recipe.AddIngredient<DigitalTuner>();
+            recipe.AddIngredient<EpicMouthpiece>();
+            recipe.AddIngredient<GuitarPickClaw>();
+            recipe.AddIngredient<StraightMute>();
+            recipe.AddIngredient<BandKit>();
+            recipe.AddIngredient<SteamFlute>();
+            recipe.AddIngredient<PrimeRoar>();
+            //recipe.AddIngredient<Eski>();
+            recipe.AddIngredient<Fishbone>();
+            //recipe.AddIngredient<Accordion>();
+            //recipe.AddIngredient<Ocarina>();
+            recipe.AddIngredient<TheMaw>();
+            recipe.AddIngredient<SonicAmplifier>();
+
+            recipe.AddTile<CrucibleCosmosSheet>();
+
+            recipe.Register();
         }
     }
 }

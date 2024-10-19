@@ -62,7 +62,7 @@ namespace ssm.SoA.Enchantments
             recipe.AddIngredient<LapisPendant>();
             recipe.AddIngredient<LapisStaff>();
             recipe.AddIngredient<Haven>();
-            recipe.AddTile(412);
+            recipe.AddTile(26);
             recipe.Register();
         }
     }

@@ -5,9 +5,9 @@ Source code: https://github.com/Shtuks/StarlightsSouls
 Discord Server: https://discord.gg/xB9s8SyQJr
 
 The content:
-- Shaddows of Abaddon enchantments, forces, souls
+- Thorium/Shaddows of Abaddon enchantments, forces, souls
 
-- Redemption/Calamity/Thorium compatibility (Work in progress)
+- Redemption/Calamity compatibility (Work in progress)
 
 - Post-Mutant content
 

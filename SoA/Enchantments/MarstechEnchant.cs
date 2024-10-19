@@ -64,8 +64,8 @@ namespace ssm.SoA.Enchantments
             recipe.AddIngredient<MarstechHelm>();
             recipe.AddIngredient<MarstechPlate>();
             recipe.AddIngredient<MarstechLegs>();
-            recipe.AddIngredient<UpgradeGem7>();
-            recipe.AddTile(412);
+            recipe.AddIngredient<SpaceJunkEnchant>();
+            recipe.AddTile(125);
             recipe.Register();
         }
     }

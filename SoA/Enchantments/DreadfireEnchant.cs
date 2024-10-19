@@ -61,7 +61,7 @@ namespace ssm.SoA.Enchantments
             recipe.AddIngredient<DreadflameEmblem>();
             recipe.AddIngredient<PumpkinFlare>();
             recipe.AddIngredient<PumpkinCarver>();
-            recipe.AddTile(412);
+            recipe.AddTile(26);
             recipe.Register();
         }
     }

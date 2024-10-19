@@ -6,12 +6,13 @@ using Terraria.Localization;
 using ssm.Core;
 using ssm.Thorium.Enchantments;
 using Fargowiltas.Items.Tiles;
+using FargowiltasSouls.Content.Items.Accessories.Forces;
 
 namespace ssm.Thorium.Forces
 {
     [ExtendsFromMod(ModCompatibility.Thorium.Name)]
     [JITWhenModsEnabled(ModCompatibility.Thorium.Name)]
-    public class VanaheimForce : ModItem
+    public class VanaheimForce : BaseForce
     {
         public override void SetDefaults()
         {

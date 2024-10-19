@@ -55,7 +55,7 @@ namespace ssm.SoA.Enchantments
         {
             Recipe recipe = this.CreateRecipe();
             recipe.AddRecipeGroup("ssm:FlariumHelms");
-            recipe.AddIngredient<FlariumHelmet>();
+            recipe.AddIngredient<FlariumChest>();
             recipe.AddIngredient<FlariumLeggings>();
             recipe.AddIngredient<FlariumRocketLauncher>();
             recipe.AddIngredient<SolusKatana>();

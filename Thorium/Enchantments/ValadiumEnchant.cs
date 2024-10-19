@@ -61,7 +61,7 @@ namespace ssm.Thorium.Enchantments
             recipe.AddIngredient(ModContent.ItemType<ValadiumBreastPlate>());
             recipe.AddIngredient(ModContent.ItemType<ValadiumGreaves>());
             recipe.AddIngredient(ModContent.ItemType<BeholderGaze>());
-            recipe.AddIngredient(ModContent.ItemType<LichMask>());
+            recipe.AddIngredient(ModContent.ItemType<MirroroftheBeholder>());
             recipe.AddIngredient(ModContent.ItemType<TommyGun>());
 
             recipe.AddTile(TileID.CrystalBall);

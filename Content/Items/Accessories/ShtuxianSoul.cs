@@ -6,7 +6,6 @@ using Terraria.Graphics.Shaders;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Luminance.Core.Graphics;
 using Fargowiltas.Items.Tiles;
 using FargowiltasSouls.Content.Items;
 using FargowiltasSouls.Core.AccessoryEffectSystem;
@@ -58,7 +57,7 @@ namespace ssm.Content.Items.Accessories
             this.Item.value = Item.buyPrice(745, 745, 745, 745);
         }
 
-        public virtual bool PreDrawTooltipLine(DrawableTooltipLine line, ref int yOffset)
+        public override bool PreDrawTooltipLine(DrawableTooltipLine line, ref int yOffset)
         {
             if ((!(((TooltipLine)line).Mod == "Terraria") || !(((TooltipLine)line).Name == "ItemName")) && !(((TooltipLine)line).Name == "FlavorText"))
                 return true;
@@ -76,19 +75,34 @@ namespace ssm.Content.Items.Accessories
             if (player.GetModPlayer<FargoSoulsPlayer>().MutantEyeCD > 0) { player.GetModPlayer<FargoSoulsPlayer>().MutantEyeCD--; }
 
             ModContent.Find<ModItem>(this.fargosouls.Name, "EternitySoul").UpdateAccessory(player, hideVisual);
+            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "CelestialEnchant").UpdateAccessory(player, false);
             ModContent.Find<ModItem>(((ModType)this).Mod.Name, "EternityForce").UpdateAccessory(player, false);
 
-            if (ModLoader.TryGetMod("Redemption", out Mod Redemption))
+            if (ModLoader.TryGetMod("Redemption", out Mod red))
             {
                 //ModContent.Find<ModItem>(((ModType)this).Mod.Name, "RedemptionSoul").UpdateAccessory(player, false);
             }
+            if (ModLoader.TryGetMod("FargoMoreSoulsCompat", out Mod FargoMoreSoulsCompat))
+            {
+                if (FargoMoreSoulsCompat.TryFind("SoulOfTmod", out ModItem SoulOfTmod))
+                {
+                    SoulOfTmod.UpdateAccessory(player, false);
+                }
+            }
             if (ModLoader.TryGetMod("SacredTools", out Mod SoA))
             {
+                //ModContent.Find<ModItem>(((ModType)this).Mod.Name, "KineticSoul").UpdateAccessory(player, false);
                 ModContent.Find<ModItem>(((ModType)this).Mod.Name, "SoASoul").UpdateAccessory(player, false);
             }
             if (ModLoader.TryGetMod("CalamityMod", out Mod kal))
             {
                 ModContent.Find<ModItem>(((ModType)this).Mod.Name, "CalamitySoul").UpdateAccessory(player, false);
+            }
+            if (ModLoader.TryGetMod("ThoriumMod", out Mod tor))
+            {
+                ModContent.Find<ModItem>(((ModType)this).Mod.Name, "GuardianAngelsSoul").UpdateAccessory(player, false);
+                ModContent.Find<ModItem>(((ModType)this).Mod.Name, "BardSoul").UpdateAccessory(player, false);
+                ModContent.Find<ModItem>(((ModType)this).Mod.Name, "ThoriumSoul").UpdateAccessory(player, false);
             }
 
             if (!Main.zenithWorld) { player.buffImmune[ModContent.Find<ModBuff>(this.FargoSoul.Name, "TimeFrozenBuff").Type] = true; }

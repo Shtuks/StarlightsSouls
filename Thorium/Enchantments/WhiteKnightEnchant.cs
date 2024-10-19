@@ -36,6 +36,8 @@ namespace ssm.Thorium.Enchantments
             ThoriumPlayer thoriumPlayer = player.GetModPlayer<ThoriumPlayer>();
             //shade band
             //thoriumPlayer.shadeBand = true;
+
+            ModContent.Find<ModItem>(this.thorium.Name, "WhiteKnightMask").UpdateArmorSet(player);
         }
 
         public override void AddRecipes()

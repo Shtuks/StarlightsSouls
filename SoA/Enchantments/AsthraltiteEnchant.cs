@@ -40,6 +40,12 @@ namespace ssm.SoA.Enchantments
             ModdedPlayer modPlayer = player.GetModPlayer<ModdedPlayer>();
             modPlayer.AstralSet = true;
 
+            //ModContent.Find<ModItem>(this.soa.Name, "AsthraliteHelmetRevenant").UpdateArmorSet(player);
+            ModContent.Find<ModItem>(this.soa.Name, "AsthralSummon").UpdateArmorSet(player);
+            ModContent.Find<ModItem>(this.soa.Name, "AsthralRanged").UpdateArmorSet(player);
+            ModContent.Find<ModItem>(this.soa.Name, "AsthralMage").UpdateArmorSet(player);
+            ModContent.Find<ModItem>(this.soa.Name, "AsthralMelee").UpdateArmorSet(player);
+
             ModContent.Find<ModItem>(this.soa.Name, "AsthralRing").UpdateAccessory(player, false);
 
             ModContent.Find<ModItem>(this.soa.Name, "MementoMori").UpdateAccessory(player, false);

@@ -39,10 +39,14 @@ namespace ssm.SoA.Enchantments
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
+            ModContent.Find<ModItem>(this.soa.Name, "FeatherHairpin").UpdateAccessory(player, false);
 
             ModdedPlayer modPlayer = player.GetModPlayer<ModdedPlayer>();
             //set bonus
             modPlayer.blightEmpowerment = true;
+
+            //pumpkin amulet
+            modPlayer.pumpkinAmulet = true;
 
             //dreadflame emblem
             modPlayer.dreadEmblem = true;
@@ -60,10 +64,10 @@ namespace ssm.SoA.Enchantments
             recipe.AddIngredient<BlightMask>();
             recipe.AddIngredient<BlightChest>();
             recipe.AddIngredient<BlightLegs>();
-            recipe.AddIngredient<DreadflameEmblem>();
+            recipe.AddIngredient<PumpkinAmulet>();
             recipe.AddIngredient<FeatherHairpin>();
             recipe.AddIngredient<PumpGlove>();
-            recipe.AddTile(412);
+            recipe.AddTile(26);
             recipe.Register();
         }
     }

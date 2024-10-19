@@ -1,16 +1,16 @@
+//fuck you
 using CalamityMod;
 using CalamityMod.NPCs.DevourerofGods;
 using CalamityMod.NPCs.PlaguebringerGoliath;
 using CalamityMod.NPCs.ProfanedGuardians;
 using CalamityMod.NPCs.Yharon;
 using CalamityMod.Projectiles.Boss;
+
+//nice code
 using System.Linq;
 using FargowiltasCrossmod.Content.Calamity.Bosses.SlimeGod;
-using FargowiltasCrossmod.Content.Calamity.Buffs;
 using FargowiltasCrossmod.Content.Common.Projectiles;
 using FargowiltasCrossmod.Core;
-using FargowiltasCrossmod.Core.Calamity;
-using FargowiltasCrossmod.Core.Calamity.Globals;
 using FargowiltasCrossmod.Core.Calamity.Systems;
 using FargowiltasCrossmod.Core.Common;
 using FargowiltasSouls;
@@ -55,10 +55,11 @@ using ModCompatibility = ssm.Core.ModCompatibility;
 
 namespace ssm.Content.NPCs.Shtuxibus
 {
-    [ExtendsFromMod(ModCompatibility.Calamity.Name//, ModCompatibility.Redemption.Name, ModCompatibility.SacredTools.Name, ModCompatibility.Thorium.Name
-                                                  )]
-    [JITWhenModsEnabled(ModCompatibility.Calamity.Name//, ModCompatibility.Redemption.Name, ModCompatibility.SacredTools.Name, ModCompatibility.Thorium.Name
-                                                    )]
+    //[ExtendsFromMod(ModCompatibility.Calamity.Name//, ModCompatibility.Redemption.Name, ModCompatibility.SacredTools.Name, ModCompatibility.Thorium.Name
+    //                                              )]
+    //[JITWhenModsEnabled(ModCompatibility.Calamity.Name//, ModCompatibility.Redemption.Name, ModCompatibility.SacredTools.Name, ModCompatibility.Thorium.Name
+    //                                                )]
+
     [AutoloadBossHead]
     public class Shtuxibus : ModNPC
     {
@@ -82,7 +83,7 @@ namespace ssm.Content.NPCs.Shtuxibus
         public int Counter = 0;
         public Queue<float> attackHistory = new Queue<float>();
         public int attackCount;
-        public static readonly Color textColor = Color.Orange;
+        public static readonly Color textColor = Color.Green;
         public static readonly Color textColor2 = new Color(Main.DiscoR, Main.DiscoG, Main.DiscoB);
         public float endTimeVariance;
         public static int imtrydomove;

@@ -32,7 +32,7 @@ namespace ssm.Thorium.Enchantments
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-           // ModContent.Find<ModItem>(this.thorium.Name, "BerserkerMask").UpdateArmorSet(player);
+            //ModContent.Find<ModItem>(this.thorium.Name, "BerserkerMask").UpdateArmorSet(player);
 
             ModContent.Find<ModItem>(((ModType)this).Mod.Name, "MagmaEnchant").UpdateAccessory(player, hideVisual);
             ModContent.Find<ModItem>(this.thorium.Name, "RapierBadge").UpdateAccessory(player, hideVisual);

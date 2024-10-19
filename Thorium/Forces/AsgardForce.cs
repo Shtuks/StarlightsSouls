@@ -5,12 +5,13 @@ using ThoriumMod;
 using ssm.Core;
 using Terraria.Localization;
 using Fargowiltas.Items.Tiles;
+using FargowiltasSouls.Content.Items.Accessories.Forces;
 
 namespace ssm.Thorium.Forces
 {
     [ExtendsFromMod(ModCompatibility.Thorium.Name)]
     [JITWhenModsEnabled(ModCompatibility.Thorium.Name)]
-    public class AsgardForce : ModItem
+    public class AsgardForce : BaseForce
     {
         public override void SetDefaults()
         {

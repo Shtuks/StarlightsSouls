@@ -39,12 +39,17 @@ using ThoriumMod.Items.BossBuriedChampion;
 //using ssm.Thorium.Swarm.Energizers;
 using ThoriumMod.NPCs.BossStarScouter;
 using ThoriumMod.Items.BossStarScouter;
+using ssm.Thorium.Swarm.Energizers;
+using ThoriumMod.NPCs.BossViscount;
+using ThoriumMod.Items.BossViscount;
+using ThoriumMod.NPCs.BossForgottenOne;
+using ThoriumMod.Items.BossForgottenOne;
 
 namespace ssm.Thorium
 {
     [ExtendsFromMod(ModCompatibility.Thorium.Name)]
     [JITWhenModsEnabled(ModCompatibility.Thorium.Name)]
-    public partial class ThoriumNpcs : GlobalNPC
+    public partial class ShtunThoriumNpcs : GlobalNPC
     {
         private readonly Mod fargosouls = ModLoader.GetMod("FargowiltasSouls");
         public override bool InstancePerEntity => true;
@@ -114,7 +119,7 @@ namespace ssm.Thorium
             NPCID.PirateShip
         };
 
-        /*public override bool PreKill(NPC npc)
+        public override bool PreKill(NPC npc)
         {
             if (NoLoot)
             {
@@ -142,37 +147,49 @@ namespace ssm.Thorium
                 {
                     Swarm(npc, ModContent.NPCType<GraniteEnergyStorm>(), ModContent.ItemType<GraniteEnergyStormTreasureBag>(), ModContent.ItemType<GraniteEnergyStormTrophy>(), ModContent.ItemType<GraniteEnergizer>());
                 }
-                else if (npc.type == ModContent.NPCType<StarScouter>())
-                {
-                    Swarm(npc, ModContent.NPCType<StarScouter>(), ModContent.ItemType<StarScouterTreasureBag>(), ModContent.ItemType<StarScouterTrophy>(), ModContent.ItemType<PerforatorEnergizer>());
-               /}
+                //else if (npc.type == ModContent.NPCType<StarScouter>())
+                //{
+                //    Swarm(npc, ModContent.NPCType<StarScouter>(), ModContent.ItemType<StarScouterTreasureBag>(), ModContent.ItemType<StarScouterTrophy>(), ModContent.ItemType<PerforatorEnergizer>());
+                //}
                 else if (npc.type == ModContent.NPCType<BoreanStrider>())
                 {
                     Swarm(npc, ModContent.NPCType<BoreanStrider>(), ModContent.ItemType<BoreanStriderTreasureBag>(), ModContent.ItemType<BoreanStriderTrophy>(), ModContent.ItemType<BoreanEnergizer>());
                 }
-                else if (npc.type == ModContent.NPCType<TheGrandThunderBird>())
+				else if (npc.type == ModContent.NPCType<Viscount>())
+				{
+					Swarm(npc, ModContent.NPCType<Viscount>(), ModContent.ItemType<ViscountTreasureBag>(), ModContent.ItemType<ViscountTrophy>(), ModContent.ItemType<ViscountEnergizer>());
+				}
+				else if (npc.type == ModContent.NPCType<TheGrandThunderBird>())
                 {
                     Swarm(npc, ModContent.NPCType<TheGrandThunderBird>(), ModContent.ItemType<TheGrandThunderBirdTreasureBag>(), ModContent.ItemType<TheGrandThunderBirdTrophy>(), ModContent.ItemType<ThunderEnergizer>());
                 }
-                return false;
+				else if (npc.type == ModContent.NPCType<ForgottenOne>())
+				{
+					Swarm(npc, ModContent.NPCType<ForgottenOne>(), ModContent.ItemType<ForgottenOneTreasureBag>(), ModContent.ItemType<ForgottenOneTrophy>(), ModContent.ItemType<ForgottenEnergizer>());
+				}
+				return false;
             }
 
             else
             {
                 return true;
             }
-        }*/
+        }
         public override void PostAI(NPC npc)
         {
             //always vulnerable in swarm
-            //if (SwarmActive && npc.type == ModContent.NPCType<SupremeCalamitas>())
-            //{
-            //    npc.dontTakeDamage = false;
-            //}
-            //else if (SwarmActive && npc.type == ModContent.NPCType<CalamitasClone>())
-            //{
-            //    npc.dontTakeDamage = false;
-            //}
+            if (SwarmActive && npc.type == ModContent.NPCType<FallenBeholder>())
+            {
+                npc.dontTakeDamage = false;
+            }
+            else if (SwarmActive && npc.type == ModContent.NPCType<BuriedChampion>())
+            {
+                npc.dontTakeDamage = false;
+            }
+            else if (SwarmActive && npc.type == ModContent.NPCType<GraniteEnergyStorm>())
+            {
+                npc.dontTakeDamage = false;
+            }
         }
         private void SpawnBoss(NPC npc, int boss)
         {
@@ -183,7 +200,7 @@ namespace ssm.Thorium
                 spawn = NPC.NewNPC(NPC.GetBossSpawnSource(Main.myPlayer), (int)npc.position.X + Main.rand.Next(-1000, 1000), (int)npc.position.Y + Main.rand.Next(-400, -100), boss);
                 if (spawn != Main.maxNPCs)
                 {
-                    Main.npc[spawn].GetGlobalNPC<ThoriumNpcs>().SwarmActive = true;
+                    Main.npc[spawn].GetGlobalNPC<ShtunThoriumNpcs>().SwarmActive = true;
                     NetMessage.SendData(MessageID.SyncNPC, number: boss);
                 }
             }
@@ -302,7 +319,7 @@ namespace ssm.Thorium
                     NPC kill = Main.npc[i];
                     if (kill.active && !kill.friendly && kill.type != NPCID.LunarTowerNebula && kill.type != NPCID.LunarTowerSolar && kill.type != NPCID.LunarTowerStardust && kill.type != NPCID.LunarTowerVortex)
                     {
-                        Main.npc[i].GetGlobalNPC<ThoriumNpcs>().NoLoot = true;
+                        Main.npc[i].GetGlobalNPC<ShtunThoriumNpcs>().NoLoot = true;
                         Main.npc[i].SimpleStrikeNPC(Main.npc[i].lifeMax, -Main.npc[i].direction, true, 0, null, false, 0, true);
                         //Main.npc[i].StrikeNPCNoInteraction(Main.npc[i].lifeMax, 0f, -Main.npc[i].direction, true);
                     }

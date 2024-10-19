@@ -11,6 +11,9 @@ using ThoriumMod.Items.HealerItems;
 using ThoriumMod.Items.NPCItems;
 using ThoriumMod.Items.Donate;
 using FargowiltasSouls.Content.Items.Accessories.Enchantments;
+using FargowiltasSouls.Core.AccessoryEffectSystem;
+using ssm.Content.SoulToggles;
+using static ssm.SoA.Enchantments.BlazingBruteEnchant;
 
 namespace ssm.Thorium.Enchantments
 {
@@ -40,8 +43,17 @@ namespace ssm.Thorium.Enchantments
             ModContent.Find<ModItem>("ssm", "LivingWoodEnchant").UpdateAccessory(player, hideVisual);
             ModContent.Find<ModItem>("ssm", "BulbEnchant").UpdateAccessory(player, hideVisual);
 
-            //toggle
+            if (player.AddEffect<LifeBloomEffect>(Item))
+            {
+                //toggle
                 ModContent.Find<ModItem>(this.thorium.Name, "HeartOfTheJungle").UpdateAccessory(player, hideVisual);
+            }
+        }
+
+        public class LifeBloomEffect : AccessoryEffect
+        {
+            public override Header ToggleHeader => Header.GetHeader<MuspelheimForceHeader>();
+            public override int ToggleItemType => ModContent.ItemType<LifeBloomEnchant>();
         }
 
         public override void AddRecipes()

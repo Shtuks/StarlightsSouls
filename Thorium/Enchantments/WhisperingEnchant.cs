@@ -8,6 +8,9 @@ using ThoriumMod.Items.HealerItems;
 using ThoriumMod.Items.Painting;
 using FargowiltasSouls.Content.Items.Accessories.Enchantments;
 using ssm.Core;
+using FargowiltasSouls.Core.AccessoryEffectSystem;
+using ssm.Content.SoulToggles;
+using static ssm.Thorium.Enchantments.TideTurnerEnchant;
 
 namespace ssm.Thorium.Enchantments
 {
@@ -34,7 +37,9 @@ namespace ssm.Thorium.Enchantments
         {
             ThoriumPlayer thoriumPlayer = player.GetModPlayer<ThoriumPlayer>();
 
-            //toggle
+            if (player.AddEffect<WhisperingEffect>(Item))
+            {
+                //toggle
                 thoriumPlayer.whisperingSet = true;
                 //if (player.ownedProjectileCounts[thorium.ProjectileType("WhisperingTentacle")] + player.ownedProjectileCounts[thorium.ProjectileType("WhisperingTentacle2")] < 6 && player.ownedProjectileCounts[thorium.ProjectileType("WhisperingTentacleSpawn")] < 1)
                 //{
@@ -45,6 +50,13 @@ namespace ssm.Thorium.Enchantments
                 //        timer = 0;
                 //    }
                 //}
+            }
+        }
+
+        public class WhisperingEffect : AccessoryEffect
+        {
+            public override Header ToggleHeader => Header.GetHeader<JotunheimForceHeader>();
+            public override int ToggleItemType => ModContent.ItemType<WhisperingEnchant>();
         }
 
         public override void AddRecipes()

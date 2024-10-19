@@ -52,10 +52,10 @@ namespace ssm.Thorium.Enchantments
 
             Recipe recipe = this.CreateRecipe();
 
-           // recipe.AddRecipeGroup("ssm:AnyTitanHelmet");
+            recipe.AddRecipeGroup("ssm:AnyTitanHelmet");
             recipe.AddIngredient(ModContent.ItemType<TitanBreastplate>());
             recipe.AddIngredient(ModContent.ItemType<TitanGreaves>());
-            recipe.AddIngredient(ModContent.ItemType<CrystalArcanite>());
+            recipe.AddIngredient(ModContent.ItemType<MaskoftheCrystalEye>());
             recipe.AddIngredient(ModContent.ItemType<AbyssalShell>());
             recipe.AddIngredient(ModContent.ItemType<TunePlayerDamageReduction>());
 

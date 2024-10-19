@@ -16,7 +16,6 @@ using Fargowiltas.Items.Tiles;
 using Terraria.Localization;
 using Terraria.DataStructures;
 using FargowiltasSouls.Core.Toggler;
-using Fargowiltas.Items.Tiles;
 using FargowiltasSouls.Content.Items.Armor;
 using FargowiltasSouls.Core.AccessoryEffectSystem;
 using ssm.Content.SoulToggles;
@@ -28,7 +27,7 @@ using FargowiltasSouls.Content.Items.Accessories.Forces;
 
 namespace ssm.Content.Items.Accessories
 {
-    public class EternityForce : BaseEnchant
+    public class EternityForce : BaseForce
     {
         private readonly Mod FargoSoul = Terraria.ModLoader.ModLoader.GetMod("FargowiltasSouls");
 
@@ -44,7 +43,7 @@ namespace ssm.Content.Items.Accessories
             this.Item.accessory = true;
         }
 
-        public override Color nameColor => new(255, 255, 255);
+        //public override Color nameColor => new(255, 255, 255);
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {

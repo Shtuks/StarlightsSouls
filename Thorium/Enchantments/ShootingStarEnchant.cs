@@ -32,7 +32,7 @@ namespace ssm.Thorium.Enchantments
         {
             ThoriumPlayer thoriumPlayer = player.GetModPlayer<ThoriumPlayer>();
             //dmg, regen
-            //thoriumPlayer.setBalladeer = true;
+            thoriumPlayer.setShootingStar = true;
             //move speed, play speed
             thoriumPlayer.accHeadset = true;
         }
@@ -41,9 +41,9 @@ namespace ssm.Thorium.Enchantments
         {
             Recipe recipe = this.CreateRecipe();
 
-            //recipe.AddIngredient(ModContent.ItemType<BalladeerHat>());
-            //recipe.AddIngredient(ModContent.ItemType<BalladeerShirt>());
-            //recipe.AddIngredient(ModContent.ItemType<BalladeerBoots>());
+            recipe.AddIngredient(ModContent.ItemType<ShootingStarHat>());
+            recipe.AddIngredient(ModContent.ItemType<ShootingStarShirt>());
+            recipe.AddIngredient(ModContent.ItemType<ShootingStarBoots>());
             recipe.AddIngredient(ModContent.ItemType<Headset>());
             recipe.AddIngredient(ModContent.ItemType<AcousticGuitar>());
             recipe.AddIngredient(ModContent.ItemType<SunflareGuitar>());

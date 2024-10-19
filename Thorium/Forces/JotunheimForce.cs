@@ -6,12 +6,13 @@ using Terraria.Localization;
 using ssm.Thorium.Enchantments;
 using FargowiltasSouls;
 using ssm.Core;
+using FargowiltasSouls.Content.Items.Accessories.Forces;
 
 namespace ssm.Thorium.Forces
 {
     [ExtendsFromMod(ModCompatibility.Thorium.Name)]
     [JITWhenModsEnabled(ModCompatibility.Thorium.Name)]
-    public class JotunheimForce : ModItem
+    public class JotunheimForce : BaseForce
     {
         public override void SetDefaults()
         {

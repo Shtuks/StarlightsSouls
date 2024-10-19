@@ -8,6 +8,9 @@ using ssm.Core;
 using ThoriumMod.Items;
 using ThoriumMod.Items.BardItems;
 using FargowiltasSouls.Content.Items.Accessories.Enchantments;
+using FargowiltasSouls.Core.AccessoryEffectSystem;
+using ssm.Content.SoulToggles;
+using static ssm.SoA.Enchantments.BlazingBruteEnchant;
 
 namespace ssm.Thorium.Enchantments
 {
@@ -31,12 +34,21 @@ namespace ssm.Thorium.Enchantments
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            //toggle
-            ModContent.Find<ModItem>(this.thorium.Name, "CyberPunkHeadset").UpdateArmorSet(player);
+            if (player.AddEffect<CyberPunkEffect>(Item))
+            {
+                //toggle
+                ModContent.Find<ModItem>(this.thorium.Name, "CyberPunkHeadset").UpdateArmorSet(player);
+            }
 
             ModContent.Find<ModItem>(this.thorium.Name, "AutoTuner").UpdateAccessory(player, hideVisual);
             ModContent.Find<ModItem>(this.thorium.Name, "TunePlayerDamage").UpdateAccessory(player, hideVisual);
             ModContent.Find<ModItem>(this.thorium.Name, "DissTrack").UpdateAccessory(player, hideVisual);
+        }
+
+        public class CyberPunkEffect : AccessoryEffect
+        {
+            public override Header ToggleHeader => Header.GetHeader<NiflheimForceHeader>();
+            public override int ToggleItemType => ModContent.ItemType<CyberPunkEnchant>();
         }
 
         public override void AddRecipes()

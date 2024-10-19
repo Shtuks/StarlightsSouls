@@ -10,6 +10,9 @@ using ThoriumMod.Items.BossMini;
 using ThoriumMod.Items.BasicAccessories;
 using ThoriumMod.Items.Donate;
 using FargowiltasSouls.Content.Items.Accessories.Enchantments;
+using FargowiltasSouls.Core.AccessoryEffectSystem;
+using ssm.Content.SoulToggles;
+using static ssm.SoA.Enchantments.BlazingBruteEnchant;
 
 namespace ssm.Thorium.Enchantments
 {
@@ -33,14 +36,22 @@ namespace ssm.Thorium.Enchantments
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            //toggle
-                ModContent.Find<ModItem>(this.thorium.Name, "LodeStoneFaceGuard").UpdateArmorSet(player);
+            ModContent.Find<ModItem>(this.thorium.Name, "LodeStoneFaceGuard").UpdateArmorSet(player);
 
             ModContent.Find<ModItem>(this.thorium.Name, "AstroBeetleHusk").UpdateAccessory(player, true);
             ModContent.Find<ModItem>(this.thorium.Name, "ObsidianScale").UpdateAccessory(player, true);
 
-            //toggle
+            if (player.AddEffect<LodestoneEffect>(Item))
+            {
+                //toggle
                 ModContent.Find<ModItem>(this.thorium.Name, "SandweaversTiara").UpdateAccessory(player, true);
+            }
+        }
+
+        public class LodestoneEffect : AccessoryEffect
+        {
+            public override Header ToggleHeader => Header.GetHeader<MidgardForceHeader>();
+            public override int ToggleItemType => ModContent.ItemType<LodestoneEnchant>();
         }
 
         public override void AddRecipes()

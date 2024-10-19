@@ -16,6 +16,7 @@ using ssm.Core;
 using Terraria.ModLoader;
 using Terraria.Utilities;
 using FargowiltasSouls.Content.Items.Weapons.FinalUpgrades;
+
 using CalamityMod.NPCs.TownNPCs;
 
 namespace ssm.Content.NPCs

@@ -55,7 +55,7 @@ namespace ssm.SoA.Enchantments
             recipe.AddIngredient<WoodJavelin>(100);
             recipe.AddIngredient<GoldJavelin>(100);
             recipe.AddIngredient<PlatinumJavelin>(100);
-            recipe.AddTile(412);
+            recipe.AddTile(26);
             recipe.Register();
         }
     }

@@ -39,7 +39,7 @@ namespace ssm.Thorium.Enchantments
             ShtunThoriumPlayer modPlayer = player.GetModPlayer<ShtunThoriumPlayer>();
             ThoriumPlayer thoriumPlayer = player.GetModPlayer<ThoriumPlayer>();
             //set bonus
-            //thoriumPlayer.setSpiritTrapper = true;
+            thoriumPlayer.setSpiritTrapper = true;
             modPlayer.SpiritTrapperEnchant = true;
 
             ModContent.Find<ModItem>(this.thorium.Name, "ScryingGlass").UpdateAccessory(player, hideVisual);
@@ -52,7 +52,7 @@ namespace ssm.Thorium.Enchantments
             recipe.AddIngredient(ModContent.ItemType<SpiritTrapperCowl>());
             recipe.AddIngredient(ModContent.ItemType<SpiritTrapperCuirass>());
             recipe.AddIngredient(ModContent.ItemType<SpiritTrapperGreaves>());
-            recipe.AddIngredient(ModContent.ItemType<SpiritTrapperMask>());
+            recipe.AddIngredient(ModContent.ItemType<InnerFlame>());
             recipe.AddIngredient(ModContent.ItemType<ScryingGlass>());
             recipe.AddIngredient(ModContent.ItemType<SpiritBlastWand>());
 

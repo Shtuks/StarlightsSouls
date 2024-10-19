@@ -9,7 +9,6 @@ using ssm.Core;
 using ThoriumMod;
 using ThoriumMod.Projectiles;
 using ThoriumMod.Buffs;
-using SacredTools.Projectiles.Lunar;
 using ThoriumMod.Projectiles.Thrower;
 using ThoriumMod.Projectiles.Bard;
 using ThoriumMod.Projectiles.Healer;

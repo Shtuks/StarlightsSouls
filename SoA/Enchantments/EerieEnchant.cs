@@ -55,7 +55,7 @@ namespace ssm.SoA.Enchantments
             recipe.AddIngredient<EerieLegs>();
             recipe.AddIngredient<EerieHelmet>();
             recipe.AddIngredient<EerieCane>();
-            recipe.AddTile(412);
+            recipe.AddTile(26);
             recipe.Register();
         }
     }

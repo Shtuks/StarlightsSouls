@@ -15,6 +15,9 @@ using CalamityMod.Items.Armor.Brimflame;
 using CalamityMod.Tiles.Furniture.CraftingStations;
 using ssm.Core;
 using ssm.Calamity.Souls;
+using Fargowiltas.Items.Tiles;
+using ssm.SoA.Souls;
+using ssm.Thorium.Souls;
 
 namespace ssm.Calamity
 {
@@ -37,6 +40,7 @@ namespace ssm.Calamity
             //RecipeGroup.RegisterGroup("ssm:FlariumHelms", rec2);
         }
 
+
         public override void PostAddRecipes()
         {
             for (int i = 0; i < Recipe.numRecipes; i++)
@@ -46,6 +50,18 @@ namespace ssm.Calamity
                 {
                     if (recipe.RemoveIngredient(ModContent.ItemType<BrandoftheBrimstoneWitch>()))
                         recipe.AddIngredient<CalamitySoul>();
+                }
+                if (recipe.HasResult(ModContent.ItemType<SoASoul>()) && !recipe.HasIngredient<ShadowspecBar>())
+                {
+                    recipe.AddIngredient<ShadowspecBar>(5);
+                }
+                if (recipe.HasResult(ModContent.ItemType<ThoriumSoul>()) && !recipe.HasIngredient<ShadowspecBar>())
+                {
+                    recipe.AddIngredient<ShadowspecBar>(5);
+                }
+                if (recipe.HasResult(ModContent.ItemType<CalamitySoul>()) && !recipe.HasIngredient<ShadowspecBar>())
+                {
+                    recipe.AddIngredient<ShadowspecBar>(5);
                 }
             }
         }

@@ -36,7 +36,7 @@ namespace ssm.Thorium.Enchantments
                 ModContent.Find<ModItem>(this.thorium.Name, "TerrariumHelmet").UpdateArmorSet(player);
 
             ModContent.Find<ModItem>("ssm", "ThoriumEnchant").UpdateAccessory(player, hideVisual);
-            //ModContent.Find<ModItem>(this.thorium.Name, "TerrariumSubwoofer").UpdateAccessory(player, hideVisual);
+            ModContent.Find<ModItem>(this.thorium.Name, "TerrariumSurroundSound").UpdateAccessory(player, hideVisual);
         }
 
         public override void AddRecipes()
@@ -49,7 +49,7 @@ namespace ssm.Thorium.Enchantments
             recipe.AddIngredient(ModContent.ItemType<TerrariumBreastPlate>());
             recipe.AddIngredient(ModContent.ItemType<TerrariumGreaves>());
             recipe.AddIngredient(ModContent.ItemType<ThoriumEnchant>());
-            recipe.AddIngredient(ModContent.ItemType<TerrariumWings>());
+            recipe.AddIngredient(ModContent.ItemType<TerrariumSurroundSound>());
             recipe.AddIngredient(ModContent.ItemType<ThoriumCube>());
 
             recipe.AddTile(TileID.LunarCraftingStation);

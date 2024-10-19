@@ -8,6 +8,8 @@ using ThoriumMod.Items.BossThePrimordials.Omni;
 using ThoriumMod.Items.RangedItems;
 using ThoriumMod.Items.Tracker;
 using FargowiltasSouls.Content.Items.Accessories.Enchantments;
+using FargowiltasSouls.Core.AccessoryEffectSystem;
+using ssm.Content.SoulToggles;
 
 namespace ssm.Thorium.Enchantments
 {

@@ -7,6 +7,7 @@ using ThoriumMod.Items.Bronze;
 using ThoriumMod.Items.ThrownItems;
 using ssm.Core;
 using FargowiltasSouls.Content.Items.Accessories.Enchantments;
+using ThoriumMod.Items.BossBuriedChampion;
 
 namespace ssm.Thorium.Enchantments
 {
@@ -34,7 +35,7 @@ namespace ssm.Thorium.Enchantments
             //lightning
             modPlayer.BronzeEnchant = true;
 
-            ModContent.Find<ModItem>(this.thorium.Name, "ChampionsBarrier").UpdateAccessory(player, hideVisual);
+            ModContent.Find<ModItem>(this.thorium.Name, "ChampionsRebuttal").UpdateAccessory(player, hideVisual);
             ModContent.Find<ModItem>(this.thorium.Name, "SpartanSandles").UpdateAccessory(player, hideVisual);
             ModContent.Find<ModItem>(this.thorium.Name, "OlympicTorch").UpdateAccessory(player, hideVisual);
         }
@@ -49,7 +50,7 @@ namespace ssm.Thorium.Enchantments
             recipe.AddIngredient(ModContent.ItemType<BronzeBreastplate>());
             recipe.AddIngredient(ModContent.ItemType<BronzeGreaves>());
             recipe.AddIngredient(ModContent.ItemType<OlympicTorch>());
-            recipe.AddIngredient(ModContent.ItemType<ChampionCatcher>());
+            recipe.AddIngredient(ModContent.ItemType<ChampionsRebuttal>());
             recipe.AddIngredient(ModContent.ItemType<SpartanSandles>());
 
             recipe.AddTile(TileID.DemonAltar);

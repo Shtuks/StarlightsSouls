@@ -1,4 +1,4 @@
-using System.IO;
+/*using System.IO;
 using Terraria.ModLoader.IO;
 using FargowiltasSouls.Content.Projectiles.Masomode;
 using Microsoft.Xna.Framework;
@@ -162,7 +162,7 @@ namespace ssm.Content.NPCs.DukeFishronEX
                         Counter2 = 0;
                         if (FargoSoulsUtil.HostCheck) //spawn cthulhunado
                             Projectile.NewProjectile(NPC.GetSource_FromThis(), NPC.Center, Vector2.Zero, ProjectileID.SharknadoBolt, 0, 0f, Main.myPlayer, 1f, NPC.target + 1);
-                    }*/
+                    }
                     break;
 
                 case 11: //p3 dash
@@ -300,7 +300,7 @@ namespace ssm.Content.NPCs.DukeFishronEX
                     GeneralTimer = 0;
                     int heal = (int)(NPC.lifeMax * Main.rand.NextFloat(0.1f, 0.12f));
                     NPC.life += heal;
-                    int max = NPC.ai[0] == 9 /*&& !Fargowiltas.Instance.MasomodeEXLoaded*/ ? NPC.lifeMax / 2 : NPC.lifeMax;
+                    int max = NPC.ai[0] == 9 && !Fargowiltas.Instance.MasomodeEXLoaded ? NPC.lifeMax / 2 : NPC.lifeMax;
                     if (NPC.life > max)
                         NPC.life = max;
                     CombatText.NewText(NPC.Hitbox, CombatText.HealLife, heal);
@@ -607,3 +607,4 @@ namespace ssm.Content.NPCs.DukeFishronEX
         #endregion
     }
 }
+*/

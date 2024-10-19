@@ -8,6 +8,7 @@ using Microsoft.Xna.Framework;
 using ThoriumMod.Items.SummonItems;
 using ThoriumMod.Items.Consumable;
 using FargowiltasSouls.Content.Items.Accessories.Enchantments;
+using FargowiltasSouls.Content.Projectiles.ChallengerItems;
 
 namespace ssm.Thorium.Enchantments
 {
@@ -48,7 +49,7 @@ namespace ssm.Thorium.Enchantments
             recipe.AddIngredient(ModContent.ItemType<LivingWoodChestguard>());
             recipe.AddIngredient(ModContent.ItemType<LivingWoodBoots>());
             recipe.AddIngredient(ModContent.ItemType<LivingLeaf>(), 39);
-            recipe.AddIngredient(ModContent.ItemType<AntlionStaff>());
+            recipe.AddIngredient(ModContent.ItemType<LivingWoodAcorn>());
             recipe.AddIngredient(ModContent.ItemType<ChiTea>(), 5);
 
             recipe.AddTile(TileID.DemonAltar);

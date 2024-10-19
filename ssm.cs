@@ -35,7 +35,6 @@ using System.Reflection;
 using Terraria.DataStructures;
 using Terraria.GameContent.Creative;
 using Terraria.GameContent.ItemDropRules;
-//using ssm.Sky;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using Terraria.UI;

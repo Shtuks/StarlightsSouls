@@ -66,7 +66,7 @@ namespace ssm.SoA.Enchantments
             recipe.AddIngredient<DecreeCharm>();
             recipe.AddIngredient<FrostGlobeStaff>();
             recipe.AddIngredient<FrostBeam>();
-            recipe.AddTile(412);
+            recipe.AddTile(26);
             recipe.Register();
         }
     }

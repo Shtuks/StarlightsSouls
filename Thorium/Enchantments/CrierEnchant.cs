@@ -30,7 +30,7 @@ namespace ssm.Thorium.Enchantments
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            //ModContent.Find<ModItem>(this.thorium.Name, "BardCap").UpdateArmorSet(player);
+            ModContent.Find<ModItem>(this.thorium.Name, "CriersCap").UpdateArmorSet(player);
 
             ModContent.Find<ModItem>(this.thorium.Name, "LuckyRabbitsFoot").UpdateAccessory(player, hideVisual);
         }
@@ -39,12 +39,12 @@ namespace ssm.Thorium.Enchantments
         {
             Recipe recipe = this.CreateRecipe();
 
-            //recipe.AddIngredient(ModContent.ItemType<BardCap>());
-            //recipe.AddIngredient(ModContent.ItemType<BardChest>());
-            //recipe.AddIngredient(ModContent.ItemType<BardLeggings>());
+            recipe.AddIngredient(ModContent.ItemType<CriersCap>());
+            recipe.AddIngredient(ModContent.ItemType<CriersSash>());
+            recipe.AddIngredient(ModContent.ItemType<CriersLeggings>());
             recipe.AddIngredient(ModContent.ItemType<LuckyRabbitsFoot>());
             recipe.AddIngredient(ModContent.ItemType<WoodenWhistle>());
-            //recipe.AddRecipeGroup("ssm:AnyBugleHorn");
+            recipe.AddRecipeGroup("ssm:AnyBugleHorn");
 
             recipe.AddTile(TileID.DemonAltar);
             recipe.Register();

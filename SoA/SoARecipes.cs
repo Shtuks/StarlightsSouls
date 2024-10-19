@@ -44,10 +44,10 @@ namespace ssm
                 //{
                 //    recipe.AddIngredient<EmberOfOmen>();
                 //}
-                if (recipe.HasResult<ColossusSoul>())
-                {
-                    recipe.AddIngredient<ReflectionShield>();
-                }
+                //if (recipe.HasResult<ColossusSoul>())
+                //{
+                //    recipe.AddIngredient<ReflectionShield>();
+                //}
             }
         }
     }

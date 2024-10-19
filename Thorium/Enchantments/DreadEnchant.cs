@@ -9,6 +9,9 @@ using ssm.Core;
 using ThoriumMod.Items.NPCItems;
 using ThoriumMod.Items.SummonItems;
 using FargowiltasSouls.Content.Items.Accessories.Enchantments;
+using FargowiltasSouls.Core.AccessoryEffectSystem;
+using ssm.Content.SoulToggles;
+using static ssm.SoA.Enchantments.BlazingBruteEnchant;
 
 namespace ssm.Thorium.Enchantments
 {
@@ -35,7 +38,9 @@ namespace ssm.Thorium.Enchantments
             ShtunThoriumPlayer modPlayer = player.GetModPlayer<ShtunThoriumPlayer>();
             ThoriumPlayer thoriumPlayer = player.GetModPlayer<ThoriumPlayer>();
 
-            //toggle
+            if (player.AddEffect<DreadEffect>(Item))
+            {
+                //toggle
                 //dread set bonus
                 player.moveSpeed += 0.8f;
                 player.maxRunSpeed += 10f;
@@ -55,10 +60,19 @@ namespace ssm.Thorium.Enchantments
                         Main.dust[num2].noLight = true;
                     }
                 }
+            }
 
             ModContent.Find<ModItem>("ssm", "DragonEnchant").UpdateAccessory(player, hideVisual);
+
             ModContent.Find<ModItem>(this.thorium.Name, "CrashBoots").UpdateAccessory(player, hideVisual);
+
             ModContent.Find<ModItem>(this.thorium.Name, "CursedCore").UpdateAccessory(player, hideVisual);
+        }
+
+        public class DreadEffect : AccessoryEffect
+        {
+            public override Header ToggleHeader => Header.GetHeader<HelheimForceHeader>();
+            public override int ToggleItemType => ModContent.ItemType<DreadEnchant>();
         }
 
         public override void AddRecipes()

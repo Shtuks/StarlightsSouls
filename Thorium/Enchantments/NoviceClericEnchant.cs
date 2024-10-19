@@ -5,6 +5,9 @@ using Microsoft.Xna.Framework;
 using ThoriumMod.Items.HealerItems;
 using ssm.Core;
 using FargowiltasSouls.Content.Items.Accessories.Enchantments;
+using FargowiltasSouls.Core.AccessoryEffectSystem;
+using ssm.Content.SoulToggles;
+using static ssm.Thorium.Enchantments.SacredEnchant;
 
 namespace ssm.Thorium.Enchantments
 {
@@ -28,10 +31,19 @@ namespace ssm.Thorium.Enchantments
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            //toggle
+            if (player.AddEffect<NoviceClericEffect>(Item))
+            {
+                //toggle
                 ModContent.Find<ModItem>(this.thorium.Name, "NoviceClericCowl").UpdateArmorSet(player);
+            }
 
             ModContent.Find<ModItem>(this.thorium.Name, "NursePurse").UpdateAccessory(player, hideVisual);
+        }
+
+        public class NoviceClericEffect : AccessoryEffect
+        {
+            public override Header ToggleHeader => Header.GetHeader<AlfheimForceHeader>();
+            public override int ToggleItemType => ModContent.ItemType<NoviceClericEnchant>();
         }
 
         public override void AddRecipes()

@@ -9,6 +9,7 @@ using ThoriumMod.Items.Painting;
 using ssm.Core;
 using FargowiltasSouls.Content.Items.Accessories.Enchantments;
 using ThoriumMod.Items.BossThePrimordials.Aqua;
+using ThoriumMod.Items.Coral;
 
 namespace ssm.Thorium.Enchantments
 {
@@ -32,7 +33,7 @@ namespace ssm.Thorium.Enchantments
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            ModContent.Find<ModItem>(this.thorium.Name, "TideTurnerHelmet").UpdateArmorSet(player);
+            ModContent.Find<ModItem>(this.thorium.Name, "CoralHelmet").UpdateArmorSet(player);
 
             ModContent.Find<ModItem>(this.thorium.Name, "SeaBreezePendant").UpdateAccessory(player, hideVisual);
             ModContent.Find<ModItem>(this.thorium.Name, "BubbleMagnet").UpdateAccessory(player, hideVisual);
@@ -42,9 +43,9 @@ namespace ssm.Thorium.Enchantments
         {
             Recipe recipe = this.CreateRecipe();
 
-            recipe.AddIngredient(ModContent.ItemType<TideHunterChestpiece>());
-            recipe.AddIngredient(ModContent.ItemType<TideTurnerHelmet>());
-            recipe.AddIngredient(ModContent.ItemType<TideTurnerGreaves>());
+            recipe.AddIngredient(ModContent.ItemType<CoralHelmet>());
+            recipe.AddIngredient(ModContent.ItemType<CoralChestGuard>());
+            recipe.AddIngredient(ModContent.ItemType<CoralGreaves>());
             recipe.AddIngredient(ModContent.ItemType<SeaBreezePendant>());
             recipe.AddIngredient(ModContent.ItemType<BubbleMagnet>());
             recipe.AddIngredient(ItemID.Swordfish);

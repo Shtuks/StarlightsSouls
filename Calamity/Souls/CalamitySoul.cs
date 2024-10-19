@@ -1,4 +1,3 @@
-//using CalamityMod.Items.Accessories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +18,7 @@ using FargowiltasSouls.Core.AccessoryEffectSystem;
 using ssm.Content.SoulToggles;
 using ssm.Content.Items.Accessories;
 using ssm.Core;
+using CalamityMod.Items.Accessories;
 
 
 namespace ssm.Calamity.Souls
@@ -41,33 +41,23 @@ namespace ssm.Calamity.Souls
         {
             ModContent.Find<ModItem>(this.FargoCross.Name, "ExplorationForce").UpdateAccessory(player, false);
             ModContent.Find<ModItem>(this.FargoCross.Name, "BrandoftheBrimstoneWitch").UpdateAccessory(player, false);
-            //if (player.AddEffect<ShatteredCommunityEffect>(Item))
-            //    ModContent.GetInstance<ShatteredCommunity>().UpdateAccessory(player, hideVisual);
+            if (player.AddEffect<ShatteredCommunityEffect>(Item))
+                ModContent.GetInstance<ShatteredCommunity>().UpdateAccessory(player, hideVisual);
+
             player.buffImmune[ModContent.Find<ModBuff>(this.FargoCross.Name, "CalamitousPresenceBuff").Type] = true;
         }
 
-        /*public override void AddRecipes()
+        public override void AddRecipes()
         {
           Recipe recipe = this.CreateRecipe(1);
-          recipe.AddIngredient(this.FargoCross, "ExplorationForce", 1);
-          recipe.AddIngredient(this.FargoCross, "BrandoftheBrimstoneWitch", 1);
-          recipe.AddIngredient(this.Calamity, "TheEvolution", 1);
-          recipe.AddIngredient(this.Calamity, "HideofAstrumDeus", 1);
-          recipe.AddIngredient(this.Calamity, "BlazingCore", 1);
-          recipe.AddIngredient(this.Calamity, "PhantomicArtifact", 1);
-          recipe.AddIngredient(this.Calamity, "BloodflareCore", 1);
-          recipe.AddIngredient(this.Calamity, "EldritchSoulArtifact", 1);
-          recipe.AddIngredient(this.Calamity, "AuricSoulArtifact", 1);
-          recipe.AddIngredient(this.Calamity, "TheCommunity", 1);
-          recipe.AddIngredient(this.Calamity, "ShatteredCommunity", 1);
-          recipe.AddIngredient(this.Calamity, "DimensionalSoulArtifact", 1);
-          recipe.AddIngredient(this.Calamity, "TheAbsorber", 1);
-          recipe.AddIngredient(this.Calamity, "Affliction", 1);
-          recipe.AddIngredient(this.Calamity, "DarkSunRing", 1);
-          recipe.AddIngredient(this.FargoSoul, "AbomEnergy", 10);
-          recipe.AddTile(ModContent.Find<ModTile>("Fargowiltas", "CrucibleCosmosSheet"));
-          recipe.Register();
-        }*/
+            recipe.AddIngredient<ShatteredCommunity>();
+
+            recipe.AddIngredient(this.FargoCross, "ExplorationForce", 1);
+            recipe.AddIngredient(this.FargoCross, "BrandoftheBrimstoneWitch", 1);
+            recipe.AddIngredient(this.FargoSoul, "AbomEnergy", 10);
+            recipe.AddTile(ModContent.Find<ModTile>("Fargowiltas", "CrucibleCosmosSheet"));
+            recipe.Register();
+        }
 
         [JITWhenModsEnabled(ModCompatibility.Calamity.Name)]
         [ExtendsFromMod(ModCompatibility.Calamity.Name)]
@@ -75,12 +65,11 @@ namespace ssm.Calamity.Souls
         {
             public override Header ToggleHeader => Header.GetHeader<CalamitySoulHeader>();
         }
-        //[JITWhenModsEnabled(ModCompatibility.Calamity.Name)]
-        //[ExtendsFromMod(ModCompatibility.Calamity.Name)]
-        //public class ShatteredCommunityEffect : CalamitySoulEffect
-        //{
-        //    public override int ToggleItemType => ModContent.ItemType<ShatteredCommunity>();
-        //    public override bool IgnoresMutantPresence => true;
-        //}
+
+        public class ShatteredCommunityEffect : CalamitySoulEffect
+        {
+            public override int ToggleItemType => ModContent.ItemType<ShatteredCommunity>();
+            public override bool IgnoresMutantPresence => true;
+        }
     }
 }

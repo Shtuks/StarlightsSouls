@@ -63,7 +63,7 @@ namespace ssm.SoA.Enchantments
             recipe.AddIngredient<VenomiteStaff>();
             recipe.AddIngredient<DeathsGarden>();
             recipe.AddIngredient<GospelOfDismay>();
-            recipe.AddTile(412);
+            recipe.AddTile(26);
             recipe.Register();
         }
     }

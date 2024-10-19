@@ -4,12 +4,13 @@ using Terraria.ModLoader;
 using ThoriumMod;
 using Terraria.Localization;
 using ssm.Core;
+using FargowiltasSouls.Content.Items.Accessories.Forces;
 
 namespace ssm.Thorium.Forces
 {
     [ExtendsFromMod(ModCompatibility.Thorium.Name)]
     [JITWhenModsEnabled(ModCompatibility.Thorium.Name)]
-    public class NiflheimForce : ModItem
+    public class NiflheimForce : BaseForce
     {
         public override void SetDefaults()
         {

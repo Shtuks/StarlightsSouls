@@ -60,7 +60,7 @@ namespace ssm.SoA.Enchantments
             recipe.AddIngredient<OrbFlayer>();
             recipe.AddIngredient<HornetNeedle>();
             recipe.AddIngredient<GoldDoorHandle>();
-            recipe.AddTile(412);
+            recipe.AddTile(125);
             recipe.Register();
         }
     }

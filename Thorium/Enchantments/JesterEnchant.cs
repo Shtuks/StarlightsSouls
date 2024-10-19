@@ -43,11 +43,11 @@ namespace ssm.Thorium.Enchantments
 
             Recipe recipe = this.CreateRecipe();
 
-            //recipe.AddRecipeGroup("ssm:AnyJesterMask");
-            //recipe.AddRecipeGroup("ssm:AnyJesterShirt");
-            //recipe.AddRecipeGroup("ssm:AnyJesterLeggings");
-            //recipe.AddRecipeGroup("ssm:AnyLetter");
-            //recipe.AddRecipeGroup("ssm:AnyTambourine");
+            recipe.AddRecipeGroup("ssm:AnyJesterMask");
+            recipe.AddRecipeGroup("ssm:AnyJesterShirt");
+            recipe.AddRecipeGroup("ssm:AnyJesterLeggings");
+            recipe.AddRecipeGroup("ssm:AnyLetter");
+            recipe.AddRecipeGroup("ssm:AnyTambourine");
             recipe.AddIngredient(ModContent.ItemType<SkywareLute>());
 
             recipe.AddTile(TileID.DemonAltar);

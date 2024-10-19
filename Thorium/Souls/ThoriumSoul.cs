@@ -6,6 +6,7 @@ using Terraria.Localization;
 using ssm.Core;
 using FargowiltasSouls.Content.Items.Accessories.Souls;
 using Fargowiltas.Items.Tiles;
+using FargowiltasSouls.Content.Items.Materials;
 
 namespace ssm.Thorium.Souls
 {
@@ -56,6 +57,7 @@ namespace ssm.Thorium.Souls
         {
             Recipe recipe = this.CreateRecipe();
 
+            recipe.AddIngredient<AbomEnergy>(10);
             recipe.AddIngredient(null, "MuspelheimForce");
             recipe.AddIngredient(null, "JotunheimForce");
             recipe.AddIngredient(null, "AlfheimForce");

@@ -11,6 +11,14 @@ namespace ssm.Reworks
 
         public override void UpdateAccessory(Item Item, Player player, bool hideVisual)
         {
+            if (Item.type == ModContent.ItemType<UniverseSoul>() || Item.type == ModContent.ItemType<EternitySoul>())
+            {
+                if (ModLoader.TryGetMod("ThoriumMod", out Mod tor))
+                {
+                    ModContent.Find<ModItem>(((ModType)this).Mod.Name, "GuardianAngelsSoul").UpdateAccessory(player, false);
+                    ModContent.Find<ModItem>(((ModType)this).Mod.Name, "BardSoul").UpdateAccessory(player, false);
+                }
+            }
             if (Item.type == ModContent.ItemType<EternitySoul>())
             {
                 if (ModLoader.TryGetMod("Redemption", out Mod Redemption))
@@ -49,7 +57,7 @@ namespace ssm.Reworks
                 //}
             }
 
-            if (Item.type == ModContent.ItemType<CosmoForce>())
+            if (Item.type == ModContent.ItemType<CosmoForce>() || Item.type == ModContent.ItemType<EternitySoul>())
             {
                 ModContent.Find<ModItem>(((ModType)this).Mod.Name, "CelestialEnchant").UpdateAccessory(player, false);
             }

@@ -9,6 +9,7 @@ using ssm.SoA.Enchantments;
 using ssm.SoA.Forces;
 using ssm.Systems;
 using ssm.Core;
+using FargowiltasSouls.Content.Items.Materials;
 
 namespace ssm.SoA.Souls
 {
@@ -43,6 +44,7 @@ namespace ssm.SoA.Souls
             recipe.AddIngredient<GenerationsForce>();
             recipe.AddIngredient<SoranForce>();
             recipe.AddIngredient<SyranForce>();
+            recipe.AddIngredient<AbomEnergy>(10);
             recipe.AddTile<CrucibleCosmosSheet>();
             recipe.Register();
         }

@@ -12,6 +12,9 @@ using ssm.Core;
 using ThoriumMod.Items.Donate;
 using ssm.Thorium;
 using FargowiltasSouls.Content.Items.Accessories.Enchantments;
+using FargowiltasSouls.Core.AccessoryEffectSystem;
+using ssm.Content.SoulToggles;
+using static ssm.SoA.Enchantments.BlazingBruteEnchant;
 
 namespace ssm.Thorium.Enchantments
 {
@@ -41,7 +44,9 @@ namespace ssm.Thorium.Enchantments
             //mini crits and daggers
             modPlayer.TideTurnerEnchant = true;
 
-            //toggle
+            if (player.AddEffect<TideTurnerEffect>(Item))
+            {
+                //toggle
                 //floating globs and defense
                 thoriumPlayer.tideHelmet = true;
                 if (thoriumPlayer.tideOrb < 10)
@@ -68,12 +73,19 @@ namespace ssm.Thorium.Enchantments
                         timer = 0;
                     }
                 }
+            }
 
             //set bonus damage to healing hot key
             thoriumPlayer.setTideTurner = true;
 
 
             ModContent.Find<ModItem>(this.thorium.Name, "PlagueLordFlask").UpdateAccessory(player, hideVisual);
+        }
+
+        public class TideTurnerEffect : AccessoryEffect
+        {
+            public override Header ToggleHeader => Header.GetHeader<AsgardForceHeader>();
+            public override int ToggleItemType => ModContent.ItemType<TideTurnerEnchant>();
         }
 
         public override void AddRecipes()

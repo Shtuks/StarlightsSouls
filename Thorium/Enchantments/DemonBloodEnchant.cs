@@ -40,7 +40,7 @@ namespace ssm.Thorium.Enchantments
             modPlayer.DemonBloodEnchant = true;
 
             ModContent.Find<ModItem>("ssm", "FleshEnchant").UpdateAccessory(player, true);
-            ModContent.Find<ModItem>(this.thorium.Name, "VileCore").UpdateAccessory(player, true);
+            ModContent.Find<ModItem>(this.thorium.Name, "VileFlailCore").UpdateAccessory(player, true);
         }
 
         public override void AddRecipes()
@@ -52,6 +52,7 @@ namespace ssm.Thorium.Enchantments
             recipe.AddIngredient(ModContent.ItemType<DemonBloodGreaves>());
             recipe.AddIngredient(ModContent.ItemType<FleshEnchant>());
             recipe.AddIngredient(ModContent.ItemType<VileSpitter>());
+            recipe.AddIngredient(ModContent.ItemType<VileFlailCore>());
 
             recipe.AddTile(TileID.CrystalBall);
             recipe.Register();

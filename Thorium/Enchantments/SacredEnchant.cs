@@ -7,6 +7,9 @@ using ThoriumMod.Items.HealerItems;
 using ssm.Core;
 using ssm.Thorium;
 using FargowiltasSouls.Content.Items.Accessories.Enchantments;
+using FargowiltasSouls.Core.AccessoryEffectSystem;
+using ssm.Content.SoulToggles;
+using static ssm.SoA.Enchantments.BlazingBruteEnchant;
 
 namespace ssm.Thorium.Enchantments
 {
@@ -32,13 +35,21 @@ namespace ssm.Thorium.Enchantments
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
             ShtunThoriumPlayer modPlayer = player.GetModPlayer<ShtunThoriumPlayer>();
-            //sacred effect
             modPlayer.SacredEnchant = true;
 
             ModContent.Find<ModItem>("ssm", "NoviceClericEnchant").UpdateAccessory(player, true);
 
-            //toggle
+            if (player.AddEffect<SacredEffect>(Item))
+            {
+                //toggle
                 ModContent.Find<ModItem>(this.thorium.Name, "KarmicHolder").UpdateAccessory(player, true);
+            }
+        }
+
+        public class SacredEffect : AccessoryEffect
+        {
+            public override Header ToggleHeader => Header.GetHeader<AlfheimForceHeader>();
+            public override int ToggleItemType => ModContent.ItemType<SacredEnchant>();
         }
 
         public override void AddRecipes()

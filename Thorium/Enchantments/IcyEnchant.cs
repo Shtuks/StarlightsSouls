@@ -8,6 +8,8 @@ using ThoriumMod.Items.Icy;
 using FargowiltasSouls.Content.Items.Accessories.Enchantments;
 using ThoriumMod.Items.HealerItems;
 using ThoriumMod.Items.Donate;
+using FargowiltasSouls.Core.AccessoryEffectSystem;
+using ssm.Content.SoulToggles;
 
 namespace ssm.Thorium.Enchantments
 {
@@ -31,8 +33,15 @@ namespace ssm.Thorium.Enchantments
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            //toggle
-                //ModContent.Find<ModItem>(this.thorium.Name, "IcyBandana").UpdateArmorSet(player);
+
+            ModContent.Find<ModItem>(this.thorium.Name, "BlizzardPouch").UpdateAccessory(player, false);
+            ModContent.Find<ModItem>(this.thorium.Name, "IcyHeadgear").UpdateArmorSet(player);
+        }
+
+        public class IcyEffect : AccessoryEffect
+        {
+            public override Header ToggleHeader => Header.GetHeader<JotunheimForceHeader>();
+            public override int ToggleItemType => ModContent.ItemType<IcyEnchant>();
         }
 
         public override void AddRecipes()
@@ -41,7 +50,7 @@ namespace ssm.Thorium.Enchantments
 
             Recipe recipe = this.CreateRecipe();
 
-            recipe.AddIngredient(ModContent.ItemType<IcyMail>());
+            recipe.AddIngredient(ModContent.ItemType<IcyHeadgear>());
             recipe.AddIngredient(ModContent.ItemType<IcyMail>());
             recipe.AddIngredient(ModContent.ItemType<IcyGreaves>());
             recipe.AddIngredient(ModContent.ItemType<IceShaver>());

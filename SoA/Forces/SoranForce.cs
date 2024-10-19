@@ -41,6 +41,7 @@ namespace ssm.SoA.Forces
         {
             Recipe recipe = this.CreateRecipe();
             recipe.AddIngredient<BlazingBruteEnchant>();
+            recipe.AddIngredient<NebulousApprenticeEnchant>();
             recipe.AddIngredient<CosmicCommanderEnchant>();
             recipe.AddIngredient<StellarPriestEnchant>();
             recipe.AddIngredient<QuasarEnchant>();

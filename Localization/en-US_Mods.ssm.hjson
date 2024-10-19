@@ -24,8 +24,8 @@ Items: {
 		DisplayName: Soul of Shtundex
 		Tooltip:
 			'''
-			Effects of [i:FargowiltasSouls/EternitySoul], [i:ssm/CalamitySoul], [i:ssm/EternityForce], [i:ssm/DemonshadeHelmetCat], [i:ssm/DemonshadeBreastplateCat], [i:ssm/DemonshadeLegginsCat]
-			Your attacks inflict Abominable Fang, Mutant Fang, God Eater
+			Effects of [i:FargowiltasSouls/EternitySoul], [i:ssm/EternityForce]
+			Your attacks inflict most of debuffs
 			Grants immunity to all debuffs except "Chtux'lag'or Inferno" and "Shtuxibus Curse"
 			'God or whatever, all things acknowledge your claim to omnipotence.'
 			'''
@@ -185,29 +185,17 @@ Items: {
 		DisplayName: Calamity Soul
 		Tooltip:
 			'''
-			[i:CalamityMod/TheEvolution] You reflect projectiles when they hit you, reflected projectiles deal no damage to you, projectiles that deal less than 5% of your max life in damage will not be reflected
-			Reflect has a cooldown that ranges between 15 and 90 seconds depending on the reflected projectile's damage, this cooldown is shared with all other dodges and reflects
-			After reflecting, grants +1 life regen and accelerated life regen for 5 seconds, if the same enemy projectile type hits you again you will resist its damage by 15%
-			[i:CalamityMod/HideofAstrumDeus] Taking damage / inflicting a true melee strike, drops an immense amount of astral stars from the sky, taking damage boosts true melee damage by 30%, boost duration scales with the amount of damage you took, up to 10 seconds
-			immunity to the astral infection, cursed inferno, on fire, and frostburn, enemies take damage when they hit you and inflicted with the astral infection
-			[i:CalamityMod/BlazingCore] Pressing activate accessory parry key will activate a parry, encasing you in profaned crystal, being hit shortly after encasement will shatter the crystal
-			Upon shattering, waves of holy stars spiral outwards and the damage you would have taken is reduced to 1, after shattering, this damage reduction effect goes on cooldown
-			If another encasement is shattered whilst on cooldown, healing stars will be interspersed throughout the waves of stars, the damage of a hit is not reduced whilst on cooldown, provides a moderate amount of light in the Abyss
-			[i:CalamityMod/PhantomicArtifact] Whenever your minions hit an enemy you will gain a random phantomic buff, does not stack with downgrades, phantomic Empowerment increases summon damage by 10% and makes minion hits spawn phantomic knives
-			Phantomic Shield increases defense by 10 and damage reduction by 5% and spawns a phantomic bulwark which absorbs 20% of the next projectile's damage that touches it
-			Phantomic Regen grants +2 life regen and spawns a phantomic heart which grants an additional 2 life regen when touched, [I:ssm/CalamitySoul] grants immunity to Calamitous Presence
-			[i:CalamityMod/BloodflareCore] Taking defense damage heals you over time, you gain 1 health for every 1 defense damage recovered, taking damage always deals at least half of your total defense in defense damage
-			[i:CalamityMod/EldritchSoulArtifact] Boosts melee speed by 10%, ranged velocity by 25%, rogue stealth regen by 15%, max minions by 1, reduces mana cost by 25%, grants immunity to whispering death
-			[i:CalamityMod/AuricSoulArtifact] For each Fiery Draconid you have summoned, you gain 1 minion slot, effects of [i:CalamityMod/TheCommunity] The Community, [i:CalamityMod/ShatteredCommunity] Shattered Community, [i:CalamityMod/DimensionalSoulArtifact] multiplies all damage by 1.2x, but at the cost of increasing damage taken by 15%
-			[i:CalamityMod/TheAbsorber] 12% increased movement and jump speed, grants immunity to knockback, enemies take immense damage when they touch you and are afflicted with a damaging sickness debuff that reduces damage reduction significantly
-			Using a healing potion will spawn a cleansing aura, aura removes all debuffs one time, aura grants +3 life regen, +8% damage, and +5% damage reduction for all players inside for 10 seconds, 5% of the damage from enemy attacks is absorbed and converted into healing
-			[i:CalamityMod/Affliction] Grants you and all other players on your team +0.5 life regen, +10% max life, 7% damage reduction, 13 defense and +10% damage
-			[i:CalamityMod/DarkSunRing] 12% increase to damage, +0.5 life regen and +2 max minions, increases minion knockback, during the day, grants +2 life regen, during the night, grants +20 defense, during an eclipse, grants +1 life regen and +10 defense
-			[i:FargowiltasCrossmod/BrandoftheBrimstoneWitch] Effects of [i:CalamityMod/HeartoftheElements] Heart of the Elements, [i:CalamityMod/OccultSkullCrown] Occult Skull Crown, [i:CalamityMod/Radiance] Radiance, [i:CalamityMod/TheSponge] The Sponge, [i:CalamityMod/ChaliceOfTheBloodGod] Chalice of the Blood God, [i:CalamityMod/NebulousCore] Nebulous Core, [i:CalamityMod/YharimsGift] Yharim's Gift, [i:CalamityMod/DraedonsHeart] Draedon's heart and [i:CalamityMod/Calamity] Calamity
-			[i:FargowiltasCrossmod/MarniteEnchant] 25% increased placement speed and +10 placement range, lasers strike nearby enemies when building and mining, effects of [i:CalamityMod/MarniteRepulsionShield] Marnite Repulsion Shield, [i:FargowiltasCrossmod/WulfrumEnchant] wulfrum drone tells you enemy debuff weaknesses and makes enemies take extra debuff damage
-			[i:FargowiltasCrossmod/DesertProwlerEnchant] Replaces jumping boot hovering with a charged sand jump that boosts you horizontally, [i:FargowiltasCrossmod/AerospecEnchant] jumping and using double jumps increase critical strike chance and summon damage
-			[i:FargowiltasCrossmod/SulphurEnchant] Grants an extra jump that spawns a bubble, shooting the bubble releases toxic gas, [i:FargowiltasCrossmod/VictideEnchant] gives you urchin spikes, which after attacking for a short time and releasing attack, launch outward
-			'The ruler of the jungle'
+			☭☭☭☭☭☭☭☭☭☭☭☭☭☭
+
+			Do you have problems passing any bosses?
+			Are you tired of suffering from a Mutant in masochist mode?
+			Then this soul is for you! Its capabilities give you nothing!
+			Nothing will change if you get it! 
+			Order our product right now. 
+
+			StarlightCat Industies®™
+
+			☭☭☭☭☭☭☭☭☭☭☭☭☭☭
 			'''
 	}
 
@@ -883,9 +871,12 @@ Items: {
 		Tooltip:
 			'''
 			'Asph-... Asthath-... How are you meant to pronounce this?'
-			Press [Ability (Primary)] to deploy one of 4 spells
-			Press [Ability (Primary)] and Up/Down to cycle between the spells
-			Deploying a spell will initiate a cooldown of 1 minute
+			Press [{$Keybinds.AbilityPrimary.DisplayName}] to parry incoming attacks in the direction of the cursor
+			Successfully parrying an attack will grant 1 second of invincibility and knock the player backwards
+			If an attack is parried the moment it hits the player, you receive 2 seconds of invincibility instead
+			Cooldown depends on the action (Missed parry: 5 seconds, Taking damage: 2 seconds, Successful parry: 3 seconds, Perfect parry: 2 seconds)
+			Certain special attacks and contact damage cannot be parried
+			This ability disables shadow dodge and similar effects
 			Effects of Ring of the Fallen, Memento Mori, and Arcanum of the Caster
 			'''
 	}
@@ -1192,387 +1183,935 @@ Items: {
 
 	BardEssence: {
 		DisplayName: Bard Essence
-		Tooltip: ""
+		Tooltip:
+			'''
+			18% increased symphonic damage
+			5% increased symphonic playing speed
+			5% increased symphonic critical strike chance
+			'This is only the beginning..'
+			'''
 	}
 
 	HealerEssence: {
 		DisplayName: Healer Essence
-		Tooltip: ""
+		Tooltip:
+			'''
+			18% increased radiant damage
+			5% increased healing and radiant casting speed
+			5% increased radiant critical strike chance
+			'This is only the beginning..'
+			'''
 	}
 
 	BardSoul: {
 		DisplayName: Bard Soul
-		Tooltip: ""
+		Tooltip:
+			'''
+			'Every note you produce births a new world'
+			30% increased symphonic damage
+			20% increased symphonic playing speed
+			15% increased symphonic critical strike chance
+			Increases maximum inspiration by 20
+			Percussion critical strikes will deal 10% more damage
+			Percussion critical strikes will briefly stun enemies
+			Your wind instrument attacks now attempt to quickly home in on enemies
+			If the attack already homes onto enemies, it does so far more quickly
+			String weapon projectiles bounce five additional times
+			Critical strikes caused by brass instrument attacks release a spread of energy
+			'''
 	}
 
 	GuardianAngelsSoul: {
 		DisplayName: Guardian Angels Soul
-		Tooltip: ""
+		Tooltip:
+			'''
+			'Divine Intervention'
+			30% increased radiant damage
+			20% increased healing and radiant casting speed
+			15% increased radiant critical strike chance
+			Healing spells will heal an additional 5 life
+			Points you towards the ally with the least health
+			Healing an ally will increase your movement speed and increase their life regen and defense
+			Upon drinking a healing potion, all allies will recover 25 life and 50 mana
+			Nearby allies take 10% reduced damage
+			Nearby allies that die drop a wisp of spirit energy
+			'''
 	}
 
 	AssassinEnchant: {
 		DisplayName: Assassin Enchant
-		Tooltip: ""
+		Tooltip:
+			'''
+			'Blacken the skies and cull the weak'
+			Attacks have a 10% chance to duplicate and become increased by 15%
+			Attacks have a 5% chance to instantly kill the enemy
+			Effects of Dart Pouch
+			'''
 	}
 
 	BerserkerEnchant: {
 		DisplayName: Berserker Enchant
-		Tooltip: ""
+		Tooltip:
+			'''
+			'I'd rather fight for my life than live it'
+			Attack speed is increased by 5% at every 25% segment of life
+			Fire surrounds your armour and melee weapons
+			Enemies that you set on fire or singe will take additional damage over time
+			Effects of Spring Steps, Slag Stompers, Molten Spear Tip, and Rapier Badge
+			'''
 	}
 
 	BiotechEnchant: {
 		DisplayName: Biotech Enchant
-		Tooltip: ""
+		Tooltip:
+			'''
+			'Anyways, that's how I lost my medical license'
+			A biotech probe will assist you in healing your allies
+			Heals ally life equal to your bonus healing
+			'''
 	}
 
 	BronzeEnchant: {
 		DisplayName: Bronze Enchant
-		Tooltip: ""
+		Tooltip:
+			'''
+			'You have the favor of Zeus'
+			Attacks have a 20% chance to unleash a piercing lightning strike
+			Effects of Olympic Torch, Champion's Rebuttal, and Spartan Sandals
+			'''
 	}
 
 	BulbEnchant: {
 		DisplayName: Bulb Enchant
-		Tooltip: ""
+		Tooltip:
+			'''
+			'Has a surprisingly sweet aroma'
+			Your healing spells increase the life recovery and life recovery rate of the healed target
+			Effects of Petal Shield, Kick Petal, and Fragrant Corsage
+			'''
 	}
 
 	CelestiaEnchant: {
 		DisplayName: Celestia Enchant
-		Tooltip: ""
+		Tooltip:
+			'''
+			'Harmonious energy embraces you'
+			Pressing the 'Special Ability' key will summon an incredibly powerful aura around your cursor
+			Creating this aura costs 150 mana
+			'''
 	}
 
 	ConduitEnchant: {
 		DisplayName: Conduit Enchant
-		Tooltip: ""
+		Tooltip:
+			'''
+			'Shocked out of this world'
+			Moving around generates up to 5 static rings, with each one generating life shielding
+			When fully charged, a bubble of energy will protect you from one attack 
+			When the bubble blocks an attack, an electrical discharge is released at nearby enemies
+			'''
 	}
 
 	CrierEnchant: {
 		DisplayName: Crier Enchant
-		Tooltip: ""
+		Tooltip:
+			'''
+			'Nothing to cry about'
+			Your symphonic empowerments will last an additional 3 seconds
+			Effects of Lucky Rabbit's Foot
+			'''
 	}
 
 	CryomancerEnchant: {
 		DisplayName: Cryomancer Enchant
-		Tooltip: ""
+		Tooltip:
+			'''
+			'What killed the dinosaurs? The ice age!'
+			Your damage will freeze enemies for two seconds
+			An icy aura surrounds you, which freezes nearby enemies after a short delay
+			Effects of Ice Bound Strider Hide
+			'''
 	}
 
 	CyberPunkEnchant: {
 		DisplayName: Cyber Punk Enchant
-		Tooltip: ""
+		Tooltip:
+			'''
+			'Techno rave!'
+			Pressing the 'Special Ability' key will cycle you through four states
+			Effects of Auto Tuner, Metal Music Player, and Diss Track
+			'''
 	}
 
 	DarksteelEnchant: {
 		DisplayName: Darksteel Enchant
-		Tooltip: ""
+		Tooltip:
+			'''
+			'Light yet durable'
+			10% damage reduction at Full HP
+			Nothing will stop your movement 
+			Double tap to dash
+			Grants immunity to shambler chain-balls
+			Effects of Spiked Bracer
+			'''
 	}
 
 	DemonBloodEnchant: {
 		DisplayName: Demon Blood Enchant
-		Tooltip: ""
+		Tooltip:
+			'''
+			'Infused with Corrupt Blood'
+			Dealing damage will grant you a 'Blood Charge'
+			At maximum charges, your next attack will deal 2x damage and heal you for 20% of the damage dealt
+			Consecutive attacks against enemies might drop flesh, which grants bonus life and damage
+			Effects of Vampire Gland and Vile Flail-Core
+			'''
 	}
 
 	DepthDiverEnchant: {
 		DisplayName: Depth Diver Enchant
-		Tooltip: ""
+		Tooltip:
+			'''
+			'Become a selfless protector'
+			Allows you and nearby allies to breathe underwater
+			Grants the ability to swim
+			You and nearby allies gain 10% increased damage and movement speed
+			Effects of Sea Breeze Pendant, Bubble Magnet, and Drowned Doubloon
+			'''
 	}
 
 	DragonEnchant: {
 		DisplayName: Dragon Enchant
-		Tooltip: ""
+		Tooltip:
+			'''
+			'Made from mythical scales'
+			Your attacks have a chance to unleash an explosion of Dragon's Flame
+			Effects of Dragon Talon Necklace and Disco Music Player
+			'''
 	}
 
 	DreadEnchant: {
 		DisplayName: Dread Enchant
-		Tooltip: ""
+		Tooltip:
+			'''
+			'Infused with souls of the damned'
+			Your boots vibrate at an unreal frequency, increasing movement speed significantly
+			While moving, your damage and critical strike chance are increased
+			Your attacks have a chance to unleash an explosion of Dragon's Flame
+			Effects of Crash Boots, Dragon Talon Necklace, Disco Music Player, and Cursed Flail-Core
+			'''
 	}
 
 	DreamWeaverEnchant: {
 		DisplayName: Dream Weaver Enchant
-		Tooltip: ""
+		Tooltip:
+			'''
+			'Manifest your dearest dreams through your allies, Bind the enemies of your future in temporal agony'
+			Pressing the 'Special Ability' key will spend 400 mana and place you within the Dream and bend the very fabric of reality
+			While in the Dream, healed allies will become briefly invulnerable and be cured of all debuffs
+			Enemies will be heavily slowed and take 15% more damage from all sources
+			Allies will receive greatly increased movement and attack speed
+			'''
 	}
 
 	DurasteelEnchant: {
 		DisplayName: Durasteel Enchant
-		Tooltip: ""
+		Tooltip:
+			'''
+			'Masterfully forged by the Blacksmith'
+			12% damage reduction at Full HP
+			Grants immunity to shambler chain-balls
+			Effects of Incandescent Spark and Spiked Bracers
+			'''
 	}
 
 	EbonEnchant: {
 		DisplayName: Ebon Enchant
-		Tooltip: ""
+		Tooltip:
+			'''
+			'Great for brooding'
+			Corrupts your radiant powers, causing them to take on dark forms and deal additional effects
+			Effects of Dark Heart
+			'''
 	}
 
 	FallenPaladinEnchant: {
 		DisplayName: Fallen Paladin Enchant
-		Tooltip: ""
+		Tooltip:
+			'''
+			'Silently, they walk the dungeon halls'
+			Taking damage heals nearby allies equal to 15% of the damage taken
+			If an ally is below half health, you will gain increased healing abilities
+			Effects of Prydwen and Nirvana Statuette
+			'''
 	}
 
 	FleshEnchant: {
 		DisplayName: Flesh Enchant
-		Tooltip: ""
+		Tooltip:
+			'''
+			'Symbiotically attached to your body'
+			Consecutive attacks against enemies might drop flesh, which grants bonus life and damage
+			Effects of Vampire Gland
+			'''
 	}
 
 	FlightEnchant: {
 		DisplayName: Flight Enchant
-		Tooltip: ""
+		Tooltip:
+			'''
+			'The sky is your playing field'
+			Increases flight time by 100%
+			Effects of the Faberge Egg
+			'''
 	}
 
 	FungusEnchant: {
 		DisplayName: Fungus Enchant
-		Tooltip: ""
+		Tooltip:
+			'''
+			'There's a fungus among us'
+			Damage done against mycelium infected enemies is increased by 10%
+			Dealing damage to enemies infected with mycelium briefly increases throwing speed by 10%
+			'''
 	}
 
 	GeodeEnchant: {
 		DisplayName: Geode Enchant
-		Tooltip: ""
+		Tooltip:
+			'''
+			'Made from the most luxurious of materials'
+			50% increased mining speed
+			Shows the location of enemies, traps, and treasures
+			Light is emitted from the player
+			Effects of Crystaline Charm and Crystal Spear Tip
+			'''
 	}
 
 	GraniteEnchant: {
 		DisplayName: Granite Enchant
-		Tooltip: ""
+		Tooltip:
+			'''
+			'Defensively energized'
+			Immune to intense heat and enemy knockback, but your movement speed is slowed down greatly
+			Effects of Heart of Stone
+			'''
 	}
 
 	IcyEnchant: {
 		DisplayName: Icy Enchant
-		Tooltip: ""
+		Tooltip:
+			'''
+			'Cold to the touch'
+			An icy aura surrounds you, freezing enemies that stay too long within it
+			'''
 	}
 
 	IllumiteEnchant: {
 		DisplayName: Illumite Enchant
-		Tooltip: ""
+		Tooltip:
+			'''
+			'As if you weren't pink enough'
+			Every third attack will unleash an illumite missile
+			Effects of The Nuclear Option and Jazz Music Player
+			'''
 	}
 
 	IridescentEnchant: {
 		DisplayName: Iridescent Enchant
-		Tooltip: ""
+		Tooltip:
+			'''
+			'All the colors of the rainbow'
+			Your radiant damage has a 15% chance to release a blinding flash of light
+			The flash heals nearby allies equal to your bonus healing and confuses enemies
+			Effects of Equalizer and Life Quartz Shield
+			'''
 	}
 
 	JesterEnchant: {
 		DisplayName: Jester Enchant
-		Tooltip: ""
+		Tooltip:
+			'''
+			'Clowning around'
+			Critical strikes ring a bell over your head, slowing all nearby enemies briefly
+			Effects of Fan Letter
+			'''
 	}
 
 	LichEnchant: {
 		DisplayName: Lich Enchant
-		Tooltip: ""
+		Tooltip:
+			'''
+			'Embrace death...'
+			Killing an enemy will release a soul fragment
+			Touching a soul fragment greatly increases your movement and throwing speed briefly
+			Your plague gas will linger in the air twice as long and your plague reactions will deal 20% more damage
+			Effects of Phylactery
+			'''
 	}
 
 	LifeBinderEnchant: {
 		DisplayName: Life Binder Enchant
-		Tooltip: ""
+		Tooltip:
+			'''
+			'Vegetation grows from your fingertips'
+			Healing spells will shortly increase the healed player's maximum life by 50
+			Your radiant damage has a 15% chance to release a blinding flash of light
+			The flash heals nearby allies equal to your bonus healing and confuses enemies
+			Effects of Aloe Leaf and Equalizer
+			'''
 	}
 
 	LifeBloomEnchant: {
 		DisplayName: Life Bloom Enchant
-		Tooltip: ""
+		Tooltip:
+			'''
+			'You are one with nature'
+			Attacks have a 33% chance to heal you lightly
+			Summons a living wood sapling and its attacks will home in on enemies
+			Your healing spells increase the life recovery and life recovery rate of the healed target
+			Effects of Petal Shield, Kick Petal, Fragrant Corsage, and Heart of the Jungle
+			'''
 	}
 
 	LivingWoodEnchant: {
 		DisplayName: Living Wood Enchant
-		Tooltip: ""
+		Tooltip:
+			'''
+			'Become one with nature'
+			Summons a living wood sapling
+			+1 maximum minions
+			'''
 	}
 
 	LodestoneEnchant: {
 		DisplayName: Lodestone Enchant
-		Tooltip: ""
+		Tooltip:
+			'''
+			'Sturdy'
+			Damage reduction is increased by 10% at every 25% segment of life
+			Maximum damage reduction is reached at 30% while below 50% life
+			Effects of Astro-Beetle Husk, Obsidian Scale, and Sandweaver's Tiara
+			'''
 	}
 
 	MaestroEnchant: {
 		DisplayName: Maestro Enchant
-		Tooltip: ""
+		Tooltip:
+			'''
+			'I'll be Bach'
+			Pressing the Special Ability key will summon a chorus of music playing ghosts
+			While in combat, a rainbow of damaging symphonic symbols will follow your movement and stun enemies
+			Effects of Full Score, Metronome, and Conductor's Baton
+			'''
 	}
 
 	MagmaEnchant: {
 		DisplayName: Magma Enchant
-		Tooltip: ""
+		Tooltip:
+			'''
+			'Bursting with heat'
+			Inflicts fire damage on melee attack
+			Increases effectiveness of On Fire! and Singed debuffs
+			Effects of Spring Steps, Slag Stompers, and Molten Spear Tip
+			'''
 	}
 
 	MarchingBandEnchant: {
 		DisplayName: Marching Band Enchant
-		Tooltip: ""
+		Tooltip:
+			'''
+			'Step to the beat'
+			While in combat, a rainbow of damaging symphonic symbols will follow your movement and stun enemies
+			Effects of Full Score
+			'''
 	}
 
 	NagaSkinEnchant: {
 		DisplayName: Naga Skin Enchant
-		Tooltip: ""
+		Tooltip:
+			'''
+			'Extreme danger noodle'
+			20% increased attack speed while in water
+			Allows quicker movement in water
+			Effects of Ocean's Retaliation
+			'''
 	}
 
 	NobleEnchant: {
 		DisplayName: Noble Enchant
-		Tooltip: ""
+		Tooltip:
+			'''
+			'Rich with culture'
+			Inspiration notes that drop are twice as potent and increase your symphonic damage briefly
+			Effects of Ring of Unity, Brass Cap, and Waxy Rosin
+			'''
 	}
 
 	NoviceClericEnchant: {
 		DisplayName: Novice Cleric Enchant
-		Tooltip: ""
+		Tooltip:
+			'''
+			'Cleansed of all evil'
+			Every 5 seconds you generate up to 3 holy crosses
+			When casting healing spells, a cross is used instead of mana
+			Effects of Nurse Purse
+			'''
 	}
 
 	OceanEnchant: {
 		DisplayName: Ocean Enchant
-		Tooltip: ""
+		Tooltip:
+			'''
+			'For swimming with the fishes'
+			Radiant damage builds up to 20 life shield and life shielding no longer decays on you. Healing an ally transfers the life shield to them
+			Effects of Sea Breeze Pendant and Bubble Magnet
+			'''
 	}
 
 	OrnateEnchant: {
 		DisplayName: Ornate Enchant
-		Tooltip: ""
+		Tooltip:
+			'''
+			'Beautifully crafted'
+			Symphonic critical strikes cause the attack's empowerment to ascend to a fourth level of intensity
+			Effects of Concert Tickets
+			'''
 	}
 
 	PlagueDoctorEnchant: {
 		DisplayName: Plague Doctor Enchant
-		Tooltip: ""
+		Tooltip:
+			'''
+			'What nasty concoction could you be brewing?'
+			Your plague gas will linger in the air twice as long and your plague reactions will deal 20% more damage
+			'''
 	}
 
 	PyromancerEnchant: {
 		DisplayName: Pyromancer Enchant
-		Tooltip: ""
+		Tooltip:
+			'''
+			'Your magma fortified army's molten gaze shall be feared'
+			Attacks will heavily burn and damage all adjacent enemies
+			Pressing the 'Special Ability' key will unleash an echo of Slag Fury's power
+			Effects of Plasma Generator
+			'''
 	}
 
 	RhapsodistEnchant: {
 		DisplayName: Rhapsodist Enchant
-		Tooltip: ""
+		Tooltip:
+			'''
+			'Allow your song to inspire an army, Prove to all that your talent is second to none'
+			Inspiration notes that drop will become more potent
+			Additionally, they give a random level 1 empowerment to all nearby allies
+			Pressing the 'Special Ability' key will grant you infinite inspiration and increased symphonic damage and playing speed
+			It also overloads all nearby allies with every empowerment III for 15 seconds
+			These effects needs to recharge for 1 minute
+			'''
 	}
 
 	SacredEnchant: {
 		DisplayName: Sacred Enchant
-		Tooltip: ""
+		Tooltip:
+			'''
+			'It glimmers with comforting power'
+			Healing potions heal 50% more life
+			Every 5 seconds you generate up to 3 holy crosses
+			When casting healing spells, a cross is used instead of mana
+			Effects of Karmic Holder
+			'''
 	}
 
 	SandstoneEnchant: {
 		DisplayName: Sandstone Enchant
-		Tooltip: ""
+		Tooltip:
+			'''
+			'Enveloped by desert winds'
+			Desert winds have granted you a sandy double jump
+			'''
 	}
 
 	ShadeMasterEnchant: {
 		DisplayName: Shade Master Enchant
-		Tooltip: ""
+		Tooltip:
+			'''
+			'Live in the shadows, and strike with precision'
+			50% of the damage you take is staggered over the next 10 seconds
+			Effects of Shinobi Sigil
+			'''
 	}
 
 	ShootingStarEnchant: {
 		DisplayName: Shooting Star Enchant
-		Tooltip: ""
+		Tooltip:
+			'''
+			'Echoes of the cosmic ballad dance in your head'
+			Each unique empowerment you have grants you:
+			5% increased symphonic damage,
+			2% increased movement speed,
+			2% increased inspiration regeneration,
+			1% increased playing speed
+			'''
 	}
 
 	SilkEnchant: {
 		DisplayName: Silk Enchant
-		Tooltip: ""
+		Tooltip:
+			'''
+			'You feel silky-smooth'
+			+12% magic damage while above 90% maximum mana
+			Effects of Artificer's Focus, Artificer's Shield, and Artificer's Rocketeers
+			'''
 	}
 
 	SpiritTrapperEnchant: {
 		DisplayName: Spirit Trapper Enchant
-		Tooltip: ""
+		Tooltip:
+			'''
+			'So many lost souls...'
+			Killing enemies or continually damaging bosses generates soul wisps
+			After generating 5 wisps, they are instantly consumed to heal you for 10 life
+			Effects of Inner Flame and Scrying Glass
+			'''
 	}
 
 	SteelEnchant: {
 		DisplayName: Steel Enchant
-		Tooltip: ""
+		Tooltip:
+			'''
+			'Expertly forged by the Blacksmith'
+			10% damage reduction at Full HP
+			Effects of Spiked Bracers
+			'''
 	}
 
 	TemplarEnchant: {
 		DisplayName: Templar Enchant
-		Tooltip: ""
+		Tooltip:
+			'''
+			'For the church!'
+			If an ally is below half health, you will gain increased healing abilities
+			'''
 	}
 
 	TerrariumEnchant: {
 		DisplayName: Terrarium Enchant
-		Tooltip: ""
+		Tooltip:
+			'''
+			'All will fall before your might...'
+			The energy of Terraria seeks to protect you
+			Shortlived Divermen will occasionally spawn when hitting enemies
+			Critical strikes ring a bell over your head, slowing all nearby enemies briefly
+			Effects of Crietz and Band of Replenishmen
+			Effects of Terrarium Surround Sound and Fan Letter
+			'''
 	}
 
 	ThoriumEnchant: {
 		DisplayName: Thorium Enchant
-		Tooltip: ""
+		Tooltip:
+			'''
+			'It pulses with energy'
+			Shortlived Divermen will occasionally spawn when hitting enemies
+			Critical strikes ring a bell over your head, slowing all nearby enemies briefly
+			Effects of Crietz, Band of Replenishment, and Fan Letter
+			'''
 	}
 
 	TideHunterEnchant: {
 		DisplayName: Tide Hunter Enchant
-		Tooltip: ""
+		Tooltip:
+			'''
+			'Not just for hunting fish'
+			Critical strikes release a splash of foam, slowing nearby enemies
+			After four consecutive non-critical strikes, your next attack will mini-crit for 150% damage
+			Effects of Goblin War Shield and Agnor's Bowl
+			'''
 	}
 
 	TideTurnerEnchant: {
 		DisplayName: Tide Turner Enchant
-		Tooltip: ""
+		Tooltip:
+			'''
+			'Become as unstoppable as the tides, Unleash aquatic wrath upon your foes'
+			Pressing the 'Special Ability' key will envelop you within an impervious bubble
+			While the bubble is active, all damage taken is converted into healing
+			Produces a floating globule every half second
+			Every globule increases defense and makes your next attack a mini-crit
+			Attacks have a 20% chance to unleash aquatic homing daggers all around you
+			Effects of Plague Lord's Flask
+			'''
 	}
 
 	TitanEnchant: {
 		DisplayName: Titan Enchant
-		Tooltip: ""
+		Tooltip:
+			'''
+			'Infused with primordial energy'
+			15% increased damage
+			Effects of Mask of the Crystal Eye, Abyssal Shell, and Rock Music Player
+			'''
 	}
 
 	ValadiumEnchant: {
 		DisplayName: Valadium Enchant
-		Tooltip: ""
+		Tooltip:
+			'''
+			'Which way is up?'
+			Reverse gravity by pressing UP
+			While reversed, damage is increased by 12%
+			Effects of Mirror of the Beholder and Beholder's Gaze
+			'''
 	}
 
 	WarlockEnchant: {
 		DisplayName: Warlock Enchant
-		Tooltip: ""
+		Tooltip:
+			'''
+			'Better than a wizard'
+			Critical strikes will generate up to 15 shadow wisps
+			Pressing the 'Special Ability' key will unleash every stored shadow wisp towards your cursor's position
+			Effects of Demon Tongue and Dark Effigy
+			'''
 	}
 
 	WhisperingEnchant: {
 		DisplayName: Whispering Enchant
-		Tooltip: ""
+		Tooltip:
+			'''
+			'Now R'lyeh on the old god's power'
+			You occasionally birth a tentacle of abyssal energy that attacks nearby enemies
+			You can have up to six tentacles and their damage saps 1 life & mana from the hit enemy
+			'''
 	}
 
 	WhiteDwarfEnchant: {
 		DisplayName: White Dwarf Enchant
-		Tooltip: ""
+		Tooltip:
+			'''
+			'Throw with the force of nuclear fusion'
+			Critical strikes will unleash ivory flares from the cosmos
+			Ivory flares deal 0.1% of the hit target's maximum life as damage
+			'''
 	}
 
 	WhiteKnightEnchant: {
 		DisplayName: White Knight Enchant
-		Tooltip: ""
+		Tooltip:
+			'''
+			'Protect e-girls at all costs'
+			Enemies that attack friendly NPCs are marked as Villains
+			You deal 50% bonus damage to Villains
+			Effects of Shade Band
+			'''
 	}
 
 	YewWoodEnchant: {
 		DisplayName: Yew Wood Enchant
-		Tooltip: ""
+		Tooltip:
+			'''
+			'This strange wood comes from a far away land'
+			After four consecutive non-critical strikes, your next attack will mini-crit for 150% damage
+			Effects of Goblin War Shield
+			'''
 	}
 
 	AlfheimForce: {
 		DisplayName: Alfheim Force
-		Tooltip: ""
+		Tooltip:
+			'''
+			'Elven mysteries unfold before you...'
+			All armor bonuses from Novice Cleric, Sacred, Warlock, and Biotech
+			All armor bonuses from Iridescent, Life Binder, Templar, and Fallen Paladin
+			Effects of Demon Tongue, Dark Effigy, Aloe Leaf, and Equalizer
+			Effects of Karmic Holder, Wynebgwrthucher, and Rebirth Statuette
+			'''
 	}
 
 	AsgardForce: {
 		DisplayName: Asgard Force
-		Tooltip: ""
+		Tooltip:
+			'''
+			'What's this about Ragnarok?'
+			All armor bonuses from Tide Turner, Assassin, and Pyromancer
+			All armor bonuses from Dream Weaver and Rhapsodist
+			Effects of Dart Pouch, Plague Lord's Flask and Plasma Generator
+			'''
 	}
 
 	HelheimForce: {
 		DisplayName: Helheim Force
-		Tooltip: ""
+		Tooltip:
+			'''
+			'From the halls of Hel, a vision of the end...'
+			All armor bonuses from Spirit Trapper, Dragon, Dread, Flesh, and Demon Blood
+			All armor bonuses from Magma, Berserker, White Knight, and Harbinger
+			Effects of Inner Flame, Crash Boots, and Dragon Talon Necklace
+			Effects of Vile Flail-Core, Cursed Flail-Core, and Molten Spear Tip
+			Effects of Vampire Gland, Spring Steps, and Slag Stompers
+			Effects of Shade Band
+			'''
 	}
 
 	JotunheimForce: {
 		DisplayName: Jotunheim Force
-		Tooltip: ""
+		Tooltip:
+			'''
+			'A bitter cold, the power of the Jotuns...'
+			All armor bonuses from Depth Diver, Yew Wood, and Tide Hunter
+			All armor bonuses from Naga Skin, Icy, Cryomancer, and Whispering
+			Effects of Sea Breeze Pendant and Bubble Magnet
+			Effects of Goblin War Shield, Agnor's Bowl, and Ice Bound Strider Hide
+			'''
 	}
 
 	MidgardForce: {
 		DisplayName: Midgard Force
-		Tooltip: ""
+		Tooltip:
+			'''
+			'Behold the power of Mankind...'
+			All armor bonuses from Lodestone, Valadium, Illumite, and Shade Master
+			All armor bonuses from Jester, Thorium, Geode, and Terrarium
+			Effects of Astro-Beetle Husk, Obsidian Scale, Mirror of the Beholder, and Jazz Music Player
+			Effects of Crietz, Band of Replenishment, Fan Letter, and Terrarium Surround Sound
+			Effects of Crystaline Charm and Crystal Spear Tip
+			'''
 	}
 
 	MuspelheimForce: {
 		DisplayName: Muspelheim Force
-		Tooltip: ""
+		Tooltip:
+			'''
+			'A blazing heat, the mark of Surtr...'
+			All armor bonuses from Sandstone, Danger, Flight, and Fungus
+			All armor bonuses Living Wood, Blooming, and Life Bloom
+			Effects of Faberge Egg, Kick Petal, and Petal Shield
+			Effects of Nightshade Flower, Flawless Chrysalis, and Bee Booties
+			'''
 	}
 
 	NiflheimForce: {
 		DisplayName: Niflheim Force
-		Tooltip: ""
+		Tooltip:
+			'''
+			'A world of mist, a sign of the dead...'
+			All armor bonuses from Crier, Noble, Cyber Punk, Ornate, and Maestro
+			Effects of Ring of Unity, Brass Cap, and Waxy Rosin
+			Effects of Auto Tuner, Metal Music Player, and Diss Track
+			Effects of Concert Tickets, Conductor's Baton, Full Score, and Metronome
+			'''
 	}
 
 	SvartalfheimForce: {
 		DisplayName: Svartalfheim Force
-		Tooltip: ""
+		Tooltip:
+			'''
+			'Behold the craftsmanship of the Dark Elves...'
+			All armor bonuses from Granite, Bronze, and Darksteel
+			All armor bonuses from Durasteel, Titan, and Conduit
+			Effects of Eye of the Storm, Champion's Rebuttal, Olympic Torch, and Spartan Sandals
+			Effects of Spiked Bracers and Rock Music Player
+			Effects of Ogre Sandals, Crystal Spear Tip, Mask of the Crystal Eye, and Abyssal Shell
+			'''
 	}
 
 	VanaheimForce: {
 		DisplayName: Vanaheim Force
-		Tooltip: ""
+		Tooltip:
+			'''
+			'Holds a glimpse of the future...'
+			All armor bonuses from Lich, Plague Doctor, and White Dwarf
+			All armor bonuses from Celestial and Shooting Star
+			Effects of Lich's Gaze and Ascension Statuette
+			'''
 	}
 
 	ThoriumSoul: {
 		DisplayName: Thorium Soul
+		Tooltip:
+			'''
+			'The true might of the 9 realms is yours!'
+			All armor bonuses from Sandstone, Danger, Flight, Fungus, Living Wood, Bulb, and Life Bloom
+			All armor bonuses from Depth Diver, Yew Wood, Tide Hunter, Naga-Skin, Icy, Cryomancer, and Whispering
+			All armor bonuses from Sacred, Warlock, Biotech, Life Binder and Fallen Paladin
+			All armor bonuses from Crier, Noble, Ornate, Cyber Punk, Marching Band, and Maestro
+			All armor bonuses from Granite, Bronze, Titan, Conduit, Steel, Darksteel, and Durasteel
+			All armor bonuses from Lodestone, Valadium, Illumite, Shade Master, Jester, Thorium, and Terrarium
+			All armor bonuses from Plague Doctor, Lich, White Dwarf, Celestial, and Shooting Star
+			All armor bonuses from Spirit Trapper, Malignant, Dragon, Dread, Flesh, Demon Blood, Magma, Berserker, and Harbinger
+			All armor bonuses from Tide Turner, Assassin, Pyromancer, Dream Weaver, and Rhapsodist
+			Effects of Nightshade Flower, Flawless Chrysalis, and Bee Booties
+			Effects of Goblin War Shield, Bubble Magnet, Agnor's Bowl, and Ice Bound Strider Hide
+			Effects of Demon Tongue, Dark Effigy, Aloe Leaf, Equalizer, Karmic Holder, Prydwen, and Rebirth Statuette
+			Effects of Ring of Unity, Brass Cap, Waxy Rosin, Auto Tuner, Metal Music Player, Diss Track, Concert Tickets, Conductor's Baton, Full Score, and Metronome
+			Effects of Eye of the Storm, Champion's Rebuttal, Olympic Torch, Spartan Sandals, Spiked Bracers, Rock Music Player, Ogre Sandals, and Mask of the Crystal Eye
+			Effects of the Abyssal Shell, Astro-Beetle Husk, Obsidian Scale, Mirror of the Beholder, Jazz Music Player, Crietz, Band of Replenishment, Fan Letter, and Terrarium Surround Sound
+			Effects of Lich's Gaze and Ascension Statuette
+			Effects of the Enchanted Shield, Mana-Charged Rocketeers, Inner Flame, Crash Boots, Vampire Gland, Spring Steps, Slag Stompers, and Shade Band
+			Effects of Dart Pouch
+			'''
+	}
+
+	ForgottenEnergizer: {
+		DisplayName: Forgotten Energizer
 		Tooltip: ""
+	}
+
+	ViscountEnergizer: {
+		DisplayName: Viscount Energizer
+		Tooltip: ""
+	}
+
+	OverloadChampion: {
+		DisplayName: Overload Champion
+		Tooltip: ""
+	}
+
+	OverloadGranite: {
+		DisplayName: Overload Granite
+		Tooltip: ""
+	}
+
+	OverloadJelly: {
+		DisplayName: Overload Jelly
+		Tooltip: ""
+	}
+
+	OverloadLich: {
+		DisplayName: Overload Lich
+		Tooltip: ""
+	}
+
+	OverloadRag: {
+		DisplayName: Overload Rag
+		Tooltip: ""
+	}
+
+	OverloadSaucer: {
+		DisplayName: Overload Saucer
+		Tooltip: ""
+	}
+
+	OverloadStrider: {
+		DisplayName: Overload Strider
+		Tooltip: ""
+	}
+
+	OverloadThunderbird: {
+		DisplayName: Overload Thunderbird
+		Tooltip: ""
+	}
+
+	OverloadViscount: {
+		Tooltip: ""
+		DisplayName: Overload Viscount
+	}
+
+	OverloadAbyssalion: {
+		Tooltip: ""
+		DisplayName: Overload Abyssalion
 	}
 }
 
@@ -1770,10 +2309,30 @@ NPCs: {
 		Census.SpawnCondition: Conditions unknown
 	}
 
-	DukeFishronEX.DisplayName: Duke Fishron E X
+	DukeFishronEX.DisplayName: Duke Fishron EX
+	Echdeath.DisplayName: Echdeath
 }
 
 Toggler: {
+	AsgardForceHeader: Asgard Force
+	AlfheimForceHeader: Alfheim Force
+	HelheimForceHeader: Helheim Force
+	MidgardForceHeader: Midgard Force
+	MuspelheimForceHeader: Muspelheim Force
+	NiflheimForceHeader: Niflheim Force
+	JotunheimForceHeader: Jotunheim Force
+	SvartalfheimForceHeader: Svartalfheim Force
+	VanaheimForceHeader: Vanaheim Force
+	SacredEffect: Karma Holder
+	IcyEffect: Icy Aura
+	NoviceClericEffect: Holy crosses
+	TideTurnerEffect: Tide Defence
+	DreadEffect: Increaced Inertia
+	WhisperingEffect: Eldrich Tentacles
+	LodestoneEffect: Sandweaver's Tiara
+	BulbEffect: Kick Petal
+	LifeBloomEffect: Heart of the Jungles
+	CyberPunkEffect: Fixed notes
 	GenerationsForceHeader: Generations Force
 	SoranForceHeader: Soran Force
 	BlazingBruteEffect: Blazing Shield
