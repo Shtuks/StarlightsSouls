@@ -16,14 +16,10 @@ using System.Linq;
 using ssm.Content.Projectiles.Deathrays;
 using FargowiltasSouls;
 using Terraria;
-using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
 using FargowiltasSouls.Content.Items.Materials;
 using FargowiltasSouls.Content.Items.Accessories.Masomode;
 using ssm.Content.Projectiles.Weapons;
 using ssm.Content.Projectiles;
-using ssm.Content.Projectiles.Deathrays;
 using ssm.Content.Projectiles.Minions;
 using ssm.Content.Buffs.Minions;
 using Luminance.Core.Graphics;
@@ -32,6 +28,11 @@ namespace ssm.Content.Items.Weapons
 {
     public class ShtuxibusSword : SoulsItem
     {
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return false;
+        }
+
         private readonly Mod fargosouls = ModLoader.GetMod("FargowiltasSouls");
         public override void SetStaticDefaults()
         {

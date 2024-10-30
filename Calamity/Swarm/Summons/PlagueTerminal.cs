@@ -15,6 +15,10 @@ namespace ssm.Calamity.Swarm.Summons
     [JITWhenModsEnabled(ModCompatibility.Calamity.Name)]
     public class PlagueTerminal : SwarmSummonBase
     {
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return ShtunConfig.Instance.CalSwarmItems;
+        }
         public PlagueTerminal() : base(ModContent.NPCType<PlaguebringerGoliath>(), 25)
         {
         }

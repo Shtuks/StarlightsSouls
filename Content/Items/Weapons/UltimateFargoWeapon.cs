@@ -28,6 +28,11 @@ namespace ssm.Content.Items.Weapons
 {
     public class UltimateFargoWeapon : ModItem
     {
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return ShtunConfig.Instance.ExtraContent;
+        }
+
         private readonly Mod fargosouls = ModLoader.GetMod("FargowiltasSouls");
         private int forceSwordTimer;
         public bool flip;

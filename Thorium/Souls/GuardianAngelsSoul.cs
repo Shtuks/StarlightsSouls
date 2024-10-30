@@ -22,6 +22,11 @@ namespace ssm.Thorium.Souls
     [JITWhenModsEnabled(ModCompatibility.Thorium.Name)]
     public class GuardianAngelsSoul : ModItem
     {
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return ShtunConfig.Instance.TorEnchantments;
+        }
+
         private readonly Mod thorium = ModLoader.GetMod("ThoriumMod");
 
         public override void SetDefaults()
@@ -79,10 +84,12 @@ namespace ssm.Thorium.Souls
             //medical bag
             thoriumPlayer.medicalAcc = true;
 
+
             //head mirror arrow 
             if (player.AddEffect<GuardianEffect>(Item))
             {
-                float num = 0f;
+                ModContent.Find<ModItem>(this.thorium.Name, "MedicalBag").UpdateAccessory(player, true);
+                /*float num = 0f;
                 int num2 = player.whoAmI;
                 for (int i = 0; i < 255; i++)
                 {
@@ -104,7 +111,7 @@ namespace ssm.Thorium.Souls
                         projectile.timeLeft = 2;
                         projectile.ai[1] = num2;
                     }
-                }
+                }*/
             }
         }
 

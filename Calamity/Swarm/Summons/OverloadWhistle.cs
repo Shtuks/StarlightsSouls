@@ -15,7 +15,11 @@ namespace ssm.Calamity.Swarm.Summons
     [JITWhenModsEnabled(ModCompatibility.Calamity.Name)]
     public class OverloadWhistle : SwarmSummonBase
     {
-        public OverloadWhistle() : base(ModContent.NPCType<RavagerBody>(), 25)
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return ShtunConfig.Instance.CalSwarmItems;
+        }
+        public OverloadWhistle() : base(ModContent.NPCType<RavagerBody>(), 10)
         {
         }
 

@@ -16,6 +16,10 @@ namespace ssm.Calamity.Swarm.Summons
     [JITWhenModsEnabled(ModCompatibility.Calamity.Name)]
     public class OverloadedWaifu : SwarmSummonBase
     {
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return ShtunConfig.Instance.CalSwarmItems;
+        }
         public OverloadedWaifu() : base(ModContent.NPCType<SupremeCalamitas>(), 25)
         {
         }

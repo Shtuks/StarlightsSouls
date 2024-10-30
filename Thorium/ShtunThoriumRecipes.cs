@@ -18,6 +18,10 @@ namespace ssm.Thorium
     [JITWhenModsEnabled(ModCompatibility.Thorium.Name)]
     class ShtunThoriumRecipes : ModSystem
 	{
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return ShtunConfig.Instance.TorEnchantments;
+        }
         public override void AddRecipeGroups()
         {
             //jester mask

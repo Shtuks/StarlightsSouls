@@ -15,6 +15,10 @@ namespace ssm.Calamity.Swarm.Summons
     [JITWhenModsEnabled(ModCompatibility.Calamity.Name)]
     public class YharonEggsBox : SwarmSummonBase
     {
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return ShtunConfig.Instance.CalSwarmItems;
+        }
         public YharonEggsBox() : base(ModContent.NPCType<Yharon>(), 25)
         {
         }

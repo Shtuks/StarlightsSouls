@@ -5,6 +5,7 @@ using Terraria.Localization;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using ssm.Core;
+using FargowiltasSouls.Content.Items.Materials;
 
 namespace ssm.Thorium.Swarm.Energizers
 {
@@ -12,6 +13,10 @@ namespace ssm.Thorium.Swarm.Energizers
     [JITWhenModsEnabled(ModCompatibility.Thorium.Name)]
     public class ThoriumEnergizer : ModItem
     {
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return ShtunConfig.Instance.TorSwarmItems;
+        }
 
         public override void SetDefaults()
         {
@@ -20,6 +25,22 @@ namespace ssm.Thorium.Swarm.Energizers
             Item.maxStack = 999;
             Item.rare = 1;
             Item.value = 1000000;
+        }
+
+        public override void AddRecipes()
+        {
+            CreateRecipe()
+                    .AddIngredient<BoreanEnergizer>()
+                    .AddIngredient<BuriedEnergizer>()
+                    .AddIngredient<FallenEnergizer>()
+                    .AddIngredient<ForgottenEnergizer>()
+                    .AddIngredient<GraniteEnergizer>()
+                    .AddIngredient<ThunderEnergizer>()
+                    .AddIngredient<ViscountEnergizer>()
+                    .AddIngredient<JellyfishEnergizer>()
+                    .AddIngredient<LichEnergizer>()
+                    .AddTile(ModContent.Find<ModTile>("Fargowiltas", "CrucibleCosmosSheet"))
+                    .Register();
         }
     }
 }

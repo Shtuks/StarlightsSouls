@@ -13,7 +13,6 @@ using Microsoft.Xna.Framework.Graphics;
 using Terraria.GameContent.Bestiary;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-//using CalamityMod;
 using System.Collections.Generic;
 using System.Text;
 using FargowiltasSouls.Core.Globals;
@@ -49,12 +48,54 @@ namespace ssm
             }
             return p;
         }
+
+        public static bool CircularHitboxCollision(Vector2 centerCheckPosition, float radius, Rectangle targetHitbox)
+        {
+            // If the center intersects the hitbox, return true immediately
+            Rectangle center = new Rectangle((int)centerCheckPosition.X, (int)centerCheckPosition.Y, 1, 1);
+            if (center.Intersects(targetHitbox))
+                return true;
+
+            float topLeftDistance = Vector2.Distance(centerCheckPosition, targetHitbox.TopLeft());
+            float topRightDistance = Vector2.Distance(centerCheckPosition, targetHitbox.TopRight());
+            float bottomLeftDistance = Vector2.Distance(centerCheckPosition, targetHitbox.BottomLeft());
+            float bottomRightDistance = Vector2.Distance(centerCheckPosition, targetHitbox.BottomRight());
+
+            float distanceToClosestPoint = topLeftDistance;
+            if (topRightDistance < distanceToClosestPoint)
+                distanceToClosestPoint = topRightDistance;
+            if (bottomLeftDistance < distanceToClosestPoint)
+                distanceToClosestPoint = bottomLeftDistance;
+            if (bottomRightDistance < distanceToClosestPoint)
+                distanceToClosestPoint = bottomRightDistance;
+
+            return distanceToClosestPoint <= radius;
+        }
         public static Vector2 ClosestPointInHitbox(Rectangle hitboxOfTarget, Vector2 desiredLocation)
         {
             Vector2 offset = desiredLocation - hitboxOfTarget.Center.ToVector2();
             offset.X = Math.Min(Math.Abs(offset.X), hitboxOfTarget.Width / 2) * Math.Sign(offset.X);
             offset.Y = Math.Min(Math.Abs(offset.Y), hitboxOfTarget.Height / 2) * Math.Sign(offset.Y);
             return hitboxOfTarget.Center.ToVector2() + offset;
+        }
+        public static void DustCircle(Vector2 position, int amount, float speed, int dustID, float scale = 1, bool noGrav = true, int alpha = 0, Color newColor = default)
+        {
+            for (int i = 0; i < amount; i++)
+            {
+                var dust = Dust.NewDustDirect(position, 1, 1, dustID);
+                dust.velocity = new Vector2(0, -speed).RotatedBy(MathHelper.ToRadians(i * (360 / amount)));
+                if (noGrav)
+                {
+                    dust.noGravity = true;
+                }
+            }
+        }
+        public static void ExpandHitboxBy(this Projectile projectile, int width, int height)
+        {
+            projectile.position = projectile.Center;
+            projectile.width = width;
+            projectile.height = height;
+            projectile.position -= projectile.Size * 0.5f;
         }
         public static void CirculateOldpos(this Projectile projectile)
         {

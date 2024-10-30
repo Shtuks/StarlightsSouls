@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<!-- Import tModLoader mod properties -->
 	<Import Project="..\tModLoader.targets" />
@@ -13,9 +13,13 @@
 	</ItemGroup>
 	<ItemGroup>
 	  <None Remove="Thorium\Enchantments\BerserkerEnchant.cs.sex" />
+	  <None Remove="Thorium\Enchantments\DangerEnchant.cs.sex" />
+	  <None Remove="Thorium\Enchantments\HarbingerEnchant.cs.sex" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Compile Include="Thorium\Enchantments\BerserkerEnchant.cs.sex" />
+	  <Compile Include="Thorium\Enchantments\DangerEnchant.cs.sex" />
+	  <Compile Include="Thorium\Enchantments\HarbingerEnchant.cs.sex" />
 	</ItemGroup>
 	<ItemGroup>
 	  <None Include="Reworks\StyxArmor.cs" />
@@ -31,14 +35,41 @@
 	  <Reference Include="FargoMoreSoulsCompat">
 	    <HintPath>Libraries\FargoMoreSoulsCompat_v0.4.2.dll</HintPath>
 	  </Reference>
+	  <Reference Include="FargoMoreSoulsCompat">
+	    <HintPath>Libraries\FargoMoreSoulsCompat_v0.4.2.dll</HintPath>
+	  </Reference>
+	  <Reference Include="FargoMoreSoulsCompat">
+	    <HintPath>Libraries\FargoMoreSoulsCompat_v0.4.2.dll</HintPath>
+	  </Reference>
+	  <Reference Include="FargoMoreSoulsCompat">
+	    <HintPath>Libraries\FargoMoreSoulsCompat_v0.4.2.dll</HintPath>
+	  </Reference>
+	  <Reference Include="FargoMoreSoulsCompat">
+	    <HintPath>Libraries\FargoMoreSoulsCompat_v0.4.2.dll</HintPath>
+	  </Reference>
 	  <Reference Include="Fargowiltas">
 	    <HintPath>Libraries\Fargowiltas.dll</HintPath>
 	  </Reference>
 	  <Reference Include="FargowiltasCrossmod">
 	    <HintPath>Libraries\FargowiltasCrossmod_v1.1.0.8.dll</HintPath>
 	  </Reference>
+	  <Reference Include="FargowiltasCrossmod">
+	    <HintPath>Libraries\FargowiltasCrossmod_v1.1.0.8.dll</HintPath>
+	  </Reference>
+	  <Reference Include="FargowiltasCrossmod">
+	    <HintPath>Libraries\FargowiltasCrossmod_v1.1.0.8.dll</HintPath>
+	  </Reference>
+	  <Reference Include="FargowiltasCrossmod">
+	    <HintPath>Libraries\FargowiltasCrossmod_v1.1.0.8.dll</HintPath>
+	  </Reference>
+	  <Reference Include="FargowiltasCrossmod">
+	    <HintPath>Libraries\FargowiltasCrossmod_v1.1.0.8.dll</HintPath>
+	  </Reference>
 	  <Reference Include="FargowiltasSouls">
 	    <HintPath>Libraries\FargowiltasSouls.dll</HintPath>
+	  </Reference>
+	  <Reference Include="MMHOOK_FargowiltasCrossmod">
+	    <HintPath>lib\MMHOOK_FargowiltasCrossmod.dll</HintPath>
 	  </Reference>
 	  <Reference Include="Redemption">
 	    <HintPath>Libraries\Redemption.dll</HintPath>
@@ -48,6 +79,18 @@
 	  </Reference>
 	  <Reference Include="SubworldLibrary">
 	    <HintPath>Libraries\SubworldLibrary.dll</HintPath>
+	  </Reference>
+	  <Reference Include="ThoriumMod">
+	    <HintPath>Libraries\ThoriumMod_v1.7.1.6.dll</HintPath>
+	  </Reference>
+	  <Reference Include="ThoriumMod">
+	    <HintPath>Libraries\ThoriumMod_v1.7.1.6.dll</HintPath>
+	  </Reference>
+	  <Reference Include="ThoriumMod">
+	    <HintPath>Libraries\ThoriumMod_v1.7.1.6.dll</HintPath>
+	  </Reference>
+	  <Reference Include="ThoriumMod">
+	    <HintPath>Libraries\ThoriumMod_v1.7.1.6.dll</HintPath>
 	  </Reference>
 	  <Reference Include="ThoriumMod">
 	    <HintPath>Libraries\ThoriumMod_v1.7.1.6.dll</HintPath>

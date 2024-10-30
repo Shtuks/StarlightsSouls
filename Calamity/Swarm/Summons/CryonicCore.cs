@@ -15,6 +15,10 @@ namespace ssm.Calamity.Swarm.Summons
     [JITWhenModsEnabled(ModCompatibility.Calamity.Name)]
     public class CryonicCore : SwarmSummonBase
     {
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return ShtunConfig.Instance.CalSwarmItems;
+        }
         public CryonicCore() : base(ModContent.NPCType<Cryogen>(), 25)
         {
         }

@@ -77,14 +77,7 @@ namespace ssm.Content.Projectiles
 
         public override bool? Colliding(Rectangle projHitbox, Rectangle targetHitbox)
         {
-            if (ssm.amiactive)
-            {
-                return Math.Abs((targetHitbox.Center.ToVector2() - projHitbox.Center.ToVector2()).Length() - threshold) < Projectile.width / 2 * Projectile.scale;
-            }
-            else
-            {
-                return bruhusok = false;
-            }
+            return Math.Abs((targetHitbox.Center.ToVector2() - projHitbox.Center.ToVector2()).Length() - threshold) < Projectile.width / 2 * Projectile.scale;
         }
 
         protected virtual void Movement(NPC npc)

@@ -15,6 +15,10 @@ namespace ssm.Calamity.Swarm.Summons
     [JITWhenModsEnabled(ModCompatibility.Calamity.Name)]
     public class BloodyWormChicken : SwarmSummonBase
     {
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return ShtunConfig.Instance.CalSwarmItems;
+        }
         public BloodyWormChicken() : base(ModContent.NPCType<PerforatorHive>(), 25)
         {
         }

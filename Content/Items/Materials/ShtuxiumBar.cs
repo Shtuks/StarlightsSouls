@@ -9,6 +9,10 @@ namespace ssm.Content.Items.Materials
 {
     public class ShtuxiumBar : ModItem
     {
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return ShtunConfig.Instance.ExtraContent;
+        }
         public override void SetStaticDefaults()
         {
             Item.ResearchUnlockCount = 25;

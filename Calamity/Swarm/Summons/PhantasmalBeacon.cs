@@ -15,7 +15,11 @@ namespace ssm.Calamity.Swarm.Summons
     [JITWhenModsEnabled(ModCompatibility.Calamity.Name)]
     public class PhantasmalBeacon : SwarmSummonBase
     {
-        public PhantasmalBeacon() : base(ModContent.NPCType<Polterghast>(), 25)
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return ShtunConfig.Instance.CalSwarmItems;
+        }
+        public PhantasmalBeacon() : base(ModContent.NPCType<Polterghast>(), 10)
         {
         }
 

@@ -32,11 +32,19 @@ using System.Linq;
 using Terraria.GameContent.Creative;
 using FargowiltasSouls.Core.ModPlayers;
 using FargowiltasSouls.Content.Projectiles;
+using FargowiltasSouls.Core.Globals;
+using CalamityMod.Items.Weapons.Magic;
+using FargowiltasSouls.Content.Buffs.Souls;
+using FargowiltasSouls.Content.Items.Accessories.Enchantments;
+using FargowiltasSouls.Content.Items.Accessories.Souls;
+using FargowiltasSouls.Core.AccessoryEffectSystem;
 
 namespace ssm
 {
     public partial class ShtunPlayer : ModPlayer
     {
+        public bool shtuxianDomination;
+        public bool shtuxianSoul;
         public bool antiCollision;
         public bool antiDeath;
         public bool antiDebuff;
@@ -79,23 +87,39 @@ namespace ssm
             if (Player.whoAmI != Main.myPlayer)
                 return;
         }
+        public void ProcessTriggers(TriggersSet triggersSet)
+        {
+            if (ssm.shtuxianSuper.JustPressed)
+            {
+                int duration = 0;
+
+                if (shtuxianSoul)
+                    duration = 5;
+                if (ChtuxlagorHeart)
+                    duration = 10;
+
+                Player.AddBuff(ModContent.BuffType<ShtuxianDomination>(), duration * 60);
+
+                //SoundEngine.PlaySound(new SoundStyle("ssm/Assets/Sounds/ShtuxianSuper"), Player.Center);
+            }
+        }
         public override bool CanBeHitByNPC(NPC npc, ref int cooldownSlot)
         {
-            return !ChtuxlagorBuff;
+            return !ChtuxlagorBuff || shtuxianDomination;
         }
         public override bool CanBeHitByProjectile(Projectile proj)
         {
-            return !ChtuxlagorBuff;
+            return !ChtuxlagorBuff || shtuxianDomination;
         }
 
         List<int> prevDyes = null;
 
         public virtual void PreUpdate()
         {
-            if (this.antiDeath)
+            if (antiDeath || shtuxianDomination)
             {
-                this.Player.ghost = false;
-                this.Player.dead = false;
+                Player.ghost = false;
+                Player.dead = false;
             }
         }
         public virtual void PostUpdateMiscEffects()
@@ -142,7 +166,6 @@ namespace ssm
         }
         private void OnHitNPCEither(NPC target, int damage, float knockback, bool crit, DamageClass damageClass, Projectile projectile = null, Item Item = null)
         {
-            //doing this so that damage-inheriting effects dont double dip or explode due to taking on crit boost
             int GetBaseDamage()
             {
                 int baseDamage = damage;
@@ -160,9 +183,8 @@ namespace ssm
                 target.AddBuff(ModContent.Find<ModBuff>(this.FargoSoul.Name, "MutantFangBuff").Type, 1000, false);
             if (this.equippedDeviatingEnchantment)
                 target.AddBuff(ModContent.Find<ModBuff>(this.FargoSoul.Name, "DeviPresenceBuff").Type, 1000, false);
-            if (!this.equippedAbominableEnchantment)
-                return;
-            target.AddBuff(ModContent.Find<ModBuff>(this.FargoSoul.Name, "AbomFangBuff").Type, 1000, false);
+            if (this.equippedAbominableEnchantment)
+                target.AddBuff(ModContent.Find<ModBuff>(this.FargoSoul.Name, "AbomFangBuff").Type, 1000, false);
         }
 
         public override void ModifyScreenPosition()
@@ -200,14 +222,22 @@ namespace ssm
             //if (NoUsingItems > 0)
             //    NoUsingItems--;
         }
-        public override void UpdateDead() { }
+        public override void OnEnterWorld()
+        {
+            ShtunUtils.DisplayLocalizedText("WARNING! In this update Shtuxibus, Echdeath and their items was moved to Extra Content.", Color.LimeGreen);
+            ShtunUtils.DisplayLocalizedText("All fargo expansions like souls, swarms and caught npc now also switchable for every mod.", Color.LimeGreen);
+            ShtunUtils.DisplayLocalizedText("You can toggle content in server-side mod settings. This will require reload of game.", Color.LimeGreen);
+            ShtunUtils.DisplayLocalizedText("                                                                - StarlightCat", Color.LimeGreen);
+        }
+
+        public override void UpdateDead() {}
         public void WingStats() { Player.wingTimeMax = 999999; Player.wingTime = Player.wingTimeMax; Player.ignoreWater = true; }
         public override bool ImmuneTo(
         PlayerDeathReason damageSource,
         int cooldownCounter,
         bool dodgeable)
         {
-            return this.Player == Main.LocalPlayer && this.antiCollision;
+            return this.Player == Main.LocalPlayer && this.antiCollision || shtuxianDomination;
         }
         public override bool PreKill(
         double damage,
@@ -217,7 +247,7 @@ namespace ssm
         ref bool genGore,
         ref PlayerDeathReason damageSource)
         {
-            return !this.antiDeath;
+            return !this.antiDeath || !shtuxianDomination;
         }
     }
 }

@@ -1,4 +1,4 @@
-/*using System.IO;
+using System.IO;
 using Terraria.ModLoader.IO;
 using FargowiltasSouls.Content.Projectiles.Masomode;
 using Microsoft.Xna.Framework;
@@ -22,6 +22,7 @@ using FargowiltasSouls;
 using FargowiltasSouls.Content.Buffs.Souls;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
+using ssm.Systems;
 
 namespace ssm.Content.NPCs.DukeFishronEX
 {
@@ -33,6 +34,7 @@ namespace ssm.Content.NPCs.DukeFishronEX
         public float endTimeVariance;
         public int attackCount;
         public int EXTornadoTimer;
+        public int Counter2;
         Player player => Main.player[NPC.target];
         public Queue<float> attackHistory = new Queue<float>();
 
@@ -103,7 +105,7 @@ namespace ssm.Content.NPCs.DukeFishronEX
             if (NPC.Distance(Main.LocalPlayer.Center) < 3000f)
             {
                 Main.LocalPlayer.AddBuff(ModContent.BuffType<OceanicSealBuff>(), 2);
-                Main.LocalPlayer.AddBuff(ModContent.BuffType<MutantPresenceBuff>(), 2); //LUL
+                Main.LocalPlayer.AddBuff(ModContent.BuffType<MutantPresenceBuff>(), 2);
             }
 
             ShtunNpcs.DukeEX = NPC.whoAmI;
@@ -156,7 +158,7 @@ namespace ssm.Content.NPCs.DukeFishronEX
                 case 10: //phase 3
                     TakeNoDamageOnHit = false;
                     //if (Timer >= 60 + (int)(540.0 * NPC.life / NPC.lifeMax)) //yes that needs to be a double
-                    /*Counter2++;
+                    Counter2++;
                     if (Counter2 >= 900)
                     {
                         Counter2 = 0;
@@ -300,7 +302,7 @@ namespace ssm.Content.NPCs.DukeFishronEX
                     GeneralTimer = 0;
                     int heal = (int)(NPC.lifeMax * Main.rand.NextFloat(0.1f, 0.12f));
                     NPC.life += heal;
-                    int max = NPC.ai[0] == 9 && !Fargowiltas.Instance.MasomodeEXLoaded ? NPC.lifeMax / 2 : NPC.lifeMax;
+                    int max = NPC.ai[0] == 9 && !WorldSavingSystem.MasochistModeReal ? NPC.lifeMax / 2 : NPC.lifeMax;
                     if (NPC.life > max)
                         NPC.life = max;
                     CombatText.NewText(NPC.Hitbox, CombatText.HealLife, heal);
@@ -607,4 +609,3 @@ namespace ssm.Content.NPCs.DukeFishronEX
         #endregion
     }
 }
-*/

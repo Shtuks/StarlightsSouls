@@ -15,7 +15,11 @@ namespace ssm.Calamity.Swarm.Summons
     [JITWhenModsEnabled(ModCompatibility.Calamity.Name)]
     public class CosmicAmalgamation : SwarmSummonBase
     {
-        public CosmicAmalgamation() : base(ModContent.NPCType<DevourerofGodsHead>(), 25)
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return ShtunConfig.Instance.CalSwarmItems;
+        }
+        public CosmicAmalgamation() : base(ModContent.NPCType<DevourerofGodsHead>(), 5)
         {
         }
 

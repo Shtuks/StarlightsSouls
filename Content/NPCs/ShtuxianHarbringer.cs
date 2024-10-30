@@ -17,20 +17,21 @@ using Terraria.ModLoader;
 using Terraria.Utilities;
 using FargowiltasSouls.Content.Items.Weapons.FinalUpgrades;
 
-using CalamityMod.NPCs.TownNPCs;
+//using CalamityMod.NPCs.TownNPCs;
 
 namespace ssm.Content.NPCs
 {
-    [ExtendsFromMod(ModCompatibility.Calamity.Name//, ModCompatibility.Redemption.Name, ModCompatibility.SacredTools.Name, ModCompatibility.Thorium.Name
-                                                  )]
-    [JITWhenModsEnabled(ModCompatibility.Calamity.Name//, ModCompatibility.Redemption.Name, ModCompatibility.SacredTools.Name, ModCompatibility.Thorium.Name
-                                                      )]
     [AutoloadHead]
     public class ShtuxianHarbringer : ModNPC
     {
         public const string ShopName = "Shop";
         public int NumberOfTimesTalkedTo = 0;
         private static Profiles.StackedNPCProfile NPCProfile;
+
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return ShtunConfig.Instance.ExtraContent;
+        }
 
         public override void SetStaticDefaults()
         {
@@ -48,7 +49,7 @@ namespace ssm.Content.NPCs
             NPCID.Sets.NPCBestiaryDrawOffset.Add(Type, drawModifiers);
 
             NPC.Happiness
-                .SetNPCAffection<WITCH>(AffectionLevel.Like)
+                //.SetNPCAffection<WITCH>(AffectionLevel.Like)
                 .SetNPCAffection<Mutant>(AffectionLevel.Like)
                 .SetBiomeAffection<SnowBiome>(AffectionLevel.Like)
                 .SetBiomeAffection<DesertBiome>(AffectionLevel.Dislike)
@@ -101,8 +102,8 @@ namespace ssm.Content.NPCs
             chat.Add(Language.GetTextValue("Mods.ssm.NPCs.ShtuxianHarbringer.Chat.Normal13"));
             chat.Add(Language.GetTextValue("Mods.ssm.NPCs.ShtuxianHarbringer.Chat.Normal14"));
 
-            if (NPC.AnyNPCs(NPCType<WITCH>()))
-                chat.Add(Language.GetTextValue("Mods.ssm.NPCs.ShtuxianHarbringer.Chat.Calamitas"), 1.45);
+            //if (NPC.AnyNPCs(NPCType<WITCH>()))
+            //    chat.Add(Language.GetTextValue("Mods.ssm.NPCs.ShtuxianHarbringer.Chat.Calamitas"), 1.45);
             if (NPC.AnyNPCs(NPCType<Mutant>()))
                 chat.Add(Language.GetTextValue("Mods.ssm.NPCs.ShtuxianHarbringer.Chat.Mutant"), 2);
 

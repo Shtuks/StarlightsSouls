@@ -16,6 +16,10 @@ namespace ssm.Thorium.Souls
     [JITWhenModsEnabled(ModCompatibility.Thorium.Name)]
     public class BardSoul : ModItem
     {
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return ShtunConfig.Instance.TorEnchantments;
+        }
         private readonly Mod thorium = ModLoader.GetMod("ThoriumMod");
         public override void SetDefaults()
         {

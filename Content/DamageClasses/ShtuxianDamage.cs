@@ -3,9 +3,9 @@ using Terraria.ModLoader;
 
 namespace ssm.Content.DamageClasses
 {
-    internal class ShtuxaianDamage : DamageClass
+    public class ShtuxaianDamage : DamageClass
     {
-        internal static ShtuxianDamage Instance;
+        public static ShtuxianDamage Instance;
 
         public override void Load() => Instance = this;
         public override void Unload() => Instance = null;

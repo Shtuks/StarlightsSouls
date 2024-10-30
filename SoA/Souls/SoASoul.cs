@@ -17,6 +17,10 @@ namespace ssm.SoA.Souls
     [JITWhenModsEnabled(ModCompatibility.SacredTools.Name)]
     public class SoASoul : BaseSoul
     {
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return ShtunConfig.Instance.SoAEnchantments;
+        }
         public override void SetDefaults()
         {
             Item.width = 20;

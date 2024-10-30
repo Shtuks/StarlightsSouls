@@ -21,7 +21,18 @@ using Fargowiltas;
 using Terraria.ModLoader;
 using Fargowiltas.Items.Summons.SwarmSummons.Energizers;
 using ssm.Core;
-//using ssm.SoA.Swarm.Energizers;
+using ssm.SoA.Swarm.Energizers;
+using SacredTools.NPCs.Boss.Erazor;
+using SacredTools.NPCs.Boss.Primordia;
+using SacredTools.Content.NPCs.Boss.Jensen;
+using SacredTools.Content.NPCs.Boss.Decree;
+using SacredTools.NPCs.Boss.Pumpkin;
+using SacredTools.NPCs.Boss.Raynare;
+using SacredTools.NPCs.Boss.Araghur;
+using SacredTools.NPCs.Boss.Lunarians;
+using SacredTools.NPCs.Boss.Araneas;
+using SacredTools.Content.Items.GrabBags.BossBags;
+using SacredTools.Items.Placeable;
 
 namespace ssm.SoA
 {
@@ -29,6 +40,10 @@ namespace ssm.SoA
     [JITWhenModsEnabled(ModCompatibility.SacredTools.Name)]
     public partial class SoANpcs : GlobalNPC
     {
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return ShtunConfig.Instance.SoASwarmItems;
+        }
         private readonly Mod fargosouls = ModLoader.GetMod("FargowiltasSouls");
         public override bool InstancePerEntity => true;
 
@@ -97,7 +112,7 @@ namespace ssm.SoA
             NPCID.PirateShip
         };
 
-        /*public override bool PreKill(NPC npc)
+        public override bool PreKill(NPC npc)
         {
             if (NoLoot)
             {
@@ -105,37 +120,41 @@ namespace ssm.SoA
             }
             if (SwarmActive && ssm.SwarmActive && Main.netMode != NetmodeID.MultiplayerClient)
             {
-                if (npc.type == ModContent.NPCType<BuriedChampion>())
+                if (npc.type == ModContent.NPCType<ErazorBoss>())
                 {
-                    Swarm(npc, ModContent.NPCType<BuriedChampion>(), ModContent.ItemType<BuriedChampionTreasureBag>(), ModContent.ItemType<BuriedChampionTrophy>(), ModContent.ItemType<BuriedEnergizer>());
+                    Swarm(npc, ModContent.NPCType<ErazorBoss>(), ModContent.ItemType<ErazorBag>(), ModContent.ItemType<TrophyErazor>(), ModContent.ItemType<ErazorEnergizer>());
                 }
-                else if (npc.type == ModContent.NPCType<FallenBeholder>())
+                else if (npc.type == ModContent.NPCType<Jensen>())
                 {
-                    Swarm(npc, ModContent.NPCType<FallenBeholder>(), ModContent.ItemType<FallenBeholderTreasureBag>(), ModContent.ItemType<FallenBeholderTrophy>(), ModContent.ItemType<FallenEnergizer>());
+                    Swarm(npc, ModContent.NPCType<Jensen>(), ModContent.ItemType<JensenBag>(), ModContent.ItemType<TrophyHarpy>(), ModContent.ItemType<JensenEnergizer>());
                 }
-                else if (npc.type == ModContent.NPCType<Lich>())
+                else if (npc.type == ModContent.NPCType<Primordia>())
                 {
-                    Swarm(npc, ModContent.NPCType<Lich>(), ModContent.ItemType<LichTreasureBag>(), ModContent.ItemType<LichTrophy>(), ModContent.ItemType<LichEnergizer>());
+                    Swarm(npc, ModContent.NPCType<Primordia>(), ModContent.ItemType<PrimordiaBag>(), ModContent.ItemType<PrimordiaTrophy>(), ModContent.ItemType<PrimordiaEnergizer>());
                 }
-                else if (npc.type == ModContent.NPCType<QueenJellyfish>())
+                else if (npc.type == ModContent.NPCType<Decree>())
                 {
-                    Swarm(npc, ModContent.NPCType<QueenJellyfish>(), ModContent.ItemType<QueenJellyfishTreasureBag>(), ModContent.ItemType<QueenJellyfishTrophy>(), ModContent.ItemType<JellyfishEnergizer>());
+                    Swarm(npc, ModContent.NPCType<Decree>(), ModContent.ItemType<DecreeBag>(), ModContent.ItemType<TrophyDecree>(), ModContent.ItemType<DecreeEnergizer>());
                 }
-                else if (npc.type == ModContent.NPCType<GraniteEnergyStorm>())
+                else if (npc.type == ModContent.NPCType<Ralnek>())
                 {
-                    Swarm(npc, ModContent.NPCType<GraniteEnergyStorm>(), ModContent.ItemType<GraniteEnergyStormTreasureBag>(), ModContent.ItemType<GraniteEnergyStormTrophy>(), ModContent.ItemType<GraniteEnergizer>());
+                    Swarm(npc, ModContent.NPCType<Ralnek>(), ModContent.ItemType<RalnekBag>(), ModContent.ItemType<TrophyPumpkin>(), ModContent.ItemType<PumpkinEnergizer>());
                 }
-                //else if (npc.type == ModContent.NPCType<Sauer>())
-                //{
-                //    Swarm(npc, ModContent.NPCType<Sauser>(), ModContent.ItemType<PerforatorBag>(), ModContent.ItemType<PerforatorTrophy>(), ModContent.ItemType<PerforatorEnergizer>());
-                //}
-                else if (npc.type == ModContent.NPCType<BoreanStrider>())
+                else if (npc.type == ModContent.NPCType<Raynare>())
                 {
-                    Swarm(npc, ModContent.NPCType<BoreanStrider>(), ModContent.ItemType<BoreanStriderTreasureBag>(), ModContent.ItemType<BoreanStriderTrophy>(), ModContent.ItemType<BoreanEnergizer>());
+                    Swarm(npc, ModContent.NPCType<Raynare>(), ModContent.ItemType<RaynareBag>(), ModContent.ItemType<TrophyHarpy2>(), ModContent.ItemType<RaynareEnergizer>());
                 }
-                else if (npc.type == ModContent.NPCType<TheGrandThunderBird>())
+                else if (npc.type == ModContent.NPCType<Novaniel>())
                 {
-                    Swarm(npc, ModContent.NPCType<TheGrandThunderBird>(), ModContent.ItemType<TheGrandThunderBirdTreasureBag>(), ModContent.ItemType<TheGrandThunderBirdTrophy>(), ModContent.ItemType<ThunderEnergizer>());
+                    Swarm(npc, ModContent.NPCType<Novaniel>(), ModContent.ItemType<LostSiblingsBag>(), ModContent.ItemType<TrophyLunarians>(), ModContent.ItemType<NovanielEnergizer>());
+                }
+                else if (npc.type == ModContent.NPCType<Araneas>())
+                {
+                    Swarm(npc, ModContent.NPCType<Araneas>(), ModContent.ItemType<AraneasBag>(), ModContent.ItemType<AraneasTrophy>(), ModContent.ItemType<AraneasEnergizer>());
+                }
+                else if (npc.type == ModContent.NPCType<AraghurHead>())
+                {
+                    Swarm(npc, ModContent.NPCType<AraghurHead>(), ModContent.ItemType<AraghurBag>(), ModContent.ItemType<TrophySerpent_Lame>(), ModContent.ItemType<SerpentEnergizer>());
                 }
                 return false;
             }
@@ -144,7 +163,7 @@ namespace ssm.SoA
             {
                 return true;
             }
-        }*/
+        }
 
         public override void PostAI(NPC npc)
         {

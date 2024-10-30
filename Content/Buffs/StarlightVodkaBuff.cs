@@ -14,8 +14,8 @@ namespace ssm.Content.Buffs
 
         public override void Update(Player player, ref int buffIndex)
         {
-            player.statDefense = player.statDefense += 100;
-            player.GetDamage(DamageClass.Generic) += 100 / 100f;
+            player.statDefense = player.statDefense += 70;
+            player.GetDamage(DamageClass.Generic) += 70 / 100f;
             player.statLifeMax2 += 10;
             player.moveSpeed += 0.1f;
             player.attackCD -= 10;
@@ -29,7 +29,7 @@ namespace ssm.Content.Buffs
             player.wingTime += 0.1f;
             player.maxFallSpeed += 0.1f;
             player.ammoBox = true;
-            player.dash += 10;
+            player.dash += 30;
             player.GetCritChance(DamageClass.Generic) *= 10f;
         }
     }

@@ -11,6 +11,10 @@ namespace ssm.Content.NPCs.Shtuxibus
 {
     public class ShtuxianCurse : ModItem
     {
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return ShtunConfig.Instance.ExtraContent;
+        }
         public override void SetStaticDefaults()
         {
             Item.ResearchUnlockCount = 10;
@@ -42,17 +46,20 @@ namespace ssm.Content.NPCs.Shtuxibus
 
         public override bool? UseItem(Player player)
         {
-            if (player.whoAmI == Main.myPlayer)
+            if (ShtunConfig.Instance.ExtraContent)
             {
-                int type = ModContent.NPCType<Shtuxibus>();
+                if (player.whoAmI == Main.myPlayer)
+                {
+                    int type = ModContent.NPCType<Shtuxibus>();
 
-                if (Main.netMode != NetmodeID.MultiplayerClient)
-                {
-                    NPC.SpawnOnPlayer(player.whoAmI, type);
-                }
-                else
-                {
-                    NetMessage.SendData(MessageID.SpawnBossUseLicenseStartEvent, number: player.whoAmI, number2: type);
+                    if (Main.netMode != NetmodeID.MultiplayerClient)
+                    {
+                        NPC.SpawnOnPlayer(player.whoAmI, type);
+                    }
+                    else
+                    {
+                        NetMessage.SendData(MessageID.SpawnBossUseLicenseStartEvent, number: player.whoAmI, number2: type);
+                    }
                 }
             }
             return true;

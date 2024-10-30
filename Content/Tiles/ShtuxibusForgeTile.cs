@@ -13,6 +13,11 @@ namespace ssm.Content.Tiles
 {
     public class ShtuxibusForgeTile : ModTile
     {
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return ShtunConfig.Instance.ExtraContent;
+        }
+
         public override void SetStaticDefaults()
         {
             Main.tileLighted[(int)((ModBlockType)this).Type] = true;
@@ -37,6 +42,13 @@ namespace ssm.Content.Tiles
             TileID.Sets.CountsAsHoneySource[Type] = true;
             TileID.Sets.CountsAsLavaSource[Type] = true;
             TileID.Sets.CountsAsWaterSource[Type] = true;
+            if (ModLoader.TryGetMod("CalamityMod", out Mod kal))
+            {
+                AdjTiles = new int[]
+                {
+                ModContent.TileType<DemonshadeWorkbenchTile>(),
+                };
+            }
             AdjTiles = new int[] {
                 TileID.WorkBenches,
                 TileID.HeavyWorkBench,

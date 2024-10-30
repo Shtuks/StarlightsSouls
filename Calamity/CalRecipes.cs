@@ -46,10 +46,13 @@ namespace ssm.Calamity
             for (int i = 0; i < Recipe.numRecipes; i++)
             {
                 Recipe recipe = Main.recipe[i];
-                if (recipe.HasResult<EternitySoul>() && !recipe.HasIngredient<CalamitySoul>() && recipe.HasIngredient<BrandoftheBrimstoneWitch>())
+                if (ShtunConfig.Instance.CalEnchantments)
                 {
-                    if (recipe.RemoveIngredient(ModContent.ItemType<BrandoftheBrimstoneWitch>()))
-                        recipe.AddIngredient<CalamitySoul>();
+                    if (recipe.HasResult<EternitySoul>() && !recipe.HasIngredient<CalamitySoul>() && recipe.HasIngredient<BrandoftheBrimstoneWitch>())
+                    {
+                        if (recipe.RemoveIngredient(ModContent.ItemType<BrandoftheBrimstoneWitch>()))
+                            recipe.AddIngredient<CalamitySoul>();
+                    }
                 }
                 if (recipe.HasResult(ModContent.ItemType<SoASoul>()) && !recipe.HasIngredient<ShadowspecBar>())
                 {

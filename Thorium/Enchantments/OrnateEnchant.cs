@@ -25,6 +25,11 @@ namespace ssm.Thorium.Enchantments
             Item.value = 200000;
         }
 
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return ShtunConfig.Instance.TorEnchantments;
+        }
+
         public override Color nameColor => new(255, 128, 0);
 
         public override void UpdateAccessory(Player player, bool hideVisual)
@@ -33,14 +38,14 @@ namespace ssm.Thorium.Enchantments
             thoriumPlayer.setOrnate = true;
             //concert tickets
             thoriumPlayer.bardResourceMax2 += 2;
-            //for (int i = 0; i < Main.myPlayer; i++)
-            //{
-            //    Player player2 = Main.player[i];
-            //    if (player2.active && !player2.dead && i != player.whoAmI && (!player2.hostile || (player2.team == player.team && player2.team != 0)) && player2.DistanceSQ(player.Center) < 202500f)
-            //    {
-            //        thoriumPlayer.inspirationRegenBonus += 0.02f;
-            //    }
-            //}
+            for (int i = 0; i < Main.myPlayer; i++)
+            {
+                Player player2 = Main.player[i];
+                if (player2.active && !player2.dead && i != player.whoAmI && (!player2.hostile || (player2.team == player.team && player2.team != 0)) && player2.DistanceSQ(player.Center) < 202500f)
+                {
+                    thoriumPlayer.inspirationRegenBonus += 0.02f;
+                }
+            }
         }
 
         public override void AddRecipes()

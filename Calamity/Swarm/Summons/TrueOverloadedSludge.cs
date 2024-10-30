@@ -15,7 +15,11 @@ namespace ssm.Calamity.Swarm.Summons
     [JITWhenModsEnabled(ModCompatibility.SacredTools.Name)]
     public class TrueOverloadedSludge : SwarmSummonBase
     {
-        public TrueOverloadedSludge() : base(ModContent.NPCType<SlimeGodCore>(), 25)
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return ShtunConfig.Instance.CalSwarmItems;
+        }
+        public TrueOverloadedSludge() : base(ModContent.NPCType<SlimeGodCore>(), 5)
         {
         }
 

@@ -16,6 +16,12 @@ namespace ssm.SoA.Forces
     {
         private readonly Mod soa = ModLoader.GetMod("SacredTools");
 
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return ShtunConfig.Instance.SoAEnchantments;
+        }
+
+
         public override void SetDefaults()
         {
             Item.width = 20;

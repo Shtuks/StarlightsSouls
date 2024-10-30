@@ -21,6 +21,11 @@ namespace ssm.Thorium.Essences
     [JITWhenModsEnabled(ModCompatibility.Thorium.Name)]
     public class HealerEssence : BaseEssence
     {
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return ShtunConfig.Instance.TorEnchantments;
+        }
+
         private readonly Mod thorium = ModLoader.GetMod("ThoriumMod");
 
         public override void SetDefaults()

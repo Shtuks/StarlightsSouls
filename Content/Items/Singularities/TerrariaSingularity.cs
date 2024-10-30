@@ -16,6 +16,10 @@ namespace ssm.Content.Items.Singularities
 {
     public class TerrariaSingularity : SoulsItem
     {
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return ShtunConfig.Instance.ExtraContent;
+        }
 
         public override void SetDefaults()
         {

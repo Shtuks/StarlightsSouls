@@ -6,11 +6,17 @@ using Terraria.ModLoader;
 using Terraria.ObjectData;
 using Fargowiltas.Items.Tiles;
 using Fargowiltas;
+using ssm.Content.Tiles;
 
 namespace ssm.Content.Tiles
 {
     public class MutantsForgeTile : ModTile
     {
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return ShtunConfig.Instance.ExtraContent;
+        }
+
         public override void SetStaticDefaults()
         {
             Main.tileLighted[(int)((ModBlockType)this).Type] = true;
@@ -25,9 +31,9 @@ namespace ssm.Content.Tiles
             TileObjectData.newTile.Height = 3;
             TileObjectData.newTile.CoordinateHeights = new int[3]
             {
-        16,
-        16,
-        18
+                16,
+                16,
+                18
             };
             TileObjectData.newTile.Origin = new Point16(2, 1);
             TileObjectData.addTile((int)((ModBlockType)this).Type);
@@ -35,57 +41,56 @@ namespace ssm.Content.Tiles
             this.AnimationFrameHeight = 54;
             TileID.Sets.DisableSmartCursor[(int)((ModBlockType)this).Type] = true;
             ((ModBlockType)this).DustType = 84;
-            AdjTiles = new int[] {
-                TileID.WorkBenches,
-                TileID.HeavyWorkBench,
-                TileID.Furnaces,
-                TileID.Anvils,
-                TileID.Bottles,
-                TileID.Sawmill,
-                TileID.Loom,
-                TileID.Tables,
-                TileID.Chairs,
-                TileID.CookingPots,
-                TileID.Sinks,
-                TileID.Kegs,
-                TileID.Hellforge,
-                TileID.AlchemyTable,
-                TileID.TinkerersWorkbench,
-                TileID.ImbuingStation,
-                TileID.DyeVat,
-                TileID.LivingLoom,
-                TileID.GlassKiln,
-                TileID.IceMachine,
-                TileID.HoneyDispenser,
-                TileID.SkyMill,
-                TileID.Solidifier,
-                TileID.BoneWelder,
-                TileID.MythrilAnvil,
-                TileID.AdamantiteForge,
-                TileID.DemonAltar,
-                TileID.Bookcases,
-                TileID.CrystalBall,
-                TileID.Autohammer,
-                TileID.LunarCraftingStation,
-                TileID.LesionStation,
-                TileID.FleshCloningVat,
-                TileID.LihzahrdFurnace,
-                TileID.SteampunkBoiler,
-                TileID.Blendomatic,
-                TileID.MeatGrinder,
-                TileID.Tombstones,
-                //ModContent.TileType<GoldenDippingVatSheet>(),
-                //ModContent.TileType<DraedonsForge>(),
-                ModContent.TileType<CrucibleCosmosSheet>(),
-                //ModContent.TileType<StaticRefiner>(),
-                //ModContent.TileType<CosmicAnvil>(),
-                //ModContent.TileType<ThoriumAnvil>(),
-                //ModContent.TileType<ArcaneArmorFabricator>(),
-                //ModContent.TileType<SoulForge>(),
-                //ModContent.TileType<XeniumRefineryTile>(),
-                //ModContent.TileType<XeniumSmelterTile>(),
-                //ModContent.TileType<GirusCorruptorTile>()
+
+            if (ModLoader.TryGetMod("CalamityMod", out Mod kal))
+            {
+                AdjTiles = new int[] 
+                {
+                ModContent.TileType<DemonshadeWorkbenchTile>(),
                 };
+            }
+
+            AdjTiles = new int[] {
+            TileID.WorkBenches,
+            TileID.HeavyWorkBench,
+            TileID.Furnaces,
+            TileID.Anvils,
+            TileID.Bottles,
+            TileID.Sawmill,
+            TileID.Loom,
+            TileID.Tables,
+            TileID.Chairs,
+            TileID.CookingPots,
+            TileID.Sinks,
+            TileID.Kegs,
+            TileID.Hellforge,
+            TileID.AlchemyTable,
+            TileID.TinkerersWorkbench,
+            TileID.ImbuingStation,
+            TileID.DyeVat,
+            TileID.LivingLoom,
+            TileID.GlassKiln,
+            TileID.IceMachine,
+            TileID.HoneyDispenser,
+            TileID.SkyMill,
+            TileID.Solidifier,
+            TileID.BoneWelder,
+            TileID.MythrilAnvil,
+            TileID.AdamantiteForge,
+            TileID.DemonAltar,
+            TileID.Bookcases,
+            TileID.CrystalBall,
+            TileID.Autohammer,
+            TileID.LunarCraftingStation,
+            TileID.LesionStation,
+            TileID.FleshCloningVat,
+            TileID.LihzahrdFurnace,
+            TileID.SteampunkBoiler,
+            TileID.Blendomatic,
+            TileID.MeatGrinder,
+            TileID.Tombstones,
+            ModContent.TileType<CrucibleCosmosSheet>(),
+        };
         }
 
         public override void AnimateTile(ref int frame, ref int frameCounter)

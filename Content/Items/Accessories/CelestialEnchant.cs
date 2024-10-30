@@ -36,6 +36,11 @@ namespace ssm.Content.Items.Accessories
 
         public override void SetStaticDefaults() => ItemID.Sets.ItemNoGravity[this.Type] = true;
 
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return ShtunConfig.Instance.ExtraContent;
+        }
+
         public override void SetDefaults()
         {
             this.Item.value = Item.buyPrice(1, 0, 0, 0);

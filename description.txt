@@ -5,10 +5,8 @@ Source code: https://github.com/Shtuks/StarlightsSouls
 Discord Server: https://discord.gg/xB9s8SyQJr
 
 The content:
-- Thorium/Shaddows of Abaddon enchantments, forces, souls
+- Thorium/Shadows of Abaddon enchantments, forces, souls, swarms, caught NPCs
 
 - Redemption/Calamity compatibility (Work in progress)
 
-- Post-Mutant content
-
-- Shtuxibus Boss. Сombine all attcks from maso Mutant, Abomination and most of champions.
+- Post-Mutant Extra content (Echdeath, Shtuxibus)

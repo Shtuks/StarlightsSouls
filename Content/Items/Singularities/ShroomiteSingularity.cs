@@ -9,6 +9,10 @@ namespace ssm.Content.Items.Singularities
 {
     public class ShroomiteSingularity : ModItem
     {
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return ShtunConfig.Instance.ExtraContent;
+        }
         public override void SetStaticDefaults()
         {
             // Registers a vertical animation with 4 frames and each one will last 5 ticks (1/12 second)

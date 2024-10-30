@@ -26,6 +26,11 @@ namespace ssm.Content.Tiles
             RelicTexture = ModContent.Request<Texture2D>(RelicTextureName);
         }
 
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return ShtunConfig.Instance.ExtraContent;
+        }
+
         public override void SetStaticDefaults()
         {
             Main.tileShine[Type] = 400; // Responsible for golden particles

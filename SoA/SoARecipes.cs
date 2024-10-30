@@ -20,6 +20,10 @@ namespace ssm
     [ExtendsFromMod(ModCompatibility.SacredTools.Name)]
     public class SoARecipes : ModSystem
     {
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return ShtunConfig.Instance.SoAEnchantments;
+        }
 
         public override void AddRecipeGroups()
         {

@@ -13,6 +13,10 @@ namespace ssm.Content.Items.Armor
     [AutoloadEquip(EquipType.Head)]
     public class TrueAuricTeslaHelm : ModItem
     {
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return ShtunConfig.Instance.ExtraContent;
+        }
         private readonly Mod FargoCross = Terraria.ModLoader.ModLoader.GetMod("FargowiltasCrossmod");
         private readonly Mod FargoSoul = Terraria.ModLoader.ModLoader.GetMod("FargowiltasSouls");
         private readonly Mod Calamity = Terraria.ModLoader.ModLoader.GetMod("CalamityMod");

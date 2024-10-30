@@ -24,10 +24,16 @@ using ssm.Content.Tiles;
 namespace ssm.Content.Items.Accessories
 {
     [AutoloadEquip(EquipType.Wings)]
-    internal class ShtuxianSoul : BaseSoul
+    public class ShtuxianSoul : BaseSoul
     {
         private readonly Mod fargosouls = Terraria.ModLoader.ModLoader.GetMod("FargowiltasSouls");
         private readonly Mod FargoSoul = Terraria.ModLoader.ModLoader.GetMod("FargowiltasSouls");
+
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return ShtunConfig.Instance.ExtraContent;
+        }
+
         public override void VerticalWingSpeeds(Player player, ref float ascentWhenFalling, ref float ascentWhenRising,
             ref float maxCanAscendMultiplier, ref float maxAscentMultiplier, ref float constantAscend)
         {
@@ -72,13 +78,15 @@ namespace ssm.Content.Items.Accessories
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
+            player.GetModPlayer<ShtunPlayer>().shtuxianSoul = true;
+
             if (player.GetModPlayer<FargoSoulsPlayer>().MutantEyeCD > 0) { player.GetModPlayer<FargoSoulsPlayer>().MutantEyeCD--; }
 
             ModContent.Find<ModItem>(this.fargosouls.Name, "EternitySoul").UpdateAccessory(player, hideVisual);
             ModContent.Find<ModItem>(((ModType)this).Mod.Name, "CelestialEnchant").UpdateAccessory(player, false);
             ModContent.Find<ModItem>(((ModType)this).Mod.Name, "EternityForce").UpdateAccessory(player, false);
 
-            if (ModLoader.TryGetMod("Redemption", out Mod red))
+            if (ModLoader.TryGetMod("Redemption", out Mod red) && ShtunConfig.Instance.RedEnchantments)
             {
                 //ModContent.Find<ModItem>(((ModType)this).Mod.Name, "RedemptionSoul").UpdateAccessory(player, false);
             }
@@ -89,16 +97,16 @@ namespace ssm.Content.Items.Accessories
                     SoulOfTmod.UpdateAccessory(player, false);
                 }
             }
-            if (ModLoader.TryGetMod("SacredTools", out Mod SoA))
+            if (ModLoader.TryGetMod("SacredTools", out Mod SoA) && ShtunConfig.Instance.SoAEnchantments)
             {
                 //ModContent.Find<ModItem>(((ModType)this).Mod.Name, "KineticSoul").UpdateAccessory(player, false);
                 ModContent.Find<ModItem>(((ModType)this).Mod.Name, "SoASoul").UpdateAccessory(player, false);
             }
-            if (ModLoader.TryGetMod("CalamityMod", out Mod kal))
+            if (ModLoader.TryGetMod("CalamityMod", out Mod kal) && ShtunConfig.Instance.CalEnchantments)
             {
                 ModContent.Find<ModItem>(((ModType)this).Mod.Name, "CalamitySoul").UpdateAccessory(player, false);
             }
-            if (ModLoader.TryGetMod("ThoriumMod", out Mod tor))
+            if (ModLoader.TryGetMod("ThoriumMod", out Mod tor) && ShtunConfig.Instance.TorEnchantments)
             {
                 ModContent.Find<ModItem>(((ModType)this).Mod.Name, "GuardianAngelsSoul").UpdateAccessory(player, false);
                 ModContent.Find<ModItem>(((ModType)this).Mod.Name, "BardSoul").UpdateAccessory(player, false);

@@ -37,6 +37,11 @@ namespace ssm.Thorium.Enchantments
             thoriumPlayer.setPlague = true;
         }
 
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return ShtunConfig.Instance.TorEnchantments;
+        }
+
         public override void AddRecipes()
         {
             Recipe recipe = this.CreateRecipe();

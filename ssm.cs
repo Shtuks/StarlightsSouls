@@ -14,7 +14,6 @@ using Terraria.Graphics.Shaders;
 using Terraria.ID;
 using Terraria.ModLoader;
 using ssm.Content.NPCs;
-using Fargowiltas.Items.CaughtNPCs;
 using FargowiltasSouls.Content.Items.Dyes;
 using FargowiltasSouls.Content.Items.Misc;
 using FargowiltasSouls.Content.Items.Accessories.Masomode;
@@ -41,6 +40,9 @@ using Terraria.UI;
 using Terraria.Chat;
 using Terraria.GameContent;
 using Terraria.Localization;
+//using Fargowiltas.Items.CaughtNPCs;
+using ssm.Items;
+using ssm.Calamity;
 
 namespace ssm
 {
@@ -51,6 +53,8 @@ namespace ssm
         internal static int SwarmKills;
         internal static int SwarmTotal;
         internal static int SwarmSpawned;
+
+        internal static ModKeybind shtuxianSuper;
         internal static ssm Instance;
         internal bool CalamityLoaded;
         internal bool FargoLoaded;
@@ -60,15 +64,26 @@ namespace ssm
         internal Mod calamity;
         internal Mod fargosouls;
         public static bool amiactive;
+
         public override uint ExtraPlayerBuffSlots => 300u;
         public override void Load()
         {
-            SkyManager.Instance["ssm:Shtuxibus"] = new ShtuxibusSky();
-            //SkyManager.Instance["ssm:Shtuxibus"] = new ShtuxibusSky2();
-            //CaughtNPCItem.Add("Shtuxibus", ModContent.NPCType<ShtuxianHarbringer>(), "'AND GODS WILL FALL!'");
-            ModLoader.TryGetMod("BossChecklist", out Mod bossChecklist);
-            furgus = ModLoader.GetMod("FargowiltasSouls");
             Instance = this;
+
+            shtuxianSuper = KeybindLoader.RegisterKeybind(this, "Shtuxian Domination", "L");
+
+            CaughtNPCItem.RegisterItems();
+
+            if(ModLoader.TryGetMod("CalamityMod", out Mod kal) && ShtunConfig.Instance.CalCaughtNpcs)
+            {
+                CalCaughtNpcs.CalRegisterItems();
+            }
+
+            //FargowiltasCrossmod.FargowiltasCrossmod.EnchantLoadingEnabled = true;
+            SkyManager.Instance["ssm:Shtuxibus"] = new ShtuxibusSky();
+
+            ModLoader.TryGetMod("BossChecklist", out Mod bossChecklist);
+
             if (Main.netMode != NetmodeID.Server)
             {
                 #region shaders
@@ -103,11 +118,12 @@ namespace ssm
                 #endregion shaders
             }
         }
+
         public override void Unload()
         {
             bossChecklist = null;
-            furgus = null;
         }
+
         public override void PostSetupContent()
         {
             try

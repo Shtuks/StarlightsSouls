@@ -10,11 +10,17 @@ using Terraria.Localization;
 using ssm.Content.Buffs;
 using ssm.Systems;
 using ssm;
+using ssm.Content.NPCs.Chtuxlagor;
 
 namespace ssm.Systems
 {
     public class ModIntegrationsSystem : ModSystem
     {
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return ShtunConfig.Instance.ExtraContent;
+        }
+
         public static class Souls
         {
             public const string Name = "FargowiltasSouls";
@@ -24,7 +30,7 @@ namespace ssm.Systems
 
         public static class Mutant
         {
-            public const string Name = "SacredTools";
+            public const string Name = "Fargowiltas";
             public static bool Loaded => ModLoader.HasMod(Name);
             public static Mod Mod => ModLoader.GetMod(Name);
         }
@@ -45,7 +51,7 @@ namespace ssm.Systems
 
         public static class Calamity
         {
-            public const string Name = "SacredTools";
+            public const string Name = "CalamityMod";
             public static bool Loaded => ModLoader.HasMod(Name);
             public static Mod Mod => ModLoader.GetMod(Name);
         }
@@ -59,26 +65,49 @@ namespace ssm.Systems
         {
             if (!ModLoader.TryGetMod("BossChecklist", out Mod bossChecklistMod)) { return; }
             if (bossChecklistMod.Version < new Version(1, 6)) { return; }
-            string internalName = "Shtuxibus";
-            float weight = 745f;
-            Func<bool> downed = () => WorldSaveSystem.downedShtuxibus;
-            int bossType = ModContent.NPCType<Shtuxibus>();
-            int spawnItem = ModContent.ItemType<ShtuxianCurse>();
-            List<int> collectibles = new List<int>() { ModContent.ItemType<ShtuxiumSoulShard>(), };
+            string internalName1 = "Shtuxibus";
+            float weight1 = 745f;
+            Func<bool> downed1 = () => WorldSaveSystem.downedShtuxibus;
+            int bossType1 = ModContent.NPCType<Shtuxibus>();
+            int spawnItem1 = ModContent.ItemType<ShtuxianCurse>();
+            List<int> collectibles1 = new List<int>() { ModContent.ItemType<ShtuxiumSoulShard>(), };
+
+            string internalName2 = "Echdeath";
+            float weight2 = 745.1f;
+            Func<bool> downed2 = () => WorldSaveSystem.downedEch;
+            int bossType2 = ModContent.NPCType<Echdeath>();
+            int spawnItem2 = ModContent.ItemType<ShtuxianCurseEX>();
+            List<int> collectibles2 = new List<int>() { ModContent.ItemType<Sadism>(), };
 
             bossChecklistMod.Call(
                 "LogBoss",
                 Mod,
-                internalName,
-                weight,
-                downed,
-                bossType,
+                internalName2,
+                weight2,
+                downed2,
+                bossType2,
+                new Dictionary<string, object>()
+                {
+                    ["spawnInfo"] = (object)Language.GetText("Mods.ssm.NPCs.Echdeath.BossChecklistIntegration.SpawnInfo").WithFormatArgs(Array.Empty<object>()),
+                    ["despawnMessage"] = (object)Language.GetText("Mods.ssm.NPCs.Echdeath.BossChecklistIntegration.DespawnMessage"),
+                    ["spawnItems"] = spawnItem2,
+                    ["collectibles"] = collectibles2,
+                }
+            );
+
+            bossChecklistMod.Call(
+                "LogBoss",
+                Mod,
+                internalName1,
+                weight1,
+                downed1,
+                bossType1,
                 new Dictionary<string, object>()
                 {
                     ["spawnInfo"] = (object)Language.GetText("Mods.ssm.NPCs.Shtuxibus.BossChecklistIntegration.SpawnInfo").WithFormatArgs(Array.Empty<object>()),
                     ["despawnMessage"] = (object)Language.GetText("Mods.ssm.NPCs.Shtuxibus.BossChecklistIntegration.DespawnMessage"),
-                    ["spawnItems"] = spawnItem,
-                    ["collectibles"] = collectibles,
+                    ["spawnItems"] = spawnItem1,
+                    ["collectibles"] = collectibles1,
                 }
             );
         }

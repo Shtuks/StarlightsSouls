@@ -15,7 +15,11 @@ namespace ssm.Calamity.Swarm.Summons
     [JITWhenModsEnabled(ModCompatibility.Calamity.Name)]
     public class OverloadSeafood : SwarmSummonBase
     {
-        public OverloadSeafood() : base(ModContent.NPCType<AquaticScourgeHead>(), 25)
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return ShtunConfig.Instance.CalSwarmItems;
+        }
+        public OverloadSeafood() : base(ModContent.NPCType<AquaticScourgeHead>(), 5)
         {
         }
 

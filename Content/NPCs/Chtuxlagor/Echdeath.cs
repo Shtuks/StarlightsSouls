@@ -18,6 +18,10 @@ namespace ssm.Content.NPCs.Chtuxlagor
         public override void SetStaticDefaults()
         {
             Main.npcFrameCount[NPC.type] = 11;
+            NPCID.Sets.NPCBestiaryDrawModifiers drawModifiers = new NPCID.Sets.NPCBestiaryDrawModifiers()
+            {
+                PortraitScale = 2f,
+            };
         }
 
         public override void SetDefaults()
@@ -45,6 +49,11 @@ namespace ssm.Content.NPCs.Chtuxlagor
         {
             cooldownSlot = 1;
             return true;
+        }
+
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return ShtunConfig.Instance.ExtraContent;
         }
 
         public override void AI()

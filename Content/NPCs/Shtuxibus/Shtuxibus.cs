@@ -1,12 +1,4 @@
-//fuck you
-using CalamityMod;
-using CalamityMod.NPCs.DevourerofGods;
-using CalamityMod.NPCs.PlaguebringerGoliath;
-using CalamityMod.NPCs.ProfanedGuardians;
-using CalamityMod.NPCs.Yharon;
-using CalamityMod.Projectiles.Boss;
-
-//nice code
+//nice code(no)
 using System.Linq;
 using FargowiltasCrossmod.Content.Calamity.Bosses.SlimeGod;
 using FargowiltasCrossmod.Content.Common.Projectiles;
@@ -52,21 +44,25 @@ using System.Runtime.InteropServices;
 using Terraria.Audio;
 using ssm.Content.Items.Consumables;
 using ModCompatibility = ssm.Core.ModCompatibility;
+using Fargowiltas;
+using ssm.Content.Items.Materials;
+using FargowiltasSouls.Content.Items.Materials;
+using ssm.Content.Projectiles.Shtuxibus.Cal;
 
 namespace ssm.Content.NPCs.Shtuxibus
 {
-    //[ExtendsFromMod(ModCompatibility.Calamity.Name//, ModCompatibility.Redemption.Name, ModCompatibility.SacredTools.Name, ModCompatibility.Thorium.Name
-    //                                              )]
-    //[JITWhenModsEnabled(ModCompatibility.Calamity.Name//, ModCompatibility.Redemption.Name, ModCompatibility.SacredTools.Name, ModCompatibility.Thorium.Name
-    //                                                )]
-
     [AutoloadBossHead]
     public class Shtuxibus : ModNPC
     {
-        private readonly Mod fargosouls = ModLoader.GetMod("FargowiltasSouls");
         Player player => Main.player[NPC.target];
         public bool playerInvulTriggered;
         public bool Aura;
+        const int MUTANT_SWORD_SPACING2 = 80;
+        const int MUTANT_SWORD_MAX2 = 12;
+        const int MUTANT_SWORD_SPACING = 80;
+        const int MUTANT_SWORD_MAX = 12;
+        private readonly Mod fargosouls = ModLoader.GetMod("FargowiltasSouls");
+        bool spawned;
         private int damageTotal = 0;
         internal int dpsCap = WorldSaveSystem.downedShtuxibus ? 5000000 : 3500000;
         public int ritualProj, spriteProj, ringProj;
@@ -78,9 +74,11 @@ namespace ssm.Content.NPCs.Shtuxibus
         public float[] NpcaiFC = new float[4];
         public float[] NpclocalaiFC = new float[4];
         public bool INPHASE3;
+        Vector2 targetPos;
         public bool INPHASE2;
         public int Timer = 0;
         public int Counter = 0;
+        float epicMe;
         public Queue<float> attackHistory = new Queue<float>();
         public int attackCount;
         public static readonly Color textColor = Color.Green;
@@ -89,6 +87,11 @@ namespace ssm.Content.NPCs.Shtuxibus
         public static int imtrydomove;
         public bool ShouldDrawAura;
 
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return ShtunConfig.Instance.ExtraContent;
+        }
+
         public override void SetStaticDefaults()
         {
             Main.npcFrameCount[NPC.type] = 4;
@@ -96,6 +99,12 @@ namespace ssm.Content.NPCs.Shtuxibus
             NPCID.Sets.MPAllowedEnemies[Type] = true;
             NPCID.Sets.BossBestiaryPriority.Add(NPC.type);
             NPCID.Sets.ImmuneToRegularBuffs[Type] = true;
+            NPCID.Sets.NPCBestiaryDrawModifiers drawModifiers = new NPCID.Sets.NPCBestiaryDrawModifiers()
+            {
+                CustomTexturePath = "ssm/Assets/Textures/Bestiary/Shtuxibus_Preview",
+                PortraitScale = 0.6f,
+                PortraitPositionYOverride = 0f,
+            };
         }
 
         public override void SetDefaults()
@@ -104,7 +113,6 @@ namespace ssm.Content.NPCs.Shtuxibus
             NPC.width = 120;
             NPC.height = 120;
             NPC.damage = 5000;
-            NPC.defense = 745;
             NPC.value = Item.buyPrice(999999);
             NPC.lifeMax = 450000000;
             if (Main.expertMode)
@@ -179,7 +187,6 @@ namespace ssm.Content.NPCs.Shtuxibus
             NPC.localAI[2] = reader.ReadSingle();
             endTimeVariance = reader.ReadSingle();
         }
-        float epicMe;
         public override void AI()
         {
             FixHealth();
@@ -361,7 +368,7 @@ namespace ssm.Content.NPCs.Shtuxibus
                 case 43: TwinRangsAndCrystals(); break;
                 case 44: EmpressSwordWave(); break;
                 case 45: ShtuxibusJavelinsP2(); break;
-                case 46: GieantDeathrayFall(); break;
+                case 46: GiantDeathrayFall(); break;
                 case 47: //beginning of scythe rows and deathray rain
                     if (NPC.ai[1] == 0 && !AliveCheck(player))
                         break;
@@ -862,7 +869,6 @@ namespace ssm.Content.NPCs.Shtuxibus
                 }
             }
         }
-
         void FixHealth()
         {
             if (this.NPC.lifeMax < 40000000)
@@ -870,8 +876,6 @@ namespace ssm.Content.NPCs.Shtuxibus
                 this.NPC.lifeMax = 40000000;
             }
         }
-        bool spawned;
-
         void TryLifeSteal(Vector2 pos, int playerWhoAmI)
         {
             int totalHealPerHit = NPC.lifeMax / 100 * 10;
@@ -918,10 +922,10 @@ namespace ssm.Content.NPCs.Shtuxibus
                 this.NPC.life = this.NPC.lifeMax;
             }
 
-            if (Main.LocalPlayer.active && !Main.LocalPlayer.dead && !Main.LocalPlayer.ghost)
-                Main.LocalPlayer.AddBuff(ModContent.Find<ModBuff>(fargosouls.Name, "MutantPresenceBuff").Type, 2);
+            //if (Main.LocalPlayer.active && !Main.LocalPlayer.dead && !Main.LocalPlayer.ghost)
+            Main.LocalPlayer.AddBuff(ModContent.Find<ModBuff>(fargosouls.Name, "MutantPresenceBuff").Type, 2);
             Main.LocalPlayer.AddBuff(ModContent.BuffType<ShtuxibusCurse>(), 2);
-            //Main.LocalPlayer.AddBuff(ModContent.BuffType<ShtuxianCurse>(), 1);
+            Main.LocalPlayer.AddBuff(ModContent.BuffType<OceanicSealBuff>(), 2);
 
             if (NPC.localAI[3] == 0)
             {
@@ -1495,7 +1499,7 @@ namespace ssm.Content.NPCs.Shtuxibus
             {
                 int distance = 550;
                 Vector2 pos = player.Center + distance * Vector2.UnitX.RotatedBy(MathHelper.Pi * (((Main.rand.NextBool() ? 1f : -1f) / 8f) + Main.rand.Next(2)));
-                SoundEngine.PlaySound(PlaguebringerGoliath.AttackSwitchSound, pos);
+                //SoundEngine.PlaySound(PlaguebringerGoliath.AttackSwitchSound, pos);
                 if (ShtunUtils.HostCheck)
                 {
                     Vector2 vel = pos.DirectionTo(player.Center);
@@ -1506,7 +1510,6 @@ namespace ssm.Content.NPCs.Shtuxibus
         [JITWhenModsEnabled(ModCompatibility.Calamity.Name)]
         void Providence()
         {
-            //
             if (!AliveCheck(player))
                 return;
 
@@ -1557,7 +1560,7 @@ namespace ssm.Content.NPCs.Shtuxibus
                 NPC.velocity.Y = 0;
                 NPC.velocity.X = Math.Sign(player.Center.X - NPC.Center.X) * dashSpeed;
 
-                SoundEngine.PlaySound(ProfanedGuardianCommander.DashSound, NPC.Center);
+                //SoundEngine.PlaySound(ProfanedGuardianCommander.DashSound, NPC.Center);
                 NPC.netUpdate = true;
 
 
@@ -1594,7 +1597,7 @@ namespace ssm.Content.NPCs.Shtuxibus
             else if (Timer - PrepareTime - DashTime == LaserPrepareTime)
             {
                 //deathray
-                SoundEngine.PlaySound(CalamityMod.NPCs.Providence.Providence.HolyRaySound, NPC.Center);
+                //SoundEngine.PlaySound(CalamityMod.NPCs.Providence.Providence.HolyRaySound, NPC.Center);
                 if (ShtunUtils.HostCheck)
                 {
                     float rotation = 435f;
@@ -1626,7 +1629,6 @@ namespace ssm.Content.NPCs.Shtuxibus
         [JITWhenModsEnabled(ModCompatibility.Calamity.Name)]
         void YharonBH()
         {
-            //
             void DoFlareDustBulletHell(int attackType, int timer, int projectileDamage, int totalProjectiles, float projectileVelocity, float radialOffset, bool phase2)
             {
                 SoundEngine.PlaySound(SoundID.Item20, NPC.Center, (SoundUpdateCallback)null);
@@ -1692,7 +1694,7 @@ namespace ssm.Content.NPCs.Shtuxibus
             if (Timer == WindupTime)
             {
                 NPC.netUpdate = true;
-                SoundEngine.PlaySound(Yharon.RoarSound, NPC.Center);
+                //SoundEngine.PlaySound(Yharon.RoarSound, NPC.Center);
                 int type = ModContent.ProjectileType<MutantYharonVortex>();
                 if (Main.netMode != NetmodeID.MultiplayerClient)
                 {
@@ -1754,7 +1756,7 @@ namespace ssm.Content.NPCs.Shtuxibus
                 else
                 {
                     Counter++;
-                    SoundEngine.PlaySound(DevourerofGodsHead.SpawnSound, NPC.Center);
+                    //SoundEngine.PlaySound(DevourerofGodsHead.SpawnSound, NPC.Center);
                     if (ShtunUtils.HostCheck) //spawn worm
                     {
                         Vector2 vel = NPC.DirectionFrom(player.Center).RotatedByRandom(MathHelper.ToRadians(120)) * 10f;
@@ -2149,8 +2151,6 @@ namespace ssm.Content.NPCs.Shtuxibus
                 NPC.ai[1] = 0;
             }
         }
-        const int MUTANT_SWORD_SPACING = 80;
-        const int MUTANT_SWORD_MAX = 12;
         void BoundaryBulletHellAndSwordP1()
         {
             switch ((int)NPC.localAI[2])
@@ -2360,13 +2360,11 @@ namespace ssm.Content.NPCs.Shtuxibus
 
         void Phase2Transition()
         {
-            NPC.velocity *= 0.9f;
+            /*NPC.velocity *= 0.9f;
             NPC.dontTakeDamage = true;
 
             if (NPC.buffType[0] != 0)
                 NPC.DelBuff(0);
-
-            EModeSpecialEffects();
 
             if (NPC.ai[2] == 0)
             {
@@ -2442,16 +2440,16 @@ namespace ssm.Content.NPCs.Shtuxibus
                 ShtunUtils.DisplayLocalizedText("Burn if the flames of shtuxian abyss!", textColor);
             }
             if (++NPC.ai[1] > 200)
-            {
+            {*/
+                EModeSpecialEffects();
                 NPC.life = NPC.lifeMax;
                 NPC.ai[0] = Main.rand.Next(new int[] { 11, 13, 16, 19, 20, 21, 24, 26, 29, 35, 37, 39, 42 }); //force a random choice
                 NPC.ai[1] = 0;
                 NPC.ai[2] = 0;
                 NPC.netUpdate = true;
                 attackHistory.Enqueue(NPC.ai[0]);
-            }
+            //}
         }
-
         void VoidRaysP2()
         {
 
@@ -2479,7 +2477,7 @@ namespace ssm.Content.NPCs.Shtuxibus
                 }
             }
         }
-        void GieantDeathrayFall()
+        void GiantDeathrayFall()
         {
             int fallintu = 0;
             NPC.velocity = Vector2.Zero;
@@ -2821,7 +2819,6 @@ namespace ssm.Content.NPCs.Shtuxibus
                 }
             }
         }
-
         void EOCStarSickles()
         {
             //
@@ -2978,7 +2975,6 @@ namespace ssm.Content.NPCs.Shtuxibus
                 NPC.ai[1] = 0;
             }
         }
-        Vector2 targetPos;
         void MassacareWait()
         {
             if (!AliveCheck(player))
@@ -4115,7 +4111,7 @@ namespace ssm.Content.NPCs.Shtuxibus
                 ChooseNextAttack(13, 19, 20, 13, 44, 41, 44, 45, 46, 47, 52, 55, 56, 58, 59, 60, 61, 62, 63, 64, 65, 58, 59, 60, 61, 62, 63, 64, 65);
             }
         }
-        void ShtuxibusFireballsP332()
+        void ShtuxibusFireballsP3()
         {
             //
             if (!AliveCheck(player))
@@ -4608,8 +4604,6 @@ namespace ssm.Content.NPCs.Shtuxibus
                 }
             }
         }
-        const int MUTANT_SWORD_SPACING2 = 80;
-        const int MUTANT_SWORD_MAX2 = 12;
         void MutantSparklingSword()
         {
 
@@ -5576,11 +5570,11 @@ namespace ssm.Content.NPCs.Shtuxibus
                     if (Main.netMode != NetmodeID.MultiplayerClient)
                     {
                         Projectile.NewProjectile(NPC.GetSource_FromThis(), NPC.Center, Vector2.UnitX.RotatedBy(NPC.localAI[1]), ModContent.ProjectileType<DeviBigDeathray>(),
-                           1000000000, 0f, Main.myPlayer, 0f, NPC.whoAmI);
+                            10000, 0f, Main.myPlayer, 0f, NPC.whoAmI);
                         Projectile.NewProjectile(NPC.GetSource_FromThis(), NPC.Center, Vector2.UnitX.RotatedBy(NPC.localAI[1] * (Main.rand.NextDouble() - 0.5)), ModContent.ProjectileType<DeviBigDeathray>(),
-                       1000000000, 0f, Main.myPlayer, 0f, NPC.whoAmI);
+                            10000, 0f, Main.myPlayer, 0f, NPC.whoAmI);
                         Projectile.NewProjectile(NPC.GetSource_FromThis(), NPC.Center, -Vector2.UnitX.RotatedBy(NPC.localAI[1] * (Main.rand.NextDouble() - 0.5)), ModContent.ProjectileType<DeviBigDeathray>(),
-                       1000000000, 0f, Main.myPlayer, 0f, NPC.whoAmI);
+                            10000, 0f, Main.myPlayer, 0f, NPC.whoAmI);
                     }
 
                     const int ring = 160;
@@ -5864,7 +5858,7 @@ namespace ssm.Content.NPCs.Shtuxibus
 
             NPC.velocity = Vector2.Zero;
         }
-        void ShtuxibusFireballsP3()
+        void ShtuxibusFireballsP3TRUE()
         {
             if (!AliveCheck(player))
                 return;
@@ -6381,7 +6375,6 @@ namespace ssm.Content.NPCs.Shtuxibus
             }
             return true;
         }
-
         public override void OnHitPlayer(Player target, Player.HurtInfo hurtInfo)
         {
             if (Main.zenithWorld)
@@ -6462,12 +6455,25 @@ namespace ssm.Content.NPCs.Shtuxibus
         public override void ModifyNPCLoot(NPCLoot npcLoot)
         {
             base.ModifyNPCLoot(npcLoot);
-            npcLoot.AddConditionalPerPlayer(() => CalDLCWorldSavingSystem.EternityRev, ModContent.ItemType<ChtuxlagorHeart>());
-            npcLoot.AddConditionalPerPlayer(() => Main.zenithWorld, ModContent.ItemType<ShtuxibusBagGfb>());
-            npcLoot.AddConditionalPerPlayer(() => !Main.zenithWorld, ModContent.ItemType<ShtuxibusBag>());
+            //npcLoot.AddConditionalPerPlayer(() => WorldSavingSystem.EternityMode, ModContent.ItemType<ChtuxlagorHeart>());
+            //npcLoot.AddConditionalPerPlayer(() => Main.expertMode, ModContent.ItemType<ShtuxibusBag>());
+            //npcLoot.AddConditionalPerPlayer(() => Main.zenithWorld, ModContent.ItemType<StarlightVodka>());
+
+            if (!Main.expertMode)
+            {
+                npcLoot.Add(ItemDropRule.NotScalingWithLuck(ModContent.ItemType<ShtuxiumSoulShard>(), 1, 20, 30));
+                npcLoot.Add(ItemDropRule.NotScalingWithLuck(ModContent.ItemType<EternalEnergy>(), 1, 40, 70));
+                npcLoot.Add(ItemDropRule.NotScalingWithLuck(ModContent.ItemType<AbomEnergy>(), 1, 70, 100));
+                npcLoot.Add(ItemDropRule.NotScalingWithLuck(ModContent.ItemType<DeviatingEnergy>(), 1, 100, 130));
+            }
+
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<Items.Placeable.ShtuxibusTrophy>(), 10));
             npcLoot.Add(ItemDropRule.MasterModeCommonDrop(ModContent.ItemType<Items.Placeable.ShtuxibusRelic>()));
-            npcLoot.AddConditionalPerPlayer(() => !WorldSaveSystem.downedShtuxibus, ModContent.ItemType<ShtuxibusLore>());
+
+            if (ModLoader.TryGetMod("CalamityMod", out Mod kal))
+            {
+                //npcLoot.AddConditionalPerPlayer(() => !WorldSaveSystem.downedShtuxibus, ModContent.ItemType<ShtuxibusLore>());
+            }
         }
         public override void BossLoot(ref string name, ref int potionType) { potionType = ModContent.ItemType<Items.Consumables.UltimateHealingPotion>(); }
         public override void FindFrame(int frameHeight)
@@ -6506,7 +6512,6 @@ namespace ssm.Content.NPCs.Shtuxibus
             hit.Crit = false;
             hit.InstantKill = false;
         }
-
         private void OnHit(float damage)
         {
             damageTotal += (int)damage * 60;

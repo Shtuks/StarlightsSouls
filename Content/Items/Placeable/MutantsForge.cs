@@ -5,18 +5,19 @@ using Terraria;
 using Terraria.GameContent.Creative;
 using Terraria.ModLoader;
 using Fargowiltas.Items.Tiles;
-using CalamityMod.Items.Placeables.Furniture.CraftingStations;
 using ssm.Content.Tiles;
 using FargowiltasSouls.Content.Items.Materials;
-using Redemption.Items.Placeable.Furniture.Lab;
-using ThoriumMod.Items.Placeable;
-using ThoriumMod.Items.Thorium;
-using ThoriumMod.Items.ArcaneArmor;
+using ssm.Content.Items.Placeable;
 
 namespace ssm.Content.Items.Placeable
 {
     public class MutantsForge : ModItem
     {
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return ShtunConfig.Instance.ExtraContent;
+        }
+
         public override void SetStaticDefaults()
         {
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[this.Type] = 1;
@@ -49,7 +50,11 @@ namespace ssm.Content.Items.Placeable
 
         public override void AddRecipes()
         {
-            CreateRecipe()
+            Recipe recipe = CreateRecipe();
+
+            if (ModLoader.HasMod("CalamityMod"))
+                recipe.AddIngredient<DemonshadeWorkbench>();
+
             //.AddIngredient<XeniumRefinery>()
             //.AddIngredient<DraedonsForge>()
             //.AddIngredient<XeniumSmelter>()
@@ -57,9 +62,9 @@ namespace ssm.Content.Items.Placeable
             //.AddIngredient<SoulForge>()
             //.AddIngredient<ThoriumAnvil>()
             //.AddIngredient<ArcaneArmorFabricator>()
-            .AddIngredient<EternalEnergy>(30)
-            .AddIngredient<CrucibleCosmos>()
-            .Register();
+            recipe.AddIngredient<EternalEnergy>(30);
+            recipe.AddIngredient<CrucibleCosmos>();
+            recipe.Register();
         }
     }
 }

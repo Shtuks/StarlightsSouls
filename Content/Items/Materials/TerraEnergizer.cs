@@ -11,11 +11,16 @@ using Terraria.ModLoader;
 using FargowiltasSouls.Content.Items;
 using ssm.Content.Items.Materials;
 using ssm.Content.Tiles;
+using Fargowiltas.Items.Summons.SwarmSummons.Energizers;
 
 namespace ssm.Content.Items.Materials
 {
     public class TerraEnergizer : SoulsItem
     {
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return ShtunConfig.Instance.ExtraContent;
+        }
         public override void SetDefaults()
         {
             Item.width = 20;
@@ -42,7 +47,25 @@ namespace ssm.Content.Items.Materials
         public override void AddRecipes()
         {
             this.CreateRecipe(1)
-            //.AddIngredient<InfinityCatalyst>()
+            .AddIngredient<EnergizerTwins>()
+            .AddIngredient<EnergizerQueenSlime>()
+            .AddIngredient<EnergizerMoon>()
+            .AddIngredient<EnergizerEye>()
+            .AddIngredient<EnergizerCultist>()
+            .AddIngredient<EnergizerBee>()
+            .AddIngredient<EnergizerBetsy>()
+            .AddIngredient<EnergizerBrain>()
+            .AddIngredient<EnergizerDestroy>()
+            .AddIngredient<EnergizerDeer>()
+            .AddIngredient<EnergizerEmpress>()
+            .AddIngredient<EnergizerGolem>()
+            .AddIngredient<EnergizerPlant>()
+            .AddIngredient<EnergizerSkele>()
+            .AddIngredient<EnergizerWall>()
+            .AddIngredient<EnergizerWorm>()
+            .AddIngredient<EnergizerSlime>()
+            .AddIngredient<EnergizerFish>()
+            .AddIngredient<EnergizerDarkMage>()
             .AddTile<MutantsForgeTile>()
             .Register();
         }

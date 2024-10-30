@@ -9,6 +9,10 @@ namespace ssm
 {
     public class Recipes : ModSystem
     {
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return ShtunConfig.Instance.ExtraContent;
+        }
         public override void PostAddRecipes()
         {
             for (int i = 0; i < Recipe.numRecipes; i++)

@@ -11,6 +11,10 @@ namespace ssm.Content.NPCs.Shtuxibus
     [LegacyName(new string[] { "KnowledgeShtuxibus" })]
     public class ShtuxibusLore : LoreItem
     {
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return ShtunConfig.Instance.ExtraContent;
+        }
         public override void SetStaticDefaults() => base.SetStaticDefaults();
 
         public override void SetDefaults()

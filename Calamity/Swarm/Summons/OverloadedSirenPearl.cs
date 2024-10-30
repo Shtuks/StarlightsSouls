@@ -16,6 +16,10 @@ namespace ssm.Calamity.Swarm.Summons
     [JITWhenModsEnabled(ModCompatibility.Calamity.Name)]
     public class OverloadedSirenPearl : SwarmSummonBase
     {
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return ShtunConfig.Instance.CalSwarmItems;
+        }
         public OverloadedSirenPearl() : base(ModContent.NPCType<Anahita>(), 25)
         {
         }

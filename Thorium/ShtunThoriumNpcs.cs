@@ -54,6 +54,11 @@ namespace ssm.Thorium
         private readonly Mod fargosouls = ModLoader.GetMod("FargowiltasSouls");
         public override bool InstancePerEntity => true;
 
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return ShtunConfig.Instance.TorSwarmItems;
+        }
+
         internal bool SwarmActive;
         internal bool PandoraActive;
         internal bool NoLoot = false;

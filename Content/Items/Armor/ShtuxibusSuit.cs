@@ -15,6 +15,12 @@ namespace ssm.Content.Items.Armor
             EquipLoader.AddEquipTexture(((ModType)this).Mod, "ssm/Content/Items/Armor/ShtuxibusSuit_Neck", (EquipType)11, (ModItem)this, (string)null, (EquipTexture)null);
             EquipLoader.AddEquipTexture(((ModType)this).Mod, "ssm/Content/Items/Armor/ShtuxibusSuit_Back", (EquipType)5, (ModItem)this, (string)null, (EquipTexture)null);
         }
+
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return ShtunConfig.Instance.ExtraContent;
+        }
+
         public override void SetDefaults()
         {
             ((Entity)this.Item).width = 42;

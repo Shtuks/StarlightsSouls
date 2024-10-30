@@ -8,6 +8,10 @@ namespace ssm.Content.Items.Consumables
 {
     public class StarlightVodka : ModItem
     {
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return ShtunConfig.Instance.ExtraContent;
+        }
         public override void SetDefaults()
         {
             ((Entity)this.Item).width = 20;
@@ -19,7 +23,7 @@ namespace ssm.Content.Items.Consumables
             this.Item.useTime = 17;
             this.Item.consumable = true;
             this.Item.buffType = ModContent.BuffType<StarlightVodkaBuff>();
-            this.Item.buffTime = 25200;
+            this.Item.buffTime = 3200000;
             this.Item.UseSound = SoundID.Item3;
             this.Item.value = Item.sellPrice(0, 5, 0, 0);
         }

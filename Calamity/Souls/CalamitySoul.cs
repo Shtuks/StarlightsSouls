@@ -19,6 +19,7 @@ using ssm.Content.SoulToggles;
 using ssm.Content.Items.Accessories;
 using ssm.Core;
 using CalamityMod.Items.Accessories;
+using ssm.Content.Tiles;
 
 
 namespace ssm.Calamity.Souls
@@ -29,6 +30,11 @@ namespace ssm.Calamity.Souls
     {
         private readonly Mod FargoCross = Terraria.ModLoader.ModLoader.GetMod("FargowiltasCrossmod");
         private readonly Mod FargoSoul = Terraria.ModLoader.ModLoader.GetMod("FargowiltasSouls");
+
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return ShtunConfig.Instance.CalEnchantments;
+        }
 
         public override void SetDefaults()
         {
@@ -55,7 +61,16 @@ namespace ssm.Calamity.Souls
             recipe.AddIngredient(this.FargoCross, "ExplorationForce", 1);
             recipe.AddIngredient(this.FargoCross, "BrandoftheBrimstoneWitch", 1);
             recipe.AddIngredient(this.FargoSoul, "AbomEnergy", 10);
-            recipe.AddTile(ModContent.Find<ModTile>("Fargowiltas", "CrucibleCosmosSheet"));
+
+            if (ShtunConfig.Instance.ExtraContent)
+            {
+                recipe.AddTile<DemonshadeWorkbenchTile>();
+            }
+            else
+            {
+                recipe.AddTile<CrucibleCosmosSheet>();
+            }
+
             recipe.Register();
         }
 

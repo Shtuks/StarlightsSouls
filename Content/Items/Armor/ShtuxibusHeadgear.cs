@@ -8,6 +8,10 @@ namespace ssm.Content.Items.Armor
     [AutoloadEquip(EquipType.Head)]
     public class ShtuxibusHeadgear : ModItem
     {
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return ShtunConfig.Instance.ExtraContent;
+        }
         public override void SetDefaults()
         {
             ((Entity)this.Item).width = 18;

@@ -15,7 +15,11 @@ namespace ssm.Calamity.Swarm.Summons
     [JITWhenModsEnabled(ModCompatibility.Calamity.Name)]
     public class ProfandedSomething : SwarmSummonBase
     {
-        public ProfandedSomething() : base(ModContent.NPCType<ProfanedGuardianCommander>(), 25)
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return ShtunConfig.Instance.CalSwarmItems;
+        }
+        public ProfandedSomething() : base(ModContent.NPCType<ProfanedGuardianCommander>(), 10)
         {
         }
 
