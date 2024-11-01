@@ -40,7 +40,6 @@ using Terraria.UI;
 using Terraria.Chat;
 using Terraria.GameContent;
 using Terraria.Localization;
-//using Fargowiltas.Items.CaughtNPCs;
 using ssm.Items;
 using ssm.Calamity;
 
@@ -54,18 +53,23 @@ namespace ssm
         internal static int SwarmTotal;
         internal static int SwarmSpawned;
 
+
         internal static ModKeybind shtuxianSuper;
         internal static ssm Instance;
+
         internal bool CalamityLoaded;
         internal bool FargoLoaded;
         internal bool SoulsLoaded;
+        internal bool RedemptionLoaded;
+        internal bool SoALoaded;
+
         internal Mod bossChecklist;
-        public static Mod furgus;
-        internal Mod calamity;
-        internal Mod fargosouls;
+
         public static bool amiactive;
 
         public override uint ExtraPlayerBuffSlots => 300u;
+
+
         public override void Load()
         {
             Instance = this;
@@ -77,6 +81,18 @@ namespace ssm
             if(ModLoader.TryGetMod("CalamityMod", out Mod kal) && ShtunConfig.Instance.CalCaughtNpcs)
             {
                 CalCaughtNpcs.CalRegisterItems();
+            }
+            if (ModLoader.TryGetMod("ThoriumMod", out Mod tor) && ShtunConfig.Instance.TorCaughtNpcs)
+            {
+                //TorCaughtNpcs.TorRegisterItems();
+            }
+            if (ModLoader.TryGetMod("SacredTools", out Mod soa) && ShtunConfig.Instance.SoACaughtNpcs)
+            {
+                //SoACaughtNpcs.SoARegisterItems();
+            }
+            if (ModLoader.TryGetMod("Redemption", out Mod red) && ShtunConfig.Instance.RedCaughtNpcs)
+            {
+                //RedCaughtNpcs.RedRegisterItems();
             }
 
             //FargowiltasCrossmod.FargowiltasCrossmod.EnchantLoadingEnabled = true;
@@ -131,16 +147,18 @@ namespace ssm
                 CalamityLoaded = ModLoader.GetMod("CalamityMod") != null;
                 SoulsLoaded = ModLoader.GetMod("FargowiltasSouls") != null;
                 FargoLoaded = ModLoader.GetMod("Fargowiltas") != null;
-                calamity = ModLoader.GetMod("CalamityMod");
-                fargosouls = ModLoader.GetMod("FargowiltasSouls");
+                SoALoaded = ModLoader.GetMod("SacredTools") != null;
+                RedemptionLoaded = ModLoader.GetMod("Redemption") != null;
             }
             catch (Exception e)
             {
                 Logger.Warn("ssm PostSetupContent Error: " + e.StackTrace + e.Message);
             }
         }
-        static float ColorTimer;
+
         static float ColorTimer2;
+
+
         public static Color ShtuxibusColor()
         {
             Color mutantColor = new Color(28, 222, 152);

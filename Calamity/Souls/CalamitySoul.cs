@@ -24,8 +24,8 @@ using ssm.Content.Tiles;
 
 namespace ssm.Calamity.Souls
 {
-    [ExtendsFromMod(ModCompatibility.Calamity.Name)]
-    [JITWhenModsEnabled(ModCompatibility.Calamity.Name)]
+    [ExtendsFromMod(ModCompatibility.Calamity.Name, ModCompatibility.Crossmod.Name)]
+    [JITWhenModsEnabled(ModCompatibility.Calamity.Name, ModCompatibility.Crossmod.Name)]
     public class CalamitySoul : BaseSoul
     {
         private readonly Mod FargoCross = Terraria.ModLoader.ModLoader.GetMod("FargowiltasCrossmod");
@@ -84,7 +84,7 @@ namespace ssm.Calamity.Souls
         public class ShatteredCommunityEffect : CalamitySoulEffect
         {
             public override int ToggleItemType => ModContent.ItemType<ShatteredCommunity>();
-            public override bool IgnoresMutantPresence => true;
+            public override bool MutantsPresenceAffects => true;
         }
     }
 }

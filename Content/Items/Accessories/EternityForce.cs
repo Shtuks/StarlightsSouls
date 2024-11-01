@@ -27,7 +27,7 @@ using FargowiltasSouls.Content.Items.Accessories.Forces;
 
 namespace ssm.Content.Items.Accessories
 {
-    public class EternityForce : BaseForce
+    public class EternityForce : ModItem
     {
         private readonly Mod FargoSoul = Terraria.ModLoader.ModLoader.GetMod("FargowiltasSouls");
 
@@ -71,6 +71,10 @@ namespace ssm.Content.Items.Accessories
             recipe.AddIngredient<StyxEnchant>(1);
             recipe.AddIngredient<PhantaplazmalEnchant>(1);
             recipe.AddIngredient<NekomiEnchant>(1);
+            recipe.AddIngredient<EternalEnergy>(15);
+            recipe.AddIngredient<AbomEnergy>(15);
+            recipe.AddIngredient<DeviatingEnergy>(15);
+            recipe.AddIngredient<Eridanium>(15);
             recipe.AddTile(ModContent.Find<ModTile>("Fargowiltas", "CrucibleCosmosSheet"));
             recipe.Register();
         }

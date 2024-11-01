@@ -17,9 +17,10 @@ namespace ssm.Content.Buffs
         private readonly Mod Fargos = Terraria.ModLoader.ModLoader.GetMod("FargowiltasSouls");
         public override void SetStaticDefaults()
         {
-            Main.buffNoSave[this.Type] = true;
-            BuffID.Sets.NurseCannotRemoveDebuff[this.Type] = true;
-            Main.persistentBuff[this.Type] = true;
+            Main.debuff[Type] = true;
+            Main.buffNoSave[Type] = true;
+            BuffID.Sets.NurseCannotRemoveDebuff[Type] = true;
+            Main.persistentBuff[Type] = true;
         }
 
         public override void Update(Player player, ref int buffIndex)
@@ -72,10 +73,9 @@ namespace ssm.Content.Buffs
 
         public override void Update(NPC npc, ref int buffIndex)
         {
-            ShtunNpcs shtunNpcs = new ShtunNpcs();
-            if (shtunNpcs.chtuxlagorInferno < npc.buffTime[buffIndex])
+            if (npc.Shtun().chtuxlagorInferno < npc.buffTime[buffIndex])
             {
-                shtunNpcs.chtuxlagorInferno = npc.buffTime[buffIndex];
+                npc.Shtun().chtuxlagorInferno = npc.buffTime[buffIndex];
             }
 
             npc.defense = 0;
@@ -87,8 +87,8 @@ namespace ssm.Content.Buffs
                     npc.buffImmune[index] = false;
             }
 
-            npc.DelBuff(buffIndex);
-            buffIndex--;
+            //npc.DelBuff(buffIndex);
+            //buffIndex--;
         }
     }
 }

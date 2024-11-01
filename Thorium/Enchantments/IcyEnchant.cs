@@ -38,9 +38,12 @@ namespace ssm.Thorium.Enchantments
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-
             ModContent.Find<ModItem>(this.thorium.Name, "BlizzardPouch").UpdateAccessory(player, false);
-            ModContent.Find<ModItem>(this.thorium.Name, "IcyHeadgear").UpdateArmorSet(player);
+
+            if (player.AddEffect<IcyEffect>(Item))
+            {
+                ModContent.Find<ModItem>(this.thorium.Name, "IcyHeadgear").UpdateArmorSet(player);
+            }
         }
 
         public class IcyEffect : AccessoryEffect
@@ -51,8 +54,6 @@ namespace ssm.Thorium.Enchantments
 
         public override void AddRecipes()
         {
-
-
             Recipe recipe = this.CreateRecipe();
 
             recipe.AddIngredient(ModContent.ItemType<IcyHeadgear>());

@@ -74,10 +74,7 @@ namespace ssm
         public override void UpdateLifeRegen(NPC npc, ref int damage)
         {
             if (chtuxlagorInferno > 0)
-            {
-                int lifeRegenValue = (int)(1000000);
-                ApplyDPSDebuff(lifeRegenValue, 10000, ref npc.lifeRegen, ref damage);
-            }
+                ApplyDPSDebuff(1000000, 10000, ref npc.lifeRegen, ref damage);
         }
 
         public override void PostAI(NPC npc)

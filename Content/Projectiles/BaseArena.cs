@@ -11,6 +11,7 @@ using FargowiltasSouls;
 using FargowiltasSouls.Content;
 using FargowiltasSouls.Core.ModPlayers;
 using FargowiltasSouls.Content.Projectiles;
+using Terraria.GameContent;
 
 namespace ssm.Content.Projectiles
 {
@@ -20,19 +21,21 @@ namespace ssm.Content.Projectiles
         protected readonly int npcType;
         protected readonly int dustType;
         protected readonly int increment;
+        protected readonly int visualCount;
         protected float threshold;
         protected float targetPlayer;
         public bool amiactive = false;
         private bool bruhusok;
         public void amIactivus(bool whga)
         { amiactive = whga; }
-        protected BaseArena(float rotationPerTick, float threshold, int npcType, int dustType = 135, int increment = 2)
+        protected BaseArena(float rotationPerTick, float threshold, int npcType, int dustType = 135, int increment = 2, int visualCount = 45)
         {
             this.rotationPerTick = rotationPerTick;
             this.threshold = threshold;
             this.npcType = npcType;
             this.dustType = dustType;
             this.increment = increment;
+            this.visualCount = visualCount;
         }
 
         public override void SetStaticDefaults()
@@ -198,6 +201,34 @@ namespace ssm.Content.Projectiles
 
         public override bool PreDraw(ref Color lightColor)
         {
+            Texture2D value = TextureAssets.Projectile[base.Projectile.type].Value;
+            int num = TextureAssets.Projectile[base.Projectile.type].Value.Height / Main.projFrames[base.Projectile.type];
+            Color alpha = base.Projectile.GetAlpha(lightColor);
+            for (int i = 0; i < this.visualCount; i++)
+            {
+                int num2 = (base.Projectile.frame + i) % Main.projFrames[base.Projectile.type];
+                int y = num * num2;
+                Rectangle rectangle = new Rectangle(0, y, value.Width, num);
+                Vector2 origin = rectangle.Size() / 2f;
+                float num3 = (float)Math.PI * 2f / (float)this.visualCount * (float)i + base.Projectile.ai[0];
+                Vector2 spinningpoint = new Vector2(this.threshold * base.Projectile.scale / 2f, 0f).RotatedBy(base.Projectile.ai[0]);
+                spinningpoint = spinningpoint.RotatedBy((float)Math.PI * 2f / (float)this.visualCount * (float)i);
+                for (int j = 0; j < 4; j++)
+                {
+                    Color color = alpha;
+                    color *= (float)(4 - j) / 4f;
+                    Vector2 vector = base.Projectile.Center + spinningpoint.RotatedBy(this.rotationPerTick * (float)(-j));
+                    float rotation = num3 + base.Projectile.rotation + (float)Math.PI / 2f * (float)i;
+                    Main.EntitySpriteDraw(value, vector - Main.screenPosition + new Vector2(0f, base.Projectile.gfxOffY), rectangle, color, rotation, origin, base.Projectile.scale, SpriteEffects.None);
+                }
+                float rotation2 = num3 + base.Projectile.rotation + (float)Math.PI / 2f * (float)i;
+                Main.EntitySpriteDraw(value, base.Projectile.Center + spinningpoint - Main.screenPosition + new Vector2(0f, base.Projectile.gfxOffY), rectangle, alpha, rotation2, origin, base.Projectile.scale, SpriteEffects.None);
+            }
+            return false;
+        }
+
+        /*public override bool PreDraw(ref Color lightColor)
+        {
             Texture2D texture2D13 = Terraria.GameContent.TextureAssets.Projectile[Projectile.type].Value;
             int num156 = Terraria.GameContent.TextureAssets.Projectile[Projectile.type].Value.Height / Main.projFrames[Projectile.type]; //ypos of lower right corner of sprite to draw
 
@@ -228,7 +259,7 @@ namespace ssm.Content.Projectiles
                 Main.EntitySpriteDraw(texture2D13, Projectile.Center + drawOffset - Main.screenPosition + new Vector2(0f, Projectile.gfxOffY), new Microsoft.Xna.Framework.Rectangle?(rectangle), color26, finalRot, origin2, Projectile.scale, SpriteEffects.None, 0);
             }
             return false;
-        }
+        }*/
 
         public override bool? CanCutTiles()
         {

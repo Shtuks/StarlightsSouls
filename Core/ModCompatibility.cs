@@ -11,6 +11,12 @@ public static class ModCompatibility
         public static bool Loaded => ModLoader.HasMod(Name);
         public static Mod Mod => ModLoader.GetMod(Name);
     }
+    public static class Crossmod
+    {
+        public const string Name = "FargowiltasCrossmod";
+        public static bool Loaded => ModLoader.HasMod(Name);
+        public static Mod Mod => ModLoader.GetMod(Name);
+    }
     public static class SoulsMod
     {
         public const string Name = "FargowiltasSouls";

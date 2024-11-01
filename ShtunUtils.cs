@@ -131,6 +131,11 @@ namespace ssm
             return false;
         }
 
+        public static ShtunNpcs Shtun(this NPC npc)
+        {
+            return npc.GetGlobalNPC<ShtunNpcs>();
+        }
+
         public static bool Stalin => ShtunConfig.Instance.Stalin;
         public static string TryStalinTexture => Stalin ? "_Stalin" : "";
 

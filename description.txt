@@ -5,8 +5,13 @@ Source code: https://github.com/Shtuks/StarlightsSouls
 Discord Server: https://discord.gg/xB9s8SyQJr
 
 The content:
-- Thorium/Shadows of Abaddon enchantments, forces, souls, swarms, caught NPCs
 
-- Redemption/Calamity compatibility (Work in progress)
+- Old Calamity DLC balance (switchable)
 
-- Post-Mutant Extra content (Echdeath, Shtuxibus)
+- Calamity swarms, caught NPCs, singularities
+
+- Thorium/Shadows of Abaddon enchantments, forces, souls, swarms
+
+- Redemption/Calamity enchantments, forces, souls (Work in progress)
+
+- Post-Mutant Extra content (Echdeath, Shtuxibus, Duke Fishron EX)

@@ -18,6 +18,11 @@ using ssm.Calamity.Souls;
 using Fargowiltas.Items.Tiles;
 using ssm.SoA.Souls;
 using ssm.Thorium.Souls;
+using CalamityMod.Items.Armor.Auric;
+using CalamityMod.Items.Armor.GodSlayer;
+using CalamityMod.Items.Armor.Silva;
+using CalamityMod.Items.Armor.Tarragon;
+using CalamityMod.Items.Armor.Bloodflare;
 
 namespace ssm.Calamity
 {
@@ -34,10 +39,16 @@ namespace ssm.Calamity
 
         public override void AddRecipeGroups()
         {
-            //RecipeGroup rec = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " Asthral Helmet", ModContent.ItemType<AsthralMage>(), ModContent.ItemType<AsthralRanged>(), ModContent.ItemType<AsthralMelee>(), ModContent.ItemType<AsthralSummon>(), ModContent.ItemType<AsthraltiteHelmetRevenant>());
-            //RecipeGroup.RegisterGroup("ssm:AsthralHelms", rec);
-            //RecipeGroup rec2 = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " Flarium Helmet", ModContent.ItemType<FlariumCrown>(), ModContent.ItemType<FlariumMask>(), ModContent.ItemType<FlariumCowl>());
-            //RecipeGroup.RegisterGroup("ssm:FlariumHelms", rec2);
+            RecipeGroup rec = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " Auric Helmet", ModContent.ItemType<AuricTeslaHoodedFacemask>(), ModContent.ItemType<AuricTeslaSpaceHelmet>(), ModContent.ItemType<AuricTeslaPlumedHelm>(), ModContent.ItemType<AuricTeslaRoyalHelm>(), ModContent.ItemType<AuricTeslaWireHemmedVisage>());
+            RecipeGroup.RegisterGroup("ssm:Auric", rec);
+            RecipeGroup rec2 = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " Godslayer Helmet", ModContent.ItemType<GodSlayerHeadMelee>(), ModContent.ItemType<GodSlayerHeadRanged>(), ModContent.ItemType<GodSlayerHeadRogue>());
+            RecipeGroup.RegisterGroup("ssm:Godslayer", rec2);
+            RecipeGroup rec3 = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " Silva Helmet", ModContent.ItemType<SilvaHeadMagic>(), ModContent.ItemType<SilvaHeadSummon>());
+            RecipeGroup.RegisterGroup("ssm:Silva", rec3);
+            RecipeGroup rec4 = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " Tarragon Helmet", ModContent.ItemType<TarragonHeadMagic>(), ModContent.ItemType<TarragonHeadMelee>(), ModContent.ItemType<TarragonHeadRanged>(), ModContent.ItemType<TarragonHeadSummon>(), ModContent.ItemType<TarragonHeadRogue>());
+            RecipeGroup.RegisterGroup("ssm:Tarragon", rec4);
+            RecipeGroup rec5 = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " Bloodflare Helmet", ModContent.ItemType<BloodflareHeadMagic>(), ModContent.ItemType<BloodflareHeadMelee>(), ModContent.ItemType<BloodflareHeadRanged>(), ModContent.ItemType<BloodflareHeadSummon>(), ModContent.ItemType<BloodflareHeadRogue>());
+            RecipeGroup.RegisterGroup("ssm:Bloodflare", rec5);
         }
 
 
@@ -46,6 +57,31 @@ namespace ssm.Calamity
             for (int i = 0; i < Recipe.numRecipes; i++)
             {
                 Recipe recipe = Main.recipe[i];
+
+                #region other
+                if (ShtunConfig.Instance.OldCalDlcBalance)
+                {
+                    if (recipe.HasResult(ModContent.ItemType<ShadowspecBar>()) && recipe.HasIngredient<EternalEnergy>())
+                    {
+                        recipe.RemoveIngredient(ModContent.ItemType<EternalEnergy>());
+                    }
+                    if (recipe.HasResult<BrandoftheBrimstoneWitch>() && !recipe.HasIngredient<ShadowspecBar>() && recipe.HasIngredient<AbomEnergy>())
+                    {
+                        if (recipe.RemoveIngredient(ModContent.ItemType<AbomEnergy>()))
+                            recipe.AddIngredient<ShadowspecBar>(5);
+                    }
+                    if (!recipe.HasIngredient<ShadowspecBar>() && recipe.HasIngredient<AshesofAnnihilation>())
+                    {
+                        if (recipe.HasResult<UniverseSoul>() || recipe.HasResult<TerrariaSoul>() || recipe.HasResult<MasochistSoul>() || recipe.HasResult<DimensionSoul>())
+                        {
+                            if (recipe.RemoveIngredient(ModContent.ItemType<AshesofAnnihilation>()) || recipe.RemoveIngredient(ModContent.ItemType<ExoPrism>()))
+                                recipe.AddIngredient<ShadowspecBar>(5);
+                        }
+                    }
+                }
+                #endregion
+
+                #region souls
                 if (ShtunConfig.Instance.CalEnchantments)
                 {
                     if (recipe.HasResult<EternitySoul>() && !recipe.HasIngredient<CalamitySoul>() && recipe.HasIngredient<BrandoftheBrimstoneWitch>())
@@ -54,18 +90,49 @@ namespace ssm.Calamity
                             recipe.AddIngredient<CalamitySoul>();
                     }
                 }
-                if (recipe.HasResult(ModContent.ItemType<SoASoul>()) && !recipe.HasIngredient<ShadowspecBar>())
+                if (!ShtunConfig.Instance.OldCalDlcBalance)
                 {
-                    recipe.AddIngredient<ShadowspecBar>(5);
+                    if (recipe.HasResult(ModContent.ItemType<SoASoul>()) && !recipe.HasIngredient<ExoPrism>())
+                    {
+                        recipe.AddIngredient<ExoPrism>(5);
+                        recipe.AddIngredient<AshesofAnnihilation>(5);
+                    }
+                    //if (recipe.HasResult(ModContent.ItemType<RedemptionSoul>()) && !recipe.HasIngredient<ExoPrism>())
+                    //{
+                    //    recipe.AddIngredient<ExoPrism>(5);
+                    //    recipe.AddIngredient<AshesofAnnihilation>(5);
+                    //}
+                    if (recipe.HasResult(ModContent.ItemType<ThoriumSoul>()) && !recipe.HasIngredient<ExoPrism>())
+                    {
+                        recipe.AddIngredient<ExoPrism>(5);
+                        recipe.AddIngredient<AshesofAnnihilation>(5);
+                    }
+                    if (recipe.HasResult(ModContent.ItemType<CalamitySoul>()) && !recipe.HasIngredient<ExoPrism>())
+                    {
+                        recipe.AddIngredient<ExoPrism>(5);
+                        recipe.AddIngredient<AshesofAnnihilation>(5);
+                    }
                 }
-                if (recipe.HasResult(ModContent.ItemType<ThoriumSoul>()) && !recipe.HasIngredient<ShadowspecBar>())
+                else
                 {
-                    recipe.AddIngredient<ShadowspecBar>(5);
+                    if (recipe.HasResult(ModContent.ItemType<SoASoul>()) && !recipe.HasIngredient<ShadowspecBar>())
+                    {
+                        recipe.AddIngredient<ShadowspecBar>(5);
+                    }
+                    //if (recipe.HasResult(ModContent.ItemType<RedemptionSoul>()) && !recipe.HasIngredient<ExoPrism>())
+                    //{
+                    //    recipe.AddIngredient<ShadowspecBar>(5);
+                    //}
+                    if (recipe.HasResult(ModContent.ItemType<ThoriumSoul>()) && !recipe.HasIngredient<ShadowspecBar>())
+                    {
+                        recipe.AddIngredient<ShadowspecBar>(5);
+                    }
+                    if (recipe.HasResult(ModContent.ItemType<CalamitySoul>()) && !recipe.HasIngredient<ShadowspecBar>())
+                    {
+                        recipe.AddIngredient<ShadowspecBar>(5);
+                    }
                 }
-                if (recipe.HasResult(ModContent.ItemType<CalamitySoul>()) && !recipe.HasIngredient<ShadowspecBar>())
-                {
-                    recipe.AddIngredient<ShadowspecBar>(5);
-                }
+                #endregion
             }
         }
     }

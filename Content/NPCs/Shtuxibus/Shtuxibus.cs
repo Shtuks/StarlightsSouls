@@ -2,9 +2,6 @@
 using System.Linq;
 using FargowiltasCrossmod.Content.Calamity.Bosses.SlimeGod;
 using FargowiltasCrossmod.Content.Common.Projectiles;
-using FargowiltasCrossmod.Core;
-using FargowiltasCrossmod.Core.Calamity.Systems;
-using FargowiltasCrossmod.Core.Common;
 using FargowiltasSouls;
 using FargowiltasSouls.Common.Graphics.Particles;
 using FargowiltasSouls.Content.Buffs.Boss;
@@ -51,6 +48,8 @@ using ssm.Content.Projectiles.Shtuxibus.Cal;
 
 namespace ssm.Content.NPCs.Shtuxibus
 {
+    [ExtendsFromMod(ModCompatibility.Crossmod.Name)]
+    [JITWhenModsEnabled(ModCompatibility.Crossmod.Name)]
     [AutoloadBossHead]
     public class Shtuxibus : ModNPC
     {

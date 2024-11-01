@@ -1,0 +1,241 @@
+CommonItemTooltip: {
+	PercentIncreasedKineticDamage: "{0}% increased rogue damage"
+	PercentIncreasedKineticCritChance: "{0}% increased rogue critical strike chance"
+	PercentIncreasedKineticDamageCritChance: "{0}% increased rogue damage and critical strike chance"
+	PercentIncreasedKineticSpeed: "{0}% increased rogue velocity"
+}
+
+DamageClasses: {
+	SanguineDamageClass.DisplayName: sanguine damage
+	KineticDamageClass.DisplayName: Rogue damage
+}
+
+Items: {
+	QuasarSigil: {
+		DisplayName: Quasar Sigil
+		Tooltip:
+			'''
+			{$CommonItemTooltip.PercentIncreasedKineticDamage}
+			{$CommonItemTooltip.PercentIncreasedKineticCritChance@1}
+			'''
+	}
+
+	FeatherHairpin: {
+		DisplayName: Feather Hairpin
+		Tooltip:
+			'''
+			{$CommonItemTooltip.PercentIncreasedKineticDamage}
+			{$CommonItemTooltip.PercentIncreasedKineticSpeed@1}
+			'''
+	}
+
+	HeartOfTheCaverns: {
+		DisplayName: Heart of the Caverns
+		Tooltip: "{$CommonItemTooltip.PercentIncreasedKineticSpeed}"
+	}
+
+	NinjaEmblem: {
+		DisplayName: Ninja Emblem
+		Tooltip: "{$CommonItemTooltip.PercentIncreasedKineticDamage}"
+	}
+
+	AsthraltiteHelmetRevenant: {
+		DisplayName: Asthraltite Cowl
+		Tooltip:
+			'''
+			{$CommonItemTooltip.PercentIncreasedLanceReadySpeed}
+			{$CommonItemTooltip.PercentIncreasedKnifeVelocity@1}
+			{$CommonItemTooltip.PercentIncreasedKineticCritChance@2}
+			{$CommonItemTooltip.IncreasesMaxLifeBy@3}
+			'''
+	}
+
+	BlightChest: {
+		DisplayName: Blightbone Breastplate
+		Tooltip: "{$CommonItemTooltip.PercentIncreasedKineticDamage}"
+	}
+
+	BlightLegs: {
+		DisplayName: Blightbone Greaves
+		Tooltip:
+			'''
+			{$CommonItemTooltip.PercentIncreasedKineticDamage}
+			{$CommonItemTooltip.PercentIncreasedMovementSpeed@1}
+			'''
+	}
+
+	BlightMask: {
+		DisplayName: Blightbone Mask
+		Tooltip:
+			'''
+			{$CommonItemTooltip.PercentIncreasedKineticCritChance}
+			{$CommonItemTooltip.PercentIncreasedKineticSpeed@1}
+			'''
+	}
+
+	CairoCrusaderFaulds: {
+		DisplayName: Cairo Crusader Faulds
+		Tooltip:
+			'''
+			{$CommonItemTooltip.PercentIncreasedKineticDamage}
+			{$CommonItemTooltip.PercentIncreasedMovementSpeed@1}
+			'''
+	}
+
+	CairoCrusaderRobe: {
+		DisplayName: Cairo Crusader Robe
+		Tooltip:
+			'''
+			{$CommonItemTooltip.PercentIncreasedKineticDamage}
+			{$CommonItemTooltip.PercentIncreasedKineticSpeed@1}
+			'''
+	}
+
+	CairoCrusaderTurban: {
+		DisplayName: Cairo Crusader Turban
+		Tooltip:
+			'''
+			{$CommonItemTooltip.PercentIncreasedKineticDamage}
+			{$CommonItemTooltip.PercentIncreasedKineticCritChance@1}
+			'''
+	}
+
+	FlariumCowl: {
+		DisplayName: Flarium Cowl
+		Tooltip:
+			'''
+			{$CommonItemTooltip.PercentIncreasedKineticDamage}
+			{$CommonItemTooltip.PercentIncreasedKineticCritChance@1}
+			{$CommonItemTooltip.PercentIncreasedKineticSpeed@2}
+			{$CommonItemTooltip.PercentChanceToSaveThrownItems@3}
+			{$CommonItemTooltip.IncreasesMaxLifeBy@4}
+			'''
+	}
+
+	FallenPrinceBoots: {
+		DisplayName: Fallen Prince's Boots
+		Tooltip:
+			'''
+			{$CommonItemTooltip.PercentIncreasedKineticDamage}
+			{$CommonItemTooltip.PercentIncreasedMovementSpeed@1}
+			'''
+	}
+
+	FallenPrinceChest: {
+		DisplayName: Fallen Prince's Chestplate
+		Tooltip:
+			'''
+			{$CommonItemTooltip.PercentIncreasedKineticDamage}
+			{$CommonItemTooltip.PercentIncreasedKineticCritChance@1}
+			{$CommonItemTooltip.PercentIncreasedKineticSpeed@2}
+			{$CommonItemTooltip.IncreasesMaxLifeBy@3}
+			{$CommonItemTooltip.MajorLifeRegen}
+			'''
+	}
+
+	FallenPrinceHelm: {
+		DisplayName: Fallen Prince's Helm
+		Tooltip:
+			'''
+			{$CommonItemTooltip.PercentIncreasedKineticDamage}
+			{$CommonItemTooltip.PercentChanceToSaveThrownItems@1}
+			'''
+	}
+
+	MarstechHelm: {
+		DisplayName: Marstech Helm
+		Tooltip:
+			'''
+			{$CommonItemTooltip.PercentIncreasedKineticDamage}
+			{$CommonItemTooltip.PercentChanceToSaveThrownItems@1}
+			'''
+	}
+
+	MarstechLegs: {
+		DisplayName: Marstech Greaves
+		Tooltip:
+			'''
+			{$CommonItemTooltip.PercentIncreasedKineticDamage}
+			{$CommonItemTooltip.PercentIncreasedKineticCritChance@1}
+			{$CommonItemTooltip.PercentIncreasedMovementSpeed@2}
+			'''
+	}
+
+	MarstechPlate: {
+		DisplayName: Marstech Plate
+		Tooltip:
+			'''
+			{$CommonItemTooltip.PercentIncreasedKineticDamage}
+			{$CommonItemTooltip.PercentIncreasedKineticSpeed@1}
+			'''
+	}
+
+	PrairieChest: {
+		DisplayName: Prairie Wristbands
+		Tooltip: "{$CommonItemTooltip.PercentIncreasedKineticSpeed}"
+	}
+
+	NovaBreastplate: {
+		DisplayName: Quasar Breastplate
+		Tooltip:
+			'''
+			{$CommonItemTooltip.PercentIncreasedKineticDamage}
+			{$CommonItemTooltip.PercentIncreasedKineticSpeed@1}
+			'''
+	}
+
+	NovaHelmet: {
+		DisplayName: Quasar Helmet
+		Tooltip:
+			'''
+			{$CommonItemTooltip.PercentIncreasedKineticDamage}
+			{$CommonItemTooltip.PercentChanceToSaveThrownItems@1}
+			'''
+	}
+
+	NovaLegs: {
+		DisplayName: Quasar Leggings
+		Tooltip:
+			'''
+			{$CommonItemTooltip.PercentIncreasedKineticDamage}
+			{$CommonItemTooltip.PercentIncreasedKineticCritChance@1}
+			{$CommonItemTooltip.PercentIncreasedMovementSpeed@2}
+			'''
+	}
+
+	SpaceJunkBody: {
+		DisplayName: Space Junk Chestplate
+		Tooltip:
+			'''
+			{$CommonItemTooltip.PercentIncreasedKineticDamage}
+			{$CommonItemTooltip.PercentIncreasedKineticSpeed@1}
+			'''
+	}
+
+	SpaceJunkHelm: {
+		DisplayName: Space Junk Helmet
+		Tooltip:
+			'''
+			{$CommonItemTooltip.PercentIncreasedKineticDamage}
+			{$CommonItemTooltip.PercentIncreasedKineticCritChance@1}
+			'''
+	}
+
+	SpaceJunkLegs: {
+		DisplayName: Space Junk Boots
+		Tooltip:
+			'''
+			{$CommonItemTooltip.PercentIncreasedKineticDamage}
+			{$CommonItemTooltip.PercentIncreasedMovementSpeed@1}
+			'''
+	}
+
+	ThrownPotion: {
+		DisplayName: Ninja Focus Potion
+		Tooltip:
+			'''
+			{$CommonItemTooltip.PercentIncreasedKineticDamage}
+			{$CommonItemTooltip.PercentIncreasedKineticSpeed@1}
+			'''
+	}
+}

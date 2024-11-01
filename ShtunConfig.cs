@@ -18,6 +18,11 @@ namespace ssm
         [DefaultValue(true)]
         public bool ExtraContent { get; set; }
 
+        [ReloadRequired]
+        [BackgroundColor(60, 200, 60, 192)]
+        [DefaultValue(true)]
+        public bool OldCalDlcBalance { get; set; }
+
         //[ReloadRequired]
         [BackgroundColor(60, 200, 60, 192)]
         [DefaultValue(true)]

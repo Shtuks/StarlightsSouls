@@ -229,11 +229,10 @@ namespace ssm
         {
             if (ShtunConfig.Instance.WorldEnterMessage)
             {
-                ShtunUtils.DisplayLocalizedText("WARNING! In this update Shtuxibus, Echdeath and their items was moved to Extra Content.", Color.LimeGreen);
-                ShtunUtils.DisplayLocalizedText("All fargo expansions like souls, swarms and caught npc now also switchable for every mod.", Color.LimeGreen);
-                ShtunUtils.DisplayLocalizedText("You can toggle content in server-side mod settings. This will require reload of game.", Color.LimeGreen);
+                ShtunUtils.DisplayLocalizedText("I recommend looking at the mod's settings.", Color.LimeGreen);
+                ShtunUtils.DisplayLocalizedText("Most of the content or rebalances are configurable.", Color.LimeGreen);
                 ShtunUtils.DisplayLocalizedText("This message also can be toggled off in settings.", Color.LimeGreen);
-                ShtunUtils.DisplayLocalizedText("                                                                      - StarlightCat", Color.LimeGreen);
+                ShtunUtils.DisplayLocalizedText("                                     - StarlightCat", Color.LimeGreen);
             }
         }
 

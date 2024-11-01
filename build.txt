@@ -1,6 +1,6 @@
 displayName = StarlightCat's Fargo Expansion
 author = StarlightCat
-version = 0.2.0
-modReferences = FargowiltasSouls, FargowiltasCrossmod, Fargowiltas, Luminance, FargowiltasMusic
-weakReferences = CalamityMod, Redemption, SacredTools, ThoriumMod
-sortArfter = FargowiltasSouls, FargowiltasCrossmod, Fargowiltas, Luminance, FargowiltasMusic
+version = 0.2.2
+modReferences = FargowiltasSouls, Fargowiltas, Luminance, FargowiltasMusic
+weakReferences = CalamityMod, Redemption, SacredTools, ThoriumMod, FargowiltasCrossmod, CalValEX, FargoMoreSoulsCompat, CatalystMod, NoxusBoss
+sortArfter = FargowiltasSouls, Fargowiltas, Luminance, FargowiltasMusic

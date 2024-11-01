@@ -2274,6 +2274,11 @@ Mods: {
 				Tooltip: ""
 				DisplayName: Demonshade Workbench
 			}
+
+			ShtuxibusFumo: {
+				Tooltip: ""
+				DisplayName: Shtuxibus Fumo
+			}
 		}
 
 		Buffs: {
@@ -2772,6 +2777,11 @@ Mods: {
 				WorldEnterMessage: {
 					Label: World Enter Message
 					Tooltip: ""
+				}
+
+				OldCalDlcBalance: {
+					Tooltip: ""
+					Label: Old Cal Dlc Balance
 				}
 			}
 		}
