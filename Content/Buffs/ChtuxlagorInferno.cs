@@ -4,11 +4,16 @@ using Terraria;
 using Terraria.ID;
 using Terraria.DataStructures;
 using Terraria.ModLoader;
+using CalamityMod.NPCs;
+using CalamityMod;
 
 namespace ssm.Content.Buffs
 {
     public class ChtuxlagorInferno : ModBuff
     {
+        public const int TickNumber = 10000;
+        public const int DPS = 100000;
+
         private readonly Mod Fargos = Terraria.ModLoader.ModLoader.GetMod("FargowiltasSouls");
         public override void SetStaticDefaults()
         {
@@ -19,7 +24,7 @@ namespace ssm.Content.Buffs
 
         public override void Update(Player player, ref int buffIndex)
         {
-            player.statLife -= 745;
+            player.statLife -= player.statLifeMax2 / 10;
             player.endurance = 0.0f;
             player.GetDamage(DamageClass.Generic) *= 0.05f;
             player.GetCritChance(DamageClass.Generic) *= 0.05f;
@@ -33,12 +38,6 @@ namespace ssm.Content.Buffs
             player.immuneNoBlink = false;
             player.immuneTime = 0;
             player.noFallDmg = false;
-            player.ichor = true;
-            player.onFire = true;
-            player.onFire2 = true;
-            player.onFrostBurn = true;
-            player.poisoned = true;
-            player.venom = true;
             player.wingTime = 0.0f;
             player.wingTimeMax = 0;
             player.rocketTime = 0;
@@ -73,15 +72,23 @@ namespace ssm.Content.Buffs
 
         public override void Update(NPC npc, ref int buffIndex)
         {
-            npc.life = npc.life - 745;
-            npc.lifeRegen -= 745;
+            ShtunNpcs shtunNpcs = new ShtunNpcs();
+            if (shtunNpcs.chtuxlagorInferno < npc.buffTime[buffIndex])
+            {
+                shtunNpcs.chtuxlagorInferno = npc.buffTime[buffIndex];
+            }
+
             npc.defense = 0;
             npc.defDefense = 0;
+
             for (int index = 0; index < BuffLoader.BuffCount; ++index)
             {
                 if (Main.debuff[index])
                     npc.buffImmune[index] = false;
             }
+
+            npc.DelBuff(buffIndex);
+            buffIndex--;
         }
     }
 }

@@ -1,5 +1,18 @@
 Mods: {
 	ssm: {
+		SetBonus: {
+			Monstrosity: Effects of all auric helmets, shadowspec helmet and gem tech headgear
+			Quantum:
+				'''
+				Maximum damage input capped at 1000 health
+				Supression of Chtuxlagor Inferno effects
+				You can revive up to 3 times, healing all health
+				Cooldown of each revive is 30 seconds
+				Your attacks inflict Chtuxlagor Inferno
+				All set bonuses from Monstrosity and Mutant armor
+				'''
+		}
+
 		Items: {
 			Lore: {
 				ShtuxibusLore: {
@@ -27,8 +40,9 @@ Mods: {
 				Tooltip:
 					'''
 					Effects of [i:FargowiltasSouls/EternitySoul], [i:ssm/EternityForce]
-					Your attacks inflict most of debuffs
+					Your attacks inflict most of debuffs, absurdly increace life regeneration
 					Grants immunity to all debuffs except "Chtux'lag'or Inferno" and "Shtuxibus Curse"
+					Press [shtuxianSuper] key to become invinvible for 5 seconds
 					'God or whatever, all things acknowledge your claim to omnipotence.'
 					'''
 			}
@@ -2517,8 +2531,8 @@ Mods: {
 			ShatteredCommunityEffect: Shattered Community
 			EridanusEffect: Eridanus blessing
 			GaiaEffect: Attacking mode
-			NekomiEffect: Nekomi set
-			PhantaplazmalEffect: Mutant set
+			NekomiEffect: Nekomi armor set
+			PhantaplazmalEffect: Mutant armor set
 			StyxEffect: Charging energy
 			MutantSoulEffect: Spectral Mutant
 			DeviEffect: Spectral Deviantt
@@ -2753,6 +2767,11 @@ Mods: {
 				RedCaughtNpcs: {
 					Label: Redemption Caught NPCs
 					Tooltip: WIP
+				}
+
+				WorldEnterMessage: {
+					Label: World Enter Message
+					Tooltip: ""
 				}
 			}
 		}

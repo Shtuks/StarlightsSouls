@@ -4,6 +4,8 @@ using Terraria;
 using Terraria.ModLoader;
 using ssm.Core;
 using Terraria.Localization;
+using CalamityMod.CalPlayer;
+using CalamityMod;
 
 namespace ssm.Content.Items.Armor
 {
@@ -55,7 +57,7 @@ namespace ssm.Content.Items.Armor
             player.GetArmorPenetration(DamageClass.Generic) += 700f;
             player.GetAttackSpeed(DamageClass.Generic) += 5f;
             player.longInvince = true;
-            player.endurance += 50f;
+            player.endurance += 5f;
             player.lavaImmune = true;
             player.manaFlower = true;
             player.manaMagnet = true;
@@ -66,25 +68,15 @@ namespace ssm.Content.Items.Armor
             player.noKnockback = true;
             player.lavaImmune = true;
             player.noFallDmg = true;
-            /*player.AddBuff(Terraria.ModLoader.ModLoader.GetMod("CalamityMod").BuffType("YharimPower"), 2, true);
-            player.AddBuff(Terraria.ModLoader.ModLoader.GetMod("CalamityMod").BuffType("GraxDefense"), 2, true);
-            player.AddBuff(Terraria.ModLoader.ModLoader.GetMod("CalamityMod").BuffType("AbyssalDivingSuitPlates"), 2, true);
-            player.AddBuff(Terraria.ModLoader.ModLoader.GetMod("CalamityMod").BuffType("DraconicSurgeBuff"), 2, true);
-            player.AddBuff(Terraria.ModLoader.ModLoader.GetMod("CalamityMod").BuffType("TyrantsFury"), 2, true);
-            player.AddBuff(Terraria.ModLoader.ModLoader.GetMod("CalamityMod").BuffType("TriumphBuff"), 2, true);
-            player.AddBuff(Terraria.ModLoader.ModLoader.GetMod("CalamityMod").BuffType("ArmorShattering"), 2, true);
-            player.AddBuff(Terraria.ModLoader.ModLoader.GetMod("CalamityMod").BuffType("TitanScale"), 2, true);
-            player.AddBuff(Terraria.ModLoader.ModLoader.GetMod("CalamityMod").BuffType("KamiBuff"), 2, true);
-            player.AddBuff(Terraria.ModLoader.ModLoader.GetMod("CalamityMod").BuffType("AbyssalWeapon"), 2, true);
-            player.AddBuff(Terraria.ModLoader.ModLoader.GetMod("CalamityMod").BuffType("HolyWrathBuff"), 2, true);
-            player.AddBuff(Terraria.ModLoader.ModLoader.GetMod("CalamityMod").BuffType("ProfanedRageBuff"), 2, true);
-            player.AddBuff(Terraria.ModLoader.ModLoader.GetMod("CalamityMod").BuffType("XerocRage"), 2, true);
-            player.AddBuff(Terraria.ModLoader.ModLoader.GetMod("CalamityMod").BuffType("AstrageldonBuff"), 2, true);
-            player.AddBuff(Terraria.ModLoader.ModLoader.GetMod("CalamityMod").BuffType("Revivify"), 2, true);*/
             if (Terraria.ModLoader.ModLoader.GetMod("CalamityMod") != null)
             {
                 ModContent.Find<ModItem>("CalamityMod", "DemonshadeHelm").UpdateArmorSet(player);
-                ModContent.Find<ModItem>("CalamityMod", "DemonshadeBreastplate").UpdateArmorSet(player);
+                CalamityPlayer calamityPlayer = player.Calamity();
+                calamityPlayer.tarraSet = true;
+                calamityPlayer.GemTechSet = true;
+                calamityPlayer.bloodflareSet = true;
+                calamityPlayer.godSlayer = true;
+                calamityPlayer.auricSet = true;
             }
         }
 

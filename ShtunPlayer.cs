@@ -43,7 +43,6 @@ namespace ssm
 {
     public partial class ShtunPlayer : ModPlayer
     {
-        public bool shtuxianDomination;
         public bool shtuxianSoul;
         public bool antiCollision;
         public bool antiDeath;
@@ -87,7 +86,7 @@ namespace ssm
             if (Player.whoAmI != Main.myPlayer)
                 return;
         }
-        public void ProcessTriggers(TriggersSet triggersSet)
+        public override void ProcessTriggers(TriggersSet triggersSet)
         {
             if (ssm.shtuxianSuper.JustPressed)
             {
@@ -103,26 +102,34 @@ namespace ssm
                 //SoundEngine.PlaySound(new SoundStyle("ssm/Assets/Sounds/ShtuxianSuper"), Player.Center);
             }
         }
+        public override void ModifyHurt(ref Player.HurtModifiers modifiers)
+        {
+            if (ChtuxlagorHeart)
+            {
+                modifiers.SetMaxDamage(1000);
+            }
+        }
+
         public override bool CanBeHitByNPC(NPC npc, ref int cooldownSlot)
         {
-            return !ChtuxlagorBuff || shtuxianDomination;
+            return !ChtuxlagorBuff || Player.HasBuff<ShtuxianDomination>();
         }
         public override bool CanBeHitByProjectile(Projectile proj)
         {
-            return !ChtuxlagorBuff || shtuxianDomination;
+            return !ChtuxlagorBuff || Player.HasBuff<ShtuxianDomination>();
         }
 
         List<int> prevDyes = null;
 
-        public virtual void PreUpdate()
+        public override void PreUpdate()
         {
-            if (antiDeath || shtuxianDomination)
+            if (Player.HasBuff<ShtuxianDomination>() || ChtuxlagorBuff)
             {
                 Player.ghost = false;
                 Player.dead = false;
             }
         }
-        public virtual void PostUpdateMiscEffects()
+        /*public override void PostUpdateMiscEffects()
         {
             if (this.antiCollision)
                 this.Player.AddBuff(ModContent.BuffType<AntiCollision>(), 2, true, false);
@@ -149,19 +156,13 @@ namespace ssm
                 if (this.Player.potionDelay > 0)
                     this.Player.potionDelay = 0;
             }
-        }
+        }*/
         public override void SaveData(TagCompound tag)
         {
-            tag.Add("antiCollision", (object)this.antiCollision);
-            tag.Add("antiDeath", (object)this.antiDeath);
-            tag.Add("antiDebuff", (object)this.antiDebuff);
             tag["ShtuxibusDeaths"] = ShtuxibusDeaths;
         }
         public override void LoadData(TagCompound tag)
         {
-            this.antiCollision = tag.GetBool("antiCollision");
-            this.antiDeath = tag.GetBool("antiDeath");
-            this.antiDebuff = tag.GetBool("antiDebuff");
             ShtuxibusDeaths = tag.GetInt("ShtuxibusDeaths");
         }
         private void OnHitNPCEither(NPC target, int damage, float knockback, bool crit, DamageClass damageClass, Projectile projectile = null, Item Item = null)
@@ -185,6 +186,8 @@ namespace ssm
                 target.AddBuff(ModContent.Find<ModBuff>(this.FargoSoul.Name, "DeviPresenceBuff").Type, 1000, false);
             if (this.equippedAbominableEnchantment)
                 target.AddBuff(ModContent.Find<ModBuff>(this.FargoSoul.Name, "AbomFangBuff").Type, 1000, false);
+            if (ChtuxlagorHeart)
+                target.AddBuff(ModContent.Find<ModBuff>("ssm", "ChtuxlagorInferno").Type, 1000, false);
         }
 
         public override void ModifyScreenPosition()
@@ -216,7 +219,7 @@ namespace ssm
             DevianttSoul = false;
             MutantSoul = false;
             ShtuxibusSoul = false;
-            ChtuxlagorBuff = false;
+            //ChtuxlagorBuff = false;
             CelestialPower = false;
 
             //if (NoUsingItems > 0)
@@ -224,10 +227,14 @@ namespace ssm
         }
         public override void OnEnterWorld()
         {
-            ShtunUtils.DisplayLocalizedText("WARNING! In this update Shtuxibus, Echdeath and their items was moved to Extra Content.", Color.LimeGreen);
-            ShtunUtils.DisplayLocalizedText("All fargo expansions like souls, swarms and caught npc now also switchable for every mod.", Color.LimeGreen);
-            ShtunUtils.DisplayLocalizedText("You can toggle content in server-side mod settings. This will require reload of game.", Color.LimeGreen);
-            ShtunUtils.DisplayLocalizedText("                                                                - StarlightCat", Color.LimeGreen);
+            if (ShtunConfig.Instance.WorldEnterMessage)
+            {
+                ShtunUtils.DisplayLocalizedText("WARNING! In this update Shtuxibus, Echdeath and their items was moved to Extra Content.", Color.LimeGreen);
+                ShtunUtils.DisplayLocalizedText("All fargo expansions like souls, swarms and caught npc now also switchable for every mod.", Color.LimeGreen);
+                ShtunUtils.DisplayLocalizedText("You can toggle content in server-side mod settings. This will require reload of game.", Color.LimeGreen);
+                ShtunUtils.DisplayLocalizedText("This message also can be toggled off in settings.", Color.LimeGreen);
+                ShtunUtils.DisplayLocalizedText("                                                                      - StarlightCat", Color.LimeGreen);
+            }
         }
 
         public override void UpdateDead() {}
@@ -237,7 +244,7 @@ namespace ssm
         int cooldownCounter,
         bool dodgeable)
         {
-            return this.Player == Main.LocalPlayer && this.antiCollision || shtuxianDomination;
+            return this.Player == Main.LocalPlayer && Player.HasBuff<ShtuxianDomination>();
         }
         public override bool PreKill(
         double damage,
@@ -247,7 +254,7 @@ namespace ssm
         ref bool genGore,
         ref PlayerDeathReason damageSource)
         {
-            return !this.antiDeath || !shtuxianDomination;
+            return !Player.HasBuff<ShtuxianDomination>();
         }
     }
 }

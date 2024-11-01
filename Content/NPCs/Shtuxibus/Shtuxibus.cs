@@ -64,7 +64,7 @@ namespace ssm.Content.NPCs.Shtuxibus
         private readonly Mod fargosouls = ModLoader.GetMod("FargowiltasSouls");
         bool spawned;
         private int damageTotal = 0;
-        internal int dpsCap = WorldSaveSystem.downedShtuxibus ? 5000000 : 3500000;
+        internal int dpsCap = 10000000;
         public int ritualProj, spriteProj, ringProj;
         private bool droppedSummon = false;
         public bool SparkAtaackUsing;
@@ -941,7 +941,7 @@ namespace ssm.Content.NPCs.Shtuxibus
             else if (NPC.localAI[3] == 1)
             {
                 ShouldDrawAura = true;
-                EModeGlobalNPC.Aura(NPC, 2000f, true, -1, default, ModContent.BuffType<GodEaterBuff>(), ModContent.BuffType<MutantFangBuff>());
+                EModeGlobalNPC.Aura(NPC, 2000f, true, -1, default, ModContent.BuffType<ChtuxlagorInferno>(), ModContent.BuffType<MutantFangBuff>());
             }
             else
             {

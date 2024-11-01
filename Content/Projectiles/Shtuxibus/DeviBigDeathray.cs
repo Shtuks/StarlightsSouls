@@ -14,10 +14,20 @@ using FargowiltasSouls;
 using FargowiltasSouls.Content.Projectiles;
 using FargowiltasSouls.Core.ModPlayers;
 using ssm.Content.Projectiles.Deathrays;
+using ssm.Assets;
+using FargowiltasSouls.Content.Buffs.Boss;
+using FargowiltasSouls.Content.Buffs.Masomode;
+using FargowiltasSouls.Content.Buffs.Souls;
+//using FargowiltasSouls.Content.Projectiles.Deathrays;
+using FargowiltasSouls.Core.Systems;
+using Luminance.Core.Graphics;
+using ssm;
+using ssm.Content.NPCs.Shtuxibus;
+using System.IO;
 
 namespace ssm.Content.Projectiles.Shtuxibus
 {
-    public class DeviBigDeathray : BaseDeathray, IPixelPrimitiveDrawer
+    public class DeviBigDeathray : BaseDeathray
     {
         public override string Texture => "ssm/Content/Projectiles/Deathrays/DeviDeathray";
 
@@ -157,70 +167,58 @@ namespace ssm.Content.Projectiles.Shtuxibus
             target.velocity.X = 0;
             target.velocity.Y = -0.4f;
         }
-        public override Color? GetAlpha(Color lightColor)
-        {
-            //IL_000f: Unknown result type (might be due to invalid IL or missing references)
-            return new Color(Main.DiscoR, Main.DiscoG, Main.DiscoB);
-        }
-        public float WidthFunction(float trailInterpolant)
-        {
-            float baseWidth = Projectile.scale * Projectile.width;
-
-            return baseWidth * 0.7f;
-        }
-        public static Color[] DeviColors => new Color[] { new(Main.DiscoR, Main.DiscoG, Main.DiscoB), new(Main.DiscoR, Main.DiscoG, Main.DiscoB), new(Main.DiscoR, Main.DiscoG, Main.DiscoB), new(Main.DiscoR, Main.DiscoG, Main.DiscoB) };
         public Color ColorFunction(float trailInterpolant)
         {
             float time = (float)(0.5 * (1 + Math.Sin(1.5f * Main.GlobalTimeWrappedHourly % 1)));
             float localInterpolant = (time + (1 - trailInterpolant)) / 2;
             return Color.Lerp(Color.MediumVioletRed, Color.Purple, localInterpolant) * 2;
         }
+        public float WidthFunction(float trailInterpolant)
+        {
+            // Grow rapidly from the start to full length. Any more than this notably distorts the texture.
+            float baseWidth = Projectile.scale * Projectile.width;
+            return baseWidth;
 
-        //  public override bool PreDraw(ref Color lightColor) => false;
-
-        public void DrawPixelPrimitives(SpriteBatch spriteBatch)
+            // Grow to 2x width by the end. Any more than this distorts the texture too much.
+            //return MathHelper.Lerp(baseWidth, baseWidth * 2, trailInterpolant);
+        }
+        public override bool PreDraw(ref Color lightColor)
         {
             // This should never happen, but just in case.
             if (Projectile.velocity == Vector2.Zero)
-                return;
+                return false;
 
-            // Initialize the drawers.
-
+            ManagedShader shader = ShaderManager.GetShader("FargowiltasSouls.MutantDeathray");
 
             // Get the laser end position.
             Vector2 laserEnd = Projectile.Center + Projectile.velocity.SafeNormalize(Vector2.UnitY) * drawDistance;
 
             // Create 8 points that span across the draw distance from the projectile center.
+
             // This allows the drawing to be pushed back, which is needed due to the shader fading in at the start to avoid
             // sharp lines.
-            Vector2 initialDrawPoint = Projectile.Center - Projectile.velocity * 300f;
+            Vector2 initialDrawPoint = Projectile.Center - Projectile.velocity * 400f;
             Vector2[] baseDrawPoints = new Vector2[8];
             for (int i = 0; i < baseDrawPoints.Length; i++)
                 baseDrawPoints[i] = Vector2.Lerp(initialDrawPoint, laserEnd, i / (float)(baseDrawPoints.Length - 1f));
 
-            // Draw the background rings.
-            DrawRings(baseDrawPoints, true);
+            // Set shader parameters. This one takes a fademap and a color.
 
-            #region MainLaser
-
-            // Set shader parameters. This one takes two lots of fademaps and colors for two different overlayed textures.
-
-            #endregion
-
-            // Draw the foreground rings.
-            DrawRings(baseDrawPoints, false);
-
+            // The laser should fade to white in the middle.
+            Color brightColor = new(194, 255, 194, 100);
+            shader.TrySetParameter("mainColor", brightColor);
+            FargoSoulsUtil.SetTexture1(ShtunTextureRegistry.ShtuxibusStreak.Value);
             // Draw a big glow above the start of the laser, to help mask the intial fade in due to the immense width.
-            //Texture2D glowTexture = ModContent.Request<Texture2D>("almazikmod/Projectiles/GlowRing").Value;
-            //Vector2 glowDrawPosition = Projectile.Center - Projectile.velocity * 320f;
-            //Main.EntitySpriteDraw(glowTexture, glowDrawPosition - Main.screenPosition, null, Color.LavenderBlush, Projectile.rotation, glowTexture.Size() * 0.5f, Projectile.scale * 0.3f, SpriteEffects.None, 0);
 
+            Texture2D glowTexture = ModContent.Request<Texture2D>("FargowiltasSouls/Content/Projectiles/GlowRing").Value;
+
+            Vector2 glowDrawPosition = Projectile.Center - Projectile.velocity * (180f);
+
+            Main.EntitySpriteDraw(glowTexture, glowDrawPosition - Main.screenPosition, null, brightColor, Projectile.rotation, glowTexture.Size() * 0.5f, Projectile.scale * 0.4f, SpriteEffects.None, 0);
+            PrimitiveRenderer.RenderTrail(baseDrawPoints, new(WidthFunction, ColorFunction, Shader: shader), 60);
+            return false;
         }
 
-        public float RingWidthFunction(float trailInterpolant)
-        {
-            return Projectile.scale * 5;
-        }
         public Color RingColorFunction(float trailInterpolant)
         {
             float time = (float)(0.5 * (1 + Math.Sin(Main.GlobalTimeWrappedHourly - trailInterpolant) / 2));
@@ -231,7 +229,6 @@ namespace ssm.Content.Projectiles.Shtuxibus
 
         private void DrawRings(Vector2[] baseDrawPoints, bool inBackground)
         {
-
             Vector2 velocity = Projectile.velocity.SafeNormalize(Vector2.UnitY);
             velocity = velocity.RotatedBy(MathHelper.PiOver2) * 1250;
 
@@ -276,10 +273,6 @@ namespace ssm.Content.Projectiles.Shtuxibus
                     else
                         ringDrawPoints[j] -= Projectile.velocity * offsetStrength * 100;
                 }
-
-
-
-
                 iterator++;
             }
         }

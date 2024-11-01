@@ -116,12 +116,12 @@ namespace ssm.Content.Items.Accessories
             if (!Main.zenithWorld) { player.buffImmune[ModContent.Find<ModBuff>(this.FargoSoul.Name, "TimeFrozenBuff").Type] = true; }
             player.buffImmune[ModContent.Find<ModBuff>(this.FargoSoul.Name, "MutantPresenceBuff").Type] = true;
             player.buffImmune[ModContent.Find<ModBuff>(this.FargoSoul.Name, "CoffinTossBuff").Type] = true;
-            if (!Main.zenithWorld) { player.buffImmune[ModContent.Find<ModBuff>(this.FargoSoul.Name, "MutantRebirthBuff").Type] = true; }
+            //if (!Main.zenithWorld) { player.buffImmune[ModContent.Find<ModBuff>(this.FargoSoul.Name, "MutantRebirthBuff").Type] = true; }
             player.buffImmune[ModContent.Find<ModBuff>(this.FargoSoul.Name, "GodEaterBuff").Type] = true;
-            if (!Main.zenithWorld) { player.buffImmune[ModContent.Find<ModBuff>(this.FargoSoul.Name, "FossilReviveCDBuff").Type] = true; }
+            //if (!Main.zenithWorld) { player.buffImmune[ModContent.Find<ModBuff>(this.FargoSoul.Name, "FossilReviveCDBuff").Type] = true; }
             player.buffImmune[ModContent.Find<ModBuff>(this.FargoSoul.Name, "BerserkerInstallCDBuff").Type] = true;
             if (!Main.zenithWorld) { player.buffImmune[ModContent.Find<ModBuff>(this.FargoSoul.Name, "TimeStopCDBuff").Type] = true; }
-            if (!Main.zenithWorld) { player.buffImmune[ModContent.Find<ModBuff>(this.FargoSoul.Name, "AbomRebirthBuff").Type] = true; }
+            //if (!Main.zenithWorld) { player.buffImmune[ModContent.Find<ModBuff>(this.FargoSoul.Name, "AbomRebirthBuff").Type] = true; }
             if (!Main.zenithWorld) { player.buffImmune[ModContent.Find<ModBuff>(this.FargoSoul.Name, "AbomCooldownBuff").Type] = true; }
 
             player.AddBuff(ModContent.BuffType<SadismBuff>(), 2);

@@ -19,6 +19,7 @@ using ssm.Content.NPCs;
 using ssm.Content.NPCs.Shtuxibus;
 using Fargowiltas;
 using Terraria.ModLoader;
+using CalamityMod.Buffs.DamageOverTime;
 
 namespace ssm
 {
@@ -27,6 +28,7 @@ namespace ssm
         private readonly Mod fargosouls = ModLoader.GetMod("FargowiltasSouls");
         public override bool InstancePerEntity => true;
         public bool isWaterEnemy;
+        public int chtuxlagorInferno;
         public static int Shtuxibus = -1;
         public static int DukeEX = -1;
         public static int boss = -1;
@@ -66,6 +68,36 @@ namespace ssm
                 {
                     shop.Add(ItemID, Array.Empty<Condition>());
                 }
+            }
+        }
+
+        public override void UpdateLifeRegen(NPC npc, ref int damage)
+        {
+            if (chtuxlagorInferno > 0)
+            {
+                int lifeRegenValue = (int)(1000000);
+                ApplyDPSDebuff(lifeRegenValue, 10000, ref npc.lifeRegen, ref damage);
+            }
+        }
+
+        public override void PostAI(NPC npc)
+        {
+            if (chtuxlagorInferno > 0)
+            {
+                chtuxlagorInferno--;
+            }
+        }
+        public void ApplyDPSDebuff(int lifeRegenValue, int damageValue, ref int lifeRegen, ref int damage)
+        {
+            if (lifeRegen > 0)
+            {
+                lifeRegen = 0;
+            }
+
+            lifeRegen -= lifeRegenValue;
+            if (damage < damageValue)
+            {
+                damage = damageValue;
             }
         }
     }
