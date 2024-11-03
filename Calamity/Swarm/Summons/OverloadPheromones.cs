@@ -1,39 +1,27 @@
-using Microsoft.Xna.Framework;
 using Terraria;
-using ssm.Calamity.Swarm.Summons;
-using Terraria.ID;
-using Terraria.Localization;
 using Terraria.ModLoader;
-using CalamityMod.NPCs.Bumblebirb;
-using CalamityMod.Items.SummonItems;
-using Fargowiltas.Items.Summons.SwarmSummons;
 using ssm.Core;
+using CalamityMod.Items.SummonItems;
+using CalamityMod.NPCs.DesertScourge;
+using CalamityMod.NPCs.Bumblebirb;
 
 namespace ssm.Calamity.Swarm.Summons
 {
     [ExtendsFromMod(ModCompatibility.Calamity.Name)]
     [JITWhenModsEnabled(ModCompatibility.Calamity.Name)]
-    public class OverloadPheromones : SwarmSummonBase
+    public class OverloadBirb : SwarmSummonBase
     {
-        public override bool IsLoadingEnabled(Mod mod)
+        public OverloadBirb() : base(ModContent.NPCType<Bumblefuck>(), 50, ModContent.ItemType<ExoticPheromones>())
         {
-            return ShtunConfig.Instance.CalSwarmItems;
         }
-        public OverloadPheromones() : base(ModContent.NPCType<Bumblefuck>(), 25)
+
+        public override void SetStaticDefaults()
         {
         }
 
         public override bool CanUseItem(Player player)
         {
             return !ssm.SwarmActive;
-        }
-
-        public override void AddRecipes()
-        {
-            this.CreateRecipe(1)
-            .AddIngredient<Overloader>()
-            .AddIngredient<ExoticPheromones>()
-            .Register();
         }
     }
 }

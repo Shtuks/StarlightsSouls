@@ -6,8 +6,6 @@ using FargowiltasSouls.Core.Systems;
 
 namespace ssm.Reworks
 {
-    [ExtendsFromMod(ModCompatibility.Calamity.Name, ModCompatibility.Crossmod.Name)]
-    [JITWhenModsEnabled(ModCompatibility.Calamity.Name, ModCompatibility.Crossmod.Name)]
     public class OldCalDlcNpcBalance : GlobalNPC
     {
         public override void SetDefaults(NPC npc)
@@ -22,18 +20,18 @@ namespace ssm.Reworks
                     {
                         npc.lifeMax = (int)(npc.lifeMax * 0.5f);
                     }
-                    if (npc.type == ModContent.NPCType<MutantBoss>())
-                    {
-                        npc.lifeMax = 10000000;
-                        if(WorldSavingSystem.EternityMode)
-                            npc.lifeMax = 50000000;
-                        if(Main.expertMode)
-                            npc.lifeMax = 20000000;
-                        if(Main.masterMode)
-                            npc.lifeMax = 30000000;
-                        if(WorldSavingSystem.MasochistModeReal)
-                            npc.lifeMax = 60000000;
-                    }
+                }
+                if (npc.type == ModContent.NPCType<MutantBoss>())
+                {
+                    npc.lifeMax = 10000000;
+                    if (WorldSavingSystem.EternityMode)
+                        npc.lifeMax = 50000000;
+                    if (Main.expertMode)
+                        npc.lifeMax = 20000000;
+                    if (Main.masterMode)
+                        npc.lifeMax = 30000000;
+                    if (WorldSavingSystem.MasochistModeReal)
+                        npc.lifeMax = 60000000;
                 }
             }
         }

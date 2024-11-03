@@ -1,6 +1,6 @@
 ﻿using CalamityMod;
 using CalamityMod.NPCs.SlimeGod;
-using FargowiltasCrossmod.Content.Calamity.Bosses.SlimeGod;
+using ssm.Content.NPCs.Shtuxibus.CalAttacks;
 using ssm.Core;
 using ssm.Core.Common;
 using FargowiltasSouls.Content.Buffs.Boss;
@@ -43,7 +43,6 @@ namespace ssm.Content.NPCs.Shtuxibus.CalAttacks
             if (Projectile.ai[2] == SlamTime / 2 + 10)
             {
                 Projectile.scale = 1.1f;
-                SoundEngine.PlaySound(SlimeGodCoreEternity.ShotSound);
                 if (ShtunUtils.HostCheck)
                 {
                     int p = Projectile.NewProjectile(Projectile.GetSource_FromThis(), Projectile.Center + Vector2.UnitY * Projectile.height / 2, Vector2.UnitY, ModContent.ProjectileType<SlamTelegraph>(), 0, 0, Main.myPlayer, ai1: 150 * 1.2f);

@@ -59,6 +59,18 @@ public static class ModCompatibility
         public static bool Loaded => ModLoader.HasMod(Name);
         public static Mod Mod => ModLoader.GetMod(Name);
     }
+    public static class Catalyst
+    {
+        public const string Name = "CatalystMod";
+        public static bool Loaded => ModLoader.HasMod(Name);
+        public static Mod Mod => ModLoader.GetMod(Name);
+    }
+    public static class CalValEX
+    {
+        public const string Name = "CalValEX";
+        public static bool Loaded => ModLoader.HasMod(Name);
+        public static Mod Mod => ModLoader.GetMod(Name);
+    }
     public static class InfernumMode
     {
         public const string Name = "InfernumMode";

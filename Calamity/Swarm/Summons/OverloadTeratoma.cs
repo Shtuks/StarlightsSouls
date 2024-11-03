@@ -1,39 +1,27 @@
-using Microsoft.Xna.Framework;
 using Terraria;
-using ssm.Calamity.Swarm.Summons;
-using Terraria.ID;
-using Terraria.Localization;
 using Terraria.ModLoader;
-using CalamityMod.NPCs.HiveMind;
-using CalamityMod.Items.SummonItems;
-using Fargowiltas.Items.Summons.SwarmSummons;
 using ssm.Core;
+using CalamityMod.Items.SummonItems;
+using CalamityMod.NPCs.DesertScourge;
+using CalamityMod.NPCs.HiveMind;
 
 namespace ssm.Calamity.Swarm.Summons
 {
     [ExtendsFromMod(ModCompatibility.Calamity.Name)]
     [JITWhenModsEnabled(ModCompatibility.Calamity.Name)]
-    public class OverloadTeratoma : SwarmSummonBase
+    public class OverloadHive : SwarmSummonBase
     {
-        public override bool IsLoadingEnabled(Mod mod)
+        public OverloadHive() : base(ModContent.NPCType<HiveMind>(), 50, ModContent.ItemType<Teratoma>())
         {
-            return ShtunConfig.Instance.CalSwarmItems;
         }
-        public OverloadTeratoma() : base(ModContent.NPCType<HiveMind>(), 25)
+
+        public override void SetStaticDefaults()
         {
         }
 
         public override bool CanUseItem(Player player)
         {
             return !ssm.SwarmActive;
-        }
-
-        public override void AddRecipes()
-        {
-            this.CreateRecipe(1)
-            .AddIngredient<Overloader>()
-            .AddIngredient<Teratoma>()
-            .Register();
         }
     }
 }

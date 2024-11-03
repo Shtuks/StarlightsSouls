@@ -1,39 +1,27 @@
-using Microsoft.Xna.Framework;
 using Terraria;
-using ssm.Calamity.Swarm.Summons;
-using Terraria.ID;
-using Terraria.Localization;
 using Terraria.ModLoader;
-using CalamityMod.NPCs.BrimstoneElemental;
-using CalamityMod.Items.SummonItems;
-using Fargowiltas.Items.Summons.SwarmSummons;
 using ssm.Core;
+using CalamityMod.Items.SummonItems;
+using CalamityMod.NPCs.DesertScourge;
+using CalamityMod.NPCs.BrimstoneElemental;
 
 namespace ssm.Calamity.Swarm.Summons
 {
     [ExtendsFromMod(ModCompatibility.Calamity.Name)]
     [JITWhenModsEnabled(ModCompatibility.Calamity.Name)]
-    public class DeepFriedIdol : SwarmSummonBase
+    public class OverloadElemental : SwarmSummonBase
     {
-        public override bool IsLoadingEnabled(Mod mod)
+        public OverloadElemental() : base(ModContent.NPCType<BrimstoneElemental>(), 50, ModContent.ItemType<CharredIdol>())
         {
-            return ShtunConfig.Instance.CalSwarmItems;
         }
-        public DeepFriedIdol() : base(ModContent.NPCType<BrimstoneElemental>(), 25)
+
+        public override void SetStaticDefaults()
         {
         }
 
         public override bool CanUseItem(Player player)
         {
             return !ssm.SwarmActive;
-        }
-
-        public override void AddRecipes()
-        {
-            this.CreateRecipe(1)
-            .AddIngredient<Overloader>()
-            .AddIngredient<CharredIdol>()
-            .Register();
         }
     }
 }

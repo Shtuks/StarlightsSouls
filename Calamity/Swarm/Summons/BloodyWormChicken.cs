@@ -1,39 +1,28 @@
-using Microsoft.Xna.Framework;
 using Terraria;
-using ssm.Calamity.Swarm.Summons;
-using Terraria.ID;
-using Terraria.Localization;
 using Terraria.ModLoader;
-using CalamityMod.NPCs.Perforator;
-using CalamityMod.Items.SummonItems;
-using Fargowiltas.Items.Summons.SwarmSummons;
+using CalamityMod.NPCs.AstrumAureus;
 using ssm.Core;
+using CalamityMod.Items.SummonItems;
+using CalamityMod.NPCs.SupremeCalamitas;
+using CalamityMod.NPCs.Perforator;
 
 namespace ssm.Calamity.Swarm.Summons
 {
     [ExtendsFromMod(ModCompatibility.Calamity.Name)]
     [JITWhenModsEnabled(ModCompatibility.Calamity.Name)]
-    public class BloodyWormChicken : SwarmSummonBase
+    public class OverloadPerforators : SwarmSummonBase
     {
-        public override bool IsLoadingEnabled(Mod mod)
+        public OverloadPerforators() : base(ModContent.NPCType<PerforatorHive>(), 50, ModContent.ItemType<BloodyWormFood>())
         {
-            return ShtunConfig.Instance.CalSwarmItems;
         }
-        public BloodyWormChicken() : base(ModContent.NPCType<PerforatorHive>(), 25)
+
+        public override void SetStaticDefaults()
         {
         }
 
         public override bool CanUseItem(Player player)
         {
             return !ssm.SwarmActive;
-        }
-
-        public override void AddRecipes()
-        {
-            this.CreateRecipe(1)
-            .AddIngredient<Overloader>()
-            .AddIngredient<BloodyWormFood>()
-            .Register();
         }
     }
 }

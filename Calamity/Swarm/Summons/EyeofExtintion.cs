@@ -1,39 +1,27 @@
-using Microsoft.Xna.Framework;
 using Terraria;
-using ssm.Calamity.Swarm.Summons;
-using Terraria.ID;
-using Terraria.Localization;
 using Terraria.ModLoader;
-using CalamityMod.NPCs.CalClone;
-using CalamityMod.Items.SummonItems;
-using Fargowiltas.Items.Summons.SwarmSummons;
 using ssm.Core;
+using CalamityMod.Items.SummonItems;
+using CalamityMod.NPCs.DesertScourge;
+using CalamityMod.NPCs.CalClone;
 
 namespace ssm.Calamity.Swarm.Summons
 {
     [ExtendsFromMod(ModCompatibility.Calamity.Name)]
     [JITWhenModsEnabled(ModCompatibility.Calamity.Name)]
-    public class EyeofExtintion : SwarmSummonBase
+    public class OverloadWaifuClone : SwarmSummonBase
     {
-        public override bool IsLoadingEnabled(Mod mod)
+        public OverloadWaifuClone() : base(ModContent.NPCType<CalamitasClone>(), 50, ModContent.ItemType<EyeofDesolation>())
         {
-            return ShtunConfig.Instance.CalSwarmItems;
         }
-        public EyeofExtintion() : base(ModContent.NPCType<CalamitasClone>(), 25)
+
+        public override void SetStaticDefaults()
         {
         }
 
         public override bool CanUseItem(Player player)
         {
             return !ssm.SwarmActive;
-        }
-
-        public override void AddRecipes()
-        {
-            this.CreateRecipe(1)
-            .AddIngredient<Overloader>()
-            .AddIngredient<EyeofDesolation>()
-            .Register();
         }
     }
 }

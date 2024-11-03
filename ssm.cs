@@ -48,10 +48,15 @@ namespace ssm
     public class ssm : Mod
     {
         // Swarms
-        internal static bool SwarmActive;
-        internal static int SwarmKills;
-        internal static int SwarmTotal;
-        internal static int SwarmSpawned;
+        public static bool PostMLSwarmActive;
+        public static bool HardmodeSwarmActive;
+        public static bool SwarmNoHyperActive;
+        public static int SwarmItemsUsed;
+        internal static bool SwarmSetDefaults;
+        public static bool SwarmActive;
+        public static int SwarmKills;
+        public static int SwarmTotal;
+        public static int SwarmSpawned;
 
 
         internal static ModKeybind shtuxianSuper;
@@ -69,6 +74,14 @@ namespace ssm
 
         public override uint ExtraPlayerBuffSlots => 300u;
 
+        public static int SwarmMinDamage
+        {
+            get
+            {
+                float num = ((!ssm.HardmodeSwarmActive) ? ((float)(50 + 3 * ssm.SwarmItemsUsed)) : ((float)(60 + 40 * ssm.SwarmItemsUsed)));
+                return (int)num;
+            }
+        }
 
         public override void Load()
         {

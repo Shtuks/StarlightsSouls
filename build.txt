@@ -1,6 +1,9 @@
 displayName = StarlightCat's Fargo Expansion
-author = StarlightCat
-version = 0.2.2
+author = StarlightCat, Mayeneznik and FormulaOak15915
+version = 0.2.4
+homepage = https://discord.gg/xB9s8SyQJr
 modReferences = FargowiltasSouls, Fargowiltas, Luminance, FargowiltasMusic
 weakReferences = CalamityMod, Redemption, SacredTools, ThoriumMod, FargowiltasCrossmod, CalValEX, FargoMoreSoulsCompat, CatalystMod, NoxusBoss
 sortArfter = FargowiltasSouls, Fargowiltas, Luminance, FargowiltasMusic
+includePDB = true
+includeSource = true

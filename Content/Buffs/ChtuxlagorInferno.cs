@@ -25,7 +25,17 @@ namespace ssm.Content.Buffs
 
         public override void Update(Player player, ref int buffIndex)
         {
-            player.statLife -= player.statLifeMax2 / 10;
+            if (ShtunConfig.Instance.ExtraContent)
+            {
+                if (player.GetModPlayer<ShtunPlayer>().ChtuxlagorHeart)
+                {
+                    player.statLife -= player.statLifeMax2 / 100;
+                }
+            }
+            else
+            {
+                player.statLife -= player.statLifeMax2 / 10;
+            }
             player.endurance = 0.0f;
             player.GetDamage(DamageClass.Generic) *= 0.05f;
             player.GetCritChance(DamageClass.Generic) *= 0.05f;

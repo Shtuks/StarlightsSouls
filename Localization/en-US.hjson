@@ -2279,6 +2279,151 @@ Mods: {
 				Tooltip: ""
 				DisplayName: Shtuxibus Fumo
 			}
+
+			BrimstoneWitch: {
+				DisplayName: Brimstone Witch
+				Tooltip: ""
+			}
+
+			Archmage: {
+				DisplayName: Archmage
+				Tooltip: ""
+			}
+
+			SeaKing: {
+				DisplayName: Sea King
+				Tooltip: ""
+			}
+
+			OverloadAnahita: {
+				DisplayName: Overload Anahita
+				Tooltip: ""
+			}
+
+			OverloadAS: {
+				DisplayName: Overload A S
+				Tooltip: ""
+			}
+
+			OverloadAureus: {
+				DisplayName: Overload Aureus
+				Tooltip: ""
+			}
+
+			OverloadBirb: {
+				DisplayName: Overload Birb
+				Tooltip: ""
+			}
+
+			OverloadCrabulon: {
+				DisplayName: Overload Crabulon
+				Tooltip: ""
+			}
+
+			OverloadCryogen: {
+				DisplayName: Overload Cryogen
+				Tooltip: ""
+			}
+
+			OverloadDeus: {
+				DisplayName: Overload Deus
+				Tooltip: ""
+			}
+
+			OverloadDOG: {
+				DisplayName: Overload D O G
+				Tooltip: ""
+			}
+
+			OverloadDS: {
+				DisplayName: Overload D S
+				Tooltip: ""
+			}
+
+			OverloadElemental: {
+				DisplayName: Overload Elemental
+				Tooltip: ""
+			}
+
+			OverloadGoliath: {
+				DisplayName: Overload Goliath
+				Tooltip: ""
+			}
+
+			OverloadGuardians: {
+				DisplayName: Overload Guardians
+				Tooltip: ""
+			}
+
+			OverloadHive: {
+				DisplayName: Overload Hive
+				Tooltip: ""
+			}
+
+			OverloadOldDuke: {
+				DisplayName: Overload Old Duke
+				Tooltip: ""
+			}
+
+			OverloadPerforators: {
+				DisplayName: Overload Perforators
+				Tooltip: ""
+			}
+
+			OverloadPolterghast: {
+				DisplayName: Overload Polterghast
+				Tooltip: ""
+			}
+
+			OverloadProvidence: {
+				DisplayName: Overload Providence
+				Tooltip: ""
+			}
+
+			OverloadRavager: {
+				DisplayName: Overload Ravager
+				Tooltip: ""
+			}
+
+			OverloadSlimeGod: {
+				DisplayName: Overload Slime God
+				Tooltip: ""
+			}
+
+			OverloadWaifu: {
+				DisplayName: Overload Waifu
+				Tooltip: ""
+			}
+
+			OverloadWaifuClone: {
+				DisplayName: Overload Waifu Clone
+				Tooltip: ""
+			}
+
+			OverloadYharon: {
+				DisplayName: Overload Yharon
+				Tooltip: ""
+			}
+
+			ShtuxianEnchant: {
+				DisplayName: Shtuxian Enchant
+				Tooltip: ""
+			}
+
+			QuantumChestplate: {
+				DisplayName: Quantum Chestplate
+				Tooltip: ""
+			}
+
+			QuantumPants: {
+				DisplayName: Quantum Pants
+				Tooltip: ""
+			}
+
+			ShieldCheckDebug: {
+				DisplayName: Shield Check Debug
+				Tooltip: ""
+			}
 		}
 
 		Buffs: {
@@ -2644,6 +2789,8 @@ Mods: {
 			VortexP.DisplayName: Vortex P
 			HolySpear.DisplayName: Holy Spear
 			FlareDust.DisplayName: Flare Dust
+			DLCBloomLine.DisplayName: D L C Bloom Line
+			SlamTelegraph.DisplayName: Slam Telegraph
 		}
 
 		Biomes: {

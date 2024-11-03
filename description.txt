@@ -1,17 +1,30 @@
-The addon for Fargos's souls mod.
+The addon for Fargos's Souls. The main goal of the mod is to balance 4 global mods with Fargos and among themselves.
+
 
 Source code: https://github.com/Shtuks/StarlightsSouls
 
 Discord Server: https://discord.gg/xB9s8SyQJr
 
-The content:
+All things mod doing for now:
+
+- Overloaded bosses summons and energizers for SoA, Calamity, Thorium
+
+- Merge kinetic(SoA) thrower(Thorium) and rogue(Calamity) in one class
 
 - Old Calamity DLC balance (switchable)
 
-- Calamity swarms, caught NPCs, singularities
+- Adds SoA items fot 1st tier souls recepies and effects
 
-- Thorium/Shadows of Abaddon enchantments, forces, souls, swarms
+- Calamity caught NPCs, singularities
 
-- Redemption/Calamity enchantments, forces, souls (Work in progress)
+- Thorium/Shadows of Abaddon enchantments, forces, souls (1.3 fargo dlc)
 
 - Post-Mutant Extra content (Echdeath, Shtuxibus, Duke Fishron EX)
+
+Planned additions:
+
+- Redemption support(not even started)
+
+- Calamity enchantments
+
+- Soul of Eternity Legacy (Hundreds of projectiles flying across the screen and lowering FPS. But it's funny)

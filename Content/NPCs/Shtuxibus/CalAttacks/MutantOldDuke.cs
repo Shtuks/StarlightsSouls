@@ -1,5 +1,5 @@
 ﻿using CalamityMod.Buffs.StatDebuffs;
-using FargowiltasCrossmod.Core;
+using ssm.Core;
 using FargowiltasSouls.Content.Bosses.MutantBoss;
 using Terraria;
 using Terraria.ModLoader;

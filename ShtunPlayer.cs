@@ -28,16 +28,6 @@ using Terraria.Graphics.Effects;
 using ssm.Content.Items;
 using ssm.Content.Buffs.Anti;
 using Terraria;
-using System.Linq;
-using Terraria.GameContent.Creative;
-using FargowiltasSouls.Core.ModPlayers;
-using FargowiltasSouls.Content.Projectiles;
-using FargowiltasSouls.Core.Globals;
-using CalamityMod.Items.Weapons.Magic;
-using FargowiltasSouls.Content.Buffs.Souls;
-using FargowiltasSouls.Content.Items.Accessories.Enchantments;
-using FargowiltasSouls.Content.Items.Accessories.Souls;
-using FargowiltasSouls.Core.AccessoryEffectSystem;
 
 namespace ssm
 {
@@ -52,7 +42,7 @@ namespace ssm
         public bool DevianttSoul;
         public bool CelestialPower;
         public int frameShtuxibusAura;
-        public int ShtuxibusSetBonusItem;
+        public bool ShtuxibusSetBonus;
         public int frameCounter;
         public int ShtuxibusDeaths;
         private readonly Mod FargoSoul = Terraria.ModLoader.ModLoader.GetMod("FargowiltasSouls");
@@ -61,10 +51,13 @@ namespace ssm
         public bool ChtuxlagorHeart;
         public bool ChtuxlagorInferno;
         public int Screenshake;
+
         public bool equippedPhantasmalEnchantment;
         public bool equippedAbominableEnchantment;
-        public bool equippedDeviatingEnchantment;
+        public bool equippedNekomiEnchantment;
+        public bool equippedShtuxianEnchantment;
         public bool ShtuxibusSoul;
+
         int timeru = 0;
         public bool DeviGraze;
         public bool Graze;
@@ -104,6 +97,9 @@ namespace ssm
         }
         public override void ModifyHurt(ref Player.HurtModifiers modifiers)
         {
+            double damageMult = 1D;
+            modifiers.SourceDamage *= (float)damageMult;
+
             if (ChtuxlagorHeart)
             {
                 modifiers.SetMaxDamage(1000);
@@ -182,7 +178,7 @@ namespace ssm
         {
             if (this.equippedPhantasmalEnchantment)
                 target.AddBuff(ModContent.Find<ModBuff>(this.FargoSoul.Name, "MutantFangBuff").Type, 1000, false);
-            if (this.equippedDeviatingEnchantment)
+            if (this.equippedNekomiEnchantment)
                 target.AddBuff(ModContent.Find<ModBuff>(this.FargoSoul.Name, "DeviPresenceBuff").Type, 1000, false);
             if (this.equippedAbominableEnchantment)
                 target.AddBuff(ModContent.Find<ModBuff>(this.FargoSoul.Name, "AbomFangBuff").Type, 1000, false);
@@ -216,10 +212,15 @@ namespace ssm
             if (Screenshake > 0)
                 Screenshake--;
 
+            ShtuxibusSetBonus = false;
+            equippedPhantasmalEnchantment = false;
+            equippedAbominableEnchantment = false;
+            equippedNekomiEnchantment = false;
             DevianttSoul = false;
             MutantSoul = false;
+            ChtuxlagorHeart = false;
+            shtuxianSoul = false;
             ShtuxibusSoul = false;
-            //ChtuxlagorBuff = false;
             CelestialPower = false;
 
             //if (NoUsingItems > 0)
@@ -245,6 +246,7 @@ namespace ssm
         {
             return this.Player == Main.LocalPlayer && Player.HasBuff<ShtuxianDomination>();
         }
+
         public override bool PreKill(
         double damage,
         int hitDirection,
@@ -253,7 +255,11 @@ namespace ssm
         ref bool genGore,
         ref PlayerDeathReason damageSource)
         {
-            return !Player.HasBuff<ShtuxianDomination>();
+            if (!Player.HasBuff<ShtuxianDomination>() || !ChtuxlagorBuff)
+            { 
+                return true; 
+            }
+            return false;
         }
     }
 }

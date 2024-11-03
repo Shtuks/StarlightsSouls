@@ -6,6 +6,11 @@ using ssm.Core;
 using Terraria.Localization;
 using CalamityMod.CalPlayer;
 using CalamityMod;
+using FargowiltasSouls.Content.Items.Armor;
+using ssm.Content.Items.Materials;
+using CalamityMod.Items.Armor.Demonshade;
+using CalamityMod.Items.Armor.GemTech;
+using ssm.Content.Tiles;
 
 namespace ssm.Content.Items.Armor
 {
@@ -82,6 +87,15 @@ namespace ssm.Content.Items.Armor
 
         public override void AddRecipes()
         {
+            Recipe recipe = CreateRecipe();
+
+            recipe.AddIngredient<MonstrosityMask>();
+
+            recipe.AddIngredient<DemonshadeHelm>();
+            recipe.AddIngredient<GemTechHeadgear>();
+            recipe.AddRecipeGroup("ssm:Auric");
+
+            recipe.AddTile<DemonshadeWorkbenchTile>();
         }
     }
 }

@@ -2,7 +2,7 @@
 using System.IO;
 using CalamityMod.Buffs.DamageOverTime;
 using CalamityMod.Buffs.StatDebuffs;
-using FargowiltasCrossmod.Core;
+using ssm.Core;
 using FargowiltasSouls;
 using FargowiltasSouls.Content.Buffs.Boss;
 using FargowiltasSouls.Core.Systems;

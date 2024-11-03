@@ -1,4 +1,4 @@
-using System;
+    using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -63,14 +63,14 @@ namespace ssm.Content.Items.Accessories
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
+            ModContent.Find<ModItem>(this.FargoSoul.Name, "AbominableWand").UpdateAccessory(player, false);
             if (player.AddEffect<DeviEffect>(Item))
             {
                 player.AddBuff(ModContent.BuffType<DeviSoulBuff>(), 2);
             }
             if (player.AddEffect<StyxEffect>(Item))
             {
-                //player.GetModPlayer<ShtunPlayer>().equippedAbominableEnchantment = true;
-                ModContent.Find<ModItem>(this.FargoSoul.Name, "AbominableWand").UpdateAccessory(player, false);
+                player.GetModPlayer<ShtunPlayer>().equippedAbominableEnchantment = true;
                 ModContent.Find<ModItem>(this.FargoSoul.Name, "StyxCrown").UpdateArmorSet(player);
                 ModContent.Find<ModItem>(this.FargoSoul.Name, "StyxChestplate").UpdateArmorSet(player);
                 ModContent.Find<ModItem>(this.FargoSoul.Name, "StyxLeggings").UpdateArmorSet(player);

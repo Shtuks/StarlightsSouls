@@ -1,39 +1,27 @@
-using Microsoft.Xna.Framework;
 using Terraria;
-using ssm.Calamity.Swarm.Summons;
-using Terraria.ID;
-using Terraria.Localization;
 using Terraria.ModLoader;
-using CalamityMod.NPCs.DevourerofGods;
-using CalamityMod.Items.SummonItems;
-using Fargowiltas.Items.Summons.SwarmSummons;
 using ssm.Core;
+using CalamityMod.Items.SummonItems;
+using CalamityMod.NPCs.DesertScourge;
+using CalamityMod.NPCs.DevourerofGods;
 
 namespace ssm.Calamity.Swarm.Summons
 {
     [ExtendsFromMod(ModCompatibility.Calamity.Name)]
     [JITWhenModsEnabled(ModCompatibility.Calamity.Name)]
-    public class CosmicAmalgamation : SwarmSummonBase
+    public class OverloadDOG : SwarmSummonBase
     {
-        public override bool IsLoadingEnabled(Mod mod)
+        public OverloadDOG() : base(ModContent.NPCType<DevourerofGodsHead>(), 50, ModContent.ItemType<CosmicWorm>())
         {
-            return ShtunConfig.Instance.CalSwarmItems;
         }
-        public CosmicAmalgamation() : base(ModContent.NPCType<DevourerofGodsHead>(), 5)
+
+        public override void SetStaticDefaults()
         {
         }
 
         public override bool CanUseItem(Player player)
         {
             return !ssm.SwarmActive;
-        }
-
-        public override void AddRecipes()
-        {
-            this.CreateRecipe(1)
-            .AddIngredient<Overloader>()
-            .AddIngredient<CosmicWorm>()
-            .Register();
         }
     }
 }

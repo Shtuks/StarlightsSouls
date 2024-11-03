@@ -1,39 +1,28 @@
-using Microsoft.Xna.Framework;
 using Terraria;
-using ssm.Calamity.Swarm.Summons;
-using Terraria.ID;
-using Terraria.Localization;
 using Terraria.ModLoader;
-using CalamityMod.NPCs.Leviathan;
-using CalamityMod.Items.SummonItems;
-using Fargowiltas.Items.Summons.SwarmSummons;
-using FargowiltasCrossmod.Content.Calamity.Items.Summons;
+using CalamityMod.NPCs.AstrumAureus;
 using ssm.Core;
+using CalamityMod.Items.SummonItems;
+using CalamityMod.NPCs.Leviathan;
+using FargowiltasCrossmod.Content.Calamity.Items.Summons;
 
 namespace ssm.Calamity.Swarm.Summons
 {
-    [ExtendsFromMod(ModCompatibility.Calamity.Name)]
-    [JITWhenModsEnabled(ModCompatibility.Calamity.Name)]
-    public class OverloadedSirenPearl : SwarmSummonBase
+    [ExtendsFromMod(ModCompatibility.Calamity.Name, ModCompatibility.Crossmod.Name)]
+    [JITWhenModsEnabled(ModCompatibility.Calamity.Name, ModCompatibility.Crossmod.Name)]
+    public class OverloadAnahita : SwarmSummonBase
     {
-        public override bool IsLoadingEnabled(Mod mod)
+        public OverloadAnahita() : base(ModContent.NPCType<Anahita>(), 50, ModContent.ItemType<SirensPearl>())
         {
-            return ShtunConfig.Instance.CalSwarmItems;
         }
-        public OverloadedSirenPearl() : base(ModContent.NPCType<Anahita>(), 25)
+
+        public override void SetStaticDefaults()
         {
         }
 
         public override bool CanUseItem(Player player)
         {
             return !ssm.SwarmActive;
-        }
-        public override void AddRecipes()
-        {
-            this.CreateRecipe(1)
-            .AddIngredient<Overloader>()
-            .AddIngredient<SirensPearl>()
-            .Register();
         }
     }
 }

@@ -33,12 +33,5 @@ namespace ssm.Content.Items
             ssm.SwarmKills = 0;
             return true;
         }
-
-        public override void AddRecipes()
-        {
-            this.CreateRecipe(1)
-            .AddIngredient<Overloader>()
-            .Register();
-        }
     }
 }

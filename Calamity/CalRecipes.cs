@@ -8,7 +8,6 @@ using ssm.Content.Items.Accessories;
 using CalamityMod.Items.Accessories;
 using Terraria.ID;
 using Terraria.Localization;
-using FargowiltasCrossmod.Content.Calamity.Items.Accessories;
 using CalamityMod.Items.Armor.Vanity;
 using CalamityMod.Items.Materials;
 using CalamityMod.Items.Armor.Brimflame;
@@ -65,11 +64,6 @@ namespace ssm.Calamity
                     {
                         recipe.RemoveIngredient(ModContent.ItemType<EternalEnergy>());
                     }
-                    if (recipe.HasResult<BrandoftheBrimstoneWitch>() && !recipe.HasIngredient<ShadowspecBar>() && recipe.HasIngredient<AbomEnergy>())
-                    {
-                        if (recipe.RemoveIngredient(ModContent.ItemType<AbomEnergy>()))
-                            recipe.AddIngredient<ShadowspecBar>(5);
-                    }
                     if (!recipe.HasIngredient<ShadowspecBar>() && recipe.HasIngredient<AshesofAnnihilation>())
                     {
                         if (recipe.HasResult<UniverseSoul>() || recipe.HasResult<TerrariaSoul>() || recipe.HasResult<MasochistSoul>() || recipe.HasResult<DimensionSoul>())
@@ -82,14 +76,6 @@ namespace ssm.Calamity
                 #endregion
 
                 #region souls
-                if (ShtunConfig.Instance.CalEnchantments)
-                {
-                    if (recipe.HasResult<EternitySoul>() && !recipe.HasIngredient<CalamitySoul>() && recipe.HasIngredient<BrandoftheBrimstoneWitch>())
-                    {
-                        if (recipe.RemoveIngredient(ModContent.ItemType<BrandoftheBrimstoneWitch>()))
-                            recipe.AddIngredient<CalamitySoul>();
-                    }
-                }
                 if (!ShtunConfig.Instance.OldCalDlcBalance)
                 {
                     if (recipe.HasResult(ModContent.ItemType<SoASoul>()) && !recipe.HasIngredient<ExoPrism>())

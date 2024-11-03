@@ -1,39 +1,26 @@
-using Microsoft.Xna.Framework;
 using Terraria;
-using ssm.Calamity.Swarm.Summons;
-using Terraria.ID;
-using Terraria.Localization;
 using Terraria.ModLoader;
-using CalamityMod.NPCs.AstrumDeus;
-using CalamityMod.Items.SummonItems;
-using Fargowiltas.Items.Summons.SwarmSummons;
 using ssm.Core;
+using CalamityMod.NPCs.AstrumDeus;
+using FargowiltasCrossmod.Content.Calamity.Items.Summons;
 
 namespace ssm.Calamity.Swarm.Summons
 {
-    [ExtendsFromMod(ModCompatibility.Calamity.Name)]
-    [JITWhenModsEnabled(ModCompatibility.Calamity.Name)]
-    public class OverloadStarcore : SwarmSummonBase
+    [ExtendsFromMod(ModCompatibility.Calamity.Name, ModCompatibility.Crossmod.Name)]
+    [JITWhenModsEnabled(ModCompatibility.Calamity.Name, ModCompatibility.Crossmod.Name)]
+    public class OverloadDeus : SwarmSummonBase
     {
-        public override bool IsLoadingEnabled(Mod mod)
+        public OverloadDeus() : base(ModContent.NPCType<AstrumDeusHead>(), 50, ModContent.ItemType<AstrumCor>())
         {
-            return ShtunConfig.Instance.CalSwarmItems;
         }
-        public OverloadStarcore() : base(ModContent.NPCType<AstrumDeusHead>(), 25)
+
+        public override void SetStaticDefaults()
         {
         }
 
         public override bool CanUseItem(Player player)
         {
             return !ssm.SwarmActive;
-        }
-
-        public override void AddRecipes()
-        {
-            this.CreateRecipe(1)
-            .AddIngredient<Overloader>()
-            .AddIngredient<Starcore>()
-            .Register();
         }
     }
 }

@@ -7,8 +7,8 @@ using CatalystMod.NPCs.Boss.Astrageldon;
 
 namespace ssm.Calamity
 {
-    [ExtendsFromMod(ModCompatibility.Calamity.Name)]
-    [JITWhenModsEnabled(ModCompatibility.Calamity.Name)]
+    [ExtendsFromMod(ModCompatibility.Calamity.Name, ModCompatibility.Catalyst.Name)]
+    [JITWhenModsEnabled(ModCompatibility.Calamity.Name, ModCompatibility.Catalyst.Name)]
     public class AddonsBossRush : ModSystem
     {
         [JITWhenModsEnabled("CatalystMod")]

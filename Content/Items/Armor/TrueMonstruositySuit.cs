@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using Terraria;
 using Terraria.ModLoader;
 using ssm.Core;
+using CalamityMod.Items.Armor.Demonshade;
+using CalamityMod.Items.Armor.GemTech;
+using ssm.Content.Tiles;
 
 namespace ssm.Content.Items.Armor
 {
@@ -39,6 +42,15 @@ namespace ssm.Content.Items.Armor
 
         public override void AddRecipes()
         {
+            Recipe recipe = CreateRecipe();
+
+            recipe.AddIngredient<MonstrositySuit>();
+
+            recipe.AddIngredient<DemonshadeBreastplate>();
+            recipe.AddIngredient<GemTechBodyArmor>();
+            recipe.AddIngredient<TrueAuricTeslaBody>();
+
+            recipe.AddTile<DemonshadeWorkbenchTile>();
         }
     }
 }

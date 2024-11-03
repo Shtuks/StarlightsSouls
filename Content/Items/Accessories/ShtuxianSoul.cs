@@ -86,6 +86,8 @@ namespace ssm.Content.Items.Accessories
             ModContent.Find<ModItem>(((ModType)this).Mod.Name, "CelestialEnchant").UpdateAccessory(player, false);
             ModContent.Find<ModItem>(((ModType)this).Mod.Name, "EternityForce").UpdateAccessory(player, false);
 
+            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "ShtuxianEnchant").UpdateAccessory(player, false);
+
             if (ModLoader.TryGetMod("Redemption", out Mod red) && ShtunConfig.Instance.RedEnchantments)
             {
                 //ModContent.Find<ModItem>(((ModType)this).Mod.Name, "RedemptionSoul").UpdateAccessory(player, false);
@@ -102,7 +104,7 @@ namespace ssm.Content.Items.Accessories
                 //ModContent.Find<ModItem>(((ModType)this).Mod.Name, "KineticSoul").UpdateAccessory(player, false);
                 ModContent.Find<ModItem>(((ModType)this).Mod.Name, "SoASoul").UpdateAccessory(player, false);
             }
-            if (ModLoader.TryGetMod("CalamityMod", out Mod kal) && ShtunConfig.Instance.CalEnchantments)
+            if (ModLoader.TryGetMod("CalamityMod", out Mod kal) && ShtunConfig.Instance.CalEnchantments && ModLoader.TryGetMod("FargowiltasCrossmod", out Mod FargoIhateYou))
             {
                 ModContent.Find<ModItem>(((ModType)this).Mod.Name, "CalamitySoul").UpdateAccessory(player, false);
             }
@@ -203,6 +205,7 @@ namespace ssm.Content.Items.Accessories
         {
             Recipe recipe = this.CreateRecipe(1);
             recipe.AddIngredient<EternityForce>(1);
+            recipe.AddIngredient<ShtuxianEnchant>(1);
             recipe.AddIngredient<Materials.InfinityIngot>(5);
             recipe.AddIngredient(this.FargoSoul, "EternitySoul", 1);
             recipe.AddTile<ShtuxibusForgeTile>();

@@ -31,7 +31,7 @@ namespace ssm.Reworks
                     ModContent.Find<ModItem>(((ModType)this).Mod.Name, "SoASoul").UpdateAccessory(player, false);
                 }
 
-                if (ModLoader.TryGetMod("CalamityMod", out Mod kal) && ShtunConfig.Instance.CalEnchantments)
+                if (ModLoader.TryGetMod("CalamityMod", out Mod kal) && ShtunConfig.Instance.CalEnchantments && ModLoader.TryGetMod("FargowiltasCrossmod", out Mod FargoIhateYou))
                 {
                     ModContent.Find<ModItem>(((ModType)this).Mod.Name, "CalamitySoul").UpdateAccessory(player, false);
                 }

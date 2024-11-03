@@ -17,6 +17,7 @@ namespace ssm.Content.Items.Armor
         {
             return ShtunConfig.Instance.ExtraContent;
         }
+
         private readonly Mod FargoSoul = Terraria.ModLoader.ModLoader.GetMod("FargowiltasSouls");
         private readonly Mod Calamity = Terraria.ModLoader.ModLoader.GetMod("CalamityMod");
 

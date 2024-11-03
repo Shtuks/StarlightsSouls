@@ -25,6 +25,7 @@ using ssm.Content.SoulToggles;
 using ssm.Content.Items.Accessories;
 using ssm.Core;
 using FargowiltasSouls.Content.Items.Accessories.Enchantments;
+using FargowiltasSouls.Content.Items.Accessories.Expert;
 
 namespace ssm.Content.Items.Accessories
 {
@@ -64,6 +65,7 @@ namespace ssm.Content.Items.Accessories
         {
             if (player.AddEffect<EridanusEffect>(Item))
             {
+                ModContent.Find<ModItem>(this.FargoSoul.Name, "UniverseCore").UpdateAccessory(player, true);
                 ModContent.Find<ModItem>(this.FargoSoul.Name, "EridanusBattleplate").UpdateArmorSet(player);
                 ModContent.Find<ModItem>(this.FargoSoul.Name, "EridanusHat").UpdateArmorSet(player);
                 ModContent.Find<ModItem>(this.FargoSoul.Name, "EridanusLegwear").UpdateArmorSet(player);
@@ -75,6 +77,7 @@ namespace ssm.Content.Items.Accessories
             Recipe recipe = this.CreateRecipe(1);
             recipe.AddIngredient(this.FargoSoul, "Eridanium", 50);
             recipe.AddIngredient(this.FargoSoul, "EridanusBattleplate", 1);
+            recipe.AddIngredient<UniverseCore>(1);
             recipe.AddIngredient(this.FargoSoul, "EridanusHat", 1);
             recipe.AddIngredient(this.FargoSoul, "EridanusLegwear", 1);
             recipe.AddTile(ModContent.Find<ModTile>("Fargowiltas", "CrucibleCosmosSheet"));

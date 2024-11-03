@@ -63,10 +63,10 @@ namespace ssm.Content.Items.Accessories
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
+            player.GetModPlayer<ShtunPlayer>().equippedNekomiEnchantment = true;
+            ModContent.Find<ModItem>(this.FargoSoul.Name, "SparklingAdoration").UpdateAccessory(player, false);
             if (player.AddEffect<NekomiEffect>(Item))
             {
-                //player.GetModPlayer<ShtunPlayer>().equippedNekomiEnchantment = true;
-                ModContent.Find<ModItem>(this.FargoSoul.Name, "SparklingAdoration").UpdateAccessory(player, false);
                 ModContent.Find<ModItem>(this.FargoSoul.Name, "NekomiHood").UpdateArmorSet(player);
                 ModContent.Find<ModItem>(this.FargoSoul.Name, "NekomiHoodie").UpdateArmorSet(player);
                 ModContent.Find<ModItem>(this.FargoSoul.Name, "NekomiLeggings").UpdateArmorSet(player);

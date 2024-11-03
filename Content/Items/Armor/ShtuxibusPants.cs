@@ -10,7 +10,8 @@ namespace ssm.Content.Items.Armor
     {
         public override bool IsLoadingEnabled(Mod mod)
         {
-            return ShtunConfig.Instance.ExtraContent;
+            return false;
+                //ShtunConfig.Instance.ExtraContent;
         }
 
         public override void SetDefaults()

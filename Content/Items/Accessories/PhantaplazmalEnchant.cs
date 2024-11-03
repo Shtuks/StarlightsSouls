@@ -62,9 +62,10 @@ namespace ssm.Content.Items.Accessories
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
+            player.GetModPlayer<ShtunPlayer>().equippedPhantasmalEnchantment = true;
+            ModContent.Find<ModItem>(this.FargoSoul.Name, "MutantEye").UpdateAccessory(player, true);
             if (player.AddEffect<PhantaplazmalEffect>(Item))
             {
-                ModContent.Find<ModItem>(this.FargoSoul.Name, "MutantEye").UpdateAccessory(player, false);
                 ModContent.Find<ModItem>(this.FargoSoul.Name, "MutantMask").UpdateArmorSet(player);
                 ModContent.Find<ModItem>(this.FargoSoul.Name, "MutantBody").UpdateArmorSet(player);
                 ModContent.Find<ModItem>(this.FargoSoul.Name, "MutantPants").UpdateArmorSet(player);

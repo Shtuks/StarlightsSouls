@@ -1,7 +1,5 @@
 //nice code(no)
 using System.Linq;
-using FargowiltasCrossmod.Content.Calamity.Bosses.SlimeGod;
-using FargowiltasCrossmod.Content.Common.Projectiles;
 using FargowiltasSouls;
 using FargowiltasSouls.Common.Graphics.Particles;
 using FargowiltasSouls.Content.Buffs.Boss;
@@ -48,8 +46,6 @@ using ssm.Content.Projectiles.Shtuxibus.Cal;
 
 namespace ssm.Content.NPCs.Shtuxibus
 {
-    [ExtendsFromMod(ModCompatibility.Crossmod.Name)]
-    [JITWhenModsEnabled(ModCompatibility.Crossmod.Name)]
     [AutoloadBossHead]
     public class Shtuxibus : ModNPC
     {
@@ -85,12 +81,12 @@ namespace ssm.Content.NPCs.Shtuxibus
         public float endTimeVariance;
         public static int imtrydomove;
         public bool ShouldDrawAura;
+        public static readonly SoundStyle ShieldSound = new("ssm/Assets/Sounds/ShtuxibusSpawnSound") { };
 
         public override bool IsLoadingEnabled(Mod mod)
         {
             return ShtunConfig.Instance.ExtraContent;
         }
-
         public override void SetStaticDefaults()
         {
             Main.npcFrameCount[NPC.type] = 4;
@@ -105,7 +101,6 @@ namespace ssm.Content.NPCs.Shtuxibus
                 PortraitPositionYOverride = 0f,
             };
         }
-
         public override void SetDefaults()
         {
             NPC.BossBar = ModContent.GetInstance<ShtuxibusBar>();
@@ -227,7 +222,16 @@ namespace ssm.Content.NPCs.Shtuxibus
                 case 15: WhileDashingP2(); break;
                 case 16: goto case 11; //approach for bullet hell
                 case 17: BoundaryBulletHellP2(); break;
-                case 18: YharonBH(); break;
+                case 18:
+                    if (ModLoader.HasMod("Calamity"))
+                    {
+                        YharonBH();
+                    }
+                    else
+                    {
+                        NPC.ai[0]++;
+                    }
+                    break;
                 case 19: PillarDunk(); break;
                 case 20: //ZA WARUDO
                     targetPos = player.Center + NPC.DirectionFrom(player.Center) * 500;
@@ -349,7 +353,16 @@ namespace ssm.Content.NPCs.Shtuxibus
                 case 25: SpearTossPredictiveP2(); break;
                 case 26: PrepareMechRayFan(); break;
                 case 27: MechRayFan(); break;
-                case 28: Providence(); break;
+                case 28:
+                    if (ModLoader.HasMod("Calamity"))
+                    {
+                        Providence();
+                    }
+                    else
+                    {
+                        NPC.ai[0]++;
+                    }
+                    break;
                 case 29: PrepareFishron1(); break;
                 case 30: SpawnFishrons(); break;
                 case 31: PrepareTrueEyeDiveP2(); break;
@@ -366,7 +379,7 @@ namespace ssm.Content.NPCs.Shtuxibus
                 case 42: PrepareTwinRangsAndCrystals(); break;
                 case 43: TwinRangsAndCrystals(); break;
                 case 44: EmpressSwordWave(); break;
-                case 45: ShtuxibusJavelinsP2(); break;
+                case 45: LifeChampFireballz(); ShtuxibusJavelinsP2(); break;
                 case 46: GiantDeathrayFall(); break;
                 case 47: //beginning of scythe rows and deathray rain
                     if (NPC.ai[1] == 0 && !AliveCheck(player))
@@ -587,10 +600,29 @@ namespace ssm.Content.NPCs.Shtuxibus
                 case 57: BigShtuxibusRay(); break;
                 case 58: BallTorture(); break;
                 case 59: UpperCutDick(); break;
-                case 60: Polterghast(); break;
+                case 60:
+                    if (ModLoader.HasMod("Calamity"))
+                    {
+                        Polterghast();
+                    }
+                    else
+                    {
+                        NPC.ai[0]++;
+                    }
+                    break;
                 //case : NPC.ai[0]++; break; //MutantSword()
                 //case : NPC.ai[0]++; break; //PrepareMutantSword()
-                case 61: SlimeGodSlam(); break; //PaladinHammster()
+                case 61:
+                    //PaladinHammster()
+                    if (ModLoader.HasMod("Calamity"))
+                    {
+                        SlimeGodSlam();
+                    }
+                    else
+                    {
+                        NPC.ai[0]++;
+                    }
+                    break;
                 case 62: //flocko swarm (p2 shoots ice waves horizontally after)
 
                     NPC.velocity *= 0.99f;
@@ -722,8 +754,18 @@ namespace ssm.Content.NPCs.Shtuxibus
                     }
 
                     break;
-                case 64: Calamitas(); break; //FunnyBettlee()
-                case 65: LifeChampFireballz(); break;
+                case 64:
+                    //FunnyBettlee()
+                    if (ModLoader.HasMod("Calamity"))
+                    {
+                        Calamitas();
+                    }
+                    else
+                    {
+                        NPC.ai[0]++;
+                    }
+                    break;
+                case 65: SpawnDoG(); break;
                 //gap in the numbers here so the ai loops right
                 //when adding a new attack, remember to make ChooseNextAttack() point to the right case!
                 case 68: P2NextAttackPause(); break;
@@ -1428,7 +1470,6 @@ namespace ssm.Content.NPCs.Shtuxibus
         [JITWhenModsEnabled(ModCompatibility.Calamity.Name)]
         void SlimeGodSlam()
         {
-            //
             if (!AliveCheck(player))
                 return;
             ref float side = ref NPC.ai[2];
@@ -1436,7 +1477,6 @@ namespace ssm.Content.NPCs.Shtuxibus
             const int ParticleTime = 30;
             if (Counter == 0 && Timer == 0)
             {
-                SoundEngine.PlaySound(SlimeGodCoreEternity.ExitSound, NPC.Center);
                 side = Math.Sign(NPC.Center.X - player.Center.X);
                 NPC.netUpdate = true;
 
@@ -1453,7 +1493,6 @@ namespace ssm.Content.NPCs.Shtuxibus
             Movement(desiredPos, 1.2f);
             if (Timer == 30 + Windup)
             {
-                SoundEngine.PlaySound(SlimeGodCoreEternity.BigShotSound, NPC.Center);
                 if (ShtunUtils.HostCheck)
                 {
                     float random = (Main.rand.NextFloat() - 0.5f) / 3;
@@ -3225,7 +3264,11 @@ namespace ssm.Content.NPCs.Shtuxibus
         }
         void MechRayFan()
         {
-            CalamityMechRayFan();
+            if (ModLoader.HasMod("Calamity"))
+            {
+                CalamityMechRayFan();
+            }
+         
             NPC.velocity = Vector2.Zero;
 
             if (NPC.ai[2] == 0)
@@ -3321,7 +3364,10 @@ namespace ssm.Content.NPCs.Shtuxibus
         }
         void SpawnFishrons()
         {
-            CalamityFishron();
+            if (ModLoader.HasMod("Calamity"))
+            {
+                CalamityFishron();
+            }
             NPC.velocity *= 0.97f;
             if (NPC.ai[1] == 0)
             {

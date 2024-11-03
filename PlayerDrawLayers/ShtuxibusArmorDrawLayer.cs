@@ -1,4 +1,4 @@
-﻿/*using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.DataStructures;
@@ -13,7 +13,7 @@ namespace ssm.PlayerDrawLayers
             && !drawInfo.drawPlayer.dead
             && !drawInfo.drawPlayer.ghost
             && drawInfo.shadow == 0
-            && drawInfo.drawPlayer.ssm().ShtuxibusSetBonusItem != null;
+            && drawInfo.drawPlayer.Shtun().ShtuxibusSetBonus != false;
 
         public override Position GetDefaultPosition() => new Between();
 
@@ -25,9 +25,9 @@ namespace ssm.PlayerDrawLayers
             }
 
             Player drawPlayer = drawInfo.drawPlayer;
-            ShtunPlayer modPlayer = drawPlayer.ssm();
+            ShtunPlayer modPlayer = drawPlayer.Shtun();
 
-            if (modPlayer.ShtuxibusSetBonusItem != null)
+            if (modPlayer.ShtuxibusSetBonus != false)
             {
                 if (modPlayer.frameCounter % 4 == 0)
                 {
@@ -44,4 +44,4 @@ namespace ssm.PlayerDrawLayers
             }
         }
     }
-}*/
+}

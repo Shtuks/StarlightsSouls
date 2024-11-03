@@ -19,7 +19,6 @@ using ssm.Content.Items.Singularities;
 using ssm.Content.NPCs;
 using ssm.Content.NPCs.Shtuxibus;
 using ssm.Calamity.Swarm.Energizers;
-using Fargowiltas;
 using CalamityMod.Items.TreasureBags;
 using CalamityMod.Items.Placeables.Furniture.Trophies;
 using Terraria.ModLoader;
@@ -60,6 +59,7 @@ using CalamityMod.NPCs.SulphurousSea;
 using CalamityMod.NPCs.SupremeCalamitas;
 using CalamityMod.NPCs.TownNPCs;
 using ssm.Core;
+using Fargowiltas.NPCs;
 
 namespace ssm.Calamity
 {
@@ -72,41 +72,11 @@ namespace ssm.Calamity
             return ShtunConfig.Instance.CalSwarmItems;
         }
 
-        private readonly Mod fargosouls = ModLoader.GetMod("FargowiltasSouls");
         private readonly Mod calamity = ModLoader.GetMod("CalamityMod");
         public override bool InstancePerEntity => true;
 
         internal bool SwarmActive;
-        internal bool PandoraActive;
         internal bool NoLoot = false;
-
-        public static int boss = -1;
-        public static int slimeBoss = -1;
-        public static int eyeBoss = -1;
-        public static int eaterBoss = -1;
-        public static int brainBoss = -1;
-        public static int beeBoss = -1;
-        public static int skeleBoss = -1;
-        public static int deerBoss = -1;
-        public static int wallBoss = -1;
-        public static int retiBoss = -1;
-        public static int spazBoss = -1;
-        public static int destroyBoss = -1;
-        public static int primeBoss = -1;
-        public static int queenSlimeBoss = -1;
-        public static int empressBoss = -1;
-        public static int betsyBoss = -1;
-        public static int fishBoss = -1;
-        public static int cultBoss = -1;
-        public static int moonBoss = -1;
-        public static int guardBoss = -1;
-        public static int fishBossEX = -1;
-        public static bool spawnFishronEX;
-        public static int deviBoss = -1;
-        public static int abomBoss = -1;
-        public static int mutantBoss = -1;
-        public static int Shtuxibus = -1;
-        public static int championBoss = -1;
 
         internal static int[] Bosses = {
             NPCID.KingSlime,
@@ -143,14 +113,8 @@ namespace ssm.Calamity
 
         public static bool Revengeance => CalamityMod.World.CalamityWorld.revenge;
 
-
-
         public override bool PreKill(NPC npc)
         {
-            if (NoLoot)
-            {
-                return false;
-            }
             if (SwarmActive && ssm.SwarmActive && Main.netMode != NetmodeID.MultiplayerClient)
             {
                 if (npc.type == ModContent.NPCType<Crabulon>())
@@ -225,13 +189,14 @@ namespace ssm.Calamity
                 {
                     Swarm(npc, ModContent.NPCType<RavagerBody>(), ModContent.ItemType<RavagerBag>(), ModContent.ItemType<RavagerTrophy>(), ModContent.ItemType<FleshyEnergizer>());
                 }
-                return false;
-            }
 
-            else
-            {
+                ssm.SwarmActive = false;
+                ssm.SwarmTotal = 0;
+                ssm.SwarmKills = 0;
+                SwarmActive = false;
                 return true;
             }
+            return true;
         }
         public override void PostAI(NPC npc)
         {
@@ -247,38 +212,45 @@ namespace ssm.Calamity
         }
         private void SpawnBoss(NPC npc, int boss)
         {
-            int spawn;
-
             if (SwarmActive)
             {
-                spawn = NPC.NewNPC(NPC.GetBossSpawnSource(Main.myPlayer), (int)npc.position.X + Main.rand.Next(-1000, 1000), (int)npc.position.Y + Main.rand.Next(-400, -100), boss);
-                if (spawn != Main.maxNPCs)
+                int num2 = NPC.NewNPC(NPC.GetBossSpawnSource(Main.myPlayer), (int)npc.position.X + Main.rand.Next(-1000, 1000), (int)npc.position.Y + Main.rand.Next(-400, -100), boss);
+                if (num2 != Main.maxNPCs)
                 {
-                    Main.npc[spawn].GetGlobalNPC<CalNpcs>().SwarmActive = true;
-                    NetMessage.SendData(MessageID.SyncNPC, number: boss);
-                }
-            }
-            else
-            {
-                // Pandora
-                int random;
-
-                do
-                {
-                    random = Main.rand.Next(Bosses);
-                }
-
-                while (NPC.CountNPCS(random) >= 4);
-
-                spawn = NPC.NewNPC(NPC.GetBossSpawnSource(Main.myPlayer), (int)npc.position.X + Main.rand.Next(-1000, 1000), (int)npc.position.Y + Main.rand.Next(-400, -100), random);
-                if (spawn != Main.maxNPCs)
-                {
-                    NetMessage.SendData(MessageID.SyncNPC, number: random);
+                    Main.npc[num2].GetGlobalNPC<CalNpcs>().SwarmActive = true;
+                    NetMessage.SendData(23, -1, -1, null, boss);
                 }
             }
         }
-
         private void Swarm(NPC npc, int boss, int bossbag, int trophy, int reward)
+        {
+            if (bossbag >= 0)
+            {
+                int num = ssm.SwarmItemsUsed * 5;
+                npc.DropItemInstanced(npc.Center, npc.Size, bossbag, num);
+            }
+            if (ssm.SwarmItemsUsed >= 10 && reward > 0)
+            {
+                Item.NewItem(npc.GetSource_Loot(), npc.Hitbox, reward, ssm.SwarmItemsUsed / 10);
+            }
+            if (ssm.SwarmItemsUsed >= 3 && trophy > 0)
+            {
+                Item.NewItem(npc.GetSource_Loot(), npc.Hitbox, trophy, ssm.SwarmItemsUsed / 3);
+            }
+            //if (minion == -1)
+            //{
+            //    return;
+            //}
+            for (int i = 0; i < Main.maxNPCs; i++)
+            {
+                //if (Main.npc[i].active && Main.npc[i].type == minion)
+                //{
+                //    Main.npc[i].SimpleStrikeNPC(Main.npc[i].lifeMax, -Main.npc[i].direction, crit: true, 0f, null, damageVariation: false, 0f, noPlayerInteraction: true);
+                //}
+            }
+        }
+
+        /*private void Swarm(NPC npc, int boss, int bossbag, int trophy, int reward)
         {
             if (bossbag >= 0 && bossbag != ItemID.DefenderMedal)
             {
@@ -420,6 +392,6 @@ namespace ssm.Calamity
                     break;
                 }
             }
-        }
+        }*/
     }
 }

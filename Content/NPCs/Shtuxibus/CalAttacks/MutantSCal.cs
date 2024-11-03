@@ -1,6 +1,5 @@
 ﻿using System;
 using CalamityMod.Buffs.DamageOverTime;
-using FargowiltasCrossmod.Core;
 using FargowiltasSouls.Content.Buffs.Boss;
 using FargowiltasSouls.Core.Systems;
 using Microsoft.Xna.Framework;
@@ -10,6 +9,7 @@ using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
+using ssm.Core;
 
 namespace ssm.Content.NPCs.Shtuxibus
 {
