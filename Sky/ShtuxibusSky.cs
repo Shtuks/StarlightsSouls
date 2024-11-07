@@ -5,11 +5,9 @@ using ReLogic.Content;
 using System;
 using Terraria.Graphics.Effects;
 using Terraria.ModLoader;
-using FargowiltasSouls;
-using FargowiltasSouls.Core.Systems;
 using ssm;
 using ssm.Content.NPCs.Shtuxibus;
-using FargowiltasSouls.Core.Globals;
+using FargowiltasSouls;
 
 namespace ssm.Sky
 {
@@ -91,7 +89,7 @@ namespace ssm.Sky
         private Color ColorToUse(ref float opacity)
         {
 
-            Color color = new(50, 250, 50);
+            Color color = ShtunUtils.Stalin ? Color.Red : new(50, 250, 50);
             opacity = intensity * 0.5f + lifeIntensity * 0.5f;
 
             if (specialColorLerp > 0 && specialColor != null)
@@ -110,8 +108,8 @@ namespace ssm.Sky
                 float opacity = 0f;
                 Color color = ColorToUse(ref opacity);
 
-                spriteBatch.Draw(ssm.Instance.Assets.Request<Texture2D>("Sky/ShtuxibusSky", ReLogic.Content.AssetRequestMode.ImmediateLoad).Value,
-                    new Rectangle(0, 0, Main.screenWidth, Main.screenHeight), Color.Lime * intensity * 0.99f);
+                spriteBatch.Draw(ModContent.Request<Texture2D>($"ssm/Sky/ShtuxibusSky{ShtunUtils.TryStalinTexture}", ReLogic.Content.AssetRequestMode.ImmediateLoad).Value,
+                    new Rectangle(0, 0, Main.screenWidth, Main.screenHeight), ShtunUtils.Stalin ? Color.Red : Color.Lime * intensity * 0.99f);
                 if (--delay < 0)
                 {
                     delay = Main.rand.Next(5 + (int)(85f * (1f - lifeIntensity)));

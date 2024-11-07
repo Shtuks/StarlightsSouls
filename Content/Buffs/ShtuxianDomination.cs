@@ -14,7 +14,7 @@ namespace ssm.Content.Buffs
 
         public override void Update(Player player, ref int buffIndex)
         {
-            player.ClearBuff(ModContent.BuffType<ChtuxlagorInferno>());
+            //player.ClearBuff(ModContent.BuffType<ChtuxlagorInferno>());
         }
     }
 }

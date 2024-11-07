@@ -61,6 +61,7 @@ namespace ssm
 
         internal static ModKeybind shtuxianSuper;
         internal static ssm Instance;
+        public static bool debug = true;
 
         internal bool CalamityLoaded;
         internal bool FargoLoaded;
@@ -71,6 +72,8 @@ namespace ssm
         internal Mod bossChecklist;
 
         public static bool amiactive;
+        public static readonly BindingFlags UniversalBindingFlags = BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic;
+        public static bool legit = false;
 
         public override uint ExtraPlayerBuffSlots => 300u;
 

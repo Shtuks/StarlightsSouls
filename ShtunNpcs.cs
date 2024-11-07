@@ -29,7 +29,9 @@ namespace ssm
         public override bool InstancePerEntity => true;
         public bool isWaterEnemy;
         public int chtuxlagorInferno;
+        public static int Chtuxlagor = -1;
         public static int Shtuxibus = -1;
+        public static int ECH = -1;
         public static int DukeEX = -1;
         public static int boss = -1;
         public static int championBoss = -1;

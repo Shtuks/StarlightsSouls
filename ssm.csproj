@@ -26,11 +26,32 @@
 	  <None Include="Thorium\Swarm\Summons\OverloadAbyssalion.cs" />
 	</ItemGroup>
 	<ItemGroup>
+	  <Reference Include="BossChecklist">
+	    <HintPath>lib\BossChecklist.dll</HintPath>
+	  </Reference>
+	  <Reference Include="CalamityBardHealer">
+	    <HintPath>lib\CalamityBardHealer.dll</HintPath>
+	  </Reference>
+	  <Reference Include="CalamityHunt">
+	    <HintPath>lib\CalamityHunt.dll</HintPath>
+	  </Reference>
 	  <Reference Include="CalamityMod">
 	    <HintPath>Libraries\CalamityMod.dll</HintPath>
 	  </Reference>
 	  <Reference Include="CalValEX">
 	    <HintPath>..\..\ModReader\CalValEX\CalValEX.dll</HintPath>
+	  </Reference>
+	  <Reference Include="CheatSheet">
+	    <HintPath>lib\CheatSheet.dll</HintPath>
+	  </Reference>
+	  <Reference Include="DragonLens">
+	    <HintPath>lib\DragonLens.dll</HintPath>
+	  </Reference>
+	  <Reference Include="FargoMoreSoulsCompat">
+	    <HintPath>Libraries\FargoMoreSoulsCompat_v0.4.2.dll</HintPath>
+	  </Reference>
+	  <Reference Include="FargoMoreSoulsCompat">
+	    <HintPath>Libraries\FargoMoreSoulsCompat_v0.4.2.dll</HintPath>
 	  </Reference>
 	  <Reference Include="FargoMoreSoulsCompat">
 	    <HintPath>Libraries\FargoMoreSoulsCompat_v0.4.2.dll</HintPath>
@@ -65,8 +86,20 @@
 	  <Reference Include="FargowiltasSouls">
 	    <HintPath>Libraries\FargowiltasSouls.dll</HintPath>
 	  </Reference>
+	  <Reference Include="HEROsMod">
+	    <HintPath>lib\HEROsMod.dll</HintPath>
+	  </Reference>
 	  <Reference Include="Luminance">
 	    <HintPath>lib\Luminance.dll</HintPath>
+	  </Reference>
+	  <Reference Include="MagicStorage">
+	    <HintPath>lib\MagicStorage.dll</HintPath>
+	  </Reference>
+	  <Reference Include="MMHOOK_MagicStorage">
+	    <HintPath>lib\MMHOOK_MagicStorage.dll</HintPath>
+	  </Reference>
+	  <Reference Include="RagnarokMod">
+	    <HintPath>lib\RagnarokMod.dll</HintPath>
 	  </Reference>
 	  <Reference Include="Redemption">
 	    <HintPath>Libraries\Redemption.dll</HintPath>
@@ -91,6 +124,9 @@
 	  </Reference>
 	  <Reference Include="ThoriumMod">
 	    <HintPath>Libraries\ThoriumMod_v1.7.1.6.dll</HintPath>
+	  </Reference>
+	  <Reference Include="ThoriumRework">
+	    <HintPath>lib\ThoriumRework.dll</HintPath>
 	  </Reference>
 	</ItemGroup>
 

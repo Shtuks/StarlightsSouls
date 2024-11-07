@@ -15,8 +15,6 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Collections.Generic;
 using System.Text;
-using FargowiltasSouls.Core.Globals;
-using FargowiltasSouls.Core.Systems;
 using Luminance.Core.Graphics;
 using static Terraria.ModLoader.ModContent;
 using Terraria.Audio;
@@ -28,7 +26,6 @@ using ReLogic.Content;
 using System.Linq;
 using Terraria.DataStructures;
 using Terraria.Localization;
-using Terraria.GameContent;
 
 namespace ssm
 {
@@ -48,6 +45,44 @@ namespace ssm
             }
             return p;
         }
+
+        public static void HomeInOnNPC(Projectile projectile, bool ignoreTiles, float distanceRequired, float homingVelocity, float inertia)
+        {
+            if (!projectile.friendly)
+                return;
+
+            Vector2 destination = projectile.Center;
+            float maxDistance = distanceRequired;
+            bool locatedTarget = false;
+
+            float npcDistCompare = 25000f;
+            int index = -1;
+            foreach (NPC n in Main.ActiveNPCs)
+            {
+                float extraDistance = (n.width / 2) + (n.height / 2);
+                if (!n.CanBeChasedBy(projectile, false) || !projectile.WithinRange(n.Center, maxDistance + extraDistance))
+                    continue;
+
+                float currentNPCDist = Vector2.Distance(n.Center, projectile.Center);
+                if ((currentNPCDist < npcDistCompare) && (ignoreTiles || Collision.CanHit(projectile.Center, 1, 1, n.Center, 1, 1)))
+                {
+                    npcDistCompare = currentNPCDist;
+                    index = n.whoAmI;
+                }
+            }
+            if (index != -1)
+            {
+                destination = Main.npc[index].Center;
+                locatedTarget = true;
+            }
+
+            if (locatedTarget)
+            {
+                Vector2 homeDirection = (destination - projectile.Center).SafeNormalize(Vector2.UnitY);
+                projectile.velocity = (projectile.velocity * inertia + homeDirection * homingVelocity) / (inertia + 1f);
+            }
+        }
+
 
         public static bool CircularHitboxCollision(Vector2 centerCheckPosition, float radius, Rectangle targetHitbox)
         {
@@ -138,7 +173,7 @@ namespace ssm
         public static ShtunShield Shield(this Player player)
             => player.GetModPlayer<ShtunShield>();
 
-        public static bool Stalin => ShtunConfig.Instance.Stalin;
+        public static bool Stalin = ShtunConfig.Instance.Stalin;
         public static string TryStalinTexture => Stalin ? "_Stalin" : "";
 
         public static NPC ClosestNPCAt(this Vector2 origin, float maxDistanceToCheck, bool ignoreTiles = true, bool bossPriority = false)

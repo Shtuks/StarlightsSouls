@@ -188,6 +188,7 @@ namespace ssm.Content.NPCs.Shtuxibus
             if (hits > 180)
                 target.endurance = 0;
             target.lifeRegen -= 10000;
+            target.AddBuff(ModContent.BuffType<TimeFrozenBuff>(), 99999);
         }
 
         public override void ModifyHitNPC(NPC target, ref NPC.HitModifiers modifiers)

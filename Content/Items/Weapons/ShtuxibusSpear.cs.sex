@@ -13,7 +13,6 @@ using ssm.Content.Projectiles;
 using Microsoft.Xna.Framework;
 using ssm.Content.Buffs.Minions;
 using System.Collections.Generic;
-using CalamityMod.CalPlayer;
 using Terraria.DataStructures;
 using Terraria.Graphics.Shaders;
 using Terraria.ID;
@@ -25,10 +24,9 @@ using FargowiltasSouls;
 
 namespace ssm.Content.Items.Weapons
 {
-	public class ShtuxibusSpear : ModItem
+	public class ShtuxianErazer : ModItem
 	{
 		private readonly Mod fargosouls = ModLoader.GetMod("FargowiltasSouls");
-		private readonly Mod calamity = ModLoader.GetMod("CalamityMod");
 		private bool ammoConsumed;
 		private int currentSwing;
 		private Vector2 vector32;
@@ -57,7 +55,6 @@ namespace ssm.Content.Items.Weapons
 			Item.rare = 11;
 			Item.useTurn = true;;
 			Item.UseSound = SoundID.Item113;
-			Item.shoot = ModContent.ProjectileType<ShtuxibusSwordSwing>();
             Item.shootSpeed = 30f;
 		}
 		public override bool CanUseItem(Player player)
@@ -113,16 +110,16 @@ namespace ssm.Content.Items.Weapons
 			if (((Entity)player).active && !player.dead)
 			{
 				player.ResetEffects();
-				player.KillMe(PlayerDeathReason.ByCustomReason(player.name + " was splitted by holder of Shtuxian Weapony."), 7777777.0, 0, false);
+				player.KillMe(PlayerDeathReason.ByCustomReason(player.name + " was splitted by holder of Shtuxian Weapony."), 745745.0, 0, false);
 				player.DropItems();
 				player.ghost = true;
 			}
 			return true;}
-	public override bool AltFunctionUse(Player player)
+		public override bool AltFunctionUse(Player player)
 		{
 			return true;
 		}
-	  public override void AddRecipes()
+		public override void AddRecipes()
         {
             
         }

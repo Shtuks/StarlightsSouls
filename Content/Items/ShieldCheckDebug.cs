@@ -27,7 +27,7 @@ namespace ssm.Content.Items
         public override bool? UseItem(Player player)
         {
             string v1 = player.Shield().shieldCapacity.ToString();
-            string v2 = player.Shield().shieldCapacityMax.ToString();
+            string v2 = player.Shield().shieldCapacityMax2.ToString();
             string v3 = player.Shield().shieldRegenSpeed.ToString();
             string v4 = player.Shield().shieldOn.ToString();
             string v5 = player.Shield().shieldHits.ToString();
@@ -46,8 +46,8 @@ namespace ssm.Content.Items
             ShtunUtils.DisplayLocalizedText("Hits Cap:             " + v6, Color.Cyan);
             ShtunUtils.DisplayLocalizedText("Hits Regen:           " + v7, Color.Lime);
             ShtunUtils.DisplayLocalizedText("No Hits Cap:          " + v9, Color.Pink);
-            ShtunUtils.DisplayLocalizedText("/ Other /", Color.White);
-            ShtunUtils.DisplayLocalizedText("Draw shield:          " + v8, Color.Orange);
+            //ShtunUtils.DisplayLocalizedText("/ Other /", Color.White);
+            //ShtunUtils.DisplayLocalizedText("Draw shield:          " + v8, Color.Orange);
             return true;
         }
     }

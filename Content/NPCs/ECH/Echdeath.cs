@@ -9,8 +9,9 @@ using FargowiltasSouls;
 using FargowiltasSouls.Content.NPCs;
 using ssm.Content.Items.Consumables;
 using System.Drawing.Drawing2D;
+using ssm.Systems;
 
-namespace ssm.Content.NPCs.Chtuxlagor
+namespace ssm.Content.NPCs.ECH
 {
     [AutoloadBossHead]
     public class Echdeath : ModNPC
@@ -207,8 +208,10 @@ namespace ssm.Content.NPCs.Chtuxlagor
 
         public override bool CheckDead()
         {
-            if (NPC.ai[1] == 1 && NPC.ai[2] == 1)
+            if (WorldSaveSystem.TrueChtuxlagorWrathModeEX)
+            {
                 return true;
+            }
 
             NPC.active = true;
             if (Main.netMode == NetmodeID.MultiplayerClient)
@@ -220,11 +223,6 @@ namespace ssm.Content.NPCs.Chtuxlagor
                 NPC.life = NPC.lifeMax;
                 NPC.ai[1] = 1;
             }
-            return false;
-        }
-
-        public override bool PreKill()
-        {
             return false;
         }
 

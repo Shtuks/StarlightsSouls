@@ -63,10 +63,8 @@ namespace ssm.Content.Items.Accessories
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            var modPlayer = player.GetModPlayer<ShtunShield>();
-            modPlayer.shieldOn = true;
-            modPlayer.shieldCapacityMax += 1000;
-            modPlayer.shieldRegenSpeed += 1f;
+            player.Shield().noShieldHitsCap = true;
+            player.Shield().shieldRegenSpeed += 10;
 
             ModContent.Find<ModItem>(this.Mod.Name, "ChtuxlagorHeart").UpdateAccessory(player, true);
             player.Shtun().equippedShtuxianEnchantment = true;

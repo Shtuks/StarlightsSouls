@@ -5,6 +5,24 @@ namespace ssm.Core;
 
 public static class ModCompatibility
 {
+    public static class HEROSMod
+    {
+        public const string Name = "HEROsMod";
+        public static bool Loaded => ModLoader.HasMod(Name);
+        public static Mod Mod => ModLoader.GetMod(Name);
+    }
+    public static class CheatSheet
+    {
+        public const string Name = "CheatSheet";
+        public static bool Loaded => ModLoader.HasMod(Name);
+        public static Mod Mod => ModLoader.GetMod(Name);
+    }
+    public static class Dragonlens
+    {
+        public const string Name = "Dragonlens";
+        public static bool Loaded => ModLoader.HasMod(Name);
+        public static Mod Mod => ModLoader.GetMod(Name);
+    }
     public static class MutantMod
     {
         public const string Name = "Fargowiltas";
@@ -14,6 +32,12 @@ public static class ModCompatibility
     public static class Crossmod
     {
         public const string Name = "FargowiltasCrossmod";
+        public static bool Loaded => ModLoader.HasMod(Name);
+        public static Mod Mod => ModLoader.GetMod(Name);
+    }
+    public static class MagicStorage
+    {
+        public const string Name = "MagicStorage";
         public static bool Loaded => ModLoader.HasMod(Name);
         public static Mod Mod => ModLoader.GetMod(Name);
     }
@@ -44,6 +68,12 @@ public static class ModCompatibility
     public static class Calamity
     {
         public const string Name = "CalamityMod";
+        public static bool Loaded => ModLoader.HasMod(Name);
+        public static Mod Mod => ModLoader.GetMod(Name);
+    }
+    public static class Goozma
+    {
+        public const string Name = "CalamityHunt";
         public static bool Loaded => ModLoader.HasMod(Name);
         public static Mod Mod => ModLoader.GetMod(Name);
     }

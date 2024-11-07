@@ -9,56 +9,29 @@ using ssm.Content.Items.Materials;
 using Terraria.Localization;
 using ssm.Content.Buffs;
 using ssm.Systems;
-using ssm;
-using ssm.Content.NPCs.Chtuxlagor;
+using ssm.Core;
+using ssm.Content.NPCs.ECH;
+using ssm.Content.Items.ShtuxibusPlush;
+using Terraria.ModLoader.Config;
+using ssm.Content.NPCs.DukeFishronEX;
+using ssm.Content.NPCs.StarlightCat;
+using ssm.Core;
 
 namespace ssm.Systems
 {
-    public class ModIntegrationsSystem : ModSystem
+    public class ModIntergationSystem : ModSystem
     {
-        public override bool IsLoadingEnabled(Mod mod)
-        {
-            return ShtunConfig.Instance.ExtraContent;
-        }
-
-        public static class Souls
-        {
-            public const string Name = "FargowiltasSouls";
-            public static bool Loaded => ModLoader.HasMod(Name);
-            public static FargowiltasSouls.FargowiltasSouls Mod => ModLoader.GetMod(Name) as FargowiltasSouls.FargowiltasSouls;
-        }
-
-        public static class Mutant
-        {
-            public const string Name = "Fargowiltas";
-            public static bool Loaded => ModLoader.HasMod(Name);
-            public static Mod Mod => ModLoader.GetMod(Name);
-        }
-
-        public static class Redemption
-        {
-            public const string Name = "Redemption";
-            public static bool Loaded => ModLoader.HasMod(Name);
-            public static Mod Mod => ModLoader.GetMod(Name);
-        }
-
-        public static class SacredTools
-        {
-            public const string Name = "SacredTools";
-            public static bool Loaded => ModLoader.HasMod(Name);
-            public static Mod Mod => ModLoader.GetMod(Name);
-        }
-
-        public static class Calamity
-        {
-            public const string Name = "CalamityMod";
-            public static bool Loaded => ModLoader.HasMod(Name);
-            public static Mod Mod => ModLoader.GetMod(Name);
-        }
-
         public override void PostSetupContent()
         {
-            DoBossChecklistIntegration();
+            if (ShtunConfig.Instance.ExtraContent)
+            {
+                DoBossChecklistIntegration();
+            }
+
+            if (ModCompatibility.HEROSMod.Loaded || ModCompatibility.Dragonlens.Loaded || ModCompatibility.CheatSheet.Loaded)
+            {
+                PrivateClassEdits.LoadAntiCheats();
+            }
         }
 
         private void DoBossChecklistIntegration()
@@ -76,8 +49,22 @@ namespace ssm.Systems
             float weight2 = 745.1f;
             Func<bool> downed2 = () => WorldSaveSystem.downedEch;
             int bossType2 = ModContent.NPCType<Echdeath>();
-            int spawnItem2 = ModContent.ItemType<ShtuxianCurseEX>();
+            int spawnItem2 = ModContent.ItemType<ShtuxibusFumo>();
             List<int> collectibles2 = new List<int>() { ModContent.ItemType<Sadism>(), };
+
+            string internalName3 = "Duke Fishron EX";
+            float weight3 = 744.99f;
+            Func<bool> downed3 = () => WorldSaveSystem.downedFish;
+            int bossType3 = ModContent.NPCType<DukeFishronEX>();
+            int spawnItem3 = ModContent.ItemType<ShtuxibusFumo>();
+            List<int> collectibles3 = new List<int>() { ModContent.ItemType<Sadism>(), };
+
+            string internalName4 = "StarlightCat";
+            float weight4 = float.MaxValue;
+            Func<bool> downed4 = () => WorldSaveSystem.downedChtuxlagor;
+            int bossType4 = ModContent.NPCType<StarlightCatBoss>();
+            int spawnItem4 = ModContent.ItemType<ShtuxibusFumo>();
+            List<int> collectibles4 = new List<int>() { ModContent.ItemType<Sadism>(), };
 
             bossChecklistMod.Call(
                 "LogBoss",
@@ -110,13 +97,45 @@ namespace ssm.Systems
                     ["collectibles"] = collectibles1,
                 }
             );
+
+            bossChecklistMod.Call(
+                "LogBoss",
+                Mod,
+                internalName3,
+                weight3,
+                downed3,
+                bossType3,
+                new Dictionary<string, object>()
+                {
+                    ["spawnInfo"] = (object)Language.GetText("Mods.ssm.NPCs.DukeFishronEX.BossChecklistIntegration.SpawnInfo").WithFormatArgs(Array.Empty<object>()),
+                    ["despawnMessage"] = (object)Language.GetText("Mods.ssm.NPCs.DukeFishronEX.BossChecklistIntegration.DespawnMessage"),
+                    ["spawnItems"] = spawnItem3,
+                    ["collectibles"] = collectibles3,
+                }
+            );
+
+            bossChecklistMod.Call(
+                "LogBoss",
+                Mod,
+                internalName4,
+                weight4,
+                downed4,
+                bossType4,
+                new Dictionary<string, object>()
+                {
+                    ["spawnInfo"] = (object)Language.GetText("Mods.ssm.NPCs.StarlightCatBoss.BossChecklistIntegration.SpawnInfo").WithFormatArgs(Array.Empty<object>()),
+                    ["despawnMessage"] = (object)Language.GetText("Mods.ssm.NPCs.StarlightCatBoss.BossChecklistIntegration.DespawnMessage"),
+                    ["spawnItems"] = spawnItem3,
+                    ["collectibles"] = collectibles3,
+                }
+            );
         }
 
         public static class BossChecklist
         {
             public static void AdjustValues()
             {
-                Souls.Mod.BossChecklistValues["MutantBoss"] = 29f;
+                ModCompatibility.SoulsMod.Mod.BossChecklistValues["MutantBoss"] = 29f;
                 /*if (Redemption.Loaded){
                 	Redemption.Mod.BossChecklistValues["Nebuleus"] = 20f;}
                 if (SacredTools.Loaded){

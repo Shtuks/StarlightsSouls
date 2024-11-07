@@ -1,0 +1,43 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Terraria.ID;
+using Terraria;
+using Terraria.ModLoader;
+using ssm.Content.NPCs.Shtuxibus;
+using System.IO;
+using ssm.Content.Buffs;
+using Terraria.Audio;
+using FargowiltasSouls.Content.Buffs.Boss;
+using FargowiltasSouls.Content.Buffs.Masomode;
+using FargowiltasSouls.Core.Globals;
+using Microsoft.Xna.Framework;
+using Terraria.Graphics.Effects;
+
+namespace ssm.Content.NPCs.StarlightCat
+{
+    [AutoloadBossHead]
+    public class StarlightCat1 : StarlightCatBase
+    {
+        //Variables
+        Player player => Main.player[NPC.target];
+
+        public override void AI()
+        {
+            //attacks handler
+            switch ((int)NPC.ai[0])
+            {
+                case 0: ; break;
+                case 1: ; break;
+                case 2: ; break;
+                case 3: ; break;
+                case 4: ; break;
+                case 5: ; break;
+                case 6: ; break;
+                case 7: ; break;
+            }
+        }
+    }
+}

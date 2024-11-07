@@ -28,19 +28,27 @@ namespace ssm.Content.Items.Armor
         public override void UpdateEquip(Player player)
         {
             player.GetDamage(DamageClass.Generic) += 5f;
+            player.GetArmorPenetration(DamageClass.Generic) += 500;
             player.GetCritChance(DamageClass.Generic) += 100;
-            player.statLifeMax2 += 7000;
-            player.statManaMax2 += 7000;
+            player.statLifeMax2 += 2000;
+            player.statManaMax2 += 2000;
             player.endurance += 0.5f;
             player.lifeRegen += 10;
             player.lifeRegenCount += 10;
             player.lifeRegenTime += 10;
+
+            player.Shield().shieldOn = true;
+            player.Shield().shieldCapacityMax2 += 10000;
+            player.Shield().shieldRegenSpeed += 200f;
+            player.Shield().shieldHitsRegen += 0.5f;
+            player.Shield().shieldHitsCap += 10;
         }
 
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe();
 
+            recipe.AddIngredient<ChtuxlagorShard>(1);
             recipe.AddIngredient<ShtuxiumBar>(20);
             recipe.AddIngredient<MutantBody>();
             recipe.AddIngredient<StyxChestplate>();

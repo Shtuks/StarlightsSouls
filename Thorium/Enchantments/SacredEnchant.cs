@@ -61,9 +61,9 @@ namespace ssm.Thorium.Enchantments
         {
             Recipe recipe = this.CreateRecipe();
 
-            //recipe.AddIngredient(ModContent.ItemType<HallowedPaladinHelmet>());
-            //recipe.AddIngredient(ModContent.ItemType<HallowedPaladinBreastplate>());
-            //recipe.AddIngredient(ModContent.ItemType<HallowedPaladinLeggings>());
+            recipe.AddIngredient(ModContent.ItemType<SacredBreastplate>());
+            recipe.AddIngredient(ModContent.ItemType<SacredHelmet>());
+            recipe.AddIngredient(ModContent.ItemType<SacredLeggings>());
             recipe.AddIngredient(ModContent.ItemType<NoviceClericEnchant>());
             recipe.AddIngredient(ModContent.ItemType<KarmicHolder>());
             recipe.AddIngredient(ModContent.ItemType<Liberation>());

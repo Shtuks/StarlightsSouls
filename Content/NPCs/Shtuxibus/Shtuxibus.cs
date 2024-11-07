@@ -4,7 +4,6 @@ using FargowiltasSouls;
 using FargowiltasSouls.Common.Graphics.Particles;
 using FargowiltasSouls.Content.Buffs.Boss;
 using FargowiltasSouls.Content.Buffs.Masomode;
-using FargowiltasSouls.Content.Buffs.Souls;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
@@ -19,30 +18,21 @@ using Terraria;
 using FargowiltasSouls.Core.Globals;
 using ssm.Content.Projectiles.Deathrays;
 using ssm.Content.Buffs;
-using ssm;
-using ssm.Content.Tiles;
+using ssm.Content.Items.Placeable;
 using ssm.Systems;
-using ssm.Content.NPCs;
 using ssm.Content.Items.Accessories;
 using ssm.Content.Projectiles.Shtuxibus;
-using FargowiltasSouls.Core.Systems;
 using Luminance.Core.Graphics;
-using CalamityMod.CalPlayer;
-using Terraria.DataStructures;
-using Terraria.Graphics.Shaders;
 using ssm.Content.NPCs.Shtuxibus.CalAttacks;
 using Terraria.ID;
 using FargowiltasSouls.Content.Projectiles;
 using System;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 using Terraria.Audio;
 using ssm.Content.Items.Consumables;
 using ModCompatibility = ssm.Core.ModCompatibility;
-using Fargowiltas;
-using ssm.Content.Items.Materials;
-using FargowiltasSouls.Content.Items.Materials;
 using ssm.Content.Projectiles.Shtuxibus.Cal;
+using FargowiltasSouls.Core.ItemDropRules.Conditions;
+using ssm.Content.Items.ShtuxibusPlush;
 
 namespace ssm.Content.NPCs.Shtuxibus
 {
@@ -81,7 +71,7 @@ namespace ssm.Content.NPCs.Shtuxibus
         public float endTimeVariance;
         public static int imtrydomove;
         public bool ShouldDrawAura;
-        public static readonly SoundStyle ShieldSound = new("ssm/Assets/Sounds/ShtuxibusSpawnSound") { };
+        public static readonly SoundStyle SpawnSound = new("ssm/Assets/Sounds/ShtuxibusSpawnSound") { };
 
         public override bool IsLoadingEnabled(Mod mod)
         {
@@ -945,21 +935,20 @@ namespace ssm.Content.NPCs.Shtuxibus
             if (!spawned)
             {
                 spawned = true;
-                int lifeMax = this.NPC.lifeMax;
-                Mod mod1 = Terraria.ModLoader.ModLoader.GetMod("CalamityMod");
-                if ((bool)mod1.Call(new object[3]{
-                (object) "GetDifficultyActive",
-                (object) "death",
-                (object) true
-                }) && Main.masterMode)
-                    this.NPC.lifeMax = 1745000000;
-                this.NPC.damage = 15000;
-                if (Main.zenithWorld)
-                {
-                    this.NPC.damage = 74500;
-                    this.NPC.GivenName = Language.GetTextValue("Mods.ssm.NPCs.ShtuxibusGFB.DisplayName");
-                    this.NPC.lifeMax = int.MaxValue;
-                }
+                //Mod mod1 = Terraria.ModLoader.ModLoader.GetMod("CalamityMod");
+                //if ((bool)mod1.Call(new object[3]{
+                //(object) "GetDifficultyActive",
+                //(object) "death",
+                //(object) true
+                //}) && Main.masterMode)
+                //    this.NPC.lifeMax = 1745000000;
+                //this.NPC.damage = 15000;
+                //if (Main.zenithWorld)
+                //{
+                //    this.NPC.damage = 74500;
+                //    this.NPC.GivenName = Language.GetTextValue("Mods.ssm.NPCs.ShtuxibusGFB.DisplayName");
+                //    this.NPC.lifeMax = int.MaxValue;
+                //}
                 this.NPC.life = this.NPC.lifeMax;
             }
 
@@ -967,6 +956,11 @@ namespace ssm.Content.NPCs.Shtuxibus
             Main.LocalPlayer.AddBuff(ModContent.Find<ModBuff>(fargosouls.Name, "MutantPresenceBuff").Type, 2);
             Main.LocalPlayer.AddBuff(ModContent.BuffType<ShtuxibusCurse>(), 2);
             Main.LocalPlayer.AddBuff(ModContent.BuffType<OceanicSealBuff>(), 2);
+
+            if (INPHASE3)
+            {
+                Main.LocalPlayer.AddBuff(ModContent.BuffType<MutantDesperationBuff>(), 2);
+            }
 
             if (NPC.localAI[3] == 0)
             {
@@ -1171,7 +1165,6 @@ namespace ssm.Content.NPCs.Shtuxibus
         }
         bool AliveCheck(Player p, bool forceDespawn = false)
         {
-            DeleteSusItems();
             if (forceDespawn || ((!p.active || p.dead) && NPC.localAI[3] > 0))
             {
                 NPC.TargetClosest();
@@ -1185,15 +1178,17 @@ namespace ssm.Content.NPCs.Shtuxibus
                     {
                         if (NPC.position.Y < 0)
                             NPC.position.Y = 0;
-                        SkyManager.Instance.Deactivate("ssm:Shtuxibus");
+                        SkyManager.Instance.Deactivate("ssm:Chtuxlagor");
                     }
                     return false;
                 }
             }
 
+            //never despawn
             if (NPC.timeLeft < 3600)
                 NPC.timeLeft = 3600;
 
+            //go to surface
             if (player.Center.Y / 16f > Main.worldSurface)
             {
                 NPC.velocity.X *= 0.95f;
@@ -1202,7 +1197,6 @@ namespace ssm.Content.NPCs.Shtuxibus
                     NPC.velocity.Y = -32f;
                 return false;
             }
-
             return true;
         }
         bool Phase2Check()
@@ -1326,7 +1320,7 @@ namespace ssm.Content.NPCs.Shtuxibus
             {
                 if (!Main.zenithWorld)
                     Music = MusicLoader.GetMusicSlot(musicMod, "Assets/Music/ORDER");
-                else
+                else if(ShtunConfig.Instance.Stalin)
                     Music = ShtunUtils.Stalin ? MusicLoader.GetMusicSlot(musicMod, "Assets/Music/StainedBrutalCommunism") : Music = MusicLoader.GetMusicSlot(musicMod, "Assets/Music/Halcyon");
             }
         }
@@ -3410,7 +3404,6 @@ namespace ssm.Content.NPCs.Shtuxibus
         {
             if (!AliveCheck(player))
                 return;
-            ssm.amiactive = true;
             Vector2 targetPos = player.Center;
             targetPos.X += 400 * (NPC.Center.X < targetPos.X ? -1 : 1);
             targetPos.Y += 400;
@@ -3467,7 +3460,6 @@ namespace ssm.Content.NPCs.Shtuxibus
         {
             if (!AliveCheck(player))
                 return;
-            ssm.amiactive = true;
             Vector2 target = NPC.Bottom.Y < player.Top.Y
                 ? player.Center + 300f * Vector2.UnitX * Math.Sign(NPC.Center.X - player.Center.X)
                 : NPC.Center + 30 * NPC.DirectionFrom(player.Center).RotatedBy(MathHelper.ToRadians(60) * Math.Sign(player.Center.X - NPC.Center.X));
@@ -3502,7 +3494,6 @@ namespace ssm.Content.NPCs.Shtuxibus
 
             if (++NPC.ai[1] > 360 + 360 * endTimeVariance)
             {
-                ssm.amiactive = false;
                 ChooseNextAttack(11, 13, 16, 19, 24, 26, 31, 35, 37, 39, 41, 42, 45, 46, 47, 52, 55, 56, 58, 59, 60, 61, 62, 63, 64, 65);
             }
 
@@ -3648,7 +3639,6 @@ namespace ssm.Content.NPCs.Shtuxibus
         {
             if (!AliveCheck(player))
                 return;
-            ssm.amiactive = true;
             Vector2 targetPos = player.Center;
             targetPos.X += 900 * (NPC.Center.X < targetPos.X ? -1 : 1);
             targetPos.Y += 700;
@@ -3895,7 +3885,6 @@ namespace ssm.Content.NPCs.Shtuxibus
             if (++NPC.ai[2] > endTime)
             {
                 ChooseNextAttack(11, 16, 19, 20, 26, 31, 33, 37, 39, 41, 42, 45, 46, 47, 52, 55, 56, 58, 59, 60, 61, 62, 63, 64, 65);
-                ssm.amiactive = false;
             }
         }
         void PrepareFishron2()
@@ -6462,9 +6451,13 @@ namespace ssm.Content.NPCs.Shtuxibus
         public override void OnKill()
         {
             ssm.amiactive = false;
+            if (!playerInvulTriggered)
+            {
+                Item.NewItem(base.NPC.GetSource_Loot(), base.NPC.Hitbox, ModContent.ItemType<Sadism>(), 30);
+            }
             if (!WorldSaveSystem.downedShtuxibus)
             {
-                ModContent.GetInstance<ShtuxiumOreSystem>().BlessWorldWithShtuxiumOre();
+                ModContent.GetInstance<Tiles.ShtuxiumOreSystem>().BlessWorldWithShtuxiumOre();
             }
             NPC.SetEventFlagCleared(ref WorldSaveSystem.downedShtuxibus, -1);
             if (!NPC.AnyNPCs(ModContent.NPCType<ShtuxianHarbringer>()))
@@ -6499,21 +6492,13 @@ namespace ssm.Content.NPCs.Shtuxibus
         }
         public override void ModifyNPCLoot(NPCLoot npcLoot)
         {
-            base.ModifyNPCLoot(npcLoot);
-            //npcLoot.AddConditionalPerPlayer(() => WorldSavingSystem.EternityMode, ModContent.ItemType<ChtuxlagorHeart>());
-            //npcLoot.AddConditionalPerPlayer(() => Main.expertMode, ModContent.ItemType<ShtuxibusBag>());
-            //npcLoot.AddConditionalPerPlayer(() => Main.zenithWorld, ModContent.ItemType<StarlightVodka>());
-
-            if (!Main.expertMode)
-            {
-                npcLoot.Add(ItemDropRule.NotScalingWithLuck(ModContent.ItemType<ShtuxiumSoulShard>(), 1, 20, 30));
-                npcLoot.Add(ItemDropRule.NotScalingWithLuck(ModContent.ItemType<EternalEnergy>(), 1, 40, 70));
-                npcLoot.Add(ItemDropRule.NotScalingWithLuck(ModContent.ItemType<AbomEnergy>(), 1, 70, 100));
-                npcLoot.Add(ItemDropRule.NotScalingWithLuck(ModContent.ItemType<DeviatingEnergy>(), 1, 100, 130));
-            }
-
-            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<Items.Placeable.ShtuxibusTrophy>(), 10));
-            npcLoot.Add(ItemDropRule.MasterModeCommonDrop(ModContent.ItemType<Items.Placeable.ShtuxibusRelic>()));
+            npcLoot.Add(ItemDropRule.BossBag(ModContent.ItemType<ShtuxibusBag>()));
+            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<ShtuxibusTrophy>(), 10));
+            npcLoot.Add(ItemDropRule.MasterModeCommonDrop(ModContent.ItemType<ShtuxibusRelic>()));
+            npcLoot.Add(ItemDropRule.MasterModeDropOnAllPlayers(ModContent.ItemType<ShtuxibusFumo>(), 4));
+            LeadingConditionRule leadingConditionRule = new LeadingConditionRule(new EModeDropCondition());
+            leadingConditionRule.OnSuccess(FargoSoulsUtil.BossBagDropCustom(ModContent.ItemType<ChtuxlagorHeart>()));
+            npcLoot.Add(leadingConditionRule);
 
             if (ModLoader.TryGetMod("CalamityMod", out Mod kal))
             {

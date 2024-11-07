@@ -4,7 +4,7 @@ Mods: {
 			Monstrosity: Effects of all auric helmets, shadowspec helmet and gem tech headgear
 			Quantum:
 				'''
-				Maximum damage input capped at 1000 health
+				If damage less than 10, it will be nulified
 				Supression of Chtuxlagor Inferno effects
 				You can revive up to 3 times, healing all health
 				Cooldown of each revive is 30 seconds
@@ -42,7 +42,7 @@ Mods: {
 					Effects of [i:FargowiltasSouls/EternitySoul], [i:ssm/EternityForce]
 					Your attacks inflict most of debuffs, absurdly increace life regeneration
 					Grants immunity to all debuffs except "Chtux'lag'or Inferno" and "Shtuxibus Curse"
-					Press [shtuxianSuper] key to become invinvible for 5 seconds
+					Press [shtuxianSuper] key to become invinvible for 20 seconds
 					'God or whatever, all things acknowledge your claim to omnipotence.'
 					'''
 			}
@@ -858,6 +858,7 @@ Mods: {
 				DisplayName: Chtux'Lag'Or heart
 				Tooltip:
 					'''
+					Press [shtuxianSuper] key to become invinvible for 5 seconds
 					Your attacks inflict "Chtux'lag'or inferno".
 					Set Mutant Bomb CD to 30 seconds instead of 60.
 					Grants immunity to "Shtuxibus Curse", Debuff "Chtux'lag'or inferno" deal lower damage
@@ -2131,7 +2132,7 @@ Mods: {
 			}
 
 			ShtuxianCurseEX: {
-				DisplayName: Shtuxian Curse E X
+				DisplayName: Shtuxian Curse EX
 				Tooltip: ""
 			}
 
@@ -2246,22 +2247,12 @@ Mods: {
 			}
 
 			Calamitass: {
-				DisplayName: Calamitass
-				Tooltip: ""
-			}
-
-			Ded: {
-				DisplayName: Ded
+				DisplayName: Calamitas
 				Tooltip: ""
 			}
 
 			YharimWhere: {
 				DisplayName: Yharim Where
-				Tooltip: ""
-			}
-
-			Hoe: {
-				DisplayName: Hoe
 				Tooltip: ""
 			}
 
@@ -2276,7 +2267,19 @@ Mods: {
 			}
 
 			ShtuxibusFumo: {
-				Tooltip: ""
+				Tooltip:
+					'''
+					Use this item to meet me.
+					Reccomend you to use it in spacious place like sky.
+					Your hitbox will become a little dot for a fight.
+					Highly reccomend to have [i:ssm/ShtuxianSoul].
+					Defeating me less than in minute will kill you.
+					Dealing more that 1/10 of health will kill you.
+					Trying to use Super Smash mod on me will kill you.
+					Trying to use [shtuxianSuper] will immideately kill you.
+					Cheat Sheet/Heros's Mod/DragonLens godmode will kill you.
+					All bosses, npcs and creature will die after usage of this item.
+					'''
 				DisplayName: Shtuxibus Fumo
 			}
 
@@ -2301,7 +2304,7 @@ Mods: {
 			}
 
 			OverloadAS: {
-				DisplayName: Overload A S
+				DisplayName: Overload Aquatic scourge
 				Tooltip: ""
 			}
 
@@ -2331,12 +2334,12 @@ Mods: {
 			}
 
 			OverloadDOG: {
-				DisplayName: Overload D O G
+				DisplayName: Overload Devourer of Gods
 				Tooltip: ""
 			}
 
 			OverloadDS: {
-				DisplayName: Overload D S
+				DisplayName: Overload Desert Scourge
 				Tooltip: ""
 			}
 
@@ -2391,12 +2394,12 @@ Mods: {
 			}
 
 			OverloadWaifu: {
-				DisplayName: Overload Waifu
+				DisplayName: Overload Calamitas
 				Tooltip: ""
 			}
 
 			OverloadWaifuClone: {
-				DisplayName: Overload Waifu Clone
+				DisplayName: Overload Calamitas Clone
 				Tooltip: ""
 			}
 
@@ -2407,21 +2410,69 @@ Mods: {
 
 			ShtuxianEnchant: {
 				DisplayName: Shtuxian Enchant
-				Tooltip: ""
+				Tooltip:
+					'''
+					[i:ssm/QuantumChestplate], [i:ssm/QuantumPants]
+					If damage less than 10, it will be nulified, Your attacks inflict "Chtux'lag'or inferno"
+					Supression of "Chtux'lag'or inferno" effects, All set bonuses from Monstrosity and Mutant armor
+					You can revive up to 3 times, healing all health, Cooldown of each revive is 30 seconds
+					[i:ssm/ChtuxlagorHeart]
+					Your attacks inflict "Chtux'lag'or inferno", You can't take more than 1000 damage.
+					Set Mutant Bomb CD to 30 seconds instead of 60, 100% increace graze bonus damage cap
+					Grants immunity to "Shtuxibus Curse", Debuff "Chtux'lag'or inferno" deal lower damage
+					Press [shtuxianSuper] key to become invinvible for 10 seconds
+					[i:ssm/ShtuxianEnchant] Remove any hits cap.
+					'''
 			}
 
 			QuantumChestplate: {
 				DisplayName: Quantum Chestplate
-				Tooltip: ""
+				Tooltip:
+					'''
+					+ 10000 shield points, + 100 shield regeneration
+					+ 2000 Max life and mana, x5 all damage for all classes
+					Godly regeneration, 50% Damage resistance
+					Ignore armor of any enemies, 100% crit chance
+					'''
 			}
 
 			QuantumPants: {
 				DisplayName: Quantum Pants
-				Tooltip: ""
+				Tooltip:
+					'''
+					+ 10000 shield points, + 100 shield regeneration
+					50% Damage resistance, Ignore armor of any enemies
+					50% move speed, x5 all damage for all classes
+					'''
+			}
+
+			QuantumHelmet: {
+				DisplayName: Quantum Helmet
+				Tooltip:
+					'''
+					+ 10000 shield points, + 100 shield regeneration
+					50% Damage resistance, Ignore armor of any enemies
+					Display all enemies, traps, treasures, ores
+					'''
 			}
 
 			ShieldCheckDebug: {
 				DisplayName: Shield Check Debug
+				Tooltip: Debug
+			}
+
+			StorageUnitShtuxian: {
+				DisplayName: Storage Unit Shtuxian
+				Tooltip: DO NOT use this
+			}
+
+			ChtuxlagorShard: {
+				Tooltip: ""
+				DisplayName: Chtuxlagor Shard
+			}
+
+			ShtuxiumArrow: {
+				DisplayName: Shtuxium Arrow
 				Tooltip: ""
 			}
 		}
@@ -2503,7 +2554,7 @@ Mods: {
 			}
 
 			ShtuxianDomination: {
-				Description: Mods.ssm.Buffs.ShtuxianDomination.Description
+				Description: You are f*king invincible
 				DisplayName: Shtuxian Domination
 			}
 		}
@@ -2636,14 +2687,16 @@ Mods: {
 			}
 
 			Echdeath: {
-				DisplayName: Echdeath
+				DisplayName: ☭
 
 				BossChecklistIntegration: {
-					SpawnInfo: Spawned with an [i:ssm/ShtuxianCurseEX] anytime anywhere.
-					DespawnMessage: ECHDEATH ECHDEATHED AWAY
-					KilledAllMessage: ECHDEATH ECHDEATHED EVERYONE
+					SpawnInfo: Spawned with an [i:ssm/ShtuxibusFumo] anytime anywhere.
+					DespawnMessage: StarlightCat despawned.
+					KilledAllMessage: StarlightCat killed all players.
 				}
 			}
+
+			StarlightCatBoss.DisplayName: Starlight Cat Boss
 		}
 
 		Toggler: {
@@ -2696,6 +2749,7 @@ Mods: {
 			ShtuxibusForgeTile.MapEntry: Shtuxibus Forge Tile
 			MutantsForgeTile.MapEntry: Mutants Forge Tile
 			DemonshadeWorkbenchTile.MapEntry: Demonshade Workbench Tile
+			ShtunStorageUnit.MapEntry: Shtun Storage Unit
 		}
 
 		ItemClass.Chtuxlagor: ∞ Chtux'Lag'Or Item ∞
@@ -2791,6 +2845,7 @@ Mods: {
 			FlareDust.DisplayName: Flare Dust
 			DLCBloomLine.DisplayName: D L C Bloom Line
 			SlamTelegraph.DisplayName: Slam Telegraph
+			ShtuxianArrowProj.DisplayName: Shtuxian Arrow Proj
 		}
 
 		Biomes: {
@@ -2813,6 +2868,8 @@ Mods: {
 					General: General
 					Calamity: Calamity
 					SoA: Shadows of Abaddon
+					SoACal: SoA - Calamity
+					TorCal: Thorium - Calamity
 					Thorium: Thorium
 					Redemption: Redemption
 					Crafting: Crafting Header
@@ -2832,7 +2889,7 @@ Mods: {
 				}
 
 				Stalin: {
-					Label: Stalin
+					Label: ☭
 					Tooltip: gUeSS whAt iT DoeS
 				}
 
@@ -2933,6 +2990,6 @@ Mods: {
 			}
 		}
 
-		"Keybinds.Shtuxian Domination.DisplayName": Shtuxian  Domination
+		"Keybinds.Shtuxian Domination.DisplayName": Shtuxian Domination
 	}
 }
