@@ -10,7 +10,7 @@ namespace ssm
     {
         public override void PostDrawTiles()
         {
-            if (StarlightCatBoss.phase > 0)
+            if (StarlightCatBoss.active)
             {
                 //if (ssm.debug) { ShtunUtils.DisplayLocalizedText("Drawing arena", Color.White); }
                 Main.spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, Main.DefaultSamplerState, DepthStencilState.None, RasterizerState.CullCounterClockwise, null, Main.Transform);

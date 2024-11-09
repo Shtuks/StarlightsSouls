@@ -23,7 +23,7 @@ namespace ssm.Reworks
             {
                 if (ModLoader.TryGetMod("Redemption", out Mod Redemption) && ShtunConfig.Instance.RedEnchantments)
                 {
-                    //ModContent.Find<ModItem>(((ModType)this).Mod.Name, "RedemptionSoul").UpdateAccessory(player, false);
+                    ModContent.Find<ModItem>(((ModType)this).Mod.Name, "RedemptionSoul").UpdateAccessory(player, false);
                 }
 
                 if (ModLoader.TryGetMod("SacredTools", out Mod SoA) && ShtunConfig.Instance.SoAEnchantments)

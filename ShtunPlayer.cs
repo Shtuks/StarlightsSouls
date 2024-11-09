@@ -30,7 +30,6 @@ using ssm.Content.Buffs.Anti;
 using Terraria;
 using ssm.Content.NPCs.StarlightCat;
 using ssm.Core;
-using ThoriumMod.Items.ZRemoved;
 
 namespace ssm
 {
@@ -68,6 +67,7 @@ namespace ssm
         public bool equippedNekomiEnchantment;
         public bool equippedShtuxianEnchantment;
         public bool ShtuxibusSoul;
+        public bool trueDevSets;
 
         int timeru = 0;
         public bool DeviGraze;
@@ -160,6 +160,11 @@ namespace ssm
             {
                 ChtuxlagorHits++;
             }
+            if(ChtuxlagorHits > 10)
+            {
+                ERASE(Player);
+                ChtuxlagorHits = 0;
+            }
         }
         /*public override void PostUpdateMiscEffects()
         {
@@ -218,24 +223,24 @@ namespace ssm
 
         public void ERASE(Player player)
         {
-            player.ghost = true;
             player.dead = true;
-            player.KillMe(PlayerDeathReason.ByCustomReason(player.name + " got out of the scope of this pixel 2D game."), double.MaxValue, 10);
             for (int index = 0; index < BuffLoader.BuffCount; ++index)
             {
                 if (Main.debuff[index])
                     player.buffImmune[index] = false;
             }
+            player.KillMe(PlayerDeathReason.ByCustomReason(player.name + " got out of the scope of this pixel 2D game."), double.MaxValue, 10);
+            player.ghost = true;
         }
         public void ERASESOFT(Player player)
         {
-            player.dead = true;
-            player.KillMe(PlayerDeathReason.ByCustomReason(player.name + " got out of the scope of this pixel 2D game."), double.MaxValue, 10);
             for (int index = 0; index < BuffLoader.BuffCount; ++index)
             {
                 if (Main.debuff[index])
                     player.buffImmune[index] = false;
             }
+            player.dead = true;
+            player.KillMe(PlayerDeathReason.ByCustomReason(player.name + " got out of the scope of this pixel 2D game."), double.MaxValue, 10);
         }
 
         public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
@@ -303,6 +308,7 @@ namespace ssm
 
         public override void UpdateDead() 
         {
+            ssm.legit = false;
             ChtuxlagorHits = 0;
         }
         public void WingStats() { Player.wingTimeMax = 999999; Player.wingTime = Player.wingTimeMax; Player.ignoreWater = true; }

@@ -1178,7 +1178,7 @@ namespace ssm.Content.NPCs.Shtuxibus
                     {
                         if (NPC.position.Y < 0)
                             NPC.position.Y = 0;
-                        SkyManager.Instance.Deactivate("ssm:Chtuxlagor");
+                        SkyManager.Instance.Deactivate("ssm:Shtuxibus");
                     }
                     return false;
                 }
@@ -1311,7 +1311,7 @@ namespace ssm.Content.NPCs.Shtuxibus
             if (Main.GameModeInfo.IsJourneyMode && CreativePowerManager.Instance.GetPower<CreativePowers.FreezeTime>().Enabled)
                 CreativePowerManager.Instance.GetPower<CreativePowers.FreezeTime>().SetPowerInfo(false);
 
-            if (!SkyManager.Instance["ssm:Shtuxibus"].IsActive() && !INPHASE3)
+            if (!SkyManager.Instance["ssm:Shtuxibus"].IsActive())
             {
                 SkyManager.Instance.Activate("ssm:Shtuxibus");
             }
@@ -2612,22 +2612,22 @@ namespace ssm.Content.NPCs.Shtuxibus
         }
         void ApproachForNextAttackP2()
         {
-            if (!AliveCheck(player)) //проверяет живой ли игрок
+            if (!AliveCheck(player))
                 return;
-            Vector2 targetPos = player.Center + player.DirectionTo(NPC.Center) * 300; //устанавливает нужную позицию
-            if (NPC.Distance(targetPos) > 50 && ++NPC.ai[2] < 180) //проверяет дистанцию
+            Vector2 targetPos = player.Center + player.DirectionTo(NPC.Center) * 300;
+            if (NPC.Distance(targetPos) > 50 && ++NPC.ai[2] < 180)
             {
-                Movement(targetPos, 0.8f); //двигается
+                Movement(targetPos, 0.8f);
             }
             else
             {
                 NPC.netUpdate = true;
-                NPC.ai[0]++; //добавляет к счетчику атаки
-                NPC.ai[1] = 0; //ставит задержку на 0
-                NPC.ai[2] = player.DirectionTo(NPC.Center).ToRotation(); //устанавливает позицию для атаки
+                NPC.ai[0]++;
+                NPC.ai[1] = 0;
+                NPC.ai[2] = player.DirectionTo(NPC.Center).ToRotation();
                 NPC.ai[3] = (float)Math.PI / 10f;
-                NPC.localAI[0] = 0; //таймер на 0
-                SoundEngine.PlaySound(SoundID.Roar, NPC.Center); // проигрывает звук
+                NPC.localAI[0] = 0;
+                SoundEngine.PlaySound(SoundID.Roar, NPC.Center);
                 if (player.Center.X < NPC.Center.X)
                     NPC.ai[3] *= -1;
             }

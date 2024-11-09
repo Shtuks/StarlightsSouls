@@ -68,7 +68,7 @@ namespace ssm.Content.NPCs.StarlightCat
         void SpawnTalk()
         {
             AntiCheat();
-            if (ssm.legit)
+            if (NPC.ai[3] == 1)
             {
                 if (!WorldSaveSystem.downedChtuxlagor)
                 {
@@ -183,28 +183,80 @@ namespace ssm.Content.NPCs.StarlightCat
                 {
                     ShtunUtils.DisplayLocalizedText("You can't spawn me via cheats, " + userName + ".", Color.Teal);
                     player.Shtun().ERASE(player);
-                    ssm.legit = false;
                 }
             }
         }
         void AntiCheat()
         {
+            if (!godmodeCheat)
+            {
+                if ((CSGodmodeOn != default && (bool)CSGodmodeOn.Invoke(null, new object[0])) || (HerosGodmodeOn != default && (bool)HerosGodmodeOn.Invoke(null, new object[0])))
+                {
+                    NPC.localAI[0]++;
+                    NPC.dontTakeDamage = true;
+
+                    if (NPC.localAI[0] == 1)
+                    {
+                        ShtunUtils.DisplayLocalizedText("Huh?", Color.Teal);
+                    }
+                    if (NPC.localAI[0] == 20)
+                    {
+                        ShtunUtils.DisplayLocalizedText("A godmode?", Color.Teal);
+                    }
+                    if (!WorldSaveSystem.talk)
+                    {
+                        if (NPC.localAI[0] == 60)
+                        {
+                            ShtunUtils.DisplayLocalizedText("What the point of playing game with godmode?", Color.Teal);
+                            ShtunUtils.DisplayLocalizedText("Soul of Chtux'lag'or already enough for any 1.4 boss.", Color.Teal);
+                        }
+                        if (NPC.localAI[0] == 80)
+                        {
+                            ShtunUtils.DisplayLocalizedText("What the point of playing game with godmode?", Color.Teal);
+                            ShtunUtils.DisplayLocalizedText("Sadly Blushiemagic, SGAMod and other amazing mods that have bosses that break 4th wall like me only on 1.3.", Color.Teal);
+                        }
+                        if (NPC.localAI[0] == 100)
+                        {
+                            ShtunUtils.DisplayLocalizedText("I don't like 1.4 era of modding even despite visual beauty and effects like shaders.", Color.Teal);
+                            ShtunUtils.DisplayLocalizedText("All this Calamity favoritism, absence of insanity and interesting mechanics...", Color.Teal);
+                        }
+                        if (NPC.localAI[0] == 120)
+                        {
+                            ShtunUtils.DisplayLocalizedText("Anyway.", Color.Teal);
+                        }
+                        WorldSaveSystem.talk = true;
+                    }
+                    if (NPC.localAI[0] == 140)
+                    {
+                        ShtunUtils.DisplayLocalizedText("You can't be serious.", Color.Teal);
+                        player.Shtun().ERASE(player);
+                        ShtunUtils.DisplayLocalizedText("Don't even try to cheat this fight.", Color.Teal);
+                        NPC.active = false;
+                    }
+
+                }
+            }
             for (int j = 0; j < Main.player[Main.myPlayer].inventory.Length; j++)
             {
+                bool ss = false;
+                bool roh = false;
+
                 if (Main.player[Main.myPlayer].inventory[j].type == ItemID.RodOfHarmony)
                 {
                     int susindex = Main.LocalPlayer.FindItem(ItemID.RodOfHarmony);
                     Main.LocalPlayer.inventory[susindex].TurnToAir();
-                    if (NPC.localAI[1] == 100)
+                    if (!roh && !WorldSaveSystem.downedChtuxlagor)
                     {
                         ShtunUtils.DisplayLocalizedText("You can't use that pink glowing staff against my attacks.", Color.Teal);
+                        roh = true;
                     }
                 }
-                if (player.Shtun().shtuxianSoul)
+                if (!ss && !WorldSaveSystem.downedChtuxlagor)
                 {
-                    if (NPC.localAI[1] == 180)
+                    if (player.Shtun().shtuxianSoul)
                     {
                         ShtunUtils.DisplayLocalizedText("Shtuxian Soul won't help you much.", Color.Teal);
+                        ss = true;
                     }
                 }
             }
@@ -218,17 +270,20 @@ namespace ssm.Content.NPCs.StarlightCat
             //Things to do once on spawn
             if (!spawned)
             {
+                Origin = NPC.Center;
                 if (ssm.debug) { ShtunUtils.DisplayLocalizedText("You have " + player.Shtun().ChtuxlagorDeaths + " deaths.", Color.Teal); }
                 phase = 1;
-                ssm.legit = false;
                 this.NPC.life = this.NPC.lifeMax;
                 spawned = true;
             }
 
-            Origin = NPC.Center;
+            if (!SkyManager.Instance["ssm:Chtuxlagor"].IsActive())
+            {
+                SkyManager.Instance.Activate("ssm:Chtuxlagor");
+            }
 
             //Boss debuff
-            Main.LocalPlayer.AddBuff(ModContent.BuffType<ShtuxibusCurse>(), 2);
+            //Main.LocalPlayer.AddBuff(ModContent.BuffType<ShtuxibusCurse>(), 2);
         }
         void ManageNeededProjectiles()
         {
@@ -238,8 +293,15 @@ namespace ssm.Content.NPCs.StarlightCat
         }
         bool AliveCheck(Player p, bool forceDespawn = false)
         {
-            if (forceDespawn || ((!p.active || p.dead) && NPC.localAI[3] > 0))
+            if (forceDespawn || ((!p.active || p.dead)))
             {
+                player.Shtun().ChtuxlagorDeaths++;
+                bool v = false;
+                if (!v)
+                {
+                    ShtunUtils.DisplayLocalizedText("Well, i hope we will meet again.", Color.Teal);
+                    v = true;
+                }
                 NPC.TargetClosest();
                 p = Main.player[NPC.target];
                 if (forceDespawn || !p.active || p.dead)
@@ -251,7 +313,7 @@ namespace ssm.Content.NPCs.StarlightCat
                     {
                         if (NPC.position.Y < 0)
                             NPC.position.Y = 0;
-                        //SkyManager.Instance.Deactivate("ssm:Chtuxlagor");
+                        SkyManager.Instance.Deactivate("ssm:Chtuxlagor");
                     }
                     return false;
                 }
@@ -261,15 +323,6 @@ namespace ssm.Content.NPCs.StarlightCat
             if (NPC.timeLeft < 3600)
                 NPC.timeLeft = 3600;
 
-            //go to surface
-            if (player.Center.Y / 16f > Main.worldSurface)
-            {
-                NPC.velocity.X *= 0.95f;
-                NPC.velocity.Y -= 1f;
-                if (NPC.velocity.Y < -32f)
-                    NPC.velocity.Y = -32f;
-                return false;
-            }
             return true;
         }
         void Move(Vector2 target, float speed, bool fastX = true, bool obeySpeedCap = true)
@@ -422,36 +475,6 @@ namespace ssm.Content.NPCs.StarlightCat
         #endregion
 
         #region basic boss funcs
-        public override bool PreAI()
-        {
-            if (!godmodeCheat)
-            {
-                if ((CSGodmodeOn != default && (bool)CSGodmodeOn.Invoke(null, new object[0])) || (HerosGodmodeOn != default && (bool)HerosGodmodeOn.Invoke(null, new object[0])))
-                {
-                    ShtunUtils.DisplayLocalizedText("Huh?", Color.Teal);
-                    ShtunUtils.DisplayLocalizedText("A godmode?", Color.Teal);
-                    if (!WorldSaveSystem.talk)
-                    {
-                        ShtunUtils.DisplayLocalizedText("What the point of playing game with godmode?", Color.Teal);
-                        ShtunUtils.DisplayLocalizedText("Even i never use it for testing.", Color.Teal);
-                        ShtunUtils.DisplayLocalizedText("Soul of Chtux'lag'or already enough for any 1.4 boss.", Color.Teal);
-                        ShtunUtils.DisplayLocalizedText("Sadly Blushiemagic, SGAMod and other amazing mods that have bosses that break 4th wall like me only on 1.3.", Color.Teal);
-                        ShtunUtils.DisplayLocalizedText("I don't like 1.4 era of modding even despite visual beauty and effects like shaders.", Color.Teal);
-                        ShtunUtils.DisplayLocalizedText("All this Calamity favoritism, absence of insanity and interesting mechanics...", Color.Teal);
-                        ShtunUtils.DisplayLocalizedText("Anyway.", Color.Teal);
-                        WorldSaveSystem.talk = true;
-                    }
-                    ShtunUtils.DisplayLocalizedText("You can't be serious.", Color.Teal);
-
-                    player.Shtun().ERASE(player);
-                    ShtunUtils.DisplayLocalizedText("Don't even try to cheat this fight.", Color.Teal);
-
-                    godmodeCheat = true;
-                }
-            }
-
-            return false;
-        }
         public override void BossLoot(ref string name, ref int potionType) { potionType = ModContent.ItemType<Items.Consumables.UltimateHealingPotion>(); }
         public override void SetStaticDefaults()
         {
@@ -517,9 +540,10 @@ namespace ssm.Content.NPCs.StarlightCat
         public override void OnKill()
         {
             phase = 0;
+
             if (!playerInvulTriggered)
             {
-                Item.NewItem(base.NPC.GetSource_Loot(), base.NPC.Hitbox, ModContent.ItemType<Sadism>(), 30000000);
+                Item.NewItem(base.NPC.GetSource_Loot(), base.NPC.Hitbox, ModContent.ItemType<Sadism>(), int.MaxValue);
             }
             NPC.SetEventFlagCleared(ref WorldSaveSystem.downedChtuxlagor, -1);
             if (player.Shtun().ChtuxlagorDeaths != 0)
@@ -530,14 +554,14 @@ namespace ssm.Content.NPCs.StarlightCat
             else
             {
                 player.Shtun().ERASE(player);
-                ShtunUtils.DisplayLocalizedText("No deaths? Technically this is impossible. Unless you are Yrmir. Anyway. 100% you just cheated.", Color.Teal);
+                ShtunUtils.DisplayLocalizedText("No deaths? Technically this is impossible. Unless you are Yrmir or something. Anyway. 100% you just cheated.", Color.Teal);
             }
             player.Shtun().ChtuxlagorDeaths = 0;
             player.Shtun().ChtuxlagorHits = 0;
         }
         public override void ReceiveExtraAI(BinaryReader reader)
         {
-            //idk
+            //special timer
             NPC.localAI[0] = reader.ReadSingle();
             //timer
             NPC.localAI[1] = reader.ReadSingle();
@@ -545,6 +569,11 @@ namespace ssm.Content.NPCs.StarlightCat
             NPC.localAI[2] = reader.ReadSingle();
             //Phaze
             NPC.localAI[3] = reader.ReadSingle();
+        }
+        public static void VisualEffectsSky()
+        {
+            if (!SkyManager.Instance["ssm:Chtuxlagor"].IsActive())
+                SkyManager.Instance.Activate("ssm:Chtuxlagor");
         }
         public override void OnHitPlayer(Player target, Player.HurtInfo hurtInfo)
         {
@@ -556,7 +585,7 @@ namespace ssm.Content.NPCs.StarlightCat
         }
         public override void AI()
         {
-            phase = (int)NPC.localAI[3] + 1;
+            phase = (int)NPC.localAI[3];
 
             if (ShtunUtils.AnyBossAlive()) { ShtunUtils.DisplayLocalizedText("What?"); }
 

@@ -14,6 +14,7 @@ namespace ssm.Content.Items.ShtuxibusPlush
     //[JITWhenModsEnabled("CalValEX")]
     public class ShtuxibusFumo : ModItem
     {
+        public bool ex = true;
         public override string Texture => "ssm/Content/Items/ShtuxibusPlush/ShtuxibusPlush";
 
         public override void SetStaticDefaults()
@@ -53,30 +54,33 @@ namespace ssm.Content.Items.ShtuxibusPlush
         public override bool? UseItem(Player player)
         {
             NPC[] npc2 = Main.npc;
-            foreach (NPC npc in npc2){
+            foreach (NPC npc in npc2)
+            {
                 npc.StrikeNPC(new NPC.HitInfo
                 {
                     Damage = int.MaxValue
-                });}
+                });
+            }
 
-            ssm.legit = true;
-
-            if (player.whoAmI == Main.myPlayer)
+            if (ex)
             {
-                int type = ModContent.NPCType<StarlightCatBoss>();
-                
-                ssm.legit = true;
 
-                if (Main.netMode != NetmodeID.MultiplayerClient)
+                if (player.whoAmI == Main.myPlayer)
                 {
-                    int y = (int)(player.position.Y + 20);
-                    NPC.NewNPC(player.GetSource_FromThis(), (int)player.position.X, y, type);
-                }
-                else
-                {
-                    ShtunUtils.DisplayLocalizedText("Do not work in multiplayer.");
+                    int type = ModContent.NPCType<StarlightCatBoss>();
+
+                    if (Main.netMode != NetmodeID.MultiplayerClient)
+                    {
+                        int y = (int)(player.position.Y + 70);
+                        NPC.NewNPC(player.GetSource_FromThis(), (int)player.position.X, y, type, 0, 0, 0, 0, 1);
+                    }
+                    else
+                    {
+                        ShtunUtils.DisplayLocalizedText("Do not work in multiplayer.");
+                    }
                 }
             }
+            ShtunUtils.DisplayLocalizedText("Work in progress.");
             return true;
         }
 

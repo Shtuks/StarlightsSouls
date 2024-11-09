@@ -73,7 +73,7 @@ namespace ssm
 
         public static bool amiactive;
         public static readonly BindingFlags UniversalBindingFlags = BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic;
-        public static bool legit = false;
+        public static bool legit;
 
         public override uint ExtraPlayerBuffSlots => 300u;
 
@@ -113,6 +113,7 @@ namespace ssm
 
             //FargowiltasCrossmod.FargowiltasCrossmod.EnchantLoadingEnabled = true;
             SkyManager.Instance["ssm:Shtuxibus"] = new ShtuxibusSky();
+            SkyManager.Instance["ssm:Chtuxlagor"] = new ChtuxlagorSky();
 
             ModLoader.TryGetMod("BossChecklist", out Mod bossChecklist);
 

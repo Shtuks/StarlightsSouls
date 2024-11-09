@@ -36,13 +36,14 @@ Mods: {
 			}
 
 			ShtuxianSoul: {
-				DisplayName: Soul of Shtundex
+				DisplayName: Soul of Chtux'lag'or
 				Tooltip:
 					'''
-					Effects of [i:FargowiltasSouls/EternitySoul], [i:ssm/EternityForce]
+					Effects of [i:FargowiltasSouls/EternitySoul], [i:ssm/EternityForce], [i:ssm/ShtuxianForce]
 					Your attacks inflict most of debuffs, absurdly increace life regeneration
 					Grants immunity to all debuffs except "Chtux'lag'or Inferno" and "Shtuxibus Curse"
 					Press [shtuxianSuper] key to become invinvible for 20 seconds
+					Increace maximum eternity crits by 2000, faster mutant eye cooldown
 					'God or whatever, all things acknowledge your claim to omnipotence.'
 					'''
 			}
@@ -2473,14 +2474,23 @@ Mods: {
 
 			ShtuxiumArrow: {
 				DisplayName: Shtuxium Arrow
-				Tooltip: ""
+				Tooltip:
+					'''
+					Inflict "Chtux'lag'or Inferno" on attacked
+					Homes in on enemies, pass throug blocks
+					'''
+			}
+
+			StarlightCompiler: {
+				DisplayName: Starlight Compiler
+				Tooltip: Equip this to unleash true power of dev suits.
 			}
 		}
 
 		Buffs: {
 			ShtuxibusCurse: {
 				DisplayName: Shtuxibus Curse
-				Description: You are gradually disappearing from this reality.
+				Description: Kill yourself
 			}
 
 			ChtuxlagorBuff: {
@@ -2687,6 +2697,16 @@ Mods: {
 			}
 
 			Echdeath: {
+				DisplayName: Duke Fishron EX
+
+				BossChecklistIntegration: {
+					SpawnInfo: Spawned with an WIP anytime anywhere.
+					DespawnMessage: ""
+					KilledAllMessage: ""
+				}
+			}
+
+			StarlightCatBoss: {
 				DisplayName: ☭
 
 				BossChecklistIntegration: {
@@ -2695,8 +2715,6 @@ Mods: {
 					KilledAllMessage: StarlightCat killed all players.
 				}
 			}
-
-			StarlightCatBoss.DisplayName: Starlight Cat Boss
 		}
 
 		Toggler: {
@@ -2874,6 +2892,8 @@ Mods: {
 					Redemption: Redemption
 					Crafting: Crafting Header
 					Shtuxibus: Shtuxibus Header
+					Bosses: Bosses Header
+					CrossMods: Cross Mods Header
 				}
 
 				ItemsUsedInSingularity: {
@@ -2986,6 +3006,16 @@ Mods: {
 				OldCalDlcBalance: {
 					Tooltip: ""
 					Label: Old Cal Dlc Balance
+				}
+
+				Boots: {
+					Label: Boots
+					Tooltip: ""
+				}
+
+				Shields: {
+					Label: Shields
+					Tooltip: ""
 				}
 			}
 		}

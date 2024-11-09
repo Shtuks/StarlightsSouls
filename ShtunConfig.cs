@@ -37,11 +37,24 @@ namespace ssm
         [DefaultValue(1000)]
         public int ItemsUsedInSingularity { get; set; }
 
-        [Header("Shtuxibus")]
+        [Header("Bosses")]
 
+        [ReloadRequired]
         [BackgroundColor(60, 200, 60, 192)]
         [DefaultValue(false)]
         public bool Stalin { get; set; }
+
+        [Header("CrossMods")]
+
+        [ReloadRequired]
+        [BackgroundColor(60, 200, 60, 192)]
+        [DefaultValue(true)]
+        public bool Boots { get; set; }
+
+        [ReloadRequired]
+        [BackgroundColor(60, 200, 60, 192)]
+        [DefaultValue(true)]
+        public bool Shields { get; set; }
 
         [Header("Visual")]
 

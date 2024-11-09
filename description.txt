@@ -13,6 +13,8 @@ All things mod doing for now:
 
 - Old Calamity DLC balance (switchable)
 
+- Reworked boots and shields progression
+
 - Adds SoA items fot 1st tier souls recepies and effects
 
 - Calamity caught NPCs, singularities
@@ -25,6 +27,6 @@ Planned additions:
 
 - Redemption support(not even started)
 
-- Calamity enchantments
+- Calamity enchantments(no)
 
 - Soul of Eternity Legacy (Hundreds of projectiles flying across the screen and lowering FPS. But it's funny)
