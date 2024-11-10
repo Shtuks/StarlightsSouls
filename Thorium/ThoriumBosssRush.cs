@@ -17,6 +17,8 @@ using CalamityMod.NPCs.CalClone;
 using ThoriumMod.NPCs.BossLich;
 using ThoriumMod.NPCs.BossForgottenOne;
 using ThoriumMod.NPCs.BossThePrimordials;
+using ThoriumMod.NPCs.BossFallenBeholder;
+using CalamityMod.NPCs.Providence;
 
 namespace ssm.SoA
 {
@@ -46,28 +48,40 @@ namespace ssm.SoA
                 }
                 if (Bosses[i].EntityID == ModContent.NPCType<SlimeGodCore>())
                 {
+                    Bosses[i].HostileNPCsToNotDelete.Add(ModContent.NPCType<BioCore>());
+                    Bosses[i].HostileNPCsToNotDelete.Add(ModContent.NPCType<CryoCore>());
+                    Bosses[i].HostileNPCsToNotDelete.Add(ModContent.NPCType<PyroCore>());
                     Bosses.Insert(i, new Boss(ModContent.NPCType<GraniteEnergyStorm>()));
                     Bosses.Insert(i, new Boss(ModContent.NPCType<BuriedChampion>()));
                     Bosses.Insert(i, new Boss(ModContent.NPCType<StarScouter>()));
                 }
                 if (Bosses[i].EntityID == NPCID.QueenSlimeBoss)
                 {
-                    Bosses[i].HostileNPCsToNotDelete.Add(ModContent.NPCType<BoreanStriderBase>());
+                    Bosses[i].HostileNPCsToNotDelete.Add(ModContent.NPCType<BoreanStriderPopped>());
+                    Bosses.Insert(i, new Boss(ModContent.NPCType<BoreanStrider>()));
                 }
                 if (Bosses[i].EntityID == ModContent.NPCType<CalamitasClone>())
                 {
+                    Bosses[i].HostileNPCsToNotDelete.Add(ModContent.NPCType<LichHeadless>());
                     Bosses.Insert(i, new Boss(ModContent.NPCType<Lich>(), TimeChangeContext.Night));
                 }
                 if (Bosses[i].EntityID == NPCID.QueenSlimeBoss)
                 {
+                    Bosses[i].HostileNPCsToNotDelete.Add(ModContent.NPCType<ForgottenOneCracked>());
+                    Bosses[i].HostileNPCsToNotDelete.Add(ModContent.NPCType<ForgottenOneReleased>());
                     Bosses.Insert(i, new Boss(ModContent.NPCType<ForgottenOne>()));
                 }
-                if (Bosses[i].EntityID == ModContent.NPCType<DevourerofGodsHead>())
+                if (Bosses[i].EntityID == ModContent.NPCType<Providence>())
                 {
                     Bosses.Insert(i, new Boss(ModContent.NPCType<DreamEater>()));
                 }
-
             }
+
+            BossIDsAfterDeath.Add(ModContent.NPCType<BoreanStrider>(), [ModContent.NPCType<BoreanStriderPopped>()]);
+            BossIDsAfterDeath.Add(ModContent.NPCType<FallenBeholder>(), [ModContent.NPCType<FallenBeholder2>()]);
+            BossIDsAfterDeath.Add(ModContent.NPCType<ForgottenOne>(), [ModContent.NPCType<ForgottenOneCracked>()]);
+            BossIDsAfterDeath.Add(ModContent.NPCType<ForgottenOneCracked>(), [ModContent.NPCType<ForgottenOneReleased>()]);
+            BossIDsAfterDeath.Add(ModContent.NPCType<Lich>(), [ModContent.NPCType<LichHeadless>()]);
 
             ////Adding bosses to boss rush
             Mod cal = ModCompatibility.Calamity.Mod;

@@ -28,6 +28,8 @@ using ssm.Content.Buffs.Anti;
 using Terraria;
 using ssm.Content.NPCs.StarlightCat;
 using ssm.Core;
+using FargowiltasSouls.Content.Items.Accessories.Masomode;
+using FargowiltasSouls.Core.AccessoryEffectSystem;
 
 namespace ssm
 {
@@ -107,6 +109,18 @@ namespace ssm
             if (Screenshake > 0)
                 Main.screenPosition += Main.rand.NextVector2Circular(7, 7);
         }
+
+        public Rectangle GetPrecisionHurtbox()
+        {
+            Rectangle hurtbox = Player.Hitbox;
+            hurtbox.X += hurtbox.Width / 4;
+            hurtbox.Y += hurtbox.Height / 4;
+            hurtbox.Width = Math.Min(hurtbox.Width, hurtbox.Height);
+            hurtbox.Height = Math.Min(hurtbox.Width, hurtbox.Height);
+            hurtbox.X -= hurtbox.Width / 4;
+            hurtbox.Y -= hurtbox.Height / 4;
+            return hurtbox;
+        }
         public override void ModifyHurt(ref Player.HurtModifiers modifiers)
         {
             double damageMult = 1D;
@@ -124,7 +138,11 @@ namespace ssm
         }
         public override bool CanBeHitByProjectile(Projectile proj)
         {
-            return !ChtuxlagorBuff || Player.HasBuff<ShtuxianDomination>();
+            if (ChtuxlagorBuff || Player.HasBuff<ShtuxianDomination>())
+                return false;
+            if (Player.HasBuff<DotBuff>() && !proj.Colliding(proj.Hitbox, GetPrecisionHurtbox()))
+                return false;
+            return true;
         }
 
         public override void PreUpdate()

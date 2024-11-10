@@ -30,7 +30,7 @@ namespace ssm.Content.NPCs.StarlightCat
     {
         //Variables
         Player player => Main.player[NPC.target];
-        public static string userName = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
+        //public static string userName = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
         internal static List<BaseProj> bullets = new List<BaseProj>();
         public static readonly SoundStyle ray = new("ssm/Assets/Sounds/beam") { };
         public static readonly SoundStyle rayCharge = new("ssm/Assets/Sounds/charge") { };
@@ -65,127 +65,127 @@ namespace ssm.Content.NPCs.StarlightCat
 
 
         #region help funcs
-        void SpawnTalk()
-        {
-            AntiCheat();
-            if (NPC.ai[3] == 1)
-            {
-                if (!WorldSaveSystem.downedChtuxlagor)
-                {
-                    if (player.Shtun().ChtuxlagorDeaths < 1)
-                    {
-                        //SoundEngine.PlaySound(spawn, Origin);
-                        if (NPC.localAI[1] == 100)
-                        {
-                            ShtunUtils.DisplayLocalizedText("I hope you enjoyed my mod.", Color.Teal);
-                        }
-                        if (NPC.localAI[1] == 100)
-                        {
-                            ShtunUtils.DisplayLocalizedText("This is your finale challenge.", Color.Teal);
-                        }
-                    }
-                    if (player.Shtun().ChtuxlagorDeaths == 1)
-                    {
-                        if (NPC.localAI[1] == 100)
-                        {
-                            ShtunUtils.DisplayLocalizedText("Is one death not enough, " + userName + "?", Color.Teal);
-                        }
-                    }
-                    if (player.Shtun().ChtuxlagorDeaths == 2)
-                    {
-                        if (NPC.localAI[1] == 100)
-                        {
-                            ShtunUtils.DisplayLocalizedText("How Interesting. But why do you keep coming back?", Color.Teal);
-                        }
-                    }
-                    if (player.Shtun().ChtuxlagorDeaths == 3)
-                    {
-                        if (NPC.localAI[1] == 100)
-                        {
-                            ShtunUtils.DisplayLocalizedText("This is getting hillarious. Your tenacity amazes me.", Color.Teal);
-                        }
-                    }
-                    if (player.Shtun().ChtuxlagorDeaths == 4)
-                    {
-                        if (NPC.localAI[1] == 100)
-                        {
-                            ShtunUtils.DisplayLocalizedText("Hey " + userName + ", you are getting boring for me.", Color.Teal);
-                        }
-                    }
-                    if (player.Shtun().ChtuxlagorDeaths == 5)
-                    {
-                        if (NPC.localAI[1] == 100)
-                        {
-                            ShtunUtils.DisplayLocalizedText("What will you do if I just take away your ability to be respawn?", Color.Teal);
-                        }
-                    }
-                    if (player.Shtun().ChtuxlagorDeaths == 6)
-                    {
-                        if (NPC.localAI[1] == 100)
-                        {
-                            ShtunUtils.DisplayLocalizedText("I have no words.", Color.Teal);
-                        }
-                    }
-                    if (player.Shtun().ChtuxlagorDeaths == 7)
-                    {
-                        if (NPC.localAI[1] == 100)
-                        {
-                            ShtunUtils.DisplayLocalizedText("I will just count how many times you dead.", Color.Teal);
-                        }
-                    }
-                    if (player.Shtun().ChtuxlagorDeaths > 7)
-                    {
-                        if (NPC.localAI[1] == 100)
-                        {
-                            ShtunUtils.DisplayLocalizedText("You dead" + player.Shtun().ChtuxlagorDeaths + "times.", Color.Teal);
-                        }
-                    }
-                }
-                else
-                {
-                    if (player.Shtun().ChtuxlagorDeaths < 1)
-                    {
-                        if (NPC.localAI[1] == 100)
-                        {
-                            ShtunUtils.DisplayLocalizedText("What? You completed my challenge and decided to summon me again?.", Color.Teal);
-                        }
-                        if (NPC.localAI[1] == 120)
-                        {
-                            ShtunUtils.DisplayLocalizedText("I don't understand why you like to suffer so much.", Color.Teal);
-                        }
-                    }
-                    if (player.Shtun().ChtuxlagorDeaths == 1)
-                    {
-                        if (NPC.localAI[1] == 100)
-                        {
-                            ShtunUtils.DisplayLocalizedText("DIE " + userName, Color.Teal);
-                        }
-                    }
-                    if (player.Shtun().ChtuxlagorDeaths == 2)
-                    {
-                        if (NPC.localAI[1] == 100)
-                        {
-                            ShtunUtils.DisplayLocalizedText("I will just count how many times you dead.", Color.Teal);
-                        }
-                    }
-                    if (player.Shtun().ChtuxlagorDeaths > 2)
-                    {
-                        if (NPC.localAI[1] == 100)
-                        {
-                            ShtunUtils.DisplayLocalizedText("You dead" + player.Shtun().ChtuxlagorDeaths + "times.", Color.Teal);
-                        }
-                    }
-                }
-            }
-            else
-            {
-                if (NPC.localAI[1] == 100)
-                {
-                    ShtunUtils.DisplayLocalizedText("You can't spawn me via cheats, " + userName + ".", Color.Teal);
-                    player.Shtun().ERASE(player);
-                }
-            }
-        }
+        //void SpawnTalk()
+        //{
+        //    AntiCheat();
+        //    if (NPC.ai[3] == 1)
+        //    {
+        //        if (!WorldSaveSystem.downedChtuxlagor)
+        //        {
+        //            if (player.Shtun().ChtuxlagorDeaths < 1)
+        //            {
+        //                //SoundEngine.PlaySound(spawn, Origin);
+        //                if (NPC.localAI[1] == 100)
+        //                {
+        //                    ShtunUtils.DisplayLocalizedText("I hope you enjoyed my mod.", Color.Teal);
+        //                }
+        //                if (NPC.localAI[1] == 100)
+        //                {
+        //                    ShtunUtils.DisplayLocalizedText("This is your finale challenge.", Color.Teal);
+        //                }
+        //            }
+        //            if (player.Shtun().ChtuxlagorDeaths == 1)
+        //            {
+        //                if (NPC.localAI[1] == 100)
+        //                {
+        //                    ShtunUtils.DisplayLocalizedText("Is one death not enough, " + userName + "?", Color.Teal);
+        //                }
+        //            }
+        //            if (player.Shtun().ChtuxlagorDeaths == 2)
+        //            {
+        //                if (NPC.localAI[1] == 100)
+        //                {
+        //                    ShtunUtils.DisplayLocalizedText("How Interesting. But why do you keep coming back?", Color.Teal);
+        //                }
+        //            }
+        //            if (player.Shtun().ChtuxlagorDeaths == 3)
+        //            {
+        //                if (NPC.localAI[1] == 100)
+        //                {
+        //                    ShtunUtils.DisplayLocalizedText("This is getting hillarious. Your tenacity amazes me.", Color.Teal);
+        //                }
+        //            }
+        //            if (player.Shtun().ChtuxlagorDeaths == 4)
+        //            {
+        //                if (NPC.localAI[1] == 100)
+        //                {
+        //                    ShtunUtils.DisplayLocalizedText("Hey " + userName + ", you are getting boring for me.", Color.Teal);
+        //                }
+        //            }
+        //            if (player.Shtun().ChtuxlagorDeaths == 5)
+        //            {
+        //                if (NPC.localAI[1] == 100)
+        //                {
+        //                    ShtunUtils.DisplayLocalizedText("What will you do if I just take away your ability to be respawn?", Color.Teal);
+        //                }
+        //            }
+        //            if (player.Shtun().ChtuxlagorDeaths == 6)
+        //            {
+        //                if (NPC.localAI[1] == 100)
+        //                {
+        //                    ShtunUtils.DisplayLocalizedText("I have no words.", Color.Teal);
+        //                }
+        //            }
+        //            if (player.Shtun().ChtuxlagorDeaths == 7)
+        //            {
+        //                if (NPC.localAI[1] == 100)
+        //                {
+        //                    ShtunUtils.DisplayLocalizedText("I will just count how many times you dead.", Color.Teal);
+        //                }
+        //            }
+        //            if (player.Shtun().ChtuxlagorDeaths > 7)
+        //            {
+        //                if (NPC.localAI[1] == 100)
+        //                {
+        //                    ShtunUtils.DisplayLocalizedText("You dead" + player.Shtun().ChtuxlagorDeaths + "times.", Color.Teal);
+        //                }
+        //            }
+        //        }
+        //        else
+        //        {
+        //            if (player.Shtun().ChtuxlagorDeaths < 1)
+        //            {
+        //                if (NPC.localAI[1] == 100)
+        //                {
+        //                    ShtunUtils.DisplayLocalizedText("What? You completed my challenge and decided to summon me again?.", Color.Teal);
+        //                }
+        //                if (NPC.localAI[1] == 120)
+        //                {
+        //                    ShtunUtils.DisplayLocalizedText("I don't understand why you like to suffer so much.", Color.Teal);
+        //                }
+        //            }
+        //            if (player.Shtun().ChtuxlagorDeaths == 1)
+        //            {
+        //                if (NPC.localAI[1] == 100)
+        //                {
+        //                    ShtunUtils.DisplayLocalizedText("DIE " + userName, Color.Teal);
+        //                }
+        //            }
+        //            if (player.Shtun().ChtuxlagorDeaths == 2)
+        //            {
+        //                if (NPC.localAI[1] == 100)
+        //                {
+        //                    ShtunUtils.DisplayLocalizedText("I will just count how many times you dead.", Color.Teal);
+        //                }
+        //            }
+        //            if (player.Shtun().ChtuxlagorDeaths > 2)
+        //            {
+        //                if (NPC.localAI[1] == 100)
+        //                {
+        //                    ShtunUtils.DisplayLocalizedText("You dead" + player.Shtun().ChtuxlagorDeaths + "times.", Color.Teal);
+        //                }
+        //            }
+        //        }
+        //    }
+        //    else
+        //    {
+        //        if (NPC.localAI[1] == 100)
+        //        {
+        //            ShtunUtils.DisplayLocalizedText("You can't spawn me via cheats, " + userName + ".", Color.Teal);
+        //            player.Shtun().ERASE(player);
+        //        }
+        //    }
+        //}
         void AntiCheat()
         {
             if (!godmodeCheat)
@@ -548,7 +548,7 @@ namespace ssm.Content.NPCs.StarlightCat
             NPC.SetEventFlagCleared(ref WorldSaveSystem.downedChtuxlagor, -1);
             if (player.Shtun().ChtuxlagorDeaths != 0)
             {
-                ShtunUtils.DisplayLocalizedText("Congratulations, " + userName + ". You did it in " + player.Shtun().ChtuxlagorDeaths + " attempts.", Color.Teal);
+                //ShtunUtils.DisplayLocalizedText("Congratulations, " + userName + ". You did it in " + player.Shtun().ChtuxlagorDeaths + " attempts.", Color.Teal);
                 ShtunUtils.DisplayLocalizedText("Special thanks to Fargowilta, Javyz, Terry N Muse, Blushiemagic, DanYami, DevaVade, cheesenuggets, Mayeneznik, Yum, Jopojelly, ChickenBones, Jofairden, DivermanSam.", Color.Teal);
             }
             else
@@ -594,7 +594,7 @@ namespace ssm.Content.NPCs.StarlightCat
             ShtunNpcs.Chtuxlagor = NPC.whoAmI;
 
             AliveCheck(player);
-            SpawnTalk();
+            //SpawnTalk();
             ManageAurasAndPreSpawn();
             ManageNeededProjectiles();
 

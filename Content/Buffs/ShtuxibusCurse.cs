@@ -46,7 +46,8 @@ namespace ssm.Content.Buffs
             player.buffImmune[ModContent.Find<ModBuff>(this.FargoSoul.Name, "BerserkerInstallBuff").Type] = true;
             player.buffImmune[ModContent.Find<ModBuff>(this.FargoSoul.Name, "SouloftheMasochistBuff").Type] = true;
             player.carpet = false;
-            player.mount.Dismount(player);
+            if (!player.HasBuff(ModContent.BuffType<DotBuff>())){
+                player.mount.Dismount(player); }
             player.FargoSouls().noDodge = true;
             player.FargoSouls().noSupersonic = true;
             player.FargoSouls().MutantPresence = true;

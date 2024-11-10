@@ -2,7 +2,6 @@
 using Terraria;
 using Terraria.ModLoader;
 using ssm.Content.NPCs.StarlightCat;
-using Microsoft.Xna.Framework;
 
 namespace ssm
 {

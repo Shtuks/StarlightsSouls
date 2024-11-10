@@ -5,6 +5,7 @@ using ssm.Core;
 using ThoriumMod.Items.Terrarium;
 using FargowiltasSouls.Content.Items.Accessories.Masomode;
 using CalamityMod.Items.Accessories.Wings;
+using FargowiltasSouls.Content.Items.Accessories.Souls;
 
 namespace ssm.CrossMod.Boots
 {
@@ -58,6 +59,17 @@ namespace ssm.CrossMod.Boots
                     recipe.RemoveIngredient(ModContent.ItemType<AngelTreads>());
                     recipe.RemoveIngredient(ModContent.ItemType<AeolusBoots>());
                     recipe.AddIngredient<TerrariumParticleSprinters>(1);
+                }
+                //seraph to supersonic (if no cal dlc)
+                if (recipe.HasResult(ModContent.ItemType<SupersonicSoul>()) && !recipe.HasIngredient<TracersSeraph>())
+                {
+                    recipe.RemoveIngredient(ModContent.ItemType<AeolusBoots>());
+                    recipe.AddIngredient<TracersSeraph>(1);
+                }
+                //drew to flight
+                if (recipe.HasResult(ModContent.ItemType<FlightMasterySoul>()) && !recipe.HasIngredient<DrewsWings>())
+                {
+                    recipe.AddIngredient<DrewsWings>(1);
                 }
             }
         }

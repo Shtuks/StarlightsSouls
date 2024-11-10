@@ -1,11 +1,11 @@
 CommonItemTooltip: {
-	PercentIncreasedKineticDamage: "{0}% increased rogue damage"
-	PercentIncreasedKineticCritChance: "{0}% increased rogue critical strike chance"
-	PercentIncreasedKineticDamageCritChance: "{0}% increased rogue damage and critical strike chance"
-	PercentIncreasedKineticSpeed: "{0}% increased rogue velocity"
+	PercentIncreasedKineticDamage: "{0}% increased United Modded Thrower damage"
+	PercentIncreasedKineticCritChance: "{0}% increased United Modded Thrower critical strike chance"
+	PercentIncreasedKineticDamageCritChance: "{0}% increased United Modded Thrower damage and critical strike chance"
+	PercentIncreasedKineticSpeed: "{0}% increased United Modded Thrower velocity"
 }
 
-DamageClasses.KineticDamageClass.DisplayName: rogue damage
+DamageClasses.KineticDamageClass.DisplayName: United Modded Thrower damage
 
 Items: {
 	QuasarSigil: {

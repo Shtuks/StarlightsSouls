@@ -27,9 +27,9 @@ namespace ssm.Reworks
                     if (WorldSavingSystem.EternityMode)
                         npc.lifeMax = 50000000;
                     if (Main.expertMode)
-                        npc.lifeMax = 20000000;
-                    if (Main.masterMode)
                         npc.lifeMax = 30000000;
+                    if (Main.masterMode)
+                        npc.lifeMax = 40000000;
                     if (WorldSavingSystem.MasochistModeReal)
                         npc.lifeMax = 60000000;
                 }

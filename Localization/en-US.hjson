@@ -2525,6 +2525,11 @@ Mods: {
 				Description: Kill yourself
 			}
 
+			Dot: {
+				DisplayName: Dot
+				Description: Your hitbox is a single dot.
+			}
+
 			ChtuxlagorBuff: {
 				DisplayName: Chtuxlagor Buff
 				Description: Strength of omniversal creator with you.
@@ -2598,6 +2603,11 @@ Mods: {
 			ShtuxianDomination: {
 				Description: You are f*king invincible
 				DisplayName: Shtuxian Domination
+			}
+
+			DotBuff: {
+				Description: Mods.ssm.Buffs.DotBuff.Description
+				DisplayName: Dot Buff
 			}
 		}
 

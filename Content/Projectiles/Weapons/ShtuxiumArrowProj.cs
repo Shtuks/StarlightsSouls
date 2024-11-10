@@ -54,7 +54,7 @@ namespace ssm.Content.Projectiles.Weapons
             }
 
 
-            NPC target = Projectile.Center.ClosestNPCAt(65);
+            NPC target = Projectile.Center.ClosestNPCAt(1000);
 
             if (target != null)
             {
@@ -63,7 +63,7 @@ namespace ssm.Content.Projectiles.Weapons
             }
 
             if (HomingTime == 1)
-                ShtunUtils.HomeInOnNPC(Projectile, true, 20000f, 12, 200f);
+                ShtunUtils.HomeInOnNPC(Projectile, true, 250f, 12, 60f);
 
             Time++;
         }

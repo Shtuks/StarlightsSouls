@@ -71,7 +71,6 @@ namespace ssm.Content.Items.Armor
             player.noFallDmg = true;
             if (Terraria.ModLoader.ModLoader.GetMod("CalamityMod") != null)
             {
-                ModContent.Find<ModItem>("CalamityMod", "DemonshadeHelm").UpdateArmorSet(player);
                 CalamityPlayer calamityPlayer = player.Calamity();
                 calamityPlayer.tarraSet = true;
                 calamityPlayer.GemTechSet = true;

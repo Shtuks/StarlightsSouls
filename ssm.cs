@@ -61,7 +61,7 @@ namespace ssm
 
         internal static ModKeybind shtuxianSuper;
         internal static ssm Instance;
-        public static bool debug = true;
+        public static bool debug;// = true;
 
         internal bool CalamityLoaded;
         internal bool FargoLoaded;

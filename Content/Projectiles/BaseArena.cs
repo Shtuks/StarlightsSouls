@@ -12,6 +12,7 @@ using FargowiltasSouls.Content;
 using FargowiltasSouls.Core.ModPlayers;
 using FargowiltasSouls.Content.Projectiles;
 using Terraria.GameContent;
+using ssm.Content.Buffs;
 
 namespace ssm.Content.Projectiles
 {
@@ -120,7 +121,12 @@ namespace ssm.Content.Projectiles
                             if (player.grapCount > 0)
                                 player.RemoveAllGrapplingHooks();
                             if (player.mount.Active)
-                                player.mount.Dismount(player);
+                            {
+                                if (!player.HasBuff(ModContent.BuffType<DotBuff>()))
+                                {
+                                    player.mount.Dismount(player);
+                                }
+                            }
                             player.velocity.X = 0f;
                             player.velocity.Y = 0f;
                             player.GetModPlayer<FargoSoulsPlayer>().NoUsingItems = 1;

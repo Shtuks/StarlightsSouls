@@ -89,11 +89,16 @@ namespace ssm.CrossMod.Boots
                 }
                 //elysian to seraph
                 //cal code
-                //seraph to flight (if no cal dlc)
-                if ((recipe.HasResult(ModContent.ItemType<FlightMasterySoul>()) || recipe.HasResult(ModContent.ItemType<SupersonicSoul>())) && !recipe.HasIngredient<TracersSeraph>())
+                //seraph to supersonic (if no cal dlc)
+                if (recipe.HasResult(ModContent.ItemType<SupersonicSoul>()) && !recipe.HasIngredient<TracersSeraph>())
                 {
                     recipe.RemoveIngredient(ModContent.ItemType<AeolusBoots>());
                     recipe.AddIngredient<TracersSeraph>(1);
+                }
+                //drew to flight
+                if (recipe.HasResult(ModContent.ItemType<FlightMasterySoul>()) && !recipe.HasIngredient<DrewsWings>())
+                {
+                    recipe.AddIngredient<DrewsWings>(1);
                 }
             }
         }

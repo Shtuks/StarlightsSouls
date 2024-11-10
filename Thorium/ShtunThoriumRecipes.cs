@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Terraria.ModLoader;
+﻿using Terraria.ModLoader;
 using ssm.Core;
 using FargowiltasSouls.Content.Items.Accessories.Souls;
 using Terraria;
@@ -60,6 +55,10 @@ namespace ssm.Thorium
                 if (recipe.HasResult<UniverseSoul>() && !recipe.HasIngredient<GuardianAngelsSoul>())
                 {
                     recipe.AddIngredient<GuardianAngelsSoul>();
+                }
+                if (recipe.HasResult<ColossusSoul>() && !recipe.HasIngredient<GuardianAngelsSoul>())
+                {
+                    recipe.AddIngredient<BlastShield>();
                 }
                 //if (recipe.HasResult<ColossusSoul>() && !recipe.HasIngredient<BlastShield>())
                 //{
