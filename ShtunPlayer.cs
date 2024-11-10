@@ -101,6 +101,12 @@ namespace ssm
                 //SoundEngine.PlaySound(new SoundStyle("ssm/Assets/Sounds/ShtuxianSuper"), Player.Center);
             }
         }
+
+        public override void ModifyScreenPosition()
+        {
+            if (Screenshake > 0)
+                Main.screenPosition += Main.rand.NextVector2Circular(7, 7);
+        }
         public override void ModifyHurt(ref Player.HurtModifiers modifiers)
         {
             double damageMult = 1D;
@@ -216,12 +222,6 @@ namespace ssm
             //    target.AddBuff(ModContent.Find<ModBuff>(this.FargoSoul.Name, "AbomFangBuff").Type, 1000, false);
             if (ChtuxlagorHeart)
                 target.AddBuff(ModContent.Find<ModBuff>("ssm", "ChtuxlagorInferno").Type, 1000, false);
-        }
-
-        public override void ModifyScreenPosition()
-        {
-            if (Screenshake > 0)
-                Main.screenPosition += Main.rand.NextVector2Circular(7, 7);
         }
 
         public override void ResetEffects()

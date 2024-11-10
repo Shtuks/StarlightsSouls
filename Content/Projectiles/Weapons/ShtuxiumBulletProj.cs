@@ -8,7 +8,7 @@ using Terraria.ModLoader;
 
 namespace ssm.Content.Projectiles.Weapons
 {
-    public class ShtuxianArrowProj : ModProjectile
+    public class ShtuxianBulletProj : ModProjectile
     {
         public ref float Time => ref Projectile.ai[0];
         public ref float ProjectileSpeed => ref Projectile.ai[1];
@@ -30,8 +30,9 @@ namespace ssm.Content.Projectiles.Weapons
             Projectile.arrow = true;
             Projectile.penetrate = 2;
             Projectile.damage = 745;
+            Projectile.scale = 0.01f;
             Projectile.timeLeft = 2000;
-            Projectile.extraUpdates = 10;
+            Projectile.extraUpdates = 100;
             Projectile.usesLocalNPCImmunity = true;
             Projectile.localNPCHitCooldown = 15 * Projectile.extraUpdates;
         }
@@ -48,7 +49,7 @@ namespace ssm.Content.Projectiles.Weapons
 
             if (Time > 4f)
             {
-                Dust dust = Dust.NewDustPerfect(Projectile.Center, 74, -Projectile.velocity * Main.rand.NextFloat(0.3f, 0.8f));
+                Dust dust = Dust.NewDustPerfect(Projectile.Center, 74, -Projectile.velocity * Main.rand.NextFloat(0.3f, 0.8f), 0, MainColor);
                 dust.noGravity = true;
                 dust.scale = Main.rand.NextFloat(0.3f, 1f);
             }
@@ -63,14 +64,9 @@ namespace ssm.Content.Projectiles.Weapons
             }
 
             if (HomingTime == 1)
-                ShtunUtils.HomeInOnNPC(Projectile, true, 20000f, 12, 200f);
+                ShtunUtils.HomeInOnNPC(Projectile, true, 20000f, 30, 10f);
 
             Time++;
-        }
-
-        public override Color? GetAlpha(Color lightColor)
-        {
-            return lightColor;
         }
 
         public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)

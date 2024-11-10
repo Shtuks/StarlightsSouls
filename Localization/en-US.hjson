@@ -2504,12 +2504,18 @@ Mods: {
 					'''
 					Inflict "Chtux'lag'or Inferno" on attacked
 					Homes in on enemies, pass throug blocks
+					Explodes on hit
 					'''
 			}
 
 			StarlightCompiler: {
 				DisplayName: Starlight Compiler
 				Tooltip: Equip this to unleash true power of dev suits.
+			}
+
+			ShtuxiumBullet: {
+				Tooltip: ""
+				DisplayName: Shtuxium Bullet
 			}
 		}
 
@@ -2900,6 +2906,8 @@ Mods: {
 			DLCBloomLine.DisplayName: D L C Bloom Line
 			SlamTelegraph.DisplayName: Slam Telegraph
 			ShtuxianArrowProj.DisplayName: Shtuxian Arrow Proj
+			ShtuxiumBlast.DisplayName: Shtuxium Blast
+			ShtuxianBulletProj.DisplayName: Shtuxian Bullet Proj
 		}
 
 		Biomes: {

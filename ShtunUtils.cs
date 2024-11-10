@@ -15,7 +15,6 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Collections.Generic;
 using System.Text;
-using Luminance.Core.Graphics;
 using static Terraria.ModLoader.ModContent;
 using Terraria.Audio;
 using FargowiltasSouls.Content.Projectiles;

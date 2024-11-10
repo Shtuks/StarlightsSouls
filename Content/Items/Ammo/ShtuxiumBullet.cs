@@ -7,7 +7,7 @@ using Terraria.ModLoader;
 
 namespace ssm.Content.Items.Ammo
 {
-    public class ShtuxiumArrow : ModItem
+    public class ShtuxiumBullet : ModItem
     {
         public override void SetStaticDefaults()
         {
@@ -18,15 +18,15 @@ namespace ssm.Content.Items.Ammo
         {
             Item.width = 22;
             Item.height = 46;
-            Item.damage = 240;
+            Item.damage = 200;
             Item.DamageType = DamageClass.Ranged;
             Item.maxStack = 9999;
             Item.consumable = true;
             Item.knockBack = 4f;
             Item.value = Item.sellPrice(gold: 1);
-            Item.shoot = ModContent.ProjectileType<ShtuxianArrowProj>();
+            Item.shoot = ModContent.ProjectileType<ShtuxianBulletProj>();
             Item.shootSpeed = 0.1f;
-            Item.ammo = AmmoID.Arrow;
+            Item.ammo = AmmoID.Bullet;
             Item.rare = 11;
         }
 
@@ -34,6 +34,7 @@ namespace ssm.Content.Items.Ammo
         {
             CreateRecipe(999).
                 AddIngredient<ShtuxiumBar>().
+                AddIngredient(ItemID.EmptyBullet, 999).
                 AddTile<MutantsForgeTile>().
                 Register();
         }

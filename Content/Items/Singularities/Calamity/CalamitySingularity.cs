@@ -5,7 +5,6 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Luminance.Core.Graphics;
 using CalamityMod.Items.Materials;
 using CalamityMod.Tiles.Furniture.CraftingStations;
 using CalamityMod.Items.Dyes;
@@ -26,22 +25,6 @@ namespace ssm.Content.Items.Singularities.Calamity
             ItemID.Sets.AnimatesAsSoul[Item.type] = true; // Makes the Item have an animation while in world (not held.). Use in combination with RegisterItemAnimation
             ItemID.Sets.ItemNoGravity[Item.type] = true; // Makes the Item have no gravity
             Item.ResearchUnlockCount = 9999; // Configure the amount of this Item that's needed to research it in Journey mode.
-        }
-
-        public virtual bool PreDrawTooltipLine(DrawableTooltipLine line, ref int yOffset)
-        {
-            if ((!(((TooltipLine)line).Mod == "Terraria") || !(((TooltipLine)line).Name == "ItemName")) && !(((TooltipLine)line).Name == "FlavorText"))
-                return true;
-            Main.spriteBatch.End();
-            Main.spriteBatch.Begin((SpriteSortMode)1, (BlendState)null, (SamplerState)null, (DepthStencilState)null, (RasterizerState)null, (Effect)null, Main.UIScaleMatrix);
-            ManagedShader shader = ShaderManager.GetShader("CalamityMod.CalamitousDyeShader");
-            shader.TrySetParameter("mainColor", (object)new Color(42, 42, 99));
-            shader.TrySetParameter("secondaryColor", (object)FargowiltasSouls.FargowiltasSouls.EModeColor());
-            shader.Apply("PulseUpwards");
-            Utils.DrawBorderString(Main.spriteBatch, line.Text, new Vector2((float)line.X, (float)line.Y), Color.White, 1f, 0.0f, 0.0f, -1);
-            Main.spriteBatch.End();
-            Main.spriteBatch.Begin((SpriteSortMode)0, (BlendState)null, (SamplerState)null, (DepthStencilState)null, (RasterizerState)null, (Effect)null, Main.UIScaleMatrix);
-            return false;
         }
 
         public override void SetDefaults()
