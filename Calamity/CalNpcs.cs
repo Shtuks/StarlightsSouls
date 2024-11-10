@@ -67,11 +67,6 @@ namespace ssm.Calamity
     [JITWhenModsEnabled(ModCompatibility.Calamity.Name)]
     public partial class CalNpcs : GlobalNPC
     {
-        public override bool IsLoadingEnabled(Mod mod)
-        {
-            return ShtunConfig.Instance.CalSwarmItems;
-        }
-
         private readonly Mod calamity = ModLoader.GetMod("CalamityMod");
         public override bool InstancePerEntity => true;
 

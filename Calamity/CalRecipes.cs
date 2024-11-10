@@ -68,7 +68,7 @@ namespace ssm.Calamity
                     {
                         if (recipe.HasResult<UniverseSoul>() || recipe.HasResult<TerrariaSoul>() || recipe.HasResult<MasochistSoul>() || recipe.HasResult<DimensionSoul>())
                         {
-                            if (recipe.RemoveIngredient(ModContent.ItemType<AshesofAnnihilation>()) || recipe.RemoveIngredient(ModContent.ItemType<ExoPrism>()))
+                            if (recipe.RemoveIngredient(ModContent.ItemType<AshesofAnnihilation>()) && recipe.RemoveIngredient(ModContent.ItemType<ExoPrism>()))
                                 recipe.AddIngredient<ShadowspecBar>(5);
                         }
                     }

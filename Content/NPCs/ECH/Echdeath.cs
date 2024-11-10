@@ -52,11 +52,6 @@ namespace ssm.Content.NPCs.ECH
             return true;
         }
 
-        public override bool IsLoadingEnabled(Mod mod)
-        {
-            return ShtunConfig.Instance.ExtraContent;
-        }
-
         public override void AI()
         {
             if (!NPC.HasValidTarget)

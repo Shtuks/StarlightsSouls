@@ -10,10 +10,6 @@ namespace ssm.Content.Items.Singularities
 {
     public class AdamantiteSingularity : ModItem
     {
-        public override bool IsLoadingEnabled(Mod mod)
-        {
-            return ShtunConfig.Instance.ExtraContent;
-        }
         public int i = ModContent.GetInstance<ShtunConfig>().ItemsUsedInSingularity;
         public override void SetStaticDefaults()
         {

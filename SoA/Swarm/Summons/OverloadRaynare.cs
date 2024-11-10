@@ -23,11 +23,6 @@ namespace ssm.SoA.Swarm.Summons
 		{
 		}
 
-        public override bool IsLoadingEnabled(Mod mod)
-        {
-            return ShtunConfig.Instance.SoASwarmItems;
-        }
-
         public override bool CanUseItem(Player player)
 		{
 			return !ssm.SwarmActive;

@@ -13,8 +13,8 @@ namespace ssm.CrossMod.Boots
         * terraspark
         * zephyr boots
         * angel treads
-        * terrarium particle sprinters
         * aeolus boots
+        * terrarium particle sprinters
         * celestial treads
         * elysean tracers
         * seraph tracers.
@@ -40,24 +40,24 @@ namespace ssm.CrossMod.Boots
                     recipe.RemoveIngredient(5000);
                     recipe.AddIngredient<ZephyrBoots>(1);
                 }
-                // treads to sprinters
+                //treads to aeolus (if no cal dlc)
+                if (recipe.HasResult(ModContent.ItemType<AeolusBoots>()) && recipe.HasIngredient<ZephyrBoots>())
+                {
+                    recipe.RemoveIngredient(ModContent.ItemType<ZephyrBoots>());
+                    recipe.AddIngredient<AngelTreads>(1);
+                }
+                //aeolus to sprinters
                 if (recipe.HasResult(ModContent.ItemType<TerrariumParticleSprinters>()) && recipe.HasIngredient(5000))
                 {
                     recipe.RemoveIngredient(5000);
-                    recipe.AddIngredient<AngelTreads>(1);
+                    recipe.AddIngredient<AeolusBoots>(1);
                 }
-                // sprinters to aeolus
-                if (recipe.HasResult(ModContent.ItemType<AeolusBoots>()) && (recipe.HasIngredient<AngelTreads>() || recipe.HasIngredient<ZephyrBoots>()))
+                //sprinters to celestial
+                if (recipe.HasResult(ModContent.ItemType<TracersCelestial>()) && (recipe.HasIngredient<AngelTreads>() || recipe.HasIngredient<AeolusBoots>()))
                 {
                     recipe.RemoveIngredient(ModContent.ItemType<AngelTreads>());
-                    recipe.RemoveIngredient(ModContent.ItemType<ZephyrBoots>());
-                    recipe.AddIngredient<TerrariumParticleSprinters>(1);
-                }
-                //aeolus to celestial (if no cal dlc)
-                if (recipe.HasResult(ModContent.ItemType<TracersCelestial>()) && recipe.HasIngredient<AngelTreads>())
-                {
                     recipe.RemoveIngredient(ModContent.ItemType<AeolusBoots>());
-                    recipe.AddIngredient<AeolusBoots>(1);
+                    recipe.AddIngredient<TerrariumParticleSprinters>(1);
                 }
             }
         }

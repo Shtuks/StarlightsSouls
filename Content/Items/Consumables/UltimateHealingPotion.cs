@@ -12,10 +12,6 @@ namespace ssm.Content.Items.Consumables
     // A mana potion is exactly the same, except Item.healMana is used instead. (Also GetHealMana would be used for dynamic mana recovery values)
     public class UltimateHealingPotion : ModItem
     {
-        public override bool IsLoadingEnabled(Mod mod)
-        {
-            return ShtunConfig.Instance.ExtraContent;
-        }
         public override void SetStaticDefaults()
         {
             Item.ResearchUnlockCount = 30;

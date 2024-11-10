@@ -31,11 +31,6 @@ namespace ssm.Calamity.Souls
         private readonly Mod FargoCross = Terraria.ModLoader.ModLoader.GetMod("FargowiltasCrossmod");
         private readonly Mod FargoSoul = Terraria.ModLoader.ModLoader.GetMod("FargowiltasSouls");
 
-        public override bool IsLoadingEnabled(Mod mod)
-        {
-            return ShtunConfig.Instance.CalEnchantments;
-        }
-
         public override void SetDefaults()
         {
             this.Item.value = Item.buyPrice(10, 0, 0, 0);
@@ -61,15 +56,8 @@ namespace ssm.Calamity.Souls
             recipe.AddIngredient(this.FargoCross, "ExplorationForce", 1);
             recipe.AddIngredient(this.FargoCross, "BrandoftheBrimstoneWitch", 1);
             recipe.AddIngredient(this.FargoSoul, "AbomEnergy", 10);
-
-            if (ShtunConfig.Instance.ExtraContent)
-            {
-                recipe.AddTile<DemonshadeWorkbenchTile>();
-            }
-            else
-            {
-                recipe.AddTile<CrucibleCosmosSheet>();
-            }
+            
+            recipe.AddTile<DemonshadeWorkbenchTile>();
 
             recipe.Register();
         }

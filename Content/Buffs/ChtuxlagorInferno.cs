@@ -25,12 +25,9 @@ namespace ssm.Content.Buffs
 
         public override void Update(Player player, ref int buffIndex)
         {
-            if (ShtunConfig.Instance.ExtraContent)
+            if (player.GetModPlayer<ShtunPlayer>().ChtuxlagorHeart)
             {
-                if (player.GetModPlayer<ShtunPlayer>().ChtuxlagorHeart)
-                {
-                    player.statLife -= player.statLifeMax2 / 100;
-                }
+                player.statLife -= player.statLifeMax2 / 100;
             }
             else
             {

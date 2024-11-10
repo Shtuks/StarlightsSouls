@@ -21,10 +21,6 @@ namespace ssm.SoA.Enchantments
     [JITWhenModsEnabled(ModCompatibility.SacredTools.Name)]
     public class PrairieEnchant : BaseEnchant
     {
-        public override bool IsLoadingEnabled(Mod mod)
-        {
-            return ShtunConfig.Instance.SoAEnchantments;
-        }
         private readonly Mod soa = ModLoader.GetMod("SacredTools");
 
         public override void SetDefaults()

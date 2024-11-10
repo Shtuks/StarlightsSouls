@@ -13,11 +13,6 @@ namespace ssm.Content.Tiles
 {
     public class ShtuxibusForgeTile : ModTile
     {
-        public override bool IsLoadingEnabled(Mod mod)
-        {
-            return ShtunConfig.Instance.ExtraContent;
-        }
-
         public override void SetStaticDefaults()
         {
             Main.tileLighted[(int)((ModBlockType)this).Type] = true;

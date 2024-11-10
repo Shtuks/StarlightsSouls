@@ -13,8 +13,8 @@ namespace ssm.CrossMod.Boots
         * terraspark
         * zephyr boots
         * royal runners
-        * terrarium particle sprinters
         * aeolus boots
+        * terrarium particle sprinters
         * void spurs.
         * 
     */
@@ -39,23 +39,27 @@ namespace ssm.CrossMod.Boots
                     recipe.RemoveIngredient(5000);
                     recipe.AddIngredient<ZephyrBoots>(1);
                 }
-                // runners to sprinters
+                // runners to aeolus
+                if (recipe.HasResult(ModContent.ItemType<AeolusBoots>()) && recipe.HasIngredient<ZephyrBoots>())
+                {
+                    recipe.RemoveIngredient(547);
+                    recipe.RemoveIngredient(548);
+                    recipe.RemoveIngredient(549);
+                    recipe.RemoveIngredient(ModContent.ItemType<ZephyrBoots>());
+                    recipe.AddIngredient<RoyalRunners>(1);
+                    recipe.AddIngredient(1508, 10);
+                }
+                // aeolus to sprinters
                 if (recipe.HasResult(ModContent.ItemType<TerrariumParticleSprinters>()) && recipe.HasIngredient(5000))
                 {
                     recipe.RemoveIngredient(5000);
-                    recipe.AddIngredient<RoyalRunners>(1);
+                    recipe.AddIngredient<AeolusBoots>(1);
                 }
-                // sprinters to aeolus
-                if (recipe.HasResult(ModContent.ItemType<AeolusBoots>()) && recipe.HasIngredient<ZephyrBoots>())
-                {
-                    recipe.RemoveIngredient(ModContent.ItemType<ZephyrBoots>());
-                    recipe.AddIngredient<TerrariumParticleSprinters>(1);
-                }
-                //aeolus to spurs
+                //sprinters to spurs
                 if (recipe.HasResult(ModContent.ItemType<VoidSpurs>()) && recipe.HasIngredient<RoyalRunners>())
                 {
                     recipe.RemoveIngredient(ModContent.ItemType<RoyalRunners>());
-                    recipe.AddIngredient<AeolusBoots>(1);
+                    recipe.AddIngredient<TerrariumParticleSprinters>(1);
                 }
                 //spurs to supersonic
                 if (recipe.HasResult(ModContent.ItemType<SupersonicSoul>()) && recipe.HasIngredient<ZephyrBoots>())
@@ -80,33 +84,33 @@ namespace ssm.CrossMod.Boots
         public override void UpdateAccessory(Item Item, Player player, bool hideVisual)
         {
             if (Item.type == ModContent.ItemType<RoyalRunners>()
-                || Item.type == ModContent.ItemType<TerrariumParticleSprinters>()
                 || Item.type == ModContent.ItemType<AeolusBoots>()
-                || Item.type == ModContent.ItemType<VoidSpurs>()
+                ||Item.type == ModContent.ItemType<TerrariumParticleSprinters>()
+                //|| Item.type == ModContent.ItemType<VoidSpurs>()
                 || Item.type == ModContent.ItemType<SupersonicSoul>())
             {
                 ModContent.Find<ModItem>(ModCompatibility.SoulsMod.Name, "ZephyrBoots").UpdateAccessory(player, false);
             }
 
-            if (Item.type == ModContent.ItemType<TerrariumParticleSprinters>()
-                || Item.type == ModContent.ItemType<AeolusBoots>()
-                || Item.type == ModContent.ItemType<VoidSpurs>()
+            if (Item.type == ModContent.ItemType<AeolusBoots>()
+                || Item.type == ModContent.ItemType<TerrariumParticleSprinters>()
+                //|| Item.type == ModContent.ItemType<VoidSpurs>()
                 || Item.type == ModContent.ItemType<SupersonicSoul>())
             {
                 ModContent.Find<ModItem>(ModCompatibility.SacredTools.Name, "RoyalRunners").UpdateAccessory(player, false);
             }
 
-            if (Item.type == ModContent.ItemType<AeolusBoots>()
+            if (Item.type == ModContent.ItemType<TerrariumParticleSprinters>()
                 || Item.type == ModContent.ItemType<VoidSpurs>()
                 || Item.type == ModContent.ItemType<SupersonicSoul>())
             {
-                ModContent.Find<ModItem>(ModCompatibility.Thorium.Name, "TerrariumParticleSprinters").UpdateAccessory(player, false);
+                ModContent.Find<ModItem>(ModCompatibility.SoulsMod.Name, "AeolusBoots").UpdateAccessory(player, false);
             }
 
-            if (Item.type == ModContent.ItemType<VoidSpurs>()
-                || Item.type == ModContent.ItemType<SupersonicSoul>())
+            if (//Item.type == ModContent.ItemType<VoidSpurs>()
+                Item.type == ModContent.ItemType<SupersonicSoul>())
             {
-                ModContent.Find<ModItem>(ModCompatibility.SoulsMod.Name, "AeolusBoots").UpdateAccessory(player, false);
+                ModContent.Find<ModItem>(ModCompatibility.Thorium.Name, "TerrariumParticleSprinters").UpdateAccessory(player, false);
             }
 
             if (Item.type == ModContent.ItemType<SupersonicSoul>())

@@ -13,7 +13,7 @@ namespace ssm.Reworks
         {
             if (Item.type == ModContent.ItemType<UniverseSoul>() || Item.type == ModContent.ItemType<EternitySoul>())
             {
-                if (ModLoader.TryGetMod("ThoriumMod", out Mod tor) && ShtunConfig.Instance.TorEnchantments)
+                if (ModLoader.TryGetMod("ThoriumMod", out Mod tor))
                 {
                     ModContent.Find<ModItem>(((ModType)this).Mod.Name, "GuardianAngelsSoul").UpdateAccessory(player, false);
                     ModContent.Find<ModItem>(((ModType)this).Mod.Name, "BardSoul").UpdateAccessory(player, false);
@@ -21,22 +21,22 @@ namespace ssm.Reworks
             }
             if (Item.type == ModContent.ItemType<EternitySoul>())
             {
-                if (ModLoader.TryGetMod("Redemption", out Mod Redemption) && ShtunConfig.Instance.RedEnchantments)
+                if (ModLoader.TryGetMod("Redemption", out Mod Redemption))
                 {
-                    ModContent.Find<ModItem>(((ModType)this).Mod.Name, "RedemptionSoul").UpdateAccessory(player, false);
+                    //ModContent.Find<ModItem>(((ModType)this).Mod.Name, "RedemptionSoul").UpdateAccessory(player, false);
                 }
 
-                if (ModLoader.TryGetMod("SacredTools", out Mod SoA) && ShtunConfig.Instance.SoAEnchantments)
+                if (ModLoader.TryGetMod("SacredTools", out Mod SoA))
                 {
                     ModContent.Find<ModItem>(((ModType)this).Mod.Name, "SoASoul").UpdateAccessory(player, false);
                 }
 
-                if (ModLoader.TryGetMod("CalamityMod", out Mod kal) && ShtunConfig.Instance.CalEnchantments && ModLoader.TryGetMod("FargowiltasCrossmod", out Mod FargoIhateYou))
+                if (ModLoader.TryGetMod("CalamityMod", out Mod kal) && ModLoader.TryGetMod("FargowiltasCrossmod", out Mod FargoIhateYou))
                 {
                     ModContent.Find<ModItem>(((ModType)this).Mod.Name, "CalamitySoul").UpdateAccessory(player, false);
                 }
 
-                if (ModLoader.TryGetMod("ThoriumMod", out Mod tor) && ShtunConfig.Instance.TorEnchantments)
+                if (ModLoader.TryGetMod("ThoriumMod", out Mod tor))
                 {
                     ModContent.Find<ModItem>(((ModType)this).Mod.Name, "ThoriumSoul").UpdateAccessory(player, false);
                 }
@@ -44,10 +44,7 @@ namespace ssm.Reworks
 
             if (Item.type == ModContent.ItemType<CosmoForce>() || Item.type == ModContent.ItemType<EternitySoul>())
             {
-                if (ShtunConfig.Instance.ExtraContent);
-                    {
-                        ModContent.Find<ModItem>(((ModType)this).Mod.Name, "CelestialEnchant").UpdateAccessory(player, false);
-                    }
+                ModContent.Find<ModItem>(((ModType)this).Mod.Name, "CelestialEnchant").UpdateAccessory(player, false);
             }
         }
     }

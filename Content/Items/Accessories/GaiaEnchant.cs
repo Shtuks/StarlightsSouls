@@ -31,12 +31,6 @@ namespace ssm.Content.Items.Accessories
     public class GaiaEnchant : BaseEnchant
     {
         private readonly Mod FargoSoul = Terraria.ModLoader.ModLoader.GetMod("FargowiltasSouls");
-
-        public override bool IsLoadingEnabled(Mod mod)
-        {
-            return ShtunConfig.Instance.ExtraContent;
-        }
-
         public override void SetStaticDefaults() => ItemID.Sets.ItemNoGravity[this.Type] = true;
 
         public override void SetDefaults()

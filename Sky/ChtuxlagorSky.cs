@@ -1,9 +1,10 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using ssm.Content.NPCs.Shtuxibus;
 using Terraria;
 using Terraria.Graphics.Effects;
 using Terraria.ModLoader;
-using ssm.Content.NPCs.StarlightCat;
+//using ssm.Content.NPCs.StarlightCat;
 
 namespace ssm.Sky
 {
@@ -23,7 +24,7 @@ namespace ssm.Sky
             bool useSpecialColor = false;
             const float increment = 0.01f;
 
-            if (ShtunUtils.BossIsAlive(ref ShtunNpcs.Chtuxlagor, ModContent.NPCType<StarlightCatBoss>()))
+            if (ShtunUtils.BossIsAlive(ref ShtunNpcs.Chtuxlagor, ModContent.NPCType<Shtuxibus>())) //change to starlightcat
             {
                 void ChangeColorIfDefault(Color color) //waits for bg to return to default first
                 {

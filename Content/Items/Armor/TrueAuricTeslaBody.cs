@@ -11,10 +11,6 @@ namespace ssm.Content.Items.Armor
     [AutoloadEquip(EquipType.Body)]
     public class TrueAuricTeslaBody : ModItem
     {
-        public override bool IsLoadingEnabled(Mod mod)
-        {
-            return ShtunConfig.Instance.ExtraContent;
-        }
         private readonly Mod calamity = Terraria.ModLoader.ModLoader.GetMod("CalamityMod");
 
         public override void SetDefaults()

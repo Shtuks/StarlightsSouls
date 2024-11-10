@@ -8,11 +8,6 @@ namespace ssm.Content.Tiles
 {
     public class InfinityIngot : ModTile
     {
-        public override bool IsLoadingEnabled(Mod mod)
-        {
-            return ShtunConfig.Instance.ExtraContent;
-        }
-
         public override void SetStaticDefaults()
         {
             Main.tileShine[Type] = 1100;

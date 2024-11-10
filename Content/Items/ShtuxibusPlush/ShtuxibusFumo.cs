@@ -14,7 +14,7 @@ namespace ssm.Content.Items.ShtuxibusPlush
     //[JITWhenModsEnabled("CalValEX")]
     public class ShtuxibusFumo : ModItem
     {
-        public bool ex = true;
+        public bool ex;
         public override string Texture => "ssm/Content/Items/ShtuxibusPlush/ShtuxibusPlush";
 
         public override void SetStaticDefaults()

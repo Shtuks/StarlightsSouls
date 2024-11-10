@@ -9,10 +9,6 @@ namespace ssm.Content.Tiles
 {
     public class ShtuxibusTrophy : ModTile
     {
-        public override bool IsLoadingEnabled(Mod mod)
-        {
-            return ShtunConfig.Instance.ExtraContent;
-        }
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;

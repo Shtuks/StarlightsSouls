@@ -5,6 +5,7 @@ using ssm.Core;
 using SacredTools.Content.Items.Accessories;
 using FargowiltasSouls.Content.Items.Accessories.Masomode;
 using CalamityMod.Items.Accessories.Wings;
+using FargowiltasSouls.Content.Items.Accessories.Souls;
 
 namespace ssm.CrossMod.Boots
 {
@@ -72,6 +73,14 @@ namespace ssm.CrossMod.Boots
                     recipe.RemoveIngredient(ModContent.ItemType<TracersCelestial>());
                     recipe.AddIngredient<VoidSpurs>(1);
                 }
+                //elysian to seraph
+                //cal code
+                //seraph to flight (if no cal dlc)
+                if ((recipe.HasResult(ModContent.ItemType<FlightMasterySoul>()) || recipe.HasResult(ModContent.ItemType<SupersonicSoul>())) && !recipe.HasIngredient<TracersSeraph>())
+                {
+                    recipe.RemoveIngredient(ModContent.ItemType<AeolusBoots>());
+                    recipe.AddIngredient<TracersSeraph>(1);
+                }
             }
         }
     }
@@ -92,7 +101,7 @@ namespace ssm.CrossMod.Boots
                 || Item.type == ModContent.ItemType<RoyalRunners>()
                 || Item.type == ModContent.ItemType<AeolusBoots>()
                 || Item.type == ModContent.ItemType<TracersCelestial>()
-                || Item.type == ModContent.ItemType<VoidSpurs>()
+                //|| Item.type == ModContent.ItemType<VoidSpurs>()
                 || Item.type == ModContent.ItemType<TracersElysian>()
                 || Item.type == ModContent.ItemType<TracersSeraph>())
             {
@@ -102,7 +111,7 @@ namespace ssm.CrossMod.Boots
             if (Item.type == ModContent.ItemType<RoyalRunners>()
                 || Item.type == ModContent.ItemType<AeolusBoots>()
                 || Item.type == ModContent.ItemType<TracersCelestial>()
-                || Item.type == ModContent.ItemType<VoidSpurs>()
+                //|| Item.type == ModContent.ItemType<VoidSpurs>()
                 || Item.type == ModContent.ItemType<TracersElysian>()
                 || Item.type == ModContent.ItemType<TracersSeraph>())
             {
@@ -111,7 +120,7 @@ namespace ssm.CrossMod.Boots
 
             if (Item.type == ModContent.ItemType<AeolusBoots>()
                 || Item.type == ModContent.ItemType<TracersCelestial>()
-                || Item.type == ModContent.ItemType<VoidSpurs>()
+                //|| Item.type == ModContent.ItemType<VoidSpurs>()
                 || Item.type == ModContent.ItemType<TracersElysian>()
                 || Item.type == ModContent.ItemType<TracersSeraph>())
             {
@@ -126,8 +135,8 @@ namespace ssm.CrossMod.Boots
                 ModContent.Find<ModItem>(ModCompatibility.SoulsMod.Name, "AeolusBoots").UpdateAccessory(player, false);
             }
 
-            if (Item.type == ModContent.ItemType<VoidSpurs>()
-                || Item.type == ModContent.ItemType<TracersElysian>()
+            if (//Item.type == ModContent.ItemType<VoidSpurs>()
+                Item.type == ModContent.ItemType<TracersElysian>()
                 || Item.type == ModContent.ItemType<TracersSeraph>())
             {
                 ModContent.Find<ModItem>(ModCompatibility.Calamity.Name, "TracersCelestial").UpdateAccessory(player, false);

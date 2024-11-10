@@ -73,10 +73,6 @@ namespace ssm.Content.NPCs.Shtuxibus
         public bool ShouldDrawAura;
         public static readonly SoundStyle SpawnSound = new("ssm/Assets/Sounds/ShtuxibusSpawnSound") { };
 
-        public override bool IsLoadingEnabled(Mod mod)
-        {
-            return ShtunConfig.Instance.ExtraContent;
-        }
         public override void SetStaticDefaults()
         {
             Main.npcFrameCount[NPC.type] = 4;
@@ -6248,7 +6244,7 @@ namespace ssm.Content.NPCs.Shtuxibus
                     if (ShaderManager.TryGetFilter("FargowiltasSouls.FinalSpark", out ManagedScreenFilter filter))
                     {
                         filter.Activate();
-                        if (ShtunConfig.Instance.ForcedFilters && Main.WaveQuality == 0)
+                        if (Main.WaveQuality == 0)
                             Main.WaveQuality = 1;
                     }
                 }

@@ -8,10 +8,6 @@ namespace ssm.Content.Items.Consumables
 {
     public class StarlightVodka : ModItem
     {
-        public override bool IsLoadingEnabled(Mod mod)
-        {
-            return ShtunConfig.Instance.ExtraContent;
-        }
         public override void SetDefaults()
         {
             ((Entity)this.Item).width = 20;

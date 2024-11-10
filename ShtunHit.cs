@@ -30,6 +30,15 @@ namespace ssm
 
         public override void OnHurt(Player.HurtInfo info)
         {
+            if (Main.expertMode && NPC.AnyNPCs(ModContent.NPCType<StarlightCatBoss>()))
+            {
+                Player.Shtun().ChtuxlagorHits++;
+            }
+            if (Player.Shtun().ChtuxlagorHits > 10)
+            {
+                Player.Shtun().ERASE(Player);
+                Player.Shtun().ChtuxlagorHits = 0;
+            }
             if (NPC.AnyNPCs(ModContent.NPCType<StarlightCatBoss>()))
             {
                 if (Main.zenithWorld)

@@ -12,10 +12,6 @@ namespace ssm.Content.Items.Armor
     [AutoloadEquip(EquipType.Legs)]
     public class QuantumPants : ModItem
     {
-        public override bool IsLoadingEnabled(Mod mod)
-        {
-            return ShtunConfig.Instance.ExtraContent;
-        }
         public override void SetDefaults()
         {
             Item.width = 18;

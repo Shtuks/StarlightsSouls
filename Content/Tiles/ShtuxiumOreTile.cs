@@ -15,10 +15,6 @@ namespace ssm.Content.Tiles
 {
     public class ShtuxiumOreTile : ModTile
     {
-        public override bool IsLoadingEnabled(Mod mod)
-        {
-            return ShtunConfig.Instance.ExtraContent;
-        }
         public override void SetStaticDefaults()
         {
             TileID.Sets.Ore[Type] = true;

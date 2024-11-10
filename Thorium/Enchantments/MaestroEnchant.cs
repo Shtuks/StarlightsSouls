@@ -26,11 +26,6 @@ namespace ssm.Thorium.Enchantments
             Item.value = 200000;
         }
 
-        public override bool IsLoadingEnabled(Mod mod)
-        {
-            return ShtunConfig.Instance.TorEnchantments;
-        }
-
         public override Color nameColor => new(255, 128, 0);
 
         public override void UpdateAccessory(Player player, bool hideVisual)
@@ -38,10 +33,11 @@ namespace ssm.Thorium.Enchantments
             //maestro
             ThoriumPlayer thoriumPlayer = player.GetModPlayer<ThoriumPlayer>();
             //thoriumPlayer.setMaestro = true;
+            ModContent.Find<ModItem>(this.thorium.Name, "MaestroWig").UpdateArmorSet(player);
 
             //metronome
             //toggle
-                ModContent.Find<ModItem>(this.thorium.Name, "Metronome").UpdateAccessory(player, hideVisual);
+            ModContent.Find<ModItem>(this.thorium.Name, "Metronome").UpdateAccessory(player, hideVisual);
 
             //conductor's baton
             ModContent.Find<ModItem>(this.thorium.Name, "ConductorsBaton").UpdateAccessory(player, hideVisual);

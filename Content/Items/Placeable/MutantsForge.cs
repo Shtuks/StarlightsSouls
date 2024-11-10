@@ -13,10 +13,6 @@ namespace ssm.Content.Items.Placeable
 {
     public class MutantsForge : ModItem
     {
-        public override bool IsLoadingEnabled(Mod mod)
-        {
-            return ShtunConfig.Instance.ExtraContent;
-        }
 
         public override void SetStaticDefaults()
         {

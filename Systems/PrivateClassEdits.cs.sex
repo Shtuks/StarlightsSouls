@@ -92,6 +92,8 @@ namespace ssm.Systems
                         if (typea.Name == "GodMode")
                             godModeCS = typea;
                     }
+
+                    StarlightCatBoss.CSGodmodeOn = godModeCS.GetProperty("Enabled", ssm.UniversalBindingFlags).GetMethod;
                 }
 
                 if (ModCompatibility.HEROSMod.Loaded)

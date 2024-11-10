@@ -16,8 +16,8 @@ namespace ssm.CrossMod.Boots
         * zephyr boots
         * angel treads
         * royal runners
-        * terrarium particle sprinters
         * aeolus boots
+        * terrarium particle sprinters
         * celestial treads
         * void spurs
         * elysean tracers
@@ -55,24 +55,25 @@ namespace ssm.CrossMod.Boots
                     recipe.RemoveIngredient(5000);
                     recipe.AddIngredient<AngelTreads>(1);
                 }
-                // runners to sprinters
+                // runners to aeolus
+                if (recipe.HasResult(ModContent.ItemType<AeolusBoots>()) && (recipe.HasIngredient<AngelTreads>() || recipe.HasIngredient<ZephyrBoots>()))
+                {
+                    recipe.RemoveIngredient(ModContent.ItemType<ZephyrBoots>());
+                    recipe.RemoveIngredient(ModContent.ItemType<AngelTreads>());
+                    recipe.AddIngredient<RoyalRunners>(1);
+                }
+                // aeolus to sprinters
                 if (recipe.HasResult(ModContent.ItemType<TerrariumParticleSprinters>()) && recipe.HasIngredient(5000))
                 {
                     recipe.RemoveIngredient(5000);
-                    recipe.AddIngredient<RoyalRunners>(1);
-                }
-                // sprinters to aeolus
-                if (recipe.HasResult(ModContent.ItemType<AeolusBoots>()) && (recipe.HasIngredient<AngelTreads>() || recipe.HasIngredient<ZephyrBoots>()))
-                {
-                    recipe.RemoveIngredient(ModContent.ItemType<AngelTreads>());
-                    recipe.RemoveIngredient(ModContent.ItemType<ZephyrBoots>());
-                    recipe.AddIngredient<TerrariumParticleSprinters>(1);
-                }
-                //aeolus to celestial (if no cal dlc)
-                if (recipe.HasResult(ModContent.ItemType<TracersCelestial>()) && recipe.HasIngredient<AngelTreads>())
-                {
-                    recipe.RemoveIngredient(ModContent.ItemType<AngelTreads>());
                     recipe.AddIngredient<AeolusBoots>(1);
+                }
+                //sprinters to celestial
+                if (recipe.HasResult(ModContent.ItemType<TracersCelestial>()) && (recipe.HasIngredient<AngelTreads>() || recipe.HasIngredient<AeolusBoots>()))
+                {
+                    recipe.RemoveIngredient(ModContent.ItemType<AngelTreads>());
+                    recipe.RemoveIngredient(ModContent.ItemType<AeolusBoots>());
+                    recipe.AddIngredient<TerrariumParticleSprinters>(1);
                 }
                 //celestial to spurs
                 if (recipe.HasResult(ModContent.ItemType<VoidSpurs>()) && recipe.HasIngredient<RoyalRunners>())
@@ -89,8 +90,9 @@ namespace ssm.CrossMod.Boots
                 //elysian to seraph
                 //cal code
                 //seraph to flight (if no cal dlc)
-                if (recipe.HasResult(ModContent.ItemType<FlightMasterySoul>()) && !recipe.HasIngredient<TracersSeraph>())
+                if ((recipe.HasResult(ModContent.ItemType<FlightMasterySoul>()) || recipe.HasResult(ModContent.ItemType<SupersonicSoul>())) && !recipe.HasIngredient<TracersSeraph>())
                 {
+                    recipe.RemoveIngredient(ModContent.ItemType<AeolusBoots>());
                     recipe.AddIngredient<TracersSeraph>(1);
                 }
             }
@@ -110,10 +112,10 @@ namespace ssm.CrossMod.Boots
         {
             if (Item.type == ModContent.ItemType<AngelTreads>()
                 || Item.type == ModContent.ItemType<RoyalRunners>()
-                || Item.type == ModContent.ItemType<TerrariumParticleSprinters>()
                 || Item.type == ModContent.ItemType<AeolusBoots>()
+                || Item.type == ModContent.ItemType<TerrariumParticleSprinters>()
                 || Item.type == ModContent.ItemType<TracersCelestial>()
-                || Item.type == ModContent.ItemType<VoidSpurs>()
+                //|| Item.type == ModContent.ItemType<VoidSpurs>()
                 || Item.type == ModContent.ItemType<TracersElysian>()
                 || Item.type == ModContent.ItemType<TracersSeraph>())
             {
@@ -121,36 +123,28 @@ namespace ssm.CrossMod.Boots
             }
 
             if (Item.type == ModContent.ItemType<RoyalRunners>()
-                || Item.type == ModContent.ItemType<TerrariumParticleSprinters>()
                 || Item.type == ModContent.ItemType<AeolusBoots>()
+                || Item.type == ModContent.ItemType<TerrariumParticleSprinters>()
                 || Item.type == ModContent.ItemType<TracersCelestial>()
-                || Item.type == ModContent.ItemType<VoidSpurs>()
+                //|| Item.type == ModContent.ItemType<VoidSpurs>()
                 || Item.type == ModContent.ItemType<TracersElysian>()
                 || Item.type == ModContent.ItemType<TracersSeraph>())
             {
                 ModContent.Find<ModItem>(ModCompatibility.Calamity.Name, "AngelTreads").UpdateAccessory(player, false);
             }
 
-            if (Item.type == ModContent.ItemType<TerrariumParticleSprinters>()
-                || Item.type == ModContent.ItemType<AeolusBoots>()
+            if (Item.type == ModContent.ItemType<AeolusBoots>()
+                || Item.type == ModContent.ItemType<TerrariumParticleSprinters>()
                 || Item.type == ModContent.ItemType<TracersCelestial>()
-                || Item.type == ModContent.ItemType<VoidSpurs>()
+                //|| Item.type == ModContent.ItemType<VoidSpurs>()
                 || Item.type == ModContent.ItemType<TracersElysian>()
                 || Item.type == ModContent.ItemType<TracersSeraph>())
             {
                 ModContent.Find<ModItem>(ModCompatibility.SacredTools.Name, "RoyalRunners").UpdateAccessory(player, false);
             }
 
-            if (Item.type == ModContent.ItemType<AeolusBoots>()
+            if (Item.type == ModContent.ItemType<TerrariumParticleSprinters>()
                 || Item.type == ModContent.ItemType<TracersCelestial>()
-                || Item.type == ModContent.ItemType<VoidSpurs>()
-                || Item.type == ModContent.ItemType<TracersElysian>()
-                || Item.type == ModContent.ItemType<TracersSeraph>())
-            {
-                ModContent.Find<ModItem>(ModCompatibility.Thorium.Name, "TerrariumParticleSprinters").UpdateAccessory(player, false);
-            }
-
-            if (Item.type == ModContent.ItemType<TracersCelestial>()
                 || Item.type == ModContent.ItemType<VoidSpurs>()
                 || Item.type == ModContent.ItemType<TracersElysian>()
                 || Item.type == ModContent.ItemType<TracersSeraph>())
@@ -158,8 +152,16 @@ namespace ssm.CrossMod.Boots
                 ModContent.Find<ModItem>(ModCompatibility.SoulsMod.Name, "AeolusBoots").UpdateAccessory(player, false);
             }
 
-            if (Item.type == ModContent.ItemType<VoidSpurs>()
+            if (Item.type == ModContent.ItemType<TracersCelestial>()
+                //|| Item.type == ModContent.ItemType<VoidSpurs>()
                 || Item.type == ModContent.ItemType<TracersElysian>()
+                || Item.type == ModContent.ItemType<TracersSeraph>())
+            {
+                ModContent.Find<ModItem>(ModCompatibility.Thorium.Name, "TerrariumParticleSprinters").UpdateAccessory(player, false);
+            }
+
+            if (//Item.type == ModContent.ItemType<VoidSpurs>()
+                Item.type == ModContent.ItemType<TracersElysian>()
                 || Item.type == ModContent.ItemType<TracersSeraph>())
             {
                 ModContent.Find<ModItem>(ModCompatibility.Calamity.Name, "TracersCelestial").UpdateAccessory(player, false);

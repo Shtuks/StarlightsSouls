@@ -23,11 +23,6 @@ namespace ssm.Thorium.Essences
     [JITWhenModsEnabled(ModCompatibility.Thorium.Name)]
     public class BardEssence : BaseEssence
     {
-        public override bool IsLoadingEnabled(Mod mod)
-        {
-            return ShtunConfig.Instance.TorEnchantments;
-        }
-
         private readonly Mod thorium = ModLoader.GetMod("ThoriumMod");
 
         public override void SetDefaults()

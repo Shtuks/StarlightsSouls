@@ -5,10 +5,7 @@ CommonItemTooltip: {
 	PercentIncreasedKineticSpeed: "{0}% increased rogue velocity"
 }
 
-DamageClasses: {
-	SanguineDamageClass.DisplayName: sanguine damage
-	KineticDamageClass.DisplayName: Rogue damage
-}
+DamageClasses.KineticDamageClass.DisplayName: rogue damage
 
 Items: {
 	QuasarSigil: {

@@ -15,11 +15,6 @@ namespace ssm.Content.Tiles
     [JITWhenModsEnabled(ModCompatibility.Calamity.Name)]
     public class DemonshadeWorkbenchTile : ModTile
 	{
-        public override bool IsLoadingEnabled(Mod mod)
-        {
-            return ShtunConfig.Instance.ExtraContent;
-        }
-
         public override void SetStaticDefaults()
 		{
 			Main.tileLighted[Type] = true;

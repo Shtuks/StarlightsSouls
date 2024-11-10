@@ -19,10 +19,6 @@ namespace ssm.Content.Items.Armor
     [AutoloadEquip(EquipType.Head)]
     public class TrueMonstrosityMask : ModItem
     {
-        public override bool IsLoadingEnabled(Mod mod)
-        {
-            return ShtunConfig.Instance.ExtraContent;
-        }
         public override void SetDefaults()
         {
             Item.width = 18;
@@ -30,7 +26,7 @@ namespace ssm.Content.Items.Armor
             Item.rare = 11;
             Item.expert = true;
             Item.value = Item.sellPrice(10, 0, 0, 0);
-            Item.defense = 60;
+            Item.defense = 100;
         }
 
         public override void UpdateEquip(Player player)

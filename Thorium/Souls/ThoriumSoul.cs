@@ -14,10 +14,6 @@ namespace ssm.Thorium.Souls
     [JITWhenModsEnabled(ModCompatibility.Thorium.Name)]
     public class ThoriumSoul : BaseSoul
     {
-        public override bool IsLoadingEnabled(Mod mod)
-        {
-            return ShtunConfig.Instance.TorEnchantments;
-        }
 
         private readonly Mod thorium = ModLoader.GetMod("ThoriumMod");
 

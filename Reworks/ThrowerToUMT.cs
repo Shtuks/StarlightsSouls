@@ -1,12 +1,12 @@
-﻿using CalamityMod;
-using Terraria;
+﻿using Terraria;
 using Terraria.ModLoader;
 using ssm.Core;
+using ssm.Content.DamageClasses;
 
 namespace ssm.Reworks
 {
-    [ExtendsFromMod(ModCompatibility.Calamity.Name, ModCompatibility.Thorium.Name)]
-    [JITWhenModsEnabled(ModCompatibility.Calamity.Name, ModCompatibility.Thorium.Name)]
+    [ExtendsFromMod(ModCompatibility.Thorium.Name)]
+    [JITWhenModsEnabled(ModCompatibility.Thorium.Name)]
     public class ThrowingToRogue : GlobalItem
     {
         public override void SetDefaults(Item item)
@@ -15,7 +15,7 @@ namespace ssm.Reworks
             {
                 if (item.CountsAsClass<ThrowingDamageClass>())
                 {
-                    item.DamageType = (DamageClass)(object)ModContent.GetInstance<RogueDamageClass>();
+                    item.DamageType = (DamageClass)(object)ModContent.GetInstance<UnitedModdedThrower>();
                 } 
             }
         }

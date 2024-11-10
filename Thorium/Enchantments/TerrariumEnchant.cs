@@ -30,11 +30,6 @@ namespace ssm.Thorium.Enchantments
             Item.value = 250000;
         }
 
-        public override bool IsLoadingEnabled(Mod mod)
-        {
-            return ShtunConfig.Instance.TorEnchantments;
-        }
-
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
             //toggle

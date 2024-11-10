@@ -10,10 +10,6 @@ namespace ssm.Content.Items.Consumables
 {
     public class ShtuxibusBag : ModItem
     {
-        public override bool IsLoadingEnabled(Mod mod)
-        {
-            return ShtunConfig.Instance.ExtraContent;
-        }
         public override void SetStaticDefaults()
         {
             ItemID.Sets.BossBag[Type] = true;

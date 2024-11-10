@@ -17,14 +17,12 @@ using Terraria.GameInput;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 using ssm.Content.Items.Accessories;
-//using ssm.Content.Projectiles.AccesProjectiles;
 using ReLogic.Content;
 using System.IO;
 using Terraria.Chat;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.Graphics.Effects;
-//using ssm.Buffs.SoulsEffects;
-//using ssm.Content.Buffs.Minions;
+using ssm.Content.Buffs.Minions;
 using ssm.Content.Items;
 using ssm.Content.Buffs.Anti;
 using Terraria;
@@ -75,21 +73,6 @@ namespace ssm
         public float GrazeRadius;
         public int DeviGrazeCounter;
         public double DeviGrazeBonus;
-        private int WeaponUseTimer => Player.GetModPlayer<ShtunPlayer>().WeaponUseTimer;
-        public bool DoubleTap
-        {
-            get
-            {
-                return Main.ReversedUpDownArmorSetBonuses ?
-                    Player.controlUp && Player.releaseUp && Player.doubleTapCardinalTimer[1] > 0 && Player.doubleTapCardinalTimer[1] != 15
-                    : Player.controlDown && Player.releaseDown && Player.doubleTapCardinalTimer[0] > 0 && Player.doubleTapCardinalTimer[0] != 15;
-            }
-        }
-        public void TryAdditionalAttacks(int damage, DamageClass damageType)
-        {
-            if (Player.whoAmI != Main.myPlayer)
-                return;
-        }
 
         public override void PreUpdateBuffs()
         {
@@ -138,14 +121,18 @@ namespace ssm
             return !ChtuxlagorBuff || Player.HasBuff<ShtuxianDomination>();
         }
 
-        List<int> prevDyes = null;
-
         public override void PreUpdate()
         {
             if(ChtuxlagorHealth < 0)
             {
                 ERASESOFT(Player);
-                ShtunUtils.DisplayLocalizedText("Well, i hope we will meet again.", Color.Teal);
+                bool var = false;
+                if (!var)
+                {
+                    ShtunUtils.DisplayLocalizedText("Well, i hope we will meet again.", Color.Teal);
+                    var = true;
+                }
+
             }
             if (Player.HasBuff<ShtuxianDomination>() || ChtuxlagorBuff)
             {
@@ -154,18 +141,6 @@ namespace ssm
             }
         }
 
-        public override void OnHurt(Player.HurtInfo info)
-        {
-            if(Main.expertMode && NPC.AnyNPCs(ModContent.NPCType<StarlightCatBoss>()))
-            {
-                ChtuxlagorHits++;
-            }
-            if(ChtuxlagorHits > 10)
-            {
-                ERASE(Player);
-                ChtuxlagorHits = 0;
-            }
-        }
         /*public override void PostUpdateMiscEffects()
         {
             if (this.antiCollision)
@@ -208,18 +183,6 @@ namespace ssm
                 bool dogmode = tag.GetBool("dogMode");
             }
         }
-        private void OnHitNPCEither(NPC target, int damage, float knockback, bool crit, DamageClass damageClass, Projectile projectile = null, Item Item = null)
-        {
-            int GetBaseDamage()
-            {
-                int baseDamage = damage;
-                if (projectile != null)
-                    baseDamage = (int)(projectile.damage * Player.ActualClassDamage(projectile.DamageType));
-                else if (Item != null)
-                    baseDamage = (int)(Item.damage * Player.ActualClassDamage(Item.DamageType));
-                return baseDamage;
-            }
-        }
 
         public void ERASE(Player player)
         {
@@ -260,22 +223,7 @@ namespace ssm
             if (Screenshake > 0)
                 Main.screenPosition += Main.rand.NextVector2Circular(7, 7);
         }
-        public void FlightMasterySoul()
-        {
-            Player.wingTimeMax = 999999;
-            Player.wingTime = Player.wingTimeMax;
-            Player.ignoreWater = true;
-            Player.empressBrooch = true;
-            Player.gravity = Player.defaultGravity * 1.5f;
-            if (Player.controlDown && Player.controlJump && !Player.mount.Active)
-            {
-                Player.position.Y -= Player.velocity.Y;
-                if (Player.velocity.Y > 0.1f)
-                    Player.velocity.Y = 0.1f;
-                else if (Player.velocity.Y < -0.1f)
-                    Player.velocity.Y = -0.1f;
-            }
-        }
+
         public override void ResetEffects()
         {
             if (Screenshake > 0)
@@ -311,7 +259,7 @@ namespace ssm
             ssm.legit = false;
             ChtuxlagorHits = 0;
         }
-        public void WingStats() { Player.wingTimeMax = 999999; Player.wingTime = Player.wingTimeMax; Player.ignoreWater = true; }
+
         public override bool ImmuneTo(
         PlayerDeathReason damageSource,
         int cooldownCounter,
@@ -339,54 +287,54 @@ namespace ssm
             return retVal;
         }
 
-        public void ChtuxlagorDamage(Player player, int projDamage)
-        {
-            if (ChtuxlagorHealth <= 0f || ChtuxlagorImmune > 0 || Main.netMode == 2)
-            {
-                return;
-            }
-            int oldHealth = player.statLife;
-            ChtuxlagorHealth -= projDamage;
-            player.statLife = (int)(player.statLifeMax2 * ChtuxlagorHealth);
-            int constDamage = (int)((200f - player.statDefense / 2f) * (1f - player.endurance));
-            if (constDamage < 1)
-            {
-                constDamage = 1;
-            }
-            if (player.statLife > oldHealth - constDamage)
-            {
-                player.statLife = oldHealth - constDamage;
-            }
-            int damage = oldHealth - player.statLife;
-            if (ChtuxlagorHealth > 0f && player.statLife > 0)
-            {
-                ChtuxlagorImmune = 60;
-                if (!player.immune)
-                {
-                    player.immune = true;
-                    player.immuneTime = 60;
-                }
-            }
-            else if (Main.myPlayer == player.whoAmI)
-            {
-                if (ssm.debug)
-                {
-                    Main.NewText("I do not think this should be possible for now.");
-                    ChtuxlagorHealth = 1;
-                    player.statLife = 1;
-                    ChtuxlagorImmune = 60;
-                    return;
-                }
-                player.KillMe(PlayerDeathReason.ByCustomReason(player.name + " was split to pieces of code!"), int.MaxValue, 10);
-                player.mount.Dismount(player);
-                player.dead = true;
-                player.respawnTimer = 600;
-                if (Main.expertMode)
-                {
-                    player.respawnTimer = 900;
-                }
-            }
-        }
+        //public void ChtuxlagorDamage(Player player, int projDamage)
+        //{
+        //    if (ChtuxlagorHealth <= 0f || ChtuxlagorImmune > 0 || Main.netMode == 2)
+        //    {
+        //        return;
+        //    }
+        //    int oldHealth = player.statLife;
+        //    ChtuxlagorHealth -= projDamage;
+        //    player.statLife = (int)(player.statLifeMax2 * ChtuxlagorHealth);
+        //    int constDamage = (int)((200f - player.statDefense / 2f) * (1f - player.endurance));
+        //    if (constDamage < 1)
+        //    {
+        //        constDamage = 1;
+        //    }
+        //    if (player.statLife > oldHealth - constDamage)
+        //    {
+        //        player.statLife = oldHealth - constDamage;
+        //    }
+        //    int damage = oldHealth - player.statLife;
+        //    if (ChtuxlagorHealth > 0f && player.statLife > 0)
+        //    {
+        //        ChtuxlagorImmune = 60;
+        //        if (!player.immune)
+        //        {
+        //            player.immune = true;
+        //            player.immuneTime = 60;
+        //        }
+        //    }
+        //    else if (Main.myPlayer == player.whoAmI)
+        //    {
+        //        if (ssm.debug)
+        //        {
+        //            Main.NewText("I do not think this should be possible for now.");
+        //            ChtuxlagorHealth = 1;
+        //            player.statLife = 1;
+        //            ChtuxlagorImmune = 60;
+        //            return;
+        //        }
+        //        player.KillMe(PlayerDeathReason.ByCustomReason(player.name + " was split to pieces of code!"), int.MaxValue, 10);
+        //        player.mount.Dismount(player);
+        //        player.dead = true;
+        //        player.respawnTimer = 600;
+        //        if (Main.expertMode)
+        //        {
+        //            player.respawnTimer = 900;
+        //        }
+        //    }
+        //}
 
         void ChtuxlagorArena()
         {

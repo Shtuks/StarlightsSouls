@@ -15,7 +15,6 @@ using ssm.Content.Items.ShtuxibusPlush;
 using Terraria.ModLoader.Config;
 using ssm.Content.NPCs.DukeFishronEX;
 using ssm.Content.NPCs.StarlightCat;
-using ssm.Core;
 
 namespace ssm.Systems
 {
@@ -23,14 +22,9 @@ namespace ssm.Systems
     {
         public override void PostSetupContent()
         {
-            if (ShtunConfig.Instance.ExtraContent)
-            {
-                DoBossChecklistIntegration();
-            }
-
             if (ModCompatibility.HEROSMod.Loaded || ModCompatibility.Dragonlens.Loaded || ModCompatibility.CheatSheet.Loaded)
             {
-                PrivateClassEdits.LoadAntiCheats();
+                //PrivateClassEdits.LoadAntiCheats();
             }
         }
 
@@ -66,69 +60,69 @@ namespace ssm.Systems
             int spawnItem4 = ModContent.ItemType<ShtuxibusFumo>();
             List<int> collectibles4 = new List<int>() { ModContent.ItemType<Sadism>(), };
 
-            bossChecklistMod.Call(
-                "LogBoss",
-                Mod,
-                internalName2,
-                weight2,
-                downed2,
-                bossType2,
-                new Dictionary<string, object>()
-                {
-                    ["spawnInfo"] = (object)Language.GetText("Mods.ssm.NPCs.Echdeath.BossChecklistIntegration.SpawnInfo").WithFormatArgs(Array.Empty<object>()),
-                    ["despawnMessage"] = (object)Language.GetText("Mods.ssm.NPCs.Echdeath.BossChecklistIntegration.DespawnMessage"),
-                    ["spawnItems"] = spawnItem2,
-                    ["collectibles"] = collectibles2,
-                }
-            );
+            //bossChecklistMod.Call(
+            //    "LogBoss",
+            //    Mod,
+            //    internalName2,
+            //    weight2,
+            //    downed2,
+            //    bossType2,
+            //    new Dictionary<string, object>()
+            //    {
+            //        ["spawnInfo"] = (object)Language.GetText("Mods.ssm.NPCs.Echdeath.BossChecklistIntegration.SpawnInfo").WithFormatArgs(Array.Empty<object>()),
+            //        ["despawnMessage"] = (object)Language.GetText("Mods.ssm.NPCs.Echdeath.BossChecklistIntegration.DespawnMessage"),
+            //        ["spawnItems"] = spawnItem2,
+            //        ["collectibles"] = collectibles2,
+            //    }
+            //);
 
-            bossChecklistMod.Call(
-                "LogBoss",
-                Mod,
-                internalName1,
-                weight1,
-                downed1,
-                bossType1,
-                new Dictionary<string, object>()
-                {
-                    ["spawnInfo"] = (object)Language.GetText("Mods.ssm.NPCs.Shtuxibus.BossChecklistIntegration.SpawnInfo").WithFormatArgs(Array.Empty<object>()),
-                    ["despawnMessage"] = (object)Language.GetText("Mods.ssm.NPCs.Shtuxibus.BossChecklistIntegration.DespawnMessage"),
-                    ["spawnItems"] = spawnItem1,
-                    ["collectibles"] = collectibles1,
-                }
-            );
+            //bossChecklistMod.Call(
+            //    "LogBoss",
+            //    Mod,
+            //    internalName1,
+            //    weight1,
+            //    downed1,
+            //    bossType1,
+            //    new Dictionary<string, object>()
+            //    {
+            //        ["spawnInfo"] = (object)Language.GetText("Mods.ssm.NPCs.Shtuxibus.BossChecklistIntegration.SpawnInfo").WithFormatArgs(Array.Empty<object>()),
+            //        ["despawnMessage"] = (object)Language.GetText("Mods.ssm.NPCs.Shtuxibus.BossChecklistIntegration.DespawnMessage"),
+            //        ["spawnItems"] = spawnItem1,
+            //        ["collectibles"] = collectibles1,
+            //    }
+            //);
 
-            bossChecklistMod.Call(
-                "LogBoss",
-                Mod,
-                internalName3,
-                weight3,
-                downed3,
-                bossType3,
-                new Dictionary<string, object>()
-                {
-                    ["spawnInfo"] = (object)Language.GetText("Mods.ssm.NPCs.DukeFishronEX.BossChecklistIntegration.SpawnInfo").WithFormatArgs(Array.Empty<object>()),
-                    ["despawnMessage"] = (object)Language.GetText("Mods.ssm.NPCs.DukeFishronEX.BossChecklistIntegration.DespawnMessage"),
-                    ["spawnItems"] = spawnItem3,
-                    ["collectibles"] = collectibles3,
-                }
-            );
+            //bossChecklistMod.Call(
+            //    "LogBoss",
+            //    Mod,
+            //    internalName3,
+            //    weight3,
+            //    downed3,
+            //    bossType3,
+            //    new Dictionary<string, object>()
+            //    {
+            //        ["spawnInfo"] = (object)Language.GetText("Mods.ssm.NPCs.DukeFishronEX.BossChecklistIntegration.SpawnInfo").WithFormatArgs(Array.Empty<object>()),
+            //        ["despawnMessage"] = (object)Language.GetText("Mods.ssm.NPCs.DukeFishronEX.BossChecklistIntegration.DespawnMessage"),
+            //        ["spawnItems"] = spawnItem3,
+            //        ["collectibles"] = collectibles3,
+            //    }
+            //);
 
-            bossChecklistMod.Call(
-                "LogBoss",
-                Mod,
-                internalName4,
-                weight4,
-                downed4,
-                bossType4,
-                new Dictionary<string, object>()
-                {
-                    ["spawnInfo"] = (object)Language.GetText("Mods.ssm.NPCs.StarlightCatBoss.BossChecklistIntegration.SpawnInfo").WithFormatArgs(Array.Empty<object>()),
-                    ["despawnMessage"] = (object)Language.GetText("Mods.ssm.NPCs.StarlightCatBoss.BossChecklistIntegration.DespawnMessage"),
-                    ["spawnItems"] = spawnItem3,
-                    ["collectibles"] = collectibles3,
-                }
-            );
+            //bossChecklistMod.Call(
+            //    "LogBoss",
+            //    Mod,
+            //    internalName4,
+            //    weight4,
+            //    downed4,
+            //    bossType4,
+            //    new Dictionary<string, object>()
+            //    {
+            //        ["spawnInfo"] = (object)Language.GetText("Mods.ssm.NPCs.StarlightCatBoss.BossChecklistIntegration.SpawnInfo").WithFormatArgs(Array.Empty<object>()),
+            //        ["despawnMessage"] = (object)Language.GetText("Mods.ssm.NPCs.StarlightCatBoss.BossChecklistIntegration.DespawnMessage"),
+            //        ["spawnItems"] = spawnItem3,
+            //        ["collectibles"] = collectibles3,
+            //    }
+            //);
         }
 
         public static class BossChecklist

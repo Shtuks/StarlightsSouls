@@ -11,17 +11,14 @@ using ssm.Thorium.Souls;
 using static ssm.Core.ModCompatibility;
 using ThoriumMod.Items.Titan;
 using ThoriumMod.Items.BardItems;
+using ThoriumMod.Items.Donate;
 
 namespace ssm.Thorium
 {
     [ExtendsFromMod(ModCompatibility.Thorium.Name)]
     [JITWhenModsEnabled(ModCompatibility.Thorium.Name)]
     class ShtunThoriumRecipes : ModSystem
-	{
-        public override bool IsLoadingEnabled(Mod mod)
-        {
-            return ShtunConfig.Instance.TorEnchantments;
-        }
+    {
         public override void AddRecipeGroups()
         {
             //jester mask
@@ -64,6 +61,10 @@ namespace ssm.Thorium
                 {
                     recipe.AddIngredient<GuardianAngelsSoul>();
                 }
+                //if (recipe.HasResult<ColossusSoul>() && !recipe.HasIngredient<BlastShield>())
+                //{
+                //    recipe.AddIngredient<BlastShield>();
+                //}
             }
 		}
 	}

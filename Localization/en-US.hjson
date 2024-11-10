@@ -14,6 +14,32 @@ Mods: {
 		}
 
 		Items: {
+			AddedEffects: {
+				ThoriumColossus: Effect of Blast Shield
+				CalDefender: Effects of Asgard's Valor
+				ThoriumUniverse:
+					'''
+					Healing spells will heal 5 additional lifes
+					Effects of Support sash, Saving grace, Grave goods
+					Increace inspiration by 20
+					20% increased throwing velocity
+					'''
+				SoARampart:
+					'''
+					Effects of Celestial Shield
+					Only grants effects of Shield of Reflections when True Mode is enabled.
+					'''
+				SoAColossus:
+					'''
+					Effects of Celestial Shield and Royal Guard
+					Only grants effects of Shield of Reflections when True Mode is enabled.
+					'''
+				SoAMaso: Summon [i:SacredTools/YataMirror] little Nihilus and [i:SacredTools/PrimordialCore] Pyramid Orbitals
+				SoABerserker: Effects of Flora Fist
+				SoASupersonic: Effects of Heart of the Plough, Advanced Dash Tech
+				SoAWorldshaper: Effects of Rage Supressor, Celestial ring
+			}
+
 			Lore: {
 				ShtuxibusLore: {
 					Lore:
@@ -39,7 +65,7 @@ Mods: {
 				DisplayName: Soul of Chtux'lag'or
 				Tooltip:
 					'''
-					Effects of [i:FargowiltasSouls/EternitySoul], [i:ssm/EternityForce], [i:ssm/ShtuxianForce]
+					Effects of [i:FargowiltasSouls/EternitySoul], [i:ssm/EternityForce], [i:ssm/ShtuxianEnchant]
 					Your attacks inflict most of debuffs, absurdly increace life regeneration
 					Grants immunity to all debuffs except "Chtux'lag'or Inferno" and "Shtuxibus Curse"
 					Press [shtuxianSuper] key to become invinvible for 20 seconds
@@ -1226,9 +1252,9 @@ Mods: {
 				Tooltip:
 					'''
 					'Every note you produce births a new world'
-					30% increased symphonic damage
+					22% increased symphonic damage
 					20% increased symphonic playing speed
-					15% increased symphonic critical strike chance
+					10% increased symphonic critical strike chance
 					Increases maximum inspiration by 20
 					Percussion critical strikes will deal 10% more damage
 					Percussion critical strikes will briefly stun enemies
@@ -1244,9 +1270,9 @@ Mods: {
 				Tooltip:
 					'''
 					'Divine Intervention'
-					30% increased radiant damage
+					22% increased radiant damage
 					20% increased healing and radiant casting speed
-					15% increased radiant critical strike chance
+					10% increased radiant critical strike chance
 					Healing spells will heal an additional 5 life
 					Points you towards the ally with the least health
 					Healing an ally will increase your movement speed and increase their life regen and defense
@@ -2718,6 +2744,16 @@ Mods: {
 		}
 
 		Toggler: {
+			SoAMasoSoulHeader: Soul of Master
+			YataMirrorEffect: Yata Mirror
+			PrimordialCoreEffect: Primordia Core
+			RoyalGuardEffect: Royal Guard
+			CelestialEffect: Celestial pillars
+			FloraFistEffect: Flora Fist
+			MilinticaDashEffect: Advanced Dash
+			HeartOfThePloughEffect: Heart of the Plough
+			ShtuxianSoulHeader: Shtuxian Soul
+			ShtuxianEffect: No caps
 			GuardianEffect: Medical Bag
 			AsgardForceHeader: Asgard Force
 			AlfheimForceHeader: Alfheim Force
@@ -3021,5 +3057,6 @@ Mods: {
 		}
 
 		"Keybinds.Shtuxian Domination.DisplayName": Shtuxian Domination
+		DamageClasses.UnitedModdedThrower.DisplayName: United Modded Thrower
 	}
 }

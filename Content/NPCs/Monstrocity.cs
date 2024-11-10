@@ -85,7 +85,7 @@ namespace ssm.Content.NPCs
         {
             if (WorldSavingSystem.EternityMode)
             {
-                return Main.hardMode;
+                return NPC.downedMoonlord;
             }
             return false;
         }

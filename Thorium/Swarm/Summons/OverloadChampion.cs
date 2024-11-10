@@ -21,11 +21,6 @@ namespace ssm.Thorium.Swarm.Summons
         {
         }
 
-        public override bool IsLoadingEnabled(Mod mod)
-        {
-            return ShtunConfig.Instance.TorSwarmItems;
-        }
-
         public override bool CanUseItem(Player player)
         {
             return !ssm.SwarmActive;

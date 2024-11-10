@@ -94,19 +94,19 @@ namespace ssm
 
             CaughtNPCItem.RegisterItems();
 
-            if(ModLoader.TryGetMod("CalamityMod", out Mod kal) && ShtunConfig.Instance.CalCaughtNpcs)
+            if(ModLoader.TryGetMod("CalamityMod", out Mod kal))
             {
                 CalCaughtNpcs.CalRegisterItems();
             }
-            if (ModLoader.TryGetMod("ThoriumMod", out Mod tor) && ShtunConfig.Instance.TorCaughtNpcs)
+            if (ModLoader.TryGetMod("ThoriumMod", out Mod tor))
             {
                 //TorCaughtNpcs.TorRegisterItems();
             }
-            if (ModLoader.TryGetMod("SacredTools", out Mod soa) && ShtunConfig.Instance.SoACaughtNpcs)
+            if (ModLoader.TryGetMod("SacredTools", out Mod soa))
             {
                 //SoACaughtNpcs.SoARegisterItems();
             }
-            if (ModLoader.TryGetMod("Redemption", out Mod red) && ShtunConfig.Instance.RedCaughtNpcs)
+            if (ModLoader.TryGetMod("Redemption", out Mod red))
             {
                 //RedCaughtNpcs.RedRegisterItems();
             }

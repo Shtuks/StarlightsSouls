@@ -1,30 +1,19 @@
 using Terraria;
-using FargowiltasSouls.Content.Items.Accessories.Forces;
-using FargowiltasSouls.Content.Items.Accessories.Masomode;
 using FargowiltasSouls.Content.Items.Accessories.Souls;
-using FargowiltasSouls.Content.Items.Materials;
 using Terraria.ModLoader;
-using SacredTools.Content.Items.Materials;
-using ssm.Content.Items.Accessories;
 using SacredTools.Content.Items.Accessories;
-using Terraria.ID;
 using Terraria.Localization;
 using SacredTools.Content.Items.Armor.Asthraltite;
 using SacredTools.Content.Items.Armor.Dragon;
-using FargowiltasCrossmod.Content.Calamity.Items.Accessories;
 using ssm.SoA.Souls;
 using ssm.Core;
+using SacredTools.Content.Items.Accessories.Wings;
 
 namespace ssm
 {
     [ExtendsFromMod(ModCompatibility.SacredTools.Name)]
     public class SoARecipes : ModSystem
     {
-        public override bool IsLoadingEnabled(Mod mod)
-        {
-            return ShtunConfig.Instance.SoAEnchantments;
-        }
-
         public override void AddRecipeGroups()
         {
             RecipeGroup rec = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " Asthral Helmet", ModContent.ItemType<AsthralMage>(), ModContent.ItemType<AsthralRanged>(), ModContent.ItemType<AsthralMelee>(), ModContent.ItemType<AsthralSummon>(), ModContent.ItemType<AsthraltiteHelmetRevenant>());
@@ -43,15 +32,55 @@ namespace ssm
                     recipe.AddIngredient<SoASoul>();
                 }
 
-                // SoA Recipies
-                //if (recipe.HasResult<ShadowspecBar>())
-                //{
-                //    recipe.AddIngredient<EmberOfOmen>();
-                //}
-                //if (recipe.HasResult<ColossusSoul>())
-                //{
-                //    recipe.AddIngredient<ReflectionShield>();
-                //}
+                if (recipe.HasResult<ConjuristsSoul>() && !recipe.HasIngredient<StarstreamVeil>())
+                {
+                    recipe.AddIngredient<StarstreamVeil>();
+                    recipe.RemoveIngredient(3812);
+                    recipe.RemoveIngredient(3810);
+                    recipe.RemoveIngredient(3811);
+                    recipe.RemoveIngredient(3809);
+                }
+
+                if (recipe.HasResult<ColossusSoul>() && !recipe.HasIngredient<RoyalGuard>())
+                {
+                    recipe.AddIngredient<RoyalGuard>();
+                    recipe.AddIngredient<NightmareBlindfold>();
+                }
+
+                if (recipe.HasResult<SupersonicSoul>() && !recipe.HasIngredient<MilinticaDash>())
+                {
+                    recipe.AddIngredient<MilinticaDash>();
+                    recipe.AddIngredient<HeartOfThePlough>();
+                }
+
+                if (recipe.HasResult<WorldShaperSoul>() && !recipe.HasIngredient<LunarRing>())
+                {
+                    recipe.AddIngredient<LunarRing>();
+                    recipe.AddIngredient<RageSuppressor>();
+                }
+
+                if (recipe.HasResult<MasochistSoul>() && !recipe.HasIngredient<YataMirror>())
+                {
+                    recipe.AddIngredient<YataMirror>();
+                    recipe.AddIngredient<PrimordialCore>();
+                }
+
+                if (recipe.HasResult<BerserkerSoul>() && !recipe.HasIngredient<FloraFist>())
+                {
+                    if (recipe.HasIngredient(1343))
+                    {
+                        recipe.RemoveIngredient(1343);
+                    }
+                    recipe.AddIngredient<FloraFist>();
+                }
+
+                if (recipe.HasResult<FlightMasterySoul>() && !recipe.HasIngredient<GrandWings>())
+                {
+                    recipe.AddIngredient<GrandWings>();
+                    recipe.AddIngredient<AsthraltiteWings>();
+                    recipe.AddIngredient<DespairBoosters>();
+                    recipe.AddIngredient<AuroraWings>();
+                }
             }
         }
     }

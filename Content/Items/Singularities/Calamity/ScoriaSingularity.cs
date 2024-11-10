@@ -13,10 +13,6 @@ namespace ssm.Content.Items.Singularities.Calamity
     [JITWhenModsEnabled(ModCompatibility.Calamity.Name)]
     public class ScoriaSingularity : ModItem
     {
-        public override bool IsLoadingEnabled(Mod mod)
-        {
-            return ShtunConfig.Instance.CalSingularities;
-        }
         public override void SetStaticDefaults()
         {
             // Registers a vertical animation with 4 frames and each one will last 5 ticks (1/12 second)

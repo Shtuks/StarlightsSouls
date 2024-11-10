@@ -47,13 +47,10 @@ namespace ssm.Calamity
                 #endregion
 
                 #region souls
-                if (ShtunConfig.Instance.CalEnchantments)
+                if (recipe.HasResult<EternitySoul>() && !recipe.HasIngredient<CalamitySoul>() && recipe.HasIngredient<BrandoftheBrimstoneWitch>())
                 {
-                    if (recipe.HasResult<EternitySoul>() && !recipe.HasIngredient<CalamitySoul>() && recipe.HasIngredient<BrandoftheBrimstoneWitch>())
-                    {
-                        if (recipe.RemoveIngredient(ModContent.ItemType<BrandoftheBrimstoneWitch>()))
-                            recipe.AddIngredient<CalamitySoul>();
-                    }
+                    if (recipe.RemoveIngredient(ModContent.ItemType<BrandoftheBrimstoneWitch>()))
+                        recipe.AddIngredient<CalamitySoul>();
                 }
                 #endregion
             }

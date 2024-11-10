@@ -22,11 +22,6 @@ namespace ssm.Thorium
 
     public partial class ShtunThoriumPlayer : ModPlayer
     {
-        public override bool IsLoadingEnabled(Mod mod)
-        {
-            return ShtunConfig.Instance.TorEnchantments;
-        }
-
         private readonly Mod thorium = ModLoader.GetMod("ThoriumMod");
 
         public bool FungusEnchant;

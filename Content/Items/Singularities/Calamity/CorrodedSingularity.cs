@@ -13,10 +13,6 @@ namespace ssm.Content.Items.Singularities.Calamity
     [JITWhenModsEnabled(ModCompatibility.Calamity.Name)]
     public class CorrodedSingularity : ModItem
     {
-        public override bool IsLoadingEnabled(Mod mod)
-        {
-            return ShtunConfig.Instance.CalSingularities;
-        }
         public int i = ModContent.GetInstance<ShtunConfig>().ItemsUsedInSingularity;
         public override void SetStaticDefaults()
         {

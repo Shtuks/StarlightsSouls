@@ -6,10 +6,6 @@ namespace ssm.Content.Items.Materials
 {
     public class ShtuxiumOre : ModItem
     {
-        public override bool IsLoadingEnabled(Mod mod)
-        {
-            return ShtunConfig.Instance.ExtraContent;
-        }
         public override void SetStaticDefaults()
         {
             Item.ResearchUnlockCount = 100;

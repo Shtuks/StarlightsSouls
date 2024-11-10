@@ -27,12 +27,6 @@ namespace ssm.Content.NPCs
         public const string ShopName = "Shop";
         public int NumberOfTimesTalkedTo = 0;
         private static Profiles.StackedNPCProfile NPCProfile;
-
-        public override bool IsLoadingEnabled(Mod mod)
-        {
-            return ShtunConfig.Instance.ExtraContent;
-        }
-
         public override void SetStaticDefaults()
         {
             Main.npcFrameCount[Type] = 25; // The total amount of frames the NPC has

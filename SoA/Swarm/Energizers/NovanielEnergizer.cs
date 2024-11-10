@@ -7,10 +7,6 @@ namespace ssm.SoA.Swarm.Energizers
     [JITWhenModsEnabled(ModCompatibility.SacredTools.Name)]
     public class NovanielEnergizer : ModItem
     {
-        public override bool IsLoadingEnabled(Mod mod)
-        {
-            return ShtunConfig.Instance.SoASwarmItems;
-        }
         public override void SetDefaults()
         {
             Item.width = 20;

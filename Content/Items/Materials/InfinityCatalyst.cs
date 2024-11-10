@@ -10,7 +10,7 @@ using ssm.Calamity.Swarm.Energizers;
 //using ssm.Thorium.Swarm.Energizers;
 using ssm.Content.Items.Singularities.Calamity;
 using ssm.Thorium.Swarm.Energizers;
-//using ssm.SoA.Swarm.Energizers;
+using ssm.SoA.Swarm.Energizers;
 //using ssm.Redemption.Swarm.Energizers;
 //using ssm.Homeward.Swarm.Energizers;
 
@@ -19,10 +19,6 @@ namespace ssm.Content.Items.Materials
 {
     public class InfinityCatalyst : ModItem
     {
-        public override bool IsLoadingEnabled(Mod mod)
-        {
-            return ShtunConfig.Instance.ExtraContent;
-        }
         public override void SetStaticDefaults()
         {
             // Registers a vertical animation with 4 frames and each one will last 5 ticks ( / 2 second)
@@ -52,34 +48,26 @@ namespace ssm.Content.Items.Materials
 
             if (ModLoader.HasMod("CalamityMod"))
             {
-                if (ShtunConfig.Instance.CalSingularities)
-                    recipe.AddIngredient<CalamitySingularity>();
-                if (ShtunConfig.Instance.CalSwarmItems)
-                    recipe.AddIngredient<CalamitousEnergizer>();
+                recipe.AddIngredient<CalamitySingularity>();
+                recipe.AddIngredient<CalamitousEnergizer>();
             }
             if (ModLoader.HasMod("ThoriumMod"))
             {
-                //if (ShtunConfig.Instance.TorSingularities)
-                    //recipe.AddIngredient<ThoriumSingularity>();
-                if (ShtunConfig.Instance.TorSwarmItems)
-                    recipe.AddIngredient<ThoriumEnergizer>();
+                //recipe.AddIngredient<ThoriumSingularity>();
+                recipe.AddIngredient<ThoriumEnergizer>();
             }
             if (ModLoader.HasMod("SacredTools"))
             {
-                //if (ShtunConfig.Instance.SoASingularities)
-                    //recipe.AddIngredient<SoASingularity>()
-                //if (ShtunConfig.Instance.SoASwarmItems)
-                    //recipe.AddIngredient<SoAEnergizer>()
+                //recipe.AddIngredient<SoASingularity>()
+                //recipe.AddIngredient<SoAEnergizer>()
             }
             if (ModLoader.HasMod("Redemption"))
             {
-                //if (ShtunConfig.Instance.RedSwarmItems)
-                    //recipe.AddIngredient<RedemptionEnergizer>()
-                //if (ShtunConfig.Instance.RedSingularities)
-                    //recipe.AddIngredient<RedemptionSingularity>()
+                //recipe.AddIngredient<RedemptionEnergizer>()
+                //recipe.AddIngredient<RedemptionSingularity>()
             }
 
-            recipe.AddTile<ShtuxibusForgeTile>();
+            recipe.AddTile<MutantsForgeTile>();
 
             recipe.Register();
         }

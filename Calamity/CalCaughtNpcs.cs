@@ -9,10 +9,6 @@ namespace ssm.Calamity
     [JITWhenModsEnabled(ModCompatibility.Calamity.Name)]
     internal class CalCaughtNpcs : ModSystem
     {
-        public override bool IsLoadingEnabled(Mod mod)
-        {
-            return ShtunConfig.Instance.CalCaughtNpcs;
-        }
         public static void CalRegisterItems()
         {
             CaughtNPCItem.Add("BrimstoneWitch", ModContent.NPCType<WITCH>(), "'I love smell of brimstone at the morning.'");

@@ -12,10 +12,6 @@ namespace ssm.Thorium.Forces
     [JITWhenModsEnabled(ModCompatibility.Thorium.Name)]
     public class MidgardForce : BaseForce
     {
-        public override bool IsLoadingEnabled(Mod mod)
-        {
-            return ShtunConfig.Instance.TorEnchantments;
-        }
 
         public override void SetDefaults()
         {

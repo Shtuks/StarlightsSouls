@@ -101,12 +101,8 @@ namespace ssm.Items
         public static void RegisterItems()
         {
             CaughtTownies = new Dictionary<int, int>();
-
-            if (ShtunConfig.Instance.ExtraContent)
-            {
-                Add("ShtuxianHarbringer", ModContent.NPCType<ShtuxianHarbringer>(), "'Hey do you know about 3d dimension?'");
-                Add("Monstrocity", ModContent.NPCType<Monstrocity>(), "'Who is Wilta Fargo?'");
-            }
+            Add("ShtuxianHarbringer", ModContent.NPCType<ShtuxianHarbringer>(), "'Hey do you know about 3d dimension?'");
+            Add("Monstrocity", ModContent.NPCType<Monstrocity>(), "'Who is Wilta Fargo?'");
         }
 
         public static void Add(string internalName, int id, string quote)

@@ -27,7 +27,7 @@ namespace ssm.Content.Buffs
                 if (ShaderManager.TryGetFilter("FargowiltasSouls.FinalSpark", out ManagedScreenFilter filter))
                 {
                     filter.Activate();
-                    if (ShtunConfig.Instance.ForcedFilters && Main.WaveQuality == 0)
+                    if (Main.WaveQuality == 0)
                         Main.WaveQuality = 1;
                 }
             }

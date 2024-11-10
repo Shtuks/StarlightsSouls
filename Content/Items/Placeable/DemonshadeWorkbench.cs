@@ -14,10 +14,6 @@ namespace ssm.Content.Items.Placeable
     [JITWhenModsEnabled(ModCompatibility.Calamity.Name)]
     public class DemonshadeWorkbench : ModItem
     {
-        public override bool IsLoadingEnabled(Mod mod)
-        {
-            return ShtunConfig.Instance.ExtraContent;
-        }
         public override void SetDefaults()
         {
             Item.CloneDefaults(ItemType<ShadowspecBar>());

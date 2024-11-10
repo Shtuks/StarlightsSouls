@@ -11,8 +11,8 @@ namespace ssm.CrossMod.Boots
         * Progression look like this:
         * terraspark
         * zephyr boots
-        * terrarium sprinters
-        * aeolus boots.
+        * aeolus boots
+        * terrarium sprinters.
     */
 
     [ExtendsFromMod(ModCompatibility.Thorium.Name)]
@@ -29,16 +29,16 @@ namespace ssm.CrossMod.Boots
             {
                 Recipe recipe = Main.recipe[i];
 
-                //zephyr to sprinters
+                //aeolus to sprinters
                 if (recipe.HasResult(ModContent.ItemType<TerrariumParticleSprinters>()) && recipe.HasIngredient(5000))
                 {
                     recipe.RemoveIngredient(5000);
-                    recipe.AddIngredient<ZephyrBoots>(1);
+                    recipe.AddIngredient<AeolusBoots>(1);
                 }
-                //sprinters to aeolus
-                if (recipe.HasResult(ModContent.ItemType<AeolusBoots>()) && recipe.HasIngredient<ZephyrBoots>())
+                //sprinters to supersonic
+                if (recipe.HasResult(ModContent.ItemType<SupersonicSoul>()) && recipe.HasIngredient(ModContent.ItemType<AeolusBoots>()))
                 {
-                    recipe.RemoveIngredient(ModContent.ItemType<ZephyrBoots>());
+                    recipe.RemoveIngredient(ModContent.ItemType<AeolusBoots>());
                     recipe.AddIngredient<TerrariumParticleSprinters>(1);
                 }
             }
@@ -58,14 +58,12 @@ namespace ssm.CrossMod.Boots
         public override void UpdateAccessory(Item Item, Player player, bool hideVisual)
         {
             if (Item.type == ModContent.ItemType<TerrariumParticleSprinters>()
-                || Item.type == ModContent.ItemType<AeolusBoots>()
                 || Item.type == ModContent.ItemType<SupersonicSoul>())
             {
-                ModContent.Find<ModItem>(ModCompatibility.SoulsMod.Name, "ZephyrBoots").UpdateAccessory(player, false);
+                ModContent.Find<ModItem>(ModCompatibility.SoulsMod.Name, "AeolusBoots").UpdateAccessory(player, false);
             }
 
-            if (Item.type == ModContent.ItemType<AeolusBoots>()
-                || Item.type == ModContent.ItemType<SupersonicSoul>())
+            if (Item.type == ModContent.ItemType<SupersonicSoul>())
             {
                 ModContent.Find<ModItem>(ModCompatibility.Thorium.Name, "TerrariumParticleSprinters").UpdateAccessory(player, false);
             }

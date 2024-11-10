@@ -14,10 +14,6 @@ namespace ssm.Content.Items.Armor
     [AutoloadEquip(EquipType.Legs)]
     public class TrueMonstrosityPants : ModItem
     {
-        public override bool IsLoadingEnabled(Mod mod)
-        {
-            return ShtunConfig.Instance.ExtraContent;
-        }
         public override void SetDefaults()
         {
             ((Entity)this.Item).width = 18;
@@ -25,7 +21,7 @@ namespace ssm.Content.Items.Armor
             this.Item.rare = 11;
             this.Item.expert = true;
             this.Item.value = Item.sellPrice(10, 0, 0, 0);
-            this.Item.defense = 60;
+            this.Item.defense = 100;
         }
 
         public override void UpdateEquip(Player player)
