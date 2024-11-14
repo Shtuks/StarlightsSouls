@@ -13,7 +13,6 @@ using FargowiltasSouls;
 using ssm.Core;
 using SacredTools.Projectiles.Lunar;
 using ssm.Thorium.Enchantments;
-using ThoriumMod;
 
 namespace ssm.Content.Buffs.Minions
 {

@@ -214,18 +214,13 @@ Mods: {
 				Tooltip: ""
 			}
 
-			AuricBullet: {
-				DisplayName: Auric Bullet
-				Tooltip: ""
-			}
-
 			ShroomiteSingularity: {
 				DisplayName: Shroomite Singularity
 				Tooltip: ""
 			}
 
 			CalamitySoul: {
-				DisplayName: Calamity Soul
+				DisplayName: Soul of Tyrant
 				Tooltip:
 					'''
 					☭☭☭☭☭☭☭☭☭☭☭☭☭☭
@@ -262,7 +257,7 @@ Mods: {
 			}
 
 			ShtuxianCurse: {
-				DisplayName: Shtuxian Curse
+				DisplayName: Shtuxibus Curse
 				Tooltip: ""
 			}
 
@@ -2073,7 +2068,7 @@ Mods: {
 			}
 
 			ThoriumSoul: {
-				DisplayName: Thorium Soul
+				DisplayName: Soul of Yggdrasil
 				Tooltip:
 					'''
 					'The true might of the 9 realms is yours!'
@@ -2514,7 +2509,12 @@ Mods: {
 			}
 
 			ShtuxiumBullet: {
-				Tooltip: ""
+				Tooltip:
+					'''
+					Inflict "Chtux'lag'or Inferno" on attacked
+					Homes in on enemies, pass throug blocks
+					Explodes on hit
+					'''
 				DisplayName: Shtuxium Bullet
 			}
 		}

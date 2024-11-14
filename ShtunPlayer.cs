@@ -30,6 +30,7 @@ using ssm.Content.NPCs.StarlightCat;
 using ssm.Core;
 using FargowiltasSouls.Content.Items.Accessories.Masomode;
 using FargowiltasSouls.Core.AccessoryEffectSystem;
+using ssm.Content.Mounts;
 
 namespace ssm
 {
@@ -56,12 +57,14 @@ namespace ssm
         public bool ChtuxlagorInferno;
         public int Screenshake;
 
+        //SCB
         public int ChtuxlagorDeaths;
         public int ChtuxlagorLives;
         public int ChtuxlagorImmune;
         public int ChtuxlagorHealth;
         public int ChtuxlagorHits;
 
+        //Enchants
         public bool equippedPhantasmalEnchantment;
         public bool equippedAbominableEnchantment;
         public bool equippedNekomiEnchantment;
@@ -75,6 +78,7 @@ namespace ssm
         public float GrazeRadius;
         public int DeviGrazeCounter;
         public double DeviGrazeBonus;
+        public bool dotMount;
 
         public override void PreUpdateBuffs()
         {
@@ -104,6 +108,38 @@ namespace ssm
             }
         }
 
+        public override void PreUpdateMovement()
+        {
+            if (Player.whoAmI == Main.myPlayer && dotMount)
+            {
+                float speed = Dot.MovementSpeed;
+
+                if (Player.controlLeft)
+                {
+                    Player.velocity.X = -speed;
+                    Player.ChangeDir(-1);
+                }
+                else if (Player.controlRight)
+                {
+                    Player.velocity.X = speed;
+                    Player.ChangeDir(1);
+                }
+                else
+                    Player.velocity.X = 0f;
+
+                if (Player.controlUp || Player.controlJump)
+                    Player.velocity.Y = -speed;
+
+                else if (Player.controlDown)
+                {
+                    Player.velocity.Y = speed;
+                    if (Collision.TileCollision(Player.position, Player.velocity, Player.width, Player.height, true, false, (int)Player.gravDir).Y == 0f)
+                        Player.velocity.Y = 0.5f;
+                }
+                else
+                    Player.velocity.Y = 0f;
+            }
+        }
         public override void ModifyScreenPosition()
         {
             if (Screenshake > 0)

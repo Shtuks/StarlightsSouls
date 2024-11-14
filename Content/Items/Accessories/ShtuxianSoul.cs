@@ -20,6 +20,7 @@ using ssm.Content.Items.Materials;
 using ssm.Content.Buffs.Minions;
 using ssm.Content.SoulToggles;
 using ssm.Content.Tiles;
+using static ssm.Content.Items.Accessories.NekomiEnchant;
 
 namespace ssm.Content.Items.Accessories
 {
@@ -175,7 +176,10 @@ namespace ssm.Content.Items.Accessories
             player.lifeRegen *= 2;
             player.palladiumRegen = true;
             player.crimsonRegen = true;
-            player.GetAttackSpeed(DamageClass.Generic) += 10f;
+            if (player.AddEffect<ShtuxianSoulEffect>(Item))
+            {
+                player.GetAttackSpeed(DamageClass.Generic) += 10f;
+            }
             player.accFishingLine = true;
             player.arcticDivingGear = true;
             player.accTackleBox = true;
@@ -207,9 +211,11 @@ namespace ssm.Content.Items.Accessories
             recipe.Register();
         }
 
-        public abstract class ShtuxianSoulEffect : AccessoryEffect
+        public class ShtuxianSoulEffect : AccessoryEffect
         {
             public override Header ToggleHeader => Header.GetHeader<ShtuxianSoulHeader>();
+            public override int ToggleItemType => ModContent.ItemType<ShtuxianSoul>();
+            public override bool MutantsPresenceAffects => true;
         }
     }
 }

@@ -8,6 +8,7 @@ using SacredTools.Content.Items.Armor.Dragon;
 using ssm.SoA.Souls;
 using ssm.Core;
 using SacredTools.Content.Items.Accessories.Wings;
+using SacredTools.Content.Items.DEV;
 
 namespace ssm
 {
@@ -20,6 +21,13 @@ namespace ssm
             RecipeGroup.RegisterGroup("ssm:AsthralHelms", rec);
             RecipeGroup rec2 = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " Flarium Helmet", ModContent.ItemType<FlariumCrown>(), ModContent.ItemType<FlariumMask>(), ModContent.ItemType<FlariumCowl>());
             RecipeGroup.RegisterGroup("ssm:FlariumHelms", rec2);
+        }
+
+        public override void AddRecipes()
+        {
+            Recipe.Create(ModContent.ItemType<RageSuppressor>(), 1).AddIngredient<BetaCoupon>(2).Register();
+            Recipe.Create(ModContent.ItemType<MilinticaDash>(), 1).AddIngredient<BetaCoupon>(2).Register();
+            Recipe.Create(ModContent.ItemType<HeartOfThePlough>(), 1).AddIngredient<BetaCoupon>(2).Register();
         }
 
         public override void PostAddRecipes()

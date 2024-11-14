@@ -1,10 +1,10 @@
 displayName = StarlightCat's Souls Expansion
 author = StarlightCat
-version = 0.2.4.4
+version = 0.2.4.5
 homepage = https://discord.gg/xB9s8SyQJr
-modReferences = FargowiltasSouls, Fargowiltas, Luminance, FargowiltasMusic
+modReferences = FargowiltasSouls, Fargowiltas, Luminance
 weakReferences = CalamityMod, Redemption, SacredTools, ThoriumMod, FargowiltasCrossmod, CalValEX, FargoMoreSoulsCompat, CatalystMod, NoxusBoss, CalamityHunt, MagicStorage, DragonLens
-sortArfter = FargowiltasSouls, Fargowiltas, Luminance, FargowiltasMusic
+sortArfter = FargowiltasSouls, Fargowiltas, Luminance
 includePDB = true
 includeSource = true
 buildIgnore = lib\*,

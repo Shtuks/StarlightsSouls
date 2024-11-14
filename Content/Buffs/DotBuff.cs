@@ -14,6 +14,7 @@ namespace ssm.Content.Buffs
 
         public override void Update(Player player, ref int buffIndex)
         {
+            player.Shtun().dotMount = true;
             player.mount.SetMount(ModContent.MountType<Dot>(), player);
             player.buffTime[buffIndex] = 10;
         }
