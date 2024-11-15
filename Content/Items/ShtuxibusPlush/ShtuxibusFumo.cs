@@ -14,7 +14,6 @@ namespace ssm.Content.Items.ShtuxibusPlush
     //[JITWhenModsEnabled("CalValEX")]
     public class ShtuxibusFumo : ModItem
     {
-        public bool ex;
         public override string Texture => "ssm/Content/Items/ShtuxibusPlush/ShtuxibusPlush";
 
         public override void SetStaticDefaults()
@@ -62,16 +61,15 @@ namespace ssm.Content.Items.ShtuxibusPlush
                 });
             }
 
-            if (ex)
+            if (ssm.debug)
             {
-
                 if (player.whoAmI == Main.myPlayer)
                 {
                     int type = ModContent.NPCType<StarlightCatBoss>();
 
                     if (Main.netMode != NetmodeID.MultiplayerClient)
                     {
-                        int y = (int)(player.position.Y + 70);
+                        int y = (int)(player.position.Y - 300);
                         NPC.NewNPC(player.GetSource_FromThis(), (int)player.position.X, y, type, 0, 0, 0, 0, 1);
                     }
                     else
@@ -80,7 +78,7 @@ namespace ssm.Content.Items.ShtuxibusPlush
                     }
                 }
             }
-            ShtunUtils.DisplayLocalizedText("Work in progress.");
+            //ShtunUtils.DisplayLocalizedText("Work in progress.");
             return true;
         }
 

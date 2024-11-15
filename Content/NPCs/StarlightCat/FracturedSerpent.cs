@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ssm.Content.NPCs.StarlightCat
 {
-    internal class TrueShtuxianCurse
+    internal class FracturedSerpent
     {
     }
 }

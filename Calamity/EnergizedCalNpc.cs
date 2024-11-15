@@ -44,9 +44,9 @@ namespace ssm.Calamity
 
         public override void SetDefaults(NPC npc)
         {
-            int num = 30000;
-            int num2 = 300000;
-            int num3 = 3000000;
+            int num = 60000;
+            int num2 = 600000;
+            int num3 = 6000000;
             bool flag = true;
 
             if (ssm.SwarmSetDefaults)

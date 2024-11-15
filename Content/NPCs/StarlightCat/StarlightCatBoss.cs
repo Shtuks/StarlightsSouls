@@ -1,23 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Terraria.ID;
 using Terraria;
 using Terraria.ModLoader;
-using ssm.Content.NPCs.Shtuxibus;
 using System.IO;
-using ssm.Content.Buffs;
 using Terraria.Audio;
 using Microsoft.Xna.Framework;
 using Terraria.Graphics.Effects;
-using ssm.Content.Items.Accessories;
 using Microsoft.Xna.Framework.Graphics;
 using ssm.Content.Items.Consumables;
 using ssm.Systems;
-using FargowiltasSouls.Content.Bosses.MutantBoss;
 using System.Reflection;
+using ReLogic.Utilities;
+using FargowiltasSouls.Content.Bosses.MutantBoss;
 
 /*
  * Blushiemagic but 1.4?
@@ -30,15 +25,15 @@ namespace ssm.Content.NPCs.StarlightCat
     {
         //Variables
         Player player => Main.player[NPC.target];
-        //public static string userName = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
         internal static List<BaseProj> bullets = new List<BaseProj>();
+        public SlotId raySoundSlot;
         public static readonly SoundStyle ray = new("ssm/Assets/Sounds/beam") { };
         public static readonly SoundStyle rayCharge = new("ssm/Assets/Sounds/charge") { };
         public static readonly SoundStyle spawn = new("ssm/Assets/Sounds/chtuxSpawn") { };
         public int ritualProj, spriteProj, ringProj;
-        internal static int[] index = [-1, -1, -1, -1, -1, -1];
-        public const int ArenaSize = 1000;
-        public bool playerInvulTriggered;
+        public static int ArenaSize = isEX ? 800 : 1000;
+        public static bool playerInvulTriggered;
+        public static bool isEX = false;
         public static MethodInfo CSGodmodeOn = default;
         public static MethodInfo HerosGodmodeOn = default;
         public static float flash = 0f;
@@ -46,6 +41,7 @@ namespace ssm.Content.NPCs.StarlightCat
         public bool godmodeCheat = false;
         public bool spawnedConstructs; 
         public static Vector2 Origin;
+        public static float rayTelegraphDuration = 0f; //isEX ? 0f : 60f;
         public bool spawned;
         public bool CameraFocus = false;
         public static int phase;
@@ -65,127 +61,133 @@ namespace ssm.Content.NPCs.StarlightCat
 
 
         #region help funcs
-        //void SpawnTalk()
-        //{
-        //    AntiCheat();
-        //    if (NPC.ai[3] == 1)
-        //    {
-        //        if (!WorldSaveSystem.downedChtuxlagor)
-        //        {
-        //            if (player.Shtun().ChtuxlagorDeaths < 1)
-        //            {
-        //                //SoundEngine.PlaySound(spawn, Origin);
-        //                if (NPC.localAI[1] == 100)
-        //                {
-        //                    ShtunUtils.DisplayLocalizedText("I hope you enjoyed my mod.", Color.Teal);
-        //                }
-        //                if (NPC.localAI[1] == 100)
-        //                {
-        //                    ShtunUtils.DisplayLocalizedText("This is your finale challenge.", Color.Teal);
-        //                }
-        //            }
-        //            if (player.Shtun().ChtuxlagorDeaths == 1)
-        //            {
-        //                if (NPC.localAI[1] == 100)
-        //                {
-        //                    ShtunUtils.DisplayLocalizedText("Is one death not enough, " + userName + "?", Color.Teal);
-        //                }
-        //            }
-        //            if (player.Shtun().ChtuxlagorDeaths == 2)
-        //            {
-        //                if (NPC.localAI[1] == 100)
-        //                {
-        //                    ShtunUtils.DisplayLocalizedText("How Interesting. But why do you keep coming back?", Color.Teal);
-        //                }
-        //            }
-        //            if (player.Shtun().ChtuxlagorDeaths == 3)
-        //            {
-        //                if (NPC.localAI[1] == 100)
-        //                {
-        //                    ShtunUtils.DisplayLocalizedText("This is getting hillarious. Your tenacity amazes me.", Color.Teal);
-        //                }
-        //            }
-        //            if (player.Shtun().ChtuxlagorDeaths == 4)
-        //            {
-        //                if (NPC.localAI[1] == 100)
-        //                {
-        //                    ShtunUtils.DisplayLocalizedText("Hey " + userName + ", you are getting boring for me.", Color.Teal);
-        //                }
-        //            }
-        //            if (player.Shtun().ChtuxlagorDeaths == 5)
-        //            {
-        //                if (NPC.localAI[1] == 100)
-        //                {
-        //                    ShtunUtils.DisplayLocalizedText("What will you do if I just take away your ability to be respawn?", Color.Teal);
-        //                }
-        //            }
-        //            if (player.Shtun().ChtuxlagorDeaths == 6)
-        //            {
-        //                if (NPC.localAI[1] == 100)
-        //                {
-        //                    ShtunUtils.DisplayLocalizedText("I have no words.", Color.Teal);
-        //                }
-        //            }
-        //            if (player.Shtun().ChtuxlagorDeaths == 7)
-        //            {
-        //                if (NPC.localAI[1] == 100)
-        //                {
-        //                    ShtunUtils.DisplayLocalizedText("I will just count how many times you dead.", Color.Teal);
-        //                }
-        //            }
-        //            if (player.Shtun().ChtuxlagorDeaths > 7)
-        //            {
-        //                if (NPC.localAI[1] == 100)
-        //                {
-        //                    ShtunUtils.DisplayLocalizedText("You dead" + player.Shtun().ChtuxlagorDeaths + "times.", Color.Teal);
-        //                }
-        //            }
-        //        }
-        //        else
-        //        {
-        //            if (player.Shtun().ChtuxlagorDeaths < 1)
-        //            {
-        //                if (NPC.localAI[1] == 100)
-        //                {
-        //                    ShtunUtils.DisplayLocalizedText("What? You completed my challenge and decided to summon me again?.", Color.Teal);
-        //                }
-        //                if (NPC.localAI[1] == 120)
-        //                {
-        //                    ShtunUtils.DisplayLocalizedText("I don't understand why you like to suffer so much.", Color.Teal);
-        //                }
-        //            }
-        //            if (player.Shtun().ChtuxlagorDeaths == 1)
-        //            {
-        //                if (NPC.localAI[1] == 100)
-        //                {
-        //                    ShtunUtils.DisplayLocalizedText("DIE " + userName, Color.Teal);
-        //                }
-        //            }
-        //            if (player.Shtun().ChtuxlagorDeaths == 2)
-        //            {
-        //                if (NPC.localAI[1] == 100)
-        //                {
-        //                    ShtunUtils.DisplayLocalizedText("I will just count how many times you dead.", Color.Teal);
-        //                }
-        //            }
-        //            if (player.Shtun().ChtuxlagorDeaths > 2)
-        //            {
-        //                if (NPC.localAI[1] == 100)
-        //                {
-        //                    ShtunUtils.DisplayLocalizedText("You dead" + player.Shtun().ChtuxlagorDeaths + "times.", Color.Teal);
-        //                }
-        //            }
-        //        }
-        //    }
-        //    else
-        //    {
-        //        if (NPC.localAI[1] == 100)
-        //        {
-        //            ShtunUtils.DisplayLocalizedText("You can't spawn me via cheats, " + userName + ".", Color.Teal);
-        //            player.Shtun().ERASE(player);
-        //        }
-        //    }
-        //}
+        void MusicAndSky()
+        {
+            if (!SkyManager.Instance["ssm:Chtuxlagor"].IsActive())
+                SkyManager.Instance.Activate("ssm:Chtuxlagor");
+            Music = ShtunUtils.Stalin ? MusicLoader.GetMusicSlot(Mod, "Assets/Music/StainedBrutalCommunism") : Music = MusicLoader.GetMusicSlot(Mod, "Assets/Music/Halcyon");
+        }
+        void SpawnTalk()
+        {
+            AntiCheat();
+            if (NPC.ai[3] == 1)
+            {
+                if (!WorldSaveSystem.downedChtuxlagor)
+                {
+                    if (player.Shtun().ChtuxlagorDeaths < 1)
+                    {
+                        //SoundEngine.PlaySound(spawn, Origin);
+                        if (NPC.localAI[1] == 100)
+                        {
+                            ShtunUtils.DisplayLocalizedText("I hope you enjoyed my mod.", Color.Teal);
+                        }
+                        if (NPC.localAI[1] == 100)
+                        {
+                            ShtunUtils.DisplayLocalizedText("This is your final challenge.", Color.Teal);
+                        }
+                    }
+                    if (player.Shtun().ChtuxlagorDeaths == 1)
+                    {
+                        if (NPC.localAI[1] == 100)
+                        {
+                            ShtunUtils.DisplayLocalizedText("Is one death wasn't enough, " + ssm.userName + "?", Color.Teal);
+                        }
+                    }
+                    if (player.Shtun().ChtuxlagorDeaths == 2)
+                    {
+                        if (NPC.localAI[1] == 100)
+                        {
+                            ShtunUtils.DisplayLocalizedText("How Interesting. But why do you keep coming back?", Color.Teal);
+                        }
+                    }
+                    if (player.Shtun().ChtuxlagorDeaths == 3)
+                    {
+                        if (NPC.localAI[1] == 100)
+                        {
+                            ShtunUtils.DisplayLocalizedText("This is getting hillarious. Your tenacity amazes me.", Color.Teal);
+                        }
+                    }
+                    if (player.Shtun().ChtuxlagorDeaths == 4)
+                    {
+                        if (NPC.localAI[1] == 100)
+                        {
+                            ShtunUtils.DisplayLocalizedText("Hey " + ssm.userName + ", you are getting boring for me.", Color.Teal);
+                        }
+                    }
+                    if (player.Shtun().ChtuxlagorDeaths == 5)
+                    {
+                        if (NPC.localAI[1] == 100)
+                        {
+                            ShtunUtils.DisplayLocalizedText("What will you do if I just take away your ability to be respawn?", Color.Teal);
+                        }
+                    }
+                    if (player.Shtun().ChtuxlagorDeaths == 6)
+                    {
+                        if (NPC.localAI[1] == 100)
+                        {
+                            ShtunUtils.DisplayLocalizedText("I have no words.", Color.Teal);
+                        }
+                    }
+                    if (player.Shtun().ChtuxlagorDeaths == 7)
+                    {
+                        if (NPC.localAI[1] == 100)
+                        {
+                            ShtunUtils.DisplayLocalizedText("I will just count how many times you dead.", Color.Teal);
+                        }
+                    }
+                    if (player.Shtun().ChtuxlagorDeaths > 7)
+                    {
+                        if (NPC.localAI[1] == 100)
+                        {
+                            ShtunUtils.DisplayLocalizedText("You dead " + player.Shtun().ChtuxlagorDeaths + " times.", Color.Teal);
+                        }
+                    }
+                }
+                else
+                {
+                    if (player.Shtun().ChtuxlagorDeaths < 1)
+                    {
+                        if (NPC.localAI[1] == 100)
+                        {
+                            ShtunUtils.DisplayLocalizedText("What? You completed my challenge and decided to summon me again?.", Color.Teal);
+                        }
+                        if (NPC.localAI[1] == 120)
+                        {
+                            ShtunUtils.DisplayLocalizedText("I don't understand why you like to suffer so much.", Color.Teal);
+                        }
+                    }
+                    if (player.Shtun().ChtuxlagorDeaths == 1)
+                    {
+                        if (NPC.localAI[1] == 100)
+                        {
+                            ShtunUtils.DisplayLocalizedText("DIE " + ssm.userName, Color.Teal);
+                        }
+                    }
+                    if (player.Shtun().ChtuxlagorDeaths == 2)
+                    {
+                        if (NPC.localAI[1] == 100)
+                        {
+                            ShtunUtils.DisplayLocalizedText("I will just count how many times you dead.", Color.Teal);
+                        }
+                    }
+                    if (player.Shtun().ChtuxlagorDeaths > 2)
+                    {
+                        if (NPC.localAI[1] == 100)
+                        {
+                            ShtunUtils.DisplayLocalizedText("You dead" + player.Shtun().ChtuxlagorDeaths + "times.", Color.Teal);
+                        }
+                    }
+                }
+            }
+            else
+            {
+                if (NPC.localAI[1] == 100)
+                {
+                    ShtunUtils.DisplayLocalizedText("You can't spawn me via cheats, " + ssm.userName + ".", Color.Teal);
+                    player.Shtun().ERASE(player);
+                }
+            }
+        }
         void AntiCheat()
         {
             if (!godmodeCheat)
@@ -247,7 +249,7 @@ namespace ssm.Content.NPCs.StarlightCat
                     Main.LocalPlayer.inventory[susindex].TurnToAir();
                     if (!roh && !WorldSaveSystem.downedChtuxlagor)
                     {
-                        ShtunUtils.DisplayLocalizedText("You can't use that pink glowing staff against my attacks.", Color.Teal);
+                        ShtunUtils.DisplayLocalizedText("No rod of harmony.", Color.Teal);
                         roh = true;
                     }
                 }
@@ -261,6 +263,18 @@ namespace ssm.Content.NPCs.StarlightCat
                 }
             }
         }
+        void JustSpawned()
+        {
+            if (NPC.localAI[1] == 200)
+            {
+                ShtunUtils.DisplayLocalizedText("Well, let's start.", Color.Teal);
+                ChooseNextAttack(1);
+            }
+        }
+        void CheckModules()
+        {
+
+        }
         void ChooseNextAttack(params int[] args)
         {
             NPC.ai[0] = Main.rand.Next(args);
@@ -271,15 +285,10 @@ namespace ssm.Content.NPCs.StarlightCat
             if (!spawned)
             {
                 Origin = NPC.Center;
-                if (ssm.debug) { ShtunUtils.DisplayLocalizedText("You have " + player.Shtun().ChtuxlagorDeaths + " deaths.", Color.Teal); }
+                if (ssm.debug && player.Shtun().ChtuxlagorDeaths < 7) { ShtunUtils.DisplayLocalizedText("You have " + player.Shtun().ChtuxlagorDeaths + " deaths.", Color.Teal); }
                 phase = 1;
                 this.NPC.life = this.NPC.lifeMax;
                 spawned = true;
-            }
-
-            if (!SkyManager.Instance["ssm:Chtuxlagor"].IsActive())
-            {
-                SkyManager.Instance.Activate("ssm:Chtuxlagor");
             }
 
             //Boss debuff
@@ -296,12 +305,6 @@ namespace ssm.Content.NPCs.StarlightCat
             if (forceDespawn || ((!p.active || p.dead)))
             {
                 player.Shtun().ChtuxlagorDeaths++;
-                bool v = false;
-                if (!v)
-                {
-                    ShtunUtils.DisplayLocalizedText("Well, i hope we will meet again.", Color.Teal);
-                    v = true;
-                }
                 NPC.TargetClosest();
                 p = Main.player[NPC.target];
                 if (forceDespawn || !p.active || p.dead)
@@ -471,7 +474,84 @@ namespace ssm.Content.NPCs.StarlightCat
         #endregion
 
         #region attack
-        void DeathrayPlusManyEyes() { }
+        void RotatingDeathrays()
+        {
+            if (ssm.debug) { ShtunUtils.DisplayLocalizedText("Doing RotatingDeathrays()", Color.Teal); }
+            
+            //Variables
+            float DeathrayAttackDuration = 700f;
+            int totalProjectiles = isEX ? 16 : Main.expertMode ? 12 : 8;
+            float radians = MathHelper.TwoPi / totalProjectiles;
+            bool normalLaserRotation = NPC.localAI[0] % 2f == 0f;
+            float velocity = 6f;
+            double angleA = radians * 0.5;
+            double angleB = MathHelper.ToRadians(90f) - angleA;
+            float velocityX2 = (float)(velocity * Math.Sin(angleA) / Math.Sin(angleB));
+            Vector2 spinningPoint = normalLaserRotation ? new Vector2(0f, -velocity) : new Vector2(-velocityX2, -velocity);
+            spinningPoint.Normalize();
+
+            //Timer
+            NPC.localAI[2]++;
+
+            if (NPC.localAI[2] < rayTelegraphDuration)
+            {
+                //Spawn telegraphs
+                if (NPC.localAI[2] == 1f)
+                {
+                    SoundEngine.PlaySound(rayCharge, NPC.Center);
+                    if (Main.netMode != NetmodeID.MultiplayerClient)
+                    {
+                        //int type = ModContent.ProjectileType<ChtuxlagorRayTelegraph>();
+                        //Vector2 spawnPoint = NPC.Center + new Vector2(-1f, 23f);
+                        //for (int k = 0; k < totalProjectiles; k++)
+                        //{
+                        //    Vector2 laserVelocity = spinningPoint.RotatedBy(radians * k);
+                        //    Projectile.NewProjectile(NPC.GetSource_FromThis(), spawnPoint + Vector2.Normalize(laserVelocity) * 17f, laserVelocity, type, 0, 0f, Main.myPlayer, 0f, NPC.whoAmI);
+                        //}
+                    }
+                }
+            }
+            else
+            {
+                //Spawn rays
+                if (NPC.localAI[2] == rayTelegraphDuration)
+                {
+                    raySoundSlot = SoundEngine.PlaySound(rayCharge, NPC.Center);
+
+                    if (Main.netMode != NetmodeID.MultiplayerClient)
+                    {
+                        int type = ModContent.ProjectileType<ChtuxlagorDeathraySmall>();
+                        int damage = NPC.damage;
+                        Vector2 spawnPoint = NPC.Center + new Vector2(-1f, 23f);
+                        for (int k = 0; k < totalProjectiles; k++)
+                        {
+                            Vector2 laserVelocity = spinningPoint.RotatedBy(radians * k);
+                            Projectile.NewProjectile(NPC.GetSource_FromThis(), NPC.Center, laserVelocity,
+                            type, damage, 0f, Main.myPlayer, 0, NPC.whoAmI);
+                            //Projectile.NewProjectile(NPC.GetSource_FromThis(), spawnPoint + Vector2.Normalize(laserVelocity) * 35f, laserVelocity, type, damage, 0f, Main.myPlayer, 0f, NPC.whoAmI);
+                        }
+                    }
+                }
+            }
+
+            //End of attack
+            float var = isEX ? 2 : 1;
+            float var2 = //rayTelegraphDuration + (
+                         DeathrayAttackDuration * var;
+
+            if (NPC.localAI[2] >= var2)
+            {
+                //deathraySound?.Stop();
+                NPC.TargetClosest();
+                NPC.netUpdate = true;
+                ChooseNextAttack(1);
+                //ChooseNextAttack(2, 3, 4, 5, 6, 7);
+            }
+        }
+        void Bullethell()
+        {
+
+        }
         #endregion
 
         #region basic boss funcs
@@ -484,13 +564,12 @@ namespace ssm.Content.NPCs.StarlightCat
         }
         public override void SetDefaults()
         {
-            NPC.BossBar = ModContent.GetInstance<ShtuxibusBar>();
-            NPC.width = 320;
-            NPC.height = 200;
+            //NPC.BossBar = ModContent.GetInstance<ShtuxibusBar>();
+            NPC.width = 120;
+            NPC.height = 120;
             NPC.damage = 100000;
             NPC.value = Item.buyPrice(999999);
             NPC.lifeMax = 1000000000;
-            NPC.HitSound = SoundID.NPCHit1;
             NPC.noGravity = true;
             NPC.noTileCollide = true;
             NPC.npcSlots = 745f;
@@ -499,7 +578,7 @@ namespace ssm.Content.NPCs.StarlightCat
             NPC.lavaImmune = true;
             NPC.aiStyle = -1;
             NPC.netAlways = true;
-            NPC.scale = 0.5f;
+            NPC.scale = 0.8f;
             NPC.timeLeft = NPC.activeTime * 30;
             SceneEffectPriority = SceneEffectPriority.BossHigh;
             //Music = MusicLoader.GetMusicSlot(this.Mod, "Assets/Music/Chtuxlagor");
@@ -548,13 +627,13 @@ namespace ssm.Content.NPCs.StarlightCat
             NPC.SetEventFlagCleared(ref WorldSaveSystem.downedChtuxlagor, -1);
             if (player.Shtun().ChtuxlagorDeaths != 0)
             {
-                //ShtunUtils.DisplayLocalizedText("Congratulations, " + userName + ". You did it in " + player.Shtun().ChtuxlagorDeaths + " attempts.", Color.Teal);
+                ShtunUtils.DisplayLocalizedText("Congratulations, " + ssm.userName + ". You did it in " + player.Shtun().ChtuxlagorDeaths + " attempts.", Color.Teal);
                 ShtunUtils.DisplayLocalizedText("Special thanks to Fargowilta, Javyz, Terry N Muse, Blushiemagic, DanYami, DevaVade, cheesenuggets, Mayeneznik, Yum, Jopojelly, ChickenBones, Jofairden, DivermanSam.", Color.Teal);
             }
             else
             {
                 player.Shtun().ERASE(player);
-                ShtunUtils.DisplayLocalizedText("No deaths? Technically this is impossible. Unless you are Yrmir or something. Anyway. 100% you just cheated.", Color.Teal);
+                ShtunUtils.DisplayLocalizedText("No deaths? Technically this is impossible. 100% you just cheated.", Color.Teal);
             }
             player.Shtun().ChtuxlagorDeaths = 0;
             player.Shtun().ChtuxlagorHits = 0;
@@ -569,11 +648,6 @@ namespace ssm.Content.NPCs.StarlightCat
             NPC.localAI[2] = reader.ReadSingle();
             //Phaze
             NPC.localAI[3] = reader.ReadSingle();
-        }
-        public static void VisualEffectsSky()
-        {
-            if (!SkyManager.Instance["ssm:Chtuxlagor"].IsActive())
-                SkyManager.Instance.Activate("ssm:Chtuxlagor");
         }
         public override void OnHitPlayer(Player target, Player.HurtInfo hurtInfo)
         {
@@ -593,26 +667,27 @@ namespace ssm.Content.NPCs.StarlightCat
 
             ShtunNpcs.Chtuxlagor = NPC.whoAmI;
 
+            MusicAndSky();
             AliveCheck(player);
-            //SpawnTalk();
+            SpawnTalk();
             ManageAurasAndPreSpawn();
             ManageNeededProjectiles();
 
             //attacks handler
-            //switch ((int)NPC.ai[0])
-            //{
-            //    case 0: ; break;
-            //    case 1: ; break;
-            //    case 2: ; break;
-            //    case 3: ; break;
-            //    case 4: ; break;
-            //    case 5: ; break;
-            //    case 6: ; break;
-            //    case 7: ; break;
+            switch ((int)NPC.ai[0])
+            {
+                case 0: JustSpawned(); break;
+                case 1: RotatingDeathrays(); break;
+                //case 2:; break;
+                //case 3:; break;
+                //case 4:; break;
+                //case 5:; break;
+                //case 6:; break;
+                //case 7:; break;
 
-            //default: NPC.ai[0] = 0; goto case 0;
-            //}
-        }
+                default: NPC.ai[0] = 0; goto case 0;
+                }
+            }
         #endregion
     }
 }

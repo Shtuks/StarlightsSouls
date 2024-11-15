@@ -9,6 +9,8 @@ using ssm.SoA.Souls;
 using ssm.Core;
 using SacredTools.Content.Items.Accessories.Wings;
 using SacredTools.Content.Items.DEV;
+using FargowiltasSouls.Content.Items.Accessories.Masomode;
+using Terraria.ID;
 
 namespace ssm
 {
@@ -35,6 +37,11 @@ namespace ssm
             for (int i = 0; i < Recipe.numRecipes; i++)
             {
                 Recipe recipe = Main.recipe[i];
+                if(recipe.HasResult<FloraFist>() && !recipe.HasIngredient(ItemID.MechanicalGlove))
+                {
+                    recipe.RemoveIngredient(ItemID.FireGauntlet);
+                    recipe.AddIngredient(ItemID.MechanicalGlove);
+                }
                 if (recipe.HasResult<EternitySoul>() && !recipe.HasIngredient<SoASoul>())
                 {
                     recipe.AddIngredient<SoASoul>();

@@ -20,6 +20,8 @@ using ssm.Content.Items.Accessories;
 using ssm.Core;
 using CalamityMod.Items.Accessories;
 using ssm.Content.Tiles;
+using FargowiltasCrossmod.Content.Calamity.Items.Accessories.Forces;
+using FargowiltasCrossmod.Content.Calamity.Items.Accessories;
 
 
 namespace ssm.Calamity.Souls
@@ -42,20 +44,24 @@ namespace ssm.Calamity.Souls
         {
             ModContent.Find<ModItem>(this.FargoCross.Name, "ExplorationForce").UpdateAccessory(player, false);
             ModContent.Find<ModItem>(this.FargoCross.Name, "BrandoftheBrimstoneWitch").UpdateAccessory(player, false);
-            if (player.AddEffect<ShatteredCommunityEffect>(Item))
-                ModContent.GetInstance<ShatteredCommunity>().UpdateAccessory(player, hideVisual);
+                
+            
+            ModContent.GetInstance<ShatteredCommunity>().UpdateAccessory(player, hideVisual);
+            ModContent.GetInstance<TheCommunity>().UpdateAccessory(player, hideVisual);
+            ModContent.GetInstance<ElementalArtifact>().UpdateAccessory(player, hideVisual);
+            ModContent.GetInstance<PotJT>().UpdateAccessory(player, hideVisual);
 
             player.buffImmune[ModContent.Find<ModBuff>(this.FargoCross.Name, "CalamitousPresenceBuff").Type] = true;
         }
 
         public override void AddRecipes()
         {
-          Recipe recipe = this.CreateRecipe(1);
+            Recipe recipe = this.CreateRecipe(1);
             recipe.AddIngredient<ShatteredCommunity>();
-
-            recipe.AddIngredient(this.FargoCross, "ExplorationForce", 1);
-            recipe.AddIngredient(this.FargoCross, "BrandoftheBrimstoneWitch", 1);
-            recipe.AddIngredient(this.FargoSoul, "AbomEnergy", 10);
+            recipe.AddIngredient<ExplorationForce>();
+            recipe.AddIngredient<BrandoftheBrimstoneWitch>();
+            recipe.AddIngredient<PotJT>();
+            recipe.AddIngredient<AbomEnergy>(10);
             
             recipe.AddTile<DemonshadeWorkbenchTile>();
 
@@ -67,12 +73,6 @@ namespace ssm.Calamity.Souls
         public abstract class CalamitySoulEffect : AccessoryEffect
         {
             public override Header ToggleHeader => Header.GetHeader<CalamitySoulHeader>();
-        }
-
-        public class ShatteredCommunityEffect : CalamitySoulEffect
-        {
-            public override int ToggleItemType => ModContent.ItemType<ShatteredCommunity>();
-            public override bool MutantsPresenceAffects => true;
         }
     }
 }

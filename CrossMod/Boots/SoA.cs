@@ -4,6 +4,7 @@ using ssm.Core;
 using SacredTools.Content.Items.Accessories;
 using FargowiltasSouls.Content.Items.Accessories.Masomode;
 using FargowiltasSouls.Content.Items.Accessories.Souls;
+using Terraria.ID;
 
 namespace ssm.CrossMod.Boots
 {
@@ -40,6 +41,10 @@ namespace ssm.CrossMod.Boots
                 // runners to aeolus
                 if (recipe.HasResult(ModContent.ItemType<AeolusBoots>()) && recipe.HasIngredient<ZephyrBoots>())
                 {
+                    recipe.RemoveIngredient(ItemID.SoulofMight);
+                    recipe.RemoveIngredient(ItemID.SoulofSight);
+                    recipe.RemoveIngredient(ItemID.SoulofFright);
+                    recipe.AddIngredient(ItemID.Ectoplasm, 10);
                     recipe.RemoveIngredient(ModContent.ItemType<ZephyrBoots>());
                     recipe.AddIngredient<RoyalRunners>(1);
                 }

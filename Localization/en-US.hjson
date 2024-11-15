@@ -66,7 +66,7 @@ Mods: {
 				Tooltip:
 					'''
 					Effects of [i:FargowiltasSouls/EternitySoul], [i:ssm/EternityForce], [i:ssm/ShtuxianEnchant]
-					Your attacks inflict most of debuffs, absurdly increace life regeneration
+					Your attacks inflict most of debuffs, all defense and regeneration bonuses x2
 					Grants immunity to all debuffs except "Chtux'lag'or Inferno" and "Shtuxibus Curse"
 					Press [shtuxianSuper] key to become invinvible for 20 seconds
 					Increace maximum eternity crits by 2000, faster mutant eye cooldown
@@ -220,8 +220,8 @@ Mods: {
 			}
 
 			CalamitySoul: {
-				DisplayName: Soul of Tyrant
-				Tooltip:
+				DisplayName: Soul of the Godseeker
+				TooltipOld:
 					'''
 					☭☭☭☭☭☭☭☭☭☭☭☭☭☭
 
@@ -229,11 +229,18 @@ Mods: {
 					Are you tired of suffering from a Mutant in masochist mode?
 					Then this soul is for you! Its capabilities give you nothing!
 					Nothing will change if you get it! 
-					Order our product right now. 
+					Craft our product right now. 
 
 					StarlightCat Industies®™
 
 					☭☭☭☭☭☭☭☭☭☭☭☭☭☭
+					'''
+				Tooltip:
+					'''
+					Effects of The Community, Shattered Community
+					Effects of Force of Exploration
+					Effects of Brand of the Brimstone Witch and Pendant of the Godseeker.
+					'The land may never grow quiet again, but peace can certainly be brought upon it.'
 					'''
 			}
 
@@ -2517,6 +2524,35 @@ Mods: {
 					'''
 				DisplayName: Shtuxium Bullet
 			}
+
+			ElementalArtifact: {
+				DisplayName: Elemental Artifact
+				Tooltip:
+					'''
+					Effects of Aero, Cryo, Bloom and Chaos Stones. 
+					'The power of the elemental stones reside within you.'
+					'''
+			}
+
+			PotJT: {
+				DisplayName: Pendant of the Godseeker
+				Tooltip:
+					'''
+					Effects of Aquatic Heart, Toxic Heart, Leviathan Ambergris, Hide of Astrum Deus.
+					Effects of Blazing Core, The Evolution, Affliction, Bloodflare Core and Elemental Artifact.
+					'It gives off a weird aura.'
+					'''
+			}
+
+			MonstrosityEnchant: {
+				DisplayName: Monstrosity Enchant
+				Tooltip: ""
+			}
+
+			MaxChargerDebug: {
+				Tooltip: ""
+				DisplayName: Max Charger Debug
+			}
 		}
 
 		Buffs: {
@@ -2567,7 +2603,7 @@ Mods: {
 
 			YharimBuff: {
 				DisplayName: Yharim Buff
-				Description: Your power rival with Jungle Tyrant's
+				Description: Your power rival with Godseeker's
 			}
 
 			CelestialPowerBuff: {
@@ -2606,7 +2642,7 @@ Mods: {
 			}
 
 			DotBuff: {
-				Description: Mods.ssm.Buffs.DotBuff.Description
+				Description: Your hitbox is a singe dot
 				DisplayName: Dot Buff
 			}
 		}
@@ -2757,9 +2793,21 @@ Mods: {
 					KilledAllMessage: StarlightCat killed all players.
 				}
 			}
+
+			StarlightCatChaos.DisplayName: Chaos
+			StarlightCatCreator.DisplayName: StarlightCat Creator
+			StarlightCatDestroyer.DisplayName: StarlightCat Destroyer
+			StarlightCatOrder.DisplayName: Order
 		}
 
 		Toggler: {
+			ChaosStoneEffect: Chaos Stone
+			CryoStoneEffect: Cryo Stone
+			BloomStoneEffect: Bloom Stone
+			ToxicHeartEffect: Toxic Heart
+			ShtuxianSoulEffect: Shtuxian attack speed
+			HideofAstrumDeusEffect: Hide of Astrum Deus
+			AquaticHeartEffect: Aquatic Heart
 			SoAMasoSoulHeader: Soul of Master
 			YataMirrorEffect: Yata Mirror
 			PrimordialCoreEffect: Primordia Core
@@ -2811,7 +2859,7 @@ Mods: {
 			DeviEffect: Spectral Deviantt
 			EternityForceHeader: Eternity Force
 			ChtuxlagorHeartHeader: Chtux'lag'or Heart
-			ChtuxlagorHeartEffect: Chtux'lag'or's Wrath
+			ChtuxlagorHeartEffect: Don't do that
 		}
 
 		Tiles: {
@@ -2918,6 +2966,9 @@ Mods: {
 			ShtuxianArrowProj.DisplayName: Shtuxian Arrow Proj
 			ShtuxiumBlast.DisplayName: Shtuxium Blast
 			ShtuxianBulletProj.DisplayName: Shtuxian Bullet Proj
+			ChtuxlagorRayTelegraph.DisplayName: Chtuxlagor Ray Telegraph
+			ChtuxlagorDeathraySmall.DisplayName: Chtuxlagor Deathray Small
+			ChtuxlagorDeathrayMark.DisplayName: Chtuxlagor Deathray Mark
 		}
 
 		Biomes: {
@@ -3004,7 +3055,7 @@ Mods: {
 
 				SoASingularities: {
 					Label: SoA Singularities
-					Tooltip: ""
+					Tooltip: WIP
 				}
 
 				SoACaughtNpcs: {
@@ -3024,7 +3075,7 @@ Mods: {
 
 				TorSingularities: {
 					Label: Thorium Singularities
-					Tooltip: ""
+					Tooltip: WIP
 				}
 
 				TorCaughtNpcs: {
@@ -3064,12 +3115,12 @@ Mods: {
 
 				Boots: {
 					Label: Boots
-					Tooltip: ""
+					Tooltip: Rework of boots Progression
 				}
 
 				Shields: {
 					Label: Shields
-					Tooltip: ""
+					Tooltip: Rework of Shields Progression
 				}
 			}
 		}

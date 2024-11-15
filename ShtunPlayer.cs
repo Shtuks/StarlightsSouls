@@ -69,6 +69,7 @@ namespace ssm
         public bool equippedAbominableEnchantment;
         public bool equippedNekomiEnchantment;
         public bool equippedShtuxianEnchantment;
+        public bool equippedMonstrosityEnchantment;
         public bool ShtuxibusSoul;
         public bool trueDevSets;
 

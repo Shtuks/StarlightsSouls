@@ -6207,7 +6207,6 @@ namespace ssm.Content.NPCs.Shtuxibus
 
                     if (Main.netMode != NetmodeID.MultiplayerClient)
                     {
-
                         Projectile.NewProjectile(NPC.GetSource_FromThis(), NPC.Center, Vector2.UnitX.RotatedBy(NPC.ai[3]),
                         ModContent.ProjectileType<MutantGiantDeathray2>(), ShtunUtils.ScaledProjectileDamage(NPC.damage, 0.5f), 0f, Main.myPlayer, 0, NPC.whoAmI);
                         Projectile.NewProjectile(NPC.GetSource_FromThis(), NPC.Center, 24f * Vector2.UnitX.RotatedBy(NPC.ai[3]), ModContent.ProjectileType<MutantEyeWavy>(), 0, 0f, Main.myPlayer,
@@ -6269,7 +6268,7 @@ namespace ssm.Content.NPCs.Shtuxibus
             {
                 NPC.netUpdate = true;
                 //bias it in one direction
-                NPC.ai[3] += MathHelper.ToRadians(20) * (1);
+                NPC.ai[3] += MathHelper.ToRadians(40);
 
                 if (Main.netMode != NetmodeID.MultiplayerClient)
                 {

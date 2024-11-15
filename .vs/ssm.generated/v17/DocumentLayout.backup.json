@@ -1,7 +1,24 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\kolot\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\My Games\\Terraria\\tModLoader\\ModSources\\ssm\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{FECA8C1A-369D-4346-8B10-8E57E17658A6}|ssm.csproj|c:\\users\\kolot\\onedrive\\\u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\my games\\terraria\\tmodloader\\modsources\\ssm\\content\\npcs\\starlightcat\\starlightcatboss.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FECA8C1A-369D-4346-8B10-8E57E17658A6}|ssm.csproj|solutionrelative:content\\npcs\\starlightcat\\starlightcatboss.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FECA8C1A-369D-4346-8B10-8E57E17658A6}|ssm.csproj|c:\\users\\kolot\\onedrive\\\u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\my games\\terraria\\tmodloader\\modsources\\ssm\\content\\npcs\\starlightcat\\chtuxlagordeathraysmall.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FECA8C1A-369D-4346-8B10-8E57E17658A6}|ssm.csproj|solutionrelative:content\\npcs\\starlightcat\\chtuxlagordeathraysmall.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FECA8C1A-369D-4346-8B10-8E57E17658A6}|ssm.csproj|c:\\users\\kolot\\onedrive\\\u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\my games\\terraria\\tmodloader\\modsources\\ssm\\content\\npcs\\starlightcat\\chtuxlagordeathraymark.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FECA8C1A-369D-4346-8B10-8E57E17658A6}|ssm.csproj|solutionrelative:content\\npcs\\starlightcat\\chtuxlagordeathraymark.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FECA8C1A-369D-4346-8B10-8E57E17658A6}|ssm.csproj|c:\\users\\kolot\\onedrive\\\u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\my games\\terraria\\tmodloader\\modsources\\ssm\\content\\npcs\\shtuxibus\\shtuxibus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FECA8C1A-369D-4346-8B10-8E57E17658A6}|ssm.csproj|solutionrelative:content\\npcs\\shtuxibus\\shtuxibus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +26,63 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ChtuxlagorDeathraySmall.cs",
+              "DocumentMoniker": "C:\\Users\\kolot\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\My Games\\Terraria\\tModLoader\\ModSources\\ssm\\Content\\NPCs\\StarlightCat\\ChtuxlagorDeathraySmall.cs",
+              "RelativeDocumentMoniker": "Content\\NPCs\\StarlightCat\\ChtuxlagorDeathraySmall.cs",
+              "ToolTip": "C:\\Users\\kolot\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\My Games\\Terraria\\tModLoader\\ModSources\\ssm\\Content\\NPCs\\StarlightCat\\ChtuxlagorDeathraySmall.cs",
+              "RelativeToolTip": "Content\\NPCs\\StarlightCat\\ChtuxlagorDeathraySmall.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABIAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-15T18:14:50.114Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ChtuxlagorDeathrayMark.cs",
+              "DocumentMoniker": "C:\\Users\\kolot\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\My Games\\Terraria\\tModLoader\\ModSources\\ssm\\Content\\NPCs\\StarlightCat\\ChtuxlagorDeathrayMark.cs",
+              "RelativeDocumentMoniker": "Content\\NPCs\\StarlightCat\\ChtuxlagorDeathrayMark.cs",
+              "ToolTip": "C:\\Users\\kolot\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\My Games\\Terraria\\tModLoader\\ModSources\\ssm\\Content\\NPCs\\StarlightCat\\ChtuxlagorDeathrayMark.cs",
+              "RelativeToolTip": "Content\\NPCs\\StarlightCat\\ChtuxlagorDeathrayMark.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwCwAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-15T18:01:57.25Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Shtuxibus.cs",
+              "DocumentMoniker": "C:\\Users\\kolot\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\My Games\\Terraria\\tModLoader\\ModSources\\ssm\\Content\\NPCs\\Shtuxibus\\Shtuxibus.cs",
+              "RelativeDocumentMoniker": "Content\\NPCs\\Shtuxibus\\Shtuxibus.cs",
+              "ToolTip": "C:\\Users\\kolot\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\My Games\\Terraria\\tModLoader\\ModSources\\ssm\\Content\\NPCs\\Shtuxibus\\Shtuxibus.cs",
+              "RelativeToolTip": "Content\\NPCs\\Shtuxibus\\Shtuxibus.cs",
+              "ViewState": "AgIAAB8YAAAAAAAAAAAAAPsXAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-15T17:18:51.946Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "StarlightCatBoss.cs",
+              "DocumentMoniker": "C:\\Users\\kolot\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\My Games\\Terraria\\tModLoader\\ModSources\\ssm\\Content\\NPCs\\StarlightCat\\StarlightCatBoss.cs",
+              "RelativeDocumentMoniker": "Content\\NPCs\\StarlightCat\\StarlightCatBoss.cs",
+              "ToolTip": "C:\\Users\\kolot\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\My Games\\Terraria\\tModLoader\\ModSources\\ssm\\Content\\NPCs\\StarlightCat\\StarlightCatBoss.cs",
+              "RelativeToolTip": "Content\\NPCs\\StarlightCat\\StarlightCatBoss.cs",
+              "ViewState": "AgIAAOQBAAAAAAAAAAAgwOABAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-15T17:18:09.145Z",
+              "EditorCaption": ""
             }
           ]
         }

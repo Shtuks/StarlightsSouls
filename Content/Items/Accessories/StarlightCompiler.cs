@@ -5,6 +5,10 @@ namespace ssm.Content.Items.Accessories
 {
     public class StarlightCompiler : ModItem
     {
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return ssm.debug;
+        }
 
         public override void SetDefaults()
         {

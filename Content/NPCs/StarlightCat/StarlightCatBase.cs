@@ -1,10 +1,5 @@
 ﻿using ssm.Content.Buffs;
 using ssm.Content.NPCs.Shtuxibus;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -15,7 +10,6 @@ namespace ssm.Content.NPCs.StarlightCat
     {
         Player player => Main.player[NPC.target];
         bool spawned;
-
         public override void SetStaticDefaults()
         {
             NPCID.Sets.NoMultiplayerSmoothingByType[NPC.type] = true;
@@ -25,11 +19,10 @@ namespace ssm.Content.NPCs.StarlightCat
         public override void SetDefaults()
         {
             NPC.BossBar = ModContent.GetInstance<ShtuxibusBar>();
-            NPC.width = 320;
-            NPC.height = 200;
+            NPC.width = 120;
+            NPC.height = 120;
             NPC.damage = 100000;
             NPC.lifeMax = 1000000000;
-            NPC.HitSound = SoundID.NPCHit1;
             NPC.noGravity = true;
             NPC.noTileCollide = true;
             NPC.npcSlots = 745f;
@@ -37,6 +30,7 @@ namespace ssm.Content.NPCs.StarlightCat
             NPC.boss = true;
             NPC.lavaImmune = true;
             NPC.aiStyle = -1;
+            NPC.scale = 0.8f;
             NPC.netAlways = true;
             NPC.timeLeft = NPC.activeTime * 30;
             SceneEffectPriority = SceneEffectPriority.BossHigh;
@@ -45,17 +39,6 @@ namespace ssm.Content.NPCs.StarlightCat
         {
             CooldownSlot = 1;
             return NPC.Distance(ShtunUtils.ClosestPointInHitbox(target, NPC.Center)) < Player.defaultHeight && NPC.ai[0] > -1;
-        }
-        void AntiCheat()
-        {
-            for (int j = 0; j < Main.player[Main.myPlayer].inventory.Length; j++)
-            {
-                if (Main.player[Main.myPlayer].inventory[j].type == ItemID.RodOfHarmony)
-                {
-                    int susindex = Main.LocalPlayer.FindItem(ItemID.RodOfHarmony);
-                    Main.LocalPlayer.inventory[susindex].TurnToAir();
-                }
-            }
         }
         void ChooseNextAttack(params int[] args)
         {

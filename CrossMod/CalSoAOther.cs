@@ -15,12 +15,12 @@ namespace ssm.CrossMod
             {
                 Recipe recipe = Main.recipe[i];
 
-                // valor to defender
-                if (recipe.HasResult(ModContent.ItemType<ElementalGauntlet>()) && recipe.HasIngredient(1613))
-                {
-                    recipe.RemoveIngredient(1613);
-                    recipe.AddIngredient<FloraFist>(1);
-                }
+                // flora fist to gaunlen
+                //if (recipe.HasResult(ModContent.ItemType<ElementalGauntlet>()) && recipe.HasIngredient(1613))
+                //{
+                //    recipe.RemoveIngredient(1613);
+                //    recipe.AddIngredient<FloraFist>(1);
+                //}
             }
         }
     }

@@ -7,6 +7,7 @@ using static ssm.Core.ModCompatibility;
 using ThoriumMod.Items.Titan;
 using ThoriumMod.Items.BardItems;
 using ThoriumMod.Items.Donate;
+using Terraria.ID;
 
 namespace ssm.Thorium
 {
@@ -59,6 +60,11 @@ namespace ssm.Thorium
                 if (recipe.HasResult<ColossusSoul>() && !recipe.HasIngredient<GuardianAngelsSoul>())
                 {
                     recipe.AddIngredient<BlastShield>();
+                }
+                if (recipe.HasResult<HungeringBlossom>() && !recipe.HasIngredient(ItemID.NaturesGift))
+                {
+                    recipe.RemoveIngredient(ItemID.ManaFlower);
+                    recipe.AddIngredient(ItemID.NaturesGift);
                 }
                 //if (recipe.HasResult<ColossusSoul>() && !recipe.HasIngredient<BlastShield>())
                 //{

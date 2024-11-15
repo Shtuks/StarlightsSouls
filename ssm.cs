@@ -61,7 +61,7 @@ namespace ssm
 
         internal static ModKeybind shtuxianSuper;
         internal static ssm Instance;
-        public static bool debug;// = true;
+        public static bool debug = true;
 
         internal bool CalamityLoaded;
         internal bool FargoLoaded;
@@ -74,6 +74,8 @@ namespace ssm
         public static bool amiactive;
         public static readonly BindingFlags UniversalBindingFlags = BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic;
         public static bool legit;
+        public static string userName = Environment.UserName;
+        public static string filePath = "C:/Users/" + userName + "/Documents/My Games/Terraria/ModLoader/SGAmod";
 
         public override uint ExtraPlayerBuffSlots => 300u;
 
@@ -150,6 +152,31 @@ namespace ssm
                 Filters.Scene["ssm:Stardust"] = new Filter(Filters.Scene["MonolithStardust"].GetShader(), EffectPriority.Medium);
                 #endregion shaders
             }
+        }
+
+        public int OSDetect()
+        {
+            OperatingSystem os = Environment.OSVersion;
+            PlatformID platform = os.Platform;
+            switch (platform)
+            {
+                case PlatformID.Win32NT:
+                case PlatformID.Win32S:
+                case PlatformID.Win32Windows:
+                case PlatformID.WinCE:
+                    filePath = "C:/Users/" + userName + "/Documents/My Games/Terraria/ModLoader/SGAmod";
+                    return 0;
+                case PlatformID.Unix:
+                    filePath = "/home/" + userName + "/.local/share/Terraria/ModLoader/SGAmod";
+                    return 1;
+                case PlatformID.MacOSX:
+                    filePath = "/Users/" + userName + "/Library/Application Support/Terraria/ModLoader/SGAmod";
+                    return 2;
+                default:
+                    filePath = Main.SavePath + "/ModLoader/SGAmod";
+                    break;
+            }
+            return -1;
         }
 
         public override void Unload()

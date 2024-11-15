@@ -12,11 +12,13 @@
 	  <Compile Remove="Thorium\Swarm\Summons\OverloadAbyssalion.cs" />
 	</ItemGroup>
 	<ItemGroup>
+	  <None Remove="Content\NPCs\StarlightCat\StarlightCatDeathray.cs.sex" />
 	  <None Remove="Thorium\Enchantments\BerserkerEnchant.cs.sex" />
 	  <None Remove="Thorium\Enchantments\DangerEnchant.cs.sex" />
 	  <None Remove="Thorium\Enchantments\HarbingerEnchant.cs.sex" />
 	</ItemGroup>
 	<ItemGroup>
+	  <Compile Include="Content\NPCs\StarlightCat\StarlightCatDeathray.cs.sex" />
 	  <Compile Include="Thorium\Enchantments\BerserkerEnchant.cs.sex" />
 	  <Compile Include="Thorium\Enchantments\DangerEnchant.cs.sex" />
 	  <Compile Include="Thorium\Enchantments\HarbingerEnchant.cs.sex" />

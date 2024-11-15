@@ -134,7 +134,6 @@ namespace ssm.Content.Items.Accessories
             player.lifeRegen += 700;
             player.blockRange += 700;
             player.noKnockback = true;
-            player.GetAttackSpeed(DamageClass.Generic) += 10f;
             player.GetArmorPenetration(DamageClass.Generic) += 745f;
             player.buffImmune[30] = true;
             player.buffImmune[21] = true;
@@ -174,11 +173,9 @@ namespace ssm.Content.Items.Accessories
             player.buffImmune[137] = true;
             player.buffImmune[94] = true;
             player.lifeRegen *= 2;
-            player.palladiumRegen = true;
-            player.crimsonRegen = true;
             if (player.AddEffect<ShtuxianSoulEffect>(Item))
             {
-                player.GetAttackSpeed(DamageClass.Generic) += 10f;
+                player.GetAttackSpeed(DamageClass.Generic) += 20f;
             }
             player.accFishingLine = true;
             player.arcticDivingGear = true;

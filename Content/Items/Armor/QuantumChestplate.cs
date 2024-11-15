@@ -1,15 +1,14 @@
 using ssm.Core;
 using FargowiltasSouls.Content.Items.Armor;
-using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ModLoader;
 using ssm.Content.Items.Materials;
+using ssm.Electricity;
 
 namespace ssm.Content.Items.Armor
 {
     [AutoloadEquip(EquipType.Body)]
-    public class QuantumChestplate : ModItem
+    public class QuantumChestplate : BaseElectricalArmor
     {
         public override void SetDefaults()
         {
@@ -19,6 +18,7 @@ namespace ssm.Content.Items.Armor
             Item.expert = true;
             Item.value = Item.sellPrice(100, 0, 0, 0);
             Item.defense = 200;
+            maxCharge = 10000000;
         }
 
         public override void UpdateEquip(Player player)
@@ -33,11 +33,14 @@ namespace ssm.Content.Items.Armor
             player.lifeRegenCount += 10;
             player.lifeRegenTime += 10;
 
-            player.Shield().shieldOn = true;
-            player.Shield().shieldCapacityMax2 += 10000;
-            player.Shield().shieldRegenSpeed += 200f;
-            player.Shield().shieldHitsRegen += 0.5f;
-            player.Shield().shieldHitsCap += 10;
+            if (charge > maxCharge)
+            {
+                player.Shield().shieldOn = true;
+                player.Shield().shieldCapacityMax2 += 10000;
+                player.Shield().shieldRegenSpeed += 200f;
+                player.Shield().shieldHitsRegen += 0.5f;
+                player.Shield().shieldHitsCap += 10;
+            }
         }
 
         public override void AddRecipes()

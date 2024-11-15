@@ -7,6 +7,8 @@ using ThoriumMod.Items.Terrarium;
 using FargowiltasSouls.Content.Items.Accessories.Masomode;
 using CalamityMod.Items.Accessories.Wings;
 using FargowiltasSouls.Content.Items.Accessories.Souls;
+using CalamityMod.Items.Materials;
+using Terraria.ID;
 
 namespace ssm.CrossMod.Boots
 {
@@ -53,6 +55,7 @@ namespace ssm.CrossMod.Boots
                 if (recipe.HasResult(ModContent.ItemType<RoyalRunners>()) && recipe.HasIngredient(5000))
                 {
                     recipe.RemoveIngredient(5000);
+                    recipe.AddIngredient(ItemID.SoulofFlight, 5);
                     recipe.AddIngredient<AngelTreads>(1);
                 }
                 // runners to aeolus
