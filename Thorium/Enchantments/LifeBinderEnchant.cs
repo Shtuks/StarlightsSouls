@@ -43,9 +43,9 @@ namespace ssm.Thorium.Enchantments
 
             Recipe recipe = this.CreateRecipe();
 
-           // recipe.AddIngredient(ModContent.ItemType<DewBinderMask>());
-            //recipe.AddIngredient(ModContent.ItemType<DewBinderBreastplate>());
-            //recipe.AddIngredient(ModContent.ItemType<DewBinderGreaves>());
+            recipe.AddIngredient(ModContent.ItemType<LifeBinderMask>());
+            recipe.AddIngredient(ModContent.ItemType<LifeBinderBreastplate>());
+            recipe.AddIngredient(ModContent.ItemType<LifeBinderGreaves>());
             recipe.AddIngredient(ModContent.ItemType<IridescentEnchant>());
             recipe.AddIngredient(ModContent.ItemType<DewCollector>());
             recipe.AddIngredient(ModContent.ItemType<SunrayStaff>());

@@ -1,4 +1,5 @@
 ﻿using CalamityMod.Items.Accessories;
+using CalamityMod.Items.Materials;
 using FargowiltasSouls.Core.AccessoryEffectSystem;
 using ssm.Content.Items.Accessories;
 using ssm.Core;
@@ -39,6 +40,7 @@ namespace ssm.Calamity.Souls
             recipe.AddIngredient<CryoStone>();
             recipe.AddIngredient<ChaosStone>();
             recipe.AddIngredient<BloomStone>();
+            recipe.AddIngredient<GalacticaSingularity>(5);
 
             recipe.AddTile(TileID.LunarCraftingStation);
 

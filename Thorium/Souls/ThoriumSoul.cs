@@ -52,6 +52,8 @@ namespace ssm.Thorium.Souls
             ModContent.Find<ModItem>(((ModType)this).Mod.Name, "HelheimForce").UpdateAccessory(player, hideVisual);
             //ASGARD
             ModContent.Find<ModItem>(((ModType)this).Mod.Name, "AsgardForce").UpdateAccessory(player, hideVisual);
+
+            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "MotDE").UpdateAccessory(player, hideVisual);
         }
 
         public override void AddRecipes()
@@ -68,6 +70,7 @@ namespace ssm.Thorium.Souls
             recipe.AddIngredient(null, "VanaheimForce");
             recipe.AddIngredient(null, "HelheimForce");
             recipe.AddIngredient(null, "AsgardForce");
+            recipe.AddIngredient(null, "MotDE");
 
             recipe.AddTile<CrucibleCosmosSheet>();
 

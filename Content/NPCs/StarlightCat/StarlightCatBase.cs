@@ -54,7 +54,7 @@ namespace ssm.Content.NPCs.StarlightCat
             }
 
             //Boss debuff
-            Main.LocalPlayer.AddBuff(ModContent.BuffType<ShtuxibusCurse>(), 2);
+            //Main.LocalPlayer.AddBuff(ModContent.BuffType<ShtuxibusCurse>(), 2);
         }
         void ManageNeededProjectiles()
         {

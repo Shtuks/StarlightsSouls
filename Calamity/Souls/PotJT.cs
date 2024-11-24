@@ -36,7 +36,7 @@ namespace ssm.Calamity.Souls
             ModContent.GetInstance<TheEvolution>().UpdateAccessory(player, hideVisual);
             ModContent.GetInstance<LeviathanAmbergris>().UpdateAccessory(player, hideVisual);
             ModContent.GetInstance<Affliction>().UpdateAccessory(player, hideVisual);
-            ModContent.GetInstance<TheCommunity>().UpdateAccessory(player, hideVisual);
+            //ModContent.GetInstance<TheCommunity>().UpdateAccessory(player, hideVisual);
 
         }
 
@@ -52,7 +52,7 @@ namespace ssm.Calamity.Souls
             recipe.AddIngredient<TheEvolution>();
             recipe.AddIngredient<AquaticHeart>();
             recipe.AddIngredient<Affliction>();
-            recipe.AddIngredient<TheCommunity>();
+            //recipe.AddIngredient<TheCommunity>();
             recipe.AddIngredient<HideofAstrumDeus>();
             recipe.AddIngredient<ToxicHeart>();
             recipe.AddIngredient<BloodflareCore>();

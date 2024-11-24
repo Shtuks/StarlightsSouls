@@ -2096,7 +2096,7 @@ Mods: {
 					Effects of the Abyssal Shell, Astro-Beetle Husk, Obsidian Scale, Mirror of the Beholder, Jazz Music Player, Crietz, Band of Replenishment, Fan Letter, and Terrarium Surround Sound
 					Effects of Lich's Gaze and Ascension Statuette
 					Effects of the Enchanted Shield, Mana-Charged Rocketeers, Inner Flame, Crash Boots, Vampire Gland, Spring Steps, Slag Stompers, and Shade Band
-					Effects of Dart Pouch
+					Effects of Dart Pouch, Mark of the Dream Eater
 					'''
 			}
 
@@ -2553,6 +2553,16 @@ Mods: {
 				Tooltip: ""
 				DisplayName: Max Charger Debug
 			}
+
+			MotDE: {
+				DisplayName: Mark of the Dream Eater
+				Tooltip:
+					'''
+						Effects of Inferno Lord’s Focus, Pocket Fusion Generator, Lihzahrd’s Tail, Serpent Shield, Metabolic Pills
+						Effects of Monster Charm, Hexing Talisman, Flawless Chrysalis and The Ring.
+						'You feel pulses of energy being released from it.'
+					'''
+			}
 		}
 
 		Buffs: {
@@ -2644,6 +2654,11 @@ Mods: {
 			DotBuff: {
 				Description: Your hitbox is a singe dot
 				DisplayName: Dot Buff
+			}
+
+			YharonBuff: {
+				DisplayName: Yharon Buff
+				Description: Mods.ssm.Buffs.YharonBuff.Description
 			}
 		}
 
@@ -2801,6 +2816,11 @@ Mods: {
 		}
 
 		Toggler: {
+			InfernoLordsFocusEffect: CInferno Lord Focus
+			LihzahrdsTailEffect: Lihzahrd’s tail
+			PocketFusionGeneratorEffect: Pocket Fusion Generator
+			SerpentShieldEffect: Serpent Shield
+			MotDEEffect: Mark of the Dream Eater
 			ChaosStoneEffect: Chaos Stone
 			CryoStoneEffect: Cryo Stone
 			BloomStoneEffect: Bloom Stone
@@ -2969,6 +2989,8 @@ Mods: {
 			ChtuxlagorRayTelegraph.DisplayName: Chtuxlagor Ray Telegraph
 			ChtuxlagorDeathraySmall.DisplayName: Chtuxlagor Deathray Small
 			ChtuxlagorDeathrayMark.DisplayName: Chtuxlagor Deathray Mark
+			YharonFireballMinion.DisplayName: Yharon Fireball Minion
+			YharonMinion.DisplayName: Yharon Minion
 		}
 
 		Biomes: {

@@ -48,6 +48,7 @@ namespace ssm
         public int frameShtuxibusAura;
         public bool ShtuxibusSetBonus;
         public bool CheatGodmode;
+        public bool yharon;
         public int frameCounter;
         public int ShtuxibusDeaths;
         private readonly Mod FargoSoul = Terraria.ModLoader.ModLoader.GetMod("FargowiltasSouls");

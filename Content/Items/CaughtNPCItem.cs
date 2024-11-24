@@ -101,7 +101,7 @@ namespace ssm.Items
         public static void RegisterItems()
         {
             CaughtTownies = new Dictionary<int, int>();
-            Add("ShtuxianHarbringer", ModContent.NPCType<ShtuxianHarbringer>(), "'Hey do you know about 3d dimension?'");
+            //Add("ShtuxianHarbringer", ModContent.NPCType<ShtuxianHarbringer>(), "'Hey do you know about 3d dimension?'");
             Add("Monstrocity", ModContent.NPCType<Monstrocity>(), "'Who is Wilta Fargo?'");
         }
 

@@ -11,7 +11,7 @@ using ThoriumMod.Items.Misc;
 using ThoriumMod.Items.NPCItems;
 using ThoriumMod.Items.Tracker;
 
-namespace ssm.Throium.Souls
+namespace ssm.Thorium.Souls
 {
     [ExtendsFromMod(ModCompatibility.Thorium.Name)]
     [JITWhenModsEnabled(ModCompatibility.Thorium.Name)]
@@ -20,9 +20,10 @@ namespace ssm.Throium.Souls
         private readonly Mod FargoSoul = Terraria.ModLoader.ModLoader.GetMod("FargowiltasSouls");
         public override void SetDefaults()
         {
-            this.Item.value = Item.buyPrice(1, 0, 0, 0);
-            this.Item.rare = 10;
-            this.Item.accessory = true;
+            Item.value = Item.buyPrice(1, 0, 0, 0);
+            Item.rare = 10;
+            Item.accessory = true;
+            Item.defense = 5;
         }
         public override void UpdateAccessory(Player player, bool hideVisual)
         {

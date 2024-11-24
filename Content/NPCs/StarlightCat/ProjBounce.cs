@@ -11,13 +11,13 @@ namespace ssm.Content.NPCs.StarlightCat
 		public BulletBounce(Vector2 position, Vector2 velocity, int bouncesCount, float size, Texture2D texture)
 			: base(position, size, texture)
 		{
-			this.Velocity = velocity;
-			this.BouncesCount = bouncesCount;
+			Velocity = velocity;
+			BouncesCount = bouncesCount;
 		}
 
 		public override void Update()
 		{
-			this.Position += this.Velocity;
+			Position += Velocity;
 			Vector2 origin = StarlightCatBoss.Origin;
 			float arenaSize = StarlightCatBoss.ArenaSize;
 			if (Position.X - Size <= origin.X - arenaSize && Velocity.X < 0f)

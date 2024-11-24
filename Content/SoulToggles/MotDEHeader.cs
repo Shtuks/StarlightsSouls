@@ -1,5 +1,5 @@
 ﻿using FargowiltasSouls.Core.Toggler.Content;
-using ssm.Throium.Souls;
+using ssm.Thorium.Souls;
 using Terraria.ModLoader;
 
 namespace ssm.Content.SoulToggles

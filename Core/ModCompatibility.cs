@@ -17,6 +17,18 @@ public static class ModCompatibility
         public static bool Loaded => ModLoader.HasMod(Name);
         public static Mod Mod => ModLoader.GetMod(Name);
     }
+    public static class QualityOfCheatingChinese
+    {
+        public const string Name = "ImproveGame";
+        public static bool Loaded => ModLoader.HasMod(Name);
+        public static Mod Mod => ModLoader.GetMod(Name);
+    }
+    public static class QualityOfCheating
+    {
+        public const string Name = "miningcracks_take_on_luiafk";
+        public static bool Loaded => ModLoader.HasMod(Name);
+        public static Mod Mod => ModLoader.GetMod(Name);
+    }
     public static class Dragonlens
     {
         public const string Name = "Dragonlens";

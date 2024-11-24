@@ -8,7 +8,6 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
 using System.IO;
-using Terraria.GameContent.Bestiary;
 using Terraria.GameContent.Creative;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.Graphics.Effects;
@@ -6455,10 +6454,10 @@ namespace ssm.Content.NPCs.Shtuxibus
                 ModContent.GetInstance<Tiles.ShtuxiumOreSystem>().BlessWorldWithShtuxiumOre();
             }
             NPC.SetEventFlagCleared(ref WorldSaveSystem.downedShtuxibus, -1);
-            if (!NPC.AnyNPCs(ModContent.NPCType<ShtuxianHarbringer>()))
-            {
-                int index = NPC.NewNPC(((Entity)this.NPC).GetSource_FromAI((string)null), (int)((Entity)this.NPC).Center.X, (int)((Entity)this.NPC).Center.Y, ModContent.NPCType<ShtuxianHarbringer>(), 0, 0.0f, 0.0f, 0.0f, 0.0f, (int)byte.MaxValue);
-            }
+            //if (!NPC.AnyNPCs(ModContent.NPCType<ShtuxianHarbringer>()))
+            //{
+            //    int index = NPC.NewNPC(((Entity)this.NPC).GetSource_FromAI((string)null), (int)((Entity)this.NPC).Center.X, (int)((Entity)this.NPC).Center.Y, ModContent.NPCType<ShtuxianHarbringer>(), 0, 0.0f, 0.0f, 0.0f, 0.0f, (int)byte.MaxValue);
+            //}
         }
         public override void ModifyIncomingHit(ref NPC.HitModifiers modifiers)
         {

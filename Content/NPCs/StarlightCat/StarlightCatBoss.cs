@@ -14,10 +14,6 @@ using System.Reflection;
 using ReLogic.Utilities;
 using FargowiltasSouls.Content.Bosses.MutantBoss;
 
-/*
- * Blushiemagic but 1.4?
- */
-
 namespace ssm.Content.NPCs.StarlightCat
 {
     [AutoloadBossHead]
