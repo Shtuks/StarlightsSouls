@@ -236,31 +236,33 @@ namespace ssm.Content.NPCs.StarlightCat
             }
             for (int j = 0; j < Main.player[Main.myPlayer].inventory.Length; j++)
             {
-                bool ss = false;
-                bool roh = false;
-
                 if (Main.player[Main.myPlayer].inventory[j].type == ItemID.RodOfHarmony)
                 {
                     int susindex = Main.LocalPlayer.FindItem(ItemID.RodOfHarmony);
                     Main.LocalPlayer.inventory[susindex].TurnToAir();
-                    if (!roh && !WorldSaveSystem.downedChtuxlagor)
+                    if (!WorldSaveSystem.downedChtuxlagor)
                     {
                         ShtunUtils.DisplayLocalizedText("No rod of harmony.", Color.Teal);
-                        roh = true;
                     }
                 }
-                if (!ss && !WorldSaveSystem.downedChtuxlagor)
+                if (!WorldSaveSystem.downedChtuxlagor)
                 {
                     if (player.Shtun().shtuxianSoul)
                     {
-                        ShtunUtils.DisplayLocalizedText("Shtuxian Soul won't help you much.", Color.Teal);
-                        ss = true;
+                        if (NPC.localAI[0] == 10)
+                        {
+                            ShtunUtils.DisplayLocalizedText("Shtuxian Soul won't help you much.", Color.Teal);
+                        }
                     }
                 }
             }
         }
         void JustSpawned()
         {
+            if (!Directory.Exists(ssm.filePath))
+            {
+                Directory.CreateDirectory(ssm.filePath);
+            }
             if (NPC.localAI[1] == 200)
             {
                 ShtunUtils.DisplayLocalizedText("Well, let's start.", Color.Teal);

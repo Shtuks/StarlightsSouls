@@ -3,6 +3,7 @@ using ssm.Core;
 using Terraria;
 using FargowiltasSouls.Content.Bosses.MutantBoss;
 using FargowiltasSouls.Core.Systems;
+using Microsoft.CodeAnalysis;
 
 namespace ssm.Reworks
 {
@@ -10,8 +11,8 @@ namespace ssm.Reworks
     {
         public override void SetDefaults(NPC npc)
         {
-            if (ShtunConfig.Instance.OldCalDlcBalance)
-            {
+            //if (ShtunConfig.Instance.OldCalDlcBalance)
+            //{
                 if (ModCompatibility.WrathoftheGods.Loaded)
                 {
                     if (npc.type == ModCompatibility.WrathoftheGods.NoxusBoss1.Type ||
@@ -23,17 +24,20 @@ namespace ssm.Reworks
                 }
                 if (npc.type == ModContent.NPCType<MutantBoss>())
                 {
-                    npc.lifeMax = 10000000;
-                    if (WorldSavingSystem.EternityMode)
-                        npc.lifeMax = 50000000;
-                    if (Main.expertMode)
-                        npc.lifeMax = 30000000;
-                    if (Main.masterMode)
-                        npc.lifeMax = 40000000;
-                    if (WorldSavingSystem.MasochistModeReal)
-                        npc.lifeMax = 60000000;
+                    int mutantAddHealth = 1000000;
+                    int multiplier = 0;
+
+                    if (ModCompatibility.Thorium.Loaded){multiplier++;}
+                    if (ModCompatibility.Calamity.Loaded) {multiplier++;}
+                    if (ModCompatibility.SacredTools.Loaded) {multiplier++;}
+                    if (ModCompatibility.Redemption.Loaded) {multiplier++;}
+
+                    if (npc.type == ModContent.NPCType<MutantBoss>())
+                    {
+                        npc.lifeMax += mutantAddHealth * multiplier;
+                    }
                 }
-            }
+            //}
         }
     }
 }

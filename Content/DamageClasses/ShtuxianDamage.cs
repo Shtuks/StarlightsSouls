@@ -1,11 +1,11 @@
-﻿/*using Terraria.Localization;
+﻿using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace ssm.Content.DamageClasses
 {
     public class ShtuxaianDamage : DamageClass
     {
-        public static ShtuxianDamage Instance;
+        internal static ShtuxaianDamage Instance;
 
         public override void Load() => Instance = this;
         public override void Unload() => Instance = null;
@@ -18,4 +18,4 @@ namespace ssm.Content.DamageClasses
 
         public override bool GetEffectInheritance(DamageClass damageClass) => true;
     }
-}*/
+}

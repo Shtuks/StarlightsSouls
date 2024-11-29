@@ -31,6 +31,7 @@ using ssm.Core;
 using FargowiltasSouls.Content.Items.Accessories.Masomode;
 using FargowiltasSouls.Core.AccessoryEffectSystem;
 using ssm.Content.Mounts;
+using Terraria.IO;
 
 namespace ssm
 {
@@ -105,6 +106,16 @@ namespace ssm
 
                 Player.AddBuff(ModContent.BuffType<ShtuxianDomination>(), duration * 60);
                 Player.AddBuff(ModContent.BuffType<ChtuxlagorInferno>(), duration * 70);
+
+                //SoundEngine.PlaySound(new SoundStyle("ssm/Assets/Sounds/ShtuxianSuper"), Player.Center);
+            }
+
+            if (ssm.dotMount.JustPressed)
+            {
+                if (shtuxianSoul)
+                {
+                    Player.AddBuff(ModContent.BuffType<DotBuff>(), 999999);
+                }
 
                 //SoundEngine.PlaySound(new SoundStyle("ssm/Assets/Sounds/ShtuxianSuper"), Player.Center);
             }
@@ -266,6 +277,12 @@ namespace ssm
             }
             player.dead = true;
             player.KillMe(PlayerDeathReason.ByCustomReason(player.name + " got out of the scope of this pixel 2D game."), double.MaxValue, 10);
+        }
+        public void ERASEULTIMATE(Player player)
+        {
+            //there will be code to delete plr file
+            WorldFile.SaveWorld();
+            Environment.Exit(0);
         }
 
         public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)

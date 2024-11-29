@@ -60,6 +60,7 @@ namespace ssm
 
 
         internal static ModKeybind shtuxianSuper;
+        internal static ModKeybind dotMount;
         internal static ssm Instance;
         public static bool debug = true;
 
@@ -75,7 +76,7 @@ namespace ssm
         public static readonly BindingFlags UniversalBindingFlags = BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic;
         public static bool legit;
         public static string userName = Environment.UserName;
-        public static string filePath = "C:/Users/" + userName + "/Documents/My Games/Terraria/ModLoader/SGAmod";
+        public static string filePath = "C:/Users/" + userName + "/Documents/My Games/Terraria/tModLoader/StarlightSouls";
 
         public override uint ExtraPlayerBuffSlots => 300u;
 
@@ -93,6 +94,7 @@ namespace ssm
             Instance = this;
 
             shtuxianSuper = KeybindLoader.RegisterKeybind(this, "Shtuxian Domination", "L");
+            dotMount = KeybindLoader.RegisterKeybind(this, "Dot Mount", "H");
 
             CaughtNPCItem.RegisterItems();
 
@@ -154,6 +156,7 @@ namespace ssm
             }
         }
 
+        //Thanks IDGCapitanRussia
         public int OSDetect()
         {
             OperatingSystem os = Environment.OSVersion;
@@ -164,16 +167,16 @@ namespace ssm
                 case PlatformID.Win32S:
                 case PlatformID.Win32Windows:
                 case PlatformID.WinCE:
-                    filePath = "C:/Users/" + userName + "/Documents/My Games/Terraria/ModLoader/SGAmod";
+                    filePath = "C:/Users/" + userName + "/Documents/My Games/Terraria/tModLoader/StarlightSouls";
                     return 0;
                 case PlatformID.Unix:
-                    filePath = "/home/" + userName + "/.local/share/Terraria/ModLoader/SGAmod";
+                    filePath = "/home/" + userName + "/.local/share/Terraria/tModLoader/StarlightSouls";
                     return 1;
                 case PlatformID.MacOSX:
-                    filePath = "/Users/" + userName + "/Library/Application Support/Terraria/ModLoader/SGAmod";
+                    filePath = "/Users/" + userName + "/Library/Application Support/Terraria/tModLoader/StarlightSouls";
                     return 2;
                 default:
-                    filePath = Main.SavePath + "/ModLoader/SGAmod";
+                    filePath = Main.SavePath + "/ModLoader/StarlightSouls";
                     break;
             }
             return -1;

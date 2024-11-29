@@ -6,10 +6,7 @@ Mods: {
 				'''
 				If damage less than 10, it will be nulified
 				Supression of Chtuxlagor Inferno effects
-				You can revive up to 3 times, healing all health
-				Cooldown of each revive is 30 seconds
-				Your attacks inflict Chtuxlagor Inferno
-				All set bonuses from Monstrosity and Mutant armor
+				Protect you from death, consuming 1,000,000 charge
 				'''
 		}
 
@@ -3147,7 +3144,14 @@ Mods: {
 			}
 		}
 
-		"Keybinds.Shtuxian Domination.DisplayName": Shtuxian Domination
-		DamageClasses.UnitedModdedThrower.DisplayName: United Modded Thrower
+		Keybinds: {
+			"Shtuxian Domination.DisplayName": Shtuxian Domination
+			"Dot Mount.DisplayName": Dot  Mount
+		}
+
+		DamageClasses: {
+			UnitedModdedThrower.DisplayName: United Modded Thrower
+			ShtuxaianDamage.DisplayName: Shtuxaian Damage
+		}
 	}
 }
