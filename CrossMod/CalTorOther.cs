@@ -5,8 +5,6 @@ using ThoriumMod.Items.SummonItems;
 using Terraria.ID;
 using CalamityMod.Items.Accessories;
 using CalamityMod.Items.Materials;
-using FargowiltasSouls.Content.Items.Accessories.Souls;
-using ThoriumMod.Items.Terrarium;
 using ThoriumMod.Items.Donate;
 
 namespace ssm.CrossMod

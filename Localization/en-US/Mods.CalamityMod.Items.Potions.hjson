@@ -1,0 +1,25 @@
+FlaskOfBrimstone: {
+	DisplayName: Flask of Brimstone
+	Tooltip: Melee, Whip, and United Modded Thrower attacks inflict Brimstone Flames
+}
+
+FlaskOfCrumbling: {
+	DisplayName: Flask of Crumbling
+	Tooltip: Melee, Whip, and United Modded Thrower attacks inflict Crumbling on enemies
+}
+
+FlaskOfHolyFlames: {
+	DisplayName: Flask of Holy Flames
+	Tooltip: Melee, Whip, and United Modded Thrower attacks inflict Holy Flames
+}
+
+ShadowPotion: {
+	DisplayName: Shadow Potion
+	Tooltip:
+		'''
+		Turns the player into a shadow with glowing eyes
+		United Modded Thrower weapons spawn projectiles on hit
+		8% increased stealth generation
+		Visual effects can be disabled with the Stealth Invisibility config
+		'''
+}

@@ -1,0 +1,209 @@
+BlunderBooster: {
+	DisplayName: Blunder Booster
+	Tooltip:
+		'''
+		12% increased United Modded Thrower damage and 15% increased United Modded Thrower projectile velocity
+		Stealth generates 10% faster
+		Summons a red lightning aura to surround the player and electrify nearby enemies
+		Press [KEY] to consume 25% of your maximum stealth to perform a swift upwards/diagonal dash which leaves a trail of lightning bolts
+		This effect has a 1 second cooldown before it can be used again
+		'''
+}
+
+CoinofDeceit: {
+	DisplayName: Coin of Deceit
+	Tooltip:
+		'''
+		Stealth strikes only expend 85% of your max stealth
+		6% increased United Modded Thrower crit chance
+		'''
+}
+
+CorrosiveSpine: {
+	DisplayName: Corrosive Spine
+	Tooltip:
+		'''
+		5% increased movement speed
+		All United Modded Thrower weapons inflict poison and spawn poisoned clouds on enemy hits
+		You release a ton of clouds everywhere on hit
+		'''
+}
+
+DarkMatterSheath: {
+	DisplayName: Dark Matter Sheath
+	Tooltip:
+		'''
+		+10 maximum stealth
+		Mobile stealth generation accelerates while not attacking
+		Stealth strikes only expend 50% of your max stealth
+		6% increased United Modded Thrower damage, and 6% increased United Modded Thrower crit chance
+		'''
+}
+
+DragonScales: {
+	DisplayName: Dragon Scales
+	Tooltip:
+		'''
+		United Modded Thrower projectiles create slow fireballs as they travel
+		Stealth strikes create infernados where they hit
+		+10% max run speed and acceleration
+		Grants immunity to Dragonfire
+		'Only a living dragon holds true treasure'
+		'''
+}
+
+EclipseMirror: {
+	DisplayName: Eclipse Mirror
+	Tooltip:
+		'''
+		+10 maximum stealth
+		6% increased United Modded Thrower damage, and 6% increased United Modded Thrower crit chance
+		Vastly reduces enemy aggression, even in the abyss
+		Stealth generates 25% faster when standing still
+		Mobile stealth generation accelerates while not attacking
+		Stealth strikes only expend 50% of your max stealth
+		Grants the ability to evade attacks in a blast of darksun light, which inflicts extreme damage in a wide area
+		Attacks that deal less than 5% of your max life in damage will not be evaded
+		The evade has a cooldown that ranges between 15 and 90 seconds depending on the evaded attack's damage
+		Evading an attack grants a lot of stealth
+		This cooldown is shared with all other dodges and reflects
+		'Its reflection shows naught but darkness'
+		'''
+}
+
+EldritchSoulArtifact: {
+	DisplayName: Eldritch Soul Artifact
+	Tooltip:
+		'''
+		Boosts melee speed by 10%, ranged velocity by 25%, United Modded Thrower stealth regen by 15%, max minions by 1 and reduces mana cost by 25%
+		Grants immunity to Whispering Death
+		Knowledge
+		'''
+}
+
+EtherealExtorter: {
+	DisplayName: Ethereal Extorter
+	Tooltip:
+		'''
+		United Modded Thrower projectiles explode into homing souls on hit
+		8% increased United Modded Thrower damage and +5 maximum stealth
+		'''
+}
+
+FeatherCrown: {
+	DisplayName: Feather Crown
+	Tooltip:
+		'''
+		15% increased United Modded Thrower projectile velocity
+		Stealth strikes cause feathers to fall from the sky on enemy hits
+		'''
+}
+
+GloveOfPrecision: {
+	DisplayName: Glove of Precision
+	Tooltip: Decreases United Modded Thrower attack speed by 15%, but increases damage by 10%, crit by 15% and velocity by 15%
+}
+
+GloveOfRecklessness: {
+	DisplayName: Glove of Recklessness
+	Tooltip:
+		'''
+		Increases United Modded Thrower attack speed by 15%, but decreases damage by 10% and crit by 5%
+		15% increased stealth regeneration
+		Adds inaccuracy to United Modded Thrower weapons
+		'''
+}
+
+MoonstoneCrown: {
+	DisplayName: Moonstone Crown
+	Tooltip:
+		'''
+		15% increased United Modded Thrower projectile velocity
+		Stealth strikes summon lunar flares on enemy hits
+		United Modded Thrower projectiles summon homing moon sigils as they travel
+		'''
+}
+
+Nanotech: {
+	DisplayName: Nanotech
+	Tooltip:
+		'''
+		United Modded Thrower projectiles create nanoblades as they travel
+		Stealth strikes summon nanobeams and sparks on enemy hits
+		Stealth strikes have +15 armor penetration, deal 5% more damage, and heal for 2 HP
+		15% increased United Modded Thrower damage and 15% increased United Modded Thrower velocity
+		Landing a stealth strike grants a 12% crit bonus to non-stealth strikes
+		This crit bonus decays over 5 seconds
+		'''
+}
+
+PlaguedFuelPack: {
+	DisplayName: Plagued Fuel Pack
+	Tooltip:
+		'''
+		8% increased United Modded Thrower damage and 15% increased United Modded Thrower projectile velocity
+		Stealth generates 10% faster
+		Press [KEY] to consume 25% of your maximum stealth to perform a swift upwards/diagonal dash which leaves a trail of plagued clouds
+		This effect has a 1 second cooldown before it can be used again
+		'''
+}
+
+ProfanedSoulCrystal.FullTooltip:
+	'''
+	Requires {0} minion slots to use in order to grant the following effects
+	All non-summon weapons are converted into powerful summon variations
+	Having no other minions will empower these attacks
+	[c/F05A5A:Transforms Melee attacks into a barrage of spears]
+	[c/3A83E4:Transforms Magic attacks into a powerful splitting fireball for {1} mana per cast]
+	[c/85E092:Transforms Ranged attacks into a flurry of fireballs and meteors]
+	[c/E94571:Transforms United Modded Thrower attacks into a deadly crystalline spiral]
+	[c/E299FF:Transforms Whip attacks into an empowering profaned crystal whip]
+	Summons and empowers the profaned soul guardians to fight alongside you
+	Provides buffs depending on the time of day
+	Thinking back, it was a boring life
+	[c/FFBF49:And so we burn it all in the name of purity]
+	'''
+
+RogueEmblem: {
+	DisplayName: United Modded Thrower Emblem
+	Tooltip: 15% increased United Modded Thrower damage
+}
+
+RuinMedallion: {
+	DisplayName: Ruin Medallion
+	Tooltip:
+		'''
+		Stealth strikes only expend 75% of your max stealth
+		6% increased United Modded Thrower damage, and 6% increased United Modded Thrower crit chance
+		'''
+}
+
+//Fargos statsheet is better
+StatMeter: {
+	RogueStats:
+		'''
+		Max Stealth: {0} | Standing Regen: {1} / sec | Moving Regen: {2} / sec
+		United Modded Thrower Velocity Boost: {3}%
+		'''
+	RogueConsumption: " | United Modded Thrower Weapon Consumption Chance: {0}%"
+}
+
+VampiricTalisman: {
+	DisplayName: Vampiric Talisman
+	Tooltip:
+		'''
+		United Modded Thrower projectiles give lifesteal on crits
+		12% increased United Modded Thrower damage
+		'''
+}
+
+VeneratedLocket: {
+	DisplayName: Venerated Locket
+	Tooltip:
+		'''
+		10% increased United Modded Thrower damage
+		Using a United Modded Thrower weapon summons a copy of the projectile that falls from the sky
+		Stealth strikes cause a circular fan of seeking cosmilite knives to be thrown
+		You'll never be alone, no matter where you go
+		'''
+}

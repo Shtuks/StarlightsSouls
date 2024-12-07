@@ -1,0 +1,67 @@
+AerospecHeadgear: {
+	DisplayName: Aerospec Headgear
+	Tooltip: 10% increased United Modded Thrower damage and 5% increased movement speed
+	SetBonus:
+		'''
+		5% increased movement speed and United Modded Thrower critical strike chance
+		+80 maximum stealth
+		'''
+}
+
+SnowRuffianChestplate: {
+	DisplayName: Snow Ruffian Chestplate
+	Tooltip: 3% increased United Modded Thrower critical strike chance
+}
+
+SnowRuffianMask: {
+	DisplayName: Snow Ruffian Mask
+	Tooltip: 2% increased United Modded Thrower damage
+	SetBonus:
+		'''
+		5% increased United Modded Thrower damage
+		+50 maximum stealth
+		You can glide to negate fall damage
+		'''
+}
+
+StatigelHeadRogue: {
+	DisplayName: Statigel Mask
+	Tooltip:
+		'''
+		10% increased United Modded Thrower damage and 34% chance to not consume United Modded Thrower items
+		7% increased United Modded Thrower critical strike chance and 5% increased movement speed
+		'''
+	SetBonus: +90 maximum stealth
+}
+
+SulphurousBreastplate: {
+	DisplayName: Sulphurous Breastplate
+	Tooltip: 6% increased United Modded Thrower damage and 4% increased United Modded Thrower critical strike chance
+}
+
+SulphurousHelmet: {
+	DisplayName: Sulphurous Helmet
+	Tooltip:
+		'''
+		4% increased United Modded Thrower damage
+		2% increased United Modded Thrower critical strike chance
+		Grants underwater breathing
+		'''
+	SetBonus:
+		'''
+		+65 maximum stealth
+		Attacking and being attacked by enemies inflicts poison
+		Grants an additional jump that summons a sulphurous bubble
+		Provides increased underwater mobility and reduces the severity of the sulphuric waters
+		'''
+}
+
+VictideHeadRogue: {
+	DisplayName: Victide Headcrab
+	Tooltip: 5% increased United Modded Thrower damage
+	SetBonus:
+		'''
+		+60 maximum stealth
+		+1.5 HP/s life regen and 10% increased United Modded Thrower damage while submerged in liquid
+		'''
+}

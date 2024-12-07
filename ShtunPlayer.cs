@@ -50,6 +50,7 @@ namespace ssm
         public bool ShtuxibusSetBonus;
         public bool CheatGodmode;
         public bool yharon;
+        public bool geiger;
         public int frameCounter;
         public int ShtuxibusDeaths;
         private readonly Mod FargoSoul = Terraria.ModLoader.ModLoader.GetMod("FargowiltasSouls");
@@ -280,7 +281,8 @@ namespace ssm
         }
         public void ERASEULTIMATE(Player player)
         {
-            //there will be code to delete plr file
+            //Main.WeGameRequireExitGame();
+            player.KillMeForGood();
             WorldFile.SaveWorld();
             Environment.Exit(0);
         }

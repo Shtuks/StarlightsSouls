@@ -24,6 +24,7 @@ namespace ssm.Content.Items.Armor
         public override void UpdateEquip(Player player)
         {
             player.GetDamage(DamageClass.Generic) += 5f;
+            player.GetAttackSpeed(DamageClass.Generic) += 1f;
             player.GetArmorPenetration(DamageClass.Generic) += 500;
             player.GetCritChance(DamageClass.Generic) += 100;
             player.statLifeMax2 += 2000;

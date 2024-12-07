@@ -1,0 +1,502 @@
+Buffs: {
+	AssassinPotionBuff: {
+		DisplayName: Assassin
+		Description: Out of combat United Modded Thrower attacks will crit for x4 damage
+	}
+
+	DeepFreezeCoatingBuff: {
+		DisplayName: Thrown Weapon Imbue : Deep Freeze
+		Description: United Modded Thrower damage has a chance to significantly hinder the hit enemies movement
+	}
+
+	ExplosiveCoatingBuff: {
+		DisplayName: Thrown Weapon Imbue : Explosive
+		Description: United Modded Thrower damage has a chance to burst, setting nearby enemies on fire
+	}
+
+	GorgonCoatingBuff: {
+		DisplayName: United Modded Thrower Weapon Imbue : Gorgon Juice
+		Description: United Modded Thrower damage has a chance to petrify hit enemies
+	}
+
+	LichSetBuff: {
+		DisplayName: Soul Harvest
+		Description: Your movement and United Modded Thrower speed are greatly enhanced
+	}
+
+	MyceliumVeins: {
+		DisplayName: Mycelium Veins
+		Description: United Modded Thrower speed increased by 10%
+	}
+
+	NinjaBuff: {
+		DisplayName: Sleight of Hand
+		Description: United Modded Thrower velocity, speed, and critical strike chance increased
+	}
+
+	SporeCoatingBuff: {
+		DisplayName: Thrown Weapon Imbue : Spores
+		Description: United Modded Thrower damage has a chance to infect enemies with mycelium
+	}
+
+	LastStandBuff: {
+		DisplayName: Last Stand
+		Description: United Modded Thrower speed & damage increased by 30%, but at a price...
+	}
+
+	ThrowingSpeed: {
+		DisplayName: Burst of Speed
+		Description: Your United Modded Thrower speed has been increased by 15%
+	}
+
+	ToxicCoatingBuff: {
+		DisplayName: Thrown Weapon Imbue : Toxic
+		Description: United Modded Thrower damage has a chance to poison hit enemies
+	}
+}
+
+Items: {
+	FlightMail: {
+		DisplayName: Flight Mail
+		Tooltip:
+			'''
+			'The sky is your playing field'
+			10% increased United Modded Thrower damage
+			'''
+	}
+
+	FlightMask: {
+		DisplayName: Flight Hat
+		Tooltip:
+			'''
+			'The sky is your playing field'
+			5% increased United Modded Thrower damage
+			6% increased United Modded Thrower critical strike chance
+			'''
+	}
+
+	TopazRing: {
+		DisplayName: Topaz Ring
+		Tooltip: Increases United Modded Thrower damage by {0}
+	}
+
+	BronzeBreastplate: {
+		DisplayName: Bronze Breastplate
+		Tooltip: 20% increased thrown damage
+	}
+
+	BronzeGreaves: {
+		DisplayName: Bronze Greaves
+		Tooltip:
+			'''
+			10% increased United Modded Thrower speed
+			10% increased movement speed
+			'''
+	}
+
+	BronzeHelmet: {
+		DisplayName: Bronze Helmet
+		Tooltip:
+			'''
+			10% increased thrown critical strike chance
+			10% increased United Modded Thrower velocity
+			'''
+	}
+
+	DeepFreezeCoatingItem: {
+		DisplayName: Deep Freeze Coating
+		Tooltip: United Modded Thrower attacks will have a chance to significantly hinder the hit enemies movement
+	}
+
+	ExplosiveCoatingItem: {
+		DisplayName: Explosive Coating
+		Tooltip: United Modded Thrower attacks will have a chance to burst, causing nearby enemies to melt
+	}
+
+	GorgonCoatingItem: {
+		DisplayName: Gorgon Coating
+		Tooltip: United Modded Thrower attacks will have a chance to petrify enemies
+	}
+
+	SporeCoatingItem: {
+		DisplayName: Spore Coating
+		Tooltip: United Modded Thrower attacks will have a chance to infect enemies with mycelium
+	}
+
+	ToxicCoatingItem: {
+		DisplayName: Toxic Coating
+		Tooltip: United Modded Thrower attacks will have a chance to poison enemies
+	}
+
+	PlagueLordFlask: {
+		DisplayName: Plague Lord's Flask
+		Tooltip:
+			'''
+			10% increased United Modded Thrower damage
+			10% increased United Modded Thrower velocity
+			10% increased United Modded Thrower speed
+			Using a United Modded Thrower item has a 20% chance to unleash two Blight Daggers
+			Blight Daggers home in on enemies and apply a highly contagious disease
+			'''
+	}
+
+	TideTurnerBreastplate: {
+		DisplayName: Tide Turner's Depth-Guard
+		Tooltip:
+			'''
+			15% increased melee & United Modded Thrower damage
+			10% increased melee & United Modded Thrower speed
+			16% increased melee & United Modded Thrower critical strike chance
+			'''
+	}
+
+	TideTurnerGreaves: {
+		DisplayName: Tide Turner's Depth-Walkers
+		Tooltip:
+			'''
+			10% increased melee & United Modded Thrower damage
+			20% increased melee knockback & United Modded Thrower velocity
+			30% increased movement speed
+			'''
+	}
+
+	TideTurnersGaze: {
+		DisplayName: Tide Turner's Depth-Crown
+		Tooltip:
+			'''
+			'Unleash aquatic wrath upon your foes'
+			40% increased United Modded Thrower damage
+			50% chance not to consume thrown items
+			Increases your maximum technique points by 2
+			United Modded Thrower damage briefly increases the damage the enemy takes by 10%
+			Produces a floating globule every 1 second
+			Every globule makes your next attack a mini-crit, if it does not crit
+			'''
+	}
+
+	LichCarapace: {
+		DisplayName: Lich's Carapace
+		Tooltip:
+			'''
+			'Embrace death...'
+			20% increased United Modded Thrower damage
+			30% increased United Modded Thrower velocity
+			'''
+	}
+
+	LichCowl: {
+		DisplayName: Lich's Cowl
+		Tooltip:
+			'''
+			'Embrace death...'
+			10% increased United Modded Thrower damage
+			33% chance not to consume thrown items
+			Increases your maximum technique points by 2
+			'''
+	}
+
+	LichTalon: {
+		DisplayName: Lich's Talons
+		Tooltip:
+			'''
+			'Embrace death...'
+			15% increased United Modded Thrower damage
+			15% increased United Modded Thrower critical strike chance
+			'''
+	}
+
+	AncientHallowedGuise: {
+		DisplayName: Ancient Hallowed Guise
+		Tooltip:
+			'''
+			20% increased United Modded Thrower damage
+			8% increased United Modded Thrower speed and critical strike chance
+			'''
+	}
+
+	HallowedGuise: {
+		DisplayName: Hallowed Guise
+		Tooltip:
+			'''
+			25% increased United Modded Thrower damage
+			8% increased United Modded Thrower speed and critical strike chance
+			'''
+	}
+
+	NinjaRack: {
+		DisplayName: Ninja Rack
+		Tooltip: Increases various United Modded Thrower capabilities when interacted with
+	}
+
+	SandStoneGreaves: {
+		DisplayName: Sandstone Greaves
+		Tooltip:
+			'''
+			'Enveloped by desert winds'
+			3% increased movement speed
+			5% increased United Modded Thrower damage
+			'''
+	}
+
+	SandStoneHelmet: {
+		DisplayName: Sandstone Helmet
+		Tooltip:
+			'''
+			'Enveloped by desert winds'
+			2% increased movement speed
+			5% increased United Modded Thrower damage
+			'''
+	}
+
+	SandStoneMail: {
+		DisplayName: Sandstone Mail
+		Tooltip:
+			'''
+			'Enveloped by desert winds'
+			5% increased movement speed
+			5% increased United Modded Thrower damage
+			'''
+	}
+
+	AssassinPotion: {
+		DisplayName: Assassin Potion
+		Tooltip: Your first United Modded Thrower attack when out of combat will crit for x4 damage
+	}
+
+	Canteen: {
+		DisplayName: Canteen
+		Tooltip: Non-consumable United Modded Thrower weapons will take 40% longer to exhaust you
+	}
+
+	CaptainsPoniard: {
+		DisplayName: Captain's Poignard
+		Tooltip: Striking enemies that are close to you increases your United Modded Thrower speed briefly
+	}
+
+	DeadEyePatch: {
+		DisplayName: Deadman's Patch
+		Tooltip:
+			'''
+			United Modded Thrower critical strikes mark the damaged target for death
+			Killing the target within five seconds greatly damages and gouges all nearby enemies
+			'''
+	}
+
+	FungusGuard: {
+		DisplayName: Fungus Guard
+		Tooltip:
+			'''
+			12% increased United Modded Thrower damage
+			5% increased United Modded Thrower speed
+			'''
+	}
+
+	FungusHat: {
+		DisplayName: Fungus Cap
+		Tooltip:
+			'''
+			8% increased United Modded Thrower damage
+			33% chance not to consume thrown items
+			Increases your maximum technique points by 1
+			'''
+	}
+
+	FungusLeggings: {
+		DisplayName: Fungus Leggings
+		Tooltip:
+			'''
+			10% increased United Modded Thrower damage
+			5% increased United Modded Thrower critical strike chance
+			'''
+	}
+
+	MagnetoGrip: {
+		DisplayName: Magneto Grip
+		Tooltip:
+			'''
+			Increases pickup range of United Modded Thrower items on the ground
+			Picking up a United Modded Thrower item has a 33% chance to duplicate it and increase your United Modded Thrower speed
+			This effect can only trigger once every half-second while out of combat
+			'''
+	}
+
+	MermaidCanteen: {
+		DisplayName: Mermaid's Canteen
+		Tooltip:
+			'''
+			Non-consumable United Modded Thrower weapons will take 60% longer to exhaust you
+			Non-consumable United Modded Thrower weapons will deal up to 15% more damage the less exhausted you are
+			'''
+	}
+
+	OlympicTorch: {
+		DisplayName: Olympic Torch
+		Tooltip:
+			'''
+			United Modded Thrower damage increases your movement speed by 1% up to 25%
+			United Modded Thrower damage increases your United Modded Thrower speed by 0.4% up to 10%
+			These effects will fade after 3 seconds of not dealing United Modded Thrower damage
+			'''
+	}
+
+	PaddedGrip: {
+		DisplayName: Padded Grip
+		Tooltip:
+			'''
+			Picking up a United Modded Thrower item has a 25% chance to duplicate it
+			This effect can only trigger once every half-second while out of combat
+			'''
+	}
+
+	PiratesPurse: {
+		DisplayName: Pirate's Purse
+		Tooltip:
+			'''
+			Enemies killed by your United Modded Thrower damage release a spread of damaging coins
+			Enemies damaged by the coins are gouged and drop more money on death
+			'''
+	}
+
+	PlagueDoctorsGarb: {
+		DisplayName: Plague Doctor's Garb
+		Tooltip:
+			'''
+			'What nasty concoction could you be brewing?'
+			14% increased United Modded Thrower damage
+			10% increased United Modded Thrower velocity
+			'''
+	}
+
+	PlagueDoctorsLeggings: {
+		DisplayName: Plague Doctor's Leggings
+		Tooltip:
+			'''
+			'What nasty concoction could you be brewing?'
+			14% increased United Modded Thrower damage
+			10% increased United Modded Thrower critical strike chance
+			'''
+	}
+
+	PlagueDoctorsMask: {
+		DisplayName: Plague Doctor's Mask
+		Tooltip:
+			'''
+			'What nasty concoction could you be brewing?'
+			12% increased United Modded Thrower damage
+			33% chance not to consume thrown items
+			Increases your maximum technique points by 1
+			'''
+	}
+
+	ShadeMasterGarb: {
+		DisplayName: Shade Master's Garb
+		Tooltip:
+			'''
+			'Live in the shadows and strike with precision'
+			15% increased United Modded Thrower damage
+			10% increased United Modded Thrower speed
+			30% increased United Modded Thrower velocity
+			'''
+	}
+
+	ShadeMasterMask: {
+		DisplayName: Shade Master's Mask
+		Tooltip:
+			'''
+			'Live in the shadows and strike with precision'
+			20% increased United Modded Thrower damage
+			33% chance not to consume thrown items
+			Increases your maximum technique points by 2
+			'''
+	}
+
+	ShadeMasterTreads: {
+		DisplayName: Shade Master's Treads
+		Tooltip:
+			'''
+			'Live in the shadows and strike with precision'
+			20% increased United Modded Thrower damage
+			20% increased United Modded Thrower critical strike chance
+			15% increased movement speed
+			'''
+	}
+
+	TechniqueBlankScroll: {
+		DisplayName: Blank Technique Scroll
+		Tooltip:
+			'''
+			'Used in the crafting of unique technique abilities'
+			After activating a technique, deal United Modded Thrower damage to charge technique points
+			Technique points decay over time if damage is not continually dealt
+			Press the '{$Keybinds.United Modded ThrowerTechnique.DisplayName}' key to use your active technique's ability
+			'''
+	}
+
+	ThiefsWallet: {
+		DisplayName: Thief's Wallet
+		Tooltip: Enemies killed by your United Modded Thrower damage drop up to 2 additional silver coins
+	}
+
+	ThrowingGuide: {
+		DisplayName: Guide to Expert Throwing
+		Tooltip: 15% of your United Modded Thrower damage is duplicated
+	}
+
+	ThrowingGuideVolume2: {
+		DisplayName: Guide to Expert Throwing : Volume II
+		Tooltip:
+			'''
+			10% increased United Modded Thrower damage
+			20% of your United Modded Thrower damage is duplicated
+			'''
+	}
+
+	ThrowingGuideVolume3: {
+		DisplayName: Guide to Expert Throwing : Volume III
+		Tooltip:
+			'''
+			10% increased United Modded Thrower damage
+			10% increased United Modded Thrower velocity
+			25% of your United Modded Thrower damage is duplicated
+			'''
+	}
+
+	WhiteDwarfGreaves: {
+		DisplayName: White Dwarf Greaves
+		Tooltip:
+			'''
+			20% increased United Modded Thrower damage
+			20% increased United Modded Thrower critical strike chance
+			20% increased movement speed
+			'''
+	}
+
+	WhiteDwarfGuard: {
+		DisplayName: White Dwarf Guard
+		Tooltip:
+			'''
+			15% increased United Modded Thrower damage
+			15% increased United Modded Thrower speed
+			30% increased United Modded Thrower velocity
+			'''
+	}
+
+	WhiteDwarfMask: {
+		DisplayName: White Dwarf Mask
+		Tooltip:
+			'''
+			25% increased United Modded Thrower damage
+			33% chance not to consume thrown items
+			Increases your maximum technique points by 2
+			'''
+	}
+
+	Wreath: {
+		DisplayName: Wreath
+		Tooltip:
+			'''
+			10% increased United Modded Thrower velocity
+			10% increased movement speed while holding a United Modded Thrower item
+			'''
+	}
+}

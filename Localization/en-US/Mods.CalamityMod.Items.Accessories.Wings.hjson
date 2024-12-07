@@ -1,0 +1,12 @@
+ExodusWings: {
+	DisplayName: Exodus Wings
+	Tooltip:
+		'''
+		Horizontal speed: 9.00
+		Acceleration multiplier: 2.5
+		Great vertical speed
+		Flight time: 180
+		5% increased United Modded Thrower damage and critical strike chance while wearing the Empyrean Armor
+		Pulsing with an alien heartbeat
+		'''
+}

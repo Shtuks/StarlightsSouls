@@ -29,6 +29,7 @@ namespace ssm.Content.Items.Armor
             player.GetCritChance(DamageClass.Generic) += 100;
             player.endurance += 0.5f;
             player.moveSpeed += 0.5f;
+            player.GetAttackSpeed(DamageClass.Generic) += 1f;
 
             if (charge > 0)
             {

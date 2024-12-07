@@ -22,6 +22,7 @@ using CalamityMod.Items.Accessories;
 using ssm.Content.Tiles;
 using FargowiltasCrossmod.Content.Calamity.Items.Accessories.Forces;
 using FargowiltasCrossmod.Content.Calamity.Items.Accessories;
+using ssm.Calamity.Enchantments;
 
 
 namespace ssm.Calamity.Souls
@@ -31,7 +32,6 @@ namespace ssm.Calamity.Souls
     public class CalamitySoul : BaseSoul
     {
         private readonly Mod FargoCross = Terraria.ModLoader.ModLoader.GetMod("FargowiltasCrossmod");
-        private readonly Mod FargoSoul = Terraria.ModLoader.ModLoader.GetMod("FargowiltasSouls");
 
         public override void SetDefaults()
         {
@@ -61,6 +61,7 @@ namespace ssm.Calamity.Souls
             recipe.AddIngredient<ExplorationForce>();
             recipe.AddIngredient<BrandoftheBrimstoneWitch>();
             recipe.AddIngredient<PotJT>();
+            recipe.AddIngredient<DemonShadeEnchant>();
             recipe.AddIngredient<AbomEnergy>(10);
             
             recipe.AddTile<DemonshadeWorkbenchTile>();

@@ -474,7 +474,7 @@ namespace ssm.Content.NPCs.StarlightCat
         #region attack
         void RotatingDeathrays()
         {
-            if (ssm.debug) { ShtunUtils.DisplayLocalizedText("Doing RotatingDeathrays()", Color.Teal); }
+            if (ssm.debug && NPC.localAI[2] == 1) { ShtunUtils.DisplayLocalizedText("Doing RotatingDeathrays()", Color.Teal); }
             
             //Variables
             float DeathrayAttackDuration = 700f;
@@ -540,6 +540,7 @@ namespace ssm.Content.NPCs.StarlightCat
             if (NPC.localAI[2] >= var2)
             {
                 //deathraySound?.Stop();
+                NPC.localAI[2] = 0;
                 NPC.TargetClosest();
                 NPC.netUpdate = true;
                 ChooseNextAttack(1);

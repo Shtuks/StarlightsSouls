@@ -3,7 +3,6 @@ using ssm.Core;
 using FargowiltasSouls.Content.Items.Accessories.Souls;
 using Terraria;
 using ssm.Thorium.Souls;
-using static ssm.Core.ModCompatibility;
 using ThoriumMod.Items.Titan;
 using ThoriumMod.Items.BardItems;
 using ThoriumMod.Items.Donate;

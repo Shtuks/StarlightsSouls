@@ -5,6 +5,7 @@ using ssm.Core;
 using ThoriumMod.Items.Terrarium;
 using CalamityMod.Items.Accessories.Wings;
 using FargowiltasSouls.Content.Items.Accessories.Souls;
+using ssm.Thorium.Souls;
 
 namespace ssm.CrossMod.Shields
 {
@@ -34,6 +35,7 @@ namespace ssm.CrossMod.Shields
                 if (recipe.HasResult(ModContent.ItemType<TerrariumDefender>()) && recipe.HasIngredient(1613))
                 {
                     recipe.RemoveIngredient(1613);
+                    recipe.AddIngredient<CorruptedWarShield>(1);
                     recipe.AddIngredient<AsgardsValor>(1);
                 }
                 // defender to aegis

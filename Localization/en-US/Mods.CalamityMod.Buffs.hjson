@@ -1,0 +1,24 @@
+ShadowBuff: {
+	DisplayName: Shadow
+	Description:
+		'''
+		You are a shadow
+		United Modded Thrower weapons spawn projectiles on hit
+		8% boosted stealth generation
+		'''
+}
+
+WeaponImbueBrimstone: {
+	DisplayName: Weapon Imbue: Brimstone
+	Description: Melee, Whip, and United Modded Thrower attacks ignite enemies with brimstone flames
+}
+
+WeaponImbueCrumbling: {
+	DisplayName: Weapon Imbue: Crumbling
+	Description: Melee, Whip, and United Modded Thrower attacks reduce enemy damage reduction
+}
+
+WeaponImbueHolyFlames: {
+	DisplayName: Weapon Imbue: Holy Flames
+	Description: Melee, Whip, and United Modded Thrower attacks dissolve enemies with holy flames
+}

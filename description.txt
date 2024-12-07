@@ -25,6 +25,8 @@ All things mod doing for now:
 
 Planned additions:
 
+- StarlightCat Boss
+
 - Redemption support(not even started)
 
 - Calamity enchantments(no)

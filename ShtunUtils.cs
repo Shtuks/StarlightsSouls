@@ -171,6 +171,8 @@ namespace ssm
             => player.GetModPlayer<ShtunPlayer>();
         public static ShtunShield Shield(this Player player)
             => player.GetModPlayer<ShtunShield>();
+        public static ShtunRadiation Radiation(this Player player)
+            => player.GetModPlayer<ShtunRadiation>();
 
         public static bool Stalin = ShtunConfig.Instance.Stalin;
         public static string TryStalinTexture => Stalin ? "_Stalin" : "";

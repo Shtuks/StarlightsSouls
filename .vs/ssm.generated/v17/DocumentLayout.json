@@ -1,12 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\kolot\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\My Games\\Terraria\\tModLoader\\ModSources\\ssm\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{FECA8C1A-369D-4346-8B10-8E57E17658A6}|ssm.csproj|c:\\users\\kolot\\onedrive\\\u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\my games\\terraria\\tmodloader\\modsources\\ssm\\shtunplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FECA8C1A-369D-4346-8B10-8E57E17658A6}|ssm.csproj|solutionrelative:shtunplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -14,24 +9,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ShtunPlayer.cs",
-              "DocumentMoniker": "C:\\Users\\kolot\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\My Games\\Terraria\\tModLoader\\ModSources\\ssm\\ShtunPlayer.cs",
-              "RelativeDocumentMoniker": "ShtunPlayer.cs",
-              "ToolTip": "C:\\Users\\kolot\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\My Games\\Terraria\\tModLoader\\ModSources\\ssm\\ShtunPlayer.cs",
-              "RelativeToolTip": "ShtunPlayer.cs",
-              "ViewState": "AgIAAAkBAAAAAAAAAAAAABoBAAAzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-29T07:43:12.223Z",
-              "EditorCaption": ""
             }
           ]
         }

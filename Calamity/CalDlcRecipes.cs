@@ -36,14 +36,18 @@ namespace ssm.Calamity
                 Recipe recipe = Main.recipe[i];
 
                 #region other
-                if (ShtunConfig.Instance.OldCalDlcBalance)
-                {
+                //if (ShtunConfig.Instance.OldCalDlcBalance)
+                //{
                     if (recipe.HasResult<BrandoftheBrimstoneWitch>() && !recipe.HasIngredient<ShadowspecBar>() && recipe.HasIngredient<AbomEnergy>())
                     {
                         if (recipe.RemoveIngredient(ModContent.ItemType<AbomEnergy>()))
                             recipe.AddIngredient<ShadowspecBar>(5);
                     }
-                }
+                    if (recipe.HasResult(ModContent.ItemType<ShadowspecBar>()) && recipe.HasIngredient<EternalEnergy>())
+                    {
+                        recipe.RemoveIngredient(ModContent.ItemType<EternalEnergy>());
+                    }
+                //}
                 #endregion
 
                 #region souls

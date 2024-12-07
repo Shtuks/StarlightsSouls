@@ -1,47 +1,26 @@
-global using ssm;
 global using FargowiltasSouls.Core.ModPlayers;
 global using FargowiltasSouls.Core.Toggler;
 using ssm.Sky;
-using FargowiltasSouls.Content.Sky;
 using Microsoft.Xna.Framework;
 using ReLogic.Content;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using Terraria;
 using Terraria.Graphics.Effects;
 using Terraria.Graphics.Shaders;
 using Terraria.ID;
 using Terraria.ModLoader;
-using ssm.Content.NPCs;
-using FargowiltasSouls.Content.Items.Dyes;
-using FargowiltasSouls.Content.Items.Misc;
-using FargowiltasSouls.Content.Items.Accessories.Masomode;
-using FargowiltasSouls.Content.Buffs.Souls;
-using FargowiltasSouls.Content.Buffs.Masomode;
-using FargowiltasSouls.Content.Buffs.Boss;
-using FargowiltasSouls.Content.Tiles;
-using FargowiltasSouls.Content.UI;
-using FargowiltasSouls.Core.Systems;
-using FargowiltasSouls.Content.Bosses.VanillaEternity;
-using FargowiltasSouls.Core.Globals;
-using FargowiltasSouls.Content.Bosses.AbomBoss;
-using FargowiltasSouls.Content.Bosses.DeviBoss;
-using FargowiltasSouls.Content.Bosses.MutantBoss;
-using FargowiltasSouls.Content.NPCs.EternityModeNPCs;
-using FargowiltasSouls.Content.Patreon.Volknet;
 using System.Reflection;
-using Terraria.DataStructures;
-using Terraria.GameContent.Creative;
-using Terraria.GameContent.ItemDropRules;
 using Microsoft.Xna.Framework.Graphics;
 using System;
-using Terraria.UI;
-using Terraria.Chat;
-using Terraria.GameContent;
-using Terraria.Localization;
 using ssm.Items;
 using ssm.Calamity;
+using ssm.Core;
+using ssm.Systems;
+using FargowiltasCrossmod.Core.Calamity.Systems;
+using ThoriumMod;
+using ThoriumMod.Items.BardItems;
+using ThoriumMod.Items.HealerItems;
+using ssm.Content.Items;
 
 namespace ssm
 {
@@ -91,6 +70,8 @@ namespace ssm
 
         public override void Load()
         {
+            ModIntergationSystem.BossChecklist.AdjustValues();
+
             Instance = this;
 
             shtuxianSuper = KeybindLoader.RegisterKeybind(this, "Shtuxian Domination", "L");
@@ -156,6 +137,58 @@ namespace ssm
             }
         }
 
+        public override void PostSetupContent()
+        {
+            try
+            {
+                CalamityLoaded = ModLoader.GetMod("CalamityMod") != null;
+                SoulsLoaded = ModLoader.GetMod("FargowiltasSouls") != null;
+                FargoLoaded = ModLoader.GetMod("Fargowiltas") != null;
+                SoALoaded = ModLoader.GetMod("SacredTools") != null;
+                RedemptionLoaded = ModLoader.GetMod("Redemption") != null;
+            }
+            catch (Exception e)
+            {
+                Logger.Warn("ssm PostSetupContent Error: " + e.StackTrace + e.Message);
+            }
+
+            if (ModCompatibility.Thorium.Loaded)
+            {
+                PostSetupContent_Thorium();
+            }
+
+            Func<string> cap = () => $"Shield Capacity: {Main.LocalPlayer.Shield().shieldCapacity}%";
+            Func<string> reg = () => $"Shield Regeneration: {Main.LocalPlayer.Shield().shieldRegenSpeed}%";
+            Func<string> max = () => $"Max Shield Capacity: {Main.LocalPlayer.Shield().shieldCapacityMax2}%";
+            ModCompatibility.MutantMod.Mod.Call("AddStat", ItemID.ObsidianShield, cap);
+            ModCompatibility.MutantMod.Mod.Call("AddStat", ItemID.SquireShield, reg);
+            ModCompatibility.MutantMod.Mod.Call("AddStat", ItemID.PaladinsShield, max);
+
+            Func<string> res = () => $"RAD resistance: {Main.LocalPlayer.Radiation().statRes}";
+            Func<string> rad = () => $"RAD: {Main.LocalPlayer.Radiation().statRad}";
+            ModCompatibility.MutantMod.Mod.Call("AddStat", ModContent.ItemType<RadiationDebug>(), res);
+            ModCompatibility.MutantMod.Mod.Call("AddStat", ModContent.ItemType<RadiationDebug>(), rad);
+        }
+
+        [JITWhenModsEnabled(ModCompatibility.Thorium.Name)]
+
+        public void PostSetupContent_Thorium()
+        {
+            double Damage(DamageClass damageClass) => Math.Round(Main.LocalPlayer.GetTotalDamage(damageClass).Additive * Main.LocalPlayer.GetTotalDamage(damageClass).Multiplicative * 100 - 100);
+            int Crit(DamageClass damageClass) => (int)Main.LocalPlayer.GetTotalCritChance(damageClass);
+
+            int bardItem = ModContent.ItemType<GoldBugleHorn>();
+            Func<string> bardDamage = () => $"Bard Damage: {Damage(ModContent.GetInstance<BardDamage>())}%";
+            Func<string> bardCrit = () => $"Bard Critical: {Crit(ModContent.GetInstance<BardDamage>())}%";
+            ModCompatibility.MutantMod.Mod.Call("AddStat", bardItem, bardDamage);
+            ModCompatibility.MutantMod.Mod.Call("AddStat", bardItem, bardCrit);
+
+            int healerItem = ModContent.ItemType<PalmCross>();
+            Func<string> healerDamage = () => $"Healer Damage: {Damage(ModContent.GetInstance<HealerDamage>())}%";
+            Func<string> healerCrit = () => $"Gealer Critical: {Crit(ModContent.GetInstance<HealerDamage>())}%";
+            ModCompatibility.MutantMod.Mod.Call("AddStat", healerItem, healerDamage);
+            ModCompatibility.MutantMod.Mod.Call("AddStat", healerItem, healerCrit);
+        }
         //Thanks IDGCapitanRussia
         public int OSDetect()
         {
@@ -187,21 +220,7 @@ namespace ssm
             bossChecklist = null;
         }
 
-        public override void PostSetupContent()
-        {
-            try
-            {
-                CalamityLoaded = ModLoader.GetMod("CalamityMod") != null;
-                SoulsLoaded = ModLoader.GetMod("FargowiltasSouls") != null;
-                FargoLoaded = ModLoader.GetMod("Fargowiltas") != null;
-                SoALoaded = ModLoader.GetMod("SacredTools") != null;
-                RedemptionLoaded = ModLoader.GetMod("Redemption") != null;
-            }
-            catch (Exception e)
-            {
-                Logger.Warn("ssm PostSetupContent Error: " + e.StackTrace + e.Message);
-            }
-        }
+        public override void HandlePacket(BinaryReader reader, int whoAmI) => PacketManager.ReceivePacket(reader);
 
         static float ColorTimer2;
 

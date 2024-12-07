@@ -2560,6 +2560,45 @@ Mods: {
 						'You feel pulses of energy being released from it.'
 					'''
 			}
+
+			CorruptedWarShield: {
+				Tooltip:
+					'''
+					Damage taken reduced by 5%
+					You steadily generate a 20 life shield
+					While standing still, gain 5 defense, 2 life recovery, and knockback immunity
+					'''
+				DisplayName: Corrupted War Shield
+			}
+
+			GtTETFinal: {
+				Tooltip:
+					'''
+					Rogue projectiles create nanoblades as they travel
+					Stealth strikes summon nanobeams and sparks on enemy hits
+					Stealth strikes have +15 armor penetration, deal 5% more damage, and heal for 2 HP
+					25% increased rogue damage and 25% increased rogue velocity
+					Landing a stealth strike grants a 12% crit bonus to non-stealth strikes
+					This crit bonus decays over 5 seconds
+					25% of your rogue damage is duplicated 
+					'''
+				DisplayName: Guide to Expert Throwing : Final Volume
+			}
+
+			DemonShadeEnchant: {
+				DisplayName: Demon Shade Enchant
+				Tooltip: ""
+			}
+
+			GeigerCounter: {
+				DisplayName: Geiger Counter
+				Tooltip: ""
+			}
+
+			RadiationDebug: {
+				DisplayName: Radiation Debug
+				Tooltip: ""
+			}
 		}
 
 		Buffs: {
@@ -2655,7 +2694,7 @@ Mods: {
 
 			YharonBuff: {
 				DisplayName: Yharon Buff
-				Description: Mods.ssm.Buffs.YharonBuff.Description
+				Description: Little Yharon is fighting for you.
 			}
 		}
 
@@ -2814,7 +2853,7 @@ Mods: {
 
 		Toggler: {
 			InfernoLordsFocusEffect: CInferno Lord Focus
-			LihzahrdsTailEffect: Lihzahrd’s tail
+			LihzahrdTailEffect: Lihzahrd’s tail
 			PocketFusionGeneratorEffect: Pocket Fusion Generator
 			SerpentShieldEffect: Serpent Shield
 			MotDEEffect: Mark of the Dream Eater

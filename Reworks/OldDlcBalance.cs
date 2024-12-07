@@ -3,7 +3,6 @@ using ssm.Core;
 using Terraria;
 using FargowiltasSouls.Content.Bosses.MutantBoss;
 using FargowiltasSouls.Core.Systems;
-using Microsoft.CodeAnalysis;
 
 namespace ssm.Reworks
 {
@@ -13,15 +12,15 @@ namespace ssm.Reworks
         {
             //if (ShtunConfig.Instance.OldCalDlcBalance)
             //{
-                if (ModCompatibility.WrathoftheGods.Loaded)
-                {
-                    if (npc.type == ModCompatibility.WrathoftheGods.NoxusBoss1.Type ||
-                        npc.type == ModCompatibility.WrathoftheGods.NoxusBoss2.Type ||
-                        npc.type == ModCompatibility.WrathoftheGods.NamelessDeityBoss.Type)
-                    {
-                        npc.lifeMax = (int)(npc.lifeMax * 0.5f);
-                    }
-                }
+                //if (ModCompatibility.WrathoftheGods.Loaded)
+                //{
+                //    if (npc.type == ModCompatibility.WrathoftheGods.NoxusBoss1.Type ||
+                //        npc.type == ModCompatibility.WrathoftheGods.NoxusBoss2.Type ||
+                //        npc.type == ModCompatibility.WrathoftheGods.NamelessDeityBoss.Type)
+                //    {
+                //        npc.lifeMax = (int)(npc.lifeMax * 0.5f);
+                //    }
+                //}
                 if (npc.type == ModContent.NPCType<MutantBoss>())
                 {
                     int mutantAddHealth = 1000000;

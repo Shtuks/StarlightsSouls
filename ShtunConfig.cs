@@ -13,10 +13,10 @@ namespace ssm
 
         [Header("General")]
 
-        [ReloadRequired]
-        [BackgroundColor(60, 200, 60, 192)]
-        [DefaultValue(true)]
-        public bool OldCalDlcBalance { get; set; }
+        //[ReloadRequired]
+        //[BackgroundColor(60, 200, 60, 192)]
+        //[DefaultValue(true)]
+        //public bool OldCalDlcBalance { get; set; }
 
         [BackgroundColor(60, 200, 60, 192)]
         [DefaultValue(true)]

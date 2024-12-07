@@ -58,12 +58,8 @@ namespace ssm.Calamity
                 Recipe recipe = Main.recipe[i];
 
                 #region other
-                if (ShtunConfig.Instance.OldCalDlcBalance)
-                {
-                    if (recipe.HasResult(ModContent.ItemType<ShadowspecBar>()) && recipe.HasIngredient<EternalEnergy>())
-                    {
-                        recipe.RemoveIngredient(ModContent.ItemType<EternalEnergy>());
-                    }
+                //if (ShtunConfig.Instance.OldCalDlcBalance)
+                //{
                     if (!recipe.HasIngredient<ShadowspecBar>() && recipe.HasIngredient<AshesofAnnihilation>())
                     {
                         if (recipe.HasResult<UniverseSoul>() || recipe.HasResult<TerrariaSoul>() || recipe.HasResult<MasochistSoul>() || recipe.HasResult<DimensionSoul>())
@@ -72,53 +68,53 @@ namespace ssm.Calamity
                                 recipe.AddIngredient<ShadowspecBar>(5);
                         }
                     }
-                }
+                //}
                 #endregion
 
-                #region souls
-                if (!ShtunConfig.Instance.OldCalDlcBalance)
-                {
-                    if (recipe.HasResult(ModContent.ItemType<SoASoul>()) && !recipe.HasIngredient<ExoPrism>())
-                    {
-                        recipe.AddIngredient<ExoPrism>(5);
-                        recipe.AddIngredient<AshesofAnnihilation>(5);
-                    }
-                    //if (recipe.HasResult(ModContent.ItemType<RedemptionSoul>()) && !recipe.HasIngredient<ExoPrism>())
+                //#region souls
+                //if (!ShtunConfig.Instance.OldCalDlcBalance)
+                //{
+                    //if (recipe.HasResult(ModContent.ItemType<SoASoul>()) && !recipe.HasIngredient<ExoPrism>())
                     //{
                     //    recipe.AddIngredient<ExoPrism>(5);
                     //    recipe.AddIngredient<AshesofAnnihilation>(5);
                     //}
-                    if (recipe.HasResult(ModContent.ItemType<ThoriumSoul>()) && !recipe.HasIngredient<ExoPrism>())
-                    {
-                        recipe.AddIngredient<ExoPrism>(5);
-                        recipe.AddIngredient<AshesofAnnihilation>(5);
-                    }
-                    if (recipe.HasResult(ModContent.ItemType<CalamitySoul>()) && !recipe.HasIngredient<ExoPrism>())
-                    {
-                        recipe.AddIngredient<ExoPrism>(5);
-                        recipe.AddIngredient<AshesofAnnihilation>(5);
-                    }
-                }
-                else
-                {
-                    if (recipe.HasResult(ModContent.ItemType<SoASoul>()) && !recipe.HasIngredient<ShadowspecBar>())
-                    {
-                        recipe.AddIngredient<ShadowspecBar>(5);
-                    }
-                    //if (recipe.HasResult(ModContent.ItemType<RedemptionSoul>()) && !recipe.HasIngredient<ExoPrism>())
+                    ////if (recipe.HasResult(ModContent.ItemType<RedemptionSoul>()) && !recipe.HasIngredient<ExoPrism>())
+                    ////{
+                    ////    recipe.AddIngredient<ExoPrism>(5);
+                    ////    recipe.AddIngredient<AshesofAnnihilation>(5);
+                    ////}
+                    //if (recipe.HasResult(ModContent.ItemType<ThoriumSoul>()) && !recipe.HasIngredient<ExoPrism>())
                     //{
-                    //    recipe.AddIngredient<ShadowspecBar>(5);
+                    //    recipe.AddIngredient<ExoPrism>(5);
+                    //    recipe.AddIngredient<AshesofAnnihilation>(5);
                     //}
-                    if (recipe.HasResult(ModContent.ItemType<ThoriumSoul>()) && !recipe.HasIngredient<ShadowspecBar>())
-                    {
-                        recipe.AddIngredient<ShadowspecBar>(5);
-                    }
-                    if (recipe.HasResult(ModContent.ItemType<CalamitySoul>()) && !recipe.HasIngredient<ShadowspecBar>())
-                    {
-                        recipe.AddIngredient<ShadowspecBar>(5);
-                    }
-                }
-                #endregion
+                    //if (recipe.HasResult(ModContent.ItemType<CalamitySoul>()) && !recipe.HasIngredient<ExoPrism>())
+                    //{
+                    //    recipe.AddIngredient<ExoPrism>(5);
+                    //    recipe.AddIngredient<AshesofAnnihilation>(5);
+                    //}
+                //}
+                //else
+                //{
+                //    if (recipe.HasResult(ModContent.ItemType<SoASoul>()) && !recipe.HasIngredient<ShadowspecBar>())
+                //    {
+                //        recipe.AddIngredient<ShadowspecBar>(5);
+                //    }
+                //    //if (recipe.HasResult(ModContent.ItemType<RedemptionSoul>()) && !recipe.HasIngredient<ExoPrism>())
+                //    //{
+                //    //    recipe.AddIngredient<ShadowspecBar>(5);
+                //    //}
+                //    if (recipe.HasResult(ModContent.ItemType<ThoriumSoul>()) && !recipe.HasIngredient<ShadowspecBar>())
+                //    {
+                //        recipe.AddIngredient<ShadowspecBar>(5);
+                //    }
+                //    if (recipe.HasResult(ModContent.ItemType<CalamitySoul>()) && !recipe.HasIngredient<ShadowspecBar>())
+                //    {
+                //        recipe.AddIngredient<ShadowspecBar>(5);
+                //    }
+                //}
+                //#endregion
             }
         }
     }
