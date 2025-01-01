@@ -7,11 +7,15 @@ Discord Server: https://discord.gg/xB9s8SyQJr
 
 All things mod doing for now:
 
+- Special accessories to combine effects of accessories from other mods
+
+- Electricity, energy shield, radiation systems
+
 - Overloaded bosses summons and energizers for SoA, Calamity, Thorium
 
 - Merge kinetic(SoA) thrower(Thorium) and rogue(Calamity) in one class
 
-- Old Calamity DLC balance (switchable)
+- Old Calamity DLC balance
 
 - Reworked boots and shields progression
 

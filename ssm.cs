@@ -3,7 +3,6 @@ global using FargowiltasSouls.Core.Toggler;
 using ssm.Sky;
 using Microsoft.Xna.Framework;
 using ReLogic.Content;
-using System.IO;
 using Terraria;
 using Terraria.Graphics.Effects;
 using Terraria.Graphics.Shaders;
@@ -16,11 +15,8 @@ using ssm.Items;
 using ssm.Calamity;
 using ssm.Core;
 using ssm.Systems;
-using FargowiltasCrossmod.Core.Calamity.Systems;
-using ThoriumMod;
-using ThoriumMod.Items.BardItems;
-using ThoriumMod.Items.HealerItems;
 using ssm.Content.Items;
+using ssm.Thorium;
 
 namespace ssm
 {
@@ -96,7 +92,6 @@ namespace ssm
                 //RedCaughtNpcs.RedRegisterItems();
             }
 
-            //FargowiltasCrossmod.FargowiltasCrossmod.EnchantLoadingEnabled = true;
             SkyManager.Instance["ssm:Shtuxibus"] = new ShtuxibusSky();
             SkyManager.Instance["ssm:Chtuxlagor"] = new ChtuxlagorSky();
 
@@ -154,41 +149,21 @@ namespace ssm
 
             if (ModCompatibility.Thorium.Loaded)
             {
-                PostSetupContent_Thorium();
+                PostSetupContentThorium.PostSetupContent_Thorium();
             }
 
             Func<string> cap = () => $"Shield Capacity: {Main.LocalPlayer.Shield().shieldCapacity}%";
             Func<string> reg = () => $"Shield Regeneration: {Main.LocalPlayer.Shield().shieldRegenSpeed}%";
             Func<string> max = () => $"Max Shield Capacity: {Main.LocalPlayer.Shield().shieldCapacityMax2}%";
+            //Func<string> res = () => $"RAD resistance: {Main.LocalPlayer.Radiation().statRes}";
+            //Func<string> rad = () => $"RAD: {Main.LocalPlayer.Radiation().statRad}";
             ModCompatibility.MutantMod.Mod.Call("AddStat", ItemID.ObsidianShield, cap);
             ModCompatibility.MutantMod.Mod.Call("AddStat", ItemID.SquireShield, reg);
             ModCompatibility.MutantMod.Mod.Call("AddStat", ItemID.PaladinsShield, max);
-
-            Func<string> res = () => $"RAD resistance: {Main.LocalPlayer.Radiation().statRes}";
-            Func<string> rad = () => $"RAD: {Main.LocalPlayer.Radiation().statRad}";
-            ModCompatibility.MutantMod.Mod.Call("AddStat", ModContent.ItemType<RadiationDebug>(), res);
-            ModCompatibility.MutantMod.Mod.Call("AddStat", ModContent.ItemType<RadiationDebug>(), rad);
+            //ModCompatibility.MutantMod.Mod.Call("AddStat", ModContent.ItemType<RadiationDebug>(), res);
+            //ModCompatibility.MutantMod.Mod.Call("AddStat", ModContent.ItemType<RadiationDebug>(), rad);
         }
-
-        [JITWhenModsEnabled(ModCompatibility.Thorium.Name)]
-
-        public void PostSetupContent_Thorium()
-        {
-            double Damage(DamageClass damageClass) => Math.Round(Main.LocalPlayer.GetTotalDamage(damageClass).Additive * Main.LocalPlayer.GetTotalDamage(damageClass).Multiplicative * 100 - 100);
-            int Crit(DamageClass damageClass) => (int)Main.LocalPlayer.GetTotalCritChance(damageClass);
-
-            int bardItem = ModContent.ItemType<GoldBugleHorn>();
-            Func<string> bardDamage = () => $"Bard Damage: {Damage(ModContent.GetInstance<BardDamage>())}%";
-            Func<string> bardCrit = () => $"Bard Critical: {Crit(ModContent.GetInstance<BardDamage>())}%";
-            ModCompatibility.MutantMod.Mod.Call("AddStat", bardItem, bardDamage);
-            ModCompatibility.MutantMod.Mod.Call("AddStat", bardItem, bardCrit);
-
-            int healerItem = ModContent.ItemType<PalmCross>();
-            Func<string> healerDamage = () => $"Healer Damage: {Damage(ModContent.GetInstance<HealerDamage>())}%";
-            Func<string> healerCrit = () => $"Gealer Critical: {Crit(ModContent.GetInstance<HealerDamage>())}%";
-            ModCompatibility.MutantMod.Mod.Call("AddStat", healerItem, healerDamage);
-            ModCompatibility.MutantMod.Mod.Call("AddStat", healerItem, healerCrit);
-        }
+        
         //Thanks IDGCapitanRussia
         public int OSDetect()
         {
@@ -220,10 +195,7 @@ namespace ssm
             bossChecklist = null;
         }
 
-        public override void HandlePacket(BinaryReader reader, int whoAmI) => PacketManager.ReceivePacket(reader);
-
         static float ColorTimer2;
-
 
         public static Color ShtuxibusColor()
         {

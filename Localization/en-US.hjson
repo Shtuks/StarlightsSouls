@@ -2599,6 +2599,16 @@ Mods: {
 				DisplayName: Radiation Debug
 				Tooltip: ""
 			}
+
+			JourneyCapacitor: {
+				DisplayName: Journey Capacitor
+				Tooltip: ""
+			}
+
+			ShtuxiumCapacitor: {
+				DisplayName: Shtuxium Capacitor
+				Tooltip: ""
+			}
 		}
 
 		Buffs: {

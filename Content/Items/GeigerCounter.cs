@@ -12,7 +12,7 @@ namespace ssm.Content.Items
         {
             Item.width = 32;
             Item.height = 32;
-            Item.maxStack = 100;
+            Item.maxStack = 1;
             Item.value = 10000;
             Item.useAnimation = 30;
             Item.useTime = 30;

@@ -8,7 +8,7 @@ namespace ssm
         //Changable variables
         public bool irradiated; //Have radioactive items in inventory
         public float irradiationSpeed; //How many RAD you get per second
-        public int radiationResistance; //0 - 100% value to determine how fast you will take RAD
+        public float radiationResistance; //0 - 100% value to determine how fast you will take RAD
         public int radiation; //Current RAD
         public float antiradRegen; //Speed of removing radiation
 
@@ -18,7 +18,7 @@ namespace ssm
 
         //Variables for stat sheet
         internal int statRad;
-        internal int statRes;
+        internal float statRes;
 
         public override void PostUpdateMiscEffects() { UpdateRad(); }
         public override void ResetEffects() { ResetVariables(); }

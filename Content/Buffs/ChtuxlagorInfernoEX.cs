@@ -1,9 +1,5 @@
-using CalamityMod.CalPlayer;
-using FargowiltasSouls;
-using FargowiltasSouls.Content.NPCs;
 using Terraria;
 using Terraria.ID;
-using Terraria.DataStructures;
 using Terraria.ModLoader;
 
 namespace ssm.Content.Buffs

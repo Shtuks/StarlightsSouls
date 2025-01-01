@@ -6,6 +6,9 @@ using Microsoft.Xna.Framework;
 using ThoriumMod.Items.BardItems;
 using ssm.Core;
 using FargowiltasSouls.Content.Items.Accessories.Enchantments;
+using FargowiltasSouls.Core.AccessoryEffectSystem;
+using ssm.Content.SoulToggles;
+using static ssm.Thorium.Enchantments.LodestoneEnchant;
 
 namespace ssm.Thorium.Enchantments
 {
@@ -29,20 +32,24 @@ namespace ssm.Thorium.Enchantments
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            ThoriumPlayer thoriumPlayer = player.GetModPlayer<ThoriumPlayer>();
-
-            //toggle
-                //marching band set 
-                //thoriumPlayer.setMarchingBand = true;
-
+            if (player.AddEffect<MarchingBandEffect>(Item))
+            {
+                ModContent.Find<ModItem>(this.thorium.Name, "MarchingBandShako").UpdateArmorSet(player);
+            }
             ModContent.Find<ModItem>(this.thorium.Name, "FullScore").UpdateAccessory(player, hideVisual);
+        }
+
+        public class MarchingBandEffect : AccessoryEffect
+        {
+            public override Header ToggleHeader => Header.GetHeader<NiflheimForceHeader>();
+            public override int ToggleItemType => ModContent.ItemType<MarchingBandEnchant>();
         }
 
         public override void AddRecipes()
         {
             Recipe recipe = this.CreateRecipe();
 
-            recipe.AddIngredient(ModContent.ItemType<MarchingBandCap>());
+            recipe.AddIngredient(ModContent.ItemType<MarchingBandShako>());
             recipe.AddIngredient(ModContent.ItemType<MarchingBandUniform>());
             recipe.AddIngredient(ModContent.ItemType<MarchingBandLeggings>());
             recipe.AddIngredient(ModContent.ItemType<FullScore>());

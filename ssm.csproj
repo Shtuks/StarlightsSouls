@@ -111,6 +111,9 @@
 	  <Reference Include="SacredTools">
 	    <HintPath>Libraries\SacredTools.dll</HintPath>
 	  </Reference>
+	  <Reference Include="sl">
+	    <HintPath>..\..\ModReader\sl\sl.dll</HintPath>
+	  </Reference>
 	  <Reference Include="SubworldLibrary">
 	    <HintPath>Libraries\SubworldLibrary.dll</HintPath>
 	  </Reference>

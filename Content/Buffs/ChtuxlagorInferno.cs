@@ -1,12 +1,7 @@
 using FargowiltasSouls;
-using FargowiltasSouls.Content.NPCs;
 using Terraria;
 using Terraria.ID;
-using Terraria.DataStructures;
 using Terraria.ModLoader;
-using CalamityMod.NPCs;
-using CalamityMod;
-
 namespace ssm.Content.Buffs
 {
     public class ChtuxlagorInferno : ModBuff

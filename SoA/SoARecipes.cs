@@ -37,11 +37,11 @@ namespace ssm
             for (int i = 0; i < Recipe.numRecipes; i++)
             {
                 Recipe recipe = Main.recipe[i];
-                if(recipe.HasResult<FloraFist>() && !recipe.HasIngredient(ItemID.MechanicalGlove))
-                {
-                    recipe.RemoveIngredient(ItemID.FireGauntlet);
-                    recipe.AddIngredient(ItemID.MechanicalGlove);
-                }
+                //if(recipe.HasResult<FloraFist>() && !recipe.HasIngredient(ItemID.MechanicalGlove))
+                //{
+                //    recipe.RemoveIngredient(ItemID.FireGauntlet);
+                //    recipe.AddIngredient(ItemID.MechanicalGlove);
+                //}
                 if (recipe.HasResult<EternitySoul>() && !recipe.HasIngredient<SoASoul>())
                 {
                     recipe.AddIngredient<SoASoul>();

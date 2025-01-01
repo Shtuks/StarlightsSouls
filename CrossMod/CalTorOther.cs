@@ -30,7 +30,6 @@ namespace ssm.CrossMod
 
                 if (recipe.HasResult(ModContent.ItemType<StatisCurse>()) && !recipe.HasIngredient(ModContent.ItemType<GalacticaSingularity>()))
                 {
-                    recipe.AddIngredient<NecroticSkull>(1);
                     recipe.RemoveIngredient(ItemID.FragmentStardust);
                     recipe.AddIngredient<GalacticaSingularity>(5);
                     recipe.AddIngredient<Necroplasm>(3);

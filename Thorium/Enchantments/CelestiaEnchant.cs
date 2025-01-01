@@ -44,7 +44,8 @@ namespace ssm.Thorium.Enchantments
             recipe.AddIngredient(ModContent.ItemType<CelestialLeggings>());
             recipe.AddIngredient(ModContent.ItemType<CelestialWand>());
             //recipe.AddIngredient(ModContent.ItemType<HealingRain>());
-            recipe.AddIngredient(ModContent.ItemType<AncientTome>());
+            //
+            recipe.AddIngredient(ModContent.ItemType<Revivify>());
 
             recipe.AddTile(TileID.LunarCraftingStation);
             recipe.Register();

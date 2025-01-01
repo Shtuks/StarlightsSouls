@@ -41,9 +41,7 @@ namespace ssm.Thorium.Enchantments
                     Player player2 = Main.player[i];
                     if (player2.active && Vector2.Distance(player2.Center, player.Center) < 250f)
                     {
-                    player.AddBuff(ModContent.BuffType<DepthSpeed>(), 30, false);
-                    player.AddBuff(ModContent.BuffType<DepthDamage>(), 30, false);
-                    player.AddBuff(ModContent.BuffType<DepthBreath>(), 30, false);
+                    player.AddBuff(ModContent.BuffType<DepthDiverAura>(), 30, false);
                     }
                 }
 

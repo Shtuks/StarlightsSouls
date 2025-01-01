@@ -17,7 +17,7 @@ using FargowiltasSouls.Content.Bosses.MutantBoss;
 namespace ssm.Content.NPCs.StarlightCat
 {
     [AutoloadBossHead]
-    public class StarlightCatBoss : ModNPC
+    internal class StarlightCatBoss : ModNPC
     {
         //Variables
         Player player => Main.player[NPC.target];

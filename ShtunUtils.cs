@@ -1,30 +1,20 @@
 using Terraria.ModLoader;
-using ssm.Content.Buffs;
-using ssm;
 using System.Reflection;
 using Terraria;
 using Terraria.Chat;
 using Terraria.GameContent.Creative;
-using Terraria.GameContent.ItemDropRules;
 using Terraria.Graphics.Shaders;
 using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Terraria.GameContent.Bestiary;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 using System.Collections.Generic;
-using System.Text;
-using static Terraria.ModLoader.ModContent;
-using Terraria.Audio;
 using FargowiltasSouls.Content.Projectiles;
-using System.IO;
 using Terraria.ID;
-using ssm.Content.NPCs;
 using ReLogic.Content;
 using System.Linq;
 using Terraria.DataStructures;
 using Terraria.Localization;
+using ssm.Electricity;
 
 namespace ssm
 {
@@ -173,6 +163,8 @@ namespace ssm
             => player.GetModPlayer<ShtunShield>();
         public static ShtunRadiation Radiation(this Player player)
             => player.GetModPlayer<ShtunRadiation>();
+        public static ElectricalItem Electricity(this Item item)
+            => item.GetGlobalItem<ElectricalItem>();
 
         public static bool Stalin = ShtunConfig.Instance.Stalin;
         public static string TryStalinTexture => Stalin ? "_Stalin" : "";

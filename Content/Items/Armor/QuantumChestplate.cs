@@ -8,7 +8,7 @@ using ssm.Electricity;
 namespace ssm.Content.Items.Armor
 {
     [AutoloadEquip(EquipType.Body)]
-    public class QuantumChestplate : BaseElectricalArmor
+    public class QuantumChestplate : ModItem
     {
         public override void SetDefaults()
         {
@@ -18,7 +18,7 @@ namespace ssm.Content.Items.Armor
             Item.expert = true;
             Item.value = Item.sellPrice(100, 0, 0, 0);
             Item.defense = 200;
-            maxCharge = 10000000;
+            Item.Electricity().chargeMax = 10000000;
         }
 
         public override void UpdateEquip(Player player)
@@ -34,13 +34,15 @@ namespace ssm.Content.Items.Armor
             player.lifeRegenCount += 10;
             player.lifeRegenTime += 10;
 
-            if (charge > maxCharge)
+            if (Item.Electricity().charge > 0)
             {
                 player.Shield().shieldOn = true;
                 player.Shield().shieldCapacityMax2 += 10000;
                 player.Shield().shieldRegenSpeed += 200f;
                 player.Shield().shieldHitsRegen += 0.5f;
                 player.Shield().shieldHitsCap += 10;
+
+                Item.Electricity().charge--;
             }
         }
 

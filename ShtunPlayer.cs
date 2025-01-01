@@ -1,35 +1,13 @@
-using Terraria.ID;
-using Terraria.Audio;
-using System.Collections.Generic;
-using ssm.Content.Projectiles.Deathrays;
-using Terraria.GameContent;
-using Terraria.Localization;
-using Terraria.UI;
 using ssm.Content.Buffs;
-using ssm;
-using Terraria.Graphics.Shaders;
-using FargowiltasSouls;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 using System;
 using Terraria.DataStructures;
 using Terraria.GameInput;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
-using ssm.Content.Items.Accessories;
-using ReLogic.Content;
-using System.IO;
-using Terraria.Chat;
-using Terraria.GameContent.ItemDropRules;
-using Terraria.Graphics.Effects;
-using ssm.Content.Buffs.Minions;
-using ssm.Content.Items;
-using ssm.Content.Buffs.Anti;
 using Terraria;
 using ssm.Content.NPCs.StarlightCat;
 using ssm.Core;
-using FargowiltasSouls.Content.Items.Accessories.Masomode;
-using FargowiltasSouls.Core.AccessoryEffectSystem;
 using ssm.Content.Mounts;
 using Terraria.IO;
 
@@ -184,7 +162,7 @@ namespace ssm
 
         public override bool CanBeHitByNPC(NPC npc, ref int cooldownSlot)
         {
-            return !ChtuxlagorBuff || Player.HasBuff<ShtuxianDomination>();
+            return !ChtuxlagorBuff || !Player.HasBuff<ShtuxianDomination>();
         }
         public override bool CanBeHitByProjectile(Projectile proj)
         {
@@ -310,6 +288,7 @@ namespace ssm
             equippedNekomiEnchantment = false;
             DevianttSoul = false;
             MutantSoul = false;
+            geiger = false;
             ChtuxlagorHeart = false;
             shtuxianSoul = false;
             ShtuxibusSoul = false;
@@ -340,7 +319,7 @@ namespace ssm
         int cooldownCounter,
         bool dodgeable)
         {
-            return this.Player == Main.LocalPlayer && Player.HasBuff<ShtuxianDomination>();
+            return Player.HasBuff<ShtuxianDomination>();
         }
 
         public override bool PreKill(double damage, int hitDirection, bool pvp, ref bool playSound, ref bool genGore, ref PlayerDeathReason damageSource)

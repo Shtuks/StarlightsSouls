@@ -58,6 +58,7 @@ namespace ssm.Calamity.Enchantments
             recipe.AddIngredient(ModContent.ItemType<Eternity>());
 
             recipe.AddTile(calamity, "DraedonsForge");
+            recipe.Register();
         }
 
         public class RedDevil : AccessoryEffect

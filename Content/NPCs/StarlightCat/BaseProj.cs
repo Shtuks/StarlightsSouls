@@ -1,9 +1,5 @@
-using System;
-using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using ssm.Content.NPCs.StarlightCat;
-using Terraria;
 
 namespace ssm.Content.NPCs.StarlightCat
 {

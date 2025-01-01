@@ -1,4 +1,3 @@
-
 using FargowiltasSouls.Content.Items.Armor;
 using ssm.Content.Items.Materials;
 using Terraria;
@@ -9,7 +8,7 @@ using ssm.Electricity;
 namespace ssm.Content.Items.Armor
 {
     [AutoloadEquip(EquipType.Legs)]
-    public class QuantumPants : BaseElectricalArmor
+    public class QuantumPants : ModItem
     {
         public override void SetDefaults()
         {
@@ -19,7 +18,7 @@ namespace ssm.Content.Items.Armor
             Item.expert = true;
             Item.value = Item.sellPrice(100, 0, 0, 0);
             Item.defense = 150;
-            maxCharge = 10000000;
+            Item.Electricity().chargeMax = 10000000;
         }
 
         public override void UpdateEquip(Player player)
@@ -31,7 +30,7 @@ namespace ssm.Content.Items.Armor
             player.moveSpeed += 0.5f;
             player.GetAttackSpeed(DamageClass.Generic) += 1f;
 
-            if (charge > 0)
+            if (Item.Electricity().charge > 0)
             {
                 player.Shield().shieldOn = true;
                 player.Shield().shieldCapacityMax2 += 10000;
@@ -39,7 +38,7 @@ namespace ssm.Content.Items.Armor
                 player.Shield().shieldHitsRegen += 0.5f;
                 player.Shield().shieldHitsCap += 10;
 
-                charge--;
+                Item.Electricity().charge--;
             }
         }
 
