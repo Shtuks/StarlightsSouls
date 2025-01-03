@@ -164,8 +164,8 @@ namespace ssm
             => player.GetModPlayer<ShtunShield>();
         public static SHTUKPlayer SHTUK(this Player player)
             => player.GetModPlayer<SHTUKPlayer>();
-        public static Modules Modules(this Player player)
-            => player.GetModPlayer<Modules>();
+        public static ModulesPlayer Modules(this Player player)
+            => player.GetModPlayer<ModulesPlayer>();
         public static ShtunRadiation Radiation(this Player player)
             => player.GetModPlayer<ShtunRadiation>();
         public static ElectricalItem Electricity(this Item item)

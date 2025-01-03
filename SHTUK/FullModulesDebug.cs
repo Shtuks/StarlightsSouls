@@ -27,6 +27,7 @@ namespace ssm.SHTUK
             player.Modules().servoModule = 5;
             player.Modules().teleportModule = true;
             player.Modules().radarModule = true;
+            player.Modules().ressurectionModule = true;
             player.Modules().noOverloadModule = true;
             player.Modules().lifeModule = 5;
             player.Modules().summonModule = 5;

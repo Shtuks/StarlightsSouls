@@ -1,16 +1,18 @@
+using FargowiltasSouls.Content.Items.Accessories.Enchantments;
+using FargowiltasSouls.Core.AccessoryEffectSystem;
+using Terraria;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
+using static SacredTools.Utilities.SoASets;
 
 namespace ssm.SHTUK
 {
-    public class Modules : ModPlayer
+    public class ModulesPlayer : ModPlayer
     {
         public bool radarModule;
         public bool teleportModule;
         public bool ressurectionModule;
         public bool noOverloadModule;
-
-        public int teleportModuleCost = 1000;
 
         public int shieldModule;
         public int servoModule;
@@ -60,10 +62,31 @@ namespace ssm.SHTUK
             {
                 if (radarModule)
                 {
+                    Player.accWatch = 3;
+                    Player.accDepthMeter = 1;
+                    Player.accCompass = 1;
+                    Player.accFishFinder = true;
+                    Player.accDreamCatcher = true;
+                    Player.accOreFinder = true;
+                    Player.accStopwatch = true;
+                    Player.accCritterGuide = true;
+                    Player.accJarOfSouls = true;
+                    Player.accThirdEye = true;
+                    Player.accCalendar = true;
+                    Player.accWeatherRadio = true;
+                    Player.chiselSpeed = true;
+                    Player.treasureMagnet = true;
+                    Player.nightVision = true;
+                    Player.findTreasure = true;
+                    Player.detectCreature = true;
+                    Player.dangerSense = true;
+                    Lighting.AddLight(Player.Center, 0.8f, 0.8f, 0);
+
                     Player.SHTUK().energyConsumption += 3;
                 }
                 if (noOverloadModule)
                 {
+                    Player.SHTUK().overload = 0;
                     Player.SHTUK().energyConsumption += 5;
                 }
 
@@ -133,11 +156,11 @@ namespace ssm.SHTUK
                 switch (energyModule)
                 {
                     case 0: break;
-                    case 1: Player.SHTUK().energyMax2 += 1000; Player.SHTUK().energyRegen += 1; Player.SHTUK().energyRegenCharging += 10; break;
-                    case 2: Player.SHTUK().energyMax2 += 3000; Player.SHTUK().energyRegen += 3; Player.SHTUK().energyRegenCharging += 15; break;
-                    case 3: Player.SHTUK().energyMax2 += 5000; Player.SHTUK().energyRegen += 5; Player.SHTUK().energyRegenCharging += 20; break;
-                    case 4: Player.SHTUK().energyMax2 += 7000; Player.SHTUK().energyRegen += 7; Player.SHTUK().energyRegenCharging += 25; break;
-                    case 5: Player.SHTUK().energyMax2 += 10000; Player.SHTUK().energyRegen += 10; Player.SHTUK().energyRegenCharging += 30; break;
+                    case 1: Player.SHTUK().energyMax2 += 10000; Player.SHTUK().energyRegen += 1; Player.SHTUK().energyRegenCharging += 10; break;
+                    case 2: Player.SHTUK().energyMax2 += 30000; Player.SHTUK().energyRegen += 3; Player.SHTUK().energyRegenCharging += 15; break;
+                    case 3: Player.SHTUK().energyMax2 += 50000; Player.SHTUK().energyRegen += 5; Player.SHTUK().energyRegenCharging += 20; break;
+                    case 4: Player.SHTUK().energyMax2 += 70000; Player.SHTUK().energyRegen += 7; Player.SHTUK().energyRegenCharging += 25; break;
+                    case 5: Player.SHTUK().energyMax2 += 100000; Player.SHTUK().energyRegen += 10; Player.SHTUK().energyRegenCharging += 30; break;
                 }
             }
         }

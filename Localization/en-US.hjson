@@ -2616,7 +2616,7 @@ Mods: {
 			}
 
 			OffenceModule: {
-				Tooltip: ""
+				Tooltip: - Tier 1 -
 				DisplayName: Offence Module
 			}
 
@@ -2636,7 +2636,17 @@ Mods: {
 			}
 
 			AdvancedSHTUKCyberneticParts: {
-				DisplayName: Advanced S H T U K Cybernetic Parts
+				DisplayName: Advanced S.H.T.U.K Cybernetic Parts
+				Tooltip: ""
+			}
+
+			InfinitieEnergyDebug: {
+				Tooltip: ""
+				DisplayName: Infinitie Energy Debug
+			}
+
+			x10MultiplierDebug: {
+				DisplayName: x10 Multiplier Debug
 				Tooltip: ""
 			}
 		}
@@ -2740,6 +2750,11 @@ Mods: {
 			CyborgBuff: {
 				DisplayName: Cyborg
 				Description: Your body made of metal.
+			}
+
+			RessurectedBuff: {
+				DisplayName: Ressurected Buff
+				Description: Mods.ssm.Buffs.RessurectedBuff.Description
 			}
 		}
 

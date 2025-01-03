@@ -12,6 +12,7 @@ using ssm.Content.Mounts;
 using Terraria.IO;
 using Terraria.Map;
 using ssm.SHTUK.Modules;
+using Terraria.ID;
 
 namespace ssm
 {
@@ -90,6 +91,30 @@ namespace ssm
 
                 //SoundEngine.PlaySound(new SoundStyle("ssm/Assets/Sounds/ShtuxianSuper"), Player.Center);
             }
+
+            if (ssm.shtukTeleport.JustPressed && Player.Modules().teleportModule && Main.myPlayer == Player.whoAmI)
+            {
+                Vector2 teleportLocation;
+                teleportLocation.X = (float)Main.mouseX + Main.screenPosition.X;
+                if (Player.gravDir == 1f)
+                {
+                    teleportLocation.Y = (float)Main.mouseY + Main.screenPosition.Y - (float)Player.height;
+                }
+                else
+                {
+                    teleportLocation.Y = Main.screenPosition.Y + (float)Main.screenHeight - (float)Main.mouseY;
+                }
+                teleportLocation.X -= (float)(Player.width / 2);
+                if (teleportLocation.X > 50f && teleportLocation.X < (float)(Main.maxTilesX * 16 - 50) && teleportLocation.Y > 50f && teleportLocation.Y < (float)(Main.maxTilesY * 16 - 50))
+                {
+                    if (!Collision.SolidCollision(teleportLocation, Player.width, Player.height))
+                    {
+                        Player.Teleport(teleportLocation, 4, 0);
+                        NetMessage.SendData(MessageID.TeleportEntity, -1, -1, null, 0, (float)Player.whoAmI, teleportLocation.X, teleportLocation.Y, 1, 0, 0);
+                    }
+                }
+            }
+
 
             if (ssm.shtukCharge.Current)
             {

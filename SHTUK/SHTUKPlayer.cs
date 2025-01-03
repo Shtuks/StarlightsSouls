@@ -40,7 +40,7 @@ namespace ssm.SHTUK
         public int energyMax;
         public int energyMax2;
         public float energyMaxMult;
-        public int baseEnergyMax = 1000;
+        public int baseEnergyMax = 10000;
 
 
         public override void Initialize() { energyMax = baseEnergyMax; }
@@ -88,7 +88,7 @@ namespace ssm.SHTUK
                 {
                     Player.statDefense += defenceAdd;
                     Player.lifeRegen += regenAdd;
-                    Player.endurance += drAdd;
+                    Player.endurance += drAdd / 100;
                     Player.statManaMax2 += manaAdd;
                     Player.GetArmorPenetration<GenericDamageClass>() += penetrationAdd;
                     Player.maxMinions += minionsAdd;
@@ -99,8 +99,8 @@ namespace ssm.SHTUK
                     Player.GetCritChance<GenericDamageClass>() += critAdd;
                     Player.Shield().shieldCapacityMax2 += shieldAdd;
                     Player.Shield().shieldRegenSpeed += shieldRegAdd;
-                    Player.GetDamage<GenericDamageClass>() += damageMult;
-                    Player.moveSpeed += speedMult;
+                    Player.GetDamage<GenericDamageClass>() += damageMult / 100;
+                    Player.moveSpeed += speedMult / 100;
 
                     if (generalMult > 1)
                     {

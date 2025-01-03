@@ -29,6 +29,7 @@ namespace ssm.SHTUK
             string v15 = player.SHTUK().energy.ToString();
             string v16 = player.SHTUK().energyMax2.ToString();
             string v17 = player.SHTUK().energyRegenCharging.ToString();
+            string v19 = player.SHTUK().energyRegen.ToString();
             string v5 = player.Modules().defenceModule.ToString();
             string v6 = player.Modules().energyModule.ToString();
             string v7 = player.Modules().magicModule.ToString();
@@ -38,6 +39,7 @@ namespace ssm.SHTUK
             string v11 = player.Modules().radarModule.ToString();
             string v12 = player.Modules().noOverloadModule.ToString();
             string v13 = player.Modules().lifeModule.ToString();
+            string v18 = player.Modules().ressurectionModule.ToString();
 
             ShtunUtils.DisplayLocalizedText("/ S.H.T.U.K /", Color.White);
             ShtunUtils.DisplayLocalizedText("Is cyborg:               " + v1, Color.Red);
@@ -47,7 +49,8 @@ namespace ssm.SHTUK
             ShtunUtils.DisplayLocalizedText("Consumption:             " + v14, Color.Violet);
             ShtunUtils.DisplayLocalizedText("Energy:                  " + v15, Color.CadetBlue);
             ShtunUtils.DisplayLocalizedText("Energy Max:              " + v16, Color.DarkSalmon);
-            ShtunUtils.DisplayLocalizedText("Charging:              " + v17, Color.Brown);
+            ShtunUtils.DisplayLocalizedText("Charging:                " + v17, Color.Brown);
+            ShtunUtils.DisplayLocalizedText("Regen:                   " + v19, Color.DarkCyan);
             ShtunUtils.DisplayLocalizedText("/ Modules /", Color.White);
             ShtunUtils.DisplayLocalizedText("Defence:                 " + v5, Color.Purple);
             ShtunUtils.DisplayLocalizedText("Energy:                  " + v6, Color.Cyan);
@@ -58,6 +61,7 @@ namespace ssm.SHTUK
             ShtunUtils.DisplayLocalizedText("Radar:                   " + v11, Color.BlueViolet);
             ShtunUtils.DisplayLocalizedText("Overload:                " + v12, Color.Chocolate);
             ShtunUtils.DisplayLocalizedText("Life:                    " + v13, Color.Crimson);
+            ShtunUtils.DisplayLocalizedText("Ressurection:            " + v18, Color.DarkGray);
 
             player.SHTUK().addEnergy(null);
 
