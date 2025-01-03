@@ -27,7 +27,7 @@ namespace ssm.CrossMod
         }
     }
     [ExtendsFromMod(ModCompatibility.Calamity.Name, ModCompatibility.SacredTools.Name)]
-    public class RampartShieldEffects : GlobalItem
+    public class CalSoAEffects : GlobalItem
     {
         public override bool IsLoadingEnabled(Mod mod)
         {

@@ -15,6 +15,7 @@ using System.Linq;
 using Terraria.DataStructures;
 using Terraria.Localization;
 using ssm.Electricity;
+using ssm.SHTUK;
 
 namespace ssm
 {
@@ -161,6 +162,10 @@ namespace ssm
             => player.GetModPlayer<ShtunPlayer>();
         public static ShtunShield Shield(this Player player)
             => player.GetModPlayer<ShtunShield>();
+        public static SHTUKPlayer SHTUK(this Player player)
+            => player.GetModPlayer<SHTUKPlayer>();
+        public static Modules Modules(this Player player)
+            => player.GetModPlayer<Modules>();
         public static ShtunRadiation Radiation(this Player player)
             => player.GetModPlayer<ShtunRadiation>();
         public static ElectricalItem Electricity(this Item item)

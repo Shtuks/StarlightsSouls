@@ -103,6 +103,7 @@ namespace ssm
                 }
             }
         }
+        
         public void InstaKill(int? damageAmmount = null)
         {
             //Manualy deal damage to shield

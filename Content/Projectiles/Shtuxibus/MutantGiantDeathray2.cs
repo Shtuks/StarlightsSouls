@@ -1,5 +1,4 @@
-﻿using ssm.Assets;
-using FargowiltasSouls.Content.Buffs.Boss;
+﻿using FargowiltasSouls.Content.Buffs.Boss;
 using FargowiltasSouls.Content.Buffs.Masomode;
 using FargowiltasSouls.Content.Buffs.Souls;
 using FargowiltasSouls.Content.Projectiles;
@@ -277,7 +276,7 @@ namespace ssm.Content.NPCs.Shtuxibus
             // The laser should fade to white in the middle.
             Color brightColor = new(194, 255, 194, 100);
             shader.TrySetParameter("mainColor", brightColor);
-            FargoSoulsUtil.SetTexture1(ShtunTextureRegistry.ShtuxibusStreak.Value);
+            FargoSoulsUtil.SetTexture1(ShtunRegs.ShtuxibusStreak.Value);
             // Draw a big glow above the start of the laser, to help mask the intial fade in due to the immense width.
 
             Texture2D glowTexture = ModContent.Request<Texture2D>("FargowiltasSouls/Content/Projectiles/GlowRing").Value;

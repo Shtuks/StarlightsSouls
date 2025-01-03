@@ -18,7 +18,7 @@ namespace ssm.Reworks
 
             //Reaver shark
             if (item.type == 2341)
-                item.pick = 65;
+                item.pick = 64;
         }
     }
 }

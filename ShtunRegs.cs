@@ -25,6 +25,8 @@ namespace ssm
         #endregion
 
         #region Trails
+        public static Asset<Texture2D> ShtuxibusStreak => ModContent.Request<Texture2D>("ssm/Assets/ExtraTextures/Trails/ShtuxibusStreak");
+        public static Asset<Texture2D> starlightArena => ModContent.Request<Texture2D>("ssm/Content/NPCs/StarlightCat/ChtuxlagorArenaBlock");
         public static Asset<Texture2D> DeviBackStreak => ModContent.Request<Texture2D>("ssm/ExtraTextures/Trails/DevBackStreak");
         public static Asset<Texture2D> DeviInnerStreak => ModContent.Request<Texture2D>("ssm/ExtraTextures/Trails/DevInnerStreak");
         public static Asset<Texture2D> FadedGlowStreak => ModContent.Request<Texture2D>("ssm/ExtraTextures/Trails/FadedGlowStreak");
@@ -33,6 +35,10 @@ namespace ssm
         public static Asset<Texture2D> GenericStreak => ModContent.Request<Texture2D>("ssm/ExtraTextures/Trails/GenericStreak");
         public static Asset<Texture2D> MutantStreak => ModContent.Request<Texture2D>("ssm/ExtraTextures/Trails/MutantStreak");
         public static Asset<Texture2D> WillStreak => ModContent.Request<Texture2D>("ssm/ExtraTextures/Trails/WillStreak");
+        #endregion
+
+        #region UI
+        public static Asset<Texture2D> energyBar => ModContent.Request<Texture2D>("ssm/Assets/UI/energyBar");
         #endregion
     }
 }

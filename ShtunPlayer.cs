@@ -10,6 +10,8 @@ using ssm.Content.NPCs.StarlightCat;
 using ssm.Core;
 using ssm.Content.Mounts;
 using Terraria.IO;
+using Terraria.Map;
+using ssm.SHTUK.Modules;
 
 namespace ssm
 {
@@ -31,6 +33,7 @@ namespace ssm
         public bool geiger;
         public int frameCounter;
         public int ShtuxibusDeaths;
+        public bool charging;
         private readonly Mod FargoSoul = Terraria.ModLoader.ModLoader.GetMod("FargowiltasSouls");
         public bool ShtuxibusMinionBuff;
         public bool ChtuxlagorBuff;
@@ -54,7 +57,6 @@ namespace ssm
         public bool ShtuxibusSoul;
         public bool trueDevSets;
 
-        int timeru = 0;
         public bool DeviGraze;
         public bool Graze;
         public float GrazeRadius;
@@ -87,6 +89,11 @@ namespace ssm
                 Player.AddBuff(ModContent.BuffType<ChtuxlagorInferno>(), duration * 70);
 
                 //SoundEngine.PlaySound(new SoundStyle("ssm/Assets/Sounds/ShtuxianSuper"), Player.Center);
+            }
+
+            if (ssm.shtukCharge.Current)
+            {
+                Player.SHTUK().addEnergy(Player.SHTUK().energyRegenCharging);
             }
 
             if (ssm.dotMount.JustPressed)
@@ -195,30 +202,30 @@ namespace ssm
 
         /*public override void PostUpdateMiscEffects()
         {
-            if (this.antiCollision)
-                this.Player.AddBuff(ModContent.BuffType<AntiCollision>(), 2, true, false);
-            if (this.antiDeath)
-                this.Player.AddBuff(ModContent.BuffType<AntiDeath>(), 2, true, false);
-            if (this.antiDebuff)
+            if (antiCollision)
+                Player.AddBuff(ModContent.BuffType<AntiCollision>(), 2, true, false);
+            if (antiDeath)
+                Player.AddBuff(ModContent.BuffType<AntiDeath>(), 2, true, false);
+            if (antiDebuff)
             {
-                this.Player.AddBuff(ModContent.BuffType<AntiDebuff>(), 2, true, false);
+                Player.AddBuff(ModContent.BuffType<AntiDebuff>(), 2, true, false);
                 for (int index = 0; index < BuffLoader.BuffCount; ++index)
                 {
                     if (Main.debuff[index])
                     {
-                        this.Player.buffImmune[index] = true;
-                        this.Player.buffImmune[28] = false;
-                        this.Player.buffImmune[34] = false;
-                        this.Player.buffImmune[146] = false;
-                        this.Player.buffImmune[87] = false;
-                        this.Player.buffImmune[89] = false;
-                        this.Player.buffImmune[48] = false;
-                        this.Player.buffImmune[158] = false;
-                        this.Player.buffImmune[215] = false;
+                        Player.buffImmune[index] = true;
+                        Player.buffImmune[28] = false;
+                        Player.buffImmune[34] = false;
+                        Player.buffImmune[146] = false;
+                        Player.buffImmune[87] = false;
+                        Player.buffImmune[89] = false;
+                        Player.buffImmune[48] = false;
+                        Player.buffImmune[158] = false;
+                        Player.buffImmune[215] = false;
                     }
                 }
-                if (this.Player.potionDelay > 0)
-                    this.Player.potionDelay = 0;
+                if (Player.potionDelay > 0)
+                    Player.potionDelay = 0;
             }
         }*/
         public override void SaveData(TagCompound tag)
@@ -267,12 +274,12 @@ namespace ssm
 
         public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
-            //if (this.equippedPhantasmalEnchantment)
-            //    target.AddBuff(ModContent.Find<ModBuff>(this.FargoSoul.Name, "MutantFangBuff").Type, 1000, false);
-            //if (this.equippedNekomiEnchantment)
-            //    target.AddBuff(ModContent.Find<ModBuff>(this.FargoSoul.Name, "DeviPresenceBuff").Type, 1000, false);
-            //if (this.equippedAbominableEnchantment)
-            //    target.AddBuff(ModContent.Find<ModBuff>(this.FargoSoul.Name, "AbomFangBuff").Type, 1000, false);
+            //if (equippedPhantasmalEnchantment)
+            //    target.AddBuff(ModContent.Find<ModBuff>(FargoSoul.Name, "MutantFangBuff").Type, 1000, false);
+            //if (equippedNekomiEnchantment)
+            //    target.AddBuff(ModContent.Find<ModBuff>(FargoSoul.Name, "DeviPresenceBuff").Type, 1000, false);
+            //if (equippedAbominableEnchantment)
+            //    target.AddBuff(ModContent.Find<ModBuff>(FargoSoul.Name, "AbomFangBuff").Type, 1000, false);
             if (ChtuxlagorHeart)
                 target.AddBuff(ModContent.Find<ModBuff>("ssm", "ChtuxlagorInferno").Type, 1000, false);
         }
@@ -330,6 +337,12 @@ namespace ssm
             {
                 if (Player.HasBuff<ShtuxianDomination>() || ChtuxlagorBuff)
                 {
+                    retVal = false;
+                }
+                if (Player.Modules().ressurectionModule && Player.SHTUK().energy > 1000 && !Player.HasBuff(ModContent.BuffType<SHTUK.Modules.RessurectedBuff>()))
+                {
+                    Player.AddBuff(ModContent.BuffType<SHTUK.Modules.RessurectedBuff>(), 300);
+                    Player.statLife = Player.statLifeMax2;
                     retVal = false;
                 }
             }

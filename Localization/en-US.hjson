@@ -2295,18 +2295,18 @@ Mods: {
 			ShtuxibusFumo: {
 				Tooltip:
 					'''
-					Use this item to meet me.
-					Reccomend you to use it in spacious place like sky.
-					Your hitbox will become a little dot for a fight.
-					Highly reccomend to have [i:ssm/ShtuxianSoul].
-					Defeating me less than in minute will kill you.
-					Dealing more that 1/10 of health will kill you.
-					Trying to use Super Smash mod on me will kill you.
-					Trying to use [shtuxianSuper] will immideately kill you.
-					Cheat Sheet/Heros's Mod/DragonLens godmode will kill you.
-					All bosses, npcs and creature will die after usage of this item.
+					Use this item to meet me. Reccomend you to use it in spacious place like sky.
+					Dealing more that 1/10 of health will kill you. Have diffrent interactions if safe mode enabled or disabled.
+					Highly reccomend to have [i:ssm/ShtuxianSoul] Dot Mount. Defeating me less than in minute will kill you.
+					Trying to use Super Smash mod on me will kill you. Trying to use [shtuxianSuper] will immideately kill you.
+					Cheat Sheet/Heros's Mod/DragonLens godmode will kill you. All bosses, npcs and creature will die after usage of this item.
 					'''
 				DisplayName: Shtuxibus Fumo
+				NoSafeMode:
+					'''
+					WARNING! Safe mode disabled! If you will die while Destroyer or Chaos alife, your character will be deleted.
+					If you will die more than 10 times in one world on Destroyer or Chaos part, world will be deleted.
+					'''
 			}
 
 			BrimstoneWitch: {
@@ -2609,6 +2609,36 @@ Mods: {
 				DisplayName: Shtuxium Capacitor
 				Tooltip: ""
 			}
+
+			SHTUKCyberneticParts: {
+				Tooltip: Usage of this item will turn you into advanced cybernetic robot
+				DisplayName: S.H.T.U.K Cybernetic Parts
+			}
+
+			OffenceModule: {
+				Tooltip: ""
+				DisplayName: Offence Module
+			}
+
+			OrangePill: {
+				DisplayName: Orange Pill
+				Tooltip: Usage of this item will turn you back in living being
+			}
+
+			CyborgDebug: {
+				Tooltip: ""
+				DisplayName: Cyborg Debug
+			}
+
+			FullModulesDebug: {
+				Tooltip: ""
+				DisplayName: Full Modules Debug
+			}
+
+			AdvancedSHTUKCyberneticParts: {
+				DisplayName: Advanced S H T U K Cybernetic Parts
+				Tooltip: ""
+			}
 		}
 
 		Buffs: {
@@ -2699,12 +2729,17 @@ Mods: {
 
 			DotBuff: {
 				Description: Your hitbox is a singe dot
-				DisplayName: Dot Buff
+				DisplayName: Dot
 			}
 
 			YharonBuff: {
-				DisplayName: Yharon Buff
+				DisplayName: Yharon
 				Description: Little Yharon is fighting for you.
+			}
+
+			CyborgBuff: {
+				DisplayName: Cyborg
+				Description: Your body made of metal.
 			}
 		}
 
@@ -3190,12 +3225,19 @@ Mods: {
 					Label: Shields
 					Tooltip: Rework of Shields Progression
 				}
+
+				SafeMode: {
+					Tooltip: ""
+					Label: Safe Mode
+				}
 			}
 		}
 
 		Keybinds: {
 			"Shtuxian Domination.DisplayName": Shtuxian Domination
 			"Dot Mount.DisplayName": Dot  Mount
+			"Teleportation Module.DisplayName": Teleportation  Module
+			"Energy charging.DisplayName": Energy charging
 		}
 
 		DamageClasses: {

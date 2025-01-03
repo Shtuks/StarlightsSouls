@@ -1,5 +1,4 @@
-﻿using CalamityMod.Enums;
-using SacredTools.Content.Items.Accessories;
+﻿using SacredTools.Content.Items.Accessories;
 using ssm.Core;
 using Terraria;
 using Terraria.DataStructures;

@@ -7,6 +7,8 @@ using ssm.Content.Tiles;
 using Terraria.ID;
 using ssm.Content.NPCs.StarlightCat;
 using ssm.Content.Items.Consumables;
+using System.Collections.Generic;
+using Terraria.Localization;
 
 namespace ssm.Content.Items.ShtuxibusPlush
 {
@@ -40,6 +42,13 @@ namespace ssm.Content.Items.ShtuxibusPlush
             //Item.SetDefaults(PlushManager.PlushItems["Shtuxibus"]);
         }
 
+        public override void ModifyTooltips(List<TooltipLine> tooltips)
+        {
+            //if(ShtunConfig.Instance.SafeMode)
+            //{
+            tooltips.Add(new TooltipLine(Mod, "NoSafeMode", Language.GetTextValue($"Mods.ssm.Items.ShtuxibusFumo.NoSafeMode")));
+            //}
+        }
         public override void ModifyResearchSorting(ref ContentSamples.CreativeHelper.ItemGroup ItemGroup)
         {
             ItemGroup = ContentSamples.CreativeHelper.ItemGroup.BossSpawners;

@@ -16,6 +16,7 @@ using ssm.Core;
 using Terraria.ModLoader;
 using Terraria.Utilities;
 using FargowiltasSouls.Content.Items.Weapons.FinalUpgrades;
+using ssm.SHTUK;
 
 //using CalamityMod.NPCs.TownNPCs;
 
@@ -58,10 +59,10 @@ namespace ssm.Content.NPCs
             NPC.width = 18;
             NPC.height = 40;
             NPC.aiStyle = 7;
-            NPC.damage = 745000;
+            NPC.damage = WorldSaveSystem.downedShtuxibus? 745745 : 745;
             NPC.defense = 745745;
             NPC.lifeMax = 745000000;
-            NPC.HitSound = SoundID.NPCHit1;
+            NPC.HitSound = SoundID.Meowmere;
             NPC.DeathSound = SoundID.NPCDeath1;
             AnimationType = NPCID.Guide;
         }
@@ -125,14 +126,15 @@ namespace ssm.Content.NPCs
         {
             var npcShop = new NPCShop(Type, ShopName)
                 .Add(new Item(ItemType<StarlightVodka>()) { shopCustomPrice = Item.buyPrice(copper: 1000000) })
-                .Add(new Item(ItemType<ShtuxianCurse>()) { shopCustomPrice = Item.buyPrice(copper: 1000000) })
+				.Add(new Item(ItemType<OrangePill>()) { shopCustomPrice = Item.buyPrice(copper: 10000000) })
+				.Add(new Item(ItemType<ShtuxianCurse>()) { shopCustomPrice = Item.buyPrice(copper: 1000000) })
             ;
             npcShop.Register();
         }
         public override void SetChatButtons(ref string button, ref string button2) { button = Language.GetTextValue("LegacyInterface.28"); }
         public override void OnChatButtonClicked(bool firstButton, ref string shop) { if (firstButton) { shop = ShopName; } }
         public override bool CanGoToStatue(bool toKingStatue) => toKingStatue;
-        public override void TownNPCAttackStrength(ref int damage, ref float knockback) { damage = 745000; knockback = 74f; }
+        public override void TownNPCAttackStrength(ref int damage, ref float knockback) { damage = NPC.damage; knockback = 1f; }
         public override void TownNPCAttackCooldown(ref int cooldown, ref int randExtraCooldown) { cooldown = 7; randExtraCooldown = 4; }
         public override void TownNPCAttackProj(ref int projType, ref int attackDelay) { projType = ProjectileID.Meowmere; attackDelay = 1; }
         public override void TownNPCAttackProjSpeed(ref float multiplier, ref float gravityCorrection, ref float randomOffset) { multiplier = 20f; randomOffset = 2f; }

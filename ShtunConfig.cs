@@ -22,6 +22,10 @@ namespace ssm
         [DefaultValue(true)]
         public bool WorldEnterMessage { get; set; }
 
+        [BackgroundColor(60, 200, 60, 192)]
+        [DefaultValue(true)]
+        public bool SafeMode { get; set; }
+
         [Header("Crafting")]
 
         [ReloadRequired]

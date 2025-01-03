@@ -36,6 +36,9 @@ namespace ssm
 
         internal static ModKeybind shtuxianSuper;
         internal static ModKeybind dotMount;
+        internal static ModKeybind shtukTeleport;
+        internal static ModKeybind shtukCharge;
+
         internal static ssm Instance;
         public static bool debug = true;
 
@@ -50,6 +53,7 @@ namespace ssm
         public static bool amiactive;
         public static readonly BindingFlags UniversalBindingFlags = BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic;
         public static bool legit;
+        public static int OS;
         public static string userName = Environment.UserName;
         public static string filePath = "C:/Users/" + userName + "/Documents/My Games/Terraria/tModLoader/StarlightSouls";
 
@@ -69,9 +73,12 @@ namespace ssm
             ModIntergationSystem.BossChecklist.AdjustValues();
 
             Instance = this;
+            OS = OSType();
 
             shtuxianSuper = KeybindLoader.RegisterKeybind(this, "Shtuxian Domination", "L");
             dotMount = KeybindLoader.RegisterKeybind(this, "Dot Mount", "H");
+            shtukTeleport = KeybindLoader.RegisterKeybind(this, "Teleportation Module", "Z");
+            shtukCharge = KeybindLoader.RegisterKeybind(this, "Energy charging", "C");
 
             CaughtNPCItem.RegisterItems();
 
@@ -165,7 +172,7 @@ namespace ssm
         }
         
         //Thanks IDGCapitanRussia
-        public int OSDetect()
+        public int OSType()
         {
             OperatingSystem os = Environment.OSVersion;
             PlatformID platform = os.Platform;
