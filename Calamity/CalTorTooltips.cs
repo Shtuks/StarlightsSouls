@@ -10,7 +10,6 @@ namespace ssm.SoA
     [ExtendsFromMod(ModCompatibility.Thorium.Name, ModCompatibility.Calamity.Name)]
     public class CalTorTooltips : GlobalItem
     {
-        static string ExpandedTooltipLoc(string line) => Language.GetTextValue($"Mods.ssm.ExpandedTooltips.{line}");
         public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
         {
             string key = "Mods.ssm.Items.AddedEffects.";

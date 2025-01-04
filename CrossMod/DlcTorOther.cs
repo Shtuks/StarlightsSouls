@@ -2,8 +2,8 @@
 using Terraria.ModLoader;
 using ssm.Core;
 using FargowiltasCrossmod.Content.Calamity.Items.Accessories.Souls;
-using ThoriumMod.Items.ThrownItems;
 using ssm.CrossMod.Accessories;
+using CalamityMod.Items.Accessories;
 
 namespace ssm.CrossMod
 {
@@ -16,8 +16,9 @@ namespace ssm.CrossMod
             {
                 Recipe recipe = Main.recipe[i];
 
-                if (recipe.HasResult(ModContent.ItemType<VagabondsSoul>()) && !recipe.HasIngredient(ModContent.ItemType<GtTETFinal>()))
+                if (recipe.HasResult(ModContent.ItemType<VagabondsSoul>()) && recipe.HasIngredient(ModContent.ItemType<Nanotech>()))
                 {
+                    recipe.RemoveIngredient(ModContent.ItemType<Nanotech>());
                     recipe.AddIngredient<GtTETFinal>(1);
                 }
             }

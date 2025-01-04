@@ -72,7 +72,7 @@ namespace ssm.Content.Items.Accessories
             recipe.AddIngredient(this.FargoSoul, "NekomiHood", 1);
             recipe.AddIngredient(this.FargoSoul, "NekomiHoodie", 1);
             recipe.AddIngredient(this.FargoSoul, "NekomiLeggings", 1);
-            recipe.AddTile(ModContent.Find<ModTile>("Fargowiltas", "CrucibleCosmosSheet"));
+            recipe.AddTile(TileID.DemonAltar);
             recipe.Register();
         }
 
