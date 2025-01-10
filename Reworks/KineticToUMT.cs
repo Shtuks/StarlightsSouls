@@ -12,7 +12,7 @@ namespace ssm.Reworks
     {
         public override void SetDefaults(Item item)
         {
-            if (item.CountsAsClass<KineticDamageClass>())
+            if (item.DamageType == ModContent.GetInstance<KineticDamageClass>())
             {
                 item.DamageType = (DamageClass)(object)ModContent.GetInstance<UnitedModdedThrower>();
             }

@@ -12,7 +12,7 @@ namespace ssm.Reworks
     {
         public override void SetDefaults(Item item)
         {
-            if (item.CountsAsClass<RogueDamageClass>())
+            if (item.DamageType == ModContent.GetInstance<RogueDamageClass>())
             {
                 item.DamageType = (DamageClass)(object)ModContent.GetInstance<UnitedModdedThrower>();
             } 

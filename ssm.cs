@@ -40,7 +40,7 @@ namespace ssm
         internal static ModKeybind shtukCharge;
 
         internal static ssm Instance;
-        public static bool debug = true;
+        public static bool debug = ShtunConfig.Instance.DebugMode;
 
         internal bool CalamityLoaded;
         internal bool FargoLoaded;

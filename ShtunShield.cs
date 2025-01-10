@@ -138,7 +138,12 @@ namespace ssm
             //Shield values regeneration
             if (shieldOn)
             {
-                if(shieldCapacity == shieldCapacityMax)
+                if (shieldCapacity > 0)
+                {
+                    Player.noKnockback = false;
+                }
+
+                if (shieldCapacity == shieldCapacityMax)
                 {
                     SoundEngine.PlaySound(ShieldUP, Player.Center);
                 }

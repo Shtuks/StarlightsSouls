@@ -1,28 +1,16 @@
 using Terraria;
-using ssm.Content.Projectiles.Minions;
-using Microsoft.Xna.Framework;
-using ssm.Content.Buffs;
-using ssm;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
-using Terraria.Audio;
-using Terraria.Localization;
-using ssm.Content.Projectiles;
-using Microsoft.Xna.Framework;
-using ssm.Content.Buffs.Minions;
-using System.Collections.Generic;
-using Terraria.DataStructures;
-using Terraria.Graphics.Shaders;
 using Terraria.ID;
 using Terraria.ModLoader;
-using System.Linq;
-using ssm.Content.Projectiles.Deathrays;
-using FargowiltasSouls;
-using FargowiltasSouls.Content.Items.Accessories.Masomode;
-using FargowiltasSouls.Content.Items.Materials;
+using ssm.Content.Items.Materials;
+using ssm.Content.Tiles;
+using Terraria.DataStructures;
+using Microsoft.Xna.Framework;
+using System;
 using FargowiltasSouls.Content.Projectiles.BossWeapons;
-
+using StyxGazer2 = FargowiltasSouls.Content.Projectiles.BossWeapons.StyxGazer;
+using StyxGazer = FargowiltasSouls.Content.Items.Weapons.FinalUpgrades.StyxGazer;
+using HentaiSpear = FargowiltasSouls.Content.Items.Weapons.FinalUpgrades.HentaiSpear;
+using SparklingLove = FargowiltasSouls.Content.Items.Weapons.FinalUpgrades.SparklingLove;
 
 namespace ssm.Content.Items.Weapons
 {
@@ -82,7 +70,7 @@ namespace ssm.Content.Items.Weapons
             {
                 if (player.controlUp)
                 {
-                    this.Item.shoot = ModContent.ProjectileType<StyxGazer>();
+                    this.Item.shoot = ModContent.ProjectileType<StyxGazer2>();
                     this.Item.useStyle = 5;
                     this.Item.DamageType = DamageClass.Magic;
                     this.Item.noUseGraphic = true;
@@ -106,10 +94,7 @@ namespace ssm.Content.Items.Weapons
         {
             return true;
         }
-        public override void AddRecipes()
-        {
 
-        }
         public virtual bool Shoot(
         Player player,
         EntitySource_ItemUse_WithAmmo source,
@@ -126,6 +111,17 @@ namespace ssm.Content.Items.Weapons
                 Projectile.NewProjectile((IEntitySource)source, position, velocity, type, damage, knockback, ((Entity)player).whoAmI, (float)(0.02617993950843811 * (this.flip ? -1.0 : 1.0)), 0.0f, 0.0f);
             }
             return false;
+        }
+
+        public override void AddRecipes()
+        {
+            CreateRecipe().
+                AddIngredient<HentaiSpear>().
+                AddIngredient<StyxGazer>().
+                AddIngredient<SparklingLove>().
+                AddIngredient<ShtuxiumBar>(5).
+                AddTile(ModContent.TileType<MutantsForgeTile>()).
+                Register();
         }
     }
 }

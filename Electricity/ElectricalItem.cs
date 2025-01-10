@@ -19,7 +19,7 @@ namespace ssm.Electricity
 
         public sealed override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
         {
-            if (chargeMax > 0)
+            if (canContainElectricity)
             {
                 tooltips.Add(new TooltipLine(Mod, "Charge", "Charge: " + charge + " / " + chargeMax));
             }
@@ -93,7 +93,7 @@ namespace ssm.Electricity
         //        mode++;
         //        if (mode >= 4) { mode = 0; }
         //    }
-        //    return true;
+        //    return base.UseItem();
         //}
     }
 }

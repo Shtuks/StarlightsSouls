@@ -13,7 +13,7 @@ namespace ssm.Reworks
         {
             if (!ModLoader.HasMod("Ragnarok"))
             {
-                if (item.CountsAsClass<ThrowingDamageClass>())
+                if (item.DamageType == DamageClass.Throwing)
                 {
                     item.DamageType = (DamageClass)(object)ModContent.GetInstance<UnitedModdedThrower>();
                 } 

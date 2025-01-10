@@ -7,7 +7,6 @@ using ThoriumMod.Items.Terrarium;
 using FargowiltasSouls.Content.Items.Accessories.Masomode;
 using CalamityMod.Items.Accessories.Wings;
 using FargowiltasSouls.Content.Items.Accessories.Souls;
-using CalamityMod.Items.Materials;
 using Terraria.ID;
 
 namespace ssm.CrossMod.Boots

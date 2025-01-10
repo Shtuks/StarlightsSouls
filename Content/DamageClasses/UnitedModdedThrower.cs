@@ -31,7 +31,7 @@ namespace ssm.Content.DamageClasses
                 SoAUMT.CalUMTAdd(damageClass);
             }
 
-            if (damageClass == DamageClass.Throwing || damageClass == DamageClass.Generic)
+            if (damageClass == Throwing || damageClass == Generic)
             {
                 return StatInheritanceData.Full;
             }

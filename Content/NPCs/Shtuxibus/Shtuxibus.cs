@@ -91,50 +91,20 @@ namespace ssm.Content.NPCs.Shtuxibus
             NPC.BossBar = ModContent.GetInstance<ShtuxibusBar>();
             NPC.width = 120;
             NPC.height = 120;
-            NPC.damage = 5000;
+            NPC.damage = 3000;
             NPC.value = Item.buyPrice(999999);
-            NPC.lifeMax = 450000000;
+            NPC.lifeMax = 13000000;
             if (Main.expertMode)
             {
-                this.NPC.damage = 7000;
-                this.NPC.lifeMax = 570000000;
+                NPC.damage = 5000;
+                NPC.lifeMax = 17000000;
             }
             if (Main.masterMode)
             {
-                this.NPC.damage = 10000;
-                this.NPC.lifeMax = 745000000;
+                NPC.damage = 7000;
+                NPC.lifeMax = 20000000;
             }
 
-            if (ModLoader.TryGetMod("CalamityMod", out Mod kal))
-            {
-                if ((bool)kal.Call(new object[3]{
-                    (object) "GetDifficultyActive",
-                    (object) "revengeance",
-                    (object) true
-                    }) && Main.expertMode)
-                {
-                    this.NPC.lifeMax = 745000000;
-                    this.NPC.damage = 7000;
-                }
-                if ((bool)kal.Call(new object[3]{
-                    (object) "GetDifficultyActive",
-                    (object) "death",
-                    (object) true
-                    }) && Main.expertMode)
-                {
-                    this.NPC.lifeMax = 1450000000;
-                    this.NPC.damage = 10000;
-                }
-                if ((bool)kal.Call(new object[3]{
-                    (object) "GetDifficultyActive",
-                    (object) "revengeance",
-                    (object) true
-                    }) && Main.masterMode)
-                {
-                    this.NPC.lifeMax = 1570000000;
-                    this.NPC.damage = 10000;
-                }
-            }
             NPC.HitSound = SoundID.NPCHit1;
             NPC.noGravity = true;
             NPC.noTileCollide = true;
@@ -168,7 +138,6 @@ namespace ssm.Content.NPCs.Shtuxibus
         }
         public override void AI()
         {
-            FixHealth();
             DeleteSusItems();
             ssm.amiactive = true;
             this.damageTotal -= this.dpsCap;
@@ -895,13 +864,7 @@ namespace ssm.Content.NPCs.Shtuxibus
                 }
             }
         }
-        void FixHealth()
-        {
-            if (this.NPC.lifeMax < 40000000)
-            {
-                this.NPC.lifeMax = 40000000;
-            }
-        }
+
         void TryLifeSteal(Vector2 pos, int playerWhoAmI)
         {
             int totalHealPerHit = NPC.lifeMax / 100 * 10;
@@ -6522,8 +6485,7 @@ namespace ssm.Content.NPCs.Shtuxibus
         }
         public override void OnHitByProjectile(Projectile projectile, NPC.HitInfo hit, int damageDone)
         {
-            projectile.Kill();
-            hit.Crit = false;
+            //projectile.Kill();
             hit.InstantKill = false;
         }
         public static void VisualEffectsSky()
@@ -6533,12 +6495,14 @@ namespace ssm.Content.NPCs.Shtuxibus
         }
         public override void OnHitByItem(Player player, Item Item, NPC.HitInfo hit, int damageDone)
         {
-            hit.Crit = false;
             hit.InstantKill = false;
         }
-        private void OnHit(float damage)
-        {
-            damageTotal += (int)damage * 60;
-        }
+        //public override void OnHitNPC(NPC target, NPC.HitInfo hit)
+        //{
+        //    base.OnHitNPC(target, hit);
+        //}
+        //{
+        //    damageTotal += (int)damage * 60;
+        //}
     }
 }

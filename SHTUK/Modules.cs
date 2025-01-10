@@ -93,11 +93,11 @@ namespace ssm.SHTUK
                 switch (shieldModule)
                 {
                     case 0: break;
-                    case 1: Player.SHTUK().shieldAdd += 100; Player.SHTUK().shieldRegAdd += 5; Player.SHTUK().energyConsumption += 1; break;
-                    case 2: Player.SHTUK().shieldAdd += 200; Player.SHTUK().shieldRegAdd += 10; Player.SHTUK().energyConsumption += 2; break;
-                    case 3: Player.SHTUK().shieldAdd += 400; Player.SHTUK().shieldRegAdd += 20; Player.SHTUK().energyConsumption += 3; break;
-                    case 4: Player.SHTUK().shieldAdd += 800; Player.SHTUK().shieldRegAdd += 40; Player.SHTUK().energyConsumption += 4; break;
-                    case 5: Player.SHTUK().shieldAdd += 1600; Player.SHTUK().shieldRegAdd += 80; Player.SHTUK().energyConsumption += 5; break;
+                    case 1: Player.Shield().shieldOn = true; Player.SHTUK().shieldAdd += 100; Player.SHTUK().shieldRegAdd += 5; Player.SHTUK().energyConsumption += 1; break;
+                    case 2: Player.Shield().shieldOn = true; Player.SHTUK().shieldAdd += 200; Player.SHTUK().shieldRegAdd += 10; Player.SHTUK().energyConsumption += 2; break;
+                    case 3: Player.Shield().shieldOn = true; Player.SHTUK().shieldAdd += 400; Player.SHTUK().shieldRegAdd += 20; Player.SHTUK().energyConsumption += 3; break;
+                    case 4: Player.Shield().shieldOn = true; Player.SHTUK().shieldAdd += 800; Player.SHTUK().shieldRegAdd += 40; Player.SHTUK().energyConsumption += 4; break;
+                    case 5: Player.Shield().shieldOn = true; Player.SHTUK().shieldAdd += 1600; Player.SHTUK().shieldRegAdd += 80; Player.SHTUK().energyConsumption += 5; break;
                 }
                 switch (servoModule)
                 {

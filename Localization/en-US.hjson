@@ -1,13 +1,67 @@
 Mods: {
 	ssm: {
 		SetBonus: {
-			Monstrosity: Effects of all auric helmets, shadowspec helmet and gem tech headgear
-			Quantum:
+			Monstrosity.SetBonus: Effects of all auric helmets, shadowspec helmet and gem tech headgear
+			Quantum.SetBonus:
 				'''
 				If damage less than 10, it will be nulified
 				Supression of Chtuxlagor Inferno effects
 				Protect you from death, consuming 1,000,000 charge
 				'''
+
+			AuricTeslaHornedVisor: {
+				SetBonus:
+					'''
+					True Tarragon, Bloodflare and Silva armor effects
+					+500 shield capacity and 10 shield regeneration
+					'''
+				DisplayName: Auric Tesla Horned Visor
+				Tooltip: 30% increased true damage, critical strike chance and attack speed
+			}
+
+			TarragonHornedVisor: {
+				SetBonus:
+					'''
+					+100 shield capacity and 5 shield regeneration
+					15% increace true attack speed
+					'''
+				DisplayName: Tarragon Horned Visor
+				Tooltip:
+					'''
+					15% increased true damage and critical strike chance
+					10% damage reduction
+					'''
+			}
+
+			BloodflareHornedVisor: {
+				SetBonus:
+					'''
+					+150 shield capacity and 7 shield regeneration
+					15% increace true attack speed
+					'''
+				DisplayName: Bloodflare Horned Visor
+				Tooltip: 20% increased true damage and 10% critical strike chance
+			}
+
+			SilvaHornedVisor: {
+				SetBonus:
+					'''
+					+200 shield capacity and 8 shield regeneration
+					20% increace true attack speed
+					'''
+				DisplayName: Silva Horned Visor
+				Tooltip: 30% increased true damage and 20% critical strike chance
+			}
+
+			GodslayerHornedVisor: {
+				SetBonus:
+					'''
+					+150 shield capacity and 7 shield regeneration
+					20% increace true attack speed
+					'''
+				DisplayName: God Slayer Horned Visor
+				Tooltip: 20% increased true damage and 15% critical strike chance
+			}
 		}
 
 		Items: {
@@ -2649,6 +2703,41 @@ Mods: {
 				DisplayName: x10 Multiplier Debug
 				Tooltip: ""
 			}
+
+			CSOCP: {
+				Tooltip: ""
+				DisplayName: C S O C P
+			}
+
+			ShtuxiumShortsword: {
+				Tooltip: ""
+				DisplayName: Shtuxium Shortsword
+			}
+
+			ShtuxiumKunai: {
+				Tooltip: ""
+				DisplayName: Shtuxium Kunai
+			}
+
+			ShtuxiumSpelltome: {
+				Tooltip: ""
+				DisplayName: Shtuxium Spelltome
+			}
+
+			ShtuxiumRifle: {
+				Tooltip: ""
+				DisplayName: Shtuxium Rifle
+			}
+
+			ShtuxiumYoyo: {
+				Tooltip: ""
+				DisplayName: Shtuxium Yoyo
+			}
+
+			ShtuxiumPrism: {
+				Tooltip: ""
+				DisplayName: Shtuxium Prism
+			}
 		}
 
 		Buffs: {
@@ -3087,6 +3176,16 @@ Mods: {
 			ChtuxlagorDeathrayMark.DisplayName: Chtuxlagor Deathray Mark
 			YharonFireballMinion.DisplayName: Yharon Fireball Minion
 			YharonMinion.DisplayName: Yharon Minion
+			ShtuxiumShortswordProj.DisplayName: Shtuxium Shortsword Proj
+			ShtuxiumKunaiProj.DisplayName: Shtuxium Kunai Proj
+			ShtuxiumSpelltomeProj.DisplayName: Shtuxium Spelltome Proj
+			ShtuxiumBlast2.DisplayName: Shtuxium Blast2
+			ShtuxiumBlast3.DisplayName: Shtuxium Blast3
+			ShtuxiumRifleDeathray.DisplayName: Shtuxium Rifle Deathray
+			ShtuxiumYoyoProj.DisplayName: Shtuxium Yoyo Proj
+			ShtuxiumPrismHoldout.DisplayName: Shtuxium Prism Holdout
+			ShtuxiumPrismDeathray.DisplayName: Shtuxium Prism Deathray
+			ShtuxiumPrismCircle.DisplayName: Shtuxium Prism Circle
 		}
 
 		Biomes: {
@@ -3245,6 +3344,11 @@ Mods: {
 					Tooltip: ""
 					Label: Safe Mode
 				}
+
+				DebugMode: {
+					Label: Debug Mode
+					Tooltip: ""
+				}
 			}
 		}
 
@@ -3258,6 +3362,7 @@ Mods: {
 		DamageClasses: {
 			UnitedModdedThrower.DisplayName: United Modded Thrower
 			ShtuxaianDamage.DisplayName: Shtuxaian Damage
+			ShtuxianDamage.DisplayName: Shtuxian Damage
 		}
 	}
 }

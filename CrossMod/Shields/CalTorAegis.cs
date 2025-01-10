@@ -3,7 +3,6 @@ using Terraria.ModLoader;
 using CalamityMod.Items.Accessories;
 using ssm.Core;
 using ThoriumMod.Items.Terrarium;
-using CalamityMod.Items.Accessories.Wings;
 using FargowiltasSouls.Content.Items.Accessories.Souls;
 using ssm.Thorium.Souls;
 
