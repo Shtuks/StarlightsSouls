@@ -68,7 +68,7 @@ namespace ssm.Content.NPCs
         }
         public override bool CanTownNPCSpawn(int numTownNPCs)
         {
-            return WorldSaveSystem.downedShtuxibus && !NPC.AnyNPCs(ModContent.NPCType<Shtuxibus.Shtuxibus>());
+            return false;
         }
         public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
         {

@@ -20,7 +20,7 @@ namespace ssm.Content.Items.Weapons.Shtuxium
             Item.width = 40;
             Item.height = 54;
             Item.DamageType = DamageClass.MeleeNoSpeed;
-            Item.damage = 1400;
+            Item.damage = 3200;
             Item.knockBack = 6f;
             Item.useTime = 20;
             Item.useAnimation = 20;

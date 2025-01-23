@@ -82,12 +82,12 @@ namespace ssm.SHTUK
                     Player.dangerSense = true;
                     Lighting.AddLight(Player.Center, 0.8f, 0.8f, 0);
 
-                    Player.SHTUK().energyConsumption += 3;
+                    Player.SHTUK().energyConsumption += 1;
                 }
                 if (noOverloadModule)
                 {
                     Player.SHTUK().overload = 0;
-                    Player.SHTUK().energyConsumption += 5;
+                    Player.SHTUK().energyConsumption += 1;
                 }
 
                 switch (shieldModule)

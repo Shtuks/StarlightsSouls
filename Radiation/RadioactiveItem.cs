@@ -16,7 +16,7 @@ namespace ssm.Radiation
 
         public sealed override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            tooltips.Add(new TooltipLine(Mod, "Charge", irradiationSpeed + " RAD/tick"));
+            tooltips.Add(new TooltipLine(Mod, "Rad", irradiationSpeed + " RAD/tick"));
         }
     }
 }

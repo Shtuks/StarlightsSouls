@@ -16,6 +16,10 @@ namespace ssm.Content.Items.Armor.CalamityShtun
     [AutoloadEquip(EquipType.Head)]
     public class TarragonHornedVisor : ModItem, ILocalizedModType
     {
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return ShtunConfig.Instance.ExperimentalContent;
+        }
         public new string LocalizationCategory => "SetBonus";
         public override void SetDefaults()
         {

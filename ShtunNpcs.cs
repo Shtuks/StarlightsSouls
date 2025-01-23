@@ -1,31 +1,12 @@
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
+using ssm.Content.Projectiles.Weapons;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using Terraria;
-using Terraria.ID;
-using Terraria.Localization;
-using Terraria.Chat;
-using Terraria.GameContent.Events;
-using Terraria.GameContent.ItemDropRules;
-using ssm.Content.Buffs;
-using ssm.Content.Items;
-using ssm.Content.Items.Accessories;
-using ssm.Content.Items.Consumables;
-using ssm.Content.Items.Materials;
-using ssm.Content.Items.Singularities;
-using ssm.Content.NPCs;
-using ssm.Content.NPCs.Shtuxibus;
-using Fargowiltas;
 using Terraria.ModLoader;
-using CalamityMod.Buffs.DamageOverTime;
 
 namespace ssm
 {
     public partial class ShtunNpcs : GlobalNPC
     {
-        private readonly Mod fargosouls = ModLoader.GetMod("FargowiltasSouls");
         public override bool InstancePerEntity => true;
         public bool isWaterEnemy;
         public int chtuxlagorInferno;
@@ -76,7 +57,7 @@ namespace ssm
         public override void UpdateLifeRegen(NPC npc, ref int damage)
         {
             if (chtuxlagorInferno > 0)
-                ApplyDPSDebuff(1000000, 10000, ref npc.lifeRegen, ref damage);
+                ApplyDPSDebuff(npc.lifeMax / 10, npc.lifeMax / 100, ref npc.lifeRegen, ref damage);
         }
 
         public override void PostAI(NPC npc)
@@ -86,6 +67,7 @@ namespace ssm
                 chtuxlagorInferno--;
             }
         }
+        
         public void ApplyDPSDebuff(int lifeRegenValue, int damageValue, ref int lifeRegen, ref int damage)
         {
             if (lifeRegen > 0)
@@ -97,6 +79,14 @@ namespace ssm
             if (damage < damageValue)
             {
                 damage = damageValue;
+            }
+        }
+
+        public override void OnHitByProjectile(NPC npc, Projectile projectile, NPC.HitInfo hit, int damageDone)
+        {
+            if((projectile.type == ModContent.ProjectileType<ShtuxiumBlast>() || projectile.type == ModContent.ProjectileType<ShtuxiumBlast2>() || projectile.type == ModContent.ProjectileType<ShtuxiumBlast3>()) && npc.life > npc.lifeMax / 100)
+            {
+                npc.life -= npc.lifeMax / 100;
             }
         }
     }

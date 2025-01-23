@@ -19,6 +19,7 @@ namespace ssm.Content.Items.Armor
             Item.value = Item.sellPrice(100, 0, 0, 0);
             Item.defense = 150;
             Item.Electricity().chargeMax = 10000000;
+            Item.Electricity().canContainElectricity = true;
         }
 
         public override void UpdateEquip(Player player)

@@ -24,7 +24,7 @@ namespace ssm.Thorium.Souls
             Item.accessory = true;
             ItemID.Sets.ItemNoGravity[Item.type] = true;
             Item.value = 5000000;
-
+            Item.defense = 20;
             Item.rare = -12;
         }
 

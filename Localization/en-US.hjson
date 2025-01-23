@@ -324,39 +324,6 @@ Mods: {
 				Tooltip: Effects of all armor sets and accessories.
 			}
 
-			DemonshadeBreastplateCat: {
-				DisplayName: Demonshade C.A.T Breastplate
-				Tooltip:
-					'''
-					+ 700 Max life
-					x2 all damage for all classes
-					Godly regeneration
-					+ 500 armor penetration for all classes
-					Effect of [i:FargowiltasSouls/MutantBody], [i:CalamityMod/DemonshadeBreastplate], [i:CalamityMod/AuricTeslaBodyArmor], [i:CalamityMod/GemTechBodyArmor].
-					'''
-			}
-
-			DemonshadeHelmetCat: {
-				DisplayName: Demonshade C.A.T Helmet
-				Tooltip:
-					'''
-					+ 700 Max mana
-					+ 60% damage to all classes and 80% crit chance
-					+ 10 Max minion slots
-					Effect of [i:FargowiltasSouls/MutantMask], [i:CalamityMod/DemonshadeHelm], [i:CalamityMod/AuricTeslaHoodedFacemask], [i:CalamityMod/AuricTeslaWireHemmedVisage], [i:CalamityMod/AuricTeslaRoyalHelm], [i:CalamityMod/AuricTeslaPlumedHelm], [i:CalamityMod/GemTechHeadgear].
-					'''
-			}
-
-			DemonshadeLegginsCat: {
-				DisplayName: Demonshade C.A.T Leggins
-				Tooltip:
-					'''
-					+ 30% movement speed
-					+ 50% damage to all clases
-					Effect of [i:FargowiltasSouls/MutantPants], [i:CalamityMod/DemonshadeGreaves], [i:CalamityMod/AuricTeslaCuisses], [i:CalamityMod/GemTechSchynbaulds].
-					'''
-			}
-
 			ShtuxiumOre: {
 				Tooltip: ""
 				DisplayName: Shtuxium Ore
@@ -849,26 +816,6 @@ Mods: {
 
 			OverloadedSirenPearl: {
 				DisplayName: Overloaded Siren Pearl
-				Tooltip: ""
-			}
-
-			DemonshadeHelmMagic: {
-				DisplayName: Demonshade Helm Magic
-				Tooltip: ""
-			}
-
-			DemonshadeHelmRanged: {
-				DisplayName: Demonshade Helm Ranged
-				Tooltip: ""
-			}
-
-			DemonshadeHelmRogue: {
-				DisplayName: Demonshade Helm Rogue
-				Tooltip: ""
-			}
-
-			DemonshadeHelmSummon: {
-				DisplayName: Demonshade Helm Summon
 				Tooltip: ""
 			}
 
@@ -2640,8 +2587,17 @@ Mods: {
 			}
 
 			DemonShadeEnchant: {
-				DisplayName: Demon Shade Enchant
-				Tooltip: ""
+				DisplayName: Demonshade Enchant
+				Tooltip:
+					'''
+					'Demonic power emanates from you…'
+					All attacks inflict Demon Flames
+					Shadowbeams and Demon Scythes fall from the sky on hit
+					A friendly red devil follows you around
+					Press Y to enrage nearby enemies with a dark magic spell for 10 seconds
+					This makes them do 1.5 times more damage but they also take five times as much damage
+					Effects of Profaned Soul Crystal
+					'''
 			}
 
 			GeigerCounter: {
@@ -2670,7 +2626,7 @@ Mods: {
 			}
 
 			OffenceModule: {
-				Tooltip: - Tier 1 -
+				Tooltip: ""
 				DisplayName: Offence Module
 			}
 
@@ -2737,6 +2693,71 @@ Mods: {
 			ShtuxiumPrism: {
 				Tooltip: ""
 				DisplayName: Shtuxium Prism
+			}
+
+			AddonsForce: {
+				DisplayName: Addons Force
+				Tooltip: ""
+			}
+
+			IntergelacticEnchant: {
+				DisplayName: Intergelactic Enchant
+				Tooltip:
+					'''
+					Surrounds you with two rings of asteroids whose damages scale with your stats
+					Press {0} to make the asteroids more transparent
+					You are immune to the Astral Blight and your attacks inflict it
+					Press the {0} key to dash towards the cursor as a violent nebula
+					During the dash, you are fully immune to damage
+					{1} second cooldown
+					'''
+			}
+
+			ShogunEnchant: {
+				DisplayName: Shogun Enchant
+				Tooltip:
+					'''
+					Activates the Stress Bar
+					Stress builds up passively, though standing close to enemies speeds up the rate at which it increases
+					At 25% Stress your weapons will produce explosions
+					At 75% Stress your explosions will become larger and deal more damage
+					Double tap DOWN while Stress is above 25% to enter Malice Mode
+					Malice Mode significantly increases your damage, as well as granting flat damage, armor penetration, and critical strike
+					These boosts and their duration scale with the amount of stress you have
+					{$CommonItemTooltip.FlightAndSlowfall}
+					Wearing any wings overrides this flight
+					{$CommonItemTooltip.PressDownToHover}
+					Allows the ability to dash and enhances other dashes
+					Grants immunity to many endgame and movement-based debuffs
+					'''
+			}
+
+			VoidFaquirEnchant: {
+				DisplayName: Void Faquir Enchant
+				Tooltip:
+					'''
+					Hitting the target will increase void energy
+					Provides movement and flight speed bonuses based on the amount of void energy
+					Press the armor bonus key to activate Void energy Summon a Void Wraith to assist in battle and fly indefinitely for 10 seconds
+					Void Wrairh damage type depends on the weapon in hand
+					Press [KEY] to activate the coordinated state
+					In this state, you are not affected by gravity and push away the surrounding projectiles
+					'''
+			}
+
+			DivineEnchant: {
+				DisplayName: Divine Enchant
+				Tooltip: ""
+			}
+
+			EntropicEnchant: {
+				DisplayName: Entropic Enchant
+				Tooltip: ""
+			}
+
+			FrozenEnchant: {
+				DisplayName: Frozen Enchant
+				Tooltip: ""
 			}
 		}
 
@@ -2817,7 +2838,7 @@ Mods: {
 			}
 
 			StellarGuardianBuff: {
-				DisplayName: Stellar Guardian Buff
+				DisplayName: Stellar Guardian
 				Description: Stellar guardian protects you
 			}
 
@@ -2843,7 +2864,7 @@ Mods: {
 
 			RessurectedBuff: {
 				DisplayName: Ressurected Buff
-				Description: Mods.ssm.Buffs.RessurectedBuff.Description
+				Description: You can't be ressurected again
 			}
 		}
 
@@ -3001,7 +3022,14 @@ Mods: {
 		}
 
 		Toggler: {
-			InfernoLordsFocusEffect: CInferno Lord Focus
+			AddonsForceHeader: Force
+			ShogunEffect: Slippery Shogun Wings
+			SplendorEffect: Splendor Jam
+			DivineEffect: Light Dimension Cursor
+			EntropicEffect: Illusions
+			TendrilsEffect: Tendrils Attachment
+			IntergelacticEffect: Asteroids Ring
+			InfernoLordsFocusEffect: Inferno Lord Focus
 			LihzahrdTailEffect: Lihzahrd’s tail
 			PocketFusionGeneratorEffect: Pocket Fusion Generator
 			SerpentShieldEffect: Serpent Shield
@@ -3069,9 +3097,9 @@ Mods: {
 
 		Tiles: {
 			ShtuxiumOreTile.MapEntry: Shtuxium Ore
-			ShtuxibusForgeTile.MapEntry: Shtuxibus Forge Tile
-			MutantsForgeTile.MapEntry: Mutants Forge Tile
-			DemonshadeWorkbenchTile.MapEntry: Demonshade Workbench Tile
+			ShtuxibusForgeTile.MapEntry: Shtuxibus Forge
+			MutantsForgeTile.MapEntry: Mutants Forge
+			DemonshadeWorkbenchTile.MapEntry: Demonshade Workbench
 			ShtunStorageUnit.MapEntry: Shtun Storage Unit
 		}
 
@@ -3129,7 +3157,7 @@ Mods: {
 			MutantRitual3.DisplayName: Mutant Ritual3
 			MutantRitual4.DisplayName: Mutant Ritual4
 			MutantRitual5.DisplayName: Mutant Ritual5
-			MutantRitualwiththing.DisplayName: Mutant Ritualwiththing
+			MutantRitualwiththing.DisplayName: Mutant Ritual
 			MutantSlimeBall.DisplayName: Mutant Slime Ball
 			MutantSlimeRain.DisplayName: Mutant Slime Rain
 			MutantSpearAim.DisplayName: Mutant Spear Aim
@@ -3186,6 +3214,7 @@ Mods: {
 			ShtuxiumPrismHoldout.DisplayName: Shtuxium Prism Holdout
 			ShtuxiumPrismDeathray.DisplayName: Shtuxium Prism Deathray
 			ShtuxiumPrismCircle.DisplayName: Shtuxium Prism Circle
+			StarlightCatRotatingDeathray.DisplayName: Starlight Cat Rotating Deathray
 		}
 
 		Biomes: {
@@ -3197,7 +3226,7 @@ Mods: {
 
 		Bestiary: {
 			Monstrocity: TEST
-			Echdeath: ech
+			Echdeath: echs
 			Shtuxibus: Shtuxibus is being came from other world called Shtundex. The shard of omnipotent Chtux'Lag'or and embodiment of energy concept.
 		}
 
@@ -3327,7 +3356,7 @@ Mods: {
 
 				OldCalDlcBalance: {
 					Tooltip: ""
-					Label: Old Cal Dlc Balance
+					Label: Old Calamity Dlc Balance
 				}
 
 				Boots: {
@@ -3341,7 +3370,7 @@ Mods: {
 				}
 
 				SafeMode: {
-					Tooltip: ""
+					Tooltip: SCB WIP
 					Label: Safe Mode
 				}
 
@@ -3349,20 +3378,24 @@ Mods: {
 					Label: Debug Mode
 					Tooltip: ""
 				}
+
+				ExperimentalContent: {
+					Label: Experimental Content
+					Tooltip: This will allow unfinished content to load.
+				}
 			}
 		}
 
 		Keybinds: {
 			"Shtuxian Domination.DisplayName": Shtuxian Domination
-			"Dot Mount.DisplayName": Dot  Mount
-			"Teleportation Module.DisplayName": Teleportation  Module
-			"Energy charging.DisplayName": Energy charging
+			"Dot Mount.DisplayName": Dot Mount
+			"Teleportation Module.DisplayName": Teleportation Module
+			"Energy charging.DisplayName": Energy Charging
 		}
 
 		DamageClasses: {
 			UnitedModdedThrower.DisplayName: United Modded Thrower
-			ShtuxaianDamage.DisplayName: Shtuxaian Damage
-			ShtuxianDamage.DisplayName: Shtuxian Damage
+			ShtuxianDamage.DisplayName: True Damage
 		}
 	}
 }

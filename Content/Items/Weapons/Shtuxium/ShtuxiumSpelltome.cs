@@ -15,7 +15,7 @@ namespace ssm.Content.Items.Weapons.Shtuxium
         {
             Item.width = 38;
             Item.height = 40;
-            Item.damage = 2300;
+            Item.damage = 4300;
             Item.DamageType = DamageClass.Magic;
             Item.mana = 20;
             Item.useTime = 25;

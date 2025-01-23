@@ -3,6 +3,7 @@ using ssm.Content.Items.Materials;
 using ssm.Content.Projectiles.Weapons;
 using ssm.Content.Tiles;
 using Terraria;
+using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -12,7 +13,7 @@ namespace ssm.Content.Items.Weapons.Shtuxium
     {
         public override void SetDefaults()
         {
-            Item.damage = 2600;
+            Item.damage = 5200;
             Item.crit = 50;
             Item.DamageType = DamageClass.Ranged;
             Item.noMelee = true;
@@ -29,6 +30,7 @@ namespace ssm.Content.Items.Weapons.Shtuxium
             Item.shootSpeed = 20f;
             Item.useAmmo = AmmoID.Bullet;
         }
+
 
         public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
         {

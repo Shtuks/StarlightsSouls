@@ -7,15 +7,15 @@ namespace ssm
 {
     public class ShtunWorld : ModSystem
     {
-        public override void PostDrawTiles()
-        {
-            if (StarlightCatBoss.active)
-            {
-                //if (ssm.debug) { ShtunUtils.DisplayLocalizedText("Drawing arena", Color.White); }
-                Main.spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, Main.DefaultSamplerState, DepthStencilState.None, RasterizerState.CullCounterClockwise, null, Main.Transform);
-                StarlightCatBoss.DrawArena(Main.spriteBatch);
-                Main.spriteBatch.End();
-            }
-        }
+        //public override void PostDrawTiles()
+        //{
+        //    if (StarlightCatBoss.active)
+        //    {
+        //        //if (ssm.debug) { ShtunUtils.DisplayLocalizedText("Drawing arena", Color.White); }
+        //        Main.spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, Main.DefaultSamplerState, DepthStencilState.None, RasterizerState.CullCounterClockwise, null, Main.Transform);
+        //        StarlightCatBoss.DrawArena(Main.spriteBatch);
+        //        Main.spriteBatch.End();
+        //    }
+        //}
     }
 }

@@ -16,7 +16,7 @@ namespace ssm.Content.Items.Weapons.Shtuxium
         {
             Item.width = 38;
             Item.height = 38;
-            Item.damage = 2000;
+            Item.damage = 4200;
             Item.maxStack = 9999;
             Item.consumable = true;
             Item.noMelee = true;

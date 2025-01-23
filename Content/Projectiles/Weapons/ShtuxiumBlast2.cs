@@ -13,7 +13,7 @@ namespace ssm.Content.Projectiles.Weapons
     {
         public override void SetStaticDefaults()
         {
-            Main.projFrames[Projectile.type] = 7;
+            Main.projFrames[Projectile.type] = 8;
         }
 
         public override void SetDefaults()

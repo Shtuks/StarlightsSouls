@@ -5,6 +5,12 @@ namespace ssm.Core;
 
 public static class ModCompatibility
 {
+    public static class Entropy
+    {
+        public const string Name = "CalamityEntropy";
+        public static bool Loaded => ModLoader.HasMod(Name);
+        public static Mod Mod => ModLoader.GetMod(Name);
+    }
     public static class HEROSMod
     {
         public const string Name = "HEROsMod";
@@ -113,7 +119,13 @@ public static class ModCompatibility
         public static bool Loaded => ModLoader.HasMod(Name);
         public static Mod Mod => ModLoader.GetMod(Name);
     }
-    public static class InfernumMode
+    public static class Clamity
+    {
+        public const string Name = "Clamity";
+        public static bool Loaded => ModLoader.HasMod(Name);
+        public static Mod Mod => ModLoader.GetMod(Name);
+    }
+    public static class Infernum
     {
         public const string Name = "InfernumMode";
         public static bool Loaded => ModLoader.HasMod(Name);

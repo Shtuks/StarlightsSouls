@@ -22,14 +22,17 @@ namespace ssm
         [DefaultValue(true)]
         public bool WorldEnterMessage { get; set; }
 
+        [ReloadRequired]
         [BackgroundColor(60, 200, 60, 192)]
         [DefaultValue(true)]
         public bool SafeMode { get; set; }
 
+        [ReloadRequired]
         [BackgroundColor(60, 200, 60, 192)]
         [DefaultValue(false)]
         public bool DebugMode { get; set; }
 
+        [ReloadRequired]
         [BackgroundColor(60, 200, 60, 192)]
         [DefaultValue(false)]
         public bool ExperimentalContent { get; set; }

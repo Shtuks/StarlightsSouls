@@ -11,8 +11,6 @@ namespace ssm.Content.Mounts
 
 		public override void SetStaticDefaults()
 		{
-            MountData.spawnDust = 182;
-            MountData.spawnDustNoGravity = true;
             MountData.buff = ModContent.BuffType<DotBuff>();
             MountData.heightBoost = 0;
             MountData.flightTimeMax = int.MaxValue;

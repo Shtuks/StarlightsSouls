@@ -34,7 +34,6 @@ namespace ssm.Thorium
             //bugle horn
             group = new RecipeGroup(() => Lang.misc[37] + " Bugle Horn", ModContent.ItemType<GoldBugleHorn>(), ModContent.ItemType<PlatinumBugleHorn>());
             RecipeGroup.RegisterGroup("ssm:AnyBugleHorn", group);
-
             //titan 
             group = new RecipeGroup(() => Lang.misc[37] + " Titan Headgear", ModContent.ItemType<TitanHelmet>(), ModContent.ItemType<TitanMask>(), ModContent.ItemType<TitanHeadgear>());
             RecipeGroup.RegisterGroup("ssm:AnyTitanHelmet", group);

@@ -23,6 +23,7 @@ using ssm.Content.Tiles;
 using FargowiltasCrossmod.Content.Calamity.Items.Accessories.Forces;
 using FargowiltasCrossmod.Content.Calamity.Items.Accessories;
 using ssm.Calamity.Enchantments;
+using ssm.Calamity.Addons;
 
 
 namespace ssm.Calamity.Souls
@@ -50,6 +51,10 @@ namespace ssm.Calamity.Souls
             ModContent.GetInstance<TheCommunity>().UpdateAccessory(player, hideVisual);
             ModContent.GetInstance<ElementalArtifact>().UpdateAccessory(player, hideVisual);
             ModContent.GetInstance<PotJT>().UpdateAccessory(player, hideVisual);
+            if (ModCompatibility.Catalyst.Loaded && ModCompatibility.Goozma.Loaded && ModCompatibility.Clamity.Loaded && ModCompatibility.WrathoftheGods.Loaded)
+            {
+                ModContent.GetInstance<AddonsForce>().UpdateAccessory(player, hideVisual);
+            }
 
             player.buffImmune[ModContent.Find<ModBuff>(this.FargoCross.Name, "CalamitousPresenceBuff").Type] = true;
         }
@@ -62,8 +67,13 @@ namespace ssm.Calamity.Souls
             recipe.AddIngredient<BrandoftheBrimstoneWitch>();
             recipe.AddIngredient<PotJT>();
             recipe.AddIngredient<DemonShadeEnchant>();
+
+            if (ModCompatibility.Catalyst.Loaded && ModCompatibility.Goozma.Loaded && ModCompatibility.Clamity.Loaded && ModCompatibility.WrathoftheGods.Loaded)
+            {
+                recipe.AddIngredient<AddonsForce>();
+            }
+
             recipe.AddIngredient<AbomEnergy>(10);
-            
             recipe.AddTile<DemonshadeWorkbenchTile>();
 
             recipe.Register();

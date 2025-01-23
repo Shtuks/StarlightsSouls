@@ -69,7 +69,7 @@ namespace ssm
         {
             if(StarlightCatBoss.phase > 0)
             {
-                ChtuxlagorArena();
+                //ChtuxlagorArena();
             }
             lastPos = Player.position;
         }
@@ -336,7 +336,6 @@ namespace ssm
                 ShtunUtils.DisplayLocalizedText("I recommend looking at the mod's settings.", Color.LimeGreen);
                 ShtunUtils.DisplayLocalizedText("Most of the content or rebalances are configurable.", Color.LimeGreen);
                 ShtunUtils.DisplayLocalizedText("This message also can be toggled off in settings.", Color.LimeGreen);
-                ShtunUtils.DisplayLocalizedText("                                     - StarlightCat", Color.LimeGreen);
             }
         }
 

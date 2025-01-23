@@ -15,13 +15,11 @@ namespace ssm.Content.Projectiles.Deathrays
     public abstract class BaseDeathray : ModProjectile
     {
         protected float maxTime;
-        protected readonly float transparency; //THIS IS A 0 TO 1 PERCENTAGE, NOT AN ALPHA
+        protected readonly float transparency;
         protected readonly float hitboxModifier;
         protected readonly int grazeCD;
         protected readonly TextureSheeting sheeting;
 
-        //by default, real hitbox is slightly more than the "white" of a vanilla ray
-        //remember that the value passed into function is total width, i.e. on each side the distance is only half the width
         protected readonly int drawDistance;
         protected enum TextureSheeting
         {

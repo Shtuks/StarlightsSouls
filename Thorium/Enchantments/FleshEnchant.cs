@@ -10,6 +10,10 @@ using ThoriumMod.Items.NPCItems;
 using ThoriumMod.Items.ThrownItems;
 using ThoriumMod.Items.HealerItems;
 using FargowiltasSouls.Content.Items.Accessories.Enchantments;
+using FargowiltasSouls.Core.AccessoryEffectSystem;
+using ssm.Calamity.Addons;
+using ssm.Content.SoulToggles;
+using static ssm.Calamity.Addons.IntergelacticEnchant;
 
 namespace ssm.Thorium.Enchantments
 {
@@ -33,11 +37,14 @@ namespace ssm.Thorium.Enchantments
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            //toggle
+            if (player.AddEffect<FleshMaskEffect>(Item))
+            {
                 ModContent.Find<ModItem>(this.thorium.Name, "FleshMask").UpdateArmorSet(player);
-
-            //toggle
+            }
+            if (player.AddEffect<VampireGlandEffect>(Item))
+            {
                 ModContent.Find<ModItem>(this.thorium.Name, "VampireGland").UpdateAccessory(player, true);
+            }
         }
 
         public override void AddRecipes()
@@ -55,6 +62,17 @@ namespace ssm.Thorium.Enchantments
 
             recipe.AddTile(TileID.CrystalBall);
             recipe.Register();
+        }
+
+        public class FleshMaskEffect : AccessoryEffect
+        {
+            public override Header ToggleHeader => Header.GetHeader<HelheimForceHeader>();
+            public override int ToggleItemType => ModContent.ItemType<FleshEnchant>();
+        }
+        public class VampireGlandEffect : AccessoryEffect
+        {
+            public override Header ToggleHeader => Header.GetHeader<HelheimForceHeader>();
+            public override int ToggleItemType => ModContent.ItemType<FleshEnchant>();
         }
     }
 }

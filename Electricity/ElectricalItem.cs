@@ -1,6 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using MagicStorage.UI;
+using Redemption.Items.Materials.HM;
+using System.Collections.Generic;
+using System.IO;
 using Terraria;
 using Terraria.ModLoader;
+using Terraria.ModLoader.IO;
 
 namespace ssm.Electricity
 {
@@ -13,7 +17,7 @@ namespace ssm.Electricity
         public int chargePerUse = 0;
         public int charge = 0;
         public int chargeMax = 0;
-        public int toBeFullGlobal = 0;
+        public int toBeFull = 0;
         public int mode = 0;
         public string modeSTR;
 
@@ -40,32 +44,105 @@ namespace ssm.Electricity
 
         public override void UpdateInventory(Item item, Player player)
         {
-            if (canContainElectricity)
+            if (canContainElectricity || isCapacitor)
             {
-                toBeFullGlobal = chargeMax - charge;
+                toBeFull = chargeMax - charge;
                 charge = Utils.Clamp(charge, 0, chargeMax);
             }
             if (isCapacitor)
             {
-                switch (mode)
+                if (mode == 1)
                 {
-                    case 0: break;
-                    case 1: break;
-                    case 2: break;
-                    case 3: break;
-                    case 4: break;
-                    default: mode = 0; goto case 0;
+
+                }
+                else if (mode == 2 && !player.HeldItem.IsAir)
+                {
+                    chargeFromCapacitor(player.HeldItem, item);
+                }
+                else if (mode == 3)
+                {
+                    //chargeFromCapacitor(player.HeldItem, item);
+                }
+                else if (mode == 4)
+                {
+                    //chargeFromCapacitor(player.HeldItem, item);
                 }
             }
         }
 
         public override void UpdateEquip(Item item, Player player)
         {
-            if (canContainElectricity)
+            if (canContainElectricity || isCapacitor)
             {
-                toBeFullGlobal = chargeMax - charge;
+                toBeFull = chargeMax - charge;
                 charge = Utils.Clamp(charge, 0, chargeMax);
             }
+            if (isCapacitor)
+            {
+                if (mode == 1)
+                {
+
+                }
+                else if (mode == 2 && !player.HeldItem.IsAir)
+                {
+                    chargeFromCapacitor(player.HeldItem, item);
+                }
+                else if (mode == 3)
+                {
+                    //chargeFromCapacitor(player.HeldItem, item);
+                }
+                else if (mode == 4)
+                {
+                    //chargeFromCapacitor(player.HeldItem, item);
+                }
+            }
+        }
+
+        public void chargeFromCapacitor(Item itemToCharge, Item capacitor)
+        {
+            if(itemToCharge.Electricity().charge < itemToCharge.Electricity().chargeMax && itemToCharge != capacitor && capacitor.Electricity().charge > 0)
+            {
+                if(itemToCharge.Electricity().toBeFull > capacitor.Electricity().charge)
+                {
+                    itemToCharge.Electricity().charge += capacitor.Electricity().charge;
+                    capacitor.Electricity().charge = 0;
+                }
+                else if (itemToCharge.Electricity().toBeFull < capacitor.Electricity().charge)
+                {
+                    capacitor.Electricity().charge -= itemToCharge.Electricity().toBeFull;
+                    itemToCharge.Electricity().charge = itemToCharge.Electricity().chargeMax;
+                }
+
+                //if (ssm.debug) { ShtunUtils.DisplayLocalizedText("Charging."); }
+            }
+            else
+            {
+                //if(ssm.debug) { ShtunUtils.DisplayLocalizedText("Item can't be charged or already fully charged.");}
+            }
+        }
+
+        public override void LoadData(Item item, TagCompound tag)
+        {
+            charge = tag.GetInt("chargeShtun");
+            mode = tag.GetInt("chargeMode");
+        }
+
+        public override void SaveData(Item item, TagCompound tag)
+        {
+            tag["chargeShtun"] = charge;
+            tag["chargeMode"] = mode;
+        }
+
+        public override void NetSend(Item item, BinaryWriter writer)
+        {
+            writer.Write(charge);
+            writer.Write(mode);
+        }
+
+        public override void NetReceive(Item item, BinaryReader reader)
+        {
+            charge = reader.Read();
+            mode = reader.Read();
         }
 
         //public override bool CanUseItem(Item item, Player player)
@@ -83,17 +160,17 @@ namespace ssm.Electricity
         //                charge -= chargeNeed;
         //        }
         //    }
-        //    return true;
+        //    return base.CanUseItem(item, player);
         //}
 
-        //public override bool? UseItem(Item item, Player player)
-        //{
-        //    if (isCapacitor)
-        //    {
-        //        mode++;
-        //        if (mode >= 4) { mode = 0; }
-        //    }
-        //    return base.UseItem();
-        //}
+        public override bool? UseItem(Item item, Player player)
+        {
+            if (isCapacitor)
+            {
+                mode++;
+                if (mode > 4) { mode = 0; }
+            }
+            return base.UseItem(item, player);
+        }
     }
 }

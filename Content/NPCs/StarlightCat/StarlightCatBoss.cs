@@ -408,6 +408,54 @@ namespace ssm.Content.NPCs.StarlightCat
                 spriteBatch.Draw(bullet.Texture, bullet.Position - new Vector2(bullet.Size) - Main.screenPosition, Color.White);
             }
         }
+        void Movement(Vector2 target, float speed, bool fastX = true, bool obeySpeedCap = true)
+        {
+            float turnaroundModifier = 1f;
+            float maxSpeed = 12;
+
+            if (Main.expertMode)
+            {
+                speed *= 1.5f;
+                turnaroundModifier *= 1.5f;
+                maxSpeed *= 1.5f;
+            }
+
+            if (Math.Abs(NPC.Center.X - target.X) > 10)
+            {
+                if (NPC.Center.X < target.X)
+                {
+                    NPC.velocity.X += speed;
+                    if (NPC.velocity.X < 0)
+                        NPC.velocity.X += speed * (fastX ? 2 : 1) * turnaroundModifier;
+                }
+                else
+                {
+                    NPC.velocity.X -= speed;
+                    if (NPC.velocity.X > 0)
+                        NPC.velocity.X -= speed * (fastX ? 2 : 1) * turnaroundModifier;
+                }
+            }
+            if (NPC.Center.Y < target.Y)
+            {
+                NPC.velocity.Y += speed;
+                if (NPC.velocity.Y < 0)
+                    NPC.velocity.Y += speed * 2 * turnaroundModifier;
+            }
+            else
+            {
+                NPC.velocity.Y -= speed;
+                if (NPC.velocity.Y > 0)
+                    NPC.velocity.Y -= speed * 2 * turnaroundModifier;
+            }
+
+            if (obeySpeedCap)
+            {
+                if (Math.Abs(NPC.velocity.X) > maxSpeed)
+                    NPC.velocity.X = maxSpeed * Math.Sign(NPC.velocity.X);
+                if (Math.Abs(NPC.velocity.Y) > maxSpeed)
+                    NPC.velocity.Y = maxSpeed * Math.Sign(NPC.velocity.Y);
+            }
+        }
         private void MovementY(float targetY, float speedModifier)
         {
             if (NPC.Center.Y < targetY)
@@ -472,83 +520,111 @@ namespace ssm.Content.NPCs.StarlightCat
         #endregion
 
         #region attack
-        void RotatingDeathrays()
-        {
-            if (ssm.debug && NPC.localAI[2] == 1) { ShtunUtils.DisplayLocalizedText("Doing RotatingDeathrays()", Color.Teal); }
+        //void RotatingDeathraysOLD()
+        //{
+        //    if (ssm.debug && NPC.localAI[2] == 1) { ShtunUtils.DisplayLocalizedText("Doing RotatingDeathrays()", Color.Teal); }
             
-            //Variables
-            float DeathrayAttackDuration = 700f;
-            int totalProjectiles = isEX ? 16 : Main.expertMode ? 12 : 8;
-            float radians = MathHelper.TwoPi / totalProjectiles;
-            bool normalLaserRotation = NPC.localAI[0] % 2f == 0f;
-            float velocity = 6f;
-            double angleA = radians * 0.5;
-            double angleB = MathHelper.ToRadians(90f) - angleA;
-            float velocityX2 = (float)(velocity * Math.Sin(angleA) / Math.Sin(angleB));
-            Vector2 spinningPoint = normalLaserRotation ? new Vector2(0f, -velocity) : new Vector2(-velocityX2, -velocity);
-            spinningPoint.Normalize();
+        //    //Variables
+        //    float DeathrayAttackDuration = 700f;
+        //    int totalProjectiles = isEX ? 16 : Main.expertMode ? 12 : 8;
+        //    float radians = MathHelper.TwoPi / totalProjectiles;
+        //    bool normalLaserRotation = NPC.localAI[0] % 2f == 0f;
+        //    float velocity = 6f;
+        //    double angleA = radians * 0.5;
+        //    double angleB = MathHelper.ToRadians(90f) - angleA;
+        //    float velocityX2 = (float)(velocity * Math.Sin(angleA) / Math.Sin(angleB));
+        //    Vector2 spinningPoint = normalLaserRotation ? new Vector2(0f, -velocity) : new Vector2(-velocityX2, -velocity);
+        //    spinningPoint.Normalize();
 
-            //Timer
+        //    //Timer
+        //    NPC.localAI[2]++;
+
+        //    if (NPC.localAI[2] < rayTelegraphDuration)
+        //    {
+        //        //Spawn telegraphs
+        //        if (NPC.localAI[2] == 1f)
+        //        {
+        //            SoundEngine.PlaySound(rayCharge, NPC.Center);
+        //            if (Main.netMode != NetmodeID.MultiplayerClient)
+        //            {
+        //                //int type = ModContent.ProjectileType<ChtuxlagorRayTelegraph>();
+        //                //Vector2 spawnPoint = NPC.Center + new Vector2(-1f, 23f);
+        //                //for (int k = 0; k < totalProjectiles; k++)
+        //                //{
+        //                //    Vector2 laserVelocity = spinningPoint.RotatedBy(radians * k);
+        //                //    Projectile.NewProjectile(NPC.GetSource_FromThis(), spawnPoint + Vector2.Normalize(laserVelocity) * 17f, laserVelocity, type, 0, 0f, Main.myPlayer, 0f, NPC.whoAmI);
+        //                //}
+        //            }
+        //        }
+        //    }
+        //    else
+        //    {
+        //        //Spawn rays
+        //        if (NPC.localAI[2] == rayTelegraphDuration)
+        //        {
+        //            raySoundSlot = SoundEngine.PlaySound(rayCharge, NPC.Center);
+
+        //            if (Main.netMode != NetmodeID.MultiplayerClient)
+        //            {
+        //                int type = ModContent.ProjectileType<ChtuxlagorDeathraySmall>();
+        //                int damage = NPC.damage;
+        //                Vector2 spawnPoint = NPC.Center + new Vector2(-1f, 23f);
+        //                for (int k = 0; k < totalProjectiles; k++)
+        //                {
+        //                    Vector2 laserVelocity = spinningPoint.RotatedBy(radians * k);
+        //                    Projectile.NewProjectile(NPC.GetSource_FromThis(), NPC.Center, laserVelocity,
+        //                    type, damage, 0f, Main.myPlayer, 0, NPC.whoAmI);
+        //                    //Projectile.NewProjectile(NPC.GetSource_FromThis(), spawnPoint + Vector2.Normalize(laserVelocity) * 35f, laserVelocity, type, damage, 0f, Main.myPlayer, 0f, NPC.whoAmI);
+        //                }
+        //            }
+        //        }
+        //    }
+
+        //    //End of attack
+        //    float var = isEX ? 2 : 1;
+        //    float var2 = //rayTelegraphDuration + (
+        //                 DeathrayAttackDuration * var;
+
+        //    if (NPC.localAI[2] >= var2)
+        //    {
+        //        //deathraySound?.Stop();
+        //        NPC.localAI[2] = 0;
+        //        NPC.TargetClosest();
+        //        NPC.netUpdate = true;
+        //        ChooseNextAttack(1);
+        //        //ChooseNextAttack(2, 3, 4, 5, 6, 7);
+        //    }
+        //}
+        void Bullethell()
+        {
+
+        }
+        void RotateDeathrays(int numberOfBeams, int durationSec)
+        {
             NPC.localAI[2]++;
-
-            if (NPC.localAI[2] < rayTelegraphDuration)
+            bool spawnedBeams = false;
+            if (NPC.localAI[2] == 60 && spawnedBeams)
             {
-                //Spawn telegraphs
-                if (NPC.localAI[2] == 1f)
+                for (int i = 0; i < numberOfBeams; i++)
                 {
-                    SoundEngine.PlaySound(rayCharge, NPC.Center);
-                    if (Main.netMode != NetmodeID.MultiplayerClient)
-                    {
-                        //int type = ModContent.ProjectileType<ChtuxlagorRayTelegraph>();
-                        //Vector2 spawnPoint = NPC.Center + new Vector2(-1f, 23f);
-                        //for (int k = 0; k < totalProjectiles; k++)
-                        //{
-                        //    Vector2 laserVelocity = spinningPoint.RotatedBy(radians * k);
-                        //    Projectile.NewProjectile(NPC.GetSource_FromThis(), spawnPoint + Vector2.Normalize(laserVelocity) * 17f, laserVelocity, type, 0, 0f, Main.myPlayer, 0f, NPC.whoAmI);
-                        //}
-                    }
-                }
-            }
-            else
-            {
-                //Spawn rays
-                if (NPC.localAI[2] == rayTelegraphDuration)
-                {
-                    raySoundSlot = SoundEngine.PlaySound(rayCharge, NPC.Center);
+                    float angle = MathHelper.ToRadians((360f / numberOfBeams) * i);
 
-                    if (Main.netMode != NetmodeID.MultiplayerClient)
-                    {
-                        int type = ModContent.ProjectileType<ChtuxlagorDeathraySmall>();
-                        int damage = NPC.damage;
-                        Vector2 spawnPoint = NPC.Center + new Vector2(-1f, 23f);
-                        for (int k = 0; k < totalProjectiles; k++)
-                        {
-                            Vector2 laserVelocity = spinningPoint.RotatedBy(radians * k);
-                            Projectile.NewProjectile(NPC.GetSource_FromThis(), NPC.Center, laserVelocity,
-                            type, damage, 0f, Main.myPlayer, 0, NPC.whoAmI);
-                            //Projectile.NewProjectile(NPC.GetSource_FromThis(), spawnPoint + Vector2.Normalize(laserVelocity) * 35f, laserVelocity, type, damage, 0f, Main.myPlayer, 0f, NPC.whoAmI);
-                        }
-                    }
+                    Vector2 direction = new Vector2((float)Math.Cos(angle), (float)Math.Sin(angle));
+
+                    Projectile.NewProjectile(NPC.GetSource_FromAI(), NPC.Center, direction * 3f,
+                        ModContent.ProjectileType<StarlightCatRotatingDeathray>(), NPC.damage, 0f);
                 }
+                spawnedBeams = true;
             }
 
-            //End of attack
-            float var = isEX ? 2 : 1;
-            float var2 = //rayTelegraphDuration + (
-                         DeathrayAttackDuration * var;
-
-            if (NPC.localAI[2] >= var2)
+            if (NPC.localAI[2] >= durationSec / 60)
             {
-                //deathraySound?.Stop();
                 NPC.localAI[2] = 0;
                 NPC.TargetClosest();
                 NPC.netUpdate = true;
                 ChooseNextAttack(1);
                 //ChooseNextAttack(2, 3, 4, 5, 6, 7);
             }
-        }
-        void Bullethell()
-        {
 
         }
         #endregion
@@ -676,7 +752,7 @@ namespace ssm.Content.NPCs.StarlightCat
             switch ((int)NPC.ai[0])
             {
                 case 0: JustSpawned(); break;
-                case 1: RotatingDeathrays(); break;
+                case 1: RotateDeathrays(10, 20); break;
                 //case 2:; break;
                 //case 3:; break;
                 //case 4:; break;

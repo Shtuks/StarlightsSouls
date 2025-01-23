@@ -7,6 +7,7 @@ namespace ssm.Content.Items.Tools
 {
     public class CSOCP : SoulsItem
     {
+        int mode;
         public override void SetDefaults()
         {
             Item.damage = int.MaxValue / 100;
@@ -29,13 +30,38 @@ namespace ssm.Content.Items.Tools
             }
         }
 
-        int mode;
-
-        public override bool? UseItem(Player player)
+        public override void HoldItem(Player player)
         {
-            mode++;
-            if (mode >= 4) { mode = 0; }
-            return true;
+            if(Main.mouseRightRelease && Main.mouseRight)
+            {
+                mode = (mode+ 1) % 3;
+                UpdateStats();
+            }
+        }
+
+        public void UpdateStats()
+        {
+            switch (mode)
+            {
+                case 0:
+                    Item.axe = 0;
+                    Item.hammer = 0;
+                    Item.pick = int.MaxValue / 100; 
+                    Item.tileBoost = 100; 
+                    break;
+                case 1:
+                    Item.axe = int.MaxValue / 100;
+                    Item.hammer = 0;
+                    Item.pick = 0;
+                    Item.tileBoost = 20;
+                    break;
+                case 2:
+                    Item.axe = 0;
+                    Item.hammer = int.MaxValue / 100;
+                    Item.pick = 0;
+                    Item.tileBoost = 20;
+                    break;
+            }
         }
     }
 }

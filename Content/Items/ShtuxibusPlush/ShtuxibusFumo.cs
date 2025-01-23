@@ -44,10 +44,10 @@ namespace ssm.Content.Items.ShtuxibusPlush
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            //if(ShtunConfig.Instance.SafeMode)
-            //{
-            tooltips.Add(new TooltipLine(Mod, "NoSafeMode", Language.GetTextValue($"Mods.ssm.Items.ShtuxibusFumo.NoSafeMode")));
-            //}
+            if (ShtunConfig.Instance.SafeMode)
+            {
+                tooltips.Add(new TooltipLine(Mod, "NoSafeMode", Language.GetTextValue($"Mods.ssm.Items.ShtuxibusFumo.NoSafeMode")));
+            }
         }
         public override void ModifyResearchSorting(ref ContentSamples.CreativeHelper.ItemGroup ItemGroup)
         {
@@ -87,7 +87,6 @@ namespace ssm.Content.Items.ShtuxibusPlush
                     }
                 }
             }
-            //ShtunUtils.DisplayLocalizedText("Work in progress.");
             return true;
         }
 

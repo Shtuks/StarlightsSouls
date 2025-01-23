@@ -25,6 +25,8 @@
 	  <Compile Include="Thorium\Enchantments\HarbingerEnchant.cs.sex" />
 	</ItemGroup>
 	<ItemGroup>
+	  <None Include="Calamity\Addons\DivineEnchant.cs" />
+	  <None Include="Calamity\Addons\EntropicEnchant.cs" />
 	  <None Include="Content\Items\Weapons\Shtuxium\ShtuxiumShortsword.cs" />
 	  <None Include="Reworks\StyxArmor.cs" />
 	  <None Include="Thorium\Swarm\Summons\OverloadAbyssalion.cs" />
@@ -36,17 +38,23 @@
 	  <Reference Include="CalamityBardHealer">
 	    <HintPath>lib\CalamityBardHealer.dll</HintPath>
 	  </Reference>
+	  <Reference Include="CalamityEntropy">
+	    <HintPath>lib\CalamityEntropy.dll</HintPath>
+	  </Reference>
 	  <Reference Include="CalamityHunt">
 	    <HintPath>lib\CalamityHunt.dll</HintPath>
 	  </Reference>
 	  <Reference Include="CalamityMod">
-	    <HintPath>Libraries\CalamityMod.dll</HintPath>
+	    <HintPath>lib\CalamityMod.dll</HintPath>
 	  </Reference>
-	  <Reference Include="CalValEX">
-	    <HintPath>..\..\ModReader\CalValEX\CalValEX.dll</HintPath>
+	  <Reference Include="CatalystMod">
+	    <HintPath>lib\CatalystMod.dll</HintPath>
 	  </Reference>
 	  <Reference Include="CheatSheet">
 	    <HintPath>lib\CheatSheet.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Clamity">
+	    <HintPath>lib\Clamity.dll</HintPath>
 	  </Reference>
 	  <Reference Include="DragonLens">
 	    <HintPath>lib\DragonLens.dll</HintPath>
@@ -66,29 +74,14 @@
 	  <Reference Include="FargoMoreSoulsCompat">
 	    <HintPath>Libraries\FargoMoreSoulsCompat_v0.4.2.dll</HintPath>
 	  </Reference>
-	  <Reference Include="FargoMoreSoulsCompat">
-	    <HintPath>Libraries\FargoMoreSoulsCompat_v0.4.2.dll</HintPath>
-	  </Reference>
-	  <Reference Include="FargoMoreSoulsCompat">
-	    <HintPath>Libraries\FargoMoreSoulsCompat_v0.4.2.dll</HintPath>
-	  </Reference>
 	  <Reference Include="Fargowiltas">
-	    <HintPath>Libraries\Fargowiltas.dll</HintPath>
-	  </Reference>
-	  <Reference Include="FargowiltasCrossmod">
-	    <HintPath>Libraries\FargowiltasCrossmod_v1.1.0.8.dll</HintPath>
-	  </Reference>
-	  <Reference Include="FargowiltasCrossmod">
-	    <HintPath>Libraries\FargowiltasCrossmod_v1.1.0.8.dll</HintPath>
-	  </Reference>
-	  <Reference Include="FargowiltasCrossmod">
-	    <HintPath>Libraries\FargowiltasCrossmod_v1.1.0.8.dll</HintPath>
+	    <HintPath>lib\Fargowiltas.dll</HintPath>
 	  </Reference>
 	  <Reference Include="FargowiltasCrossmod">
 	    <HintPath>Libraries\FargowiltasCrossmod_v1.1.0.8.dll</HintPath>
 	  </Reference>
 	  <Reference Include="FargowiltasSouls">
-	    <HintPath>Libraries\FargowiltasSouls.dll</HintPath>
+	    <HintPath>lib\FargowiltasSouls.dll</HintPath>
 	  </Reference>
 	  <Reference Include="HEROsMod">
 	    <HintPath>lib\HEROsMod.dll</HintPath>
@@ -101,6 +94,9 @@
 	  </Reference>
 	  <Reference Include="MMHOOK_MagicStorage">
 	    <HintPath>lib\MMHOOK_MagicStorage.dll</HintPath>
+	  </Reference>
+	  <Reference Include="NoxusBoss">
+	    <HintPath>lib\NoxusBoss.dll</HintPath>
 	  </Reference>
 	  <Reference Include="RagnarokMod">
 	    <HintPath>lib\RagnarokMod.dll</HintPath>
