@@ -29,6 +29,7 @@ namespace ssm.Content.Projectiles.Weapons
             Projectile.hide = true;
             Projectile.DamageType = DamageClass.Magic;
             Projectile.alpha = 0;
+            Projectile.scale = 0.8f;
             Projectile.FargoSouls().CanSplit = false;
             Projectile.FargoSouls().TimeFreezeImmune = true;
             Projectile.FargoSouls().noInteractionWithNPCImmunityFrames = true;

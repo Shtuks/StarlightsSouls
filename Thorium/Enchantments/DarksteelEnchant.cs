@@ -10,6 +10,7 @@ using ssm.Core;
 using ThoriumMod.Items.SummonItems;
 using ThoriumMod.Items.RangedItems;
 using FargowiltasSouls.Content.Items.Accessories.Enchantments;
+using ThoriumMod.Items.Thorium;
 
 namespace ssm.Thorium.Enchantments
 {
@@ -47,6 +48,7 @@ namespace ssm.Thorium.Enchantments
 
             ModContent.Find<ModItem>(this.thorium.Name, "SpikedBracer").UpdateAccessory(player, hideVisual);
             ModContent.Find<ModItem>(this.thorium.Name, "BallnChain").UpdateAccessory(player, hideVisual);
+            ModContent.GetModItem(ModContent.ItemType<ThoriumShield>()).UpdateAccessory(player, hideVisual);
         }
 
         public override void AddRecipes()

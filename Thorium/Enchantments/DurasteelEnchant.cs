@@ -10,6 +10,7 @@ using ThoriumMod.Items.NPCItems;
 using ThoriumMod.Items.BasicAccessories;
 using ThoriumMod.Items.Donate;
 using FargowiltasSouls.Content.Items.Accessories.Enchantments;
+using ThoriumMod.Items.Thorium;
 
 namespace ssm.Thorium.Enchantments
 {
@@ -44,9 +45,10 @@ namespace ssm.Thorium.Enchantments
 
             ModContent.GetModItem(ModContent.ItemType<BallnChain>()).UpdateAccessory(player, hideVisual);
             ModContent.GetModItem(ModContent.ItemType<SpikedBracer>()).UpdateAccessory(player, hideVisual);
+            ModContent.GetModItem(ModContent.ItemType<ThoriumShield>()).UpdateAccessory(player, hideVisual);
 
             //toggle
-                ModContent.GetModItem(ModContent.ItemType<IncandescentSpark>()).UpdateAccessory(player, hideVisual);
+            ModContent.GetModItem(ModContent.ItemType<IncandescentSpark>()).UpdateAccessory(player, hideVisual);
         }
 
         public override void AddRecipes()

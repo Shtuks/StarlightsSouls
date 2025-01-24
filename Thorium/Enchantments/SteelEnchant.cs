@@ -40,6 +40,7 @@ namespace ssm.Thorium.Enchantments
             }
 
             ModContent.Find<ModItem>(this.thorium.Name, "SpikedBracer").UpdateAccessory(player, hideVisual);
+            ModContent.Find<ModItem>(this.thorium.Name, "ThoriumShield").UpdateAccessory(player, hideVisual);
         }
 
         public override void AddRecipes()

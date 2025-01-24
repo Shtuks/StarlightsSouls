@@ -2,7 +2,6 @@
 using Terraria.ID;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
-using CalamityMod.CalPlayer;
 using FargowiltasSouls.Content.Items.Accessories.Enchantments;
 using ssm.Core;
 using CalamityMod.Items;
@@ -33,8 +32,6 @@ namespace ssm.Calamity.Addons
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            CalamityPlayer modPlayer = player.GetModPlayer<CalamityPlayer>();
-
             ModContent.Find<ModItem>(ModCompatibility.WrathoftheGods.Name, "DivineWings").UpdateAccessory(player, hideVisual);
             
             if (player.AddEffect<DivineEffect>(Item))

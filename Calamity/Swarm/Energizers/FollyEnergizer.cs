@@ -1,7 +1,10 @@
+using ssm.Core;
 using Terraria.ModLoader;
 
 namespace ssm.Calamity.Swarm.Energizers
 {
+    [ExtendsFromMod(ModCompatibility.Calamity.Name)]
+    [JITWhenModsEnabled(ModCompatibility.Calamity.Name)]
     public class FollyEnergizer : ModItem
     {
         public override void SetDefaults()

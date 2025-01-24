@@ -1,8 +1,11 @@
 using ssm.Content.Tiles;
+using ssm.Core;
 using Terraria.ModLoader;
 
 namespace ssm.Calamity.Swarm.Energizers
 {
+    [ExtendsFromMod(ModCompatibility.Calamity.Name)]
+    [JITWhenModsEnabled(ModCompatibility.Calamity.Name)]
     public class CalamitousEnergizer : ModItem
     {
         public override void SetDefaults()

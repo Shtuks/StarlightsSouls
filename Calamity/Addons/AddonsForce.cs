@@ -10,7 +10,6 @@ namespace ssm.Calamity.Addons
     [JITWhenModsEnabled(ModCompatibility.Catalyst.Name, ModCompatibility.Goozma.Name, ModCompatibility.Clamity.Name, ModCompatibility.WrathoftheGods.Name)]
     public class AddonsForce : BaseForce
     {
-        public override string Texture => "ssm/Content/Projectiles/Deathrays/AbomDeathray";
         public override void SetDefaults()
         {
             Item.width = 20;

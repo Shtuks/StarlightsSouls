@@ -289,7 +289,7 @@ Mods: {
 				Tooltip:
 					'''
 					Effects of The Community, Shattered Community
-					Effects of Force of Exploration
+					Effects of Force of Exploration, Force of Addons
 					Effects of Brand of the Brimstone Witch and Pendant of the Godseeker.
 					'The land may never grow quiet again, but peace can certainly be brought upon it.'
 					'''
@@ -1396,7 +1396,7 @@ Mods: {
 					Nothing will stop your movement 
 					Double tap to dash
 					Grants immunity to shambler chain-balls
-					Effects of Spiked Bracer
+					Effects of Spiked Bracer and Thorium Shield
 					'''
 			}
 
@@ -1465,7 +1465,7 @@ Mods: {
 					'Masterfully forged by the Blacksmith'
 					12% damage reduction at Full HP
 					Grants immunity to shambler chain-balls
-					Effects of Incandescent Spark and Spiked Bracers
+					Effects of Incandescent Spark, Spiked Bracersand and Thorium Shield
 					'''
 			}
 
@@ -1827,7 +1827,7 @@ Mods: {
 					'''
 					'Expertly forged by the Blacksmith'
 					10% damage reduction at Full HP
-					Effects of Spiked Bracers
+					Effects of Spiked Bracers and Thorium Shield
 					'''
 			}
 
@@ -2697,7 +2697,36 @@ Mods: {
 
 			AddonsForce: {
 				DisplayName: Addons Force
-				Tooltip: ""
+				Tooltip:
+					'''
+					Activates the Stress and Void Bar
+					Hitting the target will increase void energy
+					Provides movement and flight speed bonuses based on the amount of void energy
+					Press the armor bonus key to activate Void energy Summon a Void Wraith to assist in battle and fly indefinitely for 10 seconds
+					Void Wrairh damage type depends on the weapon in hand
+					Press [KEY] to activate the coordinated state
+					In this state, you are not affected by gravity and push away the surrounding projectiles
+					Stress builds up passively, though standing close to enemies speeds up the rate at which it increases
+					At 25% Stress your weapons will produce explosions
+					At 75% Stress your explosions will become larger and deal more damage
+					Double tap DOWN while Stress is above 25% to enter Malice Mode
+					Malice Mode significantly increases your damage, as well as granting flat damage, armor penetration, and critical strike
+					These boosts and their duration scale with the amount of stress you have
+					{$CommonItemTooltip.FlightAndSlowfall}
+					Wearing any wings overrides this flight
+					{$CommonItemTooltip.PressDownToHover}
+					Allows the ability to dash and enhances other dashes
+					Grants immunity to many endgame and movement-based debuffs
+					Surrounds you with two rings of asteroids whose damages scale with your stats
+					Press {0} to make the asteroids more transparent
+					You are immune to the Astral Blight and your attacks inflict it
+					Press the {0} key to dash towards the cursor as a violent nebula
+					During the dash, you are fully immune to damage
+					20% increaced true melee damage. Can't be frozen
+					True melee attacks inflict frostburn. 
+					Press Armor Ability Key to create an ice shield that parries attack
+					Failing to parry will cause you to overcool
+					'''
 			}
 
 			IntergelacticEnchant: {
@@ -2747,17 +2776,28 @@ Mods: {
 
 			DivineEnchant: {
 				DisplayName: Divine Enchant
-				Tooltip: ""
+				Tooltip:
+					'''
+					Grants fast infinite flight
+					{$CommonItemTooltip.PressDownToHover}
+					Reveals a Light Dimension behind your cursor
+					'''
 			}
 
 			EntropicEnchant: {
 				DisplayName: Entropic Enchant
-				Tooltip: ""
+				Tooltip: Makes cosmic hallutinations materialize around you
 			}
 
 			FrozenEnchant: {
 				DisplayName: Frozen Enchant
-				Tooltip: ""
+				Tooltip:
+					'''
+					20% increaced true melee damage. Can't be frozen
+					True melee attacks inflict frostburn. 
+					Press Armor Ability Key to create an ice shield that parries attack
+					Failing to parry will cause you to overcool
+					'''
 			}
 		}
 
@@ -3022,8 +3062,9 @@ Mods: {
 		}
 
 		Toggler: {
-			AddonsForceHeader: Force
+			AddonsForceHeader: Addons Force
 			ShogunEffect: Slippery Shogun Wings
+			VoidFaquirEffect: Void Bar
 			SplendorEffect: Splendor Jam
 			DivineEffect: Light Dimension Cursor
 			EntropicEffect: Illusions

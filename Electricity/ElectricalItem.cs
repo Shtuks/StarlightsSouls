@@ -124,25 +124,21 @@ namespace ssm.Electricity
         public override void LoadData(Item item, TagCompound tag)
         {
             charge = tag.GetInt("chargeShtun");
-            mode = tag.GetInt("chargeMode");
         }
 
         public override void SaveData(Item item, TagCompound tag)
         {
             tag["chargeShtun"] = charge;
-            tag["chargeMode"] = mode;
         }
 
         public override void NetSend(Item item, BinaryWriter writer)
         {
             writer.Write(charge);
-            writer.Write(mode);
         }
 
         public override void NetReceive(Item item, BinaryReader reader)
         {
             charge = reader.Read();
-            mode = reader.Read();
         }
 
         //public override bool CanUseItem(Item item, Player player)

@@ -5,11 +5,14 @@ Source code: https://github.com/Shtuks/StarlightsSouls
 
 Discord Server: https://discord.gg/xB9s8SyQJr
 
+
 All things mod doing for now:
+
+- Force for Calamity Addons
 
 - Special accessories to combine effects of accessories from other mods
 
-- Electricity, energy shield, radiation systems
+- Electricity, energy shield, radiation systems, S.H.T.U.K modules
 
 - Overloaded bosses summons and energizers for SoA, Calamity, Thorium
 
@@ -33,6 +36,6 @@ Planned additions:
 
 - Redemption support(not even started)
 
-- Calamity enchantments(no)
+- Calamity enchantments(soon™)
 
 - Soul of Eternity Legacy (Hundreds of projectiles flying across the screen and lowering FPS. But it's funny)

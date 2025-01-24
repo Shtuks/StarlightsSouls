@@ -1,5 +1,6 @@
 using FargowiltasSouls.Content.Items.Accessories.Forces;
 using FargowiltasSouls.Content.Items.Accessories.Souls;
+using ssm.Calamity.Souls;
 using Terraria;
 using Terraria.ModLoader;
 
@@ -18,6 +19,10 @@ namespace ssm.Reworks
                     ModContent.Find<ModItem>(((ModType)this).Mod.Name, "GuardianAngelsSoul").UpdateAccessory(player, false);
                     ModContent.Find<ModItem>(((ModType)this).Mod.Name, "BardSoul").UpdateAccessory(player, false);
                 }
+            }
+            if (Item.type == ModContent.ItemType<EternitySoul>() || Item.type == ModContent.ItemType<CalamitySoul>())
+            {
+                ModContent.Find<ModItem>(this.Mod.Name, "AddonsForce").UpdateAccessory(player, false);
             }
             if (Item.type == ModContent.ItemType<EternitySoul>())
             {

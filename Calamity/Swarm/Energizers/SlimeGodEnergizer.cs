@@ -1,7 +1,10 @@
+using ssm.Core;
 using Terraria.ModLoader;
 
 namespace ssm.Calamity.Swarm.Energizers
 {
+    [ExtendsFromMod(ModCompatibility.Calamity.Name)]
+    [JITWhenModsEnabled(ModCompatibility.Calamity.Name)]
     public class SlimeGodEnergizer : ModItem
     {
         public override void SetDefaults()
