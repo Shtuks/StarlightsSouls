@@ -1,7 +1,6 @@
 ﻿using Terraria.ModLoader;
 using ssm.Core;
 using Microsoft.Xna.Framework;
-using ssm.Systems;
 
 namespace ssm.Content.DamageClasses
 {

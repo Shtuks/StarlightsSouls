@@ -88,7 +88,7 @@ namespace ssm.Content.Projectiles.Shtuxibus
             Vector2 origin2 = rectangle.Size() / 2f;
 
             Color color26 = Projectile.GetAlpha(lightColor);
-            Texture2D glow = ssm.Instance.Assets.Request<Texture2D>("Projectiles/Shtuxibus/MutantSphereGlow", ReLogic.Content.AssetRequestMode.ImmediateLoad).Value;
+            Texture2D glow = ssm.Instance.Assets.Request<Texture2D>("Content/Projectiles/Shtuxibus/MutantSphereGlow", ReLogic.Content.AssetRequestMode.ImmediateLoad).Value;
             int rect1 = glow.Height;
             int rect2 = 0;
             Rectangle glowrectangle = new Rectangle(0, rect2, glow.Width, rect1);

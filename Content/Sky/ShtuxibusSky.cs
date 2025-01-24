@@ -5,11 +5,10 @@ using ReLogic.Content;
 using System;
 using Terraria.Graphics.Effects;
 using Terraria.ModLoader;
-using ssm;
 using ssm.Content.NPCs.Shtuxibus;
 using FargowiltasSouls;
 
-namespace ssm.Sky
+namespace ssm.Content.Sky
 {
     public class ShtuxibusSky : CustomSky
     {
@@ -96,7 +95,7 @@ namespace ssm.Sky
             {
                 color = Color.Lerp(color, (Color)specialColor, specialColorLerp);
                 if (specialColor == Color.Black)
-                    opacity = System.Math.Min(1f, opacity + System.Math.Min(intensity, lifeIntensity) * 0.5f);
+                    opacity = Math.Min(1f, opacity + Math.Min(intensity, lifeIntensity) * 0.5f);
             }
             return color;
         }
@@ -108,7 +107,7 @@ namespace ssm.Sky
                 float opacity = 0f;
                 Color color = ColorToUse(ref opacity);
 
-                spriteBatch.Draw(ModContent.Request<Texture2D>($"ssm/Sky/ShtuxibusSky{ShtunUtils.TryStalinTexture}", ReLogic.Content.AssetRequestMode.ImmediateLoad).Value,
+                spriteBatch.Draw(ModContent.Request<Texture2D>($"ssm/Content/Sky/ShtuxibusSky{ShtunUtils.TryStalinTexture}", AssetRequestMode.ImmediateLoad).Value,
                     new Rectangle(0, 0, Main.screenWidth, Main.screenHeight), ShtunUtils.Stalin ? Color.Red : Color.Lime * intensity * 0.99f);
                 if (--delay < 0)
                 {
@@ -123,7 +122,7 @@ namespace ssm.Sky
                 for (int i = 0; i < 100; i++) //static on screen
                 {
                     int width = Main.rand.Next(3, 251);
-                    spriteBatch.Draw(ModContent.Request<Texture2D>("ssm/Sky/MutantStatic", ReLogic.Content.AssetRequestMode.ImmediateLoad).Value,
+                    spriteBatch.Draw(ModContent.Request<Texture2D>("ssm/Content/Sky/MutantStatic", AssetRequestMode.ImmediateLoad).Value,
                     new Rectangle(xPos[i] - width / 2, yPos[i], width, 3),
                     color * lifeIntensity * 0.75f);
                 }

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Terraria.ModLoader;
 
-namespace ssm.Systems
+namespace ssm.Core
 {
     internal abstract class CrossModHandler : ILoadable
     {

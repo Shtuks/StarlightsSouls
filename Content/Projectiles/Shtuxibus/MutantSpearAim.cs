@@ -146,7 +146,7 @@ namespace ssm.Content.Projectiles.Shtuxibus
 
             if (Projectile.ai[1] != 5)
             {
-                Texture2D glow = ssm.Instance.Assets.Request<Texture2D>("Projectiles/Shtuxibus/MutantSpearAimGlow", ReLogic.Content.AssetRequestMode.ImmediateLoad).Value;
+                Texture2D glow = ssm.Instance.Assets.Request<Texture2D>("Content/Projectiles/Shtuxibus/MutantSpearAimGlow", ReLogic.Content.AssetRequestMode.ImmediateLoad).Value;
                 float modifier = Projectile.timeLeft / (60f - Projectile.localAI[1]);
                 Color glowColor = new Color(Main.DiscoR, Main.DiscoG, Main.DiscoB, 210);
                 if (Projectile.ai[1] > 1)

@@ -5,7 +5,7 @@ using Terraria.Graphics.Effects;
 using Terraria.ModLoader;
 using ssm.Content.NPCs.StarlightCat;
 
-namespace ssm.Sky
+namespace ssm.Content.Sky
 {
     public class ChtuxlagorSky : CustomSky
     {

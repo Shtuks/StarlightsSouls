@@ -3,7 +3,7 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
 
-namespace ssm.Systems
+namespace ssm.Core
 {
     internal sealed class ColoredDamageTypesSupport : CrossModHandler
     {
@@ -28,7 +28,7 @@ namespace ssm.Systems
 
         internal override void PostSetupContent()
         {
-            foreach (DamageClass item in from d in base.Mod.GetContent<DamageClass>()
+            foreach (DamageClass item in from d in Mod.GetContent<DamageClass>()
                                          where d is IDamageColor
                                          select d)
             {
@@ -39,7 +39,7 @@ namespace ssm.Systems
 
         private void AddDamageType(DamageClass damageType, Color tooltipColor, Color damageColor, Color critDamageColor)
         {
-            base.CrossMod.Call("AddDamageType", damageType, tooltipColor, damageColor, critDamageColor);
+            CrossMod.Call("AddDamageType", damageType, tooltipColor, damageColor, critDamageColor);
         }
     }
 }

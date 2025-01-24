@@ -1,6 +1,6 @@
 global using FargowiltasSouls.Core.ModPlayers;
 global using FargowiltasSouls.Core.Toggler;
-using ssm.Sky;
+using ssm.Content.Sky;
 using Microsoft.Xna.Framework;
 using ReLogic.Content;
 using Terraria;
