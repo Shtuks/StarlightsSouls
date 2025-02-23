@@ -24,11 +24,11 @@ namespace ssm.Thorium.Forces
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "SacredEnchant").UpdateAccessory(player, hideVisual);
-            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "WarlockEnchant").UpdateAccessory(player, hideVisual);
-            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "BiotechEnchant").UpdateAccessory(player, hideVisual);
+            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "BloomingEnchant").UpdateAccessory(player, hideVisual);
+            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "AssassinEnchant").UpdateAccessory(player, hideVisual);
+            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "LifeBloomEnchant").UpdateAccessory(player, hideVisual);
             ModContent.Find<ModItem>(((ModType)this).Mod.Name, "LifeBinderEnchant").UpdateAccessory(player, hideVisual);
-            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "FallenPaladinEnchant").UpdateAccessory(player, hideVisual);
+            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "BiotechEnchant").UpdateAccessory(player, hideVisual);
         }
 
         public override void AddRecipes()
@@ -36,10 +36,10 @@ namespace ssm.Thorium.Forces
             Recipe recipe = this.CreateRecipe();
 
             recipe.AddIngredient(null, "SacredEnchant");
-            recipe.AddIngredient(null, "WarlockEnchant");
-            recipe.AddIngredient(null, "BiotechEnchant");
+            recipe.AddIngredient(null, "AssassinEnchant");
+            recipe.AddIngredient(null, "LifeBloomEnchant");
             recipe.AddIngredient(null, "LifeBinderEnchant");
-            recipe.AddIngredient(null, "FallenPaladinEnchant");
+            recipe.AddIngredient(null, "BiotechEnchant");
 
             recipe.AddTile(TileID.LunarCraftingStation);
 

@@ -1,6 +1,6 @@
 displayName = StarlightCat's Souls Expansion
-author = StarlightCat
-version = 1.1.0.1
+author = StarlightCat, ma3allim, cheesenuggets
+version = 1.1.0.5
 homepage = https://discord.gg/xB9s8SyQJr
 modReferences = FargowiltasSouls, Fargowiltas, Luminance
 weakReferences = CalamityMod, Redemption, SacredTools, ThoriumMod, FargowiltasCrossmod, CalValEX, FargoMoreSoulsCompat, CatalystMod, CalamityHunt, MagicStorage, DragonLens, Clamity, CalamityEntropy, NoxusBoss

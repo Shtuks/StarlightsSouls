@@ -2799,6 +2799,16 @@ Mods: {
 					Failing to parry will cause you to overcool
 					'''
 			}
+
+			WoolenEnchantment: {
+				DisplayName: Woolen Enchantment
+				Tooltip: ""
+			}
+
+			EmptinessEnchant: {
+				DisplayName: Emptiness Enchant
+				Tooltip: ""
+			}
 		}
 
 		Buffs: {
@@ -3059,6 +3069,8 @@ Mods: {
 			StarlightCatCreator.DisplayName: StarlightCat Creator
 			StarlightCatDestroyer.DisplayName: StarlightCat Destroyer
 			StarlightCatOrder.DisplayName: Order
+			ChtuxlagorBoss.DisplayName: Chtuxlagor Boss
+			ShtuxibusBoss.DisplayName: Shtuxibus Boss
 		}
 
 		Toggler: {

@@ -27,20 +27,24 @@ namespace ssm.Thorium.Forces
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
+            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "BronzeEnchant").UpdateAccessory(player, hideVisual);
+            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "DragonEnchant").UpdateAccessory(player, hideVisual);
             ModContent.Find<ModItem>(((ModType)this).Mod.Name, "LichEnchant").UpdateAccessory(player, hideVisual);
             ModContent.Find<ModItem>(((ModType)this).Mod.Name, "WhiteDwarfEnchant").UpdateAccessory(player, hideVisual);
-            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "CelestiaEnchant").UpdateAccessory(player, hideVisual);
-            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "ShootingStarEnchant").UpdateAccessory(player, hideVisual);
+            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "FungusEnchant").UpdateAccessory(player, hideVisual);
+            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "FlightEnchant").UpdateAccessory(player, hideVisual);
         }
 
         public override void AddRecipes()
         {
             Recipe recipe = this.CreateRecipe();
 
+            recipe.AddIngredient(ModContent.ItemType<BronzeEnchant>());
+            recipe.AddIngredient(ModContent.ItemType<DragonEnchant>());
             recipe.AddIngredient(ModContent.ItemType<LichEnchant>());
             recipe.AddIngredient(ModContent.ItemType<WhiteDwarfEnchant>());
-            recipe.AddIngredient(ModContent.ItemType<CelestiaEnchant>());
-            recipe.AddIngredient(ModContent.ItemType<ShootingStarEnchant>());
+            recipe.AddIngredient(ModContent.ItemType<FlightEnchant>());
+            recipe.AddIngredient(ModContent.ItemType<FungusEnchant>());
 
             recipe.AddTile<CrucibleCosmosSheet>();
 

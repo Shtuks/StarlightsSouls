@@ -26,7 +26,7 @@
 	</ItemGroup>
 	<ItemGroup>
 	  <None Include="Calamity\Addons\DivineEnchant.cs" />
-	  <None Include="Calamity\Addons\EntropicEnchant.cs" />
+	  <None Include="Calamity\Addons\EmptinessEnchant.cs" />
 	  <None Include="Content\Items\Weapons\Shtuxium\ShtuxiumShortsword.cs" />
 	  <None Include="Reworks\StyxArmor.cs" />
 	  <None Include="Thorium\Swarm\Summons\OverloadAbyssalion.cs" />
@@ -58,6 +58,9 @@
 	  </Reference>
 	  <Reference Include="DragonLens">
 	    <HintPath>lib\DragonLens.dll</HintPath>
+	  </Reference>
+	  <Reference Include="EbonianMod">
+	    <HintPath>lib\EbonianMod.dll</HintPath>
 	  </Reference>
 	  <Reference Include="FargoMoreSoulsCompat">
 	    <HintPath>Libraries\FargoMoreSoulsCompat_v0.4.2.dll</HintPath>

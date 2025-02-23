@@ -10,6 +10,9 @@ using ThoriumMod.Items.HealerItems;
 using ThoriumMod.Items.SummonItems;
 using FargowiltasSouls.Content.Items.Accessories.Enchantments;
 using ThoriumMod.Items.BossLich;
+using FargowiltasSouls.Core.AccessoryEffectSystem;
+using ssm.Content.SoulToggles;
+using static ssm.Thorium.Enchantments.PlagueDoctorEnchant;
 
 namespace ssm.Thorium.Enchantments
 {
@@ -33,22 +36,24 @@ namespace ssm.Thorium.Enchantments
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-
-
-            ShtunThoriumPlayer modPlayer = player.GetModPlayer<ShtunThoriumPlayer>();
             ThoriumPlayer thoriumPlayer = player.GetModPlayer<ThoriumPlayer>();
+
             //plague effect
-            thoriumPlayer.setPlague = true;
+            if (player.AddEffect<PlagueEffect>(Item))
+            {
+                thoriumPlayer.setPlague = true;
+            }
             //lich effect
-            modPlayer.LichEnchant = true;
+            if (player.AddEffect<PlagueEffect>(Item))
+            {
+                thoriumPlayer.setLich = true;
+            }
 
             ModContent.Find<ModItem>(this.thorium.Name, "Phylactery").UpdateAccessory(player, hideVisual);
         }
 
         public override void AddRecipes()
         {
-
-
             Recipe recipe = this.CreateRecipe();
 
             recipe.AddIngredient(ModContent.ItemType<LichCowl>());
@@ -60,6 +65,12 @@ namespace ssm.Thorium.Enchantments
 
             recipe.AddTile(TileID.CrystalBall);
             recipe.Register();
+        }
+
+        public class LichEffect : AccessoryEffect
+        {
+            public override Header ToggleHeader => Header.GetHeader<VanaheimForceHeader>();
+            public override int ToggleItemType => ModContent.ItemType<LichEnchant>();
         }
     }
 }

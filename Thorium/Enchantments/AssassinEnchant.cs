@@ -3,13 +3,11 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
 using ssm.Core;
-using System.Collections.Generic;
 using ThoriumMod.Items.BossThePrimordials.Omni;
 using ThoriumMod.Items.RangedItems;
 using ThoriumMod.Items.Tracker;
 using FargowiltasSouls.Content.Items.Accessories.Enchantments;
-using FargowiltasSouls.Core.AccessoryEffectSystem;
-using ssm.Content.SoulToggles;
+using ThoriumMod;
 
 namespace ssm.Thorium.Enchantments
 {
@@ -34,8 +32,8 @@ namespace ssm.Thorium.Enchantments
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            ShtunThoriumPlayer modPlayer = player.GetModPlayer<ShtunThoriumPlayer>();
-            modPlayer.AssassinEnchant = true;
+            ThoriumPlayer modPlayer = player.GetModPlayer<ThoriumPlayer>();
+            modPlayer.assassinThrower = true;
 
             ModContent.Find<ModItem>(this.thorium.Name, "DartPouch").UpdateAccessory(player, hideVisual);
         }
@@ -44,14 +42,12 @@ namespace ssm.Thorium.Enchantments
         {
             Recipe recipe = this.CreateRecipe();
 
-            recipe.AddIngredient(ModContent.ItemType<AssassinsWalkers>()); //any..
-            //recipe.AddIngredient(ModContent.ItemType<OmniArablastHood>());
+            recipe.AddIngredient(ModContent.ItemType<AssassinsWalkers>());
             recipe.AddIngredient(ModContent.ItemType<AssassinsGuard>());
             recipe.AddIngredient(ModContent.ItemType<MasterArbalestHood>());
             recipe.AddIngredient(ModContent.ItemType<DartPouch>());
             recipe.AddIngredient(ModContent.ItemType<TheBlackBow>());
             recipe.AddIngredient(ModContent.ItemType<WyrmDecimator>());
-
 
             recipe.AddTile(TileID.LunarCraftingStation);
             recipe.Register();

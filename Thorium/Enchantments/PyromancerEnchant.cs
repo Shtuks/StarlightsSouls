@@ -9,6 +9,9 @@ using ssm.Core;
 using ThoriumMod.Items.Cultist;
 using ThoriumMod.Items.Donate;
 using FargowiltasSouls.Content.Items.Accessories.Enchantments;
+using FargowiltasSouls.Core.AccessoryEffectSystem;
+using ssm.Content.SoulToggles;
+using static ssm.Thorium.Enchantments.LivingWoodEnchant;
 
 namespace ssm.Thorium.Enchantments
 {
@@ -32,13 +35,15 @@ namespace ssm.Thorium.Enchantments
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            ShtunThoriumPlayer modPlayer = player.GetModPlayer<ShtunThoriumPlayer>();
-            modPlayer.PyroEnchant = true;
+            ThoriumPlayer modPlayer = player.GetModPlayer<ThoriumPlayer>();
+            modPlayer.setPyromancer = true;
 
             ModContent.Find<ModItem>(this.thorium.Name, "PyromancerCowl").UpdateArmorSet(player);
 
-            //toggle
+            if (player.AddEffect<PlasmaEffect>(Item))
+            {
                 ModContent.Find<ModItem>(this.thorium.Name, "PlasmaGenerator").UpdateAccessory(player, hideVisual);
+            }
         }
 
         public override void AddRecipes()
@@ -54,6 +59,12 @@ namespace ssm.Thorium.Enchantments
 
             recipe.AddTile(TileID.LunarCraftingStation);
             recipe.Register();
+        }
+
+        public class PlasmaEffect : AccessoryEffect
+        {
+            public override Header ToggleHeader => Header.GetHeader<AsgardForceHeader>();
+            public override int ToggleItemType => ModContent.ItemType<PyromancerEnchant>();
         }
     }
 }

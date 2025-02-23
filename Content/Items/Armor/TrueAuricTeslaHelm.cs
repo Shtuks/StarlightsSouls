@@ -1,10 +1,9 @@
-using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ModLoader;
 using ssm.Core;
 using ssm.Content.Buffs;
 using Terraria.Localization;
+using CalamityMod;
 
 namespace ssm.Content.Items.Armor
 {
@@ -13,8 +12,6 @@ namespace ssm.Content.Items.Armor
     [AutoloadEquip(EquipType.Head)]
     public class TrueAuricTeslaHelm : ModItem
     {
-        private readonly Mod Calamity = Terraria.ModLoader.ModLoader.GetMod("CalamityMod");
-
         public override void SetDefaults()
         {
             ((Entity)this.Item).width = 18;
@@ -55,24 +52,23 @@ namespace ssm.Content.Items.Armor
             player.GetAttackSpeed(DamageClass.Generic) += 5f;
             player.statDefense = player.statDefense += 50;
             player.AddBuff(ModContent.BuffType<YharimBuff>(), 2, true);
-            if (Terraria.ModLoader.ModLoader.GetMod("CalamityMod") != null)
-            {
-                /*ModContent.Find<ModItem>(this.Calamity.Name, "AuricTeslaBodyArmor").UpdateArmorSet(player);
-                ModContent.Find<ModItem>(this.Calamity.Name, "AuricTeslaCuisses").UpdateArmorSet(player);
-                ModContent.Find<ModItem>(this.Calamity.Name, "GodSlayerChestplate").UpdateArmorSet(player);
-                ModContent.Find<ModItem>(this.Calamity.Name, "GodSlayerLeggins").UpdateArmorSet(player);
-                ModContent.Find<ModItem>(this.Calamity.Name, "SilvaArmor").UpdateArmorSet(player);
-                ModContent.Find<ModItem>(this.Calamity.Name, "SilvaLeggins").UpdateArmorSet(player);
-                ModContent.Find<ModItem>(this.Calamity.Name, "BloodflareBodyArmor").UpdateArmorSet(player);
-                ModContent.Find<ModItem>(this.Calamity.Name, "BloodflareCuisses").UpdateArmorSet(player);
-                ModContent.Find<ModItem>(this.Calamity.Name, "TarragonBreastplace").UpdateArmorSet(player);
-                ModContent.Find<ModItem>(this.Calamity.Name, "TarragonLeggins").UpdateArmorSet(player);*/
+            player.Calamity().auricSet = true;
+            player.Calamity().bloodflareSet = true;
+            player.Calamity().silvaSet = true;
+            player.Calamity().godSlayer = true;
+            player.Calamity().tarraSet = true;
 
-                //ModContent.Find<ModItem>(this.Calamity.Name, "AuricTeslaPlumedHelm").UpdateArmorSet(player);
-                ModContent.Find<ModItem>(this.Calamity.Name, "AuricTeslaRoyalHelm").UpdateArmorSet(player);
-                //ModContent.Find<ModItem>(this.Calamity.Name, "AuricTeslaWiredHemmedVisage").UpdateArmorSet(player);
-                //ModContent.Find<ModItem>(this.Calamity.Name, "AuricTeslaHoodedFacemask").UpdateArmorSet(player);
-            }
+            player.Calamity().bloodflareMelee = true;
+            player.Calamity().bloodflareMage = true;
+            player.Calamity().bloodflareRanged = true;
+            player.Calamity().bloodflareThrowing = true;
+            player.Calamity().tarraMage = true;
+            player.Calamity().tarraMelee = true;
+            player.Calamity().tarraRanged = true;
+            player.Calamity().tarraThrowing = true;
+            player.Calamity().godSlayerRanged = true;
+            player.Calamity().godSlayerThrowing = true;
+            player.Calamity().silvaMage = true;
         }
 
         public override void AddRecipes()

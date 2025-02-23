@@ -26,10 +26,10 @@ namespace ssm.Thorium.Forces
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "TideTurnerEnchant").UpdateAccessory(player, hideVisual);
-            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "AssassinEnchant").UpdateAccessory(player, hideVisual);
-            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "PyromancerEnchant").UpdateAccessory(player, hideVisual);
-            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "DreamWeaverEnchant").UpdateAccessory(player, hideVisual);
+            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "WhiteKnightEnchant").UpdateAccessory(player, hideVisual);
+            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "SacredEnchant").UpdateAccessory(player, hideVisual);
+            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "FallenPaladinEnchant").UpdateAccessory(player, hideVisual);
+            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "CelestialEnchant").UpdateAccessory(player, hideVisual);
             ModContent.Find<ModItem>(((ModType)this).Mod.Name, "RhapsodistEnchant").UpdateAccessory(player, hideVisual);
         }
 
@@ -37,10 +37,10 @@ namespace ssm.Thorium.Forces
         {
             Recipe recipe = this.CreateRecipe();
 
-            recipe.AddIngredient(null, "TideTurnerEnchant");
-            recipe.AddIngredient(null, "AssassinEnchant");
-            recipe.AddIngredient(null, "PyromancerEnchant");
-            recipe.AddIngredient(null, "DreamWeaverEnchant");
+            recipe.AddIngredient(null, "WhiteKnightEnchant");
+            recipe.AddIngredient(null, "SacredEnchant");
+            recipe.AddIngredient(null, "FallenPaladinEnchant");
+            recipe.AddIngredient(null, "CelestialEnchant");
             recipe.AddIngredient(null, "RhapsodistEnchant");
 
             recipe.AddTile<CrucibleCosmosSheet>();

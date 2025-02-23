@@ -25,6 +25,11 @@ namespace ssm.Content.NPCs
     [AutoloadHead]
     public class ShtuxianHarbringer : ModNPC
     {
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return false;
+        }
+
         public const string ShopName = "Shop";
         public int NumberOfTimesTalkedTo = 0;
         private static Profiles.StackedNPCProfile NPCProfile;

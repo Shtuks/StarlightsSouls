@@ -24,6 +24,7 @@ using FargowiltasCrossmod.Content.Calamity.Items.Accessories.Forces;
 using FargowiltasCrossmod.Content.Calamity.Items.Accessories;
 using ssm.Calamity.Enchantments;
 using ssm.Calamity.Addons;
+using CalamityMod.Items.Materials;
 
 
 namespace ssm.Calamity.Souls
@@ -68,12 +69,13 @@ namespace ssm.Calamity.Souls
             recipe.AddIngredient<PotJT>();
             recipe.AddIngredient<DemonShadeEnchant>();
 
-            if (ModCompatibility.Catalyst.Loaded && ModCompatibility.Goozma.Loaded && ModCompatibility.Clamity.Loaded && ModCompatibility.WrathoftheGods.Loaded)
+            if (ModCompatibility.Catalyst.Loaded && ModCompatibility.Goozma.Loaded && ModCompatibility.Clamity.Loaded && ModCompatibility.WrathoftheGods.Loaded && ModCompatibility.Entropy.Loaded)
             {
                 recipe.AddIngredient<AddonsForce>();
             }
 
             recipe.AddIngredient<AbomEnergy>(10);
+            recipe.AddIngredient<ShadowspecBar>(5);
             recipe.AddTile<DemonshadeWorkbenchTile>();
 
             recipe.Register();

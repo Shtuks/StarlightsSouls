@@ -170,8 +170,7 @@ namespace ssm
             //ModCompatibility.MutantMod.Mod.Call("AddStat", ModContent.ItemType<RadiationDebug>(), res);
             //ModCompatibility.MutantMod.Mod.Call("AddStat", ModContent.ItemType<RadiationDebug>(), rad);
         }
-        
-        //Thanks IDGCapitanRussia
+       
         public int OSType()
         {
             OperatingSystem os = Environment.OSVersion;

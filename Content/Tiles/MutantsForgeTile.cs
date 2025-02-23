@@ -7,6 +7,8 @@ using Terraria.ObjectData;
 using Fargowiltas.Items.Tiles;
 using Fargowiltas;
 using ssm.Content.Tiles;
+using System;
+using ssm.Core;
 
 namespace ssm.Content.Tiles
 {
@@ -37,56 +39,82 @@ namespace ssm.Content.Tiles
             TileID.Sets.DisableSmartCursor[(int)((ModBlockType)this).Type] = true;
             ((ModBlockType)this).DustType = 84;
 
-            if (ModLoader.TryGetMod("CalamityMod", out Mod kal))
+            int[] tempTiles = new int[]
             {
-                AdjTiles = new int[] 
-                {
                 ModContent.TileType<DemonshadeWorkbenchTile>(),
-                };
+                ModContent.TileType<CrucibleCosmosSheet>(),
+                TileID.WorkBenches,
+                TileID.Anvils,
+                TileID.Furnaces,
+                TileID.Hellforge,
+                TileID.Bookcases,
+                TileID.Sinks,
+                TileID.Solidifier,
+                TileID.Blendomatic,
+                TileID.MeatGrinder,
+                TileID.Loom,
+                TileID.LivingLoom,
+                TileID.FleshCloningVat,
+                TileID.GlassKiln,
+                TileID.BoneWelder,
+                TileID.SteampunkBoiler,
+                TileID.Bottles,
+                TileID.LihzahrdFurnace,
+                TileID.ImbuingStation,
+                TileID.DyeVat,
+                TileID.Kegs,
+                TileID.HeavyWorkBench,
+                TileID.Tables,
+                TileID.Chairs,
+                TileID.CookingPots,
+                TileID.DemonAltar,
+                TileID.Sawmill,
+                TileID.CrystalBall,
+                TileID.AdamantiteForge,
+                TileID.MythrilAnvil,
+                TileID.TinkerersWorkbench,
+                TileID.Autohammer,
+                TileID.IceMachine,
+                TileID.SkyMill,
+                TileID.HoneyDispenser,
+                TileID.AlchemyTable,
+                TileID.LunarCraftingStation
+            };
+
+            if (ModLoader.TryGetMod("CalamityMod", out Mod Calamity) && Calamity.TryFind<ModTile>("DraedonsForge", out ModTile currTile))
+            {
+                Array.Resize(ref tempTiles, tempTiles.Length + 1);
+                tempTiles[tempTiles.Length - 1] = currTile.Type;
             }
 
-            AdjTiles = new int[] {
-            TileID.WorkBenches,
-            TileID.HeavyWorkBench,
-            TileID.Furnaces,
-            TileID.Anvils,
-            TileID.Bottles,
-            TileID.Sawmill,
-            TileID.Loom,
-            TileID.Tables,
-            TileID.Chairs,
-            TileID.CookingPots,
-            TileID.Sinks,
-            TileID.Kegs,
-            TileID.Hellforge,
-            TileID.AlchemyTable,
-            TileID.TinkerersWorkbench,
-            TileID.ImbuingStation,
-            TileID.DyeVat,
-            TileID.LivingLoom,
-            TileID.GlassKiln,
-            TileID.IceMachine,
-            TileID.HoneyDispenser,
-            TileID.SkyMill,
-            TileID.Solidifier,
-            TileID.BoneWelder,
-            TileID.MythrilAnvil,
-            TileID.AdamantiteForge,
-            TileID.DemonAltar,
-            TileID.Bookcases,
-            TileID.CrystalBall,
-            TileID.Autohammer,
-            TileID.LunarCraftingStation,
-            TileID.LesionStation,
-            TileID.FleshCloningVat,
-            TileID.LihzahrdFurnace,
-            TileID.SteampunkBoiler,
-            TileID.Blendomatic,
-            TileID.MeatGrinder,
-            TileID.Tombstones,
-            ModContent.TileType<CrucibleCosmosSheet>(),
-        };
+            if (ModLoader.TryGetMod(ModCompatibility.SacredTools.Name, out Mod soa) && soa.TryFind<ModTile>("TiridiumInfuserTile", out ModTile currTile6) && soa.TryFind<ModTile>("FlariumInfuserTile", out ModTile currTile7) && soa.TryFind<ModTile>("NeilBrewerTile", out ModTile currTile8))
+            {
+                Array.Resize(ref tempTiles, tempTiles.Length + 1);
+                tempTiles[tempTiles.Length - 1] = currTile6.Type;
+
+                Array.Resize(ref tempTiles, tempTiles.Length + 1);
+                tempTiles[tempTiles.Length - 1] = currTile7.Type;
+
+                Array.Resize(ref tempTiles, tempTiles.Length + 1);
+                tempTiles[tempTiles.Length - 1] = currTile8.Type;
+            }
+
+            if (ModLoader.TryGetMod("ThoriumMod", out Mod tor) && tor.TryFind<ModTile>("SoulForge", out ModTile currTile3) && tor.TryFind<ModTile>("ArcaneArmorFabricator", out ModTile currTile4) && tor.TryFind<ModTile>("ThoriumAnvil", out ModTile currTile5))
+            {
+                Array.Resize(ref tempTiles, tempTiles.Length + 1);
+                tempTiles[tempTiles.Length - 1] = currTile3.Type;
+
+                Array.Resize(ref tempTiles, tempTiles.Length + 1);
+                tempTiles[tempTiles.Length - 1] = currTile4.Type;
+
+                Array.Resize(ref tempTiles, tempTiles.Length + 1);
+                tempTiles[tempTiles.Length - 1] = currTile5.Type;
+            }
+
+            AdjTiles = tempTiles;
+            AnimationFrameHeight = 74;
         }
+
 
         public override void AnimateTile(ref int frame, ref int frameCounter)
         {

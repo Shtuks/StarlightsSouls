@@ -31,7 +31,7 @@ namespace ssm.Thorium.Forces
             ModContent.Find<ModItem>(((ModType)this).Mod.Name, "TideHunterEnchant").UpdateAccessory(player, hideVisual);
             ModContent.Find<ModItem>(((ModType)this).Mod.Name, "NagaSkinEnchant").UpdateAccessory(player, hideVisual);
             ModContent.Find<ModItem>(((ModType)this).Mod.Name, "CryomancerEnchant").UpdateAccessory(player, hideVisual);
-            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "WhisperingEnchant").UpdateAccessory(player, hideVisual);
+            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "TideTurnerEnchant").UpdateAccessory(player, hideVisual);
         }
 
         public override void AddRecipes()
@@ -42,7 +42,7 @@ namespace ssm.Thorium.Forces
             recipe.AddIngredient(ModContent.ItemType<TideHunterEnchant>());
             recipe.AddIngredient(ModContent.ItemType<NagaSkinEnchant>());
             recipe.AddIngredient(ModContent.ItemType<CryomancerEnchant>());
-            recipe.AddIngredient(ModContent.ItemType<WhisperingEnchant>());
+            recipe.AddIngredient(ModContent.ItemType<TideTurnerEnchant>());
 
             recipe.AddTile(TileID.LunarCraftingStation);
 

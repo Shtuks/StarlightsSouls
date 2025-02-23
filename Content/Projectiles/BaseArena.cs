@@ -45,7 +45,7 @@ namespace ssm.Content.Projectiles
             ProjectileID.Sets.DrawScreenCheckFluff[Projectile.type] = 2400;
         }
 
-        public override void SetDefaults() //MAKE SURE YOU CALL BASE.SETDEFAULTS IF OVERRIDING
+        public override void SetDefaults()
         {
             Projectile.width = 60;
             Projectile.height = 60;

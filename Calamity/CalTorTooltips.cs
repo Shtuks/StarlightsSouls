@@ -14,7 +14,7 @@ namespace ssm.SoA
         {
             string key = "Mods.ssm.Items.AddedEffects.";
 
-            if (item.type == ModContent.ItemType<MasochistSoul>() && !item.social)
+            if (item.type == ModContent.ItemType<ColossusSoul>() && !item.social)
             {
                 tooltips.Insert(9, new TooltipLine(Mod, "CalTerrariumDefender", Language.GetTextValue(key + "CalDefender")));
             }

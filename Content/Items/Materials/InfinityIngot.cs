@@ -37,7 +37,7 @@ namespace ssm.Content.Items.Materials
             this.CreateRecipe(1)
             .AddIngredient<InfinityCatalyst>(1)
             .AddIngredient<ShtuxiumBar>(40)
-            .AddTile<ShtuxibusForgeTile>()
+            .AddTile<MutantsForgeTile>()
             .Register();
         }
     }

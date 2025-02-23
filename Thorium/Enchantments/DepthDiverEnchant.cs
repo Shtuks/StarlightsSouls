@@ -60,7 +60,7 @@ namespace ssm.Thorium.Enchantments
             recipe.AddIngredient(ModContent.ItemType<DepthDiverHelmet>());
             recipe.AddIngredient(ModContent.ItemType<DepthDiverChestplate>());
             recipe.AddIngredient(ModContent.ItemType<DepthDiverGreaves>());
-            recipe.AddIngredient(ModContent.ItemType<OceanEnchant>());
+            recipe.AddIngredient(ModContent.ItemType<CoralEnchant>());
             recipe.AddIngredient(ModContent.ItemType<DrownedDoubloon>());
             recipe.AddIngredient(ModContent.ItemType<MagicConch>());
 

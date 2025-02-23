@@ -44,6 +44,15 @@ using ThoriumMod.NPCs.BossViscount;
 using ThoriumMod.Items.BossViscount;
 using ThoriumMod.NPCs.BossForgottenOne;
 using ThoriumMod.Items.BossForgottenOne;
+using FargowiltasSouls.Content.Items.Accessories.Enchantments;
+using ssm.Thorium.Enchantments;
+using ThoriumMod.Buffs;
+using ThoriumMod.Dusts;
+using ThoriumMod.Items.BardItems;
+using ThoriumMod.Projectiles.Bard;
+using ThoriumMod.Projectiles.Healer;
+using ThoriumMod.Projectiles.Thrower;
+using ThoriumMod.Projectiles;
 
 namespace ssm.Thorium
 {
@@ -118,7 +127,6 @@ namespace ssm.Thorium
             NPCID.HeadlessHorseman,
             NPCID.PirateShip
         };
-
         public override bool PreKill(NPC npc)
         {
             if (NoLoot)

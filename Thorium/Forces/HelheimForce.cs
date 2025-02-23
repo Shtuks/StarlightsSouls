@@ -27,22 +27,22 @@ namespace ssm.Thorium.Forces
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "SpiritTrapperEnchant").UpdateAccessory(player, hideVisual);
+            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "SilkEnchant").UpdateAccessory(player, hideVisual);
             ModContent.Find<ModItem>(((ModType)this).Mod.Name, "DreadEnchant").UpdateAccessory(player, hideVisual);
-            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "DemonBloodEnchant").UpdateAccessory(player, hideVisual);
-            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "MagmaEnchant").UpdateAccessory(player, hideVisual);
-            //ModContent.Find<ModItem>(((ModType)this).Mod.Name, "HarbingerEnchant").UpdateAccessory(player, hideVisual);
+            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "SpiritTrapperEnchant").UpdateAccessory(player, hideVisual);
+            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "ShadeMasterEnchant").UpdateAccessory(player, hideVisual);
+            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "DreamWeaverEnchant").UpdateAccessory(player, hideVisual);
         }
 
         public override void AddRecipes()
         {
             Recipe recipe = this.CreateRecipe();
 
-            recipe.AddIngredient(ModContent.ItemType<SpiritTrapperEnchant>());
+            recipe.AddIngredient(ModContent.ItemType<SilkEnchant>());
             recipe.AddIngredient(ModContent.ItemType<DreadEnchant>());
-            recipe.AddIngredient(ModContent.ItemType<DemonBloodEnchant>());
-            recipe.AddIngredient(ModContent.ItemType<MagmaEnchant>());
-            //recipe.AddIngredient(ModContent.ItemType<HarbingerEnchant>());
+            recipe.AddIngredient(ModContent.ItemType<SpiritTrapperEnchant>());
+            recipe.AddIngredient(ModContent.ItemType<ShadeMasterEnchant>());
+            recipe.AddIngredient(ModContent.ItemType<DreamWeaverEnchant>());
 
             recipe.AddTile(TileID.LunarCraftingStation);
 

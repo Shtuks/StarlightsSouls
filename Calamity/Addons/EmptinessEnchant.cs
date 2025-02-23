@@ -12,7 +12,7 @@ namespace ssm.Calamity.Addons
 {
     [ExtendsFromMod(ModCompatibility.WrathoftheGods.Name)]
     [JITWhenModsEnabled(ModCompatibility.WrathoftheGods.Name)]
-    public class EntropicEnchant : BaseEnchant
+    public class EmptinessEnchant : BaseEnchant
     {
         private readonly Mod calamity = ModLoader.GetMod("CalamityMod");
 
@@ -32,26 +32,26 @@ namespace ssm.Calamity.Addons
         {
             CalamityPlayer modPlayer = player.GetModPlayer<CalamityPlayer>();
             
-            if (player.AddEffect<EntropicEffect>(Item))
+            if (player.AddEffect<EmptinessEffect>(Item))
             {
-                ModContent.Find<ModItem>(ModCompatibility.WrathoftheGods.Name, "NoxiousEvocator").UpdateAccessory(player, hideVisual);
+                ModContent.Find<ModItem>(ModCompatibility.WrathoftheGods.Name, "PortalSkirt").UpdateAccessory(player, hideVisual);
             }
         }
 
         public override void AddRecipes()
         {
             Recipe recipe = this.CreateRecipe();
-            recipe.AddIngredient(ModContent.ItemType<NoxusBoss.Content.Items.MiscOPTools.NoxusSprayer>());
-            recipe.AddIngredient(ModContent.ItemType<NoxusBoss.Content.Items.Accessories.VanityEffects.NoxiousEvocator>());
+            recipe.AddIngredient(ModContent.ItemType<NoxusBoss.Content.Items.MiscOPTools.EmptinessSprayer>());
+            recipe.AddIngredient(ModContent.ItemType<NoxusBoss.Content.Items.Accessories.VanityEffects.PortalSkirt>());
 
             recipe.AddTile(calamity, "DraedonsForge");
             recipe.Register();
         }
 
-        public class EntropicEffect : AccessoryEffect
+        public class EmptinessEffect : AccessoryEffect
         {
             public override Header ToggleHeader => Header.GetHeader<AddonsForceHeader>();
-            public override int ToggleItemType => ModContent.ItemType<EntropicEnchant>();
+            public override int ToggleItemType => ModContent.ItemType<EmptinessEnchant>();
         }
     }
 }

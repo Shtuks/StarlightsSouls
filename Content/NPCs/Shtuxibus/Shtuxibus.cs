@@ -38,6 +38,11 @@ namespace ssm.Content.NPCs.Shtuxibus
     [AutoloadBossHead]
     public class Shtuxibus : ModNPC
     {
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return false;
+        }
+
         Player player => Main.player[NPC.target];
         public bool playerInvulTriggered;
         public bool Aura;
@@ -88,7 +93,7 @@ namespace ssm.Content.NPCs.Shtuxibus
         }
         public override void SetDefaults()
         {
-            NPC.BossBar = ModContent.GetInstance<ShtuxibusBar>();
+            //NPC.BossBar = ModContent.GetInstance<ShtuxibusBar>();
             NPC.width = 120;
             NPC.height = 120;
             NPC.damage = 3000;

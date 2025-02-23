@@ -7,6 +7,7 @@ using ssm.Core;
 using FargowiltasSouls.Content.Items.Accessories.Souls;
 using Fargowiltas.Items.Tiles;
 using FargowiltasSouls.Content.Items.Materials;
+using ThoriumMod.Buffs.Bard;
 
 namespace ssm.Thorium.Souls
 {
@@ -33,6 +34,8 @@ namespace ssm.Thorium.Souls
             ShtunThoriumPlayer thoriumPlayer = player.GetModPlayer<ShtunThoriumPlayer>();
 
             thoriumPlayer.ThoriumSoul = true;
+
+            player.ClearBuff(ModContent.BuffType<MetronomeDebuff>());
 
             //MUSPELHEIM
             ModContent.Find<ModItem>(((ModType)this).Mod.Name, "MuspelheimForce").UpdateAccessory(player, hideVisual);

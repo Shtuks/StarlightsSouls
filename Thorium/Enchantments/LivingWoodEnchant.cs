@@ -9,6 +9,11 @@ using ThoriumMod.Items.SummonItems;
 using ThoriumMod.Items.Consumable;
 using FargowiltasSouls.Content.Items.Accessories.Enchantments;
 using FargowiltasSouls.Content.Projectiles.ChallengerItems;
+using SacredTools.Projectiles.Lunar;
+using ThoriumMod.Projectiles.Minions;
+using FargowiltasSouls.Core.AccessoryEffectSystem;
+using ssm.Content.SoulToggles;
+using static ssm.Thorium.Enchantments.CyberPunkEnchant;
 
 namespace ssm.Thorium.Enchantments
 {
@@ -36,9 +41,17 @@ namespace ssm.Thorium.Enchantments
 
             ModContent.Find<ModItem>(this.thorium.Name, "LivingWoodMask").UpdateArmorSet(player);
 
-            //free boi
-            modPlayer.LivingWoodEnchant = true;
-            //modPlayer.AddMinion(SoulConfig.Instance.thoriumToggles.SaplingMinion, thorium.ProjectileType("MinionSapling"), 10, 2f);
+            player.maxMinions++;
+
+            if (player.AddEffect<LivingWoodEffect>(Item))
+            {
+                if (player.whoAmI == Main.myPlayer)
+                {
+                    const int damage = 10;
+                    if (player.ownedProjectileCounts[ModContent.ProjectileType<LivingWoodAcornPro>()] < 1)
+                        ShtunUtils.NewSummonProjectile(player.GetSource_FromThis(), player.Center, Vector2.Zero, ModContent.ProjectileType<LivingWoodAcornPro>(), damage, 8f, player.whoAmI);
+                }
+            }
         }
 
         public override void AddRecipes()
@@ -54,6 +67,12 @@ namespace ssm.Thorium.Enchantments
 
             recipe.AddTile(TileID.DemonAltar);
             recipe.Register();
+        }
+
+        public class LivingWoodEffect : AccessoryEffect
+        {
+            public override Header ToggleHeader => Header.GetHeader<MuspelheimForceHeader>();
+            public override int ToggleItemType => ModContent.ItemType<LivingWoodEnchant>();
         }
     }
 }

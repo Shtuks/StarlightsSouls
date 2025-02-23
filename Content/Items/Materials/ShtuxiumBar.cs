@@ -27,7 +27,7 @@ namespace ssm.Content.Items.Materials
             Recipe recipe = this.CreateRecipe(5);
             recipe.AddIngredient<ShtuxiumOre>(10);
             recipe.AddIngredient<ShtuxiumSoulShard>(5);
-            recipe.AddTile<ShtuxibusForgeTile>();
+            recipe.AddTile<MutantsForgeTile>();
             recipe.Register();
         }
     }

@@ -6,6 +6,9 @@ using Microsoft.Xna.Framework;
 using ThoriumMod.Items.HealerItems;
 using ssm.Core;
 using FargowiltasSouls.Content.Items.Accessories.Enchantments;
+using FargowiltasSouls.Core.AccessoryEffectSystem;
+using ssm.Content.SoulToggles;
+using static ssm.Thorium.Enchantments.LivingWoodEnchant;
 
 namespace ssm.Thorium.Enchantments
 {
@@ -31,21 +34,20 @@ namespace ssm.Thorium.Enchantments
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
             ThoriumPlayer thoriumPlayer = player.GetModPlayer<ThoriumPlayer>();
-            //thoriumPlayer.essenceSet = true;
 
-            //if (player.ownedProjectileCounts[thorium.ProjectileType("LifeEssence")] < 1)
-            //{
-            //    Projectile.NewProjectile(player.Center.X, player.Center.Y, 0f, 0f, thorium.ProjectileType("LifeEssence"), 0, 0f, player.whoAmI, 0f, 0f);
-            //}
+            if (player.AddEffect<BiotechEffect>(Item))
+            {
+                thoriumPlayer.bioTechSet = true;
+            }
         }
 
         public override void AddRecipes()
         {
             Recipe recipe = this.CreateRecipe();
 
-            //recipe.AddIngredient(ModContent.ItemType<LifeWeaverHood>());
-            //recipe.AddIngredient(ModContent.ItemType<LifeWeaverGarment>());
-            //recipe.AddIngredient(ModContent.ItemType<LifeWeaverLeggings>());
+            recipe.AddIngredient(ModContent.ItemType<BioTechGarment>());
+            recipe.AddIngredient(ModContent.ItemType<BioTechHood>());
+            recipe.AddIngredient(ModContent.ItemType<BioTechLeggings>());
             recipe.AddIngredient(ModContent.ItemType<LifeEssenceApparatus>());
             recipe.AddIngredient(ModContent.ItemType<NullZoneStaff>());
             recipe.AddIngredient(ModContent.ItemType<BarrierGenerator>());
@@ -53,6 +55,12 @@ namespace ssm.Thorium.Enchantments
 
             recipe.AddTile(TileID.CrystalBall);
             recipe.Register();
+        }
+
+        public class BiotechEffect : AccessoryEffect
+        {
+            public override Header ToggleHeader => Header.GetHeader<AlfheimForceHeader>();
+            public override int ToggleItemType => ModContent.ItemType<BiotechEnchant>();
         }
     }
 }

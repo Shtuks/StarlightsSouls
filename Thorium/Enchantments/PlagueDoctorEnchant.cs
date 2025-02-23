@@ -8,6 +8,9 @@ using ThoriumMod.Items.NPCItems;
 using ssm.Core;
 using ThoriumMod.Items.HealerItems;
 using FargowiltasSouls.Content.Items.Accessories.Enchantments;
+using FargowiltasSouls.Core.AccessoryEffectSystem;
+using ssm.Content.SoulToggles;
+using static ssm.Thorium.Enchantments.LivingWoodEnchant;
 
 namespace ssm.Thorium.Enchantments
 {
@@ -34,7 +37,10 @@ namespace ssm.Thorium.Enchantments
             ShtunThoriumPlayer modPlayer = player.GetModPlayer<ShtunThoriumPlayer>();
             ThoriumPlayer thoriumPlayer = player.GetModPlayer<ThoriumPlayer>();
             //plague effect
-            thoriumPlayer.setPlague = true;
+            if (player.AddEffect<PlagueEffect>(Item))
+            {
+                thoriumPlayer.setPlague = true;
+            }
         }
 
         public override void AddRecipes()
@@ -48,10 +54,14 @@ namespace ssm.Thorium.Enchantments
             recipe.AddIngredient(ModContent.ItemType<CombustionFlask>(), 300);
             recipe.AddIngredient(ModContent.ItemType<NitrogenVial>(), 300);
 
-
-
             recipe.AddTile(TileID.CrystalBall);
             recipe.Register();
+        }
+
+        public class PlagueEffect : AccessoryEffect
+        {
+            public override Header ToggleHeader => Header.GetHeader<VanaheimForceHeader>();
+            public override int ToggleItemType => ModContent.ItemType<PlagueDoctorEnchant>();
         }
     }
 }

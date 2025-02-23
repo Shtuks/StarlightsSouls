@@ -204,7 +204,7 @@ namespace ssm.Content.Items.Accessories
             recipe.AddIngredient<ShtuxianEnchant>(1);
             recipe.AddIngredient<Materials.InfinityIngot>(5);
             recipe.AddIngredient(this.FargoSoul, "EternitySoul", 1);
-            recipe.AddTile<ShtuxibusForgeTile>();
+            recipe.AddTile<MutantsForgeTile>();
             recipe.Register();
         }
 

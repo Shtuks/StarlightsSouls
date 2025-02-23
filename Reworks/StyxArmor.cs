@@ -18,19 +18,19 @@ namespace ssm.Reworks
 		{
 			if (Item.type == ModContent.ItemType<StyxChestplate>())
 			{
-				player.statDefense = player.statDefense += 20;
+				Item.defense += 20;
 				player.GetDamage(DamageClass.Generic) += 10 / 100f;
-				player.maxMinions += 10;
-			}
+				player.maxMinions += 5;
+            }
 			if (Item.type == ModContent.ItemType<StyxChestplate>())
 			{
-				player.statDefense = player.statDefense += 20;
-				player.GetDamage(DamageClass.Generic) += 10 / 100f;
+                Item.defense += 20;
+                player.GetDamage(DamageClass.Generic) += 10 / 100f;
 			}
 			if (Item.type == ModContent.ItemType<StyxLeggings>())
 			{
-				player.statDefense = player.statDefense += 20;
-				player.GetDamage(DamageClass.Generic) += 10 / 100f;
+                Item.defense += 20;
+                player.GetDamage(DamageClass.Generic) += 10 / 100f;
 			}
 		}
 	}	

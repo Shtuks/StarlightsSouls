@@ -25,8 +25,7 @@ namespace ssm.Thorium.Forces
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "NobleEnchant").UpdateAccessory(player, hideVisual);
-            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "CyberPunkEnchant").UpdateAccessory(player, hideVisual);
+            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "OrnateEnchant").UpdateAccessory(player, hideVisual);
             ModContent.Find<ModItem>(((ModType)this).Mod.Name, "MaestroEnchant").UpdateAccessory(player, hideVisual);
             ModContent.Find<ModItem>(((ModType)this).Mod.Name, "CrierEnchant").UpdateAccessory(player, hideVisual);
             ModContent.Find<ModItem>(((ModType)this).Mod.Name, "OrnateEnchant").UpdateAccessory(player, hideVisual);
@@ -36,11 +35,10 @@ namespace ssm.Thorium.Forces
         {
             Recipe recipe = this.CreateRecipe();
 
-            recipe.AddIngredient(null, "CrierEnchant");
-            recipe.AddIngredient(null, "NobleEnchant");
-            recipe.AddIngredient(null, "CyberPunkEnchant");
             recipe.AddIngredient(null, "OrnateEnchant");
             recipe.AddIngredient(null, "MaestroEnchant");
+            recipe.AddIngredient(null, "CrierEnchant");
+            recipe.AddIngredient(null, "OrnateEnchant");
 
             recipe.AddTile(TileID.LunarCraftingStation);
 

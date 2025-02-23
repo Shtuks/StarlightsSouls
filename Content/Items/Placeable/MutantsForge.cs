@@ -8,6 +8,7 @@ using Fargowiltas.Items.Tiles;
 using ssm.Content.Tiles;
 using FargowiltasSouls.Content.Items.Materials;
 using ssm.Content.Items.Placeable;
+using ssm.Core;
 
 namespace ssm.Content.Items.Placeable
 {
@@ -16,7 +17,7 @@ namespace ssm.Content.Items.Placeable
 
         public override void SetStaticDefaults()
         {
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[this.Type] = 1;
+            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 
         public override void ModifyTooltips(List<TooltipLine> list)
@@ -30,18 +31,18 @@ namespace ssm.Content.Items.Placeable
 
         public override void SetDefaults()
         {
-            ((Entity)this.Item).width = 28;
-            ((Entity)this.Item).height = 14;
-            this.Item.rare = 10;
-            this.Item.maxStack = 99;
-            this.Item.useTurn = true;
-            this.Item.autoReuse = true;
-            this.Item.useAnimation = 15;
-            this.Item.useTime = 10;
-            this.Item.useStyle = 1;
-            this.Item.consumable = true;
-            this.Item.value = Item.buyPrice(2, 0, 0, 0);
-            this.Item.createTile = ModContent.TileType<MutantsForgeTile>();
+            Item.width = 28;
+            Item.height = 14;
+            Item.rare = 10;
+            Item.maxStack = 99;
+            Item.useTurn = true;
+            Item.autoReuse = true;
+            Item.useAnimation = 15;
+            Item.useTime = 10;
+            Item.useStyle = 1;
+            Item.consumable = true;
+            Item.value = Item.buyPrice(2, 0, 0, 0);
+            Item.createTile = ModContent.TileType<MutantsForgeTile>();
         }
 
         public override void AddRecipes()
@@ -51,13 +52,20 @@ namespace ssm.Content.Items.Placeable
             if (ModLoader.HasMod("CalamityMod"))
                 recipe.AddIngredient<DemonshadeWorkbench>();
 
-            //.AddIngredient<XeniumRefinery>()
-            //.AddIngredient<DraedonsForge>()
-            //.AddIngredient<XeniumSmelter>()
-            //.AddIngredient<GirusCorruptor>()
-            //.AddIngredient<SoulForge>()
-            //.AddIngredient<ThoriumAnvil>()
-            //.AddIngredient<ArcaneArmorFabricator>()
+            if (ModLoader.TryGetMod(ModCompatibility.SacredTools.Name, out Mod soa) && soa.TryFind<ModItem>("TiridiumInfuser", out ModItem currTile6) && soa.TryFind<ModItem>("FlariumInfuser", out ModItem currTile7) && soa.TryFind<ModItem>("NeilBrewer", out ModItem currTile8))
+            {
+                recipe.AddIngredient(currTile6.Type);
+                recipe.AddIngredient(currTile7.Type);
+                recipe.AddIngredient(currTile8.Type);
+            }
+
+            if (ModLoader.TryGetMod("ThoriumMod", out Mod tor) && tor.TryFind<ModItem>("SoulForge", out ModItem currTile3) && tor.TryFind<ModItem>("ArcaneArmorFabricator", out ModItem currTile4) && tor.TryFind<ModItem>("ThoriumAnvil", out ModItem currTile5))
+            {
+                recipe.AddIngredient(currTile3.Type);
+                recipe.AddIngredient(currTile4.Type);
+                recipe.AddIngredient(currTile5.Type);
+            }
+
             recipe.AddIngredient<EternalEnergy>(30);
             recipe.AddIngredient<CrucibleCosmos>();
             recipe.Register();

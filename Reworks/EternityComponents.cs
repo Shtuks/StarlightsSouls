@@ -1,6 +1,7 @@
 using FargowiltasSouls.Content.Items.Accessories.Forces;
 using FargowiltasSouls.Content.Items.Accessories.Souls;
 using ssm.Calamity.Souls;
+using ssm.Core;
 using Terraria;
 using Terraria.ModLoader;
 
@@ -22,7 +23,10 @@ namespace ssm.Reworks
             }
             if (Item.type == ModContent.ItemType<EternitySoul>() || Item.type == ModContent.ItemType<CalamitySoul>())
             {
-                ModContent.Find<ModItem>(this.Mod.Name, "AddonsForce").UpdateAccessory(player, false);
+                if (ModCompatibility.Entropy.Loaded && ModCompatibility.Clamity.Loaded && ModCompatibility.WrathoftheGods.Loaded && ModCompatibility.Goozma.Loaded && ModCompatibility.Catalyst.Loaded)
+                {
+                    ModContent.Find<ModItem>(this.Mod.Name, "AddonsForce").UpdateAccessory(player, false);
+                }
             }
             if (Item.type == ModContent.ItemType<EternitySoul>())
             {

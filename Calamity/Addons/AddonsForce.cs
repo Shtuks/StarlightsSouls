@@ -6,8 +6,8 @@ using ssm.Core;
 
 namespace ssm.Calamity.Addons
 {
-    [ExtendsFromMod(ModCompatibility.Catalyst.Name, ModCompatibility.Goozma.Name, ModCompatibility.Clamity.Name, ModCompatibility.WrathoftheGods.Name)]
-    [JITWhenModsEnabled(ModCompatibility.Catalyst.Name, ModCompatibility.Goozma.Name, ModCompatibility.Clamity.Name, ModCompatibility.WrathoftheGods.Name)]
+    [ExtendsFromMod(ModCompatibility.Catalyst.Name, ModCompatibility.Goozma.Name, ModCompatibility.Clamity.Name, ModCompatibility.WrathoftheGods.Name, ModCompatibility.Entropy.Name)]
+    [JITWhenModsEnabled(ModCompatibility.Catalyst.Name, ModCompatibility.Goozma.Name, ModCompatibility.Clamity.Name, ModCompatibility.WrathoftheGods.Name, ModCompatibility.Entropy.Name)]
     public class AddonsForce : BaseForce
     {
         public override void SetDefaults()

@@ -15,7 +15,7 @@ namespace ssm.Thorium.Enchantments
 {
     [ExtendsFromMod(ModCompatibility.Thorium.Name)]
     [JITWhenModsEnabled(ModCompatibility.Thorium.Name)]
-    public class OceanEnchant : BaseEnchant
+    public class CoralEnchant : BaseEnchant
     {
         private readonly Mod thorium = ModLoader.GetMod("ThoriumMod");
 

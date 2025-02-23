@@ -9,6 +9,7 @@ using NoxusBoss.Content.Items.Accessories.Wings;
 using NoxusBoss.Content.Items.Accessories.VanityEffects;
 using FargowiltasSouls.Core.AccessoryEffectSystem;
 using ssm.Content.SoulToggles;
+using NoxusBoss.Content.Items.MiscOPTools;
 
 namespace ssm.Calamity.Addons
 {
@@ -52,6 +53,7 @@ namespace ssm.Calamity.Addons
             recipe.AddIngredient(ModContent.ItemType<Rock>());
             recipe.AddIngredient(ModContent.ItemType<DivineWings>());
             recipe.AddIngredient(ModContent.ItemType<DeificTouch>());
+            recipe.AddIngredient(ModContent.ItemType<ThePurifier>());
 
             recipe.AddTile(calamity, "DraedonsForge");
             recipe.Register();

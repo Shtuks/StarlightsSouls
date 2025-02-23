@@ -77,7 +77,6 @@ namespace ssm
     public partial class ShtunNPCHit : GlobalNPC
     {
         public override bool InstancePerEntity => true;
-        private readonly Mod FargoSoul = Terraria.ModLoader.ModLoader.GetMod("FargowiltasSouls");
 
         public override void HitEffect(NPC npc, NPC.HitInfo hit)
         {

@@ -27,9 +27,10 @@ namespace ssm.Thorium.Forces
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
             ModContent.Find<ModItem>(((ModType)this).Mod.Name, "GraniteEnchant").UpdateAccessory(player, hideVisual);
-            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "BronzeEnchant").UpdateAccessory(player, hideVisual);
-            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "DurasteelEnchant").UpdateAccessory(player, hideVisual);
+            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "YewWoodEnchant").UpdateAccessory(player, hideVisual);
+            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "JesterEnchant").UpdateAccessory(player, hideVisual);
             ModContent.Find<ModItem>(((ModType)this).Mod.Name, "ConduitEnchant").UpdateAccessory(player, hideVisual);
+            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "DarksteelEnchant").UpdateAccessory(player, hideVisual);
             ModContent.Find<ModItem>(((ModType)this).Mod.Name, "TitanEnchant").UpdateAccessory(player, hideVisual);
         }
 
@@ -38,10 +39,11 @@ namespace ssm.Thorium.Forces
             Recipe recipe = this.CreateRecipe();
 
             recipe.AddIngredient(null, "GraniteEnchant");
-            recipe.AddIngredient(null, "BronzeEnchant");
-            recipe.AddIngredient(null, "DurasteelEnchant");
-            recipe.AddIngredient(null, "TitanEnchant");
+            recipe.AddIngredient(null, "YewWoodEnchant");
+            recipe.AddIngredient(null, "JesterEnchant");
             recipe.AddIngredient(null, "ConduitEnchant");
+            recipe.AddIngredient(null, "DarksteelEnchant");
+            recipe.AddIngredient(null, "TitanEnchant");
 
             recipe.AddTile(TileID.LunarCraftingStation);
 

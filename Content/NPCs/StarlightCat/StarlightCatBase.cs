@@ -19,7 +19,7 @@ namespace ssm.Content.NPCs.StarlightCat
         }
         public override void SetDefaults()
         {
-            NPC.BossBar = ModContent.GetInstance<ShtuxibusBar>();
+            //NPC.BossBar = ModContent.GetInstance<ShtuxibusBar>();
             NPC.width = 120;
             NPC.height = 120;
             NPC.damage = 100000;

@@ -60,32 +60,34 @@ namespace ssm.Content.NPCs.Shtuxibus
 
         public override void AddRecipes()
         {
+            Recipe recipe = CreateRecipe();
+
             if (ModLoader.TryGetMod("CalamityMod", out Mod kal))
             {
-                CreateRecipe()
-                    .AddIngredient(kal.Find<ModItem>("ShadowspecBar").Type, 30)
-                    .AddIngredient<EternalEnergy>(10)
-                    .AddTile(ModContent.Find<ModTile>("Fargowiltas", "CrucibleCosmosSheet"))
-                    .Register();
+                recipe.AddIngredient(kal.Find<ModItem>("ShadowspecBar").Type, 15);
+                recipe.AddIngredient(kal.Find<ModItem>("MiracleMatter").Type, 15);
             }
 
             if (ModLoader.TryGetMod("SacredTools", out Mod soa))
             {
-                CreateRecipe()
-                    .AddIngredient(soa.Find<ModItem>("EmberOfOmen").Type, 30)
-                    .AddIngredient<EternalEnergy>(10)
-                    .AddTile(ModContent.Find<ModTile>("Fargowiltas", "CrucibleCosmosSheet"))
-                    .Register();
+                recipe.AddIngredient(soa.Find<ModItem>("EmberOfOmen").Type, 30);
             }
 
             if (ModLoader.TryGetMod("Redemption", out Mod red))
             {
-                CreateRecipe()
-                    .AddIngredient(red.Find<ModItem>("LifeFragment").Type, 30)
-                    .AddIngredient<EternalEnergy>(10)
-                    .AddTile(ModContent.Find<ModTile>("Fargowiltas", "CrucibleCosmosSheet"))
-                    .Register();
+                recipe.AddIngredient(red.Find<ModItem>("LifeFragment").Type, 30);
             }
+
+            if (ModLoader.TryGetMod("Thorium", out Mod tor))
+            {
+                recipe.AddIngredient(red.Find<ModItem>("DeathEssence").Type, 10);
+                recipe.AddIngredient(red.Find<ModItem>("OceanEssence").Type, 10);
+                recipe.AddIngredient(red.Find<ModItem>("InfernoEssence").Type, 10);
+            }
+
+            recipe.AddIngredient<EternalEnergy>(10);
+            recipe.AddTile(ModContent.Find<ModTile>("Fargowiltas", "CrucibleCosmosSheet"));
+            recipe.Register();
         }
     }
 }

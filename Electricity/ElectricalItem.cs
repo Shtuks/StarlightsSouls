@@ -1,6 +1,4 @@
-﻿using MagicStorage.UI;
-using Redemption.Items.Materials.HM;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using Terraria;
 using Terraria.ModLoader;
@@ -36,7 +34,6 @@ namespace ssm.Electricity
                     case 2: modeSTR = "Charge held item."; break;
                     case 3: modeSTR = "Charge accessories."; break;
                     case 4: modeSTR = "Charge all."; break;
-                    default: mode = 0; goto case 0;
                 }
                 tooltips.Add(new TooltipLine(Mod, "Mode", "Mode: " + modeSTR));
             }
@@ -51,11 +48,7 @@ namespace ssm.Electricity
             }
             if (isCapacitor)
             {
-                if (mode == 1)
-                {
-
-                }
-                else if (mode == 2 && !player.HeldItem.IsAir)
+                if (mode == 2 && !player.HeldItem.IsAir)
                 {
                     chargeFromCapacitor(player.HeldItem, item);
                 }
@@ -79,11 +72,7 @@ namespace ssm.Electricity
             }
             if (isCapacitor)
             {
-                if (mode == 1)
-                {
-
-                }
-                else if (mode == 2 && !player.HeldItem.IsAir)
+                if (mode == 2 && !player.HeldItem.IsAir)
                 {
                     chargeFromCapacitor(player.HeldItem, item);
                 }
@@ -164,7 +153,7 @@ namespace ssm.Electricity
             if (isCapacitor)
             {
                 mode++;
-                if (mode > 4) { mode = 0; }
+                if (mode == 4) { mode = 0; }
             }
             return base.UseItem(item, player);
         }

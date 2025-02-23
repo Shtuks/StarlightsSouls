@@ -26,26 +26,26 @@ namespace ssm.Thorium.Forces
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "LifeBloomEnchant").UpdateAccessory(player, hideVisual);
+            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "CyberPunkEnchant").UpdateAccessory(player, hideVisual);
+            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "DemonBloodEnchant").UpdateAccessory(player, hideVisual);
             ModContent.Find<ModItem>(((ModType)this).Mod.Name, "SandstoneEnchant").UpdateAccessory(player, hideVisual);
-           // ModContent.Find<ModItem>(((ModType)this).Mod.Name, "DangerEnchant").UpdateAccessory(player, hideVisual);
-            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "FlightEnchant").UpdateAccessory(player, hideVisual);
-            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "FungusEnchant").UpdateAccessory(player, hideVisual);
+            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "NobleEnchant").UpdateAccessory(player, hideVisual);
+            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "PyromancerEnchant").UpdateAccessory(player, hideVisual);
         }
 
-        public override void AddRecipes()
-        {
-            Recipe recipe = this.CreateRecipe();
+        //public override void AddRecipes()
+        //{
+        //    Recipe recipe = CreateRecipe();
 
-            recipe.AddIngredient(null, "SandstoneEnchant");
-           // recipe.AddIngredient(null, "DangerEnchant");
-            recipe.AddIngredient(null, "FlightEnchant");
-            recipe.AddIngredient(null, "FungusEnchant");
-            recipe.AddIngredient(null, "LifeBloomEnchant");
+        //    recipe.AddIngredient(null, "CyberPunkEnchant");
+        //    recipe.AddIngredient(null, "DemonBloodEnchant");
+        //    recipe.AddIngredient(null, "SandstoneEnchant");
+        //    recipe.AddIngredient(null, "NobleEnchant");
+        //    recipe.AddIngredient(null, "PyromancesEnchant");
 
-            recipe.AddTile(TileID.LunarCraftingStation);
+        //    recipe.AddTile(TileID.LunarCraftingStation);
 
-            recipe.Register();
-        }
+        //    recipe.Register();
+        //}
     }
 }

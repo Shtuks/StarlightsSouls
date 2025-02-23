@@ -77,7 +77,7 @@ namespace ssm.Thorium
             ThoriumSoul = false;
         }
 
-        private void ThoriumPostUpdate()
+        public override void PostUpdate()
         {
             if (SpiritTrapperEnchant && Player.ownedProjectileCounts[ModContent.ProjectileType<SpiritTrapperVisual>()] >= 5)
             {
@@ -566,25 +566,5 @@ namespace ssm.Thorium
                 //}
             //}
         }
-
-        /*private void ThoriumDamage(float dmg)
-        {
-            ThoriumPlayer thoriumPlayer = Player.GetModPlayer<ThoriumPlayer>();
-            thoriumPlayer.radiantBoost += dmg;
-            thoriumPlayer.symphonicDamage += dmg;
-        }
-
-        private void ThoriumCrit(int crit)
-        {
-            ThoriumPlayer thoriumPlayer = Player.GetModPlayer<ThoriumPlayer>();
-            thoriumPlayer.radiantCrit += crit;
-            thoriumPlayer.symphonicCrit += crit;
-        }
-
-        private void ThoriumCritEquals(int crit)
-        {
-            ThoriumPlayer thoriumPlayer = Player.GetModPlayer<ThoriumPlayer>();
-            thoriumPlayer.radiantCrit = crit;
-            thoriumPlayer.symphonicCrit = crit;*/
     }
 }

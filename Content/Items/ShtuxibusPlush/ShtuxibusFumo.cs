@@ -95,7 +95,7 @@ namespace ssm.Content.Items.ShtuxibusPlush
             CreateRecipe()
                 .AddIngredient<ShtuxiumSoulShard>(10)
                 .AddIngredient<Sadism>(10)
-                .AddTile<ShtuxibusForgeTile>()
+                .AddTile<MutantsForgeTile>()
                 .Register();
         }
     }
