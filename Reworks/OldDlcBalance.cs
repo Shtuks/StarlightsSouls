@@ -28,13 +28,13 @@ namespace ssm.Reworks
                     int multiplier = 0;
 
                     if (ModCompatibility.Thorium.Loaded){multiplier++;}
-                    if (ModCompatibility.Calamity.Loaded) {multiplier+=2;}
-                    if (ModCompatibility.SacredTools.Loaded) {multiplier++;}
+                    if (ModCompatibility.Calamity.Loaded) {multiplier+=3;}
+                    if (ModCompatibility.SacredTools.Loaded) {multiplier+=2;}
                     if (ModCompatibility.Redemption.Loaded) {multiplier++;}
 
                     if (npc.type == ModContent.NPCType<MutantBoss>())
                     {
-                        npc.lifeMax = mutantBaseHealth + (mutantAddHealth * multiplier);
+                        npc.lifeMax = mutantBaseHealth*2 + (mutantAddHealth * multiplier);
                     }
                 }
             //}

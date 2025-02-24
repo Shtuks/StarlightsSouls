@@ -23,7 +23,7 @@ namespace ssm.Calamity.Addons
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
             ModContent.Find<ModItem>(((ModType)this).Mod.Name, "DivineEnchant").UpdateAccessory(player, hideVisual);
-            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "EntropicEnchant").UpdateAccessory(player, hideVisual);
+            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "EmptinessEnchant").UpdateAccessory(player, hideVisual);
             ModContent.Find<ModItem>(((ModType)this).Mod.Name, "IntergelacticEnchant").UpdateAccessory(player, hideVisual);
             ModContent.Find<ModItem>(((ModType)this).Mod.Name, "ShogunEnchant").UpdateAccessory(player, hideVisual);
             ModContent.Find<ModItem>(((ModType)this).Mod.Name, "VoidFaquirEnchant").UpdateAccessory(player, hideVisual);
@@ -35,7 +35,7 @@ namespace ssm.Calamity.Addons
             Recipe recipe = this.CreateRecipe();
 
             recipe.AddIngredient(null, "DivineEnchant");
-            recipe.AddIngredient(null, "EntropicEnchant");
+            recipe.AddIngredient(null, "EmptinessEnchant");
             recipe.AddIngredient(null, "IntergelacticEnchant");
             recipe.AddIngredient(null, "ShogunEnchant");
             recipe.AddIngredient(null, "VoidFaquirEnchant");

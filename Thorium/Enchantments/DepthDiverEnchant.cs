@@ -45,7 +45,7 @@ namespace ssm.Thorium.Enchantments
                     }
                 }
 
-            ModContent.Find<ModItem>("ssm", "OceanEnchant").UpdateAccessory(player, hideVisual);
+            ModContent.Find<ModItem>("ssm", "CoralEnchant").UpdateAccessory(player, hideVisual);
 
             //toggle
                 ModContent.Find<ModItem>(this.thorium.Name, "DrownedDoubloon").UpdateAccessory(player, hideVisual);

@@ -24,7 +24,7 @@ namespace ssm.Thorium.Forces
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "BloomingEnchant").UpdateAccessory(player, hideVisual);
+            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "BulbEnchant").UpdateAccessory(player, hideVisual);
             ModContent.Find<ModItem>(((ModType)this).Mod.Name, "AssassinEnchant").UpdateAccessory(player, hideVisual);
             ModContent.Find<ModItem>(((ModType)this).Mod.Name, "LifeBloomEnchant").UpdateAccessory(player, hideVisual);
             ModContent.Find<ModItem>(((ModType)this).Mod.Name, "LifeBinderEnchant").UpdateAccessory(player, hideVisual);
@@ -35,7 +35,7 @@ namespace ssm.Thorium.Forces
         {
             Recipe recipe = this.CreateRecipe();
 
-            recipe.AddIngredient(null, "SacredEnchant");
+            recipe.AddIngredient(null, "BulbEnchant");
             recipe.AddIngredient(null, "AssassinEnchant");
             recipe.AddIngredient(null, "LifeBloomEnchant");
             recipe.AddIngredient(null, "LifeBinderEnchant");

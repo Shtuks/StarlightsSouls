@@ -1941,6 +1941,15 @@ Mods: {
 					'''
 			}
 
+			AstroEnchant: {
+				DisplayName: Astro Enchant
+				Tooltip:
+					'''
+					Summon damage has a chance to unleash a brust of damaging plasma on hit
+					Increaces your max number of minions and sentries by 1
+					'''
+			}
+
 			WhiteKnightEnchant: {
 				DisplayName: White Knight Enchant
 				Tooltip:
@@ -2807,6 +2816,11 @@ Mods: {
 
 			EmptinessEnchant: {
 				DisplayName: Emptiness Enchant
+				Tooltip: ""
+			}
+
+			CoralEnchant: {
+				DisplayName: Coral Enchant
 				Tooltip: ""
 			}
 		}
