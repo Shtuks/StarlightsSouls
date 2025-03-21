@@ -41,6 +41,7 @@ namespace ssm.SoA.Forces
             recipe.AddIngredient<LapisEnchant>();
             recipe.AddIngredient<FrosthunterEnchant>();
             recipe.AddIngredient<BlightboneEnchant>();
+
             recipe.AddTile<CrucibleCosmosSheet>();
             recipe.Register();
         }

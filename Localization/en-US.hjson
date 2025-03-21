@@ -23,7 +23,7 @@ Mods: {
 				SetBonus:
 					'''
 					+100 shield capacity and 5 shield regeneration
-					15% increace true attack speed
+					15% increase true attack speed
 					'''
 				DisplayName: Tarragon Horned Visor
 				Tooltip:
@@ -37,7 +37,7 @@ Mods: {
 				SetBonus:
 					'''
 					+150 shield capacity and 7 shield regeneration
-					15% increace true attack speed
+					15% increase true attack speed
 					'''
 				DisplayName: Bloodflare Horned Visor
 				Tooltip: 20% increased true damage and 10% critical strike chance
@@ -47,7 +47,7 @@ Mods: {
 				SetBonus:
 					'''
 					+200 shield capacity and 8 shield regeneration
-					20% increace true attack speed
+					20% increase true attack speed
 					'''
 				DisplayName: Silva Horned Visor
 				Tooltip: 30% increased true damage and 20% critical strike chance
@@ -57,7 +57,7 @@ Mods: {
 				SetBonus:
 					'''
 					+150 shield capacity and 7 shield regeneration
-					20% increace true attack speed
+					20% increase true attack speed
 					'''
 				DisplayName: God Slayer Horned Visor
 				Tooltip: 20% increased true damage and 15% critical strike chance
@@ -72,7 +72,7 @@ Mods: {
 					'''
 					Healing spells will heal 5 additional lifes
 					Effects of Support sash, Saving grace, Grave goods
-					Increace inspiration by 20
+					increase inspiration by 20
 					20% increased throwing velocity
 					'''
 				SoARampart:
@@ -120,7 +120,7 @@ Mods: {
 					Your attacks inflict most of debuffs, all defense and regeneration bonuses x2
 					Grants immunity to all debuffs except "Chtux'lag'or Inferno" and "Shtuxibus Curse"
 					Press [shtuxianSuper] key to become invinvible for 20 seconds
-					Increace maximum eternity crits by 2000, faster mutant eye cooldown
+					increase maximum eternity crits by 2000, faster mutant eye cooldown
 					'God or whatever, all things acknowledge your claim to omnipotence.'
 					'''
 			}
@@ -350,7 +350,7 @@ Mods: {
 			}
 
 			NekomiEnchant: {
-				DisplayName: Nekomi Enchant
+				DisplayName: Nekomi Enchantment
 				Tooltip:
 					'''
 					[i:FargowiltasSouls/SparklingAdoration] Graze attacks to gain up to x1.25 increased damage
@@ -365,7 +365,7 @@ Mods: {
 			}
 
 			PhantaplazmalEnchant: {
-				DisplayName: Phantasmal Enchant
+				DisplayName: Phantasmal Enchantment
 				Tooltip:
 					'''
 					[i:FargowiltasSouls/MutantEye] 25% increased graze bonus damage cap
@@ -378,7 +378,7 @@ Mods: {
 			}
 
 			StyxEnchant: {
-				DisplayName: Styx Enchant
+				DisplayName: Styx Enchantment
 				Tooltip:
 					'''
 					[i:FargowiltasSouls/AbominableWand] Can endure any attack and survive with one life, endurance recovers when you reach max life
@@ -820,13 +820,13 @@ Mods: {
 			}
 
 			EridanusEnchant: {
-				DisplayName: Eridanus Enchant
+				DisplayName: Eridanus Enchantment
 				Tooltip:
 					'''
 					[i:FargowiltasSouls/EridanusHat] [i:FargowiltasSouls/EridanusBattleplate] [i:FargowiltasSouls/EridanusLegwear]
-					20% damage increace for current class20% damage increace for current class
-					10% crit chance increace for current class
-					10% attack speed increace for current class
+					20% damage increase for current class
+					10% crit chance increase for current class
+					10% attack speed increase for current class
 					Press DOWN double times activate Eridanus' blessing
 					'''
 			}
@@ -835,11 +835,11 @@ Mods: {
 				DisplayName: Eternity Force
 				Tooltip:
 					'''
-					Massive increacement to all offencive stats.
+					Massive increasement to all offencive stats.
 					[i:ssm/GaiaEnchant] Press DOWN double times activate Attacking mode which have following effects:
-					30% damage and 15% crit chance increace for current class
-					Increace armor penetration by 20
-					Decreace defence by 30, endurance by 15% and max life by 10%
+					30% damage and 15% crit chance increase for current class
+					increase armor penetration by 20
+					decrease defence by 30, endurance by 15% and max life by 10%
 					[i:ssm/EridanusEnchant] Press DOWN double times activate Eridanus' blessing
 					[i:ssm/StyxEnchant] Can endure any attack and survive with one life, endurance recovers when you reach max life
 					Increased damage gained Sparkling Adoration graze, halves heart cooldown, Abominationn periodically manifests to support your critical hits
@@ -862,23 +862,18 @@ Mods: {
 			}
 
 			GaiaEnchant: {
-				DisplayName: Gaia Enchant
+				DisplayName: Gaia Enchantment
 				Tooltip:
 					'''
 					[i:FargowiltasSouls/GaiaHelmet] [i:FargowiltasSouls/GaiaPlate] [i:FargowiltasSouls/GaiaGreaves]
-					10% decreace mana usage and increace chance not to consume ammo
-					10% mele attack speed increacement
+					10% decrease mana usage and increase chance not to consume ammo
+					10% melee attack speed increasement
 					4 additional minion slots
 					Press DOWN double times activate Attacking mode which have following effects:
-					30% damage and 15% crit chance increace for current class
-					Increace armor penetration by 20
-					Decreace defence by 30, endurance by 15% and max life by 10%
+					30% damage and 15% crit chance increase for current class
+					increase armor penetration by 20
+					Decrease defence by 20, endurance by 15% and max life by 10%
 					'''
-			}
-
-			CelestialEnchant: {
-				DisplayName: Celestial Enchant
-				Tooltip: Summon four pillars to protect you.
 			}
 
 			ChtuxlagorHeart: {
@@ -889,7 +884,7 @@ Mods: {
 					Your attacks inflict "Chtux'lag'or inferno".
 					Set Mutant Bomb CD to 30 seconds instead of 60.
 					Grants immunity to "Shtuxibus Curse", Debuff "Chtux'lag'or inferno" deal lower damage
-					100% increace graze bonus damage cap, Increace damage of spectral siblings.
+					100% increase graze bonus damage cap, increase damage of spectral siblings.
 					You can't take more than 1000 damage.
 					'The mechanical heart of a puppet of an incomprehensible being'
 					'''
@@ -911,7 +906,7 @@ Mods: {
 			}
 
 			AsthraltiteEnchant: {
-				DisplayName: Asthraltite Enchant
+				DisplayName: Asthraltite Enchantment
 				Tooltip:
 					'''
 					'Asph-... Asthath-... How are you meant to pronounce this?'
@@ -926,7 +921,7 @@ Mods: {
 			}
 
 			BismuthEnchant: {
-				DisplayName: Bismuth Enchant
+				DisplayName: Bismuth Enchantment
 				Tooltip:
 					'''
 					'It takes every color to make a rainbow'
@@ -935,7 +930,7 @@ Mods: {
 			}
 
 			BlazingBruteEnchant: {
-				DisplayName: Blazing Brute Enchant
+				DisplayName: Blazing Brute Enchantment
 				Tooltip:
 					'''
 					'Your spirit ignites like the brightest flame. Soon, your enemies will too'
@@ -945,7 +940,7 @@ Mods: {
 			}
 
 			BlightboneEnchant: {
-				DisplayName: Blightbone Enchant
+				DisplayName: Blightbone Enchantment
 				Tooltip:
 					'''
 					'Your spooks and scares will send shivers down your enemies' spines'
@@ -955,7 +950,7 @@ Mods: {
 			}
 
 			CosmicCommanderEnchant: {
-				DisplayName: Cosmic Commander Enchant
+				DisplayName: Cosmic Commander Enchantment
 				Tooltip:
 					'''
 					'Make Soran great again'
@@ -966,7 +961,7 @@ Mods: {
 			}
 
 			DreadfireEnchant: {
-				DisplayName: Dreadfire Enchant
+				DisplayName: Dreadfire Enchantment
 				Tooltip:
 					'''
 					'Ralnek's spirit guides you'
@@ -978,7 +973,7 @@ Mods: {
 			}
 
 			EerieEnchant: {
-				DisplayName: Eerie Enchant
+				DisplayName: Eerie Enchantment
 				Tooltip:
 					'''
 					'Creeper? Aw man…'
@@ -987,7 +982,7 @@ Mods: {
 			}
 
 			ExitumLuxEnchant: {
-				DisplayName: Exitum Lux Enchant
+				DisplayName: Exitum Lux Enchantment
 				Tooltip:
 					'''
 					'Does something soon'TM
@@ -996,7 +991,7 @@ Mods: {
 			}
 
 			FallenPrinceEnchant: {
-				DisplayName: Fallen Prince Enchant
+				DisplayName: Fallen Prince Enchantment
 				Tooltip:
 					'''
 					'Give up your heritage, gain power'
@@ -1008,7 +1003,7 @@ Mods: {
 			}
 
 			FlariumEnchant: {
-				DisplayName: Flarium Enchant
+				DisplayName: Flarium Enchantment
 				Tooltip:
 					'''
 					'Raze your enemies with Araghur's flames'
@@ -1019,7 +1014,7 @@ Mods: {
 			}
 
 			FrosthunterEnchant: {
-				DisplayName: Frosthunter Enchant
+				DisplayName: Frosthunter Enchantment
 				Tooltip:
 					'''
 					'The hunter now hunted, the prey now predator'
@@ -1030,7 +1025,7 @@ Mods: {
 			}
 
 			LapisEnchant: {
-				DisplayName: Lapis Enchant
+				DisplayName: Lapis Enchantment
 				Tooltip:
 					'''
 					'Gotta go fast'
@@ -1040,7 +1035,7 @@ Mods: {
 			}
 
 			MarstechEnchant: {
-				DisplayName: Marstech Enchant
+				DisplayName: Marstech Enchantment
 				Tooltip:
 					'''
 					'Who needs magic when you have technology?'
@@ -1053,7 +1048,7 @@ Mods: {
 			}
 
 			NebulousApprenticeEnchant: {
-				DisplayName: Nebulous Apprentice Enchant
+				DisplayName: Nebulous Apprentice Enchantment
 				Tooltip:
 					'''
 					'Nuba would be proud'
@@ -1063,7 +1058,7 @@ Mods: {
 			}
 
 			PrairieEnchant: {
-				DisplayName: Prairie Enchant
+				DisplayName: Prairie Enchantment
 				Tooltip:
 					'''
 					'Subdued Serenity'
@@ -1072,7 +1067,7 @@ Mods: {
 			}
 
 			QuasarEnchant: {
-				DisplayName: Quasar Enchant
+				DisplayName: Quasar Enchantment
 				Tooltip:
 					'''
 					'It's time to shine'
@@ -1082,7 +1077,7 @@ Mods: {
 			}
 
 			SpaceJunkEnchant: {
-				DisplayName: Space Junk Enchant
+				DisplayName: Space Junk Enchantment
 				Tooltip:
 					'''
 					'I'm da spaceman!'
@@ -1092,7 +1087,7 @@ Mods: {
 			}
 
 			StellarPriestEnchant: {
-				DisplayName: Stellar Priest Enchant
+				DisplayName: Stellar Priest Enchantment
 				Tooltip:
 					'''
 					'Stand proud'
@@ -1101,7 +1096,7 @@ Mods: {
 			}
 
 			VoidWardenEnchant: {
-				DisplayName: Void Warden Enchant
+				DisplayName: Void Warden Enchantment
 				Tooltip:
 					'''
 					'The ride never ends'
@@ -1112,7 +1107,7 @@ Mods: {
 			}
 
 			VulcanReaperEnchant: {
-				DisplayName: Vulcan Reaper Enchant
+				DisplayName: Vulcan Reaper Enchantment
 				Tooltip:
 					'''
 					'Reap the rewards of your near-endless grind'
@@ -1126,7 +1121,7 @@ Mods: {
 					'''
 					':HeyMF:'
 					All armor bonuses from Prairie, Frosthunter, Lapis, and Blightbone
-					Effects of Frigid Pendant, Lapis Pendant, and Dreadflame Emblem
+					Effects of Frigid Pendant, Lapis Pendant, and Pumpkin Amulet
 					'''
 			}
 
@@ -1137,7 +1132,7 @@ Mods: {
 					Through all this world's years, none have seen anything quite like you'
 					All armor bonuses from Eerie, Bismuth, and Dreadfire
 					All armor bonuses from Space Junk and Marstech
-					Effects of Pumpkin Amulet
+					Effects of Dreadflame Emblem
 					'''
 			}
 
@@ -1160,6 +1155,7 @@ Mods: {
 					All armor bonuses from Void Warden, Vulcan Reaper, and Flarium
 					All armor bonuses from Asthraltite
 					Effects of Ring of the Fallen, Memento Mori, and Arcanum of the Caster
+					Effects of Stone of Resonance
 					'''
 			}
 
@@ -1283,7 +1279,7 @@ Mods: {
 			}
 
 			AssassinEnchant: {
-				DisplayName: Assassin Enchant
+				DisplayName: Assassin Enchantment
 				Tooltip:
 					'''
 					'Blacken the skies and cull the weak'
@@ -1294,7 +1290,7 @@ Mods: {
 			}
 
 			BerserkerEnchant: {
-				DisplayName: Berserker Enchant
+				DisplayName: Berserker Enchantment
 				Tooltip:
 					'''
 					'I'd rather fight for my life than live it'
@@ -1306,7 +1302,7 @@ Mods: {
 			}
 
 			BiotechEnchant: {
-				DisplayName: Biotech Enchant
+				DisplayName: Biotech Enchantment
 				Tooltip:
 					'''
 					'Anyways, that's how I lost my medical license'
@@ -1316,7 +1312,7 @@ Mods: {
 			}
 
 			BronzeEnchant: {
-				DisplayName: Bronze Enchant
+				DisplayName: Bronze Enchantment
 				Tooltip:
 					'''
 					'You have the favor of Zeus'
@@ -1326,7 +1322,7 @@ Mods: {
 			}
 
 			BulbEnchant: {
-				DisplayName: Bulb Enchant
+				DisplayName: Blooming Enchantment
 				Tooltip:
 					'''
 					'Has a surprisingly sweet aroma'
@@ -1336,7 +1332,7 @@ Mods: {
 			}
 
 			CelestiaEnchant: {
-				DisplayName: Celestia Enchant
+				DisplayName: Celestial Enchantment
 				Tooltip:
 					'''
 					'Harmonious energy embraces you'
@@ -1346,7 +1342,7 @@ Mods: {
 			}
 
 			ConduitEnchant: {
-				DisplayName: Conduit Enchant
+				DisplayName: Conduit Enchantment
 				Tooltip:
 					'''
 					'Shocked out of this world'
@@ -1357,7 +1353,7 @@ Mods: {
 			}
 
 			CrierEnchant: {
-				DisplayName: Crier Enchant
+				DisplayName: Crier Enchantment
 				Tooltip:
 					'''
 					'Nothing to cry about'
@@ -1367,7 +1363,7 @@ Mods: {
 			}
 
 			CryomancerEnchant: {
-				DisplayName: Cryomancer Enchant
+				DisplayName: Cryomancer Enchantment
 				Tooltip:
 					'''
 					'What killed the dinosaurs? The ice age!'
@@ -1378,7 +1374,7 @@ Mods: {
 			}
 
 			CyberPunkEnchant: {
-				DisplayName: Cyber Punk Enchant
+				DisplayName: Cyber Punk Enchantment
 				Tooltip:
 					'''
 					'Techno rave!'
@@ -1388,7 +1384,7 @@ Mods: {
 			}
 
 			DarksteelEnchant: {
-				DisplayName: Darksteel Enchant
+				DisplayName: Darksteel Enchantment
 				Tooltip:
 					'''
 					'Light yet durable'
@@ -1401,7 +1397,7 @@ Mods: {
 			}
 
 			DemonBloodEnchant: {
-				DisplayName: Demon Blood Enchant
+				DisplayName: Demon Blood Enchantment
 				Tooltip:
 					'''
 					'Infused with Corrupt Blood'
@@ -1413,7 +1409,7 @@ Mods: {
 			}
 
 			DepthDiverEnchant: {
-				DisplayName: Depth Diver Enchant
+				DisplayName: Depth Diver Enchantment
 				Tooltip:
 					'''
 					'Become a selfless protector'
@@ -1425,7 +1421,7 @@ Mods: {
 			}
 
 			DragonEnchant: {
-				DisplayName: Dragon Enchant
+				DisplayName: Dragon Enchantment
 				Tooltip:
 					'''
 					'Made from mythical scales'
@@ -1435,19 +1431,18 @@ Mods: {
 			}
 
 			DreadEnchant: {
-				DisplayName: Dread Enchant
+				DisplayName: Dread Enchantment
 				Tooltip:
 					'''
 					'Infused with souls of the damned'
 					Your boots vibrate at an unreal frequency, increasing movement speed significantly
 					While moving, your damage and critical strike chance are increased
-					Your attacks have a chance to unleash an explosion of Dragon's Flame
-					Effects of Crash Boots, Dragon Talon Necklace, Disco Music Player, and Cursed Flail-Core
+					Effects of Crash Boots and Cursed Flail-Core
 					'''
 			}
 
 			DreamWeaverEnchant: {
-				DisplayName: Dream Weaver Enchant
+				DisplayName: Dream Weaver Enchantment
 				Tooltip:
 					'''
 					'Manifest your dearest dreams through your allies, Bind the enemies of your future in temporal agony'
@@ -1459,7 +1454,7 @@ Mods: {
 			}
 
 			DurasteelEnchant: {
-				DisplayName: Durasteel Enchant
+				DisplayName: Durasteel Enchantment
 				Tooltip:
 					'''
 					'Masterfully forged by the Blacksmith'
@@ -1470,7 +1465,7 @@ Mods: {
 			}
 
 			EbonEnchant: {
-				DisplayName: Ebon Enchant
+				DisplayName: Ebon Enchantment
 				Tooltip:
 					'''
 					'Great for brooding'
@@ -1480,7 +1475,7 @@ Mods: {
 			}
 
 			FallenPaladinEnchant: {
-				DisplayName: Fallen Paladin Enchant
+				DisplayName: Fallen Paladin Enchantment
 				Tooltip:
 					'''
 					'Silently, they walk the dungeon halls'
@@ -1491,7 +1486,7 @@ Mods: {
 			}
 
 			FleshEnchant: {
-				DisplayName: Flesh Enchant
+				DisplayName: Flesh Enchantment
 				Tooltip:
 					'''
 					'Symbiotically attached to your body'
@@ -1501,7 +1496,7 @@ Mods: {
 			}
 
 			FlightEnchant: {
-				DisplayName: Flight Enchant
+				DisplayName: Flight Enchantment
 				Tooltip:
 					'''
 					'The sky is your playing field'
@@ -1511,7 +1506,7 @@ Mods: {
 			}
 
 			FungusEnchant: {
-				DisplayName: Fungus Enchant
+				DisplayName: Fungus Enchantment
 				Tooltip:
 					'''
 					'There's a fungus among us'
@@ -1521,7 +1516,7 @@ Mods: {
 			}
 
 			GeodeEnchant: {
-				DisplayName: Geode Enchant
+				DisplayName: Geode Enchantment
 				Tooltip:
 					'''
 					'Made from the most luxurious of materials'
@@ -1533,7 +1528,7 @@ Mods: {
 			}
 
 			GraniteEnchant: {
-				DisplayName: Granite Enchant
+				DisplayName: Granite Enchantment
 				Tooltip:
 					'''
 					'Defensively energized'
@@ -1543,16 +1538,17 @@ Mods: {
 			}
 
 			IcyEnchant: {
-				DisplayName: Icy Enchant
+				DisplayName: Icy Enchantment
 				Tooltip:
 					'''
 					'Cold to the touch'
 					An icy aura surrounds you, freezing enemies that stay too long within it
+					Effects of Blizzard Pouch
 					'''
 			}
 
 			IllumiteEnchant: {
-				DisplayName: Illumite Enchant
+				DisplayName: Illumite Enchantment
 				Tooltip:
 					'''
 					'As if you weren't pink enough'
@@ -1562,7 +1558,7 @@ Mods: {
 			}
 
 			IridescentEnchant: {
-				DisplayName: Iridescent Enchant
+				DisplayName: Iridescent Enchantment
 				Tooltip:
 					'''
 					'All the colors of the rainbow'
@@ -1573,7 +1569,7 @@ Mods: {
 			}
 
 			JesterEnchant: {
-				DisplayName: Jester Enchant
+				DisplayName: Jester Enchantment
 				Tooltip:
 					'''
 					'Clowning around'
@@ -1583,7 +1579,7 @@ Mods: {
 			}
 
 			LichEnchant: {
-				DisplayName: Lich Enchant
+				DisplayName: Lich Enchantment
 				Tooltip:
 					'''
 					'Embrace death...'
@@ -1595,7 +1591,7 @@ Mods: {
 			}
 
 			LifeBinderEnchant: {
-				DisplayName: Life Binder Enchant
+				DisplayName: Life Binder Enchantment
 				Tooltip:
 					'''
 					'Vegetation grows from your fingertips'
@@ -1607,19 +1603,19 @@ Mods: {
 			}
 
 			LifeBloomEnchant: {
-				DisplayName: Life Bloom Enchant
+				DisplayName: Life Bloom Enchantment
 				Tooltip:
 					'''
 					'You are one with nature'
 					Attacks have a 33% chance to heal you lightly
 					Summons a living wood sapling and its attacks will home in on enemies
 					Your healing spells increase the life recovery and life recovery rate of the healed target
-					Effects of Petal Shield, Kick Petal, Fragrant Corsage, and Heart of the Jungle
+					Effects of Heart of the Jungle
 					'''
 			}
 
 			LivingWoodEnchant: {
-				DisplayName: Living Wood Enchant
+				DisplayName: Living Wood Enchantment
 				Tooltip:
 					'''
 					'Become one with nature'
@@ -1629,7 +1625,7 @@ Mods: {
 			}
 
 			LodestoneEnchant: {
-				DisplayName: Lodestone Enchant
+				DisplayName: Lodestone Enchantment
 				Tooltip:
 					'''
 					'Sturdy'
@@ -1640,7 +1636,7 @@ Mods: {
 			}
 
 			MaestroEnchant: {
-				DisplayName: Maestro Enchant
+				DisplayName: Maestro Enchantment
 				Tooltip:
 					'''
 					'I'll be Bach'
@@ -1651,7 +1647,7 @@ Mods: {
 			}
 
 			MagmaEnchant: {
-				DisplayName: Magma Enchant
+				DisplayName: Magma Enchantment
 				Tooltip:
 					'''
 					'Bursting with heat'
@@ -1662,7 +1658,7 @@ Mods: {
 			}
 
 			MarchingBandEnchant: {
-				DisplayName: Marching Band Enchant
+				DisplayName: Marching Band Enchantment
 				Tooltip:
 					'''
 					'Step to the beat'
@@ -1672,7 +1668,7 @@ Mods: {
 			}
 
 			NagaSkinEnchant: {
-				DisplayName: Naga Skin Enchant
+				DisplayName: Naga Skin Enchantment
 				Tooltip:
 					'''
 					'Extreme danger noodle'
@@ -1683,7 +1679,7 @@ Mods: {
 			}
 
 			NobleEnchant: {
-				DisplayName: Noble Enchant
+				DisplayName: Noble Enchantment
 				Tooltip:
 					'''
 					'Rich with culture'
@@ -1693,7 +1689,7 @@ Mods: {
 			}
 
 			NoviceClericEnchant: {
-				DisplayName: Novice Cleric Enchant
+				DisplayName: Novice Cleric Enchantment
 				Tooltip:
 					'''
 					'Cleansed of all evil'
@@ -1704,7 +1700,7 @@ Mods: {
 			}
 
 			OceanEnchant: {
-				DisplayName: Ocean Enchant
+				DisplayName: Ocean Enchantment
 				Tooltip:
 					'''
 					'For swimming with the fishes'
@@ -1714,7 +1710,7 @@ Mods: {
 			}
 
 			OrnateEnchant: {
-				DisplayName: Ornate Enchant
+				DisplayName: Ornate Enchantment
 				Tooltip:
 					'''
 					'Beautifully crafted'
@@ -1724,7 +1720,7 @@ Mods: {
 			}
 
 			PlagueDoctorEnchant: {
-				DisplayName: Plague Doctor Enchant
+				DisplayName: Plague Doctor Enchantment
 				Tooltip:
 					'''
 					'What nasty concoction could you be brewing?'
@@ -1733,7 +1729,7 @@ Mods: {
 			}
 
 			PyromancerEnchant: {
-				DisplayName: Pyromancer Enchant
+				DisplayName: Pyromancer Enchantment
 				Tooltip:
 					'''
 					'Your magma fortified army's molten gaze shall be feared'
@@ -1744,7 +1740,7 @@ Mods: {
 			}
 
 			RhapsodistEnchant: {
-				DisplayName: Rhapsodist Enchant
+				DisplayName: Rhapsodist Enchantment
 				Tooltip:
 					'''
 					'Allow your song to inspire an army, Prove to all that your talent is second to none'
@@ -1757,7 +1753,7 @@ Mods: {
 			}
 
 			SacredEnchant: {
-				DisplayName: Sacred Enchant
+				DisplayName: Sacred Enchantment
 				Tooltip:
 					'''
 					'It glimmers with comforting power'
@@ -1769,7 +1765,7 @@ Mods: {
 			}
 
 			SandstoneEnchant: {
-				DisplayName: Sandstone Enchant
+				DisplayName: Sandstone Enchantment
 				Tooltip:
 					'''
 					'Enveloped by desert winds'
@@ -1778,7 +1774,7 @@ Mods: {
 			}
 
 			ShadeMasterEnchant: {
-				DisplayName: Shade Master Enchant
+				DisplayName: Shade Master Enchantment
 				Tooltip:
 					'''
 					'Live in the shadows, and strike with precision'
@@ -1788,7 +1784,7 @@ Mods: {
 			}
 
 			ShootingStarEnchant: {
-				DisplayName: Shooting Star Enchant
+				DisplayName: Shooting Star Enchantment
 				Tooltip:
 					'''
 					'Echoes of the cosmic ballad dance in your head'
@@ -1801,7 +1797,7 @@ Mods: {
 			}
 
 			SilkEnchant: {
-				DisplayName: Silk Enchant
+				DisplayName: Silk Enchantment
 				Tooltip:
 					'''
 					'You feel silky-smooth'
@@ -1811,7 +1807,7 @@ Mods: {
 			}
 
 			SpiritTrapperEnchant: {
-				DisplayName: Spirit Trapper Enchant
+				DisplayName: Spirit Trapper Enchantment
 				Tooltip:
 					'''
 					'So many lost souls...'
@@ -1822,7 +1818,7 @@ Mods: {
 			}
 
 			SteelEnchant: {
-				DisplayName: Steel Enchant
+				DisplayName: Steel Enchantment
 				Tooltip:
 					'''
 					'Expertly forged by the Blacksmith'
@@ -1832,7 +1828,7 @@ Mods: {
 			}
 
 			TemplarEnchant: {
-				DisplayName: Templar Enchant
+				DisplayName: Templar Enchantment
 				Tooltip:
 					'''
 					'For the church!'
@@ -1841,20 +1837,20 @@ Mods: {
 			}
 
 			TerrariumEnchant: {
-				DisplayName: Terrarium Enchant
+				DisplayName: Terrarium Enchantment
 				Tooltip:
 					'''
 					'All will fall before your might...'
 					The energy of Terraria seeks to protect you
 					Shortlived Divermen will occasionally spawn when hitting enemies
 					Critical strikes ring a bell over your head, slowing all nearby enemies briefly
-					Effects of Crietz and Band of Replenishmen
+					Effects of Crietz and Band of Replenishment
 					Effects of Terrarium Surround Sound and Fan Letter
 					'''
 			}
 
 			ThoriumEnchant: {
-				DisplayName: Thorium Enchant
+				DisplayName: Thorium Enchantment
 				Tooltip:
 					'''
 					'It pulses with energy'
@@ -1865,7 +1861,7 @@ Mods: {
 			}
 
 			TideHunterEnchant: {
-				DisplayName: Tide Hunter Enchant
+				DisplayName: Tide Hunter Enchantment
 				Tooltip:
 					'''
 					'Not just for hunting fish'
@@ -1876,7 +1872,7 @@ Mods: {
 			}
 
 			TideTurnerEnchant: {
-				DisplayName: Tide Turner Enchant
+				DisplayName: Tide Turner Enchantment
 				Tooltip:
 					'''
 					'Become as unstoppable as the tides, Unleash aquatic wrath upon your foes'
@@ -1890,17 +1886,18 @@ Mods: {
 			}
 
 			TitanEnchant: {
-				DisplayName: Titan Enchant
+				DisplayName: Titan Enchantment
 				Tooltip:
 					'''
 					'Infused with primordial energy'
 					15% increased damage
 					Effects of Mask of the Crystal Eye, Abyssal Shell, and Rock Music Player
+					Effects of Mask of the Crystal Eye, Abyssal Shell, and Rock Music Player
 					'''
 			}
 
 			ValadiumEnchant: {
-				DisplayName: Valadium Enchant
+				DisplayName: Valadium Enchantment
 				Tooltip:
 					'''
 					'Which way is up?'
@@ -1911,7 +1908,7 @@ Mods: {
 			}
 
 			WarlockEnchant: {
-				DisplayName: Warlock Enchant
+				DisplayName: Warlock Enchantment
 				Tooltip:
 					'''
 					'Better than a wizard'
@@ -1922,7 +1919,7 @@ Mods: {
 			}
 
 			WhisperingEnchant: {
-				DisplayName: Whispering Enchant
+				DisplayName: Whispering Enchantment
 				Tooltip:
 					'''
 					'Now R'lyeh on the old god's power'
@@ -1932,7 +1929,7 @@ Mods: {
 			}
 
 			WhiteDwarfEnchant: {
-				DisplayName: White Dwarf Enchant
+				DisplayName: White Dwarf Enchantment
 				Tooltip:
 					'''
 					'Throw with the force of nuclear fusion'
@@ -1942,27 +1939,27 @@ Mods: {
 			}
 
 			AstroEnchant: {
-				DisplayName: Astro Enchant
+				DisplayName: Astro Enchantment
 				Tooltip:
 					'''
 					Summon damage has a chance to unleash a brust of damaging plasma on hit
-					Increaces your max number of minions and sentries by 1
+					increases your max number of minions and sentries by 1
 					'''
 			}
 
 			WhiteKnightEnchant: {
-				DisplayName: White Knight Enchant
+				DisplayName: White Knight Enchantment
 				Tooltip:
 					'''
 					'Protect e-girls at all costs'
 					Enemies that attack friendly NPCs are marked as Villains
 					You deal 50% bonus damage to Villains
-					Effects of Shade Band
+					Effects of Smothering Band
 					'''
 			}
 
 			YewWoodEnchant: {
-				DisplayName: Yew Wood Enchant
+				DisplayName: Yew Wood Enchantment
 				Tooltip:
 					'''
 					'This strange wood comes from a far away land'
@@ -1976,10 +1973,9 @@ Mods: {
 				Tooltip:
 					'''
 					'Elven mysteries unfold before you...'
-					All armor bonuses from Novice Cleric, Sacred, Warlock, and Biotech
-					All armor bonuses from Iridescent, Life Binder, Templar, and Fallen Paladin
-					Effects of Demon Tongue, Dark Effigy, Aloe Leaf, and Equalizer
-					Effects of Karmic Holder, Wynebgwrthucher, and Rebirth Statuette
+					All armor bonuses from Blooming, Assassin, Life Bloom, Life Binder, and Biotech
+					Effects of Petal Shield, Kick Petal, Fragrant Corsage, and Dart Pouch
+					Effects of Aloe Leaf and Equalizer
 					'''
 			}
 
@@ -1988,9 +1984,9 @@ Mods: {
 				Tooltip:
 					'''
 					'What's this about Ragnarok?'
-					All armor bonuses from Tide Turner, Assassin, and Pyromancer
-					All armor bonuses from Dream Weaver and Rhapsodist
-					Effects of Dart Pouch, Plague Lord's Flask and Plasma Generator
+					All armor bonuses from White Knight, Sacred, and Fallen Paladin
+					All armor bonuses from Celestial and Rhapsodist
+					Effects of Prydwen, Smothering Band, Karmic Holder and Nirvana Statuette
 					'''
 			}
 
@@ -1999,12 +1995,9 @@ Mods: {
 				Tooltip:
 					'''
 					'From the halls of Hel, a vision of the end...'
-					All armor bonuses from Spirit Trapper, Dragon, Dread, Flesh, and Demon Blood
-					All armor bonuses from Magma, Berserker, White Knight, and Harbinger
-					Effects of Inner Flame, Crash Boots, and Dragon Talon Necklace
-					Effects of Vile Flail-Core, Cursed Flail-Core, and Molten Spear Tip
-					Effects of Vampire Gland, Spring Steps, and Slag Stompers
-					Effects of Shade Band
+					All armor bonuses from Silk, Spirit, Shade Master, Dream Weaver and Dread
+					Effects of Artificer's Focus, Artificer's Shield, Shinobi Sigil, and Artificer's Rocketeers
+					Effects of Crash Boots, Cursed Flail-Core, Inner Flame, and Scrying Glass
 					'''
 			}
 
@@ -2014,9 +2007,9 @@ Mods: {
 					'''
 					'A bitter cold, the power of the Jotuns...'
 					All armor bonuses from Depth Diver, Yew Wood, and Tide Hunter
-					All armor bonuses from Naga Skin, Icy, Cryomancer, and Whispering
-					Effects of Sea Breeze Pendant and Bubble Magnet
-					Effects of Goblin War Shield, Agnor's Bowl, and Ice Bound Strider Hide
+					All armor bonuses from Naga Skin, Icy, Cryomancer, and Tide Turner
+					Effects of Sea Breeze Pendant, Bubble Magnet, Ocean's Retaliation and Drowned Doubloon
+					Effects of Goblin War Shield, Agnor's Bowl, Plague Lord's flask and Ice Bound Strider Hide
 					'''
 			}
 
@@ -2025,11 +2018,12 @@ Mods: {
 				Tooltip:
 					'''
 					'Behold the power of Mankind...'
-					All armor bonuses from Lodestone, Valadium, Illumite, and Shade Master
-					All armor bonuses from Jester, Thorium, Geode, and Terrarium
-					Effects of Astro-Beetle Husk, Obsidian Scale, Mirror of the Beholder, and Jazz Music Player
-					Effects of Crietz, Band of Replenishment, Fan Letter, and Terrarium Surround Sound
-					Effects of Crystaline Charm and Crystal Spear Tip
+					All armor bonuses from Lodestone, Valadium, Illumite, and Terrarium
+					All armor bonuses from Durasteel, Darksteel, Steel, and Thorium
+					Effects of Incandescent Spark, Spiked Bracersand, Thorium Shield, and Obsidian Scale
+					Effects of Crietz, Astro-Beetle Husk, Sandweaver's Tiara, and Beholder's gaze
+					Effects of Mirror of Beholder, Nuclear Option, Jazz Music Player and Band of Replenishmen
+					Effects of Terrarium Surround Buffer and Fan Letter
 					'''
 			}
 
@@ -2038,10 +2032,9 @@ Mods: {
 				Tooltip:
 					'''
 					'A blazing heat, the mark of Surtr...'
-					All armor bonuses from Sandstone, Danger, Flight, and Fungus
-					All armor bonuses Living Wood, Blooming, and Life Bloom
-					Effects of Faberge Egg, Kick Petal, and Petal Shield
-					Effects of Nightshade Flower, Flawless Chrysalis, and Bee Booties
+					All armor bonuses from Cyber Punk, Demon Blood, Sandstone, Noble, and Pyromancer
+					Effects of Autotuner, Metal Music Player, Plasma Generator, and Diss Track
+					Effects of Vampire Gland, Vile Flail-Core, Brass Cap, Waxy Rosin, and Ring of Unity
 					'''
 			}
 
@@ -2050,10 +2043,9 @@ Mods: {
 				Tooltip:
 					'''
 					'A world of mist, a sign of the dead...'
-					All armor bonuses from Crier, Noble, Cyber Punk, Ornate, and Maestro
-					Effects of Ring of Unity, Brass Cap, and Waxy Rosin
-					Effects of Auto Tuner, Metal Music Player, and Diss Track
-					Effects of Concert Tickets, Conductor's Baton, Full Score, and Metronome
+					All armor bonuses from Crier, Shooting Star, Ornate, and Maestro
+					Effects of Lucky Rabbit's Foot and Concert Tickets
+					Effects of Conductor's Baton, Full Score, and Metronome
 					'''
 			}
 
@@ -2062,11 +2054,10 @@ Mods: {
 				Tooltip:
 					'''
 					'Behold the craftsmanship of the Dark Elves...'
-					All armor bonuses from Granite, Bronze, and Darksteel
-					All armor bonuses from Durasteel, Titan, and Conduit
-					Effects of Eye of the Storm, Champion's Rebuttal, Olympic Torch, and Spartan Sandals
-					Effects of Spiked Bracers and Rock Music Player
-					Effects of Ogre Sandals, Crystal Spear Tip, Mask of the Crystal Eye, and Abyssal Shell
+					All armor bonuses from Granite, Yew Wood, and Titan
+					All armor bonuses from Jester, Astro, and Conduit
+					Effects of Heart of Stone, Goblin War Shield, Fan Letter, and  Rock Music Player
+					Effects of Spiked Bracers, Mask of the Crystal Eye, and Abyssal Shell
 					'''
 			}
 
@@ -2076,8 +2067,9 @@ Mods: {
 					'''
 					'Holds a glimpse of the future...'
 					All armor bonuses from Lich, Plague Doctor, and White Dwarf
-					All armor bonuses from Celestial and Shooting Star
-					Effects of Lich's Gaze and Ascension Statuette
+					All armor bonuses from Bronze, Fungus, Flight and Dragon
+					Effects of Lich's Gaze, Olympic Torch, Faberge Egg, Champion's Rebuttal and Ascension Statuette
+					Effects of Spartan Sandals, Dragon Talon Necklace, Disco Music Player and Phylactery
 					'''
 			}
 
@@ -2086,24 +2078,23 @@ Mods: {
 				Tooltip:
 					'''
 					'The true might of the 9 realms is yours!'
-					All armor bonuses from Sandstone, Danger, Flight, Fungus, Living Wood, Bulb, and Life Bloom
+					All armor bonuses from Sandstone, Danger, Flight, Fungus, Living Wood, Blooming, and Life Bloom
 					All armor bonuses from Depth Diver, Yew Wood, Tide Hunter, Naga-Skin, Icy, Cryomancer, and Whispering
-					All armor bonuses from Sacred, Warlock, Biotech, Life Binder and Fallen Paladin
+					All armor bonuses from Sacred, Warlock, Biotech, Astro, Life Binder and Fallen Paladin
 					All armor bonuses from Crier, Noble, Ornate, Cyber Punk, Marching Band, and Maestro
 					All armor bonuses from Granite, Bronze, Titan, Conduit, Steel, Darksteel, and Durasteel
 					All armor bonuses from Lodestone, Valadium, Illumite, Shade Master, Jester, Thorium, and Terrarium
 					All armor bonuses from Plague Doctor, Lich, White Dwarf, Celestial, and Shooting Star
-					All armor bonuses from Spirit Trapper, Malignant, Dragon, Dread, Flesh, Demon Blood, Magma, Berserker, and Harbinger
+					All armor bonuses from Spirit Trapper, Dragon, Dread, Flesh and Demon Blood
 					All armor bonuses from Tide Turner, Assassin, Pyromancer, Dream Weaver, and Rhapsodist
 					Effects of Nightshade Flower, Flawless Chrysalis, and Bee Booties
 					Effects of Goblin War Shield, Bubble Magnet, Agnor's Bowl, and Ice Bound Strider Hide
 					Effects of Demon Tongue, Dark Effigy, Aloe Leaf, Equalizer, Karmic Holder, Prydwen, and Rebirth Statuette
 					Effects of Ring of Unity, Brass Cap, Waxy Rosin, Auto Tuner, Metal Music Player, Diss Track, Concert Tickets, Conductor's Baton, Full Score, and Metronome
 					Effects of Eye of the Storm, Champion's Rebuttal, Olympic Torch, Spartan Sandals, Spiked Bracers, Rock Music Player, Ogre Sandals, and Mask of the Crystal Eye
-					Effects of the Abyssal Shell, Astro-Beetle Husk, Obsidian Scale, Mirror of the Beholder, Jazz Music Player, Crietz, Band of Replenishment, Fan Letter, and Terrarium Surround Sound
-					Effects of Lich's Gaze and Ascension Statuette
-					Effects of the Enchanted Shield, Mana-Charged Rocketeers, Inner Flame, Crash Boots, Vampire Gland, Spring Steps, Slag Stompers, and Shade Band
-					Effects of Dart Pouch, Mark of the Dream Eater
+					Effects of the Abyssal Shell, Astro-Beetle Husk, Obsidian Scale, Mirror of the Beholder, Jazz Music Player, Fan Letter, and Terrarium Surround Sound
+					Effects of Artificer's Shield, Artificer's Rocketeers, Inner Flame, Crash Boots, Vampire Gland, Spring Steps, Slag Stompers, and Shade Band
+					Effects of Lich's Gaze, Crietz, Band of Replenishment, Ascension Statuette, Dart Pouch, Mark of the Dream Eater
 					'''
 			}
 
@@ -2445,7 +2436,7 @@ Mods: {
 			}
 
 			ShtuxianEnchant: {
-				DisplayName: Shtuxian Enchant
+				DisplayName: Shtuxian Enchantment
 				Tooltip:
 					'''
 					[i:ssm/QuantumChestplate], [i:ssm/QuantumPants]
@@ -2454,7 +2445,7 @@ Mods: {
 					You can revive up to 3 times, healing all health, Cooldown of each revive is 30 seconds
 					[i:ssm/ChtuxlagorHeart]
 					Your attacks inflict "Chtux'lag'or inferno", You can't take more than 1000 damage.
-					Set Mutant Bomb CD to 30 seconds instead of 60, 100% increace graze bonus damage cap
+					Set Mutant Bomb CD to 30 seconds instead of 60, 100% increase graze bonus damage cap
 					Grants immunity to "Shtuxibus Curse", Debuff "Chtux'lag'or inferno" deal lower damage
 					Press [shtuxianSuper] key to become invinvible for 10 seconds
 					[i:ssm/ShtuxianEnchant] Remove any hits cap.
@@ -2552,7 +2543,7 @@ Mods: {
 			}
 
 			MonstrosityEnchant: {
-				DisplayName: Monstrosity Enchant
+				DisplayName: Monstrosity Enchantment
 				Tooltip: ""
 			}
 
@@ -2596,7 +2587,7 @@ Mods: {
 			}
 
 			DemonShadeEnchant: {
-				DisplayName: Demonshade Enchant
+				DisplayName: Demonshade Enchantment
 				Tooltip:
 					'''
 					'Demonic power emanates from you…'
@@ -2731,7 +2722,7 @@ Mods: {
 					You are immune to the Astral Blight and your attacks inflict it
 					Press the {0} key to dash towards the cursor as a violent nebula
 					During the dash, you are fully immune to damage
-					20% increaced true melee damage. Can't be frozen
+					20% increased true melee damage. Can't be frozen
 					True melee attacks inflict frostburn. 
 					Press Armor Ability Key to create an ice shield that parries attack
 					Failing to parry will cause you to overcool
@@ -2739,7 +2730,7 @@ Mods: {
 			}
 
 			IntergelacticEnchant: {
-				DisplayName: Intergelactic Enchant
+				DisplayName: Intergelactic Enchantment
 				Tooltip:
 					'''
 					Surrounds you with two rings of asteroids whose damages scale with your stats
@@ -2752,7 +2743,7 @@ Mods: {
 			}
 
 			ShogunEnchant: {
-				DisplayName: Shogun Enchant
+				DisplayName: Shogun Enchantment
 				Tooltip:
 					'''
 					Activates the Stress Bar
@@ -2771,7 +2762,7 @@ Mods: {
 			}
 
 			VoidFaquirEnchant: {
-				DisplayName: Void Faquir Enchant
+				DisplayName: Void Faquir Enchantment
 				Tooltip:
 					'''
 					Hitting the target will increase void energy
@@ -2784,7 +2775,7 @@ Mods: {
 			}
 
 			DivineEnchant: {
-				DisplayName: Divine Enchant
+				DisplayName: Divine Enchantment
 				Tooltip:
 					'''
 					Grants fast infinite flight
@@ -2794,15 +2785,15 @@ Mods: {
 			}
 
 			EntropicEnchant: {
-				DisplayName: Entropic Enchant
+				DisplayName: Entropic Enchantment
 				Tooltip: Makes cosmic hallutinations materialize around you
 			}
 
 			FrozenEnchant: {
-				DisplayName: Frozen Enchant
+				DisplayName: Frozen Enchantment
 				Tooltip:
 					'''
-					20% increaced true melee damage. Can't be frozen
+					20% increased true melee damage. Can't be frozen
 					True melee attacks inflict frostburn. 
 					Press Armor Ability Key to create an ice shield that parries attack
 					Failing to parry will cause you to overcool
@@ -2815,13 +2806,57 @@ Mods: {
 			}
 
 			EmptinessEnchant: {
-				DisplayName: Emptiness Enchant
+				DisplayName: Emptiness Enchantment
 				Tooltip: ""
 			}
 
 			CoralEnchant: {
-				DisplayName: Coral Enchant
+				DisplayName: Coral Enchantment
+				Tooltip:
+					'''
+					'For swimming with the fishes'
+					Radiant damage builds up to 20 life shield and life shielding no longer decays on you. Healing an ally transfers the life shield to them
+					Effects of Sea Breeze Pendant and Bubble Magnet
+					'''
+			}
+
+			SyranCraftingStationItem: {
 				Tooltip: ""
+				DisplayName: Syran Crafting Station
+			}
+
+			MutantsForgeItem: {
+				Tooltip: ""
+				DisplayName: Mutants Forge
+			}
+
+			DreamersForgeItem: {
+				Tooltip: ""
+				DisplayName: Dreamers Forge
+			}
+
+			DemonshadeWorkbenchItem: {
+				Tooltip: ""
+				DisplayName: Demonshade Workbench
+			}
+
+			SolynsSigil: {
+				Tooltip: ""
+				DisplayName: Solyns Sigil
+			}
+
+			RedemptionCraftingStationItem: {
+				DisplayName: Redemption Crafting Station
+				Tooltip: ""
+			}
+
+			CairoCrusaderEnchant: {
+				Tooltip:
+					'''
+					Awakens Eternal Oasis to aid in your battle
+					Double tap down to switch between active and passive
+					'''
+				DisplayName: Cairo Crusader Enchant
 			}
 		}
 
@@ -3112,7 +3147,6 @@ Mods: {
 			YataMirrorEffect: Yata Mirror
 			PrimordialCoreEffect: Primordia Core
 			RoyalGuardEffect: Royal Guard
-			CelestialEffect: Celestial pillars
 			FloraFistEffect: Flora Fist
 			MilinticaDashEffect: Advanced Dash
 			HeartOfThePloughEffect: Heart of the Plough
@@ -3132,7 +3166,7 @@ Mods: {
 			IcyEffect: Icy Aura
 			NoviceClericEffect: Holy crosses
 			TideTurnerEffect: Tide Defence
-			DreadEffect: Increaced Inertia
+			DreadEffect: increased Inertia
 			WhisperingEffect: Eldrich Tentacles
 			LodestoneEffect: Sandweaver's Tiara
 			BulbEffect: Kick Petal
@@ -3168,6 +3202,9 @@ Mods: {
 			MutantsForgeTile.MapEntry: Mutants Forge
 			DemonshadeWorkbenchTile.MapEntry: Demonshade Workbench
 			ShtunStorageUnit.MapEntry: Shtun Storage Unit
+			SyranCraftingStationTile.MapEntry: Syran Crafting Station Tile
+			DreamersForgeTile.MapEntry: Dreamers Forge Tile
+			RedemptionCraftingStationTile.MapEntry: Redemption Crafting Station Tile
 		}
 
 		ItemClass.Chtuxlagor: ∞ Chtux'Lag'Or Item ∞

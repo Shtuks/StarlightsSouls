@@ -7,6 +7,10 @@ using Microsoft.Xna.Framework;
 using ThoriumMod.Items.BardItems;
 using ThoriumMod.Items.Painting;
 using FargowiltasSouls.Content.Items.Accessories.Enchantments;
+using FargowiltasSouls.Core.AccessoryEffectSystem;
+using static ssm.Thorium.Enchantments.LifeBloomEnchant;
+using ssm.Content.SoulToggles;
+using static ssm.Thorium.Enchantments.MarchingBandEnchant;
 
 namespace ssm.Thorium.Enchantments
 {
@@ -35,19 +39,26 @@ namespace ssm.Thorium.Enchantments
             //thoriumPlayer.setMaestro = true;
             ModContent.Find<ModItem>(this.thorium.Name, "MaestroWig").UpdateArmorSet(player);
 
-            //metronome
-            //toggle
-            ModContent.Find<ModItem>(this.thorium.Name, "Metronome").UpdateAccessory(player, hideVisual);
+            if (player.AddEffect<MetronomeEffect>(Item))
+            {
+                //metronome
+                //toggle
+                ModContent.Find<ModItem>(this.thorium.Name, "Metronome").UpdateAccessory(player, hideVisual);
+            }
 
             //conductor's baton
             ModContent.Find<ModItem>(this.thorium.Name, "ConductorsBaton").UpdateAccessory(player, hideVisual);
-            //marching band
 
-            //toggle
-                //thoriumPlayer.setMarchingBand = true;
+            ModContent.Find<ModItem>(this.Mod.Name, "MarchingBandEnchant").UpdateAccessory(player, hideVisual);
 
             //full score
             ModContent.Find<ModItem>(this.thorium.Name, "FullScore").UpdateAccessory(player, hideVisual);
+        }
+
+        public class MetronomeEffect : AccessoryEffect
+        {
+            public override Header ToggleHeader => Header.GetHeader<NiflheimForceHeader>();
+            public override int ToggleItemType => ModContent.ItemType<MaestroEnchant>();
         }
 
         public override void AddRecipes()

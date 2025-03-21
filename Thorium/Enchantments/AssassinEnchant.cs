@@ -33,7 +33,8 @@ namespace ssm.Thorium.Enchantments
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
             ThoriumPlayer modPlayer = player.GetModPlayer<ThoriumPlayer>();
-            modPlayer.assassinThrower = true;
+            modPlayer.masterArbalestHoodSet = true;
+            modPlayer.masterArbalestHoodSet = true;
 
             ModContent.Find<ModItem>(this.thorium.Name, "DartPouch").UpdateAccessory(player, hideVisual);
         }

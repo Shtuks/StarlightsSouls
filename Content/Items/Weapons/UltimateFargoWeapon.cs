@@ -6,6 +6,7 @@ using ssm.Content.Tiles;
 using Terraria.DataStructures;
 using Microsoft.Xna.Framework;
 using System;
+using ssm.CrossMod.CraftingStations;
 using FargowiltasSouls.Content.Projectiles.BossWeapons;
 using StyxGazer2 = FargowiltasSouls.Content.Projectiles.BossWeapons.StyxGazer;
 using StyxGazer = FargowiltasSouls.Content.Items.Weapons.FinalUpgrades.StyxGazer;

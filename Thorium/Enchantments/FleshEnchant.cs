@@ -66,12 +66,12 @@ namespace ssm.Thorium.Enchantments
 
         public class FleshMaskEffect : AccessoryEffect
         {
-            public override Header ToggleHeader => Header.GetHeader<HelheimForceHeader>();
+            public override Header ToggleHeader => Header.GetHeader<MuspelheimForceHeader>();
             public override int ToggleItemType => ModContent.ItemType<FleshEnchant>();
         }
         public class VampireGlandEffect : AccessoryEffect
         {
-            public override Header ToggleHeader => Header.GetHeader<HelheimForceHeader>();
+            public override Header ToggleHeader => Header.GetHeader<MuspelheimForceHeader>();
             public override int ToggleItemType => ModContent.ItemType<FleshEnchant>();
         }
     }

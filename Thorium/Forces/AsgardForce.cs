@@ -29,7 +29,7 @@ namespace ssm.Thorium.Forces
             ModContent.Find<ModItem>(((ModType)this).Mod.Name, "WhiteKnightEnchant").UpdateAccessory(player, hideVisual);
             ModContent.Find<ModItem>(((ModType)this).Mod.Name, "SacredEnchant").UpdateAccessory(player, hideVisual);
             ModContent.Find<ModItem>(((ModType)this).Mod.Name, "FallenPaladinEnchant").UpdateAccessory(player, hideVisual);
-            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "CelestialEnchant").UpdateAccessory(player, hideVisual);
+            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "CelestiaEnchant").UpdateAccessory(player, hideVisual);
             ModContent.Find<ModItem>(((ModType)this).Mod.Name, "RhapsodistEnchant").UpdateAccessory(player, hideVisual);
         }
 
@@ -40,7 +40,7 @@ namespace ssm.Thorium.Forces
             recipe.AddIngredient(null, "WhiteKnightEnchant");
             recipe.AddIngredient(null, "SacredEnchant");
             recipe.AddIngredient(null, "FallenPaladinEnchant");
-            recipe.AddIngredient(null, "CelestialEnchant");
+            recipe.AddIngredient(null, "CelestiaEnchant");
             recipe.AddIngredient(null, "RhapsodistEnchant");
 
             recipe.AddTile<CrucibleCosmosSheet>();

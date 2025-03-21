@@ -34,7 +34,7 @@ namespace ssm.Thorium.Enchantments
         {
             FargoSoulsPlayer fargoPlayer = player.GetModPlayer<FargoSoulsPlayer>();
             ShtunPlayer modPlayer = player.GetModPlayer<ShtunPlayer>();
-            //fargoPlayer.wingTimeModifier += 1f;
+            fargoPlayer.WingTimeModifier += 1f;
 
             ModContent.Find<ModItem>(this.thorium.Name, "FabergeEgg").UpdateAccessory(player, hideVisual);
         }

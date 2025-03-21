@@ -5,6 +5,8 @@ using ThoriumMod;
 using Terraria.Localization;
 using ssm.Core;
 using FargowiltasSouls.Content.Items.Accessories.Forces;
+using ssm.Thorium.Enchantments;
+using Fargowiltas.Items.Tiles;
 
 namespace ssm.Thorium.Forces
 {
@@ -25,7 +27,7 @@ namespace ssm.Thorium.Forces
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "OrnateEnchant").UpdateAccessory(player, hideVisual);
+            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "ShootingStarEnchant").UpdateAccessory(player, hideVisual);
             ModContent.Find<ModItem>(((ModType)this).Mod.Name, "MaestroEnchant").UpdateAccessory(player, hideVisual);
             ModContent.Find<ModItem>(((ModType)this).Mod.Name, "CrierEnchant").UpdateAccessory(player, hideVisual);
             ModContent.Find<ModItem>(((ModType)this).Mod.Name, "OrnateEnchant").UpdateAccessory(player, hideVisual);
@@ -35,12 +37,12 @@ namespace ssm.Thorium.Forces
         {
             Recipe recipe = this.CreateRecipe();
 
-            recipe.AddIngredient(null, "OrnateEnchant");
+            recipe.AddIngredient<ShootingStarEnchant>();
             recipe.AddIngredient(null, "MaestroEnchant");
             recipe.AddIngredient(null, "CrierEnchant");
             recipe.AddIngredient(null, "OrnateEnchant");
 
-            recipe.AddTile(TileID.LunarCraftingStation);
+            recipe.AddTile<CrucibleCosmosSheet>();
 
             recipe.Register();
         }

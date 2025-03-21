@@ -4,6 +4,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using ssm.Content.Items.Materials;
 using ssm.Content.Tiles;
+using ssm.CrossMod.CraftingStations;
 
 namespace ssm.Content.Items.Materials
 {

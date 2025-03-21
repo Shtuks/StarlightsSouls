@@ -6,21 +6,11 @@ using Terraria.Graphics.Shaders;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Fargowiltas.Items.Tiles;
-using FargowiltasSouls.Content.Items;
 using FargowiltasSouls.Core.AccessoryEffectSystem;
 using FargowiltasSouls.Content.Items.Accessories.Souls;
 using FargowiltasSouls.Content.Buffs.Masomode;
-using ssm.Content.Items.Accessories;
-using ssm.Calamity.Souls;
-using ssm.SoA.Souls;
-using ssm.Core;
-using ssm.Content.Items;
-using ssm.Content.Items.Materials;
-using ssm.Content.Buffs.Minions;
 using ssm.Content.SoulToggles;
-using ssm.Content.Tiles;
-using static ssm.Content.Items.Accessories.NekomiEnchant;
+using ssm.CrossMod.CraftingStations;
 
 namespace ssm.Content.Items.Accessories
 {
@@ -79,7 +69,6 @@ namespace ssm.Content.Items.Accessories
             if (player.GetModPlayer<FargoSoulsPlayer>().MutantEyeCD > 0) { player.GetModPlayer<FargoSoulsPlayer>().MutantEyeCD--; }
 
             ModContent.Find<ModItem>(this.fargosouls.Name, "EternitySoul").UpdateAccessory(player, hideVisual);
-            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "CelestialEnchant").UpdateAccessory(player, false);
             ModContent.Find<ModItem>(((ModType)this).Mod.Name, "EternityForce").UpdateAccessory(player, false);
 
             ModContent.Find<ModItem>(((ModType)this).Mod.Name, "ShtuxianEnchant").UpdateAccessory(player, false);

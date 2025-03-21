@@ -45,6 +45,7 @@ namespace ssm.Thorium.Enchantments
 
             //quicker in water
             player.ignoreWater = true;
+
             if (player.wet)
             {
                 player.moveSpeed += 0.15f;

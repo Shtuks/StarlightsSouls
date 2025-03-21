@@ -62,8 +62,6 @@ namespace ssm.Thorium.Enchantments
                 }
             }
 
-            ModContent.Find<ModItem>("ssm", "DragonEnchant").UpdateAccessory(player, hideVisual);
-
             ModContent.Find<ModItem>(this.thorium.Name, "CrashBoots").UpdateAccessory(player, hideVisual);
 
             ModContent.Find<ModItem>(this.thorium.Name, "CursedCore").UpdateAccessory(player, hideVisual);
@@ -84,7 +82,6 @@ namespace ssm.Thorium.Enchantments
             recipe.AddIngredient(ModContent.ItemType<DreadSkull>());
             recipe.AddIngredient(ModContent.ItemType<DreadChestPlate>());
             recipe.AddIngredient(ModContent.ItemType<DreadGreaves>());
-            recipe.AddIngredient(ModContent.ItemType<DragonEnchant>());
             recipe.AddIngredient(ModContent.ItemType<CrashBoots>());
             recipe.AddIngredient(ModContent.ItemType<CursedFlailCore>());
 

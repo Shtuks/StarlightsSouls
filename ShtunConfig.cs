@@ -24,17 +24,17 @@ namespace ssm
 
         [ReloadRequired]
         [BackgroundColor(60, 200, 60, 192)]
-        [DefaultValue(true)]
+        [DefaultValue(false)]
         public bool SafeMode { get; set; }
 
         [ReloadRequired]
         [BackgroundColor(60, 200, 60, 192)]
-        [DefaultValue(false)]
+        [DefaultValue(true)]
         public bool DebugMode { get; set; }
 
         [ReloadRequired]
         [BackgroundColor(60, 200, 60, 192)]
-        [DefaultValue(false)]
+        [DefaultValue(true)]
         public bool ExperimentalContent { get; set; }
 
         [Header("Crafting")]

@@ -8,6 +8,7 @@ using ThoriumMod.Items.HealerItems;
 using ThoriumMod.Items.Tracker;
 using FargowiltasSouls.Content.Items.Accessories.Enchantments;
 using ssm.Core;
+using ThoriumMod.Buffs.Healer;
 
 namespace ssm.Thorium.Enchantments
 {
@@ -41,18 +42,18 @@ namespace ssm.Thorium.Enchantments
             thoriumPlayer.radiantLifeCost = 2;
 
             //dark effigy
-            //for (int i = 0; i < 200; i++)
-            //{
-            //    NPC npc = Main.npc[i];
-            //    if (npc.active && !npc.friendly && (npc.shadowFlame || npc.GetGlobalNPC<ThoriumGlobalNPC>().lightLament) && npc.DistanceSQ(player.Center) < 1000000f)
-            //    {
-            //        thoriumPlayer.effigy++;
-            //    }
-            //}
-            //if (thoriumPlayer.effigy > 0)
-            //{
-            //    player.AddBuff(thorium.BuffType("EffigyRegen"), 2, true);
-            //}
+            for (int i = 0; i < 200; i++)
+            {
+                NPC npc = Main.npc[i];
+                if (npc.active && !npc.friendly && npc.shadowFlame && npc.DistanceSQ(player.Center) < 1000000f)
+                {
+                    thoriumPlayer.darkEffigy++;
+                }
+            }
+            if (thoriumPlayer.darkEffigy > 0)
+            {
+                player.AddBuff(ModContent.BuffType<DarkEffigyBuff>(), 2, true);
+            }
         }
 
         public override void AddRecipes()

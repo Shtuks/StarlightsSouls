@@ -42,7 +42,7 @@ namespace ssm.Thorium.Enchantments
 
         public class NoviceClericEffect : AccessoryEffect
         {
-            public override Header ToggleHeader => Header.GetHeader<AlfheimForceHeader>();
+            public override Header ToggleHeader => Header.GetHeader<AsgardForceHeader>();
             public override int ToggleItemType => ModContent.ItemType<NoviceClericEnchant>();
         }
 

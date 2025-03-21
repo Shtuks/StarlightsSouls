@@ -7,6 +7,7 @@ using ssm.Thorium.Enchantments;
 using ssm.Core;
 using FargowiltasSouls;
 using FargowiltasSouls.Content.Items.Accessories.Forces;
+using Fargowiltas.Items.Tiles;
 
 namespace ssm.Thorium.Forces
 {
@@ -33,19 +34,19 @@ namespace ssm.Thorium.Forces
             ModContent.Find<ModItem>(((ModType)this).Mod.Name, "PyromancerEnchant").UpdateAccessory(player, hideVisual);
         }
 
-        //public override void AddRecipes()
-        //{
-        //    Recipe recipe = CreateRecipe();
+        public override void AddRecipes()
+        {
+            Recipe recipe = CreateRecipe();
 
-        //    recipe.AddIngredient(null, "CyberPunkEnchant");
-        //    recipe.AddIngredient(null, "DemonBloodEnchant");
-        //    recipe.AddIngredient(null, "SandstoneEnchant");
-        //    recipe.AddIngredient(null, "NobleEnchant");
-        //    recipe.AddIngredient(null, "PyromancesEnchant");
+            recipe.AddIngredient<CyberPunkEnchant>();
+            recipe.AddIngredient<DemonBloodEnchant>();
+            recipe.AddIngredient<SandstoneEnchant>();
+            recipe.AddIngredient<NobleEnchant>();
+            recipe.AddIngredient<PyromancerEnchant>();
 
-        //    recipe.AddTile(TileID.LunarCraftingStation);
+            recipe.AddTile<CrucibleCosmosSheet>();
 
-        //    recipe.Register();
-        //}
+            recipe.Register();
+        }
     }
 }

@@ -8,6 +8,7 @@ using Terraria.ID;
 using ssm.Content.NPCs.StarlightCat;
 using ssm.Content.Items.Consumables;
 using System.Collections.Generic;
+using ssm.CrossMod.CraftingStations;
 using Terraria.Localization;
 
 namespace ssm.Content.Items.ShtuxibusPlush

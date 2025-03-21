@@ -11,6 +11,7 @@ using ssm.Calamity.Swarm.Energizers;
 using ssm.Content.Items.Singularities.Calamity;
 using ssm.Thorium.Swarm.Energizers;
 using ssm.SoA.Swarm.Energizers;
+using ssm.CrossMod.CraftingStations;
 //using ssm.Redemption.Swarm.Energizers;
 //using ssm.Homeward.Swarm.Energizers;
 

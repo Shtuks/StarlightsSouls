@@ -9,6 +9,9 @@ using ThoriumMod.Items.Terrarium;
 using ThoriumMod.Items.BardItems;
 using ThoriumMod.Items.NPCItems;
 using FargowiltasSouls.Content.Items.Accessories.Enchantments;
+using FargowiltasSouls.Core.AccessoryEffectSystem;
+using static ssm.Thorium.Enchantments.SandstoneEnchant;
+using ssm.Content.SoulToggles;
 
 namespace ssm.Thorium.Enchantments
 {
@@ -32,11 +35,20 @@ namespace ssm.Thorium.Enchantments
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            //toggle
+            if (player.AddEffect<TerrariumEffect>(Item))
+            {
+                //toggle
                 ModContent.Find<ModItem>(this.thorium.Name, "TerrariumHelmet").UpdateArmorSet(player);
+            }
 
             ModContent.Find<ModItem>("ssm", "ThoriumEnchant").UpdateAccessory(player, hideVisual);
             ModContent.Find<ModItem>(this.thorium.Name, "TerrariumSurroundSound").UpdateAccessory(player, hideVisual);
+        }
+
+        public class TerrariumEffect : AccessoryEffect
+        {
+            public override Header ToggleHeader => Header.GetHeader<MidgardForceHeader>();
+            public override int ToggleItemType => ModContent.ItemType<TerrariumEnchant>();
         }
 
         public override void AddRecipes()

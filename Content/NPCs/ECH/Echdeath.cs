@@ -203,7 +203,7 @@ namespace ssm.Content.NPCs.ECH
 
         public override bool CheckDead()
         {
-            if (WorldSaveSystem.TrueChtuxlagorWrathModeEX)
+            if (WorldSaveSystem.TrueSuperChtuxlagorWrathModeOmegaEX)
             {
                 return true;
             }

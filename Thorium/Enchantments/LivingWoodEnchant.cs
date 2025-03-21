@@ -71,7 +71,7 @@ namespace ssm.Thorium.Enchantments
 
         public class LivingWoodEffect : AccessoryEffect
         {
-            public override Header ToggleHeader => Header.GetHeader<MuspelheimForceHeader>();
+            public override Header ToggleHeader => Header.GetHeader<AlfheimForceHeader>();
             public override int ToggleItemType => ModContent.ItemType<LivingWoodEnchant>();
         }
     }

@@ -25,6 +25,7 @@ using FargowiltasCrossmod.Content.Calamity.Items.Accessories;
 using ssm.Calamity.Enchantments;
 using ssm.Calamity.Addons;
 using CalamityMod.Items.Materials;
+using ssm.CrossMod.CraftingStations;
 
 
 namespace ssm.Calamity.Souls

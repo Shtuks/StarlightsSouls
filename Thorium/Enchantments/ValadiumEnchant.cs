@@ -13,6 +13,9 @@ using FargowiltasSouls.Content.Items.Accessories.Enchantments;
 using ThoriumMod.Items.BossFallenBeholder;
 using ThoriumMod.Projectiles.Boss;
 using ThoriumMod.Items.BossLich;
+using FargowiltasSouls.Core.AccessoryEffectSystem;
+using static ssm.Thorium.Enchantments.TideTurnerEnchant;
+using ssm.Content.SoulToggles;
 
 namespace ssm.Thorium.Enchantments
 {
@@ -46,9 +49,18 @@ namespace ssm.Thorium.Enchantments
                 player.GetDamage(DamageClass.Generic) += 0.12f;
             }
 
-            //toggle
+            if (player.AddEffect<ValadiumEffect>(Item))
+            {
+                //toggle
                 //eye of beholder
                 ModContent.Find<ModItem>(this.thorium.Name, "BeholderGaze").UpdateAccessory(player, hideVisual);
+            }
+        }
+
+        public class ValadiumEffect : AccessoryEffect
+        {
+            public override Header ToggleHeader => Header.GetHeader<MidgardForceHeader>();
+            public override int ToggleItemType => ModContent.ItemType<ValadiumEnchant>();
         }
 
         public override void AddRecipes()

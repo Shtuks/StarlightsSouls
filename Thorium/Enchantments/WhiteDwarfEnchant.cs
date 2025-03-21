@@ -34,7 +34,6 @@ namespace ssm.Thorium.Enchantments
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
             ModContent.Find<ModItem>(this.thorium.Name, "WhiteDwarfMask").UpdateArmorSet(player);
-            //player.GetModPlayer<ShtunThoriumPlayer>().WhiteDwarfEnchant = true;
         }
 
         public override void AddRecipes()

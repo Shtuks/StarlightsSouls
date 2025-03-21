@@ -1,5 +1,6 @@
 using ssm.Content.Tiles;
 using ssm.Core;
+using ssm.CrossMod.CraftingStations;
 using Terraria.ModLoader;
 
 namespace ssm.Calamity.Swarm.Energizers
@@ -38,7 +39,7 @@ namespace ssm.Calamity.Swarm.Energizers
             .AddIngredient<ProfandedEnergizer>()
             .AddIngredient<SlimeGodEnergizer>()
             .AddIngredient<ToxicEnergizer>()
-            .AddTile<MutantsForgeTile>()
+            .AddTile<DemonshadeWorkbenchTile>()
             .Register();
         }
     }

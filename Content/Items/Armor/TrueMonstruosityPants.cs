@@ -6,6 +6,7 @@ using Terraria.ModLoader;
 using CalamityMod.Items.Armor.Demonshade;
 using CalamityMod.Items.Armor.GemTech;
 using ssm.Content.Tiles;
+using ssm.CrossMod.CraftingStations;
 
 namespace ssm.Content.Items.Armor
 {

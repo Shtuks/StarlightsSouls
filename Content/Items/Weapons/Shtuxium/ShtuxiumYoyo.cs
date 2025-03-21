@@ -3,6 +3,7 @@ using ssm.Content.Projectiles.Weapons;
 using ssm.Content.Tiles;
 using Terraria.ID;
 using Terraria.ModLoader;
+using ssm.CrossMod.CraftingStations;
 
 namespace ssm.Content.Items.Weapons.Shtuxium
 {

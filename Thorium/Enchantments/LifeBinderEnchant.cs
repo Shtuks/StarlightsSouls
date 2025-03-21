@@ -30,7 +30,7 @@ namespace ssm.Thorium.Enchantments
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            //ModContent.Find<ModItem>(this.thorium.Name, "DewBinderMask").UpdateArmorSet(player);
+            ModContent.Find<ModItem>(this.thorium.Name, "LifeBinderMask").UpdateArmorSet(player);
 
             ModContent.Find<ModItem>("ssm", "IridescentEnchant").UpdateAccessory(player, hideVisual);
 

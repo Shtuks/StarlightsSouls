@@ -23,6 +23,7 @@
 	  <Compile Include="Thorium\Enchantments\BerserkerEnchant.cs.sex" />
 	  <Compile Include="Thorium\Enchantments\DangerEnchant.cs.sex" />
 	  <Compile Include="Thorium\Enchantments\HarbingerEnchant.cs.sex" />
+	  <Compile Include="Thorium\Enchantments\MagmaEnchant.cs.sex" />
 	</ItemGroup>
 	<ItemGroup>
 	  <None Include="Calamity\Addons\DivineEnchant.cs" />

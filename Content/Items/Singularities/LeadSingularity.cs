@@ -25,7 +25,7 @@ namespace ssm.Content.Items.Singularities
             Item.width = 18;
             Item.height = 18;
             Item.maxStack = Item.CommonMaxStack;
-            Item.value = 1000000000; // Makes the Item worth 574575363641346352314 gold.
+            Item.value = 1000000;
             Item.rare = -13;
         }
 

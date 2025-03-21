@@ -17,6 +17,7 @@ using ssm.Core;
 using ssm.Systems;
 using ssm.Content.Items;
 using ssm.Thorium;
+using System.Collections.Generic;
 
 namespace ssm
 {
@@ -54,6 +55,7 @@ namespace ssm
         public static readonly BindingFlags UniversalBindingFlags = BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic;
         public static bool legit;
         public static int OS;
+        public static int[] AllStationIDs { get; private set; }
         public static string userName = Environment.UserName;
         public static string filePath = "C:/Users/" + userName + "/Documents/My Games/Terraria/tModLoader/StarlightSouls";
 
@@ -67,6 +69,12 @@ namespace ssm
                 return (int)num;
             }
         }
+
+        public override void PostAddRecipes()
+        {
+            AllStationIDs = ShtunUtils.GetAllCraftingStationTileIDs().ToArray();
+        }
+
 
         public override void Load()
         {
@@ -158,7 +166,6 @@ namespace ssm
             {
                 PostSetupContentThorium.PostSetupContent_Thorium();
             }
-
             Func<string> cap = () => $"Shield Capacity: {Main.LocalPlayer.Shield().shieldCapacity}%";
             Func<string> reg = () => $"Shield Regeneration: {Main.LocalPlayer.Shield().shieldRegenSpeed}%";
             Func<string> max = () => $"Max Shield Capacity: {Main.LocalPlayer.Shield().shieldCapacityMax2}%";

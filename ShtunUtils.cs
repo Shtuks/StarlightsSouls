@@ -73,6 +73,27 @@ namespace ssm
             }
         }
 
+        public static List<int> GetAllCraftingStationTileIDs()
+        {
+            HashSet<int> stationIDs = new HashSet<int>();
+
+            for (int i = 0; i < Recipe.numRecipes; i++)
+            {
+                Recipe recipe = Main.recipe[i];
+
+                if (recipe.requiredTile != null)
+                {
+                    foreach (int tileID in recipe.requiredTile)
+                    {
+                        if (tileID >= 0)
+                        {
+                            stationIDs.Add(tileID);
+                        }
+                    }
+                }
+            }
+            return new List<int>(stationIDs);
+        }
 
         public static bool CircularHitboxCollision(Vector2 centerCheckPosition, float radius, Rectangle targetHitbox)
         {

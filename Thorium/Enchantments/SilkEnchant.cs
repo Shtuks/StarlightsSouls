@@ -7,6 +7,9 @@ using ssm.Core;
 using ThoriumMod.Items.BasicAccessories;
 using FargowiltasSouls.Content.Items.Accessories.Enchantments;
 using ThoriumMod.Items.SummonItems;
+using FargowiltasSouls.Core.AccessoryEffectSystem;
+using static ssm.Thorium.Enchantments.ThoriumEnchant;
+using ssm.Content.SoulToggles;
 
 namespace ssm.Thorium.Enchantments
 {
@@ -33,10 +36,18 @@ namespace ssm.Thorium.Enchantments
             ModContent.Find<ModItem>(this.thorium.Name, "SilkHat").UpdateArmorSet(player);
 
             ModContent.Find<ModItem>(this.thorium.Name, "ArtificersFocus").UpdateAccessory(player, hideVisual);
-           // ModContent.Find<ModItem>(this.thorium.Name, "EnchantedShield").UpdateAccessory(player, hideVisual);
+            ModContent.Find<ModItem>(this.thorium.Name, "ArtificersShield").UpdateAccessory(player, hideVisual);
 
-            //toggle
-                //ModContent.Find<ModItem>(this.thorium.Name, "ManaChargedRocketeers").UpdateAccessory(player, hideVisual);
+            if (player.AddEffect<ArtificersEffect>(Item))
+            {
+                ModContent.Find<ModItem>(this.thorium.Name, "ArtificersRocketeers").UpdateAccessory(player, hideVisual);
+            }
+        }
+
+        public class ArtificersEffect : AccessoryEffect
+        {
+            public override Header ToggleHeader => Header.GetHeader<HelheimForceHeader>();
+            public override int ToggleItemType => ModContent.ItemType<ThoriumEnchant>();
         }
 
         public override void AddRecipes()
@@ -47,8 +58,8 @@ namespace ssm.Thorium.Enchantments
             recipe.AddIngredient(ModContent.ItemType<SilkTabard>());
             recipe.AddIngredient(ModContent.ItemType<SilkLeggings>());
             recipe.AddIngredient(ModContent.ItemType<ArtificersFocus>());
-            recipe.AddIngredient(ModContent.ItemType<EnchantedCane>());
-            //recipe.AddIngredient(ModContent.ItemType<ManaChargedRocketeers>());
+            recipe.AddIngredient(ModContent.ItemType<ArtificersShield>());
+            recipe.AddIngredient(ModContent.ItemType<ArtificersRocketeers>());
 
             recipe.AddTile(TileID.DemonAltar);
             recipe.Register();

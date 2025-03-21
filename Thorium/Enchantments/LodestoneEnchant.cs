@@ -50,7 +50,7 @@ namespace ssm.Thorium.Enchantments
 
         public class LodestoneEffect : AccessoryEffect
         {
-            public override Header ToggleHeader => Header.GetHeader<MidgardForceHeader>();
+            public override Header ToggleHeader => Header.GetHeader<MuspelheimForceHeader>();
             public override int ToggleItemType => ModContent.ItemType<LodestoneEnchant>();
         }
 

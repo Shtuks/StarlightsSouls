@@ -12,6 +12,9 @@ using ThoriumMod.Items.Donate;
 using FargowiltasSouls.Content.Items.Accessories.Enchantments;
 using ssm.Content.Buffs.Minions;
 using ThoriumMod.Buffs;
+using FargowiltasSouls.Core.AccessoryEffectSystem;
+using static ssm.Thorium.Enchantments.CyberPunkEnchant;
+using ssm.Content.SoulToggles;
 
 namespace ssm.Thorium.Enchantments
 {
@@ -35,20 +38,37 @@ namespace ssm.Thorium.Enchantments
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            //toggle
+            if (player.AddEffect<DepthAuraEffect>(Item))
+            {
+                //toggle
                 for (int i = 0; i < 255; i++)
                 {
                     Player player2 = Main.player[i];
                     if (player2.active && Vector2.Distance(player2.Center, player.Center) < 250f)
                     {
-                    player.AddBuff(ModContent.BuffType<DepthDiverAura>(), 30, false);
+                        player.AddBuff(ModContent.BuffType<DepthDiverAura>(), 30, false);
                     }
                 }
+            }
 
             ModContent.Find<ModItem>("ssm", "CoralEnchant").UpdateAccessory(player, hideVisual);
 
-            //toggle
+            if (player.AddEffect<DepthDiverEffect>(Item))
+            {
+                //toggle
                 ModContent.Find<ModItem>(this.thorium.Name, "DrownedDoubloon").UpdateAccessory(player, hideVisual);
+            }
+        }
+
+        public class DepthDiverEffect : AccessoryEffect
+        {
+            public override Header ToggleHeader => Header.GetHeader<JotunheimForceHeader>();
+            public override int ToggleItemType => ModContent.ItemType<DepthDiverEnchant>();
+        }
+        public class DepthAuraEffect : AccessoryEffect
+        {
+            public override Header ToggleHeader => Header.GetHeader<JotunheimForceHeader>();
+            public override int ToggleItemType => ModContent.ItemType<DepthDiverEnchant>();
         }
 
         public override void AddRecipes()

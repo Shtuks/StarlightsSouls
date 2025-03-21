@@ -14,7 +14,7 @@ namespace ssm
                 Recipe recipe = Main.recipe[i];
                 if (recipe.HasResult<TerrariaSoul>())
                 {
-                    recipe.AddIngredient<CelestialEnchant>();
+                 //   recipe.AddIngredient<CelestialEnchant>();
                 }
             }
         }

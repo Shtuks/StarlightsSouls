@@ -2,6 +2,7 @@
 using ssm.Content.Items.Materials;
 using ssm.Content.Projectiles.Weapons;
 using ssm.Content.Tiles;
+using ssm.CrossMod.CraftingStations;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;

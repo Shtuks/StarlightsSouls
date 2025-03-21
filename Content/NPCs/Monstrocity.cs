@@ -1,15 +1,10 @@
 using System.Collections.Generic;
-using FargowiltasSouls.Content.Items.Accessories.Masomode;
 using FargowiltasSouls.Core.Systems;
 using Terraria;
 using Terraria.ID;
 using Terraria.GameContent.Bestiary;
-using Terraria.GameContent.Personalities;
 using Terraria.Localization;
 using Terraria.ModLoader;
-using ssm.Content.NPCs;
-using Fargowiltas.NPCs;
-using ssm.Core;
 
 namespace ssm.Content.NPCs
 {

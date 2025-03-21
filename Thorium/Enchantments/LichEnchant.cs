@@ -44,7 +44,7 @@ namespace ssm.Thorium.Enchantments
                 thoriumPlayer.setPlague = true;
             }
             //lich effect
-            if (player.AddEffect<PlagueEffect>(Item))
+            if (player.AddEffect<LichEffect>(Item))
             {
                 thoriumPlayer.setLich = true;
             }

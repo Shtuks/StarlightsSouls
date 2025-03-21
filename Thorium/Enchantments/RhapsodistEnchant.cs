@@ -36,17 +36,16 @@ namespace ssm.Thorium.Enchantments
             //notes heal more and give random empowerments
             thoriumPlayer.armInspirator = true;
             //hotkey buff allies 
-            //thoriumPlayer.setInspirator = true;
+            thoriumPlayer.setInspiratorsHelmet = true;
             //hotkey buff self
-            //thoriumPlayer.setSoloist = true;
+            thoriumPlayer.setSoloistsHat = true;
         }
 
         public override void AddRecipes()
         {
             Recipe recipe = this.CreateRecipe();
 
-            recipe.AddIngredient(ModContent.ItemType<SoloistHat>()); //any..
-            //recipe.AddIngredient(ModContent.ItemType<RallyHat>());
+            recipe.AddIngredient(ModContent.ItemType<SoloistHat>());
             recipe.AddIngredient(ModContent.ItemType<RhapsodistChestWoofer>());
             recipe.AddIngredient(ModContent.ItemType<RhapsodistBoots>());
             recipe.AddIngredient(ModContent.ItemType<JingleBells>());

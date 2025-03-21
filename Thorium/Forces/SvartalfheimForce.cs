@@ -6,6 +6,7 @@ using Microsoft.Xna.Framework;
 using Terraria.Localization;
 using ssm.Core;
 using FargowiltasSouls.Content.Items.Accessories.Forces;
+using Fargowiltas.Items.Tiles;
 
 namespace ssm.Thorium.Forces
 {
@@ -30,7 +31,6 @@ namespace ssm.Thorium.Forces
             ModContent.Find<ModItem>(((ModType)this).Mod.Name, "YewWoodEnchant").UpdateAccessory(player, hideVisual);
             ModContent.Find<ModItem>(((ModType)this).Mod.Name, "JesterEnchant").UpdateAccessory(player, hideVisual);
             ModContent.Find<ModItem>(((ModType)this).Mod.Name, "ConduitEnchant").UpdateAccessory(player, hideVisual);
-            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "DarksteelEnchant").UpdateAccessory(player, hideVisual);
             ModContent.Find<ModItem>(((ModType)this).Mod.Name, "TitanEnchant").UpdateAccessory(player, hideVisual);
             ModContent.Find<ModItem>(((ModType)this).Mod.Name, "AstroEnchant").UpdateAccessory(player, hideVisual);
         }
@@ -43,11 +43,10 @@ namespace ssm.Thorium.Forces
             recipe.AddIngredient(null, "YewWoodEnchant");
             recipe.AddIngredient(null, "JesterEnchant");
             recipe.AddIngredient(null, "ConduitEnchant");
-            recipe.AddIngredient(null, "DarksteelEnchant");
             recipe.AddIngredient(null, "TitanEnchant");
             recipe.AddIngredient(null, "AstroEnchant");
 
-            recipe.AddTile(TileID.LunarCraftingStation);
+            recipe.AddTile<CrucibleCosmosSheet>();
 
             recipe.Register();
         }

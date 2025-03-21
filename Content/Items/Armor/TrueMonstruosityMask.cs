@@ -11,6 +11,7 @@ using ssm.Content.Items.Materials;
 using CalamityMod.Items.Armor.Demonshade;
 using CalamityMod.Items.Armor.GemTech;
 using ssm.Content.Tiles;
+using ssm.CrossMod.CraftingStations;
 
 namespace ssm.Content.Items.Armor
 {

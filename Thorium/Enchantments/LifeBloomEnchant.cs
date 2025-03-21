@@ -41,7 +41,6 @@ namespace ssm.Thorium.Enchantments
             modPlayer.LifeBloomEnchant = true;
 
             ModContent.Find<ModItem>("ssm", "LivingWoodEnchant").UpdateAccessory(player, hideVisual);
-            //ModContent.Find<ModItem>("ssm", "BulbEnchant").UpdateAccessory(player, hideVisual);
 
             if (player.AddEffect<LifeBloomEffect>(Item))
             {
@@ -52,7 +51,7 @@ namespace ssm.Thorium.Enchantments
 
         public class LifeBloomEffect : AccessoryEffect
         {
-            public override Header ToggleHeader => Header.GetHeader<MuspelheimForceHeader>();
+            public override Header ToggleHeader => Header.GetHeader<AlfheimForceHeader>();
             public override int ToggleItemType => ModContent.ItemType<LifeBloomEnchant>();
         }
 
@@ -63,8 +62,6 @@ namespace ssm.Thorium.Enchantments
             recipe.AddIngredient(ModContent.ItemType<LifeBloomMask>());
             recipe.AddIngredient(ModContent.ItemType<LifeBloomMail>());
             recipe.AddIngredient(ModContent.ItemType<LifeBloomLeggings>());
-            recipe.AddIngredient(ModContent.ItemType<LivingWoodEnchant>());
-            //recipe.AddIngredient(ModContent.ItemType<BulbEnchant>());
             recipe.AddIngredient(ModContent.ItemType<HeartOfTheJungle>());
 
             recipe.AddTile(TileID.CrystalBall);

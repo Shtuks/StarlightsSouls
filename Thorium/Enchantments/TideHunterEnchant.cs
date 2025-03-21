@@ -8,6 +8,9 @@ using ssm.Core;
 using ThoriumMod.Items.NPCItems;
 using ThoriumMod.Items.Painting;
 using FargowiltasSouls.Content.Items.Accessories.Enchantments;
+using FargowiltasSouls.Core.AccessoryEffectSystem;
+using static ssm.Thorium.Enchantments.SandstoneEnchant;
+using ssm.Content.SoulToggles;
 
 namespace ssm.Thorium.Enchantments
 {
@@ -32,14 +35,21 @@ namespace ssm.Thorium.Enchantments
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
             ShtunThoriumPlayer modPlayer = player.GetModPlayer<ShtunThoriumPlayer>();
-            //tide hunter set bonus
-            modPlayer.TideHunterEnchant = true;
+
+            if (player.AddEffect<TideHunterEffect>(Item))
+            {
+                //tide hunter set bonus
+                modPlayer.TideHunterEnchant = true;
+            }
+
             //angler bowl
             ModContent.Find<ModItem>(this.thorium.Name, "AnglerBowl").UpdateAccessory(player, hideVisual);
-            //yew set bonus
-            modPlayer.YewEnchant = true;
-            //goblin war shield
-            ModContent.Find<ModItem>(this.thorium.Name, "GoblinWarshield").UpdateAccessory(player, hideVisual);
+        }
+
+        public class TideHunterEffect : AccessoryEffect
+        {
+            public override Header ToggleHeader => Header.GetHeader<JotunheimForceHeader>();
+            public override int ToggleItemType => ModContent.ItemType<SandstoneEnchant>();
         }
 
         public override void AddRecipes()
@@ -49,7 +59,6 @@ namespace ssm.Thorium.Enchantments
             recipe.AddIngredient(ModContent.ItemType<TideHunterCap>());
             recipe.AddIngredient(ModContent.ItemType<TideHunterChestpiece>());
             recipe.AddIngredient(ModContent.ItemType<TideHunterLeggings>());
-            recipe.AddIngredient(ModContent.ItemType<YewWoodEnchant>());
             recipe.AddIngredient(ModContent.ItemType<AnglerBowl>());
             recipe.AddIngredient(ModContent.ItemType<HydroPickaxe>());
 

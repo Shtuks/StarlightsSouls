@@ -84,7 +84,7 @@ namespace ssm.Thorium.Enchantments
 
         public class TideTurnerEffect : AccessoryEffect
         {
-            public override Header ToggleHeader => Header.GetHeader<AsgardForceHeader>();
+            public override Header ToggleHeader => Header.GetHeader<JotunheimForceHeader>();
             public override int ToggleItemType => ModContent.ItemType<TideTurnerEnchant>();
         }
 
@@ -94,8 +94,7 @@ namespace ssm.Thorium.Enchantments
 
             Recipe recipe = this.CreateRecipe();
 
-            recipe.AddIngredient(ModContent.ItemType<TideTurnerHelmet>()); //any..
-            //recipe.AddIngredient(ModContent.ItemType<TideTurnersGaze>());
+            recipe.AddIngredient(ModContent.ItemType<TideTurnerHelmet>());
             recipe.AddIngredient(ModContent.ItemType<TideTurnerBreastplate>());
             recipe.AddIngredient(ModContent.ItemType<TideTurnerGreaves>());
             recipe.AddIngredient(ModContent.ItemType<PlagueLordFlask>());

@@ -7,6 +7,7 @@ using ssm.Thorium.Enchantments;
 using FargowiltasSouls;
 using ssm.Core;
 using FargowiltasSouls.Content.Items.Accessories.Forces;
+using Fargowiltas.Items.Tiles;
 
 namespace ssm.Thorium.Forces
 {
@@ -27,6 +28,7 @@ namespace ssm.Thorium.Forces
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
+            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "WhisperingEnchant").UpdateAccessory(player, hideVisual);
             ModContent.Find<ModItem>(((ModType)this).Mod.Name, "DepthDiverEnchant").UpdateAccessory(player, hideVisual);
             ModContent.Find<ModItem>(((ModType)this).Mod.Name, "TideHunterEnchant").UpdateAccessory(player, hideVisual);
             ModContent.Find<ModItem>(((ModType)this).Mod.Name, "NagaSkinEnchant").UpdateAccessory(player, hideVisual);
@@ -38,13 +40,14 @@ namespace ssm.Thorium.Forces
         {
             Recipe recipe = this.CreateRecipe();
 
+            recipe.AddIngredient(ModContent.ItemType<WhisperingEnchant>());
             recipe.AddIngredient(ModContent.ItemType<DepthDiverEnchant>());
             recipe.AddIngredient(ModContent.ItemType<TideHunterEnchant>());
             recipe.AddIngredient(ModContent.ItemType<NagaSkinEnchant>());
             recipe.AddIngredient(ModContent.ItemType<CryomancerEnchant>());
             recipe.AddIngredient(ModContent.ItemType<TideTurnerEnchant>());
 
-            recipe.AddTile(TileID.LunarCraftingStation);
+            recipe.AddTile<CrucibleCosmosSheet>();
 
             recipe.Register();
         }

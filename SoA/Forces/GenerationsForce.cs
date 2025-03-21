@@ -28,6 +28,7 @@ namespace ssm.SoA.Forces
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
+            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "CairoCrusaderEnchant").UpdateAccessory(player, hideVisual);
             ModContent.Find<ModItem>(((ModType)this).Mod.Name, "EerieEnchant").UpdateAccessory(player, hideVisual);
             ModContent.Find<ModItem>(((ModType)this).Mod.Name, "BismuthEnchant").UpdateAccessory(player, hideVisual);
             ModContent.Find<ModItem>(((ModType)this).Mod.Name, "DreadfireEnchant").UpdateAccessory(player, hideVisual);
@@ -37,6 +38,7 @@ namespace ssm.SoA.Forces
         public override void AddRecipes()
         {
             Recipe recipe = this.CreateRecipe();
+            recipe.AddIngredient<CairoCrusaderEnchant>();
             recipe.AddIngredient<EerieEnchant>();
             recipe.AddIngredient<BismuthEnchant>();
             recipe.AddIngredient<DreadfireEnchant>();

@@ -16,20 +16,20 @@ namespace ssm.Reworks
 
 		public override void UpdateEquip(Item Item, Player player)
 		{
-			if (Item.type == ModContent.ItemType<StyxChestplate>())
+			if (Item.type == ModContent.ItemType<StyxCrown>())
 			{
-				Item.defense += 20;
+				Item.defense = 35;
 				player.GetDamage(DamageClass.Generic) += 10 / 100f;
 				player.maxMinions += 5;
             }
 			if (Item.type == ModContent.ItemType<StyxChestplate>())
 			{
-                Item.defense += 20;
+                Item.defense = 45;
                 player.GetDamage(DamageClass.Generic) += 10 / 100f;
 			}
 			if (Item.type == ModContent.ItemType<StyxLeggings>())
 			{
-                Item.defense += 20;
+                Item.defense = 40;
                 player.GetDamage(DamageClass.Generic) += 10 / 100f;
 			}
 		}

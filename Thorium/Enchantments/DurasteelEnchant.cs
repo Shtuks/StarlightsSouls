@@ -11,6 +11,9 @@ using ThoriumMod.Items.BasicAccessories;
 using ThoriumMod.Items.Donate;
 using FargowiltasSouls.Content.Items.Accessories.Enchantments;
 using ThoriumMod.Items.Thorium;
+using FargowiltasSouls.Core.AccessoryEffectSystem;
+using ssm.Content.SoulToggles;
+using static ssm.Thorium.Enchantments.LodestoneEnchant;
 
 namespace ssm.Thorium.Enchantments
 {
@@ -47,8 +50,17 @@ namespace ssm.Thorium.Enchantments
             ModContent.GetModItem(ModContent.ItemType<SpikedBracer>()).UpdateAccessory(player, hideVisual);
             ModContent.GetModItem(ModContent.ItemType<ThoriumShield>()).UpdateAccessory(player, hideVisual);
 
-            //toggle
-            ModContent.GetModItem(ModContent.ItemType<IncandescentSpark>()).UpdateAccessory(player, hideVisual);
+            if (player.AddEffect<IncandescentSparkEffect>(Item))
+            {
+                //toggle
+                ModContent.GetModItem(ModContent.ItemType<IncandescentSpark>()).UpdateAccessory(player, hideVisual);
+            }
+        }
+
+        public class IncandescentSparkEffect : AccessoryEffect
+        {
+            public override Header ToggleHeader => Header.GetHeader<MidgardForceHeader>();
+            public override int ToggleItemType => ModContent.ItemType<DurasteelEnchant>();
         }
 
         public override void AddRecipes()

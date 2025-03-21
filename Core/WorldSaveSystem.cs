@@ -8,11 +8,16 @@ namespace ssm.Systems
     public class WorldSaveSystem : ModSystem
     {
         public static bool talk = false;
+
         public static bool downedEch = false;
         public static bool downedFish = false;
         public static bool downedShtuxibus = false;
         public static bool downedChtuxlagor = false;
-        public static bool TrueChtuxlagorWrathModeEX = false;
+
+        public static bool TrueSuperChtuxlagorWrathModeOmegaEX = false;
+        public static bool trueRevEternity = false;
+        public static bool trueDeathEternity = false;
+
         public override void SaveWorldData(TagCompound tag)
         {
             if (downedShtuxibus)
@@ -31,13 +36,21 @@ namespace ssm.Systems
             {
                 tag["downedFish"] = true;
             }
-            if (TrueChtuxlagorWrathModeEX)
+            if (TrueSuperChtuxlagorWrathModeOmegaEX)
             {
-                tag["TrueChtuxlagorWrathModeEX"] = true;
+                tag["TrueSuperChtuxlagorWrathModeOmegaEX"] = true;
             }
             if (downedChtuxlagor)
             {
                 tag["downedChtuxlagor"] = true;
+            }
+            if (trueRevEternity)
+            {
+                tag["trueRevEternity"] = true;
+            }
+            if (trueDeathEternity)
+            {
+                tag["trueDeathEternity"] = true;
             }
         }
         public override void LoadWorldData(TagCompound tag)
@@ -47,7 +60,9 @@ namespace ssm.Systems
             talk = tag.ContainsKey("talk");
             downedFish = tag.ContainsKey("downedFish");
             downedChtuxlagor = tag.ContainsKey("downedChtuxlagor");
-            TrueChtuxlagorWrathModeEX = tag.ContainsKey("TrueChtuxlagorWrathModeEX");
+            TrueSuperChtuxlagorWrathModeOmegaEX = tag.ContainsKey("TrueSuperChtuxlagorWrathModeOmegaEX");
+            trueRevEternity = tag.ContainsKey("trueRevEternity");
+            trueDeathEternity = tag.ContainsKey("trueDeathEternity");
         }
         public override void NetSend(BinaryWriter writer)
         {
@@ -55,9 +70,11 @@ namespace ssm.Systems
             flags[0] = downedShtuxibus;
             flags[1] = downedEch;
             flags[3] = downedChtuxlagor;
-            flags[2] = TrueChtuxlagorWrathModeEX;
+            flags[2] = TrueSuperChtuxlagorWrathModeOmegaEX;
             flags[4] = downedFish;
             flags[5] = talk;
+            flags[6] = trueRevEternity;
+            flags[7] = trueDeathEternity;
             writer.Write(flags);
         }
         public override void NetReceive(BinaryReader reader)
@@ -66,9 +83,11 @@ namespace ssm.Systems
             downedShtuxibus = flags[0];
             downedEch = flags[1];
             downedChtuxlagor = flags[3];
-            TrueChtuxlagorWrathModeEX = flags[2];
+            TrueSuperChtuxlagorWrathModeOmegaEX = flags[2];
             downedFish = flags[4];
             talk = flags[5];
+            trueRevEternity = flags[6];
+            trueDeathEternity = flags[7];
         }
     }
 }

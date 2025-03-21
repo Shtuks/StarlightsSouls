@@ -34,10 +34,9 @@ namespace ssm.Thorium.Enchantments
         {
             ShtunThoriumPlayer modPlayer = player.GetModPlayer<ShtunThoriumPlayer>();
             ThoriumPlayer thoriumPlayer = player.GetModPlayer<ThoriumPlayer>();
-            //all allies invuln hot key
+
             thoriumPlayer.setDreamWeaversHood = true;
-            //enemies slowed and take more dmg hot key
-            //thoriumPlayer.setDreamWeaversMask = true;
+            thoriumPlayer.setDreamWeaversMask.Set(base.Item);
         }
 
         public override void AddRecipes()
@@ -46,8 +45,7 @@ namespace ssm.Thorium.Enchantments
 
             Recipe recipe = this.CreateRecipe();
 
-            recipe.AddIngredient(ModContent.ItemType<DreamWeaversHelmet>()); //any..
-            //recipe.AddIngredient(ModContent.ItemType<DreamWeaversHood>());
+            recipe.AddIngredient(ModContent.ItemType<DreamWeaversHelmet>());
             recipe.AddIngredient(ModContent.ItemType<DreamWeaversTabard>());
             recipe.AddIngredient(ModContent.ItemType<DreamWeaversTreads>());
             recipe.AddIngredient(ModContent.ItemType<DragonHeartWand>());

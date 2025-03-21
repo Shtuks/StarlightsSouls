@@ -34,6 +34,8 @@ namespace ssm.Thorium.Enchantments
         {
             ThoriumPlayer modPlayer = player.GetModPlayer<ThoriumPlayer>();
             modPlayer.setAstro = true;
+            player.maxMinions++;
+            player.maxTurrets++;
         }
 
         public override void AddRecipes()
@@ -47,7 +49,7 @@ namespace ssm.Thorium.Enchantments
             recipe.AddIngredient(ModContent.ItemType<TechniqueMeteorStomp>());
             recipe.AddIngredient(ModContent.ItemType<MeteoriteClusterBomb>(), 300);
 
-            recipe.AddTile(TileID.LunarCraftingStation);
+            recipe.AddTile(TileID.DemonAltar);
             recipe.Register();
         }
     }

@@ -48,7 +48,7 @@ namespace ssm.Thorium.Enchantments
 
         public class SacredEffect : AccessoryEffect
         {
-            public override Header ToggleHeader => Header.GetHeader<AlfheimForceHeader>();
+            public override Header ToggleHeader => Header.GetHeader<AsgardForceHeader>();
             public override int ToggleItemType => ModContent.ItemType<SacredEnchant>();
         }
 

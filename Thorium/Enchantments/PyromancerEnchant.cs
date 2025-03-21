@@ -37,8 +37,8 @@ namespace ssm.Thorium.Enchantments
         {
             ThoriumPlayer modPlayer = player.GetModPlayer<ThoriumPlayer>();
             modPlayer.setPyromancer = true;
+            modPlayer.napalm = true;
 
-            ModContent.Find<ModItem>(this.thorium.Name, "PyromancerCowl").UpdateArmorSet(player);
 
             if (player.AddEffect<PlasmaEffect>(Item))
             {
@@ -63,7 +63,7 @@ namespace ssm.Thorium.Enchantments
 
         public class PlasmaEffect : AccessoryEffect
         {
-            public override Header ToggleHeader => Header.GetHeader<AsgardForceHeader>();
+            public override Header ToggleHeader => Header.GetHeader<MuspelheimForceHeader>();
             public override int ToggleItemType => ModContent.ItemType<PyromancerEnchant>();
         }
     }

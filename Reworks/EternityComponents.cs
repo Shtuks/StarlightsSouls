@@ -50,11 +50,6 @@ namespace ssm.Reworks
                     ModContent.Find<ModItem>(((ModType)this).Mod.Name, "ThoriumSoul").UpdateAccessory(player, false);
                 }
             }
-
-            if (Item.type == ModContent.ItemType<CosmoForce>() || Item.type == ModContent.ItemType<EternitySoul>())
-            {
-                ModContent.Find<ModItem>(((ModType)this).Mod.Name, "CelestialEnchant").UpdateAccessory(player, false);
-            }
         }
     }
 }

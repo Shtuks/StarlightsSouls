@@ -12,6 +12,7 @@ using FargowiltasSouls.Content.Items;
 using ssm.Content.Items.Materials;
 using ssm.Content.Tiles;
 using Fargowiltas.Items.Summons.SwarmSummons.Energizers;
+using Fargowiltas.Items.Tiles;
 
 namespace ssm.Content.Items.Materials
 {
@@ -62,7 +63,7 @@ namespace ssm.Content.Items.Materials
             .AddIngredient<EnergizerSlime>()
             .AddIngredient<EnergizerFish>()
             .AddIngredient<EnergizerDarkMage>()
-            .AddTile<MutantsForgeTile>()
+            .AddTile<CrucibleCosmosSheet>()
             .Register();
         }
     }

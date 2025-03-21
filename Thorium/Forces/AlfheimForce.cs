@@ -5,6 +5,7 @@ using ThoriumMod;
 using Terraria.Localization;
 using ssm.Core;
 using FargowiltasSouls.Content.Items.Accessories.Forces;
+using Fargowiltas.Items.Tiles;
 
 namespace ssm.Thorium.Forces
 {
@@ -41,7 +42,7 @@ namespace ssm.Thorium.Forces
             recipe.AddIngredient(null, "LifeBinderEnchant");
             recipe.AddIngredient(null, "BiotechEnchant");
 
-            recipe.AddTile(TileID.LunarCraftingStation);
+            recipe.AddTile<CrucibleCosmosSheet>();
 
             recipe.Register();
         }

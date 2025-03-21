@@ -6,8 +6,8 @@ using ssm.Core;
 
 namespace ssm.Calamity.Addons
 {
-    [ExtendsFromMod(ModCompatibility.Catalyst.Name, ModCompatibility.Goozma.Name, ModCompatibility.Clamity.Name, ModCompatibility.WrathoftheGods.Name, ModCompatibility.Entropy.Name)]
-    [JITWhenModsEnabled(ModCompatibility.Catalyst.Name, ModCompatibility.Goozma.Name, ModCompatibility.Clamity.Name, ModCompatibility.WrathoftheGods.Name, ModCompatibility.Entropy.Name)]
+    [ExtendsFromMod(ModCompatibility.Catalyst.Name, ModCompatibility.Goozma.Name, ModCompatibility.Clamity.Name, ModCompatibility.Entropy.Name)]
+    [JITWhenModsEnabled(ModCompatibility.Catalyst.Name, ModCompatibility.Goozma.Name, ModCompatibility.Clamity.Name, ModCompatibility.Entropy.Name)]
     public class AddonsForce : BaseForce
     {
         public override void SetDefaults()
@@ -22,8 +22,6 @@ namespace ssm.Calamity.Addons
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "DivineEnchant").UpdateAccessory(player, hideVisual);
-            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "EmptinessEnchant").UpdateAccessory(player, hideVisual);
             ModContent.Find<ModItem>(((ModType)this).Mod.Name, "IntergelacticEnchant").UpdateAccessory(player, hideVisual);
             ModContent.Find<ModItem>(((ModType)this).Mod.Name, "ShogunEnchant").UpdateAccessory(player, hideVisual);
             ModContent.Find<ModItem>(((ModType)this).Mod.Name, "VoidFaquirEnchant").UpdateAccessory(player, hideVisual);
@@ -34,8 +32,6 @@ namespace ssm.Calamity.Addons
         {
             Recipe recipe = this.CreateRecipe();
 
-            recipe.AddIngredient(null, "DivineEnchant");
-            recipe.AddIngredient(null, "EmptinessEnchant");
             recipe.AddIngredient(null, "IntergelacticEnchant");
             recipe.AddIngredient(null, "ShogunEnchant");
             recipe.AddIngredient(null, "VoidFaquirEnchant");

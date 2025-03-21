@@ -9,6 +9,9 @@ using ThoriumMod.Items.NPCItems;
 using ThoriumMod.Items.ThrownItems;
 using ThoriumMod.Items.BardItems;
 using FargowiltasSouls.Content.Items.Accessories.Enchantments;
+using FargowiltasSouls.Core.AccessoryEffectSystem;
+using static ssm.Thorium.Enchantments.DepthDiverEnchant;
+using ssm.Content.SoulToggles;
 
 namespace ssm.Thorium.Enchantments
 {
@@ -32,13 +35,22 @@ namespace ssm.Thorium.Enchantments
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            //toggle
+            if (player.AddEffect<DragonEffect>(Item))
+            {
+                //toggle
                 string oldSetBonus = player.setBonus;
                 ModContent.Find<ModItem>(this.thorium.Name, "DragonMask").UpdateArmorSet(player);
                 player.setBonus = oldSetBonus;
+            }
 
             ModContent.Find<ModItem>(this.thorium.Name, "DragonTalonNecklace").UpdateAccessory(player, hideVisual);
             ModContent.Find<ModItem>(this.thorium.Name, "TunePlayerMovementSpeed").UpdateAccessory(player, hideVisual);
+        }
+
+        public class DragonEffect : AccessoryEffect
+        {
+            public override Header ToggleHeader => Header.GetHeader<VanaheimForceHeader>();
+            public override int ToggleItemType => ModContent.ItemType<DragonEnchant>();
         }
 
         public override void AddRecipes()

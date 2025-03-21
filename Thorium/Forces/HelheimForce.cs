@@ -7,6 +7,7 @@ using Terraria.Localization;
 using ssm.Thorium.Enchantments;
 using ssm.Core;
 using FargowiltasSouls.Content.Items.Accessories.Forces;
+using Fargowiltas.Items.Tiles;
 
 namespace ssm.Thorium.Forces
 {
@@ -44,7 +45,7 @@ namespace ssm.Thorium.Forces
             recipe.AddIngredient(ModContent.ItemType<ShadeMasterEnchant>());
             recipe.AddIngredient(ModContent.ItemType<DreamWeaverEnchant>());
 
-            recipe.AddTile(TileID.LunarCraftingStation);
+            recipe.AddTile<CrucibleCosmosSheet>();
 
             recipe.Register();
         }

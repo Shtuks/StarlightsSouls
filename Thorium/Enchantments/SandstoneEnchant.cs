@@ -9,6 +9,9 @@ using ThoriumMod.Items.BossTheGrandThunderBird;
 using ssm.Core;
 using ThoriumMod.Items.NPCItems;
 using FargowiltasSouls.Content.Items.Accessories.Enchantments;
+using FargowiltasSouls.Core.AccessoryEffectSystem;
+using ssm.Content.SoulToggles;
+using static ssm.Thorium.Enchantments.MarchingBandEnchant;
 
 namespace ssm.Thorium.Enchantments
 {
@@ -32,8 +35,17 @@ namespace ssm.Thorium.Enchantments
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            //toggle
+            if (player.AddEffect<SandstoneEffect>(Item))
+            {
+                //toggle
                 ModContent.Find<ModItem>(this.thorium.Name, "SandStoneHelmet").UpdateArmorSet(player);
+            }
+        }
+
+        public class SandstoneEffect : AccessoryEffect
+        {
+            public override Header ToggleHeader => Header.GetHeader<MuspelheimForceHeader>();
+            public override int ToggleItemType => ModContent.ItemType<SandstoneEnchant>();
         }
 
         public override void AddRecipes()

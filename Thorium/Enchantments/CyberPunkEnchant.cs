@@ -47,7 +47,7 @@ namespace ssm.Thorium.Enchantments
 
         public class CyberPunkEffect : AccessoryEffect
         {
-            public override Header ToggleHeader => Header.GetHeader<NiflheimForceHeader>();
+            public override Header ToggleHeader => Header.GetHeader<MuspelheimForceHeader>();
             public override int ToggleItemType => ModContent.ItemType<CyberPunkEnchant>();
         }
 
