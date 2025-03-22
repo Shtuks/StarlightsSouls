@@ -107,7 +107,7 @@ namespace ssm
                 //RedCaughtNpcs.RedRegisterItems();
             }
 
-            SkyManager.Instance["ssm:Shtuxibus"] = new ShtuxibusSky();
+            //SkyManager.Instance["ssm:Shtuxibus"] = new ShtuxibusSky();
             SkyManager.Instance["ssm:Chtuxlagor"] = new ChtuxlagorSky();
 
             ModLoader.TryGetMod("BossChecklist", out Mod bossChecklist);

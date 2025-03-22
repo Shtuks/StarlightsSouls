@@ -41,6 +41,11 @@ using Terraria.ModLoader;
 [AutoloadBossHead]
 public class MutantEX : ModNPC
 {
+    public override bool IsLoadingEnabled(Mod mod)
+    {
+        return false;
+    }
+
     public bool playerInvulTriggered;
 
     public int ritualProj;
@@ -74,7 +79,7 @@ public class MutantEX : ModNPC
     private Player player => Main.player[NPC.target];
 
     public override void SetStaticDefaults()
-       {
+    {
         Main.npcFrameCount[NPC.type] = 4;
         NPCID.Sets.NoMultiplayerSmoothingByType[NPC.type] = true;
         NPCID.Sets.MPAllowedEnemies[Type] = true;
@@ -90,7 +95,6 @@ public class MutantEX : ModNPC
         }
         PostAI();
     }
-
     public override void SetDefaults()
     {
         NPC.width = 120;

@@ -16,7 +16,6 @@ using ssm.Content.Items.Consumables;
 using ssm.Content.Items.Materials;
 using ssm.Content.Items.Singularities;
 using ssm.Content.NPCs;
-using ssm.Content.NPCs.Shtuxibus;
 using Fargowiltas;
 using Terraria.ModLoader;
 using Fargowiltas.Items.Summons.SwarmSummons.Energizers;

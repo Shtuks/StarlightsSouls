@@ -78,7 +78,7 @@ namespace ssm.Content.Projectiles.Minions
                     {
                         Projectile.localAI[0] = 0;
                         if (Projectile.owner == Main.myPlayer)
-                            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Projectile.Center, Projectile.velocity + Projectile.DirectionTo(npc.Center) * 30f, ModContent.Find<ModProjectile>(fargosouls.Name, "HentaiSpearThrown").Type, 300, Projectile.knockBack / 2, Projectile.owner, npc.whoAmI);
+                            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Projectile.Center, Projectile.velocity + Projectile.DirectionTo(npc.Center) * 30f, ModContent.Find<ModProjectile>(fargosouls.Name, "PenetratorThrown").Type, 300, Projectile.knockBack / 2, Projectile.owner, npc.whoAmI);
                     }
                 }
                 else //forget target

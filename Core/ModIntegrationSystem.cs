@@ -1,18 +1,11 @@
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
 using Terraria.ModLoader;
-using ssm.Content.NPCs.Shtuxibus;
 using ssm.Content.Items.Consumables;
 using ssm.Content.Items.Materials;
-using Terraria.Localization;
-using ssm.Content.Buffs;
-using ssm.Systems;
 using ssm.Core;
 using ssm.Content.NPCs.ECH;
 using ssm.Content.Items.ShtuxibusPlush;
-using Terraria.ModLoader.Config;
 using ssm.Content.NPCs.DukeFishronEX;
 using ssm.Content.NPCs.StarlightCat;
 
@@ -30,14 +23,14 @@ namespace ssm.Systems
 
         private void DoBossChecklistIntegration()
         {
-            if (!ModLoader.TryGetMod("BossChecklist", out Mod bossChecklistMod)) { return; }
-            if (bossChecklistMod.Version < new Version(1, 6)) { return; }
-            string internalName1 = "Shtuxibus";
-            float weight1 = 745f;
-            Func<bool> downed1 = () => WorldSaveSystem.downedShtuxibus;
-            int bossType1 = ModContent.NPCType<Shtuxibus>();
-            int spawnItem1 = ModContent.ItemType<ShtuxianCurse>();
-            List<int> collectibles1 = new List<int>() { ModContent.ItemType<ShtuxiumSoulShard>(), };
+            //if (!ModLoader.TryGetMod("BossChecklist", out Mod bossChecklistMod)) { return; }
+            //if (bossChecklistMod.Version < new Version(1, 6)) { return; }
+            //string internalName1 = "Shtuxibus";
+            //float weight1 = 745f;
+            //Func<bool> downed1 = () => WorldSaveSystem.downedShtuxibus;
+            //int bossType1 = ModContent.NPCType<Shtuxibus>();
+            //int spawnItem1 = ModContent.ItemType<ShtuxianCurse>();
+            //List<int> collectibles1 = new List<int>() { ModContent.ItemType<ShtuxiumSoulShard>(), };
 
             string internalName2 = "Echdeath";
             float weight2 = 745.1f;

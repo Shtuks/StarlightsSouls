@@ -65,7 +65,8 @@ namespace ssm.Calamity.Souls
         {
             Recipe recipe = this.CreateRecipe(1);
             recipe.AddIngredient<ShatteredCommunity>();
-            recipe.AddIngredient<ExplorationForce>();
+            recipe.AddIngredient<GaleForce>();
+            recipe.AddIngredient<ElementsForce>();
             recipe.AddIngredient<BrandoftheBrimstoneWitch>();
             recipe.AddIngredient<PotJT>();
             recipe.AddIngredient<DemonShadeEnchant>();

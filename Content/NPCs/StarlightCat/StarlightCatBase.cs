@@ -1,5 +1,4 @@
-﻿using ssm.Content.NPCs.Shtuxibus;
-using Terraria;
+﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -19,7 +18,6 @@ namespace ssm.Content.NPCs.StarlightCat
         }
         public override void SetDefaults()
         {
-            //NPC.BossBar = ModContent.GetInstance<ShtuxibusBar>();
             NPC.width = 120;
             NPC.height = 120;
             NPC.damage = 100000;

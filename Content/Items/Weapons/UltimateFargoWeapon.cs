@@ -10,7 +10,7 @@ using ssm.CrossMod.CraftingStations;
 using FargowiltasSouls.Content.Projectiles.BossWeapons;
 using StyxGazer2 = FargowiltasSouls.Content.Projectiles.BossWeapons.StyxGazer;
 using StyxGazer = FargowiltasSouls.Content.Items.Weapons.FinalUpgrades.StyxGazer;
-using HentaiSpear = FargowiltasSouls.Content.Items.Weapons.FinalUpgrades.HentaiSpear;
+using Penetrator = FargowiltasSouls.Content.Items.Weapons.FinalUpgrades.Penetrator;
 using SparklingLove = FargowiltasSouls.Content.Items.Weapons.FinalUpgrades.SparklingLove;
 
 namespace ssm.Content.Items.Weapons
@@ -34,7 +34,7 @@ namespace ssm.Content.Items.Weapons
             Item.rare = 11;
             Item.useTurn = true;
             Item.UseSound = SoundID.Item113;
-            Item.shoot = ModContent.ProjectileType<FargowiltasSouls.Content.Projectiles.BossWeapons.HentaiSpear>();
+            Item.shoot = ModContent.ProjectileType<FargowiltasSouls.Content.Projectiles.BossWeapons.Penetrator>();
             Item.shootSpeed = 30f;
         }
         public override bool CanUseItem(Player player)
@@ -62,7 +62,7 @@ namespace ssm.Content.Items.Weapons
                     Item.DamageType = DamageClass.Ranged;
                     Item.useTime = 26;
                     Item.mana = 0;
-                    Item.shoot = ModContent.ProjectileType<HentaiSpearThrown>();
+                    Item.shoot = ModContent.ProjectileType<PenetratorThrown>();
                     Item.noUseGraphic = true;
                     Item.useTurn = false;
                 }
@@ -84,7 +84,7 @@ namespace ssm.Content.Items.Weapons
                     this.Item.useTime = 16;
                     this.Item.mana = 0;
                     this.Item.DamageType = DamageClass.Melee;
-                    this.Item.shoot = ModContent.ProjectileType<HentaiSpearSpin>();
+                    this.Item.shoot = ModContent.ProjectileType<PenetratorSpin>();
                     this.Item.shootSpeed = 1f;
                     this.Item.useTurn = true;
                 }
@@ -117,7 +117,7 @@ namespace ssm.Content.Items.Weapons
         public override void AddRecipes()
         {
             CreateRecipe().
-                AddIngredient<HentaiSpear>().
+                AddIngredient<Penetrator>().
                 AddIngredient<StyxGazer>().
                 AddIngredient<SparklingLove>().
                 AddIngredient<ShtuxiumBar>(5).
