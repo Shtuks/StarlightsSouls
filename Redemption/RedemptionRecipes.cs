@@ -5,8 +5,9 @@ using Redemption.Items.Materials.PostML;
 using Redemption.Items.Accessories.PostML;
 using Redemption.Items.Accessories.HM;
 using ssm.Core;
+using FargowiltasSouls.Content.Items.Accessories.Forces;
 
-namespace ssm
+namespace ssm.Redemption
 {
     [ExtendsFromMod(ModCompatibility.Redemption.Name)]
     [JITWhenModsEnabled(ModCompatibility.Redemption.Name)]
@@ -45,6 +46,12 @@ namespace ssm
                 if (recipe.HasResult<MutagenRitualist>())
                 {
                     recipe.AddIngredient<LifeFragment>(5);
+                }
+
+                if (recipe.createItem.ModItem is BaseForce)
+                {
+                    if (!recipe.HasIngredient<RoboBrain>())
+                        recipe.AddIngredient<RoboBrain>();
                 }
 
                 if (recipe.HasResult<FlightMasterySoul>())

@@ -8,6 +8,10 @@ namespace ssm.CrossMod.Difficulties
     [JITWhenModsEnabled(ModCompatibility.Calamity.Name, ModCompatibility.SacredTools.Name, ModCompatibility.Crossmod.Name)]
     internal class DifficultiesRegister : ModSystem
     {
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return ShtunConfig.Instance.ExperimentalContent;
+        }
         public override void PostSetupContent()
         {
             Mod cal = ModCompatibility.Calamity.Mod;

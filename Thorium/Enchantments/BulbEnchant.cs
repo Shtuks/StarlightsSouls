@@ -55,6 +55,7 @@ namespace ssm.Thorium.Enchantments
         {
             public override Header ToggleHeader => Header.GetHeader<AlfheimForceHeader>();
             public override int ToggleItemType => ModContent.ItemType<BulbEnchant>();
+            public override bool MutantsPresenceAffects => true;
         }
 
         public override void AddRecipes()

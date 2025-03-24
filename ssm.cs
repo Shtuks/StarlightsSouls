@@ -1,3 +1,4 @@
+global using LumUtils = Luminance.Common.Utilities.Utilities;
 global using FargowiltasSouls.Core.ModPlayers;
 global using FargowiltasSouls.Core.Toggler;
 using ssm.Content.Sky;
@@ -18,6 +19,8 @@ using ssm.Systems;
 using ssm.Content.Items;
 using ssm.Thorium;
 using System.Collections.Generic;
+using ssm.SoA;
+using ssm.Redemption;
 
 namespace ssm
 {
@@ -42,12 +45,6 @@ namespace ssm
 
         internal static ssm Instance;
         public static bool debug = ShtunConfig.Instance.DebugMode;
-
-        internal bool CalamityLoaded;
-        internal bool FargoLoaded;
-        internal bool SoulsLoaded;
-        internal bool RedemptionLoaded;
-        internal bool SoALoaded;
 
         internal Mod bossChecklist;
 
@@ -96,84 +93,37 @@ namespace ssm
             }
             if (ModLoader.TryGetMod("ThoriumMod", out Mod tor))
             {
-                //TorCaughtNpcs.TorRegisterItems();
+                ThoriumCaughtNpcs.ThoriumRegisterItems();
             }
             if (ModLoader.TryGetMod("SacredTools", out Mod soa))
             {
-                //SoACaughtNpcs.SoARegisterItems();
+                SoACaughtNpcs.SoARegisterItems();
             }
             if (ModLoader.TryGetMod("Redemption", out Mod red))
             {
-                //RedCaughtNpcs.RedRegisterItems();
+                RedemptionCaughtNpcs.RedemptionRegisterItems();
             }
 
             //SkyManager.Instance["ssm:Shtuxibus"] = new ShtuxibusSky();
             SkyManager.Instance["ssm:Chtuxlagor"] = new ChtuxlagorSky();
 
             ModLoader.TryGetMod("BossChecklist", out Mod bossChecklist);
-
-            if (Main.netMode != NetmodeID.Server)
-            {
-                #region shaders
-                //loading refs for shaders
-                Ref<Effect> lcRef = new Ref<Effect>(Assets.Request<Effect>("Effects/LifeChampionShader", AssetRequestMode.ImmediateLoad).Value);
-                Ref<Effect> wcRef = new Ref<Effect>(Assets.Request<Effect>("Effects/WillChampionShader", AssetRequestMode.ImmediateLoad).Value);
-                Ref<Effect> gaiaRef = new Ref<Effect>(Assets.Request<Effect>("Effects/GaiaShader", AssetRequestMode.ImmediateLoad).Value);
-                Ref<Effect> textRef = new Ref<Effect>(Assets.Request<Effect>("Effects/TextShader", AssetRequestMode.ImmediateLoad).Value);
-                Ref<Effect> invertRef = new Ref<Effect>(Assets.Request<Effect>("Effects/Invert", AssetRequestMode.ImmediateLoad).Value);
-                Ref<Effect> finalSparkRef = new Ref<Effect>(Assets.Request<Effect>("Effects/FinalSpark", AssetRequestMode.ImmediateLoad).Value);
-                Ref<Effect> mutantDeathrayRef = new(Assets.Request<Effect>("Effects/PrimitiveShaders/MutantFinalDeathrayShader", AssetRequestMode.ImmediateLoad).Value);
-                Ref<Effect> willDeathrayRef = new(Assets.Request<Effect>("Effects/PrimitiveShaders/WillDeathrayShader", AssetRequestMode.ImmediateLoad).Value);
-                Ref<Effect> willBigDeathrayRef = new(Assets.Request<Effect>("Effects/PrimitiveShaders/WillBigDeathrayShader", AssetRequestMode.ImmediateLoad).Value);
-                Ref<Effect> deviBigDeathrayRef = new(Assets.Request<Effect>("Effects/PrimitiveShaders/DeviTouhouDeathrayShader", AssetRequestMode.ImmediateLoad).Value);
-                Ref<Effect> deviRingRef = new(Assets.Request<Effect>("Effects/PrimitiveShaders/DeviRingShader", AssetRequestMode.ImmediateLoad).Value);
-                Ref<Effect> genericDeathrayRef = new(Assets.Request<Effect>("Effects/PrimitiveShaders/GenericDeathrayShader", AssetRequestMode.ImmediateLoad).Value);
-                Ref<Effect> blobTrailRef = new(Assets.Request<Effect>("Effects/PrimitiveShaders/BlobTrailShader", AssetRequestMode.ImmediateLoad).Value);
-                GameShaders.Misc["PulseUpwards"] = new MiscShaderData(textRef, "PulseUpwards");
-                GameShaders.Misc["PulseDiagonal"] = new MiscShaderData(textRef, "PulseDiagonal");
-                GameShaders.Misc["PulseCircle"] = new MiscShaderData(textRef, "PulseCircle");
-                GameShaders.Misc["ssm:MutantDeathray"] = new MiscShaderData(mutantDeathrayRef, "TrailPass");
-                GameShaders.Misc["ssm:WillDeathray"] = new MiscShaderData(willDeathrayRef, "TrailPass");
-                GameShaders.Misc["ssm:WillBigDeathray"] = new MiscShaderData(willBigDeathrayRef, "TrailPass");
-                GameShaders.Misc["ssm:DeviBigDeathray"] = new MiscShaderData(deviBigDeathrayRef, "TrailPass");
-                GameShaders.Misc["ssm:DeviRing"] = new MiscShaderData(deviRingRef, "TrailPass");
-                GameShaders.Misc["ssm:GenericDeathray"] = new MiscShaderData(genericDeathrayRef, "TrailPass");
-                GameShaders.Misc["ssm:BlobTrail"] = new MiscShaderData(blobTrailRef, "TrailPass");
-                Filters.Scene["ssm:Solar"] = new Filter(Filters.Scene["MonolithSolar"].GetShader(), EffectPriority.Medium);
-                Filters.Scene["ssm:Vortex"] = new Filter(Filters.Scene["MonolithVortex"].GetShader(), EffectPriority.Medium);
-                Filters.Scene["ssm:Nebula"] = new Filter(Filters.Scene["MonolithNebula"].GetShader(), EffectPriority.Medium);
-                Filters.Scene["ssm:Stardust"] = new Filter(Filters.Scene["MonolithStardust"].GetShader(), EffectPriority.Medium);
-                #endregion shaders
-            }
         }
 
         public override void PostSetupContent()
         {
-            try
-            {
-                CalamityLoaded = ModLoader.GetMod("CalamityMod") != null;
-                SoulsLoaded = ModLoader.GetMod("FargowiltasSouls") != null;
-                FargoLoaded = ModLoader.GetMod("Fargowiltas") != null;
-                SoALoaded = ModLoader.GetMod("SacredTools") != null;
-                RedemptionLoaded = ModLoader.GetMod("Redemption") != null;
-            }
-            catch (Exception e)
-            {
-                Logger.Warn("ssm PostSetupContent Error: " + e.StackTrace + e.Message);
-            }
-
             if (ModCompatibility.Thorium.Loaded)
             {
                 PostSetupContentThorium.PostSetupContent_Thorium();
             }
-            Func<string> cap = () => $"Shield Capacity: {Main.LocalPlayer.Shield().shieldCapacity}%";
-            Func<string> reg = () => $"Shield Regeneration: {Main.LocalPlayer.Shield().shieldRegenSpeed}%";
-            Func<string> max = () => $"Max Shield Capacity: {Main.LocalPlayer.Shield().shieldCapacityMax2}%";
+            //Func<string> cap = () => $"Shield Capacity: {Main.LocalPlayer.Shield().shieldCapacity}%";
+            //Func<string> reg = () => $"Shield Regeneration: {Main.LocalPlayer.Shield().shieldRegenSpeed}%";
+            //Func<string> max = () => $"Max Shield Capacity: {Main.LocalPlayer.Shield().shieldCapacityMax2}%";
             //Func<string> res = () => $"RAD resistance: {Main.LocalPlayer.Radiation().statRes}";
             //Func<string> rad = () => $"RAD: {Main.LocalPlayer.Radiation().statRad}";
-            ModCompatibility.MutantMod.Mod.Call("AddStat", ItemID.ObsidianShield, cap);
-            ModCompatibility.MutantMod.Mod.Call("AddStat", ItemID.SquireShield, reg);
-            ModCompatibility.MutantMod.Mod.Call("AddStat", ItemID.PaladinsShield, max);
+            //ModCompatibility.MutantMod.Mod.Call("AddStat", ItemID.ObsidianShield, cap);
+            //ModCompatibility.MutantMod.Mod.Call("AddStat", ItemID.SquireShield, reg);
+            //ModCompatibility.MutantMod.Mod.Call("AddStat", ItemID.PaladinsShield, max);
             //ModCompatibility.MutantMod.Mod.Call("AddStat", ModContent.ItemType<RadiationDebug>(), res);
             //ModCompatibility.MutantMod.Mod.Call("AddStat", ModContent.ItemType<RadiationDebug>(), rad);
         }

@@ -1,10 +1,10 @@
 // Buff Descriptions
 BuffDescription: {
-	WeaponImbueCursedFlames: Melee, Whip, and United Modded Thrower attacks inflict enemies with cursed flames
-	WeaponImbueFire: Melee, Whip, and United Modded Thrower attacks set enemies on fire
-	WeaponImbueGold: Melee, Whip, and United Modded Thrower attacks make enemies drop more gold
-	WeaponImbueIchor: Melee, Whip, and United Modded Thrower attacks decrease enemies defense
-	WeaponImbueNanites: Melee, Whip, and United Modded Thrower attacks confuse enemies
-	WeaponImbuePoison: Melee, Whip, and United Modded Thrower attacks poison enemies
-	WeaponImbueVenom: Melee, Whip, and United Modded Thrower attacks inflict acid venom on your targets
+	WeaponImbueCursedFlames: Melee, Whip, and Thrower attacks inflict enemies with cursed flames
+	WeaponImbueFire: Melee, Whip, and Thrower attacks set enemies on fire
+	WeaponImbueGold: Melee, Whip, and Thrower attacks make enemies drop more gold
+	WeaponImbueIchor: Melee, Whip, and Thrower attacks decrease enemies defense
+	WeaponImbueNanites: Melee, Whip, and Thrower attacks confuse enemies
+	WeaponImbuePoison: Melee, Whip, and Thrower attacks poison enemies
+	WeaponImbueVenom: Melee, Whip, and Thrower attacks inflict acid venom on your targets
 }

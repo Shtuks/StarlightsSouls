@@ -41,22 +41,13 @@ namespace ssm.Calamity.Souls
             this.Item.value = Item.buyPrice(10, 0, 0, 0);
             this.Item.rare = 11;
             this.Item.accessory = true;
-            this.Item.defense = 90;
+            this.Item.defense = 40;
         }
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            ModContent.Find<ModItem>(this.FargoCross.Name, "ExplorationForce").UpdateAccessory(player, false);
-            ModContent.Find<ModItem>(this.FargoCross.Name, "BrandoftheBrimstoneWitch").UpdateAccessory(player, false);
-                
-            
             ModContent.GetInstance<ShatteredCommunity>().UpdateAccessory(player, hideVisual);
-            ModContent.GetInstance<TheCommunity>().UpdateAccessory(player, hideVisual);
             ModContent.GetInstance<ElementalArtifact>().UpdateAccessory(player, hideVisual);
             ModContent.GetInstance<PotJT>().UpdateAccessory(player, hideVisual);
-            if (ModCompatibility.Catalyst.Loaded && ModCompatibility.Goozma.Loaded && ModCompatibility.Clamity.Loaded && ModCompatibility.WrathoftheGods.Loaded)
-            {
-                ModContent.GetInstance<AddonsForce>().UpdateAccessory(player, hideVisual);
-            }
 
             player.buffImmune[ModContent.Find<ModBuff>(this.FargoCross.Name, "CalamitousPresenceBuff").Type] = true;
         }

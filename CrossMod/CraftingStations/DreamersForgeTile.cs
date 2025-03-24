@@ -17,15 +17,10 @@ namespace ssm.CrossMod.CraftingStations
         public override void SetStaticDefaults()
 		{
             TileObjectData.newTile.CopyFrom(TileObjectData.Style6x3);
-            TileObjectData.newTile.Width = 6;
-            TileObjectData.newTile.Height = 3;
-            TileObjectData.newTile.CoordinatePadding = 0;
             TileObjectData.newTile.CoordinateHeights = new[] { 16, 16, 16 };
             TileObjectData.newTile.Origin = new Point16(0, 2);
             TileObjectData.newTile.DrawFlipHorizontal = false;
             TileObjectData.newTile.DrawFlipVertical = false;
-
-            AnimationFrameHeight = 48;
 
             Main.tileLighted[Type] = true;
 			Main.tileFrameImportant[Type] = true;

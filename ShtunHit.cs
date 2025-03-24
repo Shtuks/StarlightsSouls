@@ -7,6 +7,8 @@ using FargowiltasSouls.Content.Buffs.Boss;
 using FargowiltasSouls.Content.Buffs.Souls;
 using FargowiltasSouls.Content.Buffs.Masomode;
 using ssm.Content.NPCs.StarlightCat;
+using FargowiltasSouls.Content.Bosses.MutantBoss;
+using CalamityEntropy.Util;
 
 namespace ssm
 {
@@ -78,9 +80,26 @@ namespace ssm
     {
         public override bool InstancePerEntity => true;
 
+        public override void ModifyHitByProjectile(NPC npc, Projectile projectile, ref NPC.HitModifiers modifiers)
+        {
+            if (npc.type == ModContent.NPCType<MutantBoss>())
+            {
+                modifiers.SetMaxDamage(50000);
+            }
+        }
+        public override void ModifyHitByItem(NPC npc, Player player, Item item, ref NPC.HitModifiers modifiers)
+        {
+            if (npc.type == ModContent.NPCType<MutantBoss>())
+            {
+                modifiers.SetMaxDamage(50000);
+            }
+        }
         public override void HitEffect(NPC npc, NPC.HitInfo hit)
         {
-            
+            if (npc.type == ModContent.NPCType<MutantBoss>())
+            {
+                hit.InstantKill = false;
+            }
         }
     }
 }

@@ -49,6 +49,7 @@ namespace ssm.Thorium.Enchantments
         {
             public override Header ToggleHeader => Header.GetHeader<MidgardForceHeader>();
             public override int ToggleItemType => ModContent.ItemType<TerrariumEnchant>();
+            public override bool MutantsPresenceAffects => true;
         }
 
         public override void AddRecipes()

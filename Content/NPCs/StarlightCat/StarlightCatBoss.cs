@@ -703,7 +703,6 @@ namespace ssm.Content.NPCs.StarlightCat
             if (player.Shtun().ChtuxlagorDeaths != 0)
             {
                 ShtunUtils.DisplayLocalizedText("Congratulations, " + ssm.userName + ". You did it in " + player.Shtun().ChtuxlagorDeaths + " attempts.", Color.Teal);
-                ShtunUtils.DisplayLocalizedText("Special thanks to Fargowilta, Javyz, Terry N Muse, Blushiemagic, DanYami, DevaVade, cheesenuggets, Mayeneznik, Yum, Jopojelly, ChickenBones, Jofairden, DivermanSam.", Color.Teal);
             }
             else
             {

@@ -62,6 +62,8 @@ namespace ssm.Thorium.Enchantments
         {
             public override Header ToggleHeader => Header.GetHeader<VanaheimForceHeader>();
             public override int ToggleItemType => ModContent.ItemType<PlagueDoctorEnchant>();
+            public override bool ExtraAttackEffect => true;
+            public override bool MutantsPresenceAffects => true;
         }
     }
 }

@@ -25,8 +25,6 @@ namespace ssm.Content.NPCs.DukeFishronEX
         public bool TakeNoDamageOnHit;
 
         public bool SpectralFishronRandom;
-
-
         public override void SendExtraAI(BinaryWriter binaryWriter)
         {
             binaryWriter.Write(GeneralTimer);

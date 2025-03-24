@@ -46,6 +46,7 @@ namespace ssm.Thorium.Enchantments
         {
             public override Header ToggleHeader => Header.GetHeader<MuspelheimForceHeader>();
             public override int ToggleItemType => ModContent.ItemType<SandstoneEnchant>();
+            public override bool MutantsPresenceAffects => true;
         }
 
         public override void AddRecipes()

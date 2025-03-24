@@ -9,6 +9,8 @@ using FargowiltasSouls.Content.Items.Accessories.Enchantments;
 using FargowiltasSouls.Core.AccessoryEffectSystem;
 using ssm.Content.SoulToggles;
 using static ssm.Thorium.Enchantments.LivingWoodEnchant;
+using ThoriumMod.Projectiles.Minions;
+using ThoriumMod.Projectiles.Healer;
 
 namespace ssm.Thorium.Enchantments
 {
@@ -38,7 +40,14 @@ namespace ssm.Thorium.Enchantments
             if (player.AddEffect<BiotechEffect>(Item))
             {
                 thoriumPlayer.bioTechSet = true;
+                if (player.whoAmI == Main.myPlayer)
+                {
+                    const int damage = 100;
+                    if (player.ownedProjectileCounts[ModContent.ProjectileType<BiotechProbe>()] < 1)
+                        ShtunUtils.NewSummonProjectile(player.GetSource_FromThis(), player.Center, Vector2.Zero, ModContent.ProjectileType<BiotechProbe>(), damage, 8f, player.whoAmI);
+                }
             }
+
         }
 
         public override void AddRecipes()
@@ -61,6 +70,9 @@ namespace ssm.Thorium.Enchantments
         {
             public override Header ToggleHeader => Header.GetHeader<AlfheimForceHeader>();
             public override int ToggleItemType => ModContent.ItemType<BiotechEnchant>();
+
+            public override bool MinionEffect => true;
+            public override bool MutantsPresenceAffects => true;
         }
     }
 }

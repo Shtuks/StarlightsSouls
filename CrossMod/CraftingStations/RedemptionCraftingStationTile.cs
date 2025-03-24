@@ -17,7 +17,6 @@ namespace ssm.CrossMod.CraftingStations
 	{
         public override void SetStaticDefaults()
 		{
-            AnimationFrameHeight = 64;
             Main.tileLighted[Type] = true;
 			Main.tileFrameImportant[Type] = true;
 			Main.tileNoAttach[Type] = true;
@@ -26,6 +25,7 @@ namespace ssm.CrossMod.CraftingStations
 			TileObjectData.newTile.DrawFlipHorizontal = false;
 			TileObjectData.newTile.DrawFlipVertical = false;
             TileObjectData.newTile.Height = 4;
+            TileObjectData.newTile.Width = 11;
             TileObjectData.newTile.CoordinateHeights = new int[]
 			{
 				16,

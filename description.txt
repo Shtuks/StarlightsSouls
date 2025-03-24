@@ -22,13 +22,11 @@ All things mod doing for now:
 
 - Reworked boots and shields progression
 
-- Adds SoA items fot 1st tier souls recepies and effects
+- Adds SoA and Thorium items fot 1st tier souls recepies and effects
 
 - Calamity caught NPCs, singularities
 
-- Thorium/Shadows of Abaddon enchantments, forces, souls (1.3 fargo dlc)
-
-- Post-Mutant Extra content (Echdeath, Shtuxibus, Duke Fishron EX)
+- Thorium/Shadows of Abaddon enchantments, forces, souls
 
 Planned additions:
 
@@ -39,3 +37,6 @@ Planned additions:
 - Calamity enchantments(soon™)
 
 - Soul of Eternity Legacy (Hundreds of projectiles flying across the screen and lowering FPS. But it's funny)
+
+Everyone who took part in creating this mod: StarlightCat, ma3allim, cheesenuggets, AwesomeSavage777, Soltan, Comrade Mutant, GodzilaJedi, Maeneznik, MasterD.
+Special thanks to Fargowilta, Javyz, Terry N Muse, Blushiemagic, DanYami, DevaVade, Yum, Jopojelly, ChickenBones, Jofairden, DivermanSam.

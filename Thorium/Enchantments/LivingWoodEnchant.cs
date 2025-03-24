@@ -73,6 +73,9 @@ namespace ssm.Thorium.Enchantments
         {
             public override Header ToggleHeader => Header.GetHeader<AlfheimForceHeader>();
             public override int ToggleItemType => ModContent.ItemType<LivingWoodEnchant>();
+
+            public override bool MinionEffect => true;
+            public override bool MutantsPresenceAffects => true;
         }
     }
 }

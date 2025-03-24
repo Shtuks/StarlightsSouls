@@ -49,7 +49,8 @@ namespace ssm.Thorium.Enchantments
         public class TideHunterEffect : AccessoryEffect
         {
             public override Header ToggleHeader => Header.GetHeader<JotunheimForceHeader>();
-            public override int ToggleItemType => ModContent.ItemType<SandstoneEnchant>();
+            public override int ToggleItemType => ModContent.ItemType<TideHunterEnchant>();
+            public override bool ExtraAttackEffect => true;
         }
 
         public override void AddRecipes()

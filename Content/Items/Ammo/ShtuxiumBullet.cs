@@ -25,7 +25,7 @@ namespace ssm.Content.Items.Ammo
             Item.consumable = true;
             Item.knockBack = 4f;
             Item.value = Item.sellPrice(gold: 1);
-            Item.shoot = ModContent.ProjectileType<ShtuxianBulletProj>();
+            Item.shoot = ModContent.ProjectileType<ShtuxiumBulletProj>();
             Item.shootSpeed = 0.1f;
             Item.ammo = AmmoID.Bullet;
             Item.rare = 11;

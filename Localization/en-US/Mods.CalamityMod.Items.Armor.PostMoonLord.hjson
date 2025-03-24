@@ -2,12 +2,12 @@ AuricTeslaPlumedHelm: {
 	DisplayName: Auric Tesla Plumed Helm
 	Tooltip:
 		'''
-		20% increased United Modded Thrower damage and critical strike chance
+		20% increased Thrower damage and critical strike chance
 		5% increased movement speed
 		'''
 	SetBonus:
 		'''
-		United Modded Thrower Tarragon, Bloodflare and God Slayer armor effects
+		Thrower Tarragon, Bloodflare and God Slayer armor effects
 		+130 maximum stealth
 		'''
 }
@@ -16,15 +16,15 @@ BloodflareHeadRogue: {
 	DisplayName: Bloodflare Imp Mask
 	Tooltip:
 		'''
-		10% increased United Modded Thrower damage and critical strike chance
+		10% increased Thrower damage and critical strike chance
 		5% increased movement speed
 		'''
 	SetBonus:
 		'''
 		+120 maximum stealth
-		Being over 80% life boosts your defense by 30 and United Modded Thrower crit by 5%
-		Being below 80% life boosts your United Modded Thrower damage by 10%
-		United Modded Thrower critical strikes heal you
+		Being over 80% life boosts your defense by 30 and Thrower crit by 5%
+		Being below 80% life boosts your Thrower damage by 10%
+		Thrower critical strikes heal you
 		'''
 }
 
@@ -34,7 +34,7 @@ EmpyreanCloak: {
 		'''
 		Armor of the cosmos
 		+20 max life
-		7% increased United Modded Thrower damage and critical strike chance
+		7% increased Thrower damage and critical strike chance
 		'''
 }
 
@@ -42,7 +42,7 @@ EmpyreanCuisses: {
 	DisplayName: Empyrean Cuisses
 	Tooltip:
 		'''
-		5% increased United Modded Thrower damage and critical strike chance
+		5% increased Thrower damage and critical strike chance
 		15% increased movement speed
 		'''
 }
@@ -51,31 +51,31 @@ EmpyreanMask: {
 	DisplayName: Empyrean Mask
 	Tooltip:
 		'''
-		11% increased United Modded Thrower damage and critical strike chance
+		11% increased Thrower damage and critical strike chance
 		5% increased movement speed
 		'''
 	SetBonus:
 		'''
-		9% increased United Modded Thrower damage and velocity
+		9% increased Thrower damage and velocity
 		+115 maximum stealth
-		United Modded Thrower projectiles have special effects on enemy hits
+		Thrower projectiles have special effects on enemy hits
 		Imbued with cosmic wrath and rage when you are damaged
 		'''
 }
 
-GemTechHeadgear.RedGemInfo: "[i:Ruby] The red gem grants {0} maximum stealth, increased United Modded Thrower stats, and makes stealth only consumable by United Modded Thrower weapons"
+GemTechHeadgear.RedGemInfo: "[i:Ruby] The red gem grants {0} maximum stealth, increased Thrower stats, and makes stealth only consumable by Thrower weapons"
 
 GodSlayerHeadRogue: {
 	DisplayName: God Slayer Mask
 	Tooltip:
 		'''
-		14% increased United Modded Thrower damage and critical strike chance
+		14% increased Thrower damage and critical strike chance
 		5% increased movement speed
 		'''
 	SetBonus:
 		'''
 		+120 maximum stealth
-		While at full HP all of your United Modded Thrower stats are boosted by 10%
+		While at full HP all of your Thrower stats are boosted by 10%
 		If you take over 80 damage in one hit you will be given extra immunity frames
 		'''
 }
@@ -84,14 +84,14 @@ TarragonHeadRogue: {
 	DisplayName: Tarragon Helmet
 	Tooltip:
 		'''
-		10% increased United Modded Thrower damage and critical strike chance
+		10% increased Thrower damage and critical strike chance
 		10% increased damage reduction and 5% increased movement speed
 		'''
 	SetBonus:
 		'''
 		+115 maximum stealth
-		After every 50 United Modded Thrower critical hits you will gain 2.5 seconds of damage immunity
+		After every 50 Thrower critical hits you will gain 2.5 seconds of damage immunity
 		This effect has a cooldown of 25 seconds
-		While under the effects of a debuff you gain 10% increased United Modded Thrower damage
+		While under the effects of a debuff you gain 10% increased Thrower damage
 		'''
 }

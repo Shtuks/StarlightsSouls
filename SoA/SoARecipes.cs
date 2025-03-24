@@ -9,8 +9,10 @@ using ssm.SoA.Souls;
 using ssm.Core;
 using SacredTools.Content.Items.Accessories.Wings;
 using SacredTools.Content.Items.DEV;
-using FargowiltasSouls.Content.Items.Accessories.Masomode;
-using Terraria.ID;
+using SacredTools.Content.Items.Placeable.CraftingStations;
+using FargowiltasSouls.Content.Items.Accessories.Forces;
+using FargowiltasSouls.Content.NPCs.EternityModeNPCs.VanillaEnemies.GoblinInvasion;
+using SacredTools.Content.Items.Materials;
 
 namespace ssm
 {
@@ -27,6 +29,7 @@ namespace ssm
 
         public override void AddRecipes()
         {
+            Recipe.Create(ModContent.ItemType<OblivionForge>(), 1).AddIngredient<BetaCoupon>(2).Register();
             Recipe.Create(ModContent.ItemType<RageSuppressor>(), 1).AddIngredient<BetaCoupon>(2).Register();
             Recipe.Create(ModContent.ItemType<MilinticaDash>(), 1).AddIngredient<BetaCoupon>(2).Register();
             Recipe.Create(ModContent.ItemType<HeartOfThePlough>(), 1).AddIngredient<BetaCoupon>(2).Register();
@@ -37,11 +40,13 @@ namespace ssm
             for (int i = 0; i < Recipe.numRecipes; i++)
             {
                 Recipe recipe = Main.recipe[i];
+
                 //if(recipe.HasResult<FloraFist>() && !recipe.HasIngredient(ItemID.MechanicalGlove))
                 //{
                 //    recipe.RemoveIngredient(ItemID.FireGauntlet);
                 //    recipe.AddIngredient(ItemID.MechanicalGlove);
                 //}
+
                 if (recipe.HasResult<EternitySoul>() && !recipe.HasIngredient<SoASoul>())
                 {
                     recipe.AddIngredient<SoASoul>();
@@ -95,6 +100,12 @@ namespace ssm
                     recipe.AddIngredient<AsthraltiteWings>();
                     recipe.AddIngredient<DespairBoosters>();
                     recipe.AddIngredient<AuroraWings>();
+                }
+
+                if (recipe.createItem.ModItem is BaseForce)
+                {
+                    if (!recipe.HasIngredient<TraceOfChaos>())
+                        recipe.AddIngredient<TraceOfChaos>(4);
                 }
             }
         }

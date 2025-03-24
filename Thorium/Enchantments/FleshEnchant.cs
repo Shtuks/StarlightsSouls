@@ -68,11 +68,13 @@ namespace ssm.Thorium.Enchantments
         {
             public override Header ToggleHeader => Header.GetHeader<MuspelheimForceHeader>();
             public override int ToggleItemType => ModContent.ItemType<FleshEnchant>();
+            public override bool MutantsPresenceAffects => true;
         }
         public class VampireGlandEffect : AccessoryEffect
         {
             public override Header ToggleHeader => Header.GetHeader<MuspelheimForceHeader>();
-            public override int ToggleItemType => ModContent.ItemType<FleshEnchant>();
+            public override int ToggleItemType => ModContent.ItemType<FleshEnchant>(); 
+            public override bool MutantsPresenceAffects => true;
         }
     }
 }

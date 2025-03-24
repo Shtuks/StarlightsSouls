@@ -47,7 +47,8 @@ namespace ssm.Thorium.Enchantments
         public class ArtificersEffect : AccessoryEffect
         {
             public override Header ToggleHeader => Header.GetHeader<HelheimForceHeader>();
-            public override int ToggleItemType => ModContent.ItemType<ThoriumEnchant>();
+            public override int ToggleItemType => ModContent.ItemType<SilkEnchant>();
+            public override bool MutantsPresenceAffects => true;
         }
 
         public override void AddRecipes()

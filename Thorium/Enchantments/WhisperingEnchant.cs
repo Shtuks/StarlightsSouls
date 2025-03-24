@@ -48,6 +48,8 @@ namespace ssm.Thorium.Enchantments
         {
             public override Header ToggleHeader => Header.GetHeader<JotunheimForceHeader>();
             public override int ToggleItemType => ModContent.ItemType<WhisperingEnchant>();
+            public override bool ExtraAttackEffect => true;
+            public override bool MutantsPresenceAffects => true;
         }
 
         public override void AddRecipes()
@@ -57,7 +59,6 @@ namespace ssm.Thorium.Enchantments
             recipe.AddIngredient(ModContent.ItemType<WhisperingHood>());
             recipe.AddIngredient(ModContent.ItemType<WhisperingTabard>());
             recipe.AddIngredient(ModContent.ItemType<WhisperingLeggings>());
-
             recipe.AddIngredient(ModContent.ItemType<WildUmbra>());
             recipe.AddIngredient(ModContent.ItemType<MindMelter>());
             recipe.AddIngredient(ModContent.ItemType<WhisperingDagger>());

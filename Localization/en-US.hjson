@@ -289,7 +289,7 @@ Mods: {
 				Tooltip:
 					'''
 					Effects of The Community, Shattered Community
-					Effects of Force of Exploration, Force of Addons
+					Effects of Force of Gale, Force of Elements, Force of Addons
 					Effects of Brand of the Brimstone Witch and Pendant of the Godseeker.
 					'The land may never grow quiet again, but peace can certainly be brought upon it.'
 					'''
@@ -1485,6 +1485,11 @@ Mods: {
 					'''
 			}
 
+			Fallen: {
+				DisplayName: Fallen
+				Tooltip: ""
+			}
+
 			FleshEnchant: {
 				DisplayName: Flesh Enchantment
 				Tooltip:
@@ -2575,13 +2580,13 @@ Mods: {
 			GtTETFinal: {
 				Tooltip:
 					'''
-					Rogue projectiles create nanoblades as they travel
+					Thrower projectiles create nanoblades as they travel
 					Stealth strikes summon nanobeams and sparks on enemy hits
 					Stealth strikes have +15 armor penetration, deal 5% more damage, and heal for 2 HP
-					25% increased rogue damage and 25% increased rogue velocity
+					25% increased Thrower damage and 25% increased Thrower velocity
 					Landing a stealth strike grants a 12% crit bonus to non-stealth strikes
 					This crit bonus decays over 5 seconds
-					25% of your rogue damage is duplicated 
+					25% of your Thrower damage is duplicated 
 					'''
 				DisplayName: Guide to Expert Throwing : Final Volume
 			}
@@ -2841,7 +2846,10 @@ Mods: {
 			}
 
 			SolynsSigil: {
-				Tooltip: ""
+				Tooltip: 
+				'''
+				Effects of every cosmetical accessories from WotG
+				'''
 				DisplayName: Solyns Sigil
 			}
 
@@ -2857,6 +2865,101 @@ Mods: {
 					Double tap down to switch between active and passive
 					'''
 				DisplayName: Cairo Crusader Enchant
+			}
+
+			Blacksmith: {
+				DisplayName: Blacksmith
+				Tooltip: ""
+			}
+
+			Cook: {
+				DisplayName: Cook
+				Tooltip: ""
+			}
+
+			Cobbler: {
+				DisplayName: Cobbler
+				Tooltip: ""
+			}
+
+			ConfusedZombie: {
+				DisplayName: Confused Zombie
+				Tooltip: ""
+			}
+
+			DesertAcolyte: {
+				DisplayName: Desert Acolyte
+				Tooltip: ""
+			}
+
+			Diverman: {
+				DisplayName: Diverman
+				Tooltip: ""
+			}
+
+			Druid: {
+				DisplayName: Druid
+				Tooltip: ""
+			}
+
+			Spiritualist: {
+				DisplayName: Spiritualist
+				Tooltip: ""
+			}
+
+			Tracker: {
+				DisplayName: Tracker
+				Tooltip: ""
+			}
+
+			WeaponMaster: {
+				DisplayName: Weapon Master
+				Tooltip: ""
+			}
+
+			PureNymph: {
+				DisplayName: Pure Nymph
+				Tooltip: ""
+			}
+
+			Scavenger: {
+				DisplayName: Scavenger
+				Tooltip: ""
+			}
+
+			PandolarSalvager: {
+				DisplayName: Pandolar Salvager
+				Tooltip: ""
+			}
+
+			Decorationist: {
+				DisplayName: Decorationist
+				Tooltip: ""
+			}
+
+			CloakedAlchemist: {
+				DisplayName: Cloaked Alchemist
+				Tooltip: ""
+			}
+
+			Fool: {
+				DisplayName: Fool
+				Tooltip: ""
+			}
+
+			FriendlyTbot: {
+				DisplayName: Friendly Tbot
+				Tooltip: ""
+			}
+
+			Calavia: {
+				DisplayName: Calavia
+				Tooltip: ""
+			}
+
+			Wayfarer: {
+				DisplayName: Wayfarer
+				Tooltip: ""
 			}
 		}
 
@@ -3123,6 +3226,31 @@ Mods: {
 		}
 
 		Toggler: {
+			CrashEffect: Crash Boots
+			CairoEffect: Eternal Oasis
+			MotDEHEader: Mark of the Dream Eater
+			PlagueEffect: Plague Gases
+			LichEffect: Soul Fragments
+			DragonEffect: Dragon's Flame
+			ConduitEffect: Bubble of Energy
+			MarchingBandEffect: Symphonic Symbols
+			MetronomeEffect: Metronome
+			SandstoneEffect: Double Jump
+			PlasmaEffect: Plasma Generator
+			VampireGlandEffect: Vampire Gland
+			FleshMaskEffect: Attacks Drop Flesh
+			ValadiumEffect: Valadium Gravity
+			CrietzEffect: Crietz Brusts
+			TerrariumEffect: Terrarium Energies
+			NuclearOptionEffect: Nuclear Option
+			IllumiteEffect: Illumite Missiles
+			IncandescentSparkEffect: Incandescent Spark
+			TideHunterEffect: Foam Splashes
+			DepthDiverEffect: Drowned Doublon
+			DepthAuraEffect: Depth Aura Buff
+			ArtificersEffect: Artificer's Rocketeers
+			LivingWoodEffect: Living Wood Sapling
+			BiotechEffect: Biotech Probe
 			AddonsForceHeader: Addons Force
 			ShogunEffect: Slippery Shogun Wings
 			VoidFaquirEffect: Void Bar
@@ -3215,91 +3343,6 @@ Mods: {
 		}
 
 		Projectiles: {
-			GiantDeathrayULTRA.DisplayName: Giant Deathray
-			GiantDeathrayULTRA100.DisplayName: Giant Deathray
-			WillDeathrayBig.DisplayName: Will Deathray Big
-			WillDeathrayBig20.DisplayName: Will Deathray Big20
-			WillDeathraySmall.DisplayName: Will Deathray Small
-			WillDeathraySmall20.DisplayName: Will Deathray Small20
-			ProtoProjectileAimButOP.DisplayName: Proto Projectile
-			ProtoProjectile.DisplayName: Proto Projectile
-			AbomFlocko.DisplayName: Abom Flocko
-			AbomFlocko2.DisplayName: Abom Flocko2
-			AbomFlocko3.DisplayName: Abom Flocko3
-			AbomFrostShard.DisplayName: Abom Frost Shard
-			AbomFrostWave.DisplayName: Abom Frost Wave
-			AbomLaser.DisplayName: Abom Laser
-			AbomRocket.DisplayName: Abom Rocket
-			AbomSword.DisplayName: Abom Sword
-			AbomSwordHandle.DisplayName: Abom Sword Handle
-			BossRush.DisplayName: Boss Rush
-			Boss.MutantYharonVortex.DisplayName: Mutant Yharon Vortex
-			ChampionBeetle.DisplayName: Champion Beetle
-			CosmosDeathray.DisplayName: Cosmos Deathray
-			CosmosDeathray2.DisplayName: Cosmos Deathray2
-			CosmosSphere.DisplayName: Cosmos Sphere
-			DeviAxe.DisplayName: Devi Axe
-			DeviBigDeathray.DisplayName: Devi Big Deathray
-			DeviDeathray.DisplayName: Devi Deathray
-			DeviEnergyHeart.DisplayName: Devi Energy Heart
-			DeviHammer.DisplayName: Devi Hammer
-			DeviHammerHeld.DisplayName: Devi Hammer Held
-			DeviHeart.DisplayName: Devi Heart
-			DeviSparklingLove.DisplayName: Devi Sparkling Love
-			LifeFireball.DisplayName: Life Fireball
-			MutantBomb.DisplayName: Mutant Bomb
-			MutantBombSmall.DisplayName: Mutant Bomb Small
-			MutantDeathray2.DisplayName: Mutant Deathray2
-			MutantEye.DisplayName: Mutant Eye
-			MutantEyeWavy.DisplayName: Mutant Eye Wavy
-			MutantFishron.DisplayName: Mutant Fishron
-			MutantGiantDeathray2.DisplayName: Mutant Giant Deathray2
-			MutantNuke.DisplayName: Mutant Nuke
-			MutantReticle.DisplayName: Mutant Reticle
-			MutantRitual.DisplayName: Mutant Ritual
-			MutantRitual2.DisplayName: Mutant Ritual2
-			MutantRitual3.DisplayName: Mutant Ritual3
-			MutantRitual4.DisplayName: Mutant Ritual4
-			MutantRitual5.DisplayName: Mutant Ritual5
-			MutantRitualwiththing.DisplayName: Mutant Ritual
-			MutantSlimeBall.DisplayName: Mutant Slime Ball
-			MutantSlimeRain.DisplayName: Mutant Slime Rain
-			MutantSpearAim.DisplayName: Mutant Spear Aim
-			MutantSpearThrown.DisplayName: Mutant Spear Thrown
-			MutantSphereRing.DisplayName: Mutant Sphere Ring
-			MutantSphereSmall.DisplayName: Mutant Sphere Small
-			MutantSword.DisplayName: Mutant Sword
-			PhantasmalBlast.DisplayName: Phantasmal Blast
-			PhantasmalBlastTS.DisplayName: Phantasmal Blast TS
-			Shtuxibus.DisplayName: Shtuxibus
-			WillJavelin.DisplayName: Will Javelin
-			ShtuxibusSoulMinion.DisplayName: Shtuxibus Soul Minion
-			ShtuxibusMiniSword.DisplayName: Shtuxibus Mini Sword
-			ShtuxibusSoulAttack.DisplayName: Shtuxibus Soul Attack
-			ShtuxibusSpearThrow.DisplayName: Shtuxibus Spear Throw
-			ShtuxibusSwordSwing.DisplayName: Shtuxibus Sword Swing
-			MutantAureusSpawn.DisplayName: Mutant Aureus Spawn
-			MutantHolyRay.DisplayName: Mutant Holy Ray
-			MutantPBG.DisplayName: Mutant PBG
-			MutantPolter.DisplayName: Mutant Polter
-			MutantSlimeGod.DisplayName: Mutant Slime God
-			MutantHeal.DisplayName: Mutant Heal
-			ShtuxibusSwordAttack.DisplayName: Shtuxibus Sword Attack
-			MutantDoGBody.DisplayName: Mutant DoG Body
-			MutantDoGHead.DisplayName: Mutant DoG Head
-			MutantDoGTail.DisplayName: Mutant DoG Tail
-			MutantOldDuke.DisplayName: Mutant Old Duke
-			MutantSCal.DisplayName: Mutant SCal
-			DevianttSoul.DisplayName: Deviantt Soul
-			MutantSoul.DisplayName: Mutant Soul
-			NebulaP.DisplayName: Nebula P
-			SolarP.DisplayName: Solar P
-			StardustP.DisplayName: Stardust P
-			VortexP.DisplayName: Vortex P
-			HolySpear.DisplayName: Holy Spear
-			FlareDust.DisplayName: Flare Dust
-			DLCBloomLine.DisplayName: D L C Bloom Line
-			SlamTelegraph.DisplayName: Slam Telegraph
 			ShtuxianArrowProj.DisplayName: Shtuxian Arrow Proj
 			ShtuxiumBlast.DisplayName: Shtuxium Blast
 			ShtuxianBulletProj.DisplayName: Shtuxian Bullet Proj
@@ -3319,6 +3362,14 @@ Mods: {
 			ShtuxiumPrismDeathray.DisplayName: Shtuxium Prism Deathray
 			ShtuxiumPrismCircle.DisplayName: Shtuxium Prism Circle
 			StarlightCatRotatingDeathray.DisplayName: Starlight Cat Rotating Deathray
+			ShtuxiumArrowProj.DisplayName: Shtuxium Arrow Proj
+			ShtuxiumBulletProj.DisplayName: Shtuxium Bullet Proj
+			DevianttSoul.DisplayName: Deviantt Soul
+			MutantSoul.DisplayName: Mutant Soul
+			NebulaP.DisplayName: Nebula P
+			SolarP.DisplayName: Solar P
+			StardustP.DisplayName: Stardust P
+			VortexP.DisplayName: Vortex P
 		}
 
 		Biomes: {

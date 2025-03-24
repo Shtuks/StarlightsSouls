@@ -53,7 +53,7 @@ namespace ssm.CrossMod.CraftingStations
                 recipe.AddIngredient<DemonshadeWorkbenchItem>();
             }
 
-            if (ModLoader.HasMod("SacredTools"))
+            if (ModLoader.HasMod("SacredTools") && ShtunConfig.Instance.ExperimentalContent)
             {
                 recipe.AddIngredient<SyranCraftingStationItem>();
             }

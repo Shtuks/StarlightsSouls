@@ -64,6 +64,8 @@ namespace ssm.Thorium.Enchantments
         {
             public override Header ToggleHeader => Header.GetHeader<JotunheimForceHeader>();
             public override int ToggleItemType => ModContent.ItemType<DepthDiverEnchant>();
+
+            public override bool MutantsPresenceAffects => true;
         }
         public class DepthAuraEffect : AccessoryEffect
         {

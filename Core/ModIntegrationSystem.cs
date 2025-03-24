@@ -122,7 +122,7 @@ namespace ssm.Systems
         {
             public static void AdjustValues()
             {
-                ModCompatibility.SoulsMod.Mod.BossChecklistValues["MutantBoss"] = 29f;
+                ModCompatibility.SoulsMod.Mod.BossChecklistValues["MutantBoss"] = (float.MaxValue - 10);
                 //if (ModCompatibility.Redemption.Loaded){
                 //    ModCompatibility.Redemption.Mod.BossChecklistValues["Nebuleus"] = 20f;}
                 //if (ModCompatibility.SacredTools.Loaded){

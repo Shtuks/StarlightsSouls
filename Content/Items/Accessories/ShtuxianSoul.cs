@@ -23,8 +23,8 @@ namespace ssm.Content.Items.Accessories
         public override void VerticalWingSpeeds(Player player, ref float ascentWhenFalling, ref float ascentWhenRising,
             ref float maxCanAscendMultiplier, ref float maxAscentMultiplier, ref float constantAscend)
         {
-            ascentWhenFalling = 0.85f; // Falling glide speed
-            ascentWhenRising = 0.15f; // Rising speed
+            ascentWhenFalling = 0.85f;
+            ascentWhenRising = 0.15f;
             maxCanAscendMultiplier = 1f;
             maxAscentMultiplier = 3f;
             constantAscend = 0.135f;
@@ -86,7 +86,6 @@ namespace ssm.Content.Items.Accessories
             }
             if (ModLoader.TryGetMod("SacredTools", out Mod SoA))
             {
-                //ModContent.Find<ModItem>(((ModType)this).Mod.Name, "KineticSoul").UpdateAccessory(player, false);
                 ModContent.Find<ModItem>(((ModType)this).Mod.Name, "SoASoul").UpdateAccessory(player, false);
             }
             if (ModLoader.TryGetMod("CalamityMod", out Mod kal) && ModLoader.TryGetMod("FargowiltasCrossmod", out Mod FargoIhateYou))

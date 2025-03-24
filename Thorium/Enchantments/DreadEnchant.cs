@@ -62,7 +62,10 @@ namespace ssm.Thorium.Enchantments
                 }
             }
 
-            ModContent.Find<ModItem>(this.thorium.Name, "CrashBoots").UpdateAccessory(player, hideVisual);
+            if (player.AddEffect<DreadEffect>(Item))
+            {
+                ModContent.Find<ModItem>(this.thorium.Name, "CrashBoots").UpdateAccessory(player, hideVisual);
+            }
 
             ModContent.Find<ModItem>(this.thorium.Name, "CursedCore").UpdateAccessory(player, hideVisual);
         }
@@ -71,6 +74,14 @@ namespace ssm.Thorium.Enchantments
         {
             public override Header ToggleHeader => Header.GetHeader<HelheimForceHeader>();
             public override int ToggleItemType => ModContent.ItemType<DreadEnchant>();
+            public override bool MutantsPresenceAffects => true;
+        }
+
+        public class CrashEffect : AccessoryEffect
+        {
+            public override Header ToggleHeader => Header.GetHeader<HelheimForceHeader>();
+            public override int ToggleItemType => ModContent.ItemType<DreadEnchant>();
+            public override bool MutantsPresenceAffects => true;
         }
 
         public override void AddRecipes()

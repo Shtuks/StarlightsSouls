@@ -1,25 +1,11 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using Terraria;
 using Terraria.ID;
 using Terraria.Localization;
 using Terraria.Chat;
-using Terraria.GameContent.Events;
-using Terraria.GameContent.ItemDropRules;
-using ssm.Content.Buffs;
-using ssm.Content.Items;
-using ssm.Content.Items.Accessories;
-using ssm.Content.Items.Consumables;
-using ssm.Content.Items.Materials;
-using ssm.Content.Items.Singularities;
-using ssm.Content.NPCs;
-using Fargowiltas;
-using Thorium;
 using Terraria.ModLoader;
-using Fargowiltas.Items.Summons.SwarmSummons.Energizers;
 using ssm.Core;
 using ThoriumMod.NPCs.BossBuriedChampion;
 using ThoriumMod.NPCs.BossGraniteEnergyStorm;
@@ -43,15 +29,8 @@ using ThoriumMod.NPCs.BossViscount;
 using ThoriumMod.Items.BossViscount;
 using ThoriumMod.NPCs.BossForgottenOne;
 using ThoriumMod.Items.BossForgottenOne;
-using FargowiltasSouls.Content.Items.Accessories.Enchantments;
-using ssm.Thorium.Enchantments;
-using ThoriumMod.Buffs;
-using ThoriumMod.Dusts;
-using ThoriumMod.Items.BardItems;
-using ThoriumMod.Projectiles.Bard;
-using ThoriumMod.Projectiles.Healer;
-using ThoriumMod.Projectiles.Thrower;
-using ThoriumMod.Projectiles;
+using ThoriumMod.NPCs.BossMini;
+
 
 namespace ssm.Thorium
 {
@@ -128,6 +107,29 @@ namespace ssm.Thorium
         };
         public override bool PreKill(NPC npc)
         {
+            #region newshopitemdisplay
+            bool doDeviText = false;
+            if (npc.type == ModContent.NPCType<PatchWerk>() && !ThoriumWorldSave.downedPatchWrek)
+            {
+                doDeviText = true;
+                ThoriumWorldSave.downedPatchWrek = true;
+            }
+            if (npc.type == ModContent.NPCType<Illusionist>() && !ThoriumWorldSave.downedIllusionist)
+            {
+                doDeviText = true;
+                ThoriumWorldSave.downedIllusionist = true;
+            }
+            if (npc.type == ModContent.NPCType<CorpseBloom>() && !ThoriumWorldSave.downedCorpseBloom)
+            {
+                doDeviText = true;
+                ThoriumWorldSave.downedCorpseBloom = true;
+            }
+            if (doDeviText && Main.netMode != NetmodeID.Server)
+            {
+                Main.NewText("A new item has been unlocked in Deviantt's shop!", Color.HotPink);
+            }
+            #endregion
+
             if (NoLoot)
             {
                 return false;
@@ -230,7 +232,6 @@ namespace ssm.Thorium
                 }
             }
         }
-
         private void Swarm(NPC npc, int boss, int bossbag, int trophy, int reward)
         {
             if (bossbag >= 0 && bossbag != ItemID.DefenderMedal)

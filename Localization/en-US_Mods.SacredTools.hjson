@@ -1,11 +1,11 @@
 CommonItemTooltip: {
-	PercentIncreasedKineticDamage: "{0}% increased United Modded Thrower damage"
-	PercentIncreasedKineticCritChance: "{0}% increased United Modded Thrower critical strike chance"
-	PercentIncreasedKineticDamageCritChance: "{0}% increased United Modded Thrower damage and critical strike chance"
-	PercentIncreasedKineticSpeed: "{0}% increased United Modded Thrower velocity"
+	PercentIncreasedKineticDamage: "{0}% increased Thrower damage"
+	PercentIncreasedKineticCritChance: "{0}% increased Thrower critical strike chance"
+	PercentIncreasedKineticDamageCritChance: "{0}% increased Thrower damage and critical strike chance"
+	PercentIncreasedKineticSpeed: "{0}% increased Thrower velocity"
 }
 
-DamageClasses.KineticDamageClass.DisplayName: United Modded Thrower damage
+DamageClasses.KineticDamageClass.DisplayName: Thrower damage
 
 Items: {
 	QuasarSigil: {

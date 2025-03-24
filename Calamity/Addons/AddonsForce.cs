@@ -3,6 +3,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria;
 using ssm.Core;
+using Fargowiltas.Items.Tiles;
 
 namespace ssm.Calamity.Addons
 {
@@ -22,8 +23,9 @@ namespace ssm.Calamity.Addons
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "IntergelacticEnchant").UpdateAccessory(player, hideVisual);
-            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "ShogunEnchant").UpdateAccessory(player, hideVisual);
+            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "MariviumEnchant").UpdateAccessory(player, hideVisual);
+            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "IntergelacticEnchant").UpdateAccessory(player, false);
+            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "ShogunEnchant").UpdateAccessory(player, false);
             ModContent.Find<ModItem>(((ModType)this).Mod.Name, "VoidFaquirEnchant").UpdateAccessory(player, hideVisual);
             ModContent.Find<ModItem>(((ModType)this).Mod.Name, "FrozenEnchant").UpdateAccessory(player, hideVisual);
         }
@@ -32,12 +34,13 @@ namespace ssm.Calamity.Addons
         {
             Recipe recipe = this.CreateRecipe();
 
+            recipe.AddIngredient<MariviumEnchant>();
             recipe.AddIngredient(null, "IntergelacticEnchant");
             recipe.AddIngredient(null, "ShogunEnchant");
             recipe.AddIngredient(null, "VoidFaquirEnchant");
             recipe.AddIngredient(null, "FrozenEnchant");
 
-            recipe.AddTile(TileID.LunarCraftingStation);
+            recipe.AddTile<CrucibleCosmosSheet>();
 
             recipe.Register();
         }

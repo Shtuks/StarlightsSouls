@@ -8,7 +8,7 @@ using Terraria.ModLoader;
 
 namespace ssm.Content.Projectiles.Weapons
 {
-    public class ShtuxianArrowProj : ModProjectile
+    public class ShtuxiumArrowProj : ModProjectile
     {
         public ref float Time => ref Projectile.ai[0];
         public ref float ProjectileSpeed => ref Projectile.ai[1];

@@ -1,24 +1,24 @@
 AerospecHeadgear: {
 	DisplayName: Aerospec Headgear
-	Tooltip: 10% increased United Modded Thrower damage and 5% increased movement speed
+	Tooltip: 10% increased Thrower damage and 5% increased movement speed
 	SetBonus:
 		'''
-		5% increased movement speed and United Modded Thrower critical strike chance
+		5% increased movement speed and Thrower critical strike chance
 		+80 maximum stealth
 		'''
 }
 
 SnowRuffianChestplate: {
 	DisplayName: Snow Ruffian Chestplate
-	Tooltip: 3% increased United Modded Thrower critical strike chance
+	Tooltip: 3% increased Thrower critical strike chance
 }
 
 SnowRuffianMask: {
 	DisplayName: Snow Ruffian Mask
-	Tooltip: 2% increased United Modded Thrower damage
+	Tooltip: 2% increased Thrower damage
 	SetBonus:
 		'''
-		5% increased United Modded Thrower damage
+		5% increased Thrower damage
 		+50 maximum stealth
 		You can glide to negate fall damage
 		'''
@@ -28,23 +28,23 @@ StatigelHeadRogue: {
 	DisplayName: Statigel Mask
 	Tooltip:
 		'''
-		10% increased United Modded Thrower damage and 34% chance to not consume United Modded Thrower items
-		7% increased United Modded Thrower critical strike chance and 5% increased movement speed
+		10% increased Thrower damage and 34% chance to not consume Thrower items
+		7% increased Thrower critical strike chance and 5% increased movement speed
 		'''
 	SetBonus: +90 maximum stealth
 }
 
 SulphurousBreastplate: {
 	DisplayName: Sulphurous Breastplate
-	Tooltip: 6% increased United Modded Thrower damage and 4% increased United Modded Thrower critical strike chance
+	Tooltip: 6% increased Thrower damage and 4% increased Thrower critical strike chance
 }
 
 SulphurousHelmet: {
 	DisplayName: Sulphurous Helmet
 	Tooltip:
 		'''
-		4% increased United Modded Thrower damage
-		2% increased United Modded Thrower critical strike chance
+		4% increased Thrower damage
+		2% increased Thrower critical strike chance
 		Grants underwater breathing
 		'''
 	SetBonus:
@@ -58,10 +58,10 @@ SulphurousHelmet: {
 
 VictideHeadRogue: {
 	DisplayName: Victide Headcrab
-	Tooltip: 5% increased United Modded Thrower damage
+	Tooltip: 5% increased Thrower damage
 	SetBonus:
 		'''
 		+60 maximum stealth
-		+1.5 HP/s life regen and 10% increased United Modded Thrower damage while submerged in liquid
+		+1.5 HP/s life regen and 10% increased Thrower damage while submerged in liquid
 		'''
 }

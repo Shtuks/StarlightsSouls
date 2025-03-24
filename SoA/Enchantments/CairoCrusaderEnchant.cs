@@ -13,7 +13,7 @@ using SacredTools.Content.Items.Armor.CairoCrusader;
 using SacredTools.Items.Weapons.Sand;
 using SacredTools.Items.Tools;
 using SacredTools.Items.Weapons;
-using static ssm.SoA.Enchantments.BlazingBruteEnchant;
+using SacredTools.Projectiles.Minions.EternalOasis;
 
 namespace ssm.SoA.Enchantments
 {
@@ -43,6 +43,12 @@ namespace ssm.SoA.Enchantments
             if (player.AddEffect<CairoEffect>(Item))
             {
                 modPlayer.cairoCrusader = true;
+                if (player.whoAmI == Main.myPlayer)
+                {
+                    const int damage = 255;
+                    if (player.ownedProjectileCounts[ModContent.ProjectileType<EternalOasis>()] < 1)
+                        ShtunUtils.NewSummonProjectile(player.GetSource_FromThis(), player.Center, Vector2.Zero, ModContent.ProjectileType<EternalOasis>(), damage, 8f, player.whoAmI);
+                }
             }
         }
 

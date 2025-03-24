@@ -13,6 +13,10 @@ namespace ssm.CrossMod.CraftingStations
     [JITWhenModsEnabled(ModCompatibility.SacredTools.Name)]
     public class SyranCraftingStationItem : ModItem
     {
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return ShtunConfig.Instance.ExperimentalContent;
+        }
         public override void SetDefaults()
         {
             Item.CloneDefaults(ItemType<OblivionBar>());
@@ -27,7 +31,6 @@ namespace ssm.CrossMod.CraftingStations
             recipe.AddIngredient(ItemType<OblivionForge>());
             recipe.AddIngredient(ItemType<FlariumAnvil>());
             recipe.AddIngredient(ItemType<FlariumForge>());
-            recipe.AddIngredient(ItemType<FlariumWorkBench>());
             recipe.AddIngredient(ItemType<EmberOfOmen>(), 15);
             recipe.Register();
         }

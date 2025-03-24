@@ -43,6 +43,9 @@ namespace ssm.Thorium.Enchantments
         {
             public override Header ToggleHeader => Header.GetHeader<NiflheimForceHeader>();
             public override int ToggleItemType => ModContent.ItemType<MarchingBandEnchant>();
+            public override bool MinionEffect => true;
+            public override bool ExtraAttackEffect => true;
+            public override bool MutantsPresenceAffects => true;
         }
 
         public override void AddRecipes()

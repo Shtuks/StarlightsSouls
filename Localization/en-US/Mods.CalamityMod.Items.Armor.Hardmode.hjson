@@ -2,27 +2,27 @@ DaedalusHeadRogue: {
 	DisplayName: Daedalus Facemask
 	Tooltip:
 		'''
-		13% increased United Modded Thrower damage and 7% increased United Modded Thrower critical strike chance
-		15% increased United Modded Thrower velocity and 5% increased movement speed
+		13% increased Thrower damage and 7% increased Thrower critical strike chance
+		15% increased Thrower velocity and 5% increased movement speed
 		'''
 	SetBonus:
 		'''
-		5% increased United Modded Thrower damage
+		5% increased Thrower damage
 		+105 maximum stealth
-		United Modded Thrower projectiles throw out crystal shards as they travel
+		Thrower projectiles throw out crystal shards as they travel
 		'''
 }
 
 ForbiddenCirclet: {
 	DisplayName: Forbidden Circlet
-	Tooltip: 10% increased summon damage and 15% increased United Modded Thrower velocity
+	Tooltip: 10% increased summon damage and 15% increased Thrower velocity
 	SetBonus:
 		'''
 		+40 maximum stealth
 		Press {0} to call an ancient storm to the cursor location
-		The ancient storm costs {1} mana and benefits from both summon and United Modded Thrower bonuses
-		United Modded Thrower stealth strikes spawn homing eaters on enemy hits
-		United Modded Thrower and summon attacks will scale off of the stat with a higher boost
+		The ancient storm costs {1} mana and benefits from both summon and Thrower bonuses
+		Thrower stealth strikes spawn homing eaters on enemy hits
+		Thrower and summon attacks will scale off of the stat with a higher boost
 		'''
 }
 
@@ -30,29 +30,29 @@ HydrothermicHeadRogue: {
 	DisplayName: Hydrothermic Hood
 	Tooltip:
 		'''
-		12% increased United Modded Thrower damage and 10% increased United Modded Thrower critical strike chance
-		50% chance to not consume United Modded Thrower items and 5% increased movement speed
+		12% increased Thrower damage and 10% increased Thrower critical strike chance
+		50% chance to not consume Thrower items and 5% increased movement speed
 		Grants immunity to fire and lava
 		'''
 	SetBonus:
 		'''
-		5% increased United Modded Thrower damage
+		5% increased Thrower damage
 		+110 maximum stealth
-		United Modded Thrower weapons unleash a volley of homing chaos flames around the player every 2 seconds
+		Thrower weapons unleash a volley of homing chaos flames around the player every 2 seconds
 		'''
 }
 
 TitanHeartBoots: {
 	DisplayName: Titan Heart Boots
-	Tooltip: 4% increased United Modded Thrower damage, 10% increased United Modded Thrower velocity, and 5% increased United Modded Thrower knockback
+	Tooltip: 4% increased Thrower damage, 10% increased Thrower velocity, and 5% increased Thrower knockback
 }
 
 TitanHeartMantle: {
 	DisplayName: Titan Heart Mantle
 	Tooltip:
 		'''
-		45% chance to not consume United Modded Thrower items
-		5% boosted United Modded Thrower knockback but 15% lowered United Modded Thrower attack speed
+		45% chance to not consume Thrower items
+		5% boosted Thrower knockback but 15% lowered Thrower attack speed
 		'''
 }
 
@@ -60,12 +60,12 @@ TitanHeartMask: {
 	DisplayName: Titan Heart Mask
 	Tooltip:
 		'''
-		5% increased United Modded Thrower damage and knockback
-		United Modded Thrower weapons inflict the Astral Infection debuff
+		5% increased Thrower damage and knockback
+		Thrower weapons inflict the Astral Infection debuff
 		'''
 	SetBonus:
 		'''
-		15% increased United Modded Thrower damage and knockback
+		15% increased Thrower damage and knockback
 		+100 maximum stealth
 		Stealth strikes deal double knockback and cause an astral explosion
 		Grants immunity to knockback
@@ -76,23 +76,23 @@ UmbraphileBoots: {
 	DisplayName: Umbraphile Boots
 	Tooltip:
 		'''
-		9% increased United Modded Thrower damage and 6% increased United Modded Thrower crit
+		9% increased Thrower damage and 6% increased Thrower crit
 		20% increased movement speed
 		'''
 }
 
 UmbraphileHood: {
 	DisplayName: Umbraphile Hood
-	Tooltip: 8% increased United Modded Thrower damage and 10% increased United Modded Thrower velocity
+	Tooltip: 8% increased Thrower damage and 10% increased Thrower velocity
 	SetBonus:
 		'''
 		+110 maximum stealth
-		United Modded Thrower weapons have a chance to create explosions on hit
+		Thrower weapons have a chance to create explosions on hit
 		Stealth strikes always create an explosion
 		'''
 }
 
 UmbraphileRegalia: {
 	DisplayName: Umbraphile Regalia
-	Tooltip: 10% increased United Modded Thrower damage and 10% increased United Modded Thrower crit
+	Tooltip: 10% increased Thrower damage and 10% increased Thrower crit
 }

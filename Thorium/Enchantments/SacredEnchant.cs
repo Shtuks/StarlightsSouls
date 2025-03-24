@@ -50,6 +50,7 @@ namespace ssm.Thorium.Enchantments
         {
             public override Header ToggleHeader => Header.GetHeader<AsgardForceHeader>();
             public override int ToggleItemType => ModContent.ItemType<SacredEnchant>();
+            public override bool MinionEffect => true;
         }
 
         public override void AddRecipes()
