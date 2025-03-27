@@ -1,6 +1,7 @@
 ﻿using FargowiltasSouls.Content.Bosses.MutantBoss;
 using FargowiltasSouls.Content.Buffs.Boss;
 using ssm.Content.Buffs;
+using ssm.Content.NPCs.MutantEX;
 using Terraria;
 using Terraria.ModLoader;
 
@@ -14,7 +15,7 @@ namespace ssm
         {
             if (type == ModContent.BuffType<MutantPresenceBuff>())
             {
-                if (NPC.AnyNPCs(ModContent.NPCType<MutantBoss>()))
+                if (NPC.AnyNPCs(ModContent.NPCType<MutantBoss>()) || NPC.AnyNPCs(ModContent.NPCType<MutantEX>()))
                 {
                     if (!player.HasBuff(ModContent.BuffType<DotBuff>()))
                     {

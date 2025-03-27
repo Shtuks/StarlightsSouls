@@ -7,6 +7,9 @@ using ThoriumMod.Items.Titan;
 using ThoriumMod.Items.BardItems;
 using ThoriumMod.Items.Donate;
 using Terraria.ID;
+using ThoriumMod.Items.Misc;
+using FargowiltasSouls.Content.Items.Summons;
+using CalamityMod.Items.SummonItems;
 
 namespace ssm.Thorium
 {
@@ -37,6 +40,19 @@ namespace ssm.Thorium
             //titan 
             group = new RecipeGroup(() => Lang.misc[37] + " Titan Headgear", ModContent.ItemType<TitanHelmet>(), ModContent.ItemType<TitanMask>(), ModContent.ItemType<TitanHeadgear>());
             RecipeGroup.RegisterGroup("ssm:AnyTitanHelmet", group);
+            //any gem
+            group = new RecipeGroup(() => Lang.misc[37] + " Gem", ModContent.ItemType<Opal>(), ModContent.ItemType<Aquamarine>());
+            RecipeGroup.RegisterGroup("ssm:AnyThoriumGem", group);
+        }
+
+        public override void AddRecipes()
+        {
+            Recipe.Create(ModContent.ItemType<CoffinSummon>())
+                .AddIngredient(ItemID.ClayBlock, 15)
+                .AddIngredient(ItemID.FossilOre, 8)
+                .AddRecipeGroup("ssm:AnyThoriumGem", 4)
+                .AddTile(TileID.DemonAltar)
+                .Register();
         }
         public override void PostAddRecipes()
 		{

@@ -120,7 +120,7 @@ namespace ssm.Content.Items.Weapons
                 AddIngredient<Penetrator>().
                 AddIngredient<StyxGazer>().
                 AddIngredient<SparklingLove>().
-                AddIngredient<ShtuxiumBar>(5).
+                //AddIngredient<ShtuxiumBar>(5).
                 AddTile(ModContent.TileType<MutantsForgeTile>()).
                 Register();
         }

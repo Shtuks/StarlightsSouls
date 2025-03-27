@@ -1,4 +1,3 @@
-using ssm.Content.Projectiles.Weapons;
 using System;
 using Terraria;
 using Terraria.ModLoader;
@@ -15,6 +14,7 @@ namespace ssm
         public static int ECH = -1;
         public static int DukeEX = -1;
         public static int boss = -1;
+        public static int mutantEX = -1;
         public static int championBoss = -1;
         public bool CelestialPower;
 
@@ -84,10 +84,10 @@ namespace ssm
 
         public override void OnHitByProjectile(NPC npc, Projectile projectile, NPC.HitInfo hit, int damageDone)
         {
-            if((projectile.type == ModContent.ProjectileType<ShtuxiumBlast>() || projectile.type == ModContent.ProjectileType<ShtuxiumBlast2>() || projectile.type == ModContent.ProjectileType<ShtuxiumBlast3>()) && npc.life > npc.lifeMax / 100)
-            {
-                npc.life -= npc.lifeMax / 100;
-            }
+            //if((projectile.type == ModContent.ProjectileType<ShtuxiumBlast>() || projectile.type == ModContent.ProjectileType<ShtuxiumBlast2>() || projectile.type == ModContent.ProjectileType<ShtuxiumBlast3>()) && npc.life > npc.lifeMax / 100)
+            //{
+            //    npc.life -= npc.lifeMax / 100;
+            //}
         }
     }
 }

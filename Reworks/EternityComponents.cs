@@ -1,5 +1,3 @@
-using FargowiltasCrossmod.Content.Calamity.Items.Accessories.Forces;
-using FargowiltasSouls.Content.Items.Accessories.Forces;
 using FargowiltasSouls.Content.Items.Accessories.Souls;
 using ssm.Calamity.Addons;
 using ssm.Calamity.Souls;
@@ -16,7 +14,7 @@ namespace ssm.Reworks
 
         public override void UpdateAccessory(Item Item, Player player, bool hideVisual)
         {
-            if (Item.type == ModContent.ItemType<UniverseSoul>() || Item.type == ModContent.ItemType<EternitySoul>() || Item.type == ModContent.ItemType<ShtuxianSoul>())
+            if (Item.type == ModContent.ItemType<UniverseSoul>() || Item.type == ModContent.ItemType<EternitySoul>())
             {
                 if (ModLoader.TryGetMod("ThoriumMod", out Mod tor))
                 {
@@ -24,7 +22,7 @@ namespace ssm.Reworks
                     ModContent.Find<ModItem>(((ModType)this).Mod.Name, "BardSoul").UpdateAccessory(player, false);
                 }
             }
-            if (Item.type == ModContent.ItemType<EternitySoul>() || Item.type == ModContent.ItemType<CalamitySoul>() || Item.type == ModContent.ItemType<ShtuxianSoul>())
+            if (Item.type == ModContent.ItemType<EternitySoul>() || Item.type == ModContent.ItemType<CalamitySoul>())
             {
                 if (ModCompatibility.Entropy.Loaded && ModCompatibility.Clamity.Loaded && ModCompatibility.Goozma.Loaded && ModCompatibility.Catalyst.Loaded)
                 {
@@ -36,11 +34,12 @@ namespace ssm.Reworks
                 }
                 if (ModCompatibility.Crossmod.Loaded)
                 {
-                    ModContent.GetInstance<GaleForce>().UpdateAccessory(player, hideVisual);
-                    ModContent.GetInstance<ElementsForce>().UpdateAccessory(player, hideVisual);
+                    ModContent.Find<ModItem>(ModCompatibility.Crossmod.Name, "BrandoftheBrimstoneWitch").UpdateAccessory(player, hideVisual);
+                    ModContent.Find<ModItem>(ModCompatibility.Crossmod.Name, "GaleForce").UpdateAccessory(player, hideVisual);
+                    ModContent.Find<ModItem>(ModCompatibility.Crossmod.Name, "ElementsForce").UpdateAccessory(player, hideVisual);
                 }
             }
-            if (Item.type == ModContent.ItemType<EternitySoul>() || Item.type == ModContent.ItemType<ShtuxianSoul>())
+            if (Item.type == ModContent.ItemType<EternitySoul>())
             {
                 if (ModLoader.TryGetMod("Redemption", out Mod Redemption))
                 {

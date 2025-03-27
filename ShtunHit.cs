@@ -6,9 +6,9 @@ using Terraria;
 using FargowiltasSouls.Content.Buffs.Boss;
 using FargowiltasSouls.Content.Buffs.Souls;
 using FargowiltasSouls.Content.Buffs.Masomode;
-using ssm.Content.NPCs.StarlightCat;
 using FargowiltasSouls.Content.Bosses.MutantBoss;
 using CalamityEntropy.Util;
+using ssm.Content.NPCs.MutantEX;
 
 namespace ssm
 {
@@ -24,43 +24,43 @@ namespace ssm
             {
                 modifiers.SetMaxDamage(1000);
             }
-            if (Player.HasBuff<MutantDesperationBuff>())
+            if (Player.HasBuff<MutantDesperationBuff>() && NPC.AnyNPCs(ModContent.NPCType<MutantEX>()))
             {
-                Player.AddBuff(ModContent.BuffType<TimeFrozenBuff>(),9999);
+                Player.AddBuff(ModContent.BuffType<TimeFrozenBuff>(),10);
             }
         }
 
         public override void OnHurt(Player.HurtInfo info)
         {
-            if (Main.expertMode && NPC.AnyNPCs(ModContent.NPCType<StarlightCatBoss>()))
-            {
-                Player.Shtun().ChtuxlagorHits++;
-            }
+            //if (Main.expertMode && NPC.AnyNPCs(ModContent.NPCType<StarlightCatBoss>()))
+            //{
+            //    Player.Shtun().ChtuxlagorHits++;
+            //}
             if (Player.Shtun().ChtuxlagorHits > 10)
             {
                 Player.Shtun().ERASE(Player);
                 Player.Shtun().ChtuxlagorHits = 0;
             }
-            if (NPC.AnyNPCs(ModContent.NPCType<StarlightCatBoss>()))
-            {
-                if (Main.zenithWorld)
-                {
-                    Player.statLife = 0;
-                    Player.AddBuff(ModContent.BuffType<ChtuxlagorInfernoEX>(), 5400);
-                }
-                else
-                {
-                    Player.GetModPlayer<FargoSoulsPlayer>().MaxLifeReduction += 100;
-                    Player.AddBuff(ModContent.BuffType<OceanicMaulBuff>(), 5400);
-                    Player.AddBuff(ModContent.BuffType<MutantFangBuff>(), 5400);
-                    Player.AddBuff(ModContent.BuffType<GodEaterBuff>(), 5400);
-                    Player.AddBuff(ModContent.BuffType<AbomFangBuff>(), 5400);
-                    Player.AddBuff(ModContent.BuffType<PurifiedBuff>(), 5400);
-                    Player.AddBuff(ModContent.BuffType<CurseoftheMoonBuff>(), 5400);
-                    Player.AddBuff(ModContent.BuffType<MutantNibbleBuff>(), 5400);
-                    Player.AddBuff(ModContent.BuffType<ChtuxlagorInferno>(), 5400);
-                }
-            }
+            //if (NPC.AnyNPCs(ModContent.NPCType<StarlightCatBoss>()))
+            //{
+            //    if (Main.zenithWorld)
+            //    {
+            //        Player.statLife = 0;
+            //        Player.AddBuff(ModContent.BuffType<ChtuxlagorInfernoEX>(), 5400);
+            //    }
+            //    else
+            //    {
+            //        Player.GetModPlayer<FargoSoulsPlayer>().MaxLifeReduction += 100;
+            //        Player.AddBuff(ModContent.BuffType<OceanicMaulBuff>(), 5400);
+            //        Player.AddBuff(ModContent.BuffType<MutantFangBuff>(), 5400);
+            //        Player.AddBuff(ModContent.BuffType<GodEaterBuff>(), 5400);
+            //        Player.AddBuff(ModContent.BuffType<AbomFangBuff>(), 5400);
+            //        Player.AddBuff(ModContent.BuffType<PurifiedBuff>(), 5400);
+            //        Player.AddBuff(ModContent.BuffType<CurseoftheMoonBuff>(), 5400);
+            //        Player.AddBuff(ModContent.BuffType<MutantNibbleBuff>(), 5400);
+            //        Player.AddBuff(ModContent.BuffType<ChtuxlagorInferno>(), 5400);
+            //    }
+            //}
         }
 
         public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)

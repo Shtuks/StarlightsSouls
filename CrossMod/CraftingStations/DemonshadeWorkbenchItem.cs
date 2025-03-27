@@ -22,16 +22,15 @@ namespace ssm.CrossMod.CraftingStations
         {
             Recipe recipe = CreateRecipe();
             recipe.AddIngredient(ItemType<DraedonsForge>());
-            recipe.AddIngredient(ItemType<SilvaWorkBench>());
-            recipe.AddIngredient(ItemType<VoidCondenser>());
-            recipe.AddIngredient(ItemType<BotanicPlanter>());
+            recipe.AddIngredient(ItemType<StaticRefiner>());
             recipe.AddIngredient(ItemType<ProfanedCrucible>());
             recipe.AddIngredient(ItemType<PlagueInfuser>());
+            recipe.AddIngredient(ItemType<MonolithAmalgam>());
+            recipe.AddIngredient(ItemType<EutrophicShelf>());
+            recipe.AddIngredient(ItemType<EffulgentManipulator>());
             recipe.AddIngredient(ItemType<AncientAltar>());
             recipe.AddIngredient(ItemType<AshenAltar>());
-            recipe.AddIngredient(ItemType<MonolithAmalgam>());
-            recipe.AddIngredient(ItemType<StaticRefiner>());
-            recipe.AddIngredient(ItemType<EutrophicWorkBench>());
+            recipe.AddIngredient(ItemType<BotanicPlanter>());
             recipe.AddIngredient(ItemType<ShadowspecBar>(), 15);
             recipe.Register();
         }

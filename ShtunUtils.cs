@@ -14,8 +14,6 @@ using ReLogic.Content;
 using System.Linq;
 using Terraria.DataStructures;
 using Terraria.Localization;
-using ssm.Electricity;
-using ssm.SHTUK;
 
 namespace ssm
 {
@@ -97,7 +95,6 @@ namespace ssm
 
         public static bool CircularHitboxCollision(Vector2 centerCheckPosition, float radius, Rectangle targetHitbox)
         {
-            // If the center intersects the hitbox, return true immediately
             Rectangle center = new Rectangle((int)centerCheckPosition.X, (int)centerCheckPosition.Y, 1, 1);
             if (center.Intersects(targetHitbox))
                 return true;
@@ -183,14 +180,6 @@ namespace ssm
             => player.GetModPlayer<ShtunPlayer>();
         public static ShtunShield Shield(this Player player)
             => player.GetModPlayer<ShtunShield>();
-        public static SHTUKPlayer SHTUK(this Player player)
-            => player.GetModPlayer<SHTUKPlayer>();
-        public static ModulesPlayer Modules(this Player player)
-            => player.GetModPlayer<ModulesPlayer>();
-        public static ShtunRadiation Radiation(this Player player)
-            => player.GetModPlayer<ShtunRadiation>();
-        public static ElectricalItem Electricity(this Item item)
-            => item.GetGlobalItem<ElectricalItem>();
 
         public static bool Stalin = ShtunConfig.Instance.Stalin;
         public static string TryStalinTexture => Stalin ? "_Stalin" : "";
@@ -204,7 +193,6 @@ namespace ssm
                 bool bossFound = false;
                 for (int index = 0; index < Main.npc.Length; index++)
                 {
-                    // If we've found a valid boss target, ignore ALL targets which aren't bosses.
                     if (bossFound && !(Main.npc[index].boss || Main.npc[index].type == NPCID.WallofFleshEye))
                         continue;
 

@@ -6,12 +6,9 @@ using Terraria.GameInput;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 using Terraria;
-using ssm.Content.NPCs.StarlightCat;
 using ssm.Core;
 using ssm.Content.Mounts;
 using Terraria.IO;
-using Terraria.Map;
-using ssm.SHTUK.Modules;
 using Terraria.ID;
 
 namespace ssm
@@ -67,10 +64,6 @@ namespace ssm
 
         public override void PreUpdateBuffs()
         {
-            if(StarlightCatBoss.phase > 0)
-            {
-                //ChtuxlagorArena();
-            }
             lastPos = Player.position;
         }
         public override void ProcessTriggers(TriggersSet triggersSet)
@@ -92,34 +85,34 @@ namespace ssm
                 //SoundEngine.PlaySound(new SoundStyle("ssm/Assets/Sounds/ShtuxianSuper"), Player.Center);
             }
 
-            if (ssm.shtukTeleport.JustPressed && Player.Modules().teleportModule && Main.myPlayer == Player.whoAmI)
-            {
-                Vector2 teleportLocation;
-                teleportLocation.X = (float)Main.mouseX + Main.screenPosition.X;
-                if (Player.gravDir == 1f)
-                {
-                    teleportLocation.Y = (float)Main.mouseY + Main.screenPosition.Y - (float)Player.height;
-                }
-                else
-                {
-                    teleportLocation.Y = Main.screenPosition.Y + (float)Main.screenHeight - (float)Main.mouseY;
-                }
-                teleportLocation.X -= (float)(Player.width / 2);
-                if (teleportLocation.X > 50f && teleportLocation.X < (float)(Main.maxTilesX * 16 - 50) && teleportLocation.Y > 50f && teleportLocation.Y < (float)(Main.maxTilesY * 16 - 50))
-                {
-                    if (!Collision.SolidCollision(teleportLocation, Player.width, Player.height))
-                    {
-                        Player.Teleport(teleportLocation, 4, 0);
-                        NetMessage.SendData(MessageID.TeleportEntity, -1, -1, null, 0, (float)Player.whoAmI, teleportLocation.X, teleportLocation.Y, 1, 0, 0);
-                    }
-                }
-            }
+            //if (ssm.shtukTeleport.JustPressed && Player.Modules().teleportModule && Main.myPlayer == Player.whoAmI)
+            //{
+            //    Vector2 teleportLocation;
+            //    teleportLocation.X = (float)Main.mouseX + Main.screenPosition.X;
+            //    if (Player.gravDir == 1f)
+            //    {
+            //        teleportLocation.Y = (float)Main.mouseY + Main.screenPosition.Y - (float)Player.height;
+            //    }
+            //    else
+            //    {
+            //        teleportLocation.Y = Main.screenPosition.Y + (float)Main.screenHeight - (float)Main.mouseY;
+            //    }
+            //    teleportLocation.X -= (float)(Player.width / 2);
+            //    if (teleportLocation.X > 50f && teleportLocation.X < (float)(Main.maxTilesX * 16 - 50) && teleportLocation.Y > 50f && teleportLocation.Y < (float)(Main.maxTilesY * 16 - 50))
+            //    {
+            //        if (!Collision.SolidCollision(teleportLocation, Player.width, Player.height))
+            //        {
+            //            Player.Teleport(teleportLocation, 4, 0);
+            //            NetMessage.SendData(MessageID.TeleportEntity, -1, -1, null, 0, (float)Player.whoAmI, teleportLocation.X, teleportLocation.Y, 1, 0, 0);
+            //        }
+            //    }
+            //}
 
 
-            if (ssm.shtukCharge.Current)
-            {
-                Player.SHTUK().addEnergy(Player.SHTUK().energyRegenCharging);
-            }
+            //if (ssm.shtukCharge.Current)
+            //{
+            //    Player.SHTUK().addEnergy(Player.SHTUK().energyRegenCharging);
+            //}
 
             if (ssm.dotMount.JustPressed)
             {
@@ -329,16 +322,6 @@ namespace ssm
             //if (NoUsingItems > 0)
             //    NoUsingItems--;
         }
-        public override void OnEnterWorld()
-        {
-            if (ShtunConfig.Instance.WorldEnterMessage)
-            {
-                ShtunUtils.DisplayLocalizedText("I recommend looking at the mod's settings.", Color.LimeGreen);
-                ShtunUtils.DisplayLocalizedText("Most of the content or rebalances are configurable.", Color.LimeGreen);
-                ShtunUtils.DisplayLocalizedText("This message also can be toggled off in settings.", Color.LimeGreen);
-            }
-        }
-
         public override void UpdateDead() 
         {
             ssm.legit = false;
@@ -357,23 +340,16 @@ namespace ssm
         {
             bool retVal = true;
 
-            if (!NPC.AnyNPCs(ModContent.NPCType<StarlightCatBoss>()))
+            if (Player.HasBuff<ShtuxianDomination>() || ChtuxlagorBuff)
             {
-                if (Player.HasBuff<ShtuxianDomination>() || ChtuxlagorBuff)
-                {
-                    retVal = false;
-                }
-                if (Player.Modules().ressurectionModule && Player.SHTUK().energy > 1000 && !Player.HasBuff(ModContent.BuffType<SHTUK.Modules.RessurectedBuff>()))
-                {
-                    Player.AddBuff(ModContent.BuffType<SHTUK.Modules.RessurectedBuff>(), 300);
-                    Player.statLife = Player.statLifeMax2;
-                    retVal = false;
-                }
+                retVal = false;
             }
-            else
-            {
-                ChtuxlagorDeaths++;
-            }
+            //if (Player.Modules().ressurectionModule && Player.SHTUK().energy > 1000 && !Player.HasBuff(ModContent.BuffType<SHTUK.Modules.RessurectedBuff>()))
+            //{
+            //    Player.AddBuff(ModContent.BuffType<SHTUK.Modules.RessurectedBuff>(), 300);
+            //    Player.statLife = Player.statLifeMax2;
+            //    retVal = false;
+            //}
 
             return retVal;
         }
@@ -427,49 +403,5 @@ namespace ssm
         //    }
         //}
 
-        void ChtuxlagorArena()
-        {
-            Vector2 offset = Player.position - lastPos;
-            if (offset.Length() > 32f)
-            {
-                offset.Normalize();
-                offset *= 32f;
-                Player.position = lastPos + offset;
-            }
-            Vector2 origin = StarlightCatBoss.Origin;
-            float arenaSize = StarlightCatBoss.ArenaSize;
-            if (Player.position.X <= origin.X - arenaSize)
-            {
-                Player.position.X = origin.X - arenaSize;
-                if (Player.velocity.X < 0f)
-                {
-                    Player.velocity.X = 0f;
-                }
-            }
-            else if (Player.position.X + Player.width >= origin.X + arenaSize)
-            {
-                Player.position.X = origin.X + arenaSize - Player.width;
-                if (Player.velocity.X > 0f)
-                {
-                    Player.velocity.X = 0f;
-                }
-            }
-            if (Player.position.Y <= origin.Y - arenaSize)
-            {
-                Player.position.Y = origin.Y - arenaSize;
-                if (Player.velocity.Y < 0f)
-                {
-                    Player.velocity.Y = 0f;
-                }
-            }
-            else if (Player.position.Y + Player.height >= origin.Y + arenaSize)
-            {
-                Player.position.Y = origin.Y + arenaSize - Player.height;
-                if (Player.velocity.Y > 0f)
-                {
-                    Player.velocity.Y = 0f;
-                }
-            }
-        }
     }
 }

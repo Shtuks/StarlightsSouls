@@ -1,7 +1,7 @@
 Mods: {
 	ssm: {
 		SetBonus: {
-			Monstrosity.SetBonus: Effects of all auric helmets, shadowspec helmet and gem tech headgear
+			Monstrosity.SetBonus: WIP
 			Quantum.SetBonus:
 				'''
 				If damage less than 10, it will be nulified
@@ -89,17 +89,6 @@ Mods: {
 				SoABerserker: Effects of Flora Fist
 				SoASupersonic: Effects of Heart of the Plough, Advanced Dash Tech
 				SoAWorldshaper: Effects of Rage Supressor, Celestial ring
-			}
-
-			Lore: {
-				ShtuxibusLore: {
-					Lore:
-						'''
-						No. No no no no. I reject commenting this.
-						I am commenting already too much.
-						'''
-					DisplayName: Lore - Shtuxibus
-				}
 			}
 
 			AdamantiteSingularity: {
@@ -314,11 +303,6 @@ Mods: {
 				Tooltip: True essense of Chtux'Lag'Or shard.
 			}
 
-			ShtuxianCurse: {
-				DisplayName: Shtuxibus Curse
-				Tooltip: ""
-			}
-
 			chtuxmantle: {
 				DisplayName: Chtuxlagor Mantle
 				Tooltip: Effects of all armor sets and accessories.
@@ -332,21 +316,6 @@ Mods: {
 			ShtuxiumBar: {
 				Tooltip: Ingot of Chtux'Lag'Or shard's essense.
 				DisplayName: Shtuxium Bar
-			}
-
-			ShtuxiumSoulShard: {
-				Tooltip: ""
-				DisplayName: Shtuxium Soul Shard
-			}
-
-			ShtuxibusBag: {
-				Tooltip: ""
-				DisplayName: Shtuxibus Bag
-			}
-
-			ShtuxibusSpear: {
-				Tooltip: ""
-				DisplayName: Shtuxibus Spear
 			}
 
 			NekomiEnchant: {
@@ -538,7 +507,7 @@ Mods: {
 				DisplayName: True Monstrosity Mask
 				Tooltip:
 					'''
-					60% increased damage and 50% increased critical strike chance
+					100% increased damage and 50% increased critical strike chance
 					Drastically increases life regen, also increases armor penetration to 70.
 					'''
 			}
@@ -547,7 +516,7 @@ Mods: {
 				DisplayName: True Monstrosity Pants
 				Tooltip:
 					'''
-					40% increased damage and 20% increased critical strike chance
+					100% increased damage and 20% increased critical strike chance
 					50% increased movement and 20% increased attack speed
 					Also increases armor penetration to 70.
 					'''
@@ -557,7 +526,7 @@ Mods: {
 				DisplayName: True Monstrosity Suit
 				Tooltip:
 					'''
-					50% increased damage and 20% increased critical strike chance 
+					150% increased damage and 20% increased critical strike chance 
 					Increases max number of minions and sentries by 20
 					Increases damage reduction by 50%, Increases max life and mana by 1000
 					40% reduced mana usage, 25% chance not to consume ammo, also increases armor penetration to 70.
@@ -2846,10 +2815,7 @@ Mods: {
 			}
 
 			SolynsSigil: {
-				Tooltip: 
-				'''
-				Effects of every cosmetical accessories from WotG
-				'''
+				Tooltip: Effects of every cosmetical accessories from WotG
 				DisplayName: Solyns Sigil
 			}
 
@@ -2959,6 +2925,90 @@ Mods: {
 
 			Wayfarer: {
 				DisplayName: Wayfarer
+				Tooltip: ""
+			}
+
+			BlueComputerChip: {
+				Tooltip: ""
+				DisplayName: Blue Computer Chip
+			}
+
+			MariviumEnchant: {
+				Tooltip:
+					'''
+					If your crit chance is over 100%, convert excess crit chance into damage bonus
+					Obtain 2 layers of shields, which takes 10 seconds to recover after being shattered
+					After shield shattered, treat 140 health points and increase your damage by 100% for 5 seconds
+					'''
+				DisplayName: Marivium Enchant
+			}
+
+			ClamitasEnchant: {
+				Tooltip: 
+				'''
+				Three shellfishes aid you in combat
+				Effects of Soul of Pyrogen and Hell Flare
+				'''
+				DisplayName: Clamitas Enchant
+			}
+
+			BuffaloDrumstick: {
+				DisplayName: Buffalo Drumstick
+				Tooltip: ""
+			}
+
+			CockatriceEgg: {
+				DisplayName: Cockatrice Egg
+				Tooltip: ""
+			}
+
+			DirtyCloth: {
+				DisplayName: Dirty Cloth
+				Tooltip: ""
+			}
+
+			FrostedMetal: {
+				DisplayName: Frosted Metal
+				Tooltip: ""
+			}
+
+			GildedDrumstick: {
+				DisplayName: Gilded Drumstick
+				Tooltip: ""
+			}
+
+			GreenComputerChip: {
+				DisplayName: Green Computer Chip
+				Tooltip: ""
+			}
+
+			GreyComputerChip: {
+				DisplayName: Grey Computer Chip
+				Tooltip: ""
+			}
+
+			IrradiatedSkull: {
+				DisplayName: Irradiated Skull
+				Tooltip: ""
+			}
+
+			RadioactiveSushi: {
+				DisplayName: Radioactive Sushi
+				Tooltip: ""
+			}
+
+			SleepyRock: {
+				DisplayName: Sleepy Rock
+				Tooltip: ""
+			}
+
+			ShtuxiumSoulShard: {
+				Tooltip: ""
+				DisplayName: Shtuxium Soul Shard
+			}
+
+			MutantsCurseEX: {
+				DisplayName: Mutants Curse EX
 				Tooltip: ""
 			}
 		}
@@ -3217,18 +3267,31 @@ Mods: {
 				}
 			}
 
+			MutantEX: {
+				DisplayName: Mutant EX
+
+				BossChecklistIntegration: {
+					SpawnInfo: Spawned with an Mutants Curse EX anytime anywhere.
+					DespawnMessage: ""
+					KilledAllMessage: ""
+				}
+			}
+
 			StarlightCatChaos.DisplayName: Chaos
 			StarlightCatCreator.DisplayName: StarlightCat Creator
 			StarlightCatDestroyer.DisplayName: StarlightCat Destroyer
 			StarlightCatOrder.DisplayName: Order
 			ChtuxlagorBoss.DisplayName: Chtuxlagor Boss
 			ShtuxibusBoss.DisplayName: Shtuxibus Boss
+			MutantIllusion.DisplayName: Mutant EX
 		}
 
 		Toggler: {
+			MariviumEffect: Marivium Shields
+			HolyShieldEffect: Holy Shield
 			CrashEffect: Crash Boots
 			CairoEffect: Eternal Oasis
-			MotDEHEader: Mark of the Dream Eater
+			MotDEHeader: Mark of the Dream Eater
 			PlagueEffect: Plague Gases
 			LichEffect: Soul Fragments
 			DragonEffect: Dragon's Flame
@@ -3370,6 +3433,64 @@ Mods: {
 			SolarP.DisplayName: Solar P
 			StardustP.DisplayName: Stardust P
 			VortexP.DisplayName: Vortex P
+			MutantTyphoon.DisplayName: Mutant Typhoon
+			MutantTrueEyeSphere.DisplayName: Mutant True Eye Sphere
+			MutantTrueEyeS.DisplayName: Mutant True Eye S
+			MutantTrueEyeR.DisplayName: Mutant True Eye R
+			MutantTrueEyeL.DisplayName: Mutant True Eye L
+			MutantTrueEyeDeathray.DisplayName: Mutant True Eye Deathray
+			MutantSword.DisplayName: Mutant Sword
+			MutantSphereSmall.DisplayName: Mutant Sphere Small
+			MutantSpazmarang.DisplayName: Mutant Spazmarang
+			MutantSlimeRain.DisplayName: Mutant Slime Rain
+			MutantSlimeBall.DisplayName: Mutant Slime Ball
+			MutantScythe2.DisplayName: Mutant Scythe2
+			MutantScythe1.DisplayName: Mutant Scythe1
+			MutantRitual.DisplayName: Mutant Ritual
+			MutantRetirang.DisplayName: Mutant Retirang
+			MutantReticle2.DisplayName: Mutant Reticle2
+			MutantReticle.DisplayName: Mutant Reticle
+			MutantPillar.DisplayName: Mutant Pillar
+			MutantNuke.DisplayName: Mutant Nuke
+			MutantMark2.DisplayName: Mutant Mark2
+			MutantMark1.DisplayName: Mutant Mark1
+			MutantHeal.DisplayName: Mutant Heal
+			MutantGuardian.DisplayName: Mutant Guardian
+			MutantGlowything.DisplayName: Mutant Glowything
+			MutantGiantDeathray2.DisplayName: Mutant Giant Deathray2
+			MutantFragment.DisplayName: Mutant Fragment
+			MutantFishronRitual.DisplayName: Mutant Fishron Ritual
+			MutantFishron.DisplayName: Mutant Fishron
+			MutantEyeWavy.DisplayName: Mutant Eye Wavy
+			MutantEyeOfCthulhu.DisplayName: Mutant Eye Of Cthulhu
+			MutantEyeHoming.DisplayName: Mutant Eye Homing
+			MutantEye.DisplayName: Mutant Eye
+			MutantDestroyerTail.DisplayName: Mutant Destroyer Tail
+			MutantDestroyerHead.DisplayName: Mutant Destroyer Head
+			MutantDestroyerBody.DisplayName: Mutant Destroyer Body
+			MutantDeathraySmall.DisplayName: Mutant Deathray Small
+			MutantDeathrayAim.DisplayName: Mutant Deathray Aim
+			MutantDeathray3.DisplayName: Mutant Deathray3
+			MutantDeathray2.DisplayName: Mutant Deathray2
+			MutantDeathray1.DisplayName: Mutant Deathray1
+			MutantCrystalLeaf.DisplayName: Mutant Crystal Leaf
+			MutantBoss.DisplayName: Mutant Boss
+			MutantBombSmall.DisplayName: Mutant Bomb Small
+			MutantBomb.DisplayName: Mutant Bomb
+			MutantSphereRing.DisplayName: Mutant Sphere Ring
+			MutantSpearThrown.DisplayName: Mutant Spear Thrown
+			MutantSpearSpin.DisplayName: Mutant Spear Spin
+			MutantSpearMagical.DisplayName: Mutant Spear Magical
+			MutantSpearDash.DisplayName: Mutant Spear Dash
+			MutantSpearAim.DisplayName: Mutant Spear Aim
+			MutantSlimeSpike.DisplayName: Mutant Slime Spike
+			MutantShadowHand.DisplayName: Mutant Shadow Hand
+			MutantSansHead.DisplayName: Mutant Sans Head
+			MutantSansBeam.DisplayName: Mutant Sans Beam
+			MutantRitual5.DisplayName: Mutant Ritual5
+			BossRush.DisplayName: Boss Rush
+			AbomSword.DisplayName: Abom Sword
+			AbomSwordHandle.DisplayName: Abom Sword Handle
 		}
 
 		Biomes: {
@@ -3549,7 +3670,7 @@ Mods: {
 		}
 
 		DamageClasses: {
-			UnitedModdedThrower.DisplayName: United Modded Thrower
+			UnitedModdedThrower.DisplayName: Thrower Damage
 			ShtuxianDamage.DisplayName: True Damage
 		}
 	}

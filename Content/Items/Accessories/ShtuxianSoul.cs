@@ -189,8 +189,8 @@ namespace ssm.Content.Items.Accessories
         {
             Recipe recipe = this.CreateRecipe(1);
             recipe.AddIngredient<EternityForce>(1);
-            recipe.AddIngredient<ShtuxianEnchant>(1);
-            recipe.AddIngredient<Materials.InfinityIngot>(5);
+            //recipe.AddIngredient<ShtuxianEnchant>(1);
+            //recipe.AddIngredient<Materials.InfinityIngot>(5);
             recipe.AddIngredient(this.FargoSoul, "EternitySoul", 1);
             recipe.AddTile<MutantsForgeTile>();
             recipe.Register();

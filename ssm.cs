@@ -21,11 +21,48 @@ using ssm.Thorium;
 using System.Collections.Generic;
 using ssm.SoA;
 using ssm.Redemption;
+using FargowiltasSouls.Content.Bosses.AbomBoss;
+using FargowiltasSouls.Content.Bosses.BanishedBaron;
+using FargowiltasSouls.Content.Bosses.Champions.Cosmos;
+using FargowiltasSouls.Content.Bosses.Champions.Earth;
+using FargowiltasSouls.Content.Bosses.Champions.Life;
+using FargowiltasSouls.Content.Bosses.Champions.Nature;
+using FargowiltasSouls.Content.Bosses.Champions.Shadow;
+using FargowiltasSouls.Content.Bosses.Champions.Spirit;
+using FargowiltasSouls.Content.Bosses.Champions.Terra;
+using FargowiltasSouls.Content.Bosses.Champions.Timber;
+using FargowiltasSouls.Content.Bosses.Champions.Will;
+using FargowiltasSouls.Content.Bosses.CursedCoffin;
+using FargowiltasSouls.Content.Bosses.DeviBoss;
+using FargowiltasSouls.Content.Bosses.Lifelight;
+using FargowiltasSouls.Content.Bosses.TrojanSquirrel;
+using FargowiltasSouls.Content.Items.Accessories.Forces;
+using FargowiltasSouls.Content.Items.Materials;
+using FargowiltasSouls.Content.Items.Pets;
+using FargowiltasSouls.Content.Items.Placables.MusicBoxes;
+using FargowiltasSouls.Content.Items.Summons;
+using FargowiltasSouls.Content.Items.Weapons.Challengers;
+using FargowiltasSouls.Core.Systems;
+using System.Linq;
+using Terraria.Localization;
+using FargowiltasSouls.Content.Items.Placables.Trophies;
+using ssm.Content.Items.Consumables;
+using ssm.Content.NPCs.MutantEX;
 
 namespace ssm
 {
     public class ssm : Mod
     {
+        public Dictionary<string, float> BossChecklistValues = new Dictionary<string, float>
+        {
+            {"DukeFishronEX", float.MaxValue-5},
+            {"Shtuxibus", float.MaxValue-4},
+            {"Echdeath", float.MaxValue-3},
+            {"MutantEX", float.MaxValue-2},
+            {"Chtuxlagor", float.MaxValue-1},
+            {"StarlightCatBoss", float.MaxValue}
+        };
+
         // Swarms
         public static bool PostMLSwarmActive;
         public static bool HardmodeSwarmActive;
@@ -72,6 +109,61 @@ namespace ssm
             AllStationIDs = ShtunUtils.GetAllCraftingStationTileIDs().ToArray();
         }
 
+        private void BossChecklistCompatibility()
+        {
+            if (ModLoader.TryGetMod("BossChecklist", out Mod bossChecklist))
+            {
+                static bool AllPlayersAreDead() => Main.player.All(plr => !plr.active || plr.dead);
+
+                void Add(string type, string bossName, List<int> npcIDs, Func<bool> downed, Func<bool> available, List<int> collectibles, List<int> spawnItems, bool hasKilledAllMessage, string portrait = null)
+                {
+                    bossChecklist.Call(
+                        $"Log{type}",
+                        this,
+                        bossName,
+                        BossChecklistValues[bossName],
+                        downed,
+                        npcIDs,
+                        new Dictionary<string, object>()
+                        {
+                            { "spawnItems", spawnItems },
+                            { "availability", available },
+                            { "despawnMessage", hasKilledAllMessage ? new Func<NPC, LocalizedText>(npc =>
+                                        AllPlayersAreDead() ? Language.GetText($"Mods.{Name}.NPCs.{bossName}.BossChecklistIntegration.KilledAllMessage") : Language.GetText($"Mods.{Name}.NPCs.{bossName}.BossChecklistIntegration.DespawnMessage")) :
+                                    Language.GetText($"Mods.{Name}.NPCs.{bossName}.BossChecklistIntegration.DespawnMessage") },
+                            {
+                                "customPortrait",
+                                portrait == null ? null : new Action<SpriteBatch, Rectangle, Color>((spriteBatch, rect, color) =>
+                                {
+                                    Texture2D tex = Assets.Request<Texture2D>(portrait, ReLogic.Content.AssetRequestMode.ImmediateLoad).Value;
+                                    Rectangle sourceRect = tex.Bounds;
+                                    float scale = Math.Min(1f, (float)rect.Width / sourceRect.Width);
+                                    spriteBatch.Draw(tex, rect.Center.ToVector2(), sourceRect, color, 0f, sourceRect.Size() / 2, scale, SpriteEffects.None, 0);
+                                })
+                            }
+                        }
+                    );
+                }
+
+                Add("Boss",
+                    "MutantEX",
+                    new List<int> { ModContent.NPCType<MutantEX>() },
+                    () => WorldSaveSystem.downedMutantEX,
+                    () => true,
+                    new List<int> {
+                        ModContent.ItemType<MutantMusicBox>(),
+                        ModContent.ItemType<Sadism>(),
+                        ModContent.ItemType<MutantTrophy>(),
+                        ModContent.ItemType<SpawnSack>(),
+                        ModContent.ItemType<PhantasmalEnergy>()
+                    },
+                    new List<int> { ModContent.ItemType<MutantsCurseEX>() },
+                    true
+                );
+
+            }
+        }
+
 
         public override void Load()
         {
@@ -87,10 +179,6 @@ namespace ssm
 
             CaughtNPCItem.RegisterItems();
 
-            if(ModLoader.TryGetMod("CalamityMod", out Mod kal))
-            {
-                CalCaughtNpcs.CalRegisterItems();
-            }
             if (ModLoader.TryGetMod("ThoriumMod", out Mod tor))
             {
                 ThoriumCaughtNpcs.ThoriumRegisterItems();
@@ -105,13 +193,15 @@ namespace ssm
             }
 
             //SkyManager.Instance["ssm:Shtuxibus"] = new ShtuxibusSky();
-            SkyManager.Instance["ssm:Chtuxlagor"] = new ChtuxlagorSky();
+            //SkyManager.Instance["ssm:Chtuxlagor"] = new ChtuxlagorSky();
+            SkyManager.Instance["ssm:MutantEX"] = new MutantEXSky();
 
             ModLoader.TryGetMod("BossChecklist", out Mod bossChecklist);
         }
 
         public override void PostSetupContent()
         {
+            BossChecklistCompatibility();
             if (ModCompatibility.Thorium.Loaded)
             {
                 PostSetupContentThorium.PostSetupContent_Thorium();
@@ -246,32 +336,6 @@ namespace ssm
                 return Color.Lerp(abomColor, deviColor, (ColorTimer2 - 100) / 100);
             else
                 return Color.Lerp(deviColor, mutantColor, (ColorTimer2 - 200) / 100);
-        }
-        public static int FindClosestHostileNPC(Vector2 location, float detectionRange, bool lineCheck = false)
-        {
-            NPC closestNpc = null;
-            foreach (NPC n in Main.npc)
-            {
-                if (n.CanBeChasedBy() && n.Distance(location) < detectionRange && (!lineCheck || Collision.CanHitLine(location, 0, 0, n.Center, 0, 0)))
-                {
-                    detectionRange = n.Distance(location);
-                    closestNpc = n;
-                }
-            }
-            return closestNpc == null ? -1 : closestNpc.whoAmI;
-        }
-        public static int FindClosestHostileNPCPrioritizingMinionFocus(Projectile projectile, float detectionRange, bool lineCheck = false, Vector2 center = default)
-        {
-            if (center == default)
-                center = projectile.Center;
-
-            NPC minionAttackTargetNpc = projectile.OwnerMinionAttackTargetNPC;
-            if (minionAttackTargetNpc != null && minionAttackTargetNpc.CanBeChasedBy() && minionAttackTargetNpc.Distance(center) < detectionRange
-                && (!lineCheck || Collision.CanHitLine(center, 0, 0, minionAttackTargetNpc.Center, 0, 0)))
-            {
-                return minionAttackTargetNpc.whoAmI;
-            }
-            return FindClosestHostileNPC(center, detectionRange, lineCheck);
         }
 
     }

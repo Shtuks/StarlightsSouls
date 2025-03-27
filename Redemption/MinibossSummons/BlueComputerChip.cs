@@ -10,7 +10,7 @@ namespace ssm.Redemption.MinibossSummons
     [ExtendsFromMod(ModCompatibility.Redemption.Name)]
     [JITWhenModsEnabled(ModCompatibility.Redemption.Name)]
 
-    public class BuffaloDrumstick : ModItem
+    public class BlueComputerChip : ModItem
     {
         public override void SetStaticDefaults()
         {

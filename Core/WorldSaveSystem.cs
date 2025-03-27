@@ -12,6 +12,7 @@ namespace ssm.Systems
         public static bool downedEch = false;
         public static bool downedFish = false;
         public static bool downedShtuxibus = false;
+        public static bool downedMutantEX = false;
         public static bool downedChtuxlagor = false;
 
         public static bool TrueSuperChtuxlagorWrathModeOmegaEX = false;
@@ -52,6 +53,10 @@ namespace ssm.Systems
             {
                 tag["trueDeathEternity"] = true;
             }
+            if (downedMutantEX)
+            {
+                tag["downedMutantEX"] = true;
+            }
         }
         public override void LoadWorldData(TagCompound tag)
         {
@@ -63,6 +68,7 @@ namespace ssm.Systems
             TrueSuperChtuxlagorWrathModeOmegaEX = tag.ContainsKey("TrueSuperChtuxlagorWrathModeOmegaEX");
             trueRevEternity = tag.ContainsKey("trueRevEternity");
             trueDeathEternity = tag.ContainsKey("trueDeathEternity");
+            downedMutantEX = tag.ContainsKey("downedMutantEX");
         }
         public override void NetSend(BinaryWriter writer)
         {
@@ -75,6 +81,7 @@ namespace ssm.Systems
             flags[5] = talk;
             flags[6] = trueRevEternity;
             flags[7] = trueDeathEternity;
+            flags[8] = downedMutantEX;
             writer.Write(flags);
         }
         public override void NetReceive(BinaryReader reader)
@@ -88,6 +95,7 @@ namespace ssm.Systems
             talk = flags[5];
             trueRevEternity = flags[6];
             trueDeathEternity = flags[7];
+            downedMutantEX = flags[7];
         }
     }
 }

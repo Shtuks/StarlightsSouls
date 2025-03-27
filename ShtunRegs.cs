@@ -2,7 +2,6 @@
 using ReLogic.Content;
 using Terraria.ModLoader;
 
-// Base namespace for convinience
 namespace ssm
 {
     public static class ShtunRegs
