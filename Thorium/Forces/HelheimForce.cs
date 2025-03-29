@@ -28,6 +28,7 @@ namespace ssm.Thorium.Forces
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
+            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "WarlockEnchant").UpdateAccessory(player, hideVisual);
             ModContent.Find<ModItem>(((ModType)this).Mod.Name, "SilkEnchant").UpdateAccessory(player, hideVisual);
             ModContent.Find<ModItem>(((ModType)this).Mod.Name, "DreadEnchant").UpdateAccessory(player, hideVisual);
             ModContent.Find<ModItem>(((ModType)this).Mod.Name, "SpiritTrapperEnchant").UpdateAccessory(player, hideVisual);
@@ -39,6 +40,7 @@ namespace ssm.Thorium.Forces
         {
             Recipe recipe = this.CreateRecipe();
 
+            recipe.AddIngredient(ModContent.ItemType<WarlockEnchant>());
             recipe.AddIngredient(ModContent.ItemType<SilkEnchant>());
             recipe.AddIngredient(ModContent.ItemType<DreadEnchant>());
             recipe.AddIngredient(ModContent.ItemType<SpiritTrapperEnchant>());

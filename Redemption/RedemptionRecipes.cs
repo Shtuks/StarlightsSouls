@@ -6,6 +6,8 @@ using Redemption.Items.Accessories.PostML;
 using Redemption.Items.Accessories.HM;
 using ssm.Core;
 using FargowiltasSouls.Content.Items.Accessories.Forces;
+using FargowiltasSouls.Content.Items.Accessories.Essences;
+using Terraria.ID;
 
 namespace ssm.Redemption
 {
@@ -26,27 +28,28 @@ namespace ssm.Redemption
             for (int i = 0; i < Recipe.numRecipes; i++)
             {
                 Recipe recipe = Main.recipe[i];
-                //because mutagen is op
-                if (recipe.HasResult<MutagenMelee>())
-                {
-                    recipe.AddIngredient<LifeFragment>(5);
-                }
-                if (recipe.HasResult<MutagenRanged>())
-                {
-                    recipe.AddIngredient<LifeFragment>(5);
-                }
-                if (recipe.HasResult<MutagenMagic>())
-                {
-                    recipe.AddIngredient<LifeFragment>(5);
-                }
-                if (recipe.HasResult<MutagenSummon>())
-                {
-                    recipe.AddIngredient<LifeFragment>(5);
-                }
-                if (recipe.HasResult<MutagenRitualist>())
-                {
-                    recipe.AddIngredient<LifeFragment>(5);
-                }
+
+                //FIXED
+                //if (recipe.HasResult<MutagenMelee>())
+                //{
+                //    recipe.AddIngredient<LifeFragment>(5);
+                //}
+                //if (recipe.HasResult<MutagenRanged>())
+                //{
+                //    recipe.AddIngredient<LifeFragment>(5);
+                //}
+                //if (recipe.HasResult<MutagenMagic>())
+                //{
+                //    recipe.AddIngredient<LifeFragment>(5);
+                //}
+                //if (recipe.HasResult<MutagenSummon>())
+                //{
+                //    recipe.AddIngredient<LifeFragment>(5);
+                //}
+                //if (recipe.HasResult<MutagenRitualist>())
+                //{
+                //    recipe.AddIngredient<LifeFragment>(5);
+                //}
 
                 if (recipe.createItem.ModItem is BaseForce)
                 {
@@ -54,10 +57,55 @@ namespace ssm.Redemption
                         recipe.AddIngredient<RoboBrain>();
                 }
 
-                if (recipe.HasResult<FlightMasterySoul>())
+                if (recipe.HasResult<FlightMasterySoul>() && !recipe.HasResult<NebWings>())
                 {
                     recipe.AddIngredient<NebWings>();
                     recipe.AddIngredient<XenomiteJetpack>();
+                }
+
+                //emblem -> essence -> mutagen -> soul
+                //Where clamity post dog acc? I dont know.
+
+                if (recipe.HasResult<MutagenMagic>() && !recipe.HasResult<ApprenticesEssence>())
+                {
+                    recipe.AddIngredient<ApprenticesEssence>();
+                    recipe.RemoveIngredient(ItemID.DestroyerEmblem);
+                }
+                if (recipe.HasResult<MutagenMelee>() && !recipe.HasResult<BarbariansEssence>())
+                {
+                    recipe.AddIngredient<BarbariansEssence>();
+                    recipe.RemoveIngredient(ItemID.DestroyerEmblem);
+                }
+                if (recipe.HasResult<MutagenSummon>() && !recipe.HasResult<OccultistsEssence>())
+                {
+                    recipe.AddIngredient<OccultistsEssence>();
+                    recipe.RemoveIngredient(ItemID.DestroyerEmblem);
+                }
+                if (recipe.HasResult<MutagenRanged>() && !recipe.HasResult<SharpshootersEssence>())
+                {
+                    recipe.AddIngredient<SharpshootersEssence>();
+                    recipe.RemoveIngredient(ItemID.DestroyerEmblem);
+                }
+
+                if (recipe.HasResult<ArchWizardsSoul>() && !recipe.HasResult<MutagenMagic>())
+                {
+                    recipe.AddIngredient<MutagenMagic>();
+                    recipe.RemoveIngredient(ModContent.ItemType<ApprenticesEssence>());
+                }
+                if (recipe.HasResult<BerserkerSoul>() && !recipe.HasResult<MutagenMelee>())
+                {
+                    recipe.AddIngredient<MutagenMelee>();
+                    recipe.RemoveIngredient(ModContent.ItemType<BarbariansEssence>());
+                }
+                if (recipe.HasResult<ConjuristsSoul>() && !recipe.HasResult<MutagenSummon>())
+                {
+                    recipe.AddIngredient<MutagenSummon>();
+                    recipe.RemoveIngredient(ModContent.ItemType<OccultistsEssence>());
+                }
+                if (recipe.HasResult<SnipersSoul>() && !recipe.HasResult<MutagenRanged>())
+                {
+                    recipe.AddIngredient<SharpshootersEssence>();
+                    recipe.RemoveIngredient(ModContent.ItemType<SharpshootersEssence>());
                 }
             }
         }

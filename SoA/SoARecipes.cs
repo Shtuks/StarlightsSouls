@@ -11,7 +11,6 @@ using SacredTools.Content.Items.Accessories.Wings;
 using SacredTools.Content.Items.DEV;
 using SacredTools.Content.Items.Placeable.CraftingStations;
 using FargowiltasSouls.Content.Items.Accessories.Forces;
-using FargowiltasSouls.Content.NPCs.EternityModeNPCs.VanillaEnemies.GoblinInvasion;
 using SacredTools.Content.Items.Materials;
 
 namespace ssm
@@ -46,6 +45,11 @@ namespace ssm
                 //    recipe.RemoveIngredient(ItemID.FireGauntlet);
                 //    recipe.AddIngredient(ItemID.MechanicalGlove);
                 //}
+
+                if ((recipe.HasResult<UniverseSoul>() || recipe.HasResult<TerrariaSoul>() || recipe.HasResult<MasochistSoul>() || recipe.HasResult<DimensionSoul>()) && !recipe.HasIngredient<EmberOfOmen>())
+                {
+                    recipe.AddIngredient<EmberOfOmen>(5);
+                }
 
                 if (recipe.HasResult<EternitySoul>() && !recipe.HasIngredient<SoASoul>())
                 {

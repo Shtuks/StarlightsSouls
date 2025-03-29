@@ -91,16 +91,6 @@ Mods: {
 				SoAWorldshaper: Effects of Rage Supressor, Celestial ring
 			}
 
-			AdamantiteSingularity: {
-				DisplayName: Adamantite Singularity
-				Tooltip: ""
-			}
-
-			AeraliteSingularity: {
-				DisplayName: Aeralite Singularity
-				Tooltip: ""
-			}
-
 			ShtuxianSoul: {
 				DisplayName: Soul of Chtux'lag'or
 				Tooltip:
@@ -112,151 +102,6 @@ Mods: {
 					increase maximum eternity crits by 2000, faster mutant eye cooldown
 					'God or whatever, all things acknowledge your claim to omnipotence.'
 					'''
-			}
-
-			AstralSingularity: {
-				DisplayName: Astral Singularity
-				Tooltip: ""
-			}
-
-			AuricSingularity: {
-				DisplayName: Auric Singularity
-				Tooltip: ""
-			}
-
-			ChlorophyteSingularity: {
-				DisplayName: Chlorophyte Singularity
-				Tooltip: ""
-			}
-
-			CobaltSingularity: {
-				DisplayName: Cobalt Singularity
-				Tooltip: ""
-			}
-
-			CopperSingularity: {
-				DisplayName: Copper Singularity
-				Tooltip: ""
-			}
-
-			CosmiliteSingularity: {
-				DisplayName: Cosmilite Singularity
-				Tooltip: ""
-			}
-
-			CrimtaneSingularity: {
-				DisplayName: Crimtane Singularity
-				Tooltip: ""
-			}
-
-			CryoniteSingularity: {
-				DisplayName: Cryonite Singularity
-				Tooltip: ""
-			}
-
-			DemoniteSingularity: {
-				DisplayName: Demonite Singularity
-				Tooltip: ""
-			}
-
-			GoldSingularity: {
-				DisplayName: Gold Singularity
-				Tooltip: ""
-			}
-
-			HallowSingularity: {
-				DisplayName: Hallow Singularity
-				Tooltip: ""
-			}
-
-			HellstoneSingularity: {
-				DisplayName: Hellstone Singularity
-				Tooltip: ""
-			}
-
-			LeadSingularity: {
-				DisplayName: Lead Singularity
-				Tooltip: ""
-			}
-
-			MeteoriteSingularity: {
-				DisplayName: Meteorite Singularity
-				Tooltip: ""
-			}
-
-			MythrillSingularity: {
-				DisplayName: Mythrill Singularity
-				Tooltip: ""
-			}
-
-			OrichalcumSingularity: {
-				DisplayName: Orichalcum Singularity
-				Tooltip: ""
-			}
-
-			PalladiumSingularity: {
-				DisplayName: Palladium Singularity
-				Tooltip: ""
-			}
-
-			PerenialSingularity: {
-				DisplayName: Perenial Singularity
-				Tooltip: ""
-			}
-
-			PlatinumSingularity: {
-				DisplayName: Platinum Singularity
-				Tooltip: ""
-			}
-
-			ScoriaSingularity: {
-				DisplayName: Scoria Singularity
-				Tooltip: ""
-			}
-
-			SilverSingularity: {
-				DisplayName: Silver Singularity
-				Tooltip: ""
-			}
-
-			SpectreSingularity: {
-				DisplayName: Spectre Singularity
-				Tooltip: ""
-			}
-
-			TinSingularity: {
-				DisplayName: Tin Singularity
-				Tooltip: ""
-			}
-
-			TitaniumSingularity: {
-				DisplayName: Titanium Singularity
-				Tooltip: ""
-			}
-
-			TungstenSingularity: {
-				DisplayName: Tungsten Singularity
-				Tooltip: ""
-			}
-
-			UelibloomSingularity: {
-				DisplayName: Uelibloom Singularity
-				Tooltip: ""
-			}
-
-			UltimateHealingPotion: {
-				DisplayName: Ultimate Healing Potion
-				Tooltip: ""
-			}
-
-			LuminiteSingularity: {
-				DisplayName: Luminite Singularity
-				Tooltip: ""
-			}
-
-			ShroomiteSingularity: {
-				DisplayName: Shroomite Singularity
-				Tooltip: ""
 			}
 
 			CalamitySoul: {
@@ -282,40 +127,6 @@ Mods: {
 					Effects of Brand of the Brimstone Witch and Pendant of the Godseeker.
 					'The land may never grow quiet again, but peace can certainly be brought upon it.'
 					'''
-			}
-
-			ShtuxibusSword: {
-				DisplayName: Shtuxian Spear
-				Tooltip:
-					'''
-					Set life of attacked entity to 0.
-					♎ Chtux'Lag'Or Item ♎
-					'''
-			}
-
-			InfinityCatalyst: {
-				DisplayName: Infinity Catalyst
-				Tooltip: All strength of universe in your palm.
-			}
-
-			InfinityIngot: {
-				DisplayName: Awakened shtuxium bar
-				Tooltip: True essense of Chtux'Lag'Or shard.
-			}
-
-			chtuxmantle: {
-				DisplayName: Chtuxlagor Mantle
-				Tooltip: Effects of all armor sets and accessories.
-			}
-
-			ShtuxiumOre: {
-				Tooltip: ""
-				DisplayName: Shtuxium Ore
-			}
-
-			ShtuxiumBar: {
-				Tooltip: Ingot of Chtux'Lag'Or shard's essense.
-				DisplayName: Shtuxium Bar
 			}
 
 			NekomiEnchant: {
@@ -358,106 +169,6 @@ Mods: {
 					'''
 			}
 
-			ShtuxibusTrophy: {
-				DisplayName: Shtuxibus Trophy
-				Tooltip: ""
-			}
-
-			ShtuxibusRelic: {
-				DisplayName: Shtuxibus Relic
-				Tooltip: ""
-			}
-
-			AnnihilationAshSingularity: {
-				DisplayName: Annihilation Ash Singularity
-				Tooltip: ""
-			}
-
-			AscendantSingularity: {
-				DisplayName: Ascendant Singularity
-				Tooltip: ""
-			}
-
-			BloodSampleSingularity: {
-				DisplayName: Blood Sample Singularity
-				Tooltip: ""
-			}
-
-			BloodstoneSingularity: {
-				DisplayName: Bloodstone Singularity
-				Tooltip: ""
-			}
-
-			CalamityAshSingularity: {
-				DisplayName: Calamity Ash Singularity
-				Tooltip: ""
-			}
-
-			CalamitySingularity: {
-				DisplayName: Calamity Singularity
-				Tooltip: ""
-			}
-
-			CorrodedSingularity: {
-				DisplayName: Corroded Singularity
-				Tooltip: ""
-			}
-
-			DepthSingularity: {
-				DisplayName: Depth Singularity
-				Tooltip: ""
-			}
-
-			ExoSingularity: {
-				DisplayName: Exo Singularity
-				Tooltip: ""
-			}
-
-			MeldSingularity: {
-				DisplayName: Meld Singularity
-				Tooltip: ""
-			}
-
-			NecroplasmSingularity: {
-				DisplayName: Necroplasm Singularity
-				Tooltip: ""
-			}
-
-			PlagueCanisterSingularity: {
-				DisplayName: Plague Canister Singularity
-				Tooltip: ""
-			}
-
-			PurifiedGelSingularity: {
-				DisplayName: Purified Gel Singularity
-				Tooltip: ""
-			}
-
-			RottenMatterSingularity: {
-				DisplayName: Rotten Matter Singularity
-				Tooltip: ""
-			}
-
-			SeaRemainsSingularity: {
-				DisplayName: Sea Remains Singularity
-				Tooltip: ""
-			}
-
-			SolarVeilSingularity: {
-				DisplayName: Solar Veil Singularity
-				Tooltip: ""
-			}
-
-			TerrariaSingularity: {
-				DisplayName: Terraria Singularity
-				Tooltip: ""
-			}
-
-			WulfrumSingularity: {
-				DisplayName: Wulfrum Singularity
-				Tooltip: ""
-			}
-
 			UltimateFargoWeapon: {
 				Tooltip: ""
 				DisplayName: Ultimate Fargo Weapon
@@ -466,11 +177,6 @@ Mods: {
 			MutantsForge: {
 				DisplayName: Mutants Forge
 				Tooltip: ""
-			}
-
-			ShtuxibusForge: {
-				Tooltip: Allow you creating Chtuxlagor Items and Items from Shtuxium
-				DisplayName: Shtuxibus Forge
 			}
 
 			MonstrosityMask: {
@@ -485,21 +191,6 @@ Mods: {
 
 			MonstrositySuit: {
 				DisplayName: Monstrosity Suit
-				Tooltip: Vanity
-			}
-
-			ShtuxibusHeadgear: {
-				DisplayName: Shtuxibus Headgear
-				Tooltip: Vanity
-			}
-
-			ShtuxibusPants: {
-				DisplayName: Shtuxibus Pants
-				Tooltip: Vanity
-			}
-
-			ShtuxibusSuit: {
-				DisplayName: Shtuxibus Suit
 				Tooltip: Vanity
 			}
 
@@ -566,11 +257,6 @@ Mods: {
 					40% increased damage and 20% increased critical strike chance
 					50% increased movement
 					'''
-			}
-
-			ShtuxibusBagGfb: {
-				DisplayName: Shtuxibus Bag Gfb
-				Tooltip: ""
 			}
 
 			CrabulonEnergizer: {
@@ -1191,7 +877,7 @@ Mods: {
 			}
 
 			BardEssence: {
-				DisplayName: Bard Essence
+				DisplayName: Musician Essence
 				Tooltip:
 					'''
 					18% increased symphonic damage
@@ -1202,12 +888,23 @@ Mods: {
 			}
 
 			HealerEssence: {
-				DisplayName: Healer Essence
+				DisplayName: Crusader Essence
 				Tooltip:
 					'''
 					18% increased radiant damage
 					5% increased healing and radiant casting speed
 					5% increased radiant critical strike chance
+					'This is only the beginning..'
+					'''
+			}
+
+			SlingerEssence: {
+				DisplayName: Slinger Essence
+				Tooltip:
+					'''
+					18% increased thrower damage
+					5% increased thrower and throwing speed
+					5% increased thrower critical strike chance
 					'This is only the beginning..'
 					'''
 			}
@@ -2944,11 +2641,11 @@ Mods: {
 			}
 
 			ClamitasEnchant: {
-				Tooltip: 
-				'''
-				Three shellfishes aid you in combat
-				Effects of Soul of Pyrogen and Hell Flare
-				'''
+				Tooltip:
+					'''
+					Three shellfishes aid you in combat
+					Effects of Soul of Pyrogen and Hell Flare
+					'''
 				DisplayName: Clamitas Enchant
 			}
 
@@ -3002,14 +2699,67 @@ Mods: {
 				Tooltip: ""
 			}
 
-			ShtuxiumSoulShard: {
-				Tooltip: ""
-				DisplayName: Shtuxium Soul Shard
-			}
-
 			MutantsCurseEX: {
 				DisplayName: Mutants Curse EX
 				Tooltip: ""
+			}
+
+			UltimateHealingPotion: {
+				Tooltip: ""
+				DisplayName: Ultimate Healing Potion
+			}
+
+			OlympiansSoul: {
+				DisplayName: Olympians Soul
+				Tooltip:
+					'''
+					22% increased thrower damage
+					10% increased thrower projectile velocity
+					10% increased thrower critical chance
+					Effects of Deadman's Patch and Pirate's Purse
+					'''
+			}
+
+			MutagenHealing: {
+				DisplayName: Mutagen Healing
+				Tooltip:
+					'''
+					20% increased radiant damage
+					10% increased radiant crit chance
+					10% increased radiant critical strike and healing/casting speed
+					Healing spells heal additional 3 life
+					'''
+			}
+
+			MutagenSymphonic: {
+				DisplayName: Mutagen Symphonic
+				Tooltip:
+					'''
+					20% increased symphonic damage
+					10% increased symphonic crit chance and attack speed
+					+10 max Inspiration
+					Empowerments last longer
+					'''
+			}
+
+			MutagenThrowing: {
+				DisplayName: Mutagen Throwing
+				Tooltip:
+					'''
+					20% increased throwing damage
+					10% increased throwing crit chance and attack speed
+					10% increased throwing velocity
+					'''
+			}
+
+			MutagenThrowingSoA: {
+				Tooltip: ""
+				DisplayName: Mutagen Throwing So A
+			}
+
+			MutagenThrowingCal: {
+				Tooltip: ""
+				DisplayName: Mutagen Throwing Cal
 			}
 		}
 
@@ -3287,6 +3037,8 @@ Mods: {
 		}
 
 		Toggler: {
+			BlastShieldEffect: Blast Shield
+			SpeedCapEffect: Movement Speed Cap
 			MariviumEffect: Marivium Shields
 			HolyShieldEffect: Holy Shield
 			CrashEffect: Crash Boots
@@ -3672,6 +3424,86 @@ Mods: {
 		DamageClasses: {
 			UnitedModdedThrower.DisplayName: Thrower Damage
 			ShtuxianDamage.DisplayName: True Damage
+		}
+	}
+
+	Redemption: {
+		Items: {
+			MutagenMagic: {
+				DisplayName: Sorcerer's Mutagen
+				Tooltip:
+					'''
+					20% increased magic damage
+					10% increased magic critical strike chance
+					Increase your maximum mana by 100
+					'''
+			}
+
+			MutagenMelee: {
+				DisplayName: Warrior's Mutagen
+				Tooltip:
+					'''
+					20% increased melee damage
+					10% increased melee critical strike chance and attack speed
+					Increased melee knockback
+					'''
+			}
+
+			MutagenRanged: {
+				DisplayName: Ranger's Mutagen
+				Tooltip:
+					'''
+					20% increased ranged damage
+					10% increased ranged critical strike chance
+					15% increased ranged projectile velocity
+					'''
+			}
+
+			MutagenRitualist: {
+				DisplayName: Ritualist's Mutagen
+				Tooltip:
+					'''
+					20% increased ritual damage
+					10% increased ritual critical strike chance
+					'''
+			}
+
+			MutagenSummon: {
+				DisplayName: Summoner's Mutagen
+				Tooltip:
+					'''
+					20% increased summon damage
+					10% increased whip range 
+					Increase max numbers of minions by 2
+					'''
+			}
+		}
+	}
+
+	FargowiltasCrossmod: {
+		Items: {
+			AddedEffects: {
+				OutlawsEssence: {
+					DisplayName: Outlaw's Essence
+					Tooltip:
+						'''
+						18% increased thrower damage
+						8% increased thrower projectile velocity
+						5% increased thrower critical chance
+						'''
+				}
+
+				VagabondsSoul: {
+					DisplayName: Vagabond's Soul
+					Tooltip:
+						'''
+						22% increased thrower damage
+						10% increased thrower projectile velocity
+						10% increased thrower critical chance
+						Effects of Nanotech and Eclipse Mirror
+						'''
+				}
+			}
 		}
 	}
 }

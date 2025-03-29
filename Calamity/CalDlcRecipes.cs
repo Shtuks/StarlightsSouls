@@ -1,27 +1,11 @@
 using Terraria;
-using FargowiltasSouls.Content.Items.Accessories.Forces;
-using FargowiltasSouls.Content.Items.Accessories.Masomode;
 using FargowiltasSouls.Content.Items.Accessories.Souls;
 using FargowiltasSouls.Content.Items.Materials;
 using Terraria.ModLoader;
-using ssm.Content.Items.Accessories;
-using CalamityMod.Items.Accessories;
-using Terraria.ID;
-using Terraria.Localization;
 using FargowiltasCrossmod.Content.Calamity.Items.Accessories;
-using CalamityMod.Items.Armor.Vanity;
 using CalamityMod.Items.Materials;
-using CalamityMod.Items.Armor.Brimflame;
-using CalamityMod.Tiles.Furniture.CraftingStations;
 using ssm.Core;
 using ssm.Calamity.Souls;
-using ssm.SoA.Souls;
-using ssm.Thorium.Souls;
-using CalamityMod.Items.Armor.Auric;
-using CalamityMod.Items.Armor.GodSlayer;
-using CalamityMod.Items.Armor.Silva;
-using CalamityMod.Items.Armor.Tarragon;
-using CalamityMod.Items.Armor.Bloodflare;
 
 namespace ssm.Calamity
 {

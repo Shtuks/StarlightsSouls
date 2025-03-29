@@ -1,26 +1,20 @@
-using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
 using ThoriumMod;
-using System.Collections.Generic;
-using Terraria.Localization;
 using ThoriumMod.Items.HealerItems;
 using ssm.Core;
 using Fargowiltas.Items.Tiles;
 using FargowiltasSouls.Content.Items.Materials;
 using ThoriumMod.Items.Terrarium;
-using ThoriumMod.Projectiles.Healer;
 using FargowiltasSouls.Core.AccessoryEffectSystem;
-using ssm.Content.SoulToggles;
-using ssm.Thorium.Enchantments;
 using FargowiltasSouls.Core.Toggler.Content;
-using static ssm.Thorium.Enchantments.CyberPunkEnchant;
+using FargowiltasSouls.Content.Items.Accessories.Souls;
 
 namespace ssm.Thorium.Souls
 {
     [ExtendsFromMod(ModCompatibility.Thorium.Name)]
     [JITWhenModsEnabled(ModCompatibility.Thorium.Name)]
-    public class GuardianAngelsSoul : ModItem
+    public class GuardianAngelsSoul : BaseSoul
     {
 
         private readonly Mod thorium = ModLoader.GetMod("ThoriumMod");
@@ -45,9 +39,9 @@ namespace ssm.Thorium.Souls
             //general
             ThoriumPlayer thoriumPlayer = player.GetModPlayer<ThoriumPlayer>();
 
-            player.GetDamage<HealerDamage>() += 0.30f;
-            player.GetCritChance<HealerDamage>() += 0.15f;
-            player.GetAttackSpeed<HealerDamage>() += 0.20f;
+            player.GetDamage<HealerDamage>() += 0.22f;
+            player.GetCritChance<HealerDamage>() += 0.12f;
+            player.GetAttackSpeed<HealerDamage>() += 0.15f;
             player.GetAttackSpeed((DamageClass)ThoriumDamageBase<HealerTool>.Instance) += 0.20f;
             player.GetModPlayer<ThoriumPlayer>().healBonus += 20;
 

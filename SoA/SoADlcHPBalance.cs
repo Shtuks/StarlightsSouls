@@ -19,6 +19,7 @@ namespace ssm.SoA
     [JITWhenModsEnabled(ModCompatibility.SacredTools.Name, ModCompatibility.Calamity.Name)]
     public class SoADlcHPBalance : GlobalNPC
     {
+        public override bool InstancePerEntity => true;
         public override void SetDefaults(NPC npc)
         {
             if (Main.expertMode)
@@ -101,12 +102,12 @@ namespace ssm.SoA
                 }
                 if (npc.type == ModContent.NPCType<Nihilus>())
                 {
-                    npc.lifeMax = 3200000;
+                    npc.lifeMax = 4200000;
                     npc.damage = 700;
                 }
                 if (npc.type == ModContent.NPCType<Nihilus2>())
                 {
-                    npc.lifeMax = 4000000;
+                    npc.lifeMax = 5000000;
                     npc.damage = 700;
                 }
             }

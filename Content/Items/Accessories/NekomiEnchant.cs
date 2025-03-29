@@ -60,7 +60,7 @@ namespace ssm.Content.Items.Accessories
                 ModContent.Find<ModItem>(this.FargoSoul.Name, "NekomiHoodie").UpdateArmorSet(player);
                 ModContent.Find<ModItem>(this.FargoSoul.Name, "NekomiLeggings").UpdateArmorSet(player);
             }
-            player.buffImmune[ModContent.Find<ModBuff>(this.FargoSoul.Name, "DeviPresenceBuff").Type] = true;
+            //player.buffImmune[ModContent.Find<ModBuff>(this.FargoSoul.Name, "DeviPresenceBuff").Type] = true;
         }
 
         public override void AddRecipes()

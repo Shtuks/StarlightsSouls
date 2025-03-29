@@ -2,7 +2,6 @@ using CalamityMod.Items.Armor.Vanity;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.ModLoader;
-using ssm;
 using ssm.Core;
 
 namespace ssm.Reworks
@@ -18,19 +17,17 @@ namespace ssm.Reworks
 
         public override void UpdateArmorSet(Player player, string set)
         {
-            player.setBonus = "All vanilla prefixes on accessories are twice as effective\nInflicts Vulnerability Hex on all hits";
-            //ShtunPlayer modPlayer = player.GetModPlayer<ShtunPlayer>();
-            //modPlayer.InflictHex = true;
-            for (int index = 3; index < 8 + player.extraAccessorySlots; ++index)
-            {
-                Item obj = player.armor[index];
-                if (obj.prefix > 0)
-                {
-                    int type = obj.type;
-                    player.GrantPrefixBenefits(obj);
-                    obj.type = type;
-                }
-            }
+            player.setBonus = "Inflicts Vulnerability Hex on all hits";
+            //for (int index = 3; index < 8 + player.extraAccessorySlots; ++index)
+            //{
+            //    Item obj = player.armor[index];
+            //    if (obj.prefix > 0)
+            //    {
+            //        int type = obj.type;
+            //        player.GrantPrefixBenefits(obj);
+            //        obj.type = type;
+            //    }
+            //}
         }
 
         public override void UpdateEquip(Item Item, Player player)
@@ -53,32 +50,40 @@ namespace ssm.Reworks
                 player.maxMinions += 2;
                 Item.vanity = false;
             }
-            if (Item.type != ModContent.ItemType<SCalBoots>())
-                return;
-            player.statDefense = player.statDefense += 35;
-            player.GetDamage(DamageClass.Magic) += 10 / 100f;
-            player.GetDamage(DamageClass.Summon) += 10 / 100f;
-            player.GetCritChance<MagicDamageClass>() += 8f;
-            ++player.maxMinions;
-            Item.vanity = false;
+            if (Item.type == ModContent.ItemType<SCalBoots>())
+            {
+                player.statDefense = player.statDefense += 35;
+                player.GetDamage(DamageClass.Magic) += 10 / 100f;
+                player.GetDamage(DamageClass.Summon) += 10 / 100f;
+                player.GetCritChance<MagicDamageClass>() += 8f;
+                ++player.maxMinions;
+                Item.vanity = false;
+            }
         }
 
         public override void ModifyTooltips(Item Item, List<TooltipLine> tooltips)
         {
             if (Item.type == ModContent.ItemType<SCalMask>())
             {
+                tooltips.Clear();
+                tooltips.Add(new TooltipLine(((ModType)this).Mod, "ScalBootsName", "Calamitous Hood"));
                 TooltipLine tooltipLine = new TooltipLine(((ModType)this).Mod, "ScalMaskThing", "30 Defense\nIncreases minion and magic damage by 10%\nIncreases magic crit chance by 7%\nIncreases max minions by 1");
                 tooltips.Add(tooltipLine);
             }
             if (Item.type == ModContent.ItemType<SCalRobes>())
             {
+                tooltips.Clear();
+                tooltips.Add(new TooltipLine(((ModType)this).Mod, "ScalBootsName", "Calamitous Robes"));
                 TooltipLine tooltipLine = new TooltipLine(((ModType)this).Mod, "ScalRobesThing", "40 Defense\nIncreases minion and magic damage by 15%\nIncreases magic crit chance by 10%\nIncreases max minions by 2");
                 tooltips.Add(tooltipLine);
             }
-            if (Item.type != ModContent.ItemType<SCalBoots>())
-                return;
-            TooltipLine tooltipLine1 = new TooltipLine(((ModType)this).Mod, "ScalBootsThing", "20 Defense\nIncreases minion and magic damage by 10%\nIncreases magic crit chance by 8%\nIncreases max minions by 1");
-            tooltips.Add(tooltipLine1);
+            if (Item.type == ModContent.ItemType<SCalBoots>())
+            {
+                tooltips.Clear();
+                tooltips.Add(new TooltipLine(((ModType)this).Mod, "ScalBootsName", "Calamitous Boots"));
+                TooltipLine tooltipLine = new TooltipLine(((ModType)this).Mod, "ScalBootsThing", "20 Defense\nIncreases minion and magic damage by 10%\nIncreases magic crit chance by 8%\nIncreases max minions by 1");
+                tooltips.Add(tooltipLine);
+            }
         }
     }
 }

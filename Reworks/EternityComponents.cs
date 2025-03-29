@@ -1,7 +1,6 @@
 using FargowiltasSouls.Content.Items.Accessories.Souls;
 using ssm.Calamity.Addons;
 using ssm.Calamity.Souls;
-using ssm.Content.Items.Accessories;
 using ssm.Core;
 using Terraria;
 using Terraria.ModLoader;
@@ -20,6 +19,11 @@ namespace ssm.Reworks
                 {
                     ModContent.Find<ModItem>(((ModType)this).Mod.Name, "GuardianAngelsSoul").UpdateAccessory(player, false);
                     ModContent.Find<ModItem>(((ModType)this).Mod.Name, "BardSoul").UpdateAccessory(player, false);
+
+                    if (!ModLoader.HasMod(ModCompatibility.Calamity.Name))
+                    {
+                        ModContent.Find<ModItem>(((ModType)this).Mod.Name, "OlympiansSoul").UpdateAccessory(player, false);
+                    }
                 }
             }
             if (Item.type == ModContent.ItemType<EternitySoul>() || Item.type == ModContent.ItemType<CalamitySoul>())
@@ -37,6 +41,8 @@ namespace ssm.Reworks
                     ModContent.Find<ModItem>(ModCompatibility.Crossmod.Name, "BrandoftheBrimstoneWitch").UpdateAccessory(player, hideVisual);
                     ModContent.Find<ModItem>(ModCompatibility.Crossmod.Name, "GaleForce").UpdateAccessory(player, hideVisual);
                     ModContent.Find<ModItem>(ModCompatibility.Crossmod.Name, "ElementsForce").UpdateAccessory(player, hideVisual);
+                    ModContent.Find<ModItem>(ModCompatibility.Crossmod.Name, "TitansHeartEnchant").UpdateAccessory(player, hideVisual);
+                    ModContent.Find<ModItem>(ModCompatibility.Crossmod.Name, "WulfrumEnchant").UpdateAccessory(player, hideVisual);
                 }
             }
             if (Item.type == ModContent.ItemType<EternitySoul>())

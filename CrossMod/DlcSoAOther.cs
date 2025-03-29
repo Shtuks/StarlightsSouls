@@ -11,16 +11,18 @@ namespace ssm.CrossMod
     {
         public override void PostAddRecipes()
         {
-            for (int i = 0; i < Recipe.numRecipes; i++)
-            {
-                Recipe recipe = Main.recipe[i];
+            //souls/mutagen overhaul
 
-                if (recipe.HasResult(ModContent.ItemType<VagabondsSoul>()) && !recipe.HasIngredient(ModContent.ItemType<BindsOfVeracity>()))
-                {
-                    recipe.AddIngredient<BindsOfVeracity>(1);
-                    recipe.AddIngredient<LanceSheathTalisman>(1);
-                }
-            }
+            //for (int i = 0; i < Recipe.numRecipes; i++)
+            //{
+            //    Recipe recipe = Main.recipe[i];
+
+            //    if (recipe.HasResult(ModContent.ItemType<VagabondsSoul>()) && !recipe.HasIngredient(ModContent.ItemType<BindsOfVeracity>()))
+            //    {
+            //        recipe.AddIngredient<BindsOfVeracity>(1);
+            //        recipe.AddIngredient<LanceSheathTalisman>(1);
+            //    }
+            //}
         }
     }
 }

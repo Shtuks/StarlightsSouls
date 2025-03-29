@@ -10,6 +10,7 @@ using ssm.SoA.Forces;
 using ssm.Systems;
 using ssm.Core;
 using FargowiltasSouls.Content.Items.Materials;
+using SacredTools.Content.Items.Materials;
 
 namespace ssm.SoA.Souls
 {
@@ -21,7 +22,7 @@ namespace ssm.SoA.Souls
         {
             Item.width = 20;
             Item.height = 20;
-            Item.defense = 35;
+            Item.defense = 25;
             Item.accessory = true;
             ItemID.Sets.ItemNoGravity[Item.type] = true;
             Item.rare = 11;
@@ -46,6 +47,7 @@ namespace ssm.SoA.Souls
             recipe.AddIngredient<SoranForce>();
             recipe.AddIngredient<SyranForce>();
             recipe.AddIngredient<AbomEnergy>(10);
+            recipe.AddIngredient<EmberOfOmen>(5);
             recipe.AddTile<CrucibleCosmosSheet>();
             recipe.Register();
         }

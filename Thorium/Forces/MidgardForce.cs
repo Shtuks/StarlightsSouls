@@ -26,6 +26,7 @@ namespace ssm.Thorium.Forces
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
+            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "GeodeEnchant").UpdateAccessory(player, hideVisual);
             ModContent.Find<ModItem>(((ModType)this).Mod.Name, "DurasteelEnchant").UpdateAccessory(player, hideVisual);
             ModContent.Find<ModItem>(((ModType)this).Mod.Name, "LodestoneEnchant").UpdateAccessory(player, hideVisual);
             ModContent.Find<ModItem>(((ModType)this).Mod.Name, "ValadiumEnchant").UpdateAccessory(player, hideVisual);
@@ -37,6 +38,7 @@ namespace ssm.Thorium.Forces
         {
             Recipe recipe = this.CreateRecipe();
 
+            recipe.AddIngredient(null, "GeodeEnchant");
             recipe.AddIngredient(null, "DurasteelEnchant");
             recipe.AddIngredient(null, "LodestoneEnchant");
             recipe.AddIngredient(null, "ValadiumEnchant");

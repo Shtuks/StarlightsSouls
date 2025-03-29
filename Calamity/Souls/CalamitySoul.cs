@@ -1,31 +1,18 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Terraria;
 using Terraria.ModLoader;
-using Terraria.GameContent;
 using FargowiltasSouls.Content.Items.Materials;
-using Terraria.ID;
-using FargowiltasSouls.Content.Items;
 using FargowiltasSouls.Content.Items.Accessories.Souls;
-using Fargowiltas.Items.Tiles;
-using Terraria.Localization;
-using Terraria.DataStructures;
-using FargowiltasSouls.Core.Toggler;
 using FargowiltasSouls.Core.AccessoryEffectSystem;
 using ssm.Content.SoulToggles;
-using ssm.Content.Items.Accessories;
 using ssm.Core;
 using CalamityMod.Items.Accessories;
-using ssm.Content.Tiles;
 using FargowiltasCrossmod.Content.Calamity.Items.Accessories.Forces;
 using FargowiltasCrossmod.Content.Calamity.Items.Accessories;
 using ssm.Calamity.Enchantments;
 using ssm.Calamity.Addons;
 using CalamityMod.Items.Materials;
 using ssm.CrossMod.CraftingStations;
+using FargowiltasCrossmod.Content.Calamity.Items.Accessories.Enchantments;
 
 
 namespace ssm.Calamity.Souls
@@ -41,7 +28,7 @@ namespace ssm.Calamity.Souls
             this.Item.value = Item.buyPrice(10, 0, 0, 0);
             this.Item.rare = 11;
             this.Item.accessory = true;
-            this.Item.defense = 40;
+            this.Item.defense = 30;
         }
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
@@ -61,6 +48,8 @@ namespace ssm.Calamity.Souls
             recipe.AddIngredient<BrandoftheBrimstoneWitch>();
             recipe.AddIngredient<PotJT>();
             recipe.AddIngredient<DemonShadeEnchant>();
+            recipe.AddIngredient<WulfrumEnchant>();
+            recipe.AddIngredient<TitanHeartEnchant>();
 
             if (ModCompatibility.Catalyst.Loaded && ModCompatibility.Goozma.Loaded && ModCompatibility.Clamity.Loaded && ModCompatibility.WrathoftheGods.Loaded && ModCompatibility.Entropy.Loaded)
             {

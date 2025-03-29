@@ -178,8 +178,6 @@ namespace ssm
             => npc.GetGlobalNPC<ShtunNpcs>();
         public static ShtunPlayer Shtun(this Player player)
             => player.GetModPlayer<ShtunPlayer>();
-        public static ShtunShield Shield(this Player player)
-            => player.GetModPlayer<ShtunShield>();
 
         public static bool Stalin = ShtunConfig.Instance.Stalin;
         public static string TryStalinTexture => Stalin ? "_Stalin" : "";

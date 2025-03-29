@@ -60,9 +60,8 @@ namespace ssm.Thorium.Essences
             Recipe recipe = this.CreateRecipe();
 
             recipe.AddIngredient<ClericEmblem>();
-            recipe.AddIngredient<GraveGoods>();
+            //recipe.AddIngredient<GraveGoods>();
             recipe.AddIngredient<HeartWand>();
-            //recipe.AddIngredient<TulipStaff>();
             recipe.AddIngredient<LargePopcorn>();
             recipe.AddIngredient<DarkMageStaff>();
             recipe.AddIngredient<BatScythe>();
