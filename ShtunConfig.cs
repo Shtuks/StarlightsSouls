@@ -29,12 +29,12 @@ namespace ssm
 
         [ReloadRequired]
         [BackgroundColor(60, 200, 60, 192)]
-        [DefaultValue(true)]
+        [DefaultValue(false)]
         public bool DebugMode { get; set; }
 
         [ReloadRequired]
         [BackgroundColor(60, 200, 60, 192)]
-        [DefaultValue(true)]
+        [DefaultValue(false)]
         public bool ExperimentalContent { get; set; }
 
         [Header("Crafting")]

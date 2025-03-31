@@ -10,10 +10,6 @@ All things mod doing for now:
 
 - Force for Calamity Addons
 
-- Special accessories to combine effects of accessories from other mods
-
-- Electricity, energy shield, radiation systems, S.H.T.U.K modules
-
 - Overloaded bosses summons and energizers for SoA, Calamity, Thorium
 
 - Merge kinetic(SoA) thrower(Thorium) and rogue(Calamity) in one class
@@ -24,19 +20,9 @@ All things mod doing for now:
 
 - Adds SoA and Thorium items fot 1st tier souls recepies and effects
 
-- Calamity caught NPCs, singularities
+- Redemption, Thorium, SoA caught NPCs,
 
 - Thorium/Shadows of Abaddon enchantments, forces, souls
-
-Planned additions:
-
-- StarlightCat Boss
-
-- Redemption support(not even started)
-
-- Calamity enchantments(soon™)
-
-- Soul of Eternity Legacy (Hundreds of projectiles flying across the screen and lowering FPS. But it's funny)
 
 Everyone who took part in creating this mod: StarlightCat, ma3allim, cheesenuggets, AwesomeSavage777, Soltan, Comrade Mutant, GodzilaJedi, Maeneznik, MasterD.
 Special thanks to Fargowilta, Javyz, Terry N Muse, Blushiemagic, DanYami, DevaVade, Yum, Jopojelly, ChickenBones, Jofairden, DivermanSam.

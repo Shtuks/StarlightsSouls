@@ -3,7 +3,7 @@ using FargowiltasSouls.Core.AccessoryEffectSystem;
 using FargowiltasSouls.Core.Toggler;
 using Terraria.ModLoader;
 
-namespace ssm.Content.Items.Accessories
+namespace ssm.Calamity.Souls
 {
     [JITWhenModsEnabled(new string[] { "CalamityMod" })]
     [ExtendsFromMod(new string[] { "CalamityMod" })]
@@ -11,7 +11,7 @@ namespace ssm.Content.Items.Accessories
     {
         public override Header ToggleHeader
         {
-            get => (Header)Header.GetHeader<CalamitySoulHeader>();
+            get => Header.GetHeader<CalamitySoulHeader>();
         }
     }
 }

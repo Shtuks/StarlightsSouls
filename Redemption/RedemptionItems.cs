@@ -1,10 +1,13 @@
 ﻿using FargowiltasSouls;
 using Redemption.Items.Accessories.PostML;
+using ssm.Core;
 using Terraria;
 using Terraria.ModLoader;
 
 namespace ssm.Redemption
 {
+    [ExtendsFromMod(ModCompatibility.Redemption.Name)]
+    [JITWhenModsEnabled(ModCompatibility.Redemption.Name)]
     public class RedemptionItems : GlobalItem
     {
         public override bool InstancePerEntity => true;

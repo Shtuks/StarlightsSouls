@@ -1,5 +1,6 @@
 ﻿using FargowiltasSouls;
 using FargowiltasSouls.Core.ItemDropRules.Conditions;
+using ssm.Core;
 using Terraria;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.ID;
@@ -7,7 +8,6 @@ using Terraria.ModLoader;
 using ThoriumMod.Items.Depths;
 using ThoriumMod.Items.Misc;
 using ThoriumMod.Items.Thorium;
-using ThoriumMod.NPCs.BossBoreanStrider;
 using ThoriumMod.NPCs.BossForgottenOne;
 using ThoriumMod.NPCs.BossLich;
 using ThoriumMod.NPCs.BossQueenJellyfish;
@@ -17,6 +17,8 @@ using ThoriumMod.NPCs.BossViscount;
 
 namespace ssm.Thorium
 {
+    [ExtendsFromMod(ModCompatibility.Thorium.Name)]
+    [JITWhenModsEnabled(ModCompatibility.Thorium.Name)]
     public class ThoriumEternityDrops : GlobalNPC
     {
         public override void ModifyNPCLoot(NPC npc, NPCLoot npcLoot)

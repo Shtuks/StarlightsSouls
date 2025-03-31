@@ -12,6 +12,10 @@ namespace ssm.Redemption.Mutagens
     [JITWhenModsEnabled(ModCompatibility.Redemption.Name, ModCompatibility.Thorium.Name)]
     public class MutagenThrowing : ModItem
     {
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return !ModLoader.HasMod(ModCompatibility.Calamity.Name) && !ModLoader.HasMod(ModCompatibility.SacredTools.Name);
+        }
         public override void SetStaticDefaults()
         {
             base.Item.ResearchUnlockCount = 1;

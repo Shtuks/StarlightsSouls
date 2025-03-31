@@ -1,11 +1,7 @@
-using ssm.Content.Buffs;
-using Terraria.GameInput;
 using Terraria.ModLoader;
-using ssm.Content.Items.Accessories;
 using Terraria;
 using FargowiltasSouls.Content.Buffs.Boss;
 using FargowiltasSouls.Content.Buffs.Souls;
-using FargowiltasSouls.Content.Buffs.Masomode;
 using FargowiltasSouls.Content.Bosses.MutantBoss;
 using ssm.Content.NPCs.MutantEX;
 

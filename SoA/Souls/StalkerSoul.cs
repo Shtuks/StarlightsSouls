@@ -4,6 +4,14 @@ using Terraria.ModLoader;
 using Terraria;
 using FargowiltasSouls.Content.Items.Accessories.Souls;
 using ssm.Core;
+using ssm.SoA.Essences;
+using SacredTools.Content.Items.Weapons.Asthraltite;
+using SacredTools.Items.Weapons.Lunatic;
+using SacredTools.Items.Weapons.Flarium;
+using SacredTools.Items.Weapons.Oblivion;
+using SacredTools.Items.Weapons;
+using SacredTools.Items.Weapons.Primordia;
+using FargowiltasSouls.Content.Items.Materials;
 
 namespace ssm.SoA.Souls
 {
@@ -41,8 +49,21 @@ namespace ssm.SoA.Souls
         {
             Recipe recipe = this.CreateRecipe();
 
-            //recipe.AddIngredient<Essence>();
+            recipe.AddIngredient<StalkerEssence>();
 
+            recipe.AddIngredient<AsthralSaber>();
+            recipe.AddIngredient<LunaticsGamble>();
+            recipe.AddIngredient<FlariumDisc>();
+            recipe.AddIngredient<SinisterKnives>();
+            recipe.AddIngredient<FairGame>();
+            recipe.AddIngredient<NovaknifePack>();
+            recipe.AddIngredient<Ainfijarnar>();
+            recipe.AddIngredient<TerraLance>();
+            recipe.AddIngredient<TrueDecapitator>();
+            recipe.AddIngredient<StalkerEssence>();
+            recipe.AddIngredient<OrbFlayer>();
+
+            recipe.AddIngredient<AbomEnergy>(10);
 
             recipe.AddTile<CrucibleCosmosSheet>();
             recipe.Register();

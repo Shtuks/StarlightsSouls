@@ -38,7 +38,7 @@ namespace ssm.Thorium.Enchantments
         {
             ModContent.Find<ModItem>(this.thorium.Name, "LodeStoneFaceGuard").UpdateArmorSet(player);
 
-            ModContent.Find<ModItem>(this.thorium.Name, "AstroBeetleHusk").UpdateAccessory(player, true);
+            //ModContent.Find<ModItem>(this.thorium.Name, "AstroBeetleHusk").UpdateAccessory(player, true);
             ModContent.Find<ModItem>(this.thorium.Name, "ObsidianScale").UpdateAccessory(player, true);
 
             if (player.AddEffect<LodestoneEffect>(Item))
@@ -62,7 +62,7 @@ namespace ssm.Thorium.Enchantments
             recipe.AddIngredient(ModContent.ItemType<LodeStoneFaceGuard>());
             recipe.AddIngredient(ModContent.ItemType<LodeStoneChestGuard>());
             recipe.AddIngredient(ModContent.ItemType<LodeStoneShinGuards>());
-            recipe.AddIngredient(ModContent.ItemType<AstroBeetleHusk>());
+            recipe.AddIngredient(ModContent.ItemType<LodeStoneClaymore>()); //astrobettle husk
             recipe.AddIngredient(ModContent.ItemType<ObsidianScale>());
             recipe.AddIngredient(ModContent.ItemType<SandweaversTiara>());
 

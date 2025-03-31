@@ -1563,7 +1563,6 @@ Mods: {
 					'Infused with primordial energy'
 					15% increased damage
 					Effects of Mask of the Crystal Eye, Abyssal Shell, and Rock Music Player
-					Effects of Mask of the Crystal Eye, Abyssal Shell, and Rock Music Player
 					'''
 			}
 
@@ -2753,13 +2752,46 @@ Mods: {
 			}
 
 			MutagenThrowingSoA: {
-				Tooltip: ""
-				DisplayName: Mutagen Throwing So A
+				Tooltip:
+					'''
+					20% increased throwing damage
+					10% increased throwing crit chance and attack speed
+					10% increased throwing velocity
+					'''
+				DisplayName: Mutagen Throwing
 			}
 
 			MutagenThrowingCal: {
-				Tooltip: ""
-				DisplayName: Mutagen Throwing Cal
+				Tooltip:
+					'''
+					20% increased throwing damage
+					10% increased throwing crit chance and attack speed
+					10% increased throwing velocity
+					'''
+				DisplayName: Mutagen Throwing
+			}
+
+			StalkerEssence: {
+				Tooltip:
+					'''
+					18% increased thrower damage
+					5% increased thrower and throwing speed
+					5% increased thrower critical strike chance
+					'''
+				DisplayName: Stalker Essence
+			}
+
+			CyclonicFin: {
+				Tooltip:
+					'''
+					'The wind is howling'
+					Grants immunity to Curse of the Moon and Oceanic Maul
+					Your attacks inflict Curse of the Moon and Oceanic Maul
+					Spectral Fishron periodically manifests to support your critical hits
+					Spectral Fishron also inflicts Mutant Nibble, disabling enemy healing
+					Upgrades Cute Fishron to Cute Fishron EX
+					'''
+				DisplayName: Cyclonic Fin
 			}
 		}
 
@@ -2871,68 +2903,6 @@ Mods: {
 		}
 
 		NPCs: {
-			ShtuxianHarbringer: {
-				DisplayName: Shtuxian Harbringer
-
-				TownNPCMood: {
-					Content: I am satisfied.
-					NoHome: Terrible that i don't have place to stay. I will go back to my world if will not get one.
-					FarFromHome: I am far from home.
-					LoveSpace: I like how spacious it is here. Just like in my palace in Shtundex.
-					DislikeCrowded: I don't like that there are a lot of people here.
-					HateCrowded: I hate all this people. I feel like gonna erase everything around.
-					LikeBiome: I like {BiomeName}. It's very similar to my home world.
-					LoveBiome: The {BiomeName} is amazing place to live.
-					DislikeBiome: I hate {BiomeName}.
-					HateBiome: I can live anywhere but not in {BiomeName}.
-					LoveNPC: I adore {NPCName}. Do you think she like me?
-					LikeNPC: I like spending time with {NPCName}.
-					DislikeNPC: "{NPCName} is getting on my nerves. I would prefer not to exist near him"
-					HateNPC: GET {NPCName} AWAY FROM ME! I HATE IT.
-					LikeNPC_Princess: I don't understand why everyone likes {NPCName}. What so special about her?
-					Princess_LovesNPC: Ugh. {NPCName} annoy me
-				}
-
-				Chat: {
-					ZenithSeed: What the hell is going on here? This world act abnormaly.
-					Defeat: ShtuxiumSuit: So you used shtuxian tech for your equipment? This look awful. You could use AA-7 capacitor instead of AA-4. Also this pieces absolutely impractical. Are you really have no engeneering education?
-					Calamitas: Do you think that Calamitas would come to me and... Nevermind.
-					Mutant: Mutant is so strange. Anyway. I like drinking with him.
-					MasoMode: Is it the hardest difficulty of tml? I heard about Satanist mode and Maso EX.
-					Normal0: Hm. It's interesting to observe your progress. But you will never reach my level of power.
-					Normal1: Can i jump? Yeah. I have that thing you call 'space'.
-					Normal2: Have you ever seen shtuxian before? I bet no!
-					Normal3: Who is Yharim? How many years you waiting for him to be added in game?
-					Normal4: Heh. Gods of this world so pathetic. Kill dragon and consume his soul? Don't make me laugh!
-					Normal5: Do you know about 'Сhtux'Lag'Or'? No? I thought that people study cosmology.
-					Normal6: Sometimes I feel that I'm too different from everyone else here.
-					Normal7: Hey, do you know about 3d dimension? No? Disappointing. My home world in 3d dimension.
-					Normal8: What i was doing in my world? Hmm... Just sitting on sofa and making some machines out of sticks and shit.
-					Normal9: Why does Mutant, Deviantt and Abomination call themselfes siblings? Who are they even?
-					Normal10: Only Chtux'lag'or and other shards can rival my power.
-					Normal11: How old i am? I don't really know. But anyway i look like i am sixteen. I never age.
-					Normal12: Echdeath? It look it have something in common with Chtux'Lag'Or.
-					Normal13: What will happen if I will use Itemss with 'Overload' in name?
-					Normal14: Who is Fargowilta?
-				}
-
-				Census.SpawnCondition: Spawn when Shtuxibus was defeated
-			}
-
-			ShtuxibusGFB.DisplayName: The true eldrich multiversal horror of Chtux'Lag'Or EX
-
-			Shtuxibus: {
-				DisplayName: Shtuxibus
-
-				BossChecklistIntegration: {
-					SpawnInfo: Spawned with an [i:ssm/ShtuxianCurse] anytime anywhere.
-					DespawnMessage: "[c/008000:Shtuxibus return to the space rift.]"
-					KilledAllMessage: "[c/008000:Chtuxlagorian Shard erased every alife human in this universe.]"
-				}
-			}
-
-			ShtuxibusIllusion.DisplayName: Shtuxibus
-
 			Monstrocity: {
 				TownNPCMood: {
 					Content: I am content.
@@ -2991,34 +2961,24 @@ Mods: {
 				DisplayName: Duke Fishron EX
 
 				BossChecklistIntegration: {
-					SpawnInfo: Spawned with an WIP anytime anywhere.
+					SpawnInfo: Spawned with an Oceanic Curse anytime at the seashore.
 					DespawnMessage: ""
 					KilledAllMessage: ""
 				}
 			}
 
 			Echdeath: {
-				DisplayName: Duke Fishron EX
+				DisplayName: Echdeath
 
 				BossChecklistIntegration: {
-					SpawnInfo: Spawned with an WIP anytime anywhere.
+					SpawnInfo: Spawned with an [deleted] anytime anywhere.
 					DespawnMessage: ""
 					KilledAllMessage: ""
 				}
 			}
 
-			StarlightCatBoss: {
-				DisplayName: ☭
-
-				BossChecklistIntegration: {
-					SpawnInfo: Spawned with an [i:ssm/ShtuxibusFumo] anytime anywhere.
-					DespawnMessage: StarlightCat despawned.
-					KilledAllMessage: StarlightCat killed all players.
-				}
-			}
-
 			MutantEX: {
-				DisplayName: Mutant EX
+				DisplayName: Monstrocity
 
 				BossChecklistIntegration: {
 					SpawnInfo: Spawned with an Mutants Curse EX anytime anywhere.
@@ -3027,12 +2987,6 @@ Mods: {
 				}
 			}
 
-			StarlightCatChaos.DisplayName: Chaos
-			StarlightCatCreator.DisplayName: StarlightCat Creator
-			StarlightCatDestroyer.DisplayName: StarlightCat Destroyer
-			StarlightCatOrder.DisplayName: Order
-			ChtuxlagorBoss.DisplayName: Chtuxlagor Boss
-			ShtuxibusBoss.DisplayName: Shtuxibus Boss
 			MutantIllusion.DisplayName: Mutant EX
 		}
 
@@ -3150,8 +3104,6 @@ Mods: {
 			RedemptionCraftingStationTile.MapEntry: Redemption Crafting Station Tile
 		}
 
-		ItemClass.Chtuxlagor: ∞ Chtux'Lag'Or Item ∞
-
 		WorldGen: {
 			BlessedWithShtuxiumOreMessage: Defeat of Chtux'lag'or shard vented concentrated shtuxian energy in this world.
 			ShtuxiumOrePassMessage: Mods.ssm.WorldGen.ShtuxiumOrePassMessage
@@ -3243,6 +3195,8 @@ Mods: {
 			BossRush.DisplayName: Boss Rush
 			AbomSword.DisplayName: Abom Sword
 			AbomSwordHandle.DisplayName: Abom Sword Handle
+			SpectralFishron.DisplayName: Spectral Fishron
+			CuteFishronRitual.DisplayName: Cute Fishron Ritual
 		}
 
 		Biomes: {
@@ -3424,6 +3378,12 @@ Mods: {
 		DamageClasses: {
 			UnitedModdedThrower.DisplayName: Thrower Damage
 			ShtuxianDamage.DisplayName: True Damage
+		}
+
+		Message: {
+			NoRework: It is recomended to play Thorium with Thorium Bosses Rework to enhance experience.
+			NoSoABardHealer1: We detected that you playing Shadows of Abaddon with Thorium Mod.
+			NoSoABardHealer2: Please install SoA Bard & Healer for better compatibility.
 		}
 	}
 

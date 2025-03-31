@@ -2,7 +2,6 @@
 using CalamityMod.Items.Materials;
 using CalamityMod.Tiles.Furniture.CraftingStations;
 using FargowiltasSouls.Core.AccessoryEffectSystem;
-using ssm.Content.Items.Accessories;
 using ssm.Core;
 using Terraria;
 using Terraria.ModLoader;

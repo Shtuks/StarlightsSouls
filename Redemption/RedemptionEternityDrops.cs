@@ -6,12 +6,15 @@ using Redemption.NPCs.Bosses.Cleaver;
 using Redemption.NPCs.Bosses.Gigapora;
 using Redemption.NPCs.Bosses.Obliterator;
 using Redemption.NPCs.Bosses.PatientZero;
+using ssm.Core;
 using Terraria;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.ModLoader;
 
 namespace ssm.Redemption
 {
+    [ExtendsFromMod(ModCompatibility.Redemption.Name)]
+    [JITWhenModsEnabled(ModCompatibility.Redemption.Name)]
     public class RedemptionEternityDrops : GlobalNPC
     {
         public override void ModifyNPCLoot(NPC npc, NPCLoot npcLoot)

@@ -1,7 +1,6 @@
 ﻿using CalamityMod.Items.Accessories;
 using CalamityMod.Items.Materials;
 using FargowiltasSouls.Core.AccessoryEffectSystem;
-using ssm.Content.Items.Accessories;
 using ssm.Core;
 using Terraria;
 using Terraria.ID;

@@ -25,6 +25,10 @@ namespace ssm.Thorium.Essences
     {
         private readonly Mod thorium = ModLoader.GetMod("ThoriumMod");
 
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return !ModLoader.HasMod(ModCompatibility.Calamity.Name) && !ModLoader.HasMod(ModCompatibility.SacredTools.Name);
+        }
         public override void SetDefaults()
         {
             Item.width = 20;

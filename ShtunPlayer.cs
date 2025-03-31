@@ -10,6 +10,11 @@ using ssm.Core;
 using ssm.Content.Mounts;
 using Terraria.IO;
 using Terraria.ID;
+using Terraria.Localization;
+using FargowiltasSouls.Content.Projectiles.BossWeapons;
+using ssm.Content.Items.Accessories;
+using FargowiltasSouls.Content.Buffs.Masomode;
+using ssm.Content.Projectiles;
 
 namespace ssm
 {
@@ -39,6 +44,8 @@ namespace ssm
         public bool ChtuxlagorInferno;
         public int Screenshake;
         public float throwerVelocity = 1f;
+        public bool CyclonicFin;
+        public int CyclonicFinCD;
 
         //SCB
         public int ChtuxlagorDeaths;
@@ -74,6 +81,44 @@ namespace ssm
                 if (shtuxianSoul)
                 {
                     Player.AddBuff(ModContent.BuffType<DotBuff>(), 999999);
+                }
+            }
+        }
+
+        public override void OnEnterWorld()
+        {
+            if (!ModLoader.TryGetMod("ThoriumRework", out Mod _) && ModLoader.TryGetMod("ThoriumMod", out Mod _))
+            {
+                Main.NewText(Language.GetTextValue($"Mods.ssm.Message.NoRework"), Color.LimeGreen);
+            }
+            //if (!ModLoader.TryGetMod("SoABardHealer", out Mod _) && ModLoader.TryGetMod("SoA", out Mod _) && ModLoader.TryGetMod("ThoriumMod", out Mod _))
+            //{
+            //    Main.NewText(Language.GetTextValue($"Mods.ssm.Message.NoSoABardHealer1"), Color.Purple);
+            //    Main.NewText(Language.GetTextValue($"Mods.ssm.Message.NoSoABardHealer2"), Color.Purple);
+            //}
+        }
+
+        public override void OnHitNPCWithProj(Projectile proj, NPC target, NPC.HitInfo hit, int damageDone)
+        {
+            if (CyclonicFin)
+            {
+                target.AddBuff(ModContent.BuffType<OceanicMaulBuff>(), 900);
+                target.AddBuff(ModContent.BuffType<CurseoftheMoonBuff>(), 900);
+
+                if (hit.Crit && CyclonicFinCD <= 0 && proj.type != ModContent.ProjectileType<RazorbladeTyphoonFriendly>())
+                {
+                    CyclonicFinCD = 360;
+
+                    float screenX = Main.screenPosition.X;
+                    if (Player.direction < 0)
+                        screenX += Main.screenWidth;
+                    float screenY = Main.screenPosition.Y;
+                    screenY += Main.rand.Next(Main.screenHeight);
+                    Vector2 spawn = new Vector2(screenX, screenY);
+                    Vector2 vel = target.Center - spawn;
+                    vel.Normalize();
+                    vel *= 27f;
+                    Projectile.NewProjectile(proj.GetSource_FromThis(), spawn, vel, ModContent.ProjectileType<SpectralFishron>(), 300, 10f, proj.owner, target.whoAmI, 300);
                 }
             }
         }
@@ -181,12 +226,6 @@ namespace ssm
 
         public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
-            //if (equippedPhantasmalEnchantment)
-            //    target.AddBuff(ModContent.Find<ModBuff>(FargoSoul.Name, "MutantFangBuff").Type, 1000, false);
-            //if (equippedNekomiEnchantment)
-            //    target.AddBuff(ModContent.Find<ModBuff>(FargoSoul.Name, "DeviPresenceBuff").Type, 1000, false);
-            //if (equippedAbominableEnchantment)
-            //    target.AddBuff(ModContent.Find<ModBuff>(FargoSoul.Name, "AbomFangBuff").Type, 1000, false);
             if (ChtuxlagorHeart)
                 target.AddBuff(ModContent.Find<ModBuff>("ssm", "ChtuxlagorInferno").Type, 1000, false);
         }
@@ -208,6 +247,7 @@ namespace ssm
             ShtuxibusSoul = false;
             CelestialPower = false;
             throwerVelocity = 1f;
+            CyclonicFin = false;
 
             //if (NoUsingItems > 0)
             //    NoUsingItems--;
