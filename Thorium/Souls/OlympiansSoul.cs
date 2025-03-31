@@ -21,7 +21,7 @@ namespace ssm.Thorium.Souls
     {
         public override bool IsLoadingEnabled(Mod mod)
         {
-            return !ModLoader.HasMod(ModCompatibility.Calamity.Name) && !ModLoader.HasMod(ModCompatibility.SacredTools.Name);
+            return !ModLoader.HasMod(ModCompatibility.Calamity.Name);
         }
         public override void SetDefaults()
         {

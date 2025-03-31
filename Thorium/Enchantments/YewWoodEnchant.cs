@@ -33,7 +33,7 @@ namespace ssm.Thorium.Enchantments
             //yew set bonus
             modPlayer.YewEnchant = true;
             //goblin war shield
-            ModContent.Find<ModItem>(this.thorium.Name, "GoblinWarshield").UpdateAccessory(player, hideVisual);
+            ModContent.Find<ModItem>(this.thorium.Name, "ThumbRing").UpdateAccessory(player, hideVisual);
         }
 
         public override void AddRecipes()
@@ -43,7 +43,7 @@ namespace ssm.Thorium.Enchantments
             recipe.AddIngredient(ModContent.ItemType<YewWoodHelmet>());
             recipe.AddIngredient(ModContent.ItemType<YewWoodBreastguard>());
             recipe.AddIngredient(ModContent.ItemType<YewWoodLeggings>());
-            recipe.AddIngredient(ModContent.ItemType<GoblinWarshield>());
+            recipe.AddIngredient(ModContent.ItemType<ThumbRing>());
             recipe.AddIngredient(ModContent.ItemType<YewWoodBow>());
             recipe.AddIngredient(ModContent.ItemType<YewWoodFlintlock>());
 

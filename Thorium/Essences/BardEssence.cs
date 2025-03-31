@@ -57,6 +57,7 @@ namespace ssm.Thorium.Essences
             Recipe recipe = this.CreateRecipe();
 
             recipe.AddIngredient<BardEmblem>();
+
             recipe.AddIngredient<AntlionMaraca>();
             recipe.AddIngredient<SeashellCastanettes>();
             recipe.AddIngredient<Didgeridoo>();
@@ -64,11 +65,7 @@ namespace ssm.Thorium.Essences
             recipe.AddIngredient<SkywareLute>();
             recipe.AddIngredient<ForestOcarina>();
             recipe.AddIngredient<MarineWineGlass>();
-            recipe.AddIngredient<SonarCannon>();
-            recipe.AddIngredient<Calaveras>();
-            recipe.AddIngredient<TuningFork>();
-            recipe.AddIngredient<HotHorn>();
-            recipe.AddIngredient<SongofIceAndFire>();
+
             recipe.AddIngredient(ItemID.HallowedBar, 5);
 
             recipe.AddTile(TileID.TinkerersWorkbench);

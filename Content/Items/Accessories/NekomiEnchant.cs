@@ -19,6 +19,7 @@ using ssm.Content.SoulToggles;
 using ssm.Content.Items.Accessories;
 using ssm.Core;
 using FargowiltasSouls.Content.Items.Accessories.Enchantments;
+using FargowiltasSouls;
 
 namespace ssm.Content.Items.Accessories
 {
@@ -56,10 +57,9 @@ namespace ssm.Content.Items.Accessories
             ModContent.Find<ModItem>(this.FargoSoul.Name, "SparklingAdoration").UpdateAccessory(player, false);
             if (player.AddEffect<NekomiEffect>(Item))
             {
-                ModContent.Find<ModItem>(this.FargoSoul.Name, "NekomiHood").UpdateArmorSet(player);
-                ModContent.Find<ModItem>(this.FargoSoul.Name, "NekomiHoodie").UpdateArmorSet(player);
-                ModContent.Find<ModItem>(this.FargoSoul.Name, "NekomiLeggings").UpdateArmorSet(player);
+                player.FargoSouls().NekomiSet = true;
             }
+
             //player.buffImmune[ModContent.Find<ModBuff>(this.FargoSoul.Name, "DeviPresenceBuff").Type] = true;
         }
 

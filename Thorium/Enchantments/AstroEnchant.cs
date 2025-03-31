@@ -3,9 +3,6 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
 using ssm.Core;
-using ThoriumMod.Items.BossThePrimordials.Omni;
-using ThoriumMod.Items.RangedItems;
-using ThoriumMod.Items.Tracker;
 using FargowiltasSouls.Content.Items.Accessories.Enchantments;
 using ThoriumMod;
 using ThoriumMod.Items.SummonItems;
@@ -25,7 +22,7 @@ namespace ssm.Thorium.Enchantments
             Item.accessory = true;
             ItemID.Sets.ItemNoGravity[Item.type] = true;
             Item.rare = 10;
-            Item.value = 400000;
+            Item.value = 40000;
         }
 
         public override Color nameColor => new(255, 128, 0);

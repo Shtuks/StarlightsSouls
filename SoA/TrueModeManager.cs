@@ -1,9 +1,7 @@
 ﻿using SacredTools.Common.Systems;
-using SacredTools.Items.Tools;
 using ssm.Core;
 using System;
 using System.Reflection;
-using Terraria;
 using Terraria.ModLoader;
 
 namespace ssm.SoA

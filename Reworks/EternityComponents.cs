@@ -25,6 +25,13 @@ namespace ssm.Reworks
                         ModContent.Find<ModItem>(((ModType)this).Mod.Name, "OlympiansSoul").UpdateAccessory(player, false);
                     }
                 }
+                if (ModLoader.TryGetMod("SacredTools", out Mod soa))
+                {
+                    if (!ModLoader.HasMod(ModCompatibility.Calamity.Name) && !ModLoader.HasMod(ModCompatibility.Thorium.Name))
+                    {
+                        ModContent.Find<ModItem>(((ModType)this).Mod.Name, "StalkerSoul").UpdateAccessory(player, false);
+                    }
+                }
             }
             if (Item.type == ModContent.ItemType<EternitySoul>() || Item.type == ModContent.ItemType<CalamitySoul>())
             {

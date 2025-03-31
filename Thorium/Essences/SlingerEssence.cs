@@ -5,9 +5,6 @@ using ThoriumMod;
 using Microsoft.Xna.Framework;
 using ssm.Core;
 using FargowiltasSouls.Content.Items.Accessories.Essences;
-using ThoriumMod.Items.HealerItems;
-using ThoriumMod.Items.DD;
-using ThoriumMod.Items.BossViscount;
 using ThoriumMod.Items.BossStarScouter;
 using ssm.Content.DamageClasses;
 using ThoriumMod.Items.ThrownItems;
@@ -27,7 +24,7 @@ namespace ssm.Thorium.Essences
 
         public override bool IsLoadingEnabled(Mod mod)
         {
-            return !ModLoader.HasMod(ModCompatibility.Calamity.Name) && !ModLoader.HasMod(ModCompatibility.SacredTools.Name);
+            return !ModLoader.HasMod(ModCompatibility.Calamity.Name);
         }
         public override void SetDefaults()
         {
@@ -59,7 +56,6 @@ namespace ssm.Thorium.Essences
 
             recipe.AddIngredient<NinjaEmblem>();
 
-            recipe.AddIngredient<NinjaEmblem>();
             recipe.AddIngredient<GaussFlinger>();
             recipe.AddIngredient<NaiadShiv>();
             recipe.AddIngredient<GelGlove>();
@@ -67,8 +63,6 @@ namespace ssm.Thorium.Essences
             recipe.AddIngredient<EnchantedKnife>(500);
             recipe.AddIngredient<BloomingShuriken>(500);
             recipe.AddIngredient<CoralCaltrop>(500);
-            recipe.AddIngredient<HarpiesBarrage>(500);
-            recipe.AddIngredient<BronzeThrowingAxe>(500);
 
             recipe.AddIngredient(ItemID.HallowedBar, 5);
 

@@ -49,7 +49,6 @@ namespace ssm.SoA.Essences
             recipe.AddIngredient<Featherstorm>();
             recipe.AddIngredient<Pumpnade>(500);
             recipe.AddIngredient<GoldJavelin>(500);
-            recipe.AddIngredient<WoodJavelin>(500);
 
             recipe.AddIngredient(ItemID.HallowedBar, 5);
 

@@ -12,17 +12,18 @@ using SacredTools.NPCs.Boss.Jensen;
 using SacredTools.Content.NPCs.Boss.Decree;
 using SacredTools.NPCs.Boss.Pumpkin;
 using SacredTools.NPCs.Boss.Obelisk.Nihilus;
+using FargowiltasSouls.Core.Systems;
 
 namespace ssm.SoA
 {
-    [ExtendsFromMod(ModCompatibility.SacredTools.Name, ModCompatibility.Calamity.Name)]
-    [JITWhenModsEnabled(ModCompatibility.SacredTools.Name, ModCompatibility.Calamity.Name)]
+    [ExtendsFromMod(ModCompatibility.SacredTools.Name)]
+    [JITWhenModsEnabled(ModCompatibility.SacredTools.Name)]
     public class SoADlcHPBalance : GlobalNPC
     {
         public override bool InstancePerEntity => true;
         public override void SetDefaults(NPC npc)
         {
-            if (Main.expertMode)
+            if (WorldSavingSystem.EternityMode)
             {
                 if (npc.type == ModContent.NPCType<ErazorBoss>())
                 {

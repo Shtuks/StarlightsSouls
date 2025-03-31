@@ -10,6 +10,9 @@ using ssm.Core;
 using ThoriumMod.Items.Painting;
 using ThoriumMod.Items.Donate;
 using FargowiltasSouls.Content.Items.Accessories.Enchantments;
+using FargowiltasSouls.Core.AccessoryEffectSystem;
+using ssm.Content.SoulToggles;
+using static ssm.Thorium.Enchantments.BiotechEnchant;
 
 namespace ssm.Thorium.Enchantments
 {
@@ -33,8 +36,6 @@ namespace ssm.Thorium.Enchantments
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-
-
             //set bonus
             player.fireWalk = true;
             player.lavaImmune = true;
@@ -49,12 +50,15 @@ namespace ssm.Thorium.Enchantments
 
             //toggle
             ModContent.Find<ModItem>(this.thorium.Name, "HeartOfStone").UpdateAccessory(player, hideVisual);
+
+            if (player.AddEffect<GraniteEffect>(Item))
+            {
+                ModContent.Find<ModItem>(this.thorium.Name, "ShockAbsorber").UpdateAccessory(player, hideVisual);
+            }
         }
 
         public override void AddRecipes()
         {
-
-
             Recipe recipe = this.CreateRecipe();
 
             recipe.AddIngredient(ModContent.ItemType<GraniteHelmet>());
@@ -66,6 +70,14 @@ namespace ssm.Thorium.Enchantments
 
             recipe.AddTile(TileID.DemonAltar);
             recipe.Register();
+        }
+
+        public class GraniteEffect : AccessoryEffect
+        {
+            public override Header ToggleHeader => Header.GetHeader<SvartalfheimForceHeader>();
+            public override int ToggleItemType => ModContent.ItemType<GraniteEnchant>();
+            public override bool MinionEffect => true;
+            public override bool MutantsPresenceAffects => true;
         }
     }
 }

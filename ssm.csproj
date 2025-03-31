@@ -20,6 +20,7 @@
 	</ItemGroup>
 	<ItemGroup>
 	  <Compile Include="Content\NPCs\StarlightCat\StarlightCatDeathray.cs.sex" />
+	  <Compile Include="Core\ModIconSystem.bak" />
 	  <Compile Include="Thorium\Enchantments\BerserkerEnchant.cs.sex" />
 	  <Compile Include="Thorium\Enchantments\DangerEnchant.cs.sex" />
 	  <Compile Include="Thorium\Enchantments\HarbingerEnchant.cs.sex" />
@@ -101,6 +102,9 @@
 	  </Reference>
 	  <Reference Include="NoxusBoss">
 	    <HintPath>lib\NoxusBoss.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Polarities">
+	    <HintPath>lib\Polarities.dll</HintPath>
 	  </Reference>
 	  <Reference Include="RagnarokMod">
 	    <HintPath>lib\RagnarokMod.dll</HintPath>

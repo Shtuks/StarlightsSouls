@@ -60,17 +60,15 @@ namespace ssm.Thorium.Essences
             Recipe recipe = this.CreateRecipe();
 
             recipe.AddIngredient<ClericEmblem>();
-            //recipe.AddIngredient<GraveGoods>();
+
             recipe.AddIngredient<HeartWand>();
             recipe.AddIngredient<LargePopcorn>();
             recipe.AddIngredient<DarkMageStaff>();
             recipe.AddIngredient<BatScythe>();
             recipe.AddIngredient<DivineLotus>();
-            recipe.AddIngredient<SentinelWand>();
+            recipe.AddIngredient<DefenderWand>();
             recipe.AddIngredient<LifeDisperser>();
-            recipe.AddIngredient<RedeemerStaff>();
-            recipe.AddIngredient<DeepStaff>();
-            recipe.AddIngredient<StarRod>();
+
             recipe.AddIngredient(ItemID.HallowedBar, 5);
 
             recipe.AddTile(TileID.TinkerersWorkbench);

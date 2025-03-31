@@ -17,6 +17,12 @@ public static class ModCompatibility
         public static bool Loaded => ModLoader.HasMod(Name);
         public static Mod Mod => ModLoader.GetMod(Name);
     }
+    public static class Polarities
+    {
+        public const string Name = "Polarities";
+        public static bool Loaded => ModLoader.HasMod(Name);
+        public static Mod Mod => ModLoader.GetMod(Name);
+    }
     public static class CheatSheet
     {
         public const string Name = "CheatSheet";

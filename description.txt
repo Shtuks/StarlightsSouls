@@ -1,4 +1,4 @@
-The addon for Fargos's Souls. The main goal of the mod is to balance 4 global mods with Fargos and among themselves.
+The addon for Fargos's Souls. The main goal of the mod is to balance many global mods with Fargos and among themselves.
 
 
 Source code: https://github.com/Shtuks/StarlightsSouls
@@ -22,7 +22,7 @@ All things mod doing for now:
 
 - Redemption, Thorium, SoA caught NPCs,
 
-- Thorium/Shadows of Abaddon enchantments, forces, souls
+- Thorium/SoA/Polarities enchantments, forces, souls
 
 Everyone who took part in creating this mod: StarlightCat, ma3allim, cheesenuggets, AwesomeSavage777, Soltan, Comrade Mutant, GodzilaJedi, Maeneznik, MasterD.
 Special thanks to Fargowilta, Javyz, Terry N Muse, Blushiemagic, DanYami, DevaVade, Yum, Jopojelly, ChickenBones, Jofairden, DivermanSam.

@@ -1,6 +1,4 @@
 using System.ComponentModel;
-using System.Runtime.Serialization;
-using Terraria;
 using Terraria.ModLoader.Config;
 
 namespace ssm
@@ -12,11 +10,6 @@ namespace ssm
         public static ShtunConfig Instance;
 
         [Header("General")]
-
-        //[ReloadRequired]
-        //[BackgroundColor(60, 200, 60, 192)]
-        //[DefaultValue(true)]
-        //public bool OldCalDlcBalance { get; set; }
 
         [BackgroundColor(60, 200, 60, 192)]
         [DefaultValue(true)]

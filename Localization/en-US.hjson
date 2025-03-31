@@ -72,7 +72,7 @@ Mods: {
 					'''
 					Healing spells will heal 5 additional lifes
 					Effects of Support sash, Saving grace, Grave goods
-					increase inspiration by 20
+					Increase inspiration by 20
 					20% increased throwing velocity
 					'''
 				SoARampart:
@@ -92,14 +92,12 @@ Mods: {
 			}
 
 			ShtuxianSoul: {
-				DisplayName: Soul of Chtux'lag'or
+				DisplayName: Soul
 				Tooltip:
 					'''
-					Effects of [i:FargowiltasSouls/EternitySoul], [i:ssm/EternityForce], [i:ssm/ShtuxianEnchant]
+					Effects of [i:FargowiltasSouls/EternitySoul], [i:ssm/EternityForce]
 					Your attacks inflict most of debuffs, all defense and regeneration bonuses x2
-					Grants immunity to all debuffs except "Chtux'lag'or Inferno" and "Shtuxibus Curse"
-					Press [shtuxianSuper] key to become invinvible for 20 seconds
-					increase maximum eternity crits by 2000, faster mutant eye cooldown
+					Increase maximum eternity crits by 2000, faster mutant eye cooldown
 					'God or whatever, all things acknowledge your claim to omnipotence.'
 					'''
 			}
@@ -122,8 +120,7 @@ Mods: {
 					'''
 				Tooltip:
 					'''
-					Effects of The Community, Shattered Community
-					Effects of Force of Gale, Force of Elements, Force of Addons
+					Effects of Shattered Community, Force of Gale, Force of Elements, Force of Addons
 					Effects of Brand of the Brimstone Witch and Pendant of the Godseeker.
 					'The land may never grow quiet again, but peace can certainly be brought upon it.'
 					'''
@@ -492,9 +489,8 @@ Mods: {
 					'''
 					Massive increasement to all offencive stats.
 					[i:ssm/GaiaEnchant] Press DOWN double times activate Attacking mode which have following effects:
-					30% damage and 15% crit chance increase for current class
-					increase armor penetration by 20
-					decrease defence by 30, endurance by 15% and max life by 10%
+					30% damage and 15% crit chance increase for current class, increase armor penetration by 20
+					Decrease defence by 30, endurance by 15% and max life by 10%
 					[i:ssm/EridanusEnchant] Press DOWN double times activate Eridanus' blessing
 					[i:ssm/StyxEnchant] Can endure any attack and survive with one life, endurance recovers when you reach max life
 					Increased damage gained Sparkling Adoration graze, halves heart cooldown, Abominationn periodically manifests to support your critical hits
@@ -1204,7 +1200,7 @@ Mods: {
 					'''
 					'Defensively energized'
 					Immune to intense heat and enemy knockback, but your movement speed is slowed down greatly
-					Effects of Heart of Stone
+					Effects of Heart of Stone and Shock Absorber
 					'''
 			}
 
@@ -1302,7 +1298,7 @@ Mods: {
 					'Sturdy'
 					Damage reduction is increased by 10% at every 25% segment of life
 					Maximum damage reduction is reached at 30% while below 50% life
-					Effects of Astro-Beetle Husk, Obsidian Scale, and Sandweaver's Tiara
+					Effects of Obsidian Scale, and Sandweaver's Tiara
 					'''
 			}
 
@@ -1538,7 +1534,7 @@ Mods: {
 					'Not just for hunting fish'
 					Critical strikes release a splash of foam, slowing nearby enemies
 					After four consecutive non-critical strikes, your next attack will mini-crit for 150% damage
-					Effects of Goblin War Shield and Agnor's Bowl
+					Effects of Thumb Ring and Agnor's Bowl
 					'''
 			}
 
@@ -1624,7 +1620,7 @@ Mods: {
 					'Protect e-girls at all costs'
 					Enemies that attack friendly NPCs are marked as Villains
 					You deal 50% bonus damage to Villains
-					Effects of Smothering Band
+					Effects of Murky Catalyst
 					'''
 			}
 
@@ -1634,7 +1630,7 @@ Mods: {
 					'''
 					'This strange wood comes from a far away land'
 					After four consecutive non-critical strikes, your next attack will mini-crit for 150% damage
-					Effects of Goblin War Shield
+					Effects of Thumb Ring
 					'''
 			}
 
@@ -1656,7 +1652,7 @@ Mods: {
 					'What's this about Ragnarok?'
 					All armor bonuses from White Knight, Sacred, and Fallen Paladin
 					All armor bonuses from Celestial and Rhapsodist
-					Effects of Prydwen, Smothering Band, Karmic Holder and Nirvana Statuette
+					Effects of Prydwen, Murky Catalyst, Karmic Holder and Nirvana Statuette
 					'''
 			}
 
@@ -1679,7 +1675,7 @@ Mods: {
 					All armor bonuses from Depth Diver, Yew Wood, and Tide Hunter
 					All armor bonuses from Naga Skin, Icy, Cryomancer, and Tide Turner
 					Effects of Sea Breeze Pendant, Bubble Magnet, Ocean's Retaliation and Drowned Doubloon
-					Effects of Goblin War Shield, Agnor's Bowl, Plague Lord's flask and Ice Bound Strider Hide
+					Effects of Thumb Ring, Agnor's Bowl, Plague Lord's flask and Ice Bound Strider Hide
 					'''
 			}
 
@@ -1726,7 +1722,7 @@ Mods: {
 					'Behold the craftsmanship of the Dark Elves...'
 					All armor bonuses from Granite, Yew Wood, and Titan
 					All armor bonuses from Jester, Astro, and Conduit
-					Effects of Heart of Stone, Goblin War Shield, Fan Letter, and  Rock Music Player
+					Effects of Heart of Stone, Thumb Ring, Fan Letter, and  Rock Music Player
 					Effects of Spiked Bracers, Mask of the Crystal Eye, and Abyssal Shell
 					'''
 			}
@@ -1757,7 +1753,7 @@ Mods: {
 					All armor bonuses from Plague Doctor, Lich, White Dwarf, Celestial, and Shooting Star
 					All armor bonuses from Spirit Trapper, Dragon, Dread, Flesh and Demon Blood
 					All armor bonuses from Tide Turner, Assassin, Pyromancer, Dream Weaver, and Rhapsodist
-					Effects of Nightshade Flower, Flawless Chrysalis, and Bee Booties
+					Effects of Nightshade Flower, Flawless Chrysalis, Thumb Ring and Bee Booties
 					Effects of Goblin War Shield, Bubble Magnet, Agnor's Bowl, and Ice Bound Strider Hide
 					Effects of Demon Tongue, Dark Effigy, Aloe Leaf, Equalizer, Karmic Holder, Prydwen, and Rebirth Statuette
 					Effects of Ring of Unity, Brass Cap, Waxy Rosin, Auto Tuner, Metal Music Player, Diss Track, Concert Tickets, Conductor's Baton, Full Score, and Metronome
@@ -2105,94 +2101,6 @@ Mods: {
 				Tooltip: ""
 			}
 
-			ShtuxianEnchant: {
-				DisplayName: Shtuxian Enchantment
-				Tooltip:
-					'''
-					[i:ssm/QuantumChestplate], [i:ssm/QuantumPants]
-					If damage less than 10, it will be nulified, Your attacks inflict "Chtux'lag'or inferno"
-					Supression of "Chtux'lag'or inferno" effects, All set bonuses from Monstrosity and Mutant armor
-					You can revive up to 3 times, healing all health, Cooldown of each revive is 30 seconds
-					[i:ssm/ChtuxlagorHeart]
-					Your attacks inflict "Chtux'lag'or inferno", You can't take more than 1000 damage.
-					Set Mutant Bomb CD to 30 seconds instead of 60, 100% increase graze bonus damage cap
-					Grants immunity to "Shtuxibus Curse", Debuff "Chtux'lag'or inferno" deal lower damage
-					Press [shtuxianSuper] key to become invinvible for 10 seconds
-					[i:ssm/ShtuxianEnchant] Remove any hits cap.
-					'''
-			}
-
-			QuantumChestplate: {
-				DisplayName: Quantum Chestplate
-				Tooltip:
-					'''
-					+ 10000 shield points, + 100 shield regeneration
-					+ 2000 Max life and mana, x5 all damage for all classes
-					Godly regeneration, 50% Damage resistance
-					Ignore armor of any enemies, 100% crit chance
-					'''
-			}
-
-			QuantumPants: {
-				DisplayName: Quantum Pants
-				Tooltip:
-					'''
-					+ 10000 shield points, + 100 shield regeneration
-					50% Damage resistance, Ignore armor of any enemies
-					50% move speed, x5 all damage for all classes
-					'''
-			}
-
-			QuantumHelmet: {
-				DisplayName: Quantum Helmet
-				Tooltip:
-					'''
-					+ 10000 shield points, + 100 shield regeneration
-					50% Damage resistance, Ignore armor of any enemies
-					Display all enemies, traps, treasures, ores
-					'''
-			}
-
-			ShieldCheckDebug: {
-				DisplayName: Shield Check Debug
-				Tooltip: Debug
-			}
-
-			StorageUnitShtuxian: {
-				DisplayName: Storage Unit Shtuxian
-				Tooltip: DO NOT use this
-			}
-
-			ChtuxlagorShard: {
-				Tooltip: ""
-				DisplayName: Chtuxlagor Shard
-			}
-
-			ShtuxiumArrow: {
-				DisplayName: Shtuxium Arrow
-				Tooltip:
-					'''
-					Inflict "Chtux'lag'or Inferno" on attacked
-					Homes in on enemies, pass throug blocks
-					Explodes on hit
-					'''
-			}
-
-			StarlightCompiler: {
-				DisplayName: Starlight Compiler
-				Tooltip: Equip this to unleash true power of dev suits.
-			}
-
-			ShtuxiumBullet: {
-				Tooltip:
-					'''
-					Inflict "Chtux'lag'or Inferno" on attacked
-					Homes in on enemies, pass throug blocks
-					Explodes on hit
-					'''
-				DisplayName: Shtuxium Bullet
-			}
-
 			ElementalArtifact: {
 				DisplayName: Elemental Artifact
 				Tooltip:
@@ -2226,9 +2134,9 @@ Mods: {
 				DisplayName: Mark of the Dream Eater
 				Tooltip:
 					'''
-						Effects of Inferno Lord’s Focus, Pocket Fusion Generator, Lihzahrd’s Tail, Serpent Shield, Metabolic Pills
-						Effects of Monster Charm, Hexing Talisman, Flawless Chrysalis and The Ring.
-						'You feel pulses of energy being released from it.'
+					Effects of Inferno Lord’s Focus, Pocket Fusion Generator, Lihzahrd’s Tail, Serpent Shield, Metabolic Pills
+					Effects of Monster Charm, Hexing Talisman, Flawless Chrysalis and The Ring.
+					'You feel pulses of energy being released from it.'
 					'''
 			}
 
@@ -2793,27 +2701,125 @@ Mods: {
 					'''
 				DisplayName: Cyclonic Fin
 			}
+
+			WildernessForce: {
+				Tooltip:
+					'''
+					Set bonuses from [i:Polarities/SnakescaleMask] Snakescale, [i:Polarities/SunplateMask] Sunplate, [i:Polarities/StormcloudMask] Stormcloud, [i:Polarities/LimestoneHelmet] Limestone, [i:Polarities/HaliteHelmet] Halite and [i:Polarities/ConvectiveHelmetSummon] Convective armor
+					Effects of [i:Polarities/CosmicCable] Cosmic Cable, [i:Polarities/StarbindCuffs] Starbind Cuffs, [i:Polarities/StormScales] Stormscales and [i:Polarities/RhyoliteShield] Rhyolite Shield
+					Effects of [i:Polarities/CorrosivePolish] Corrosive Polish, [i:Polarities/BuildingEruption] Building Eruption and [i:Polarities/SaltatoryLeg] Saltatory Leg
+					'''
+				DisplayName: Wilderness Force
+			}
+
+			SpacetimeForce: {
+				Tooltip:
+					'''
+					Set bonuses from [i:Polarities/SelfsimilarHelmetMelee] Selfsimilar, [i:Polarities/FractalHelmetMelee] Fractal and [i:Polarities/FlawlessMechMask] Flawless Mechanical Armor
+					Effects of [i:Polarities/SentinelsHeart] Sentinels Heart, [i:Polarities/CloakofPockets] Cloak of Pockets
+					'''
+				DisplayName: Spacetime Force
+			}
+
+			SunplateEnchant: {
+				Tooltip:
+					'''
+					[i:Polarities/SunplateMask] Allows the ability to dash
+					[i:Polarities/CosmicCable] Improves hook stats
+					[i:Polarities/StarbindCuffs] Increases pickup range for mana stars, Restores mana when damaged
+					[i:Polarities/StarbindCuffs] Increases maximum mana by 20, Doubles mana recieved from mana stars
+					'''
+				DisplayName: Sunplate Enchant
+			}
+
+			StormcloudEnchant: {
+				Tooltip:
+					'''
+					[i:Polarities/StormcloudMask] Summons clouds to drench your foes
+					[i:Polarities/StormcloudMask] Increases your max number of minions
+					[i:Polarities/StormScales] Boosts mobility in the air
+					'''
+				DisplayName: Stormcloud Enchant
+			}
+
+			SnakescaleEnchant: {
+				Tooltip:
+					'''
+					[i:Polarities/SnakescaleMask] Free movement in liquids
+					[i:Polarities/SnakescaleMask] Critical hits deal extra damage and inflict venom
+					'''
+				DisplayName: Snakescale Enchant
+			}
+
+			SelfsimilarEnchant: {
+				Tooltip:
+					'''
+					[i:Polarities/SelfsimilarHelmetMelee] Maximum life lost to fractalization is divided by 1.25
+					[i:Polarities/SelfsimilarHelmetMelee] Grants resistance up to 3 minutes of fractalization
+					[i:Polarities/SelfsimilarHelmetMelee] Create class-specific projectiles from selfsimilar energy
+					[i:Polarities/SentinelsHeart] Grants the player additional health, and a boost to defense while this additional health is retained
+					[i:Polarities/SentinelsHeart] When this additional health is lost, released homing wisps to damage enemies
+					'''
+				DisplayName: Selfsimilar Enchant
+			}
+
+			MechanicalEnchant: {
+				Tooltip:
+					'''
+					[i:Polarities/FlawlessMechMask] Right click to enter a temporary state of mecha mayhem, buffing your armor's attacks
+					[i:Polarities/FlawlessMechMask] This has a short cooldown, but the cooldown does not progress while holding a weapon
+					'''
+				DisplayName: Mechanical Enchant
+			}
+
+			LimestoneEnchant: {
+				Tooltip:
+					'''
+					[i:Polarities/LimestoneHelmet] 40 defense
+					[i:Polarities/LimestoneHelmet] Defense is reduced to zero for a short time after being hit
+					[i:Polarities/RhyoliteShield] Grants immunity to knockback and fire blocks
+					[i:Polarities/RhyoliteShield] You take 33% less damage from a single hit with a 30 second cooldown
+					[i:Polarities/CorrosivePolish] Warhammers remove 10 more defense for 10 more seconds
+					'''
+				DisplayName: Limestone Enchantment
+			}
+
+			HaliteEnchant: {
+				Tooltip:
+					'''
+					[i:Polarities/SaltatoryLeg] Increases jump speed and allows auto-jump
+					[i:Polarities/SaltatoryLeg] Increases fall resistance and horizontal speed when jumping
+					[i:Polarities/HaliteHelmet] Free movement in liquids
+					[i:Polarities/HaliteHelmet] Immunity to desiccation
+					'''
+				DisplayName: Halite Enchantment
+			}
+
+			FractalEnchant: {
+				Tooltip:
+					'''
+					[i:Polarities/FractalFaceplate] Maximum life lost to fractalization is divided by 1.25
+					[i:Polarities/FractalFaceplate] Create class-specific projectiles from fractal energy
+					[i:Polarities/CloakofPockets] Press an {Hotkey} to hide in your cloak, or to emerge if already hidden
+					'''
+				DisplayName: Fractal Enchantment
+			}
+
+			ConvectiveEnchant: {
+				Tooltip:
+					'''
+					[i:Polarities/ConvectiveHelmetSummon] Press {Hotkey} to use class-specified ability, with a 10 second cooldown
+					[i:Polarities/BuildingEruption] Press and hold [KEY] to dash in the direction of the cursor
+					[i:Polarities/BuildingEruption] This requires some time to fully recharge
+					'''
+				DisplayName: Convective Enchantment
+			}
 		}
 
 		Buffs: {
-			ShtuxibusCurse: {
-				DisplayName: Shtuxibus Curse
-				Description: Kill yourself
-			}
-
 			Dot: {
 				DisplayName: Dot
 				Description: Your hitbox is a single dot.
-			}
-
-			ChtuxlagorBuff: {
-				DisplayName: Chtuxlagor Buff
-				Description: Strength of omniversal creator with you.
-			}
-
-			ShtuxibusMinionBuff: {
-				DisplayName: Shtuxibus Minion Buff
-				Description: Shtuxibus's spectral image protect you.
 			}
 
 			AntiCollision: {
@@ -2899,6 +2905,16 @@ Mods: {
 			RessurectedBuff: {
 				DisplayName: Ressurected Buff
 				Description: You can't be ressurected again
+			}
+
+			ChtuxlagorBuff: {
+				DisplayName: Chtuxlagor Buff
+				Description: Mods.ssm.Buffs.ChtuxlagorBuff.Description
+			}
+
+			ShtuxibusCurse: {
+				DisplayName: Shtuxibus Curse
+				Description: Mods.ssm.Buffs.ShtuxibusCurse.Description
 			}
 		}
 
@@ -2991,6 +3007,10 @@ Mods: {
 		}
 
 		Toggler: {
+			SpectralFishEffect: Spectral Fishron Support
+			CuteFishEXEffect: Fishron Ritual
+			GraniteEffect: Shock Absorber
+			ThiefsWalletEffect: Thief's Wallet
 			BlastShieldEffect: Blast Shield
 			SpeedCapEffect: Movement Speed Cap
 			MariviumEffect: Marivium Shields
@@ -3465,5 +3485,29 @@ Mods: {
 				}
 			}
 		}
+	}
+
+	Catalyst: {
+		Items: {
+			IntergelacticHeadRogue: {
+				DisplayName: Intergelactic Headgear
+				Tooltip:
+					'''
+					Increases thrower damage and critical strike chance by 22%
+					12% increased damage reduction
+					'''
+			}
+		}
+
+		AuricTeslaPlusSet.Rogue:
+			'''
+			Thrower Intergelactic, Bloodflare and God Slayer armor effects
+			Press {0} to make the asteroids more transparent
+			All projectiles spawn healing auric orbs on enemy hits
+			Thrower stealth builds while not attacking and slower while moving, up to a max of 130
+			Once you have built max stealth, you will be able to perform a Stealth Strike
+			Throwere stealth only reduces when you attack, it does not reduce while moving
+			The higher your thrower stealth the higher your thrower damage, crit, and movement speed
+			'''
 	}
 }

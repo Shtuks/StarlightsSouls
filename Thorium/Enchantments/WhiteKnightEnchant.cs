@@ -35,6 +35,7 @@ namespace ssm.Thorium.Enchantments
             ShtunThoriumPlayer modPlayer = player.GetModPlayer<ShtunThoriumPlayer>();
             ThoriumPlayer thoriumPlayer = player.GetModPlayer<ThoriumPlayer>();
             //shade band
+            thoriumPlayer.accMurkyCatalyst = true;
             thoriumPlayer.smotheringBand = true;
 
             ModContent.Find<ModItem>(this.thorium.Name, "WhiteKnightMask").UpdateArmorSet(player);
@@ -47,7 +48,7 @@ namespace ssm.Thorium.Enchantments
             recipe.AddIngredient(ModContent.ItemType<WhiteKnightMask>());
             recipe.AddIngredient(ModContent.ItemType<WhiteKnightTabard>());
             recipe.AddIngredient(ModContent.ItemType<WhiteKnightLeggings>());
-            recipe.AddIngredient(ModContent.ItemType<SmotheringBand>());
+            recipe.AddIngredient(ModContent.ItemType<MurkyCatalyst>());
             recipe.AddIngredient(ModContent.ItemType<PrismiteGemLock>());
             //recipe.AddIngredient(ModContent.ItemType<FrostFang>());
 
