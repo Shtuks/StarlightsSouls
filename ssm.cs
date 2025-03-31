@@ -24,10 +24,16 @@ using Terraria.Localization;
 using FargowiltasSouls.Content.Items.Placables.Trophies;
 using ssm.Content.Items.Consumables;
 using ssm.Content.NPCs.MutantEX;
+using MonoMod.Cil;
+using System;
+using System.Reflection;
+using Humanizer;
+using Terraria.UI;
+using Mono.Cecil.Cil;
 
 namespace ssm
 {
-    public class ssm : Mod
+    public partial class ssm : Mod
     {
         public Dictionary<string, float> BossChecklistValues = new Dictionary<string, float>
         {
@@ -55,6 +61,7 @@ namespace ssm
         internal static ssm Instance;
         public static bool debug = ShtunConfig.Instance.DebugMode;
 
+        private delegate void UIModDelegate(object instance, SpriteBatch spriteBatch);
         public static bool amiactive;
         public static readonly BindingFlags UniversalBindingFlags = BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic;
         public static bool legit;
@@ -134,7 +141,6 @@ namespace ssm
             }
         }
 
-
         public override void Load()
         {
             ModIntergationSystem.BossChecklist.AdjustValues();
@@ -163,7 +169,6 @@ namespace ssm
 
             ModLoader.TryGetMod("BossChecklist", out Mod bossChecklist);
         }
-
         public override void PostSetupContent()
         {
             BossChecklistCompatibility();
@@ -172,7 +177,7 @@ namespace ssm
                 PostSetupContentThorium.PostSetupContent_Thorium();
             }
         }
-       
+
         public int OSType()
         {
             OperatingSystem os = Environment.OSVersion;
