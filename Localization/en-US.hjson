@@ -2,11 +2,10 @@ Mods: {
 	ssm: {
 		SetBonus: {
 			Monstrosity.SetBonus: WIP
-			Quantum.SetBonus:
+			TrueLumberjak.SetBonus:
 				'''
-				If damage less than 10, it will be nulified
-				Supression of Chtuxlagor Inferno effects
-				Protect you from death, consuming 1,000,000 charge
+				All damage is nulified. You one-shot every NPC.
+				Ring of squirrels orbit you and shoot acorns at your enemies.
 				'''
 
 			AuricTeslaHornedVisor: {
@@ -213,36 +212,6 @@ Mods: {
 			Sadism: {
 				DisplayName: Sadism
 				Tooltip: True escence of eternity.
-			}
-
-			TrueAuricTeslaBody: {
-				DisplayName: True Auric Tesla Body
-				Tooltip:
-					'''
-					40% increased damage and 20% increased critical strike chance 
-					Increases max number of minions and sentries by 10
-					Increases damage reduction by 50%, Increases max life and mana by 300
-					50% reduced mana usage, 25% chance not to consume ammo.
-					'''
-			}
-
-			TrueAuricTeslaHelm: {
-				DisplayName: True Auric Tesla Helm
-				Tooltip:
-					'''
-					50% increased damage and 50% increased critical strike chance
-					Godly increases life regen, also increases armor penetration to 60.
-					Effect of [i:CalamityMod/AuricTeslaHoodedFacemask], [i:CalamityMod/AuricTeslaWireHemmedVisage], [i:CalamityMod/AuricTeslaRoyalHelm], [i:CalamityMod/AuricTeslaPlumedHelm]
-					'''
-			}
-
-			TrueAuricTeslaLegs: {
-				DisplayName: True Auric Tesla Legs
-				Tooltip:
-					'''
-					40% increased damage and 20% increased critical strike chance
-					50% increased movement
-					'''
 			}
 
 			CrabulonEnergizer: {
@@ -2901,17 +2870,32 @@ Mods: {
 			}
 
 			TrueLumberjackPants: {
-				Tooltip: ""
+				Tooltip:
+					'''
+					2147483% increased damage and 2147483% increased critical strike chance
+					214% increased movement and 21474% increased attack speed
+					Also increases armor penetration to 2147483.
+					'''
 				DisplayName: True Lumberjack Pants
 			}
 
 			TrueLumberjackMask: {
-				Tooltip: ""
+				Tooltip:
+					'''
+					2147483% increased damage and 2147483% increased critical strike chance
+					[c/FF0000:Absurdly] increases life regen, also increases armor penetration to 2147483.
+					'''
 				DisplayName: True Lumberjack Mask
 			}
 
 			TrueLumberjackBody: {
-				Tooltip: ""
+				Tooltip:
+					'''
+					2147483% increased damage and 2147483% increased critical strike chance 
+					Increases max number of minions and sentries by 2147483
+					Increases damage reduction by 2147483%, Increases max life and mana by 21474
+					2147483% reduced mana usage, 2147483% chance not to consume ammo, also increases armor penetration by 2147483.
+					'''
 				DisplayName: True Lumberjack Body
 			}
 

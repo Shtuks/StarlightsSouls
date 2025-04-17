@@ -86,7 +86,7 @@ namespace ssm.Content.NPCs.MutantEX
             NPC.width = 70;
             NPC.height = 54;
             NPC.damage = 4000;
-            NPC.defense = 200;
+            NPC.defense = 700;
             NPC.value = Item.buyPrice(15);
             NPC.lifeMax = Main.expertMode ? 120000000 : 60000000;
             NPC.HitSound = SoundID.NPCHit57;
@@ -101,10 +101,10 @@ namespace ssm.Content.NPCs.MutantEX
             NPC.timeLeft = NPC.activeTime * 30;
             NPC.BossBar = ModContent.GetInstance<MonstrocityBossBar>();
 
-            if (WorldSavingSystem.AngryMutant)
+            if (WorldSaveSystem.enragedMutantEX)
             {
-                NPC.damage *= 17;
-                NPC.defense *= 10;
+                NPC.damage = int.MaxValue;
+                NPC.defense = int.MaxValue;
             }
 
             if (ModLoader.TryGetMod("FargowiltasMusic", out Mod musicMod))
@@ -431,14 +431,6 @@ namespace ssm.Content.NPCs.MutantEX
             if (!spawned)
             {
                 spawned = true;
-
-                int prevLifeMax = NPC.lifeMax;
-                if (WorldSavingSystem.AngryMutant)
-                {
-                    NPC.lifeMax *= 100;
-                    if (NPC.lifeMax < prevLifeMax)
-                        NPC.lifeMax = int.MaxValue;
-                }
                 NPC.life = NPC.lifeMax;
 
                 if (player.FargoSouls().TerrariaSoul)
@@ -3990,7 +3982,7 @@ namespace ssm.Content.NPCs.MutantEX
 
         public override void FindFrame(int frameHeight)
         {
-            if (++NPC.frameCounter > 4)
+            if (++NPC.frameCounter > 5)
             {
                 NPC.frameCounter = 0;
                 NPC.frame.Y += frameHeight;

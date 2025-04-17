@@ -18,20 +18,20 @@ namespace ssm.Content.Items.Armor
             this.Item.rare = 11;
             this.Item.expert = true;
             this.Item.value = Item.sellPrice(100, 0, 0, 0);
-            this.Item.defense = int.MaxValue / 100;
+            this.Item.defense = int.MaxValue / 1000;
         }
 
         public override void UpdateEquip(Player player)
         {
-            player.GetDamage(DamageClass.Generic) += int.MaxValue / 100;
-            player.GetCritChance(DamageClass.Generic) += int.MaxValue / 100;
+            player.GetDamage(DamageClass.Generic) += int.MaxValue / 1000;
+            player.GetCritChance(DamageClass.Generic) += int.MaxValue / 1000;
             player.statLifeMax2 += int.MaxValue / 100000;
             player.statManaMax2 += int.MaxValue / 100000;
             player.endurance += int.MaxValue / 100;
             //infinitie regen
             player.statLife = player.statLifeMax2;
-            player.lifeRegenCount += int.MaxValue / 100;
-            player.lifeRegenTime += int.MaxValue / 100;
+            player.lifeRegenCount += int.MaxValue / 1000;
+            player.lifeRegenTime += int.MaxValue / 1000;
         }
 
         public override void AddRecipes()
@@ -41,10 +41,11 @@ namespace ssm.Content.Items.Armor
             recipe.AddIngredient<LumberjackBody>();
 
             recipe.AddIngredient<Sadism>(100);
-            recipe.AddIngredient<EternitySoul>(5);
-            recipe.AddIngredient<EternityForce>(5);
+            recipe.AddIngredient<EternitySoul>(4);
+            recipe.AddIngredient<EternityForce>(4);
 
             recipe.AddTile<MutantsForgeTile>();
+            recipe.Register();
         }
     }
 }

@@ -16,7 +16,7 @@ namespace ssm
             double damageMult = 1D;
             modifiers.SourceDamage *= (float)damageMult;
 
-            if (Player.Shtun().ChtuxlagorHeart)
+            if (Player.Shtun().equippedPhantasmalEnchantment)
             {
                 modifiers.SetMaxDamage(1000);
             }

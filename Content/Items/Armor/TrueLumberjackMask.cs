@@ -27,17 +27,17 @@ namespace ssm.Content.Items.Armor
             Item.rare = 11;
             Item.expert = true;
             Item.value = Item.sellPrice(100, 0, 0, 0);
-            Item.defense = int.MaxValue/10;
+            Item.defense = int.MaxValue/1000;
         }
 
         public override void UpdateEquip(Player player)
         {
-            player.GetDamage(DamageClass.Generic) += int.MaxValue / 100;
-            player.GetArmorPenetration(DamageClass.Generic) += int.MaxValue / 100;
-            player.GetCritChance(DamageClass.Generic) += int.MaxValue / 100;
-            player.maxMinions += int.MaxValue / 100;
-            player.maxTurrets += int.MaxValue / 100;
-            player.manaCost -= int.MaxValue / 100;
+            player.GetDamage(DamageClass.Generic) += int.MaxValue / 1000;
+            player.GetArmorPenetration(DamageClass.Generic) += int.MaxValue / 1000;
+            player.GetCritChance(DamageClass.Generic) += int.MaxValue / 1000;
+            player.maxMinions += int.MaxValue / 1000;
+            player.maxTurrets += int.MaxValue / 1000;
+            player.manaCost -= int.MaxValue / 1000;
             player.ammoCost75 = true;
         }
 
@@ -69,10 +69,11 @@ namespace ssm.Content.Items.Armor
             recipe.AddIngredient<LumberjackMask>();
 
             recipe.AddIngredient<Sadism>(100);
-            recipe.AddIngredient<EternitySoul>(5);
-            recipe.AddIngredient<EternityForce>(5);
+            recipe.AddIngredient<EternitySoul>(4);
+            recipe.AddIngredient<EternityForce>(4);
 
             recipe.AddTile<MutantsForgeTile>();
+            recipe.Register();
         }
 
         public class MayoRing : AccessoryEffect

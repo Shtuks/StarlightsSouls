@@ -11,9 +11,8 @@ using Terraria.Localization;
 using FargowiltasSouls.Content.Projectiles.BossWeapons;
 using FargowiltasSouls.Content.Buffs.Masomode;
 using ssm.Content.Projectiles;
-using FargowiltasSouls.Content.Bosses.AbomBoss;
-using FargowiltasSouls.Core.Globals;
 using ssm.Content.NPCs.MutantEX;
+using ssm.Systems;
 
 namespace ssm
 {
@@ -66,6 +65,14 @@ namespace ssm
             }
         }
 
+        public override void PreUpdate()
+        {
+            if(ShtunUtils.BossIsAlive(ref ShtunNpcs.mutantEX, ModContent.NPCType<MutantEX>()) && Main.player[Main.myPlayer].Shtun().lumberjackSet && WorldSaveSystem.enragedMutantEX)
+            {
+                Player.statDefense*=0;
+                Player.endurance*=0;
+            }
+        }
         public override void OnEnterWorld()
         {
             if (!ModLoader.TryGetMod("ThoriumRework", out Mod _) && ModLoader.TryGetMod("ThoriumMod", out Mod _))
@@ -106,12 +113,12 @@ namespace ssm
 
         public override bool CanBeHitByNPC(NPC npc, ref int cooldownSlot)
         {
-            return !lumberjackSet && !ShtunUtils.BossIsAlive(ref ShtunNpcs.mutantEX, ModContent.NPCType<MutantEX>());
+            return !lumberjackSet && !ShtunUtils.BossIsAlive(ref ShtunNpcs.mutantEX, ModContent.NPCType<MutantEX>()) && !WorldSaveSystem.enragedMutantEX;
         }
 
         public override bool CanBeHitByProjectile(Projectile proj)
         {
-            return !lumberjackSet && !ShtunUtils.BossIsAlive(ref ShtunNpcs.mutantEX, ModContent.NPCType<MutantEX>()) && !(Player.HasBuff<DotBuff>() && !proj.Colliding(proj.Hitbox, GetPrecisionHurtbox()));
+            return !lumberjackSet && !ShtunUtils.BossIsAlive(ref ShtunNpcs.mutantEX, ModContent.NPCType<MutantEX>()) && !WorldSaveSystem.enragedMutantEX && !(Player.HasBuff<DotBuff>() && !proj.Colliding(proj.Hitbox, GetPrecisionHurtbox()));
         }
 
         public override void PreUpdateMovement()

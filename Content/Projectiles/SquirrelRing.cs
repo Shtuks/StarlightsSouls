@@ -5,10 +5,7 @@ using Terraria;
 using FargowiltasSouls;
 using FargowiltasSouls.Core.AccessoryEffectSystem;
 using Microsoft.Xna.Framework;
-using FargowiltasSouls.Content.Items.Armor;
-using FargowiltasSouls.Content.Projectiles.Minions;
 using Microsoft.Xna.Framework.Graphics;
-using FargowiltasSouls.Content.Projectiles.JungleMimic;
 using System.Linq;
 using Luminance.Common.Utilities;
 
@@ -24,7 +21,7 @@ namespace ssm.Content.Projectiles
 
         public override void SetStaticDefaults()
         {
-            Main.projFrames[Projectile.type] = 8;
+            Main.projFrames[Projectile.type] = 6;
         }
 
         public override void SetDefaults()
@@ -37,8 +34,6 @@ namespace ssm.Content.Projectiles
             Projectile.friendly = true;
             Projectile.minion = true;
             Projectile.DamageType = DamageClass.Generic;
-            Projectile.alpha = 255;
-            Projectile.scale = 4f;
         }
 
         public override void AI()
@@ -65,7 +60,7 @@ namespace ssm.Content.Projectiles
             }
 
             Projectile.frameCounter++;
-            if (Projectile.frameCounter >= 8)
+            if (Projectile.frameCounter >= 6)
             {
                 Projectile.frameCounter = 0;
                 Projectile.frame++;
@@ -102,20 +97,13 @@ namespace ssm.Content.Projectiles
             Rectangle rectangle = new(0, y3, texture2D13.Width, num156);
             Vector2 origin2 = rectangle.Size() / 2f;
 
-            Color color26 = Projectile.GetAlpha(lightColor);
-
             for (int x = 0; x < 10; x++)
             {
                 Vector2 drawOffset = new Vector2(threshold * Projectile.scale / 2f, 0f).RotatedBy(Projectile.ai[0]);
-                drawOffset = drawOffset.RotatedBy(2f * Math.PI / 7f * x);
-                Main.EntitySpriteDraw(texture2D13, Projectile.Center + drawOffset - Main.screenPosition + new Vector2(0f, Projectile.gfxOffY), new Microsoft.Xna.Framework.Rectangle?(rectangle), color26, Projectile.rotation, origin2, Projectile.scale, SpriteEffects.None, 0);
+                drawOffset = drawOffset.RotatedBy(2f * Math.PI / 10f * x);
+                Main.EntitySpriteDraw(texture2D13, Projectile.Center + drawOffset - Main.screenPosition + new Vector2(0f, Projectile.gfxOffY), new Microsoft.Xna.Framework.Rectangle?(rectangle), Main.DiscoColor, Projectile.rotation, origin2, Projectile.scale * 2f, SpriteEffects.None, 0);
             }
             return false;
-        }
-
-        public override Color? GetAlpha(Color lightColor)
-        {
-            return Color.White * Projectile.Opacity * .3f;
         }
     }
 }
