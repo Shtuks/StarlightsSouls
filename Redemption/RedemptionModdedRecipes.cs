@@ -11,8 +11,8 @@ using Terraria.ModLoader;
 
 namespace ssm.Redemption
 {
-    [ExtendsFromMod(ModCompatibility.Redemption.Name, ModCompatibility.Calamity.Name)]
-    [JITWhenModsEnabled(ModCompatibility.Redemption.Name, ModCompatibility.Calamity.Name)]
+    [ExtendsFromMod(ModCompatibility.Redemption.Name, ModCompatibility.Calamity.Name, ModCompatibility.Crossmod.Name)]
+    [JITWhenModsEnabled(ModCompatibility.Redemption.Name, ModCompatibility.Calamity.Name, ModCompatibility.Crossmod.Name)]
     public class RedemptionDlcRecipes : ModSystem
     {
         //public override bool IsLoadingEnabled(Mod mod)

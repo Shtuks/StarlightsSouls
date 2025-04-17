@@ -5,6 +5,8 @@ Source code: https://github.com/Shtuks/StarlightsSouls
 
 Discord Server: https://discord.gg/xB9s8SyQJr
 
+Official Wiki: https://terrariamods.wiki.gg/wiki/Community_Souls_Expansion
+
 
 All things mod doing for now:
 
@@ -14,15 +16,13 @@ All things mod doing for now:
 
 - Merge kinetic(SoA) thrower(Thorium) and rogue(Calamity) in one class
 
-- Old Calamity DLC balance
-
 - Reworked boots and shields progression
 
 - Adds SoA and Thorium items fot 1st tier souls recepies and effects
 
 - Redemption, Thorium, SoA caught NPCs,
 
-- Thorium/SoA/Polarities enchantments, forces, souls
+- Thorium/SoA/Polarities/Spooky enchantments, forces, souls
 
-Everyone who took part in creating this mod: StarlightCat, ma3allim, cheesenuggets, AwesomeSavage777, Soltan, Comrade Mutant, GodzilaJedi, Maeneznik, MasterD.
+Everyone who contributed: StarlightCat, ma3allim, cheesenuggets, Soltan, MithMoonwalker, magegor11.
 Special thanks to Fargowilta, Javyz, Terry N Muse, Blushiemagic, DanYami, DevaVade, Yum, Jopojelly, ChickenBones, Jofairden, DivermanSam.

@@ -60,16 +60,6 @@ namespace ssm.Content.Items.Armor
             player.noKnockback = true;
             player.lavaImmune = true;
             player.noFallDmg = true;
-
-            //if (Terraria.ModLoader.ModLoader.GetMod("CalamityMod") != null)
-            //{
-            //    CalamityPlayer calamityPlayer = player.Calamity();
-            //    calamityPlayer.tarraSet = true;
-            //    calamityPlayer.GemTechSet = true;
-            //    calamityPlayer.bloodflareSet = true;
-            //    calamityPlayer.godSlayer = true;
-            //    calamityPlayer.auricSet = true;
-            //}
         }
 
         public override void AddRecipes()

@@ -40,11 +40,13 @@ namespace ssm
             {
                 Recipe recipe = Main.recipe[i];
 
-                //if(recipe.HasResult<FloraFist>() && !recipe.HasIngredient(ItemID.MechanicalGlove))
-                //{
-                //    recipe.RemoveIngredient(ItemID.FireGauntlet);
-                //    recipe.AddIngredient(ItemID.MechanicalGlove);
-                //}
+                if (!ModCompatibility.Calamity.Loaded && !ModCompatibility.Thorium.Loaded)
+                {
+                    if (recipe.HasResult<DimensionSoul>() && !recipe.HasIngredient<StalkerSoul>())
+                    {
+                        recipe.AddIngredient<StalkerSoul>();
+                    }
+                }
 
                 if ((recipe.HasResult<UniverseSoul>() || recipe.HasResult<TerrariaSoul>() || recipe.HasResult<MasochistSoul>() || recipe.HasResult<DimensionSoul>()) && !recipe.HasIngredient<EmberOfOmen>())
                 {

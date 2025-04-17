@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using FargowiltasSouls;
 using FargowiltasSouls.Assets.ExtraTextures;
 using FargowiltasSouls.Content.Buffs.Boss;
 using FargowiltasSouls.Content.Projectiles;

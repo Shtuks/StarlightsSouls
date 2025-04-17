@@ -14,7 +14,23 @@ namespace ssm.Reworks
 			return head.type == ModContent.ItemType<StyxCrown>() && body.type == ModContent.ItemType<StyxChestplate>() && legs.type == ModContent.ItemType<StyxLeggings>() ? "NewStyx" : "";
 		}
 
-		public override void UpdateEquip(Item Item, Player player)
+        public override void SetDefaults(Item item)
+        {
+            if (item.type == ModContent.ItemType<StyxCrown>())
+            {
+                item.defense = 35;
+            }
+            if (item.type == ModContent.ItemType<StyxChestplate>())
+            {
+                item.defense = 45;
+            }
+            if (item.type == ModContent.ItemType<StyxLeggings>())
+            {
+                item.defense = 40;
+            }
+        }
+
+        public override void UpdateEquip(Item Item, Player player)
 		{
 			if (Item.type == ModContent.ItemType<StyxCrown>())
 			{

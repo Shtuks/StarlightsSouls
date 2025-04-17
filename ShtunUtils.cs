@@ -34,6 +34,16 @@ namespace ssm
             return p;
         }
 
+        public static Player ToPlayer(this int ins)
+        {
+            if (ins < 0 || !Main.player[ins].active)
+            {
+                return Main.LocalPlayer;
+            }
+
+            return Main.player[ins];
+        }
+
         public static void HomeInOnNPC(Projectile projectile, bool ignoreTiles, float distanceRequired, float homingVelocity, float inertia)
         {
             if (!projectile.friendly)
@@ -529,47 +539,6 @@ namespace ssm
             return NPCExists((int)whoAmI, types);
         }
 
-        #region Shader Utils
-
-        private static readonly FieldInfo shaderTextureField = typeof(MiscShaderData).GetField("_uImage1", BindingFlags.NonPublic | BindingFlags.Instance);
-        private static readonly FieldInfo shaderTextureField2 = typeof(MiscShaderData).GetField("_uImage2", BindingFlags.NonPublic | BindingFlags.Instance);
-
-        /// <summary>
-        /// Uses reflection to set uImage1. Its underlying data is private and the only way to change it publicly
-        /// is via a method that only accepts paths to vanilla textures.
-        /// </summary>
-        /// <param name="shader">The shader</param>
-        /// <param name="texture">The texture to set</param>
-        public static void SetShaderTexture(this MiscShaderData shader, Asset<Texture2D> texture) => shaderTextureField.SetValue(shader, texture);
-
-        /// <summary>
-        /// Uses reflection to set uImage2. Its underlying data is private and the only way to change it publicly
-        /// is via a method that only accepts paths to vanilla textures.
-        /// </summary>
-        /// <param name="shader">The shader</param>
-        /// <param name="texture">The texture to set</param>
-        public static void SetShaderTexture2(this MiscShaderData shader, Asset<Texture2D> texture) => shaderTextureField2.SetValue(shader, texture);
-
-        /// <summary>
-        /// Prepares a <see cref="SpriteBatch"/> for shader-based drawing.
-        /// </summary>
-        /// <param name="spriteBatch">The sprite batch.</param>
-        public static void EnterShaderRegion(this SpriteBatch spriteBatch)
-        {
-            spriteBatch.End();
-            spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend, Main.DefaultSamplerState, DepthStencilState.None, Main.Rasterizer, null, Main.GameViewMatrix.TransformationMatrix);
-        }
-
-        /// <summary>
-        /// Ends changes to a <see cref="SpriteBatch"/> based on shader-based drawing in favor of typical draw begin states.
-        /// </summary>
-        /// <param name="spriteBatch">The sprite batch.</param>
-        public static void ExitShaderRegion(this SpriteBatch spriteBatch)
-        {
-            spriteBatch.End();
-            spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, Main.DefaultSamplerState, DepthStencilState.None, Main.Rasterizer, null, Main.GameViewMatrix.TransformationMatrix);
-        }
-        #endregion
         public static float ActualClassDamage(this Player player, DamageClass damageClass)
             => player.GetTotalDamage(damageClass).Additive * player.GetTotalDamage(damageClass).Multiplicative;
         public static int HighestDamageTypeScaling(Player player, int dmg)

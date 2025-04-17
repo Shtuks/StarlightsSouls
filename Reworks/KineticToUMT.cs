@@ -10,6 +10,10 @@ namespace ssm.Reworks
     [JITWhenModsEnabled(ModCompatibility.SacredTools.Name)]
     public class KineticToUMT : GlobalItem
     {
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return ShtunConfig.Instance.ThrowerMerge;
+        }
         public override void SetDefaults(Item item)
         {
             if (item.DamageType == ModContent.GetInstance<KineticDamageClass>())

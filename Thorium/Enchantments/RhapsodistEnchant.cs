@@ -45,7 +45,7 @@ namespace ssm.Thorium.Enchantments
         {
             Recipe recipe = this.CreateRecipe();
 
-            recipe.AddIngredient(ModContent.ItemType<SoloistHat>());
+            recipe.AddRecipeGroup("ssm:AnyRhapsodistHelmet");
             recipe.AddIngredient(ModContent.ItemType<RhapsodistChestWoofer>());
             recipe.AddIngredient(ModContent.ItemType<RhapsodistBoots>());
             recipe.AddIngredient(ModContent.ItemType<JingleBells>());

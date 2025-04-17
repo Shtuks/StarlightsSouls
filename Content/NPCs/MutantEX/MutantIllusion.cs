@@ -17,52 +17,20 @@ namespace ssm.Content.NPCs.MutantEX.Projectiles
     [AutoloadBossHead]
     public class MutantIllusion : ModNPC
     {
-        public override string Texture => "FargowiltasSouls/Content/Bosses/MutantBoss/MutantBoss";
+        public override string Texture => "ssm/Content/NPCs/MutantEX/MutantEX";
         public override void SetStaticDefaults()
         {
             Main.npcFrameCount[base.NPC.type] = 4;
             NPCID.Sets.CantTakeLunchMoney[base.Type] = true;
-            NPC nPC = base.NPC;
-            int num = 12;
-            List<int> list = new List<int>(num);
-            CollectionsMarshal.SetCount<int>(list, num);
-            Span<int> span = CollectionsMarshal.AsSpan(list);
-            int num2 = 0;
-            span[num2] = 31;
-            num2++;
-            span[num2] = 46;
-            num2++;
-            span[num2] = 24;
-            num2++;
-            span[num2] = 68;
-            num2++;
-            span[num2] = ModContent.BuffType<LethargicBuff>();
-            num2++;
-            span[num2] = ModContent.BuffType<ClippedWingsBuff>();
-            num2++;
-            span[num2] = ModContent.BuffType<MutantNibbleBuff>();
-            num2++;
-            span[num2] = ModContent.BuffType<OceanicMaulBuff>();
-            num2++;
-            span[num2] = ModContent.BuffType<LightningRodBuff>();
-            num2++;
-            span[num2] = ModContent.BuffType<SadismBuff>();
-            num2++;
-            span[num2] = ModContent.BuffType<GodEaterBuff>();
-            num2++;
-            span[num2] = ModContent.BuffType<TimeFrozenBuff>();
-            num2++;
-            nPC.AddDebuffImmunities(list);
-            Utilities.ExcludeFromBestiary((ModNPC)this);
         }
 
         public override void SetDefaults()
         {
-            base.NPC.width = 34;
-            base.NPC.height = 50;
+            NPC.width = 70;
+            NPC.height = 54;
             base.NPC.damage = 360;
             base.NPC.defense = 400;
-            base.NPC.lifeMax = 7000000;
+            base.NPC.lifeMax = 700000000;
             base.NPC.dontTakeDamage = true;
             base.NPC.HitSound = SoundID.NPCHit57;
             base.NPC.noGravity = true;

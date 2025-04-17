@@ -1,13 +1,6 @@
-using Fargowiltas.NPCs;
-using Microsoft.Xna.Framework;
 using Terraria;
-using Terraria.Audio;
-using Terraria.Chat;
 using Terraria.ID;
-using Terraria.Localization;
 using Terraria.ModLoader;
-using Fargowiltas.Items.Summons.SwarmSummons;
-using ssm.Core;
 
 namespace ssm.Content.Items
 {

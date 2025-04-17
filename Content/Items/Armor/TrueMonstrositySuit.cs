@@ -4,8 +4,6 @@ using ssm.CrossMod.CraftingStations;
 
 namespace ssm.Content.Items.Armor
 {
-    //[ExtendsFromMod(ModCompatibility.Calamity.Name)]
-    //[JITWhenModsEnabled(ModCompatibility.Calamity.Name)]
     [AutoloadEquip(EquipType.Body)]
     public class TrueMonstrositySuit : ModItem
     {

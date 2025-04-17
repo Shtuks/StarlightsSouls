@@ -171,6 +171,10 @@ namespace ssm
         }
         public override void PostSetupContent()
         {
+            if (ModLoader.TryGetMod("Wikithis", out Mod wikithis) && !Main.dedServ)
+            {
+                wikithis.Call("AddModURL", this, "https://terrariamods.wiki.gg/wiki/Community_Souls_Expansion/{}");
+            }
             BossChecklistCompatibility();
             if (ModCompatibility.Thorium.Loaded)
             {

@@ -124,6 +124,9 @@
 	  <Reference Include="sl">
 	    <HintPath>..\..\ModReader\sl\sl.dll</HintPath>
 	  </Reference>
+	  <Reference Include="Spooky">
+	    <HintPath>lib\Spooky.dll</HintPath>
+	  </Reference>
 	  <Reference Include="SubworldLibrary">
 	    <HintPath>Libraries\SubworldLibrary.dll</HintPath>
 	  </Reference>

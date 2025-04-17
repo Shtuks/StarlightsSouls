@@ -43,7 +43,7 @@ namespace ssm.Content.Sky
                 {
                     case -5:
                         if (Main.npc[ShtunNpcs.mutantEX].ai[2] >= 420)
-                            ChangeColorIfDefault(Color.Cyan);
+                            ChangeColorIfDefault(Color.MediumPurple);
                         break;
 
                     case 10:
@@ -118,7 +118,7 @@ namespace ssm.Content.Sky
 
         private Color ColorToUse(ref float opacity)
         {
-            Color color = new(51, 255, 191);
+            Color color = Color.MediumPurple;
             opacity = intensity * 0.5f + lifeIntensity * 0.5f;
 
             if (specialColorLerp > 0 && specialColor != null)

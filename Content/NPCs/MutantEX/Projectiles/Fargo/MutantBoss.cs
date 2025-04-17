@@ -22,7 +22,7 @@ public class MutantBoss : ModProjectile
 	public bool sansEye;
 
 	public float SHADOWMUTANTREAL;
-    public override string Texture => "FargowiltasSouls/Content/Bosses/MutantBoss/MutantBoss";
+    public override string Texture => "ssm/Content/NPCs/MutantEX/MutantEX";
 
     public int npcType => ModContent.NPCType<MutantEX>();
 

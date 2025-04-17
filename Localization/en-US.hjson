@@ -91,17 +91,6 @@ Mods: {
 				SoAWorldshaper: Effects of Rage Supressor, Celestial ring
 			}
 
-			ShtuxianSoul: {
-				DisplayName: Soul
-				Tooltip:
-					'''
-					Effects of [i:FargowiltasSouls/EternitySoul], [i:ssm/EternityForce]
-					Your attacks inflict most of debuffs, all defense and regeneration bonuses x2
-					Increase maximum eternity crits by 2000, faster mutant eye cooldown
-					'God or whatever, all things acknowledge your claim to omnipotence.'
-					'''
-			}
-
 			CalamitySoul: {
 				DisplayName: Soul of the Godseeker
 				TooltipOld:
@@ -989,7 +978,7 @@ Mods: {
 					'''
 					'Has a surprisingly sweet aroma'
 					Your healing spells increase the life recovery and life recovery rate of the healed target
-					Effects of Petal Shield, Kick Petal, and Fragrant Corsage
+					Effects of Blooming Shield, Kick Petal, and Fragrant Corsage
 					'''
 			}
 
@@ -1265,7 +1254,7 @@ Mods: {
 					Healing spells will shortly increase the healed player's maximum life by 50
 					Your radiant damage has a 15% chance to release a blinding flash of light
 					The flash heals nearby allies equal to your bonus healing and confuses enemies
-					Effects of Aloe Leaf and Equalizer
+					Effects of Dew Collector and Equalizer
 					'''
 			}
 
@@ -1424,7 +1413,6 @@ Mods: {
 				Tooltip:
 					'''
 					'It glimmers with comforting power'
-					Healing potions heal 50% more life
 					Every 5 seconds you generate up to 3 holy crosses
 					When casting healing spells, a cross is used instead of mana
 					Effects of Karmic Holder
@@ -1534,7 +1522,7 @@ Mods: {
 					'Not just for hunting fish'
 					Critical strikes release a splash of foam, slowing nearby enemies
 					After four consecutive non-critical strikes, your next attack will mini-crit for 150% damage
-					Effects of Thumb Ring and Agnor's Bowl
+					Effects of Thumb Ring and Angler's Bowl
 					'''
 			}
 
@@ -2277,33 +2265,9 @@ Mods: {
 				DisplayName: Addons Force
 				Tooltip:
 					'''
-					Activates the Stress and Void Bar
-					Hitting the target will increase void energy
-					Provides movement and flight speed bonuses based on the amount of void energy
-					Press the armor bonus key to activate Void energy Summon a Void Wraith to assist in battle and fly indefinitely for 10 seconds
-					Void Wrairh damage type depends on the weapon in hand
-					Press [KEY] to activate the coordinated state
-					In this state, you are not affected by gravity and push away the surrounding projectiles
-					Stress builds up passively, though standing close to enemies speeds up the rate at which it increases
-					At 25% Stress your weapons will produce explosions
-					At 75% Stress your explosions will become larger and deal more damage
-					Double tap DOWN while Stress is above 25% to enter Malice Mode
-					Malice Mode significantly increases your damage, as well as granting flat damage, armor penetration, and critical strike
-					These boosts and their duration scale with the amount of stress you have
-					{$CommonItemTooltip.FlightAndSlowfall}
-					Wearing any wings overrides this flight
-					{$CommonItemTooltip.PressDownToHover}
-					Allows the ability to dash and enhances other dashes
-					Grants immunity to many endgame and movement-based debuffs
-					Surrounds you with two rings of asteroids whose damages scale with your stats
-					Press {0} to make the asteroids more transparent
-					You are immune to the Astral Blight and your attacks inflict it
-					Press the {0} key to dash towards the cursor as a violent nebula
-					During the dash, you are fully immune to damage
-					20% increased true melee damage. Can't be frozen
-					True melee attacks inflict frostburn. 
-					Press Armor Ability Key to create an ice shield that parries attack
-					Failing to parry will cause you to overcool
+					Set Bonuses of Marivium, Intergelactic, Clamitas, Shogun, Void Faquir and Frozen armor sets
+					Effects of Hell's Fire, Soul of Pyrogen, Holy Mantle and Splendor Jam
+					Effects of Cursor Mutagen, Reincarnation Badge and Influx Cluster
 					'''
 			}
 
@@ -2814,27 +2778,153 @@ Mods: {
 					'''
 				DisplayName: Convective Enchantment
 			}
+
+			TerrorForce: {
+				Tooltip:
+					'''
+					Set bonuses from [i:Spooky/EyeHead] Living Flesh, [i:Spooky/GoreHoodEye] Gore, [i:Spooky/OldWoodHead] Old Wood and [i:Spooky/GourdHead] RottenGourd
+					Effects of [i:Spooky/CreepyCandle] Creepy Candle, [i:Spooky/MonsterBloodVial] Monster Blood Vial and [i:Spooky/TotalOrganPackage] Total Organ Package
+					Effects of [i:Spooky/GhostBook] Tome of Spirits, [i:Spooky/CandyBag] Bag 'O Treats and [i:Spooky/RustyRing] Rusty Ring
+					'''
+				DisplayName: Terror Force
+			}
+
+			HorrorForce: {
+				Tooltip:
+					'''
+					Set bonuses from [i:Spooky/SpiritHorsemanHead] Spirit Horseman, [i:Spooky/SpiderHead] Spi-Ops, [i:Spooky/WizardGangsterHead] Gilded Mage and [i:Spooky/Root] Root
+					Effects of [i:Spooky/SkullAmulet] Skull Amulet, [i:Spooky/SpiritAmulet] Spirit Amulet and [i:Spooky/BustlingGlowshroom] Bustling Glowshroom
+					Effects of [i:Spooky/HunterScarf] Old Hunter Scarf, [i:Spooky/SewingThread] Sewing Thread and [i:Spooky/DaffodilHairpin] Flower Hairpin 
+					'''
+				DisplayName: Horror Force
+			}
+
+			SpiritHorsemenEnchant: {
+				Tooltip:
+					'''
+					[i:Spooky/SpiritHorsemanHead] Your own head will now fight alongside you
+					[i:Spooky/SkullAmulet] Allows you to absorb the souls of enemies you kill 
+					[i:Spooky/SkullAmulet] After 10 souls are absorbed, you will enter a frenzy for 10 seconds
+					[i:Spooky/SkullAmulet] During this frenzy you gain increases to various stats
+					[i:Spooky/SpiritAmulet] When hit, you will sometimes release homing spirit particles around you
+					'''
+				DisplayName: Spirit Horsemen Enchant
+			}
+
+			SpiOpsEnchant: {
+				Tooltip:
+					'''
+					[i:Spooky/SpiderHead] Press the Armor Bonus Hotkey to enter spider stealth for 10 seconds
+					[i:Spooky/SpiderHead] Upon entering spider stealth you will briefly stun nearby enemies
+					[i:Spooky/SpiderHead] While in spider stealth your damage reduction is increased by 12%
+					[i:Spooky/HunterScarf] Marked enemies will take more damage from your ranged weapons
+					[i:Spooky/SewingThread] Using items will sometimes launch out a piercing thread
+					'''
+				DisplayName: Spi Ops Enchant
+			}
+
+			RottenGourdEnchant: {
+				Tooltip:
+					'''
+					[i:Spooky/GourdHead] Melee weapons have a 12.5% chance to inflict Rotting
+					[i:Spooky/GhostBook] Summons one of the grave-robber's spirits to fight with and protect you
+					[i:Spooky/RustyRing] Increases your maximum life by 60 and life regeneration
+					[i:Spooky/RustyRing] Grants you the spelunker effect while in the dungeon or catacombs
+					'''
+				DisplayName: Rotten Gourd Enchant
+			}
+
+			RootEnchant: {
+				Tooltip: "[i:Spooky/RootHead] Your ranged projectiles have a 20% chance to heal you"
+				DisplayName: Root Enchant
+			}
+
+			OldWoodEnchant: {
+				Tooltip:
+					'''
+					[i:Spooky/CreepyCandle] Magic projectiles will sometimes ignite enemies
+					[i:Spooky/CandyBag] Summons a magical bag of candy to follow you
+					[i:Spooky/CandyBag] Hitting enemies with summon weapons will spawn homing candy out of the bag
+					'''
+				DisplayName: Old Wood Enchant
+			}
+
+			LivingFleshEnchant: {
+				Tooltip:
+					'''
+					[i:Spooky/EyeHead] Hitting enemies with whips has a 20% chance to spawn eyes that deal additional damage
+					[i:Spooky/MonsterBloodVial] Massively increases life regeneration while not moving
+					[i:Spooky/MonsterBloodVial] While moving, you gain 5% increased critical strike chance
+					'''
+				DisplayName: Living Flesh Enchant
+			}
+
+			GoreEnchant: {
+				Tooltip:
+					'''
+					[i:Spooky/GoreHoodEye] Summons a baby orro and boro to fight alongside you
+					[i:Spooky/TotalOrganPackage] Grants the abilities of all organ accessories
+					'''
+				DisplayName: Gore Enchant
+			}
+
+			GildedWizardEnchant: {
+				Tooltip:
+					'''
+					[i:Spooky/WizardGangsterHead] Grants +2% magic damage for each gold coin you have, up to +20%
+					[i:Spooky/WizardGangsterHead2] Grants -2% mana usage for each gold coin you have, up to -20%
+					[i:Spooky/BustlingGlowshroom] Summons a magical bag of candy to follow you
+					'''
+				DisplayName: Gilded Wizard Enchant
+			}
+
+			FlowerEnchant: {
+				Tooltip:
+					'''
+					[i:Spooky/FlowerHead] Increases life regeneration by +2.5 HP/s
+					[i:Spooky/FlowerHead] Press the Armor Bonus Hotkey to summon a large amount of pollen to attack your enemies
+					[i:Spooky/FlowerHead] This ability has a 30 second cooldown before it can be used again
+					[i:Spooky/DaffodilHairpin] Grants you a petal ring that deals massive damage to enemies when they touch you
+					[i:Spooky/DaffodilHairpin] The ring goes away when an enemy hits you, and grows back after one minute
+					'''
+				DisplayName: Flower Enchant
+			}
+
+			StalkerSoul: {
+				DisplayName: Stalker Soul
+				Tooltip:
+					'''
+					22% increased thrower damage
+					10% increased thrower projectile velocity
+					10% increased thrower critical chance
+					'''
+			}
+
+			TrueLumberjackPants: {
+				Tooltip: ""
+				DisplayName: True Lumberjack Pants
+			}
+
+			TrueLumberjackMask: {
+				Tooltip: ""
+				DisplayName: True Lumberjack Mask
+			}
+
+			TrueLumberjackBody: {
+				Tooltip: ""
+				DisplayName: True Lumberjack Body
+			}
+
+			ShtunTerminus: {
+				DisplayName: Terminus
+				Tooltip: ""
+			}
 		}
 
 		Buffs: {
 			Dot: {
 				DisplayName: Dot
 				Description: Your hitbox is a single dot.
-			}
-
-			AntiCollision: {
-				DisplayName: Anti Collision
-				Description: You can't get hit.
-			}
-
-			AntiDeath: {
-				DisplayName: Anti Death
-				Description: You can't die.
-			}
-
-			AntiDebuff: {
-				DisplayName: Anti Debuff
-				Description: You immune to all debuffs.
 			}
 
 			ChtuxlagorInferno: {
@@ -2877,16 +2967,6 @@ Mods: {
 				DisplayName: Chtuxlagor Inferno EX
 			}
 
-			StellarGuardianBuff: {
-				DisplayName: Stellar Guardian
-				Description: Stellar guardian protects you
-			}
-
-			ShtuxianDomination: {
-				Description: You are f*king invincible
-				DisplayName: Shtuxian Domination
-			}
-
 			DotBuff: {
 				Description: Your hitbox is a singe dot
 				DisplayName: Dot
@@ -2897,24 +2977,14 @@ Mods: {
 				Description: Little Yharon is fighting for you.
 			}
 
-			CyborgBuff: {
-				DisplayName: Cyborg
-				Description: Your body made of metal.
+			MonstrocityPresenceBuff: {
+				Description: Mods.ssm.Buffs.MonstrocityPresenceBuff.Description
+				DisplayName: Monstrocity Presence Buff
 			}
 
-			RessurectedBuff: {
-				DisplayName: Ressurected Buff
-				Description: You can't be ressurected again
-			}
-
-			ChtuxlagorBuff: {
-				DisplayName: Chtuxlagor Buff
-				Description: Mods.ssm.Buffs.ChtuxlagorBuff.Description
-			}
-
-			ShtuxibusCurse: {
-				DisplayName: Shtuxibus Curse
-				Description: Mods.ssm.Buffs.ShtuxibusCurse.Description
+			StellarGuardianBuff: {
+				Description: Mods.ssm.Buffs.StellarGuardianBuff.Description
+				DisplayName: Stellar Guardian Buff
 			}
 		}
 
@@ -3217,6 +3287,9 @@ Mods: {
 			AbomSwordHandle.DisplayName: Abom Sword Handle
 			SpectralFishron.DisplayName: Spectral Fishron
 			CuteFishronRitual.DisplayName: Cute Fishron Ritual
+			TrueAcornProjectile.DisplayName: True Acorn Projectile
+			SquirrelMinion.DisplayName: Squirrel Minion
+			SquirrelRing.DisplayName: Squirrel Ring
 		}
 
 		Biomes: {
@@ -3384,6 +3457,11 @@ Mods: {
 				ExperimentalContent: {
 					Label: Experimental Content
 					Tooltip: This will allow unfinished content to load.
+				}
+
+				ThrowerMerge: {
+					Tooltip: ""
+					Label: Thrower Merge
 				}
 			}
 		}

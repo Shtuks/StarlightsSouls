@@ -55,11 +55,17 @@ namespace ssm.Content.Items.Accessories
         {
             player.GetModPlayer<ShtunPlayer>().equippedNekomiEnchantment = true;
             ModContent.Find<ModItem>(this.FargoSoul.Name, "SparklingAdoration").UpdateAccessory(player, false);
+            
             if (player.AddEffect<NekomiEffect>(Item))
             {
                 player.FargoSouls().NekomiSet = true;
             }
 
+            player.slotsMinions += 1f;
+            player.GetCritChance<GenericDamageClass>() += 7f;
+            player.GetDamage<GenericDamageClass>() += 0.07f;
+
+            //no longer exist
             //player.buffImmune[ModContent.Find<ModBuff>(this.FargoSoul.Name, "DeviPresenceBuff").Type] = true;
         }
 

@@ -8,8 +8,6 @@ namespace ssm.Content.Buffs
     {
         public const int TickNumber = 10000;
         public const int DPS = 100000;
-
-        private readonly Mod Fargos = Terraria.ModLoader.ModLoader.GetMod("FargowiltasSouls");
         public override void SetStaticDefaults()
         {
             Main.debuff[Type] = true;

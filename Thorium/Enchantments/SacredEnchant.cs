@@ -34,10 +34,8 @@ namespace ssm.Thorium.Enchantments
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            ShtunThoriumPlayer modPlayer = player.GetModPlayer<ShtunThoriumPlayer>();
-            modPlayer.SacredEnchant = true;
-
             ModContent.Find<ModItem>("ssm", "NoviceClericEnchant").UpdateAccessory(player, true);
+            ModContent.Find<ModItem>("ThoriumMod", "SacredHelmet").UpdateArmorSet(player);
 
             if (player.AddEffect<SacredEffect>(Item))
             {

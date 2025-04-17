@@ -7,8 +7,8 @@ using Fargowiltas.Items.Tiles;
 
 namespace ssm.Calamity.Addons
 {
-    [ExtendsFromMod(ModCompatibility.Catalyst.Name, ModCompatibility.Goozma.Name, ModCompatibility.Clamity.Name, ModCompatibility.Entropy.Name)]
-    [JITWhenModsEnabled(ModCompatibility.Catalyst.Name, ModCompatibility.Goozma.Name, ModCompatibility.Clamity.Name, ModCompatibility.Entropy.Name)]
+    [ExtendsFromMod(ModCompatibility.Calamity.Name)]
+    [JITWhenModsEnabled(ModCompatibility.Calamity.Name)]
     public class AddonsForce : BaseForce
     {
         public override void SetDefaults()
@@ -23,24 +23,56 @@ namespace ssm.Calamity.Addons
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "ClamitasEnchant").UpdateAccessory(player, hideVisual);
-            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "MariviumEnchant").UpdateAccessory(player, hideVisual);
-            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "IntergelacticEnchant").UpdateAccessory(player, false);
-            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "ShogunEnchant").UpdateAccessory(player, false);
-            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "VoidFaquirEnchant").UpdateAccessory(player, hideVisual);
-            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "FrozenEnchant").UpdateAccessory(player, hideVisual);
+            if (ModCompatibility.Clamity.Loaded)
+            {
+                ModContent.Find<ModItem>(((ModType)this).Mod.Name, "ClamitasEnchant").UpdateAccessory(player, hideVisual);
+                ModContent.Find<ModItem>(((ModType)this).Mod.Name, "FrozenEnchant").UpdateAccessory(player, hideVisual);
+            }
+
+            if (ModCompatibility.Catalyst.Loaded)
+            {
+                //ModContent.Find<ModItem>(((ModType)this).Mod.Name, "AuricPlusEnchant").UpdateAccessory(player, false);
+                ModContent.Find<ModItem>(((ModType)this).Mod.Name, "IntergelacticEnchant").UpdateAccessory(player, false);
+            }
+
+            if (ModCompatibility.Goozma.Loaded)
+            {
+                ModContent.Find<ModItem>(((ModType)this).Mod.Name, "ShogunEnchant").UpdateAccessory(player, false);
+            }
+
+            if (ModCompatibility.Entropy.Loaded)
+            {
+                ModContent.Find<ModItem>(((ModType)this).Mod.Name, "MariviumEnchant").UpdateAccessory(player, hideVisual);
+                ModContent.Find<ModItem>(((ModType)this).Mod.Name, "VoidFaquirEnchant").UpdateAccessory(player, hideVisual);
+            }
         }
 
         public override void AddRecipes()
         {
             Recipe recipe = this.CreateRecipe();
 
-            recipe.AddIngredient<MariviumEnchant>();
-            recipe.AddIngredient(null, "ClamitasEnchant");
-            recipe.AddIngredient(null, "IntergelacticEnchant");
-            recipe.AddIngredient(null, "ShogunEnchant");
-            recipe.AddIngredient(null, "VoidFaquirEnchant");
-            recipe.AddIngredient(null, "FrozenEnchant");
+            if (ModCompatibility.Clamity.Loaded)
+            {
+                recipe.AddIngredient(null, "FrozenEnchant");
+                recipe.AddIngredient(null, "ClamitasEnchant");
+            }
+
+            if (ModCompatibility.Catalyst.Loaded)
+            {
+                recipe.AddIngredient(null, "IntergelacticEnchant");
+                //recipe.AddIngredient(null, "AuricPlusEnchant");
+            }
+
+            if (ModCompatibility.Goozma.Loaded)
+            {
+                recipe.AddIngredient(null, "ShogunEnchant");
+            }
+
+            if (ModCompatibility.Entropy.Loaded)
+            {
+                recipe.AddIngredient(null, "VoidFaquirEnchant");
+                recipe.AddIngredient(null, "MariviumEnchant");
+            }
 
             recipe.AddTile<CrucibleCosmosSheet>();
 

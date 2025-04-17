@@ -9,7 +9,7 @@ using ThoriumMod.Items.Donate;
 using Terraria.ID;
 using ThoriumMod.Items.Misc;
 using FargowiltasSouls.Content.Items.Summons;
-using CalamityMod.Items.SummonItems;
+using ThoriumMod.Items.BossThePrimordials.Rhapsodist;
 
 namespace ssm.Thorium
 {
@@ -43,6 +43,9 @@ namespace ssm.Thorium
             //any gem
             group = new RecipeGroup(() => Lang.misc[37] + " Gem", ModContent.ItemType<Opal>(), ModContent.ItemType<Aquamarine>());
             RecipeGroup.RegisterGroup("ssm:AnyThoriumGem", group);
+            // rhapsodist
+            group = new RecipeGroup(() => Lang.misc[37] + " Rhapsodist Helmet", ModContent.ItemType<SoloistHat>(), ModContent.ItemType<InspiratorsHelmet>());
+            RecipeGroup.RegisterGroup("ssm:AnyRhapsodistHelmet", group);
         }
 
         public override void AddRecipes()

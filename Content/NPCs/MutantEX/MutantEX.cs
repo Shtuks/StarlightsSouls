@@ -42,7 +42,6 @@ namespace ssm.Content.NPCs.MutantEX
     [AutoloadBossHead]
     public class MutantEX : ModNPC
     {
-        public override string Texture => $"ssm/Content/NPCs/MutantEX/MutantEX{FargoSoulsUtil.TryAprilFoolsTexture}";
 
         public SlotId? TelegraphSound = null;
         Player player => Main.player[NPC.target];
@@ -66,7 +65,7 @@ namespace ssm.Content.NPCs.MutantEX
 
         public override void SetStaticDefaults()
         {
-            Main.npcFrameCount[NPC.type] = 4;
+            Main.npcFrameCount[NPC.type] = 5;
             NPCID.Sets.NoMultiplayerSmoothingByType[NPC.type] = true;
             NPCID.Sets.MPAllowedEnemies[Type] = true;
             NPCID.Sets.BossBestiaryPriority.Add(NPC.type);
@@ -78,14 +77,14 @@ namespace ssm.Content.NPCs.MutantEX
         {
             bestiaryEntry.Info.AddRange([
                 BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Sky,
-                new FlavorTextBestiaryInfoElement($"Mods.FargowiltasSouls.Bestiary.{Name}")
+                new FlavorTextBestiaryInfoElement($"Mods.ssm.Bestiary.{Name}")
             ]);
         }
 
         public override void SetDefaults()
         {
-            NPC.width = 120;
-            NPC.height = 120;
+            NPC.width = 70;
+            NPC.height = 54;
             NPC.damage = 4000;
             NPC.defense = 200;
             NPC.value = Item.buyPrice(15);
@@ -100,7 +99,7 @@ namespace ssm.Content.NPCs.MutantEX
             NPC.aiStyle = -1;
             NPC.netAlways = true;
             NPC.timeLeft = NPC.activeTime * 30;
-            NPC.BossBar = ModContent.GetInstance<MutantBossBar>();
+            NPC.BossBar = ModContent.GetInstance<MonstrocityBossBar>();
 
             if (WorldSavingSystem.AngryMutant)
             {
@@ -110,7 +109,7 @@ namespace ssm.Content.NPCs.MutantEX
 
             if (ModLoader.TryGetMod("FargowiltasMusic", out Mod musicMod))
             {
-                Music = MusicLoader.GetMusicSlot(musicMod, "Assets/Music/rePrologue");
+                Music = MusicLoader.GetMusicSlot(musicMod, "Assets/Music/Storia");
             }
 
             SceneEffectPriority = SceneEffectPriority.BossHigh;
@@ -172,7 +171,7 @@ namespace ssm.Content.NPCs.MutantEX
 
         public override void OnSpawn(IEntitySource source)
         {
-            if (ModContent.TryFind("Fargowiltas", "Mutant", out ModNPC modNPC))
+            if (ModContent.TryFind(Mod.Name, "Monstrocity", out ModNPC modNPC))
             {
                 int n = NPC.FindFirstNPC(modNPC.Type);
                 if (n != -1 && n != Main.maxNPCs)
@@ -447,7 +446,7 @@ namespace ssm.Content.NPCs.MutantEX
             }
 
             if (Main.LocalPlayer.active && !Main.LocalPlayer.dead && !Main.LocalPlayer.ghost)
-                Main.LocalPlayer.AddBuff(ModContent.BuffType<MutantPresenceBuff>(), 2);
+                Main.LocalPlayer.AddBuff(ModContent.BuffType<MonstrocityPresenceBuff>(), 2);
 
             if (NPC.localAI[3] == 0)
             {
@@ -676,7 +675,7 @@ namespace ssm.Content.NPCs.MutantEX
                         EdgyBossText(GFBQuote(36));
                         if (NPC.position.Y < 0)
                             NPC.position.Y = 0;
-                        if (FargoSoulsUtil.HostCheck && ModContent.TryFind("Fargowiltas", "Mutant", out ModNPC modNPC) && !NPC.AnyNPCs(modNPC.Type))
+                        if (FargoSoulsUtil.HostCheck && ModContent.TryFind("ssm", "Monstrocity", out ModNPC modNPC) && !NPC.AnyNPCs(modNPC.Type))
                         {
                             FargoSoulsUtil.ClearHostileProjectiles(2, NPC.whoAmI);
                             int n = NPC.NewNPC(NPC.GetSource_FromAI(), (int)NPC.Center.X, (int)NPC.Center.Y, modNPC.Type);
@@ -848,7 +847,7 @@ namespace ssm.Content.NPCs.MutantEX
             }
         }
         const int ObnoxiousQuoteCount = 71;
-        const string GFBLocPath = $"Mods.FargowiltasSouls.NPCs.MutantBoss.GFBText.";
+        const string GFBLocPath = $"Mods.ssm.NPCs.MutantEX.GFBText.";
         private string RandomObnoxiousQuote() => Language.GetTextValue($"{GFBLocPath}Random{Main.rand.Next(ObnoxiousQuoteCount)}");
         private string GFBQuote(int num) => Language.GetTextValue($"{GFBLocPath}Quote{num}");
 
@@ -4036,7 +4035,7 @@ namespace ssm.Content.NPCs.MutantEX
                 return;
             var maxOpacity = NPC.Opacity;
 
-            ManagedShader borderShader = ShaderManager.GetShader("FargowiltasSouls.MutantP1Aura");
+            ManagedShader borderShader = ShaderManager.GetShader("FargowiltasSouls.MutantP2Aura");
             borderShader.TrySetParameter("colorMult", 7.35f);
             borderShader.TrySetParameter("time", Main.GlobalTimeWrappedHourly);
             borderShader.TrySetParameter("radius", radius);

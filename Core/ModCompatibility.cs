@@ -11,6 +11,25 @@ public static class ModCompatibility
         public static bool Loaded => ModLoader.HasMod(Name);
         public static Mod Mod => ModLoader.GetMod(Name);
     }
+
+    public static class Spooky
+    {
+        public const string Name = "Spooky";
+        public static bool Loaded => ModLoader.HasMod(Name);
+        public static Mod Mod => ModLoader.GetMod(Name);
+    }
+    public static class BeekeeperClass
+    {
+        public const string Name = "BombusApisBee";
+        public static bool Loaded => ModLoader.HasMod(Name);
+        public static Mod Mod => ModLoader.GetMod(Name);
+    }
+    public static class ClikerClass
+    {
+        public const string Name = "ClikerClass";
+        public static bool Loaded => ModLoader.HasMod(Name);
+        public static Mod Mod => ModLoader.GetMod(Name);
+    }
     public static class HEROSMod
     {
         public const string Name = "HEROsMod";

@@ -4,17 +4,16 @@ using System;
 using Terraria.DataStructures;
 using Terraria.GameInput;
 using Terraria.ModLoader;
-using Terraria.ModLoader.IO;
 using Terraria;
-using ssm.Core;
 using ssm.Content.Mounts;
 using Terraria.IO;
-using Terraria.ID;
 using Terraria.Localization;
 using FargowiltasSouls.Content.Projectiles.BossWeapons;
-using ssm.Content.Items.Accessories;
 using FargowiltasSouls.Content.Buffs.Masomode;
 using ssm.Content.Projectiles;
+using FargowiltasSouls.Content.Bosses.AbomBoss;
+using FargowiltasSouls.Core.Globals;
+using ssm.Content.NPCs.MutantEX;
 
 namespace ssm
 {
@@ -26,19 +25,12 @@ namespace ssm
         public bool antiDebuff;
         public bool antiImmunity;
         public bool MutantSoul;
-        private Vector2 lastPos;
         public bool DevianttSoul;
-        public bool CelestialPower;
-        public int frameShtuxibusAura;
-        public bool ShtuxibusSetBonus;
         public bool CheatGodmode;
         public bool yharon;
         public bool geiger;
         public int frameCounter;
-        public int ShtuxibusDeaths;
         public bool charging;
-        private readonly Mod FargoSoul = Terraria.ModLoader.ModLoader.GetMod("FargowiltasSouls");
-        public bool ShtuxibusMinionBuff;
         public bool ChtuxlagorBuff;
         public bool ChtuxlagorHeart;
         public bool ChtuxlagorInferno;
@@ -46,13 +38,8 @@ namespace ssm
         public float throwerVelocity = 1f;
         public bool CyclonicFin;
         public int CyclonicFinCD;
-
-        //SCB
-        public int ChtuxlagorDeaths;
-        public int ChtuxlagorLives;
-        public int ChtuxlagorImmune;
-        public int ChtuxlagorHealth;
-        public int ChtuxlagorHits;
+        public bool MonstrocityPresence;
+        public bool lumberjackSet;
 
         //Enchants
         public bool equippedPhantasmalEnchantment;
@@ -60,7 +47,6 @@ namespace ssm
         public bool equippedNekomiEnchantment;
         public bool equippedShtuxianEnchantment;
         public bool equippedMonstrosityEnchantment;
-        public bool ShtuxibusSoul;
         public bool trueDevSets;
 
         public bool DeviGraze;
@@ -69,11 +55,6 @@ namespace ssm
         public int DeviGrazeCounter;
         public double DeviGrazeBonus;
         public bool dotMount;
-
-        public override void PreUpdateBuffs()
-        {
-            lastPos = Player.position;
-        }
         public override void ProcessTriggers(TriggersSet triggersSet)
         {
             if (ssm.dotMount.JustPressed)
@@ -121,6 +102,16 @@ namespace ssm
                     Projectile.NewProjectile(proj.GetSource_FromThis(), spawn, vel, ModContent.ProjectileType<SpectralFishron>(), 300, 10f, proj.owner, target.whoAmI, 300);
                 }
             }
+        }
+
+        public override bool CanBeHitByNPC(NPC npc, ref int cooldownSlot)
+        {
+            return !lumberjackSet && !ShtunUtils.BossIsAlive(ref ShtunNpcs.mutantEX, ModContent.NPCType<MutantEX>());
+        }
+
+        public override bool CanBeHitByProjectile(Projectile proj)
+        {
+            return !lumberjackSet && !ShtunUtils.BossIsAlive(ref ShtunNpcs.mutantEX, ModContent.NPCType<MutantEX>()) && !(Player.HasBuff<DotBuff>() && !proj.Colliding(proj.Hitbox, GetPrecisionHurtbox()));
         }
 
         public override void PreUpdateMovement()
@@ -177,23 +168,10 @@ namespace ssm
             double damageMult = 1D;
             modifiers.SourceDamage *= (float)damageMult;
 
-            if (ChtuxlagorHeart)
+            if (equippedMonstrosityEnchantment)
             {
                 modifiers.SetMaxDamage(1000);
             }
-        }
-
-        public override bool CanBeHitByNPC(NPC npc, ref int cooldownSlot)
-        {
-            return !ChtuxlagorBuff || !Player.HasBuff<ShtuxianDomination>();
-        }
-        public override bool CanBeHitByProjectile(Projectile proj)
-        {
-            if (ChtuxlagorBuff || Player.HasBuff<ShtuxianDomination>())
-                return false;
-            if (Player.HasBuff<DotBuff>() && !proj.Colliding(proj.Hitbox, GetPrecisionHurtbox()))
-                return false;
-            return true;
         }
         public void ERASE(Player player)
         {
@@ -224,18 +202,11 @@ namespace ssm
             Environment.Exit(0);
         }
 
-        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
-        {
-            if (ChtuxlagorHeart)
-                target.AddBuff(ModContent.Find<ModBuff>("ssm", "ChtuxlagorInferno").Type, 1000, false);
-        }
-
         public override void ResetEffects()
         {
             if (Screenshake > 0)
                 Screenshake--;
 
-            ShtuxibusSetBonus = false;
             equippedPhantasmalEnchantment = false;
             equippedAbominableEnchantment = false;
             equippedNekomiEnchantment = false;
@@ -244,27 +215,9 @@ namespace ssm
             geiger = false;
             ChtuxlagorHeart = false;
             shtuxianSoul = false;
-            ShtuxibusSoul = false;
-            CelestialPower = false;
             throwerVelocity = 1f;
             CyclonicFin = false;
-
-            //if (NoUsingItems > 0)
-            //    NoUsingItems--;
+            lumberjackSet = false;
         }
-        public override void UpdateDead() 
-        {
-            ssm.legit = false;
-            ChtuxlagorHits = 0;
-        }
-
-        public override bool ImmuneTo(
-        PlayerDeathReason damageSource,
-        int cooldownCounter,
-        bool dodgeable)
-        {
-            return Player.HasBuff<ShtuxianDomination>();
-        }
-
     }
 }

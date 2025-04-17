@@ -32,7 +32,7 @@ namespace ssm.Thorium.Enchantments
         {
             //string oldSetBonus = player.setBonus;
             ModContent.Find<ModItem>(this.thorium.Name, "FallenPaladinFacegaurd").UpdateArmorSet(player);
-            //ModContent.Find<ModItem>(this.thorium.Name, "Wynebgwrthucher").UpdateAccessory(player, hideVisual);
+            ModContent.Find<ModItem>(this.thorium.Name, "Prydwen").UpdateAccessory(player, hideVisual);
             ModContent.Find<ModItem>(this.thorium.Name, "NirvanaStatuette").UpdateAccessory(player, hideVisual);
             ModContent.Find<ModItem>(this.thorium.Name, "TemplarsCirclet").UpdateArmorSet(player);
             //player.setBonus = oldSetBonus;
@@ -48,7 +48,7 @@ namespace ssm.Thorium.Enchantments
             recipe.AddIngredient(ModContent.ItemType<FallenPaladinCuirass>());
             recipe.AddIngredient(ModContent.ItemType<FallenPaladinGreaves>());
             recipe.AddIngredient(ModContent.ItemType<TemplarEnchant>());
-           // recipe.AddIngredient(ModContent.ItemType<Wynebgwrthucher>());
+            recipe.AddIngredient(ModContent.ItemType < Prydwen >()); //WHO TF NAMED THIS THING Wynebgwrthucher
             recipe.AddIngredient(ModContent.ItemType<NirvanaStatuette>());
 
             recipe.AddTile(TileID.CrystalBall);

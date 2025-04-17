@@ -11,7 +11,7 @@ namespace ssm.Reworks
     {
         public override bool AppliesToEntity(Item entity, bool lateInstantiation)
         {
-            return entity.type == ModContent.ItemType<SupersonicSoul>() || entity.type == ModContent.ItemType<DimensionSoul>() || entity.type == ModContent.ItemType<EternitySoul>() || entity.type == ModContent.ItemType<ShtuxianSoul>();
+            return entity.type == ModContent.ItemType<SupersonicSoul>() || entity.type == ModContent.ItemType<DimensionSoul>() || entity.type == ModContent.ItemType<EternitySoul>();
         }
         public override void UpdateAccessory(Item item, Player player, bool hideVisual)
         {

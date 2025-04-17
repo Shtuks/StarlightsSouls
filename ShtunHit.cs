@@ -4,6 +4,7 @@ using FargowiltasSouls.Content.Buffs.Boss;
 using FargowiltasSouls.Content.Buffs.Souls;
 using FargowiltasSouls.Content.Bosses.MutantBoss;
 using ssm.Content.NPCs.MutantEX;
+using ssm.Content.Buffs;
 
 namespace ssm
 {
@@ -24,24 +25,12 @@ namespace ssm
                 Player.AddBuff(ModContent.BuffType<TimeFrozenBuff>(),10);
             }
         }
-
-        public override void OnHurt(Player.HurtInfo info)
-        {
-            if (Player.Shtun().ChtuxlagorHits > 10)
-            {
-                Player.Shtun().ERASE(Player);
-                Player.Shtun().ChtuxlagorHits = 0;
-            }
-        }
-
         public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
             if (Player.Shtun().equippedPhantasmalEnchantment)
                 target.AddBuff(ModContent.Find<ModBuff>(this.FargoSoul.Name, "MutantFangBuff").Type, 1000, false);
             if (Player.Shtun().equippedAbominableEnchantment)
                 target.AddBuff(ModContent.Find<ModBuff>(this.FargoSoul.Name, "AbomFangBuff").Type, 1000, false);
-            if (Player.Shtun().ChtuxlagorHeart)
-                target.AddBuff(ModContent.Find<ModBuff>("ssm", "ChtuxlagorInferno").Type, 1000, false);
         }
     }
 
@@ -51,6 +40,21 @@ namespace ssm
 
         public override void ModifyHitByProjectile(NPC npc, Projectile projectile, ref NPC.HitModifiers modifiers)
         {
+            if(npc.type != ModContent.NPCType<MutantEX>() && Main.player[projectile.owner].Shtun().lumberjackSet)
+            {
+                npc.dontTakeDamage = false;
+                npc.dontTakeDamageFromHostiles = false;
+                npc.immortal = false;
+                npc.life = 0;
+                npc.HitEffect(0, 10.0);
+                npc.checkDead();
+            }
+
+            if (Main.player[projectile.owner].Shtun().lumberjackSet)
+            {
+                npc.AddBuff(ModContent.BuffType<ChtuxlagorInferno>(), 180);
+            }
+
             if (npc.type == ModContent.NPCType<MutantBoss>())
             {
                 modifiers.SetMaxDamage(50000);
@@ -58,6 +62,16 @@ namespace ssm
         }
         public override void ModifyHitByItem(NPC npc, Player player, Item item, ref NPC.HitModifiers modifiers)
         {
+            if (npc.type != ModContent.NPCType<MutantEX>() && player.Shtun().lumberjackSet)
+            {
+                npc.dontTakeDamage = false;
+                npc.dontTakeDamageFromHostiles = false;
+                npc.immortal = false;
+                npc.life = 0;
+                npc.HitEffect(0, 10.0);
+                npc.checkDead();
+            }
+
             if (npc.type == ModContent.NPCType<MutantBoss>())
             {
                 modifiers.SetMaxDamage(50000);

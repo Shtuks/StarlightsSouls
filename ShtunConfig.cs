@@ -57,5 +57,10 @@ namespace ssm
         [BackgroundColor(60, 200, 60, 192)]
         [DefaultValue(true)]
         public bool Shields { get; set; }
+
+        [ReloadRequired]
+        [BackgroundColor(60, 200, 60, 192)]
+        [DefaultValue(true)]
+        public bool ThrowerMerge { get; set; }
     }
 }

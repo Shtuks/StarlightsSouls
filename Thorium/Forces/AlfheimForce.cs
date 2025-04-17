@@ -1,8 +1,6 @@
 ﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using ThoriumMod;
-using Terraria.Localization;
 using ssm.Core;
 using FargowiltasSouls.Content.Items.Accessories.Forces;
 using Fargowiltas.Items.Tiles;
