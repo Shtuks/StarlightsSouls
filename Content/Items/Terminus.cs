@@ -5,7 +5,6 @@ using Terraria;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
 using ssm.Core;
-using NoxusBoss.Content.Projectiles;
 
 namespace ssm.Items;
 [ExtendsFromMod(ModCompatibility.Calamity.Name)]
@@ -30,7 +29,8 @@ public class ShtunTerminus : ModItem, ILocalizedModType, IModType
         }
         else
         {
-            Item.shoot = ModContent.ProjectileType<TerminusProj>();
+            ModCompatibility.WrathoftheGods.Mod.TryFind<ModProjectile>("TerminusProj", out ModProjectile terminusProj);
+            Item.shoot = terminusProj.Type;
         }
 
         Item.useStyle = 4;

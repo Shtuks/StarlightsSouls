@@ -1,14 +1,10 @@
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using Terraria;
 using Terraria.ID;
 using Terraria.Localization;
 using Terraria.Chat;
 using Terraria.ModLoader;
-using Fargowiltas.Items.Summons.SwarmSummons.Energizers;
 using ssm.Core;
 using ssm.SoA.Swarm.Energizers;
 using SacredTools.NPCs.Boss.Erazor;
@@ -22,6 +18,8 @@ using SacredTools.NPCs.Boss.Lunarians;
 using SacredTools.NPCs.Boss.Araneas;
 using SacredTools.Content.Items.GrabBags.BossBags;
 using SacredTools.Items.Placeable;
+using SacredTools.NPCs.Boss.Obelisk.Nihilus;
+using ssm.Content.Buffs;
 
 namespace ssm.SoA
 {
@@ -157,6 +155,16 @@ namespace ssm.SoA
             //{
             //    npc.dontTakeDamage = false;
             //}
+        }
+
+        public override bool PreAI(NPC npc)
+        {
+            if (npc.type == ModContent.NPCType<Nihilus>() || npc.type == ModContent.NPCType<Nihilus2>())
+            {
+                if (Main.expertMode && Main.LocalPlayer.active && !Main.LocalPlayer.dead && !Main.LocalPlayer.ghost)
+                    Main.LocalPlayer.AddBuff(ModContent.BuffType<NihilityPresenceBuff>(), 2);
+            }
+            return base.PreAI(npc);
         }
         private void SpawnBoss(NPC npc, int boss)
         {
