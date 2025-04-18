@@ -2903,14 +2903,29 @@ Mods: {
 				DisplayName: Terminus
 				Tooltip: ""
 			}
+
+			BeekeeperEssence: {
+				DisplayName: Beekeeper Essence
+				Tooltip: 
+					'''
+					18% increased hymenoptra damage
+					10% increased hymenoptra critical chance
+					+ 50 max honey
+					'''
+			}
+
+			BeekeeperSoul: {
+				DisplayName: Beekeeper Soul
+				Tooltip: 
+					'''
+					22% increased hymenoptra damage
+					10% increased hymenoptra critical chance
+					+ 200 max honey
+					'''
+			}
 		}
 
 		Buffs: {
-			Dot: {
-				DisplayName: Dot
-				Description: Your hitbox is a single dot.
-			}
-
 			ChtuxlagorInferno: {
 				DisplayName: Chtuxlagor Inferno
 				Description: OOOHHHH NOOOO YOU dAed
@@ -2926,11 +2941,6 @@ Mods: {
 				Description: Your power rival with Godseeker's
 			}
 
-			CelestialPowerBuff: {
-				DisplayName: Celestial Power Buff
-				Description: Celestial pillars protects you
-			}
-
 			DeviSoulBuff: {
 				DisplayName: Deviantt Soul Buff
 				Description: Spectral Deviantt protects you
@@ -2941,19 +2951,9 @@ Mods: {
 				Description: Spectral Mutant protects you
 			}
 
-			StarlightVodkaBuff: {
-				DisplayName: Starlight Vodka Buff
-				Description: You feel oversupply of shtuxian energy in your veins
-			}
-
 			ChtuxlagorInfernoEX: {
 				Description: No life, no salvation, no escape, no existance
 				DisplayName: Chtuxlagor Inferno EX
-			}
-
-			DotBuff: {
-				Description: Your hitbox is a singe dot
-				DisplayName: Dot
 			}
 
 			YharonBuff: {
@@ -2969,6 +2969,11 @@ Mods: {
 			StellarGuardianBuff: {
 				Description: Mods.ssm.Buffs.StellarGuardianBuff.Description
 				DisplayName: Stellar Guardian Buff
+			}
+
+			NihilityPresenceBuff: {
+				DisplayName: Nihility Presence Buff
+				Description: Some of your souls effects are toggled off
 			}
 		}
 

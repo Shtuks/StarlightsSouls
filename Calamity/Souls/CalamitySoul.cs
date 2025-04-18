@@ -32,6 +32,7 @@ namespace ssm.Calamity.Souls
         }
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
+            ModContent.GetInstance<AddonsForce>().UpdateAccessory(player, hideVisual);
             ModContent.GetInstance<ShatteredCommunity>().UpdateAccessory(player, hideVisual);
             ModContent.GetInstance<ElementalArtifact>().UpdateAccessory(player, hideVisual);
             ModContent.GetInstance<PotJT>().UpdateAccessory(player, hideVisual);
@@ -51,7 +52,7 @@ namespace ssm.Calamity.Souls
             recipe.AddIngredient<WulfrumEnchant>();
             recipe.AddIngredient<TitanHeartEnchant>();
 
-            if (ModCompatibility.Catalyst.Loaded && ModCompatibility.Goozma.Loaded && ModCompatibility.Clamity.Loaded && ModCompatibility.WrathoftheGods.Loaded && ModCompatibility.Entropy.Loaded)
+            if (ModCompatibility.Catalyst.Loaded || ModCompatibility.Goozma.Loaded || ModCompatibility.Clamity.Loaded || ModCompatibility.WrathoftheGods.Loaded || ModCompatibility.Entropy.Loaded)
             {
                 recipe.AddIngredient<AddonsForce>();
             }

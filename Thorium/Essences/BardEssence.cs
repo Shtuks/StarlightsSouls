@@ -2,20 +2,11 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using ThoriumMod;
-using Terraria.Localization;
 using ssm.Core;
-using System.Collections.Generic;
 using Microsoft.Xna.Framework;
-using FargowiltasSouls.Content.Items.Accessories.Souls;
-using ThoriumMod.Projectiles.Bard;
-using Fargowiltas.Items.Tiles;
-using FargowiltasSouls.Content.Items.Materials;
-using ThoriumMod.Items.HealerItems;
-using ThoriumMod.Items.Terrarium;
 using FargowiltasSouls.Content.Items.Accessories.Essences;
 using ThoriumMod.Items.BardItems;
 using ThoriumMod.Items.BossTheGrandThunderBird;
-using ThoriumMod.Items.BossViscount;
 
 namespace ssm.Thorium.Essences
 {

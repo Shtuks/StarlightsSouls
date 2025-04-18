@@ -26,7 +26,7 @@ public static class ModCompatibility
     }
     public static class ClikerClass
     {
-        public const string Name = "ClikerClass";
+        public const string Name = "ClickerClass";
         public static bool Loaded => ModLoader.HasMod(Name);
         public static Mod Mod => ModLoader.GetMod(Name);
     }

@@ -1,10 +1,13 @@
 using Terraria;
-using FargowiltasSouls.Content.Items.Accessories.Souls;
 using Terraria.ModLoader;
-using ssm.Content.Items.Accessories;
+using MagicStorage.Items;
+using ssm.Core;
+using ssm.Content.Items.Armor;
 
 namespace ssm
 {
+    [ExtendsFromMod(ModCompatibility.SacredTools.Name)]
+    [JITWhenModsEnabled(ModCompatibility.SacredTools.Name)]
     public class Recipes : ModSystem
     {
         public override void PostAddRecipes()
@@ -12,9 +15,11 @@ namespace ssm
             for (int i = 0; i < Recipe.numRecipes; i++)
             {
                 Recipe recipe = Main.recipe[i];
-                if (recipe.HasResult<TerrariaSoul>())
+                if (recipe.HasResult<CreativeStorageUnit>())
                 {
-                 //   recipe.AddIngredient<CelestialEnchant>();
+                    recipe.AddIngredient<TrueLumberjackBody>();
+                    recipe.AddIngredient<TrueLumberjackMask>();
+                    recipe.AddIngredient<TrueLumberjackPants>();
                 }
             }
         }

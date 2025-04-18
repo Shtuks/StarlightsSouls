@@ -32,6 +32,14 @@ namespace ssm.Reworks
                         ModContent.Find<ModItem>(((ModType)this).Mod.Name, "StalkerSoul").UpdateAccessory(player, false);
                     }
                 }
+                if (ModLoader.TryGetMod("ClickerClass", out Mod clicker))
+                {
+                    ModContent.Find<ModItem>(((ModType)this).Mod.Name, "ClickerSoul").UpdateAccessory(player, false);
+                }
+                if (ModLoader.TryGetMod("BombusApisBee", out Mod bee))
+                {
+                    ModContent.Find<ModItem>(((ModType)this).Mod.Name, "BeekeeperSoul").UpdateAccessory(player, false);
+                }
             }
             if (Item.type == ModContent.ItemType<EternitySoul>() || Item.type == ModContent.ItemType<CalamitySoul>())
             {
