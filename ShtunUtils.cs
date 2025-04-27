@@ -189,9 +189,6 @@ namespace ssm
         public static ShtunPlayer Shtun(this Player player)
             => player.GetModPlayer<ShtunPlayer>();
 
-        public static bool Stalin = ShtunConfig.Instance.Stalin;
-        public static string TryStalinTexture => Stalin ? "_Stalin" : "";
-
         public static NPC ClosestNPCAt(this Vector2 origin, float maxDistanceToCheck, bool ignoreTiles = true, bool bossPriority = false)
         {
             NPC closestTarget = null;

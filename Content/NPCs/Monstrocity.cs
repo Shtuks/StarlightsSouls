@@ -5,6 +5,8 @@ using Terraria.ID;
 using Terraria.GameContent.Bestiary;
 using Terraria.Localization;
 using Terraria.ModLoader;
+using Terraria.GameContent.Personalities;
+using Fargowiltas.NPCs;
 
 namespace ssm.Content.NPCs
 {
@@ -64,16 +66,17 @@ namespace ssm.Content.NPCs
             NPC.height = 54;
             NPC.aiStyle = 7;
             NPC.damage = 500;
-            NPC.defense = NPC.downedMoonlord ? 50 : 15;
-            NPC.lifeMax = NPC.downedMoonlord ? 5000 : 250;
+            NPC.defense = int.MaxValue;
+            NPC.lifeMax = int.MaxValue;
             NPC.HitSound = SoundID.NPCHit1;
             NPC.DeathSound = SoundID.NPCDeath1;
             NPC.knockBackResist = 0.5f;
             NPC.dontTakeDamage = true;
             AnimationType = 22;
-            //NPC.Happiness
-            //        .SetNPCAffection<ShtuxianHarbringer>(AffectionLevel.Dislike)
-            //        .SetNPCAffection<Mutant>(AffectionLevel.Like);
+            NPC.Happiness
+                    .SetNPCAffection<Mutant>(AffectionLevel.Dislike)
+                    .SetNPCAffection<Deviantt>(AffectionLevel.Like)
+                    .SetNPCAffection<Abominationn>(AffectionLevel.Like);
         }
 
         public override bool CanTownNPCSpawn(int numTownNPCs)
@@ -104,28 +107,6 @@ namespace ssm.Content.NPCs
                 7 => "Mods.ssm.NPCs.Monstrocity.Chat.Normal8",
                 8 => "Mods.ssm.NPCs.Monstrocity.Chat.Normal9",
                 9 => "Mods.ssm.NPCs.Monstrocity.Chat.Normal10",
-                10 => "Mods.ssm.NPCs.Monstrocity.Chat.Normal11",
-                11 => "Mods.ssm.NPCs.Monstrocity.Chat.Normal12",
-                12 => "Mods.ssm.NPCs.Monstrocity.Chat.Normal13",
-                13 => "Mods.ssm.NPCs.Monstrocity.Chat.Normal14",
-                14 => "Mods.ssm.NPCs.Monstrocity.Chat.Normal15",
-                15 => "Mods.ssm.NPCs.Monstrocity.Chat.Normal16",
-                16 => "Mods.ssm.NPCs.Monstrocity.Chat.Normal17",
-                17 => "Mods.ssm.NPCs.Monstrocity.Chat.Normal18",
-                18 => "Mods.ssm.NPCs.Monstrocity.Chat.Normal19",
-                19 => "Mods.ssm.NPCs.Monstrocity.Chat.Normal20",
-                20 => "Mods.ssm.NPCs.Monstrocity.Chat.Normal21",
-                21 => "Mods.ssm.NPCs.Monstrocity.Chat.Normal22",
-                22 => "Mods.ssm.NPCs.Monstrocity.Chat.Normal23",
-                23 => "Mods.ssm.NPCs.Monstrocity.Chat.Normal24",
-                24 => "Mods.ssm.NPCs.Monstrocity.Chat.Normal25",
-                25 => "Mods.ssm.NPCs.Monstrocity.Chat.Normal26",
-                26 => "Mods.ssm.NPCs.Monstrocity.Chat.Normal27",
-                27 => "Mods.ssm.NPCs.Monstrocity.Chat.Normal28",
-                28 => "Mods.ssm.NPCs.Monstrocity.Chat.Normal29",
-                29 => "Mods.ssm.NPCs.Monstrocity.Chat.Normal30",
-                30 => "Mods.ssm.NPCs.Monstrocity.Chat.Normal31",
-                31 => "Mods.ssm.NPCs.Monstrocity.Chat.Normal32",
                 _ => "Mods.ssm.NPCs.Monstrocity.Chat.Normal0"
             };
         }

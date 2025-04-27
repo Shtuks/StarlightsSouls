@@ -83,8 +83,8 @@ namespace ssm.Content.NPCs.MutantEX
 
         public override void SetDefaults()
         {
-            NPC.width = 70;
-            NPC.height = 54;
+            NPC.width = 140;
+            NPC.height = 124;
             NPC.damage = 4000;
             NPC.defense = 700;
             NPC.value = Item.buyPrice(15);
@@ -4006,7 +4006,7 @@ namespace ssm.Content.NPCs.MutantEX
             if (ShouldDrawAura)
                 DrawAura(spriteBatch, auraPosition, AuraScale);
 
-            return false;
+            return true;
         }
 
         public void DrawAura(SpriteBatch spriteBatch, Vector2 position, float auraScale)

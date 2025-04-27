@@ -1,5 +1,5 @@
 displayName = Community Souls Expansion
-author = StarlightCat, ma3allim, cheesenuggets, Soltan
+author = CSE Developer Team
 version = 1.1.2.3
 homepage = https://discord.gg/xB9s8SyQJr
 modReferences = FargowiltasSouls, Fargowiltas, Luminance

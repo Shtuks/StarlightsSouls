@@ -4,7 +4,6 @@ using Terraria;
 using ssm.Core;
 using ClickerClass;
 using ClickerClass.Items;
-using ssm.ClassSouls.Clicker.Essences;
 
 namespace ssm.Redemption.Mutagens
 {
@@ -12,6 +11,10 @@ namespace ssm.Redemption.Mutagens
     [JITWhenModsEnabled(ModCompatibility.Redemption.Name, ModCompatibility.ClikerClass.Name)]
     public class MutagenClicker : ModItem
     {
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return false;
+        }
         public override void SetStaticDefaults()
         {
             base.Item.ResearchUnlockCount = 1;
@@ -33,11 +36,11 @@ namespace ssm.Redemption.Mutagens
             player.GetModPlayer<ClickerPlayer>().clickerRadius += 1;
         }
 
-        public override void AddRecipes()
-        {
-            CreateRecipe().AddIngredient(ModContent.ItemType<MiceFragment>(), 10).AddIngredient(ModContent.ItemType<EmptyMutagen>()).AddIngredient(ModContent.ItemType<ClickerEssence>())
-                .AddTile(412)
-                .Register();
-        }
+        //public override void AddRecipes()
+        //{
+        //    CreateRecipe().AddIngredient(ModContent.ItemType<MiceFragment>(), 10).AddIngredient(ModContent.ItemType<EmptyMutagen>()).AddIngredient(ModContent.ItemType<ClickerEssence>())
+        //        .AddTile(412)
+        //        .Register();
+        //}
     }
 }

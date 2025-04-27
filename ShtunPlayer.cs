@@ -75,12 +75,12 @@ namespace ssm
 
         public override bool CanBeHitByNPC(NPC npc, ref int cooldownSlot)
         {
-            return !lumberjackSet && !ShtunUtils.BossIsAlive(ref ShtunNpcs.mutantEX, ModContent.NPCType<MutantEX>()) && !WorldSaveSystem.enragedMutantEX;
+            return !lumberjackSet;
         }
 
         public override bool CanBeHitByProjectile(Projectile proj)
         {
-            return !lumberjackSet && !ShtunUtils.BossIsAlive(ref ShtunNpcs.mutantEX, ModContent.NPCType<MutantEX>()) && !WorldSaveSystem.enragedMutantEX;
+            return !lumberjackSet;
         }
         public override void ModifyScreenPosition()
         {

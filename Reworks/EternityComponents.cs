@@ -32,13 +32,26 @@ namespace ssm.Reworks
                         ModContent.Find<ModItem>(((ModType)this).Mod.Name, "StalkerSoul").UpdateAccessory(player, false);
                     }
                 }
-                if (ModLoader.TryGetMod("ClickerClass", out Mod clicker))
-                {
-                    ModContent.Find<ModItem>(((ModType)this).Mod.Name, "ClickerSoul").UpdateAccessory(player, false);
-                }
-                if (ModLoader.TryGetMod("BombusApisBee", out Mod bee))
+                //if (ModCompatibility.ClikerClass.Loaded)
+                //{
+                //    ModContent.Find<ModItem>(((ModType)this).Mod.Name, "ClickerSoul").UpdateAccessory(player, false);
+                //}
+                if (ModCompatibility.BeekeeperClass.Loaded)
                 {
                     ModContent.Find<ModItem>(((ModType)this).Mod.Name, "BeekeeperSoul").UpdateAccessory(player, false);
+                }
+            }
+            if (Item.type == ModContent.ItemType<TerrariaSoul>() || Item.type == ModContent.ItemType<EternitySoul>())
+            {
+                if (ModLoader.TryGetMod("Spooky", out Mod tor))
+                {
+                    ModContent.Find<ModItem>(((ModType)this).Mod.Name, "HorrorForce").UpdateAccessory(player, false);
+                    ModContent.Find<ModItem>(((ModType)this).Mod.Name, "TerrorForce").UpdateAccessory(player, false);
+                }
+                if (ModLoader.TryGetMod("Polarities", out Mod soa))
+                {
+                    ModContent.Find<ModItem>(((ModType)this).Mod.Name, "WildernessForce").UpdateAccessory(player, false);
+                    ModContent.Find<ModItem>(((ModType)this).Mod.Name, "SpacetimeForce").UpdateAccessory(player, false);
                 }
             }
             if (Item.type == ModContent.ItemType<EternitySoul>() || Item.type == ModContent.ItemType<CalamitySoul>())

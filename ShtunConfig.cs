@@ -18,33 +18,12 @@ namespace ssm
         [ReloadRequired]
         [BackgroundColor(60, 200, 60, 192)]
         [DefaultValue(false)]
-        public bool SafeMode { get; set; }
-
-        [ReloadRequired]
-        [BackgroundColor(60, 200, 60, 192)]
-        [DefaultValue(false)]
         public bool DebugMode { get; set; }
 
         [ReloadRequired]
         [BackgroundColor(60, 200, 60, 192)]
         [DefaultValue(false)]
         public bool ExperimentalContent { get; set; }
-
-        [Header("Crafting")]
-
-        [ReloadRequired]
-        [BackgroundColor(60, 200, 60, 192)]
-        [SliderColor(60, 230, 100, 128)]
-        [Range(500, 100000)]
-        [DefaultValue(1000)]
-        public int ItemsUsedInSingularity { get; set; }
-
-        [Header("Bosses")]
-
-        [ReloadRequired]
-        [BackgroundColor(60, 200, 60, 192)]
-        [DefaultValue(false)]
-        public bool Stalin { get; set; }
 
         [Header("CrossMods")]
 
@@ -60,7 +39,7 @@ namespace ssm
 
         [ReloadRequired]
         [BackgroundColor(60, 200, 60, 192)]
-        [DefaultValue(true)]
+        [DefaultValue(false)]
         public bool ThrowerMerge { get; set; }
     }
 }

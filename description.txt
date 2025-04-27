@@ -22,9 +22,12 @@ All things mod doing for now:
 
 - Adds SoA and Thorium items fot 1st tier souls recepies and effects
 
-- Redemption, Thorium, SoA caught NPCs,
+- Redemption, Thorium, SoA caught NPCs
 
 - Thorium/SoA/Polarities/Spooky enchantments, forces, souls
+
+Full list of supported mods: Calamity, Shadows of Abaddon, Thorium, Redemption, Spooky, Polarities, Bombus Apis, Clicker Class
+Coming soon compatibility: Homeward Journey, Spirit, Consolaria
 
 Everyone who contributed: StarlightCat, ma3allim, cheesenuggets, Soltan, MithMoonwalker, magegor11.
 Special thanks to Fargowilta, Javyz, Terry N Muse, Blushiemagic, DanYami, DevaVade, Yum, Jopojelly, ChickenBones, Jofairden, DivermanSam.

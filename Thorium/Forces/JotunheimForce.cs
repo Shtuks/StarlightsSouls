@@ -28,11 +28,11 @@ namespace ssm.Thorium.Forces
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "WhisperingEnchant").UpdateAccessory(player, hideVisual);
-            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "DepthDiverEnchant").UpdateAccessory(player, hideVisual);
+            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "WhisperingEnchant").UpdateAccessory(player, hideVisual); //
+            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "DepthDiverEnchant").UpdateAccessory(player, hideVisual); //
             ModContent.Find<ModItem>(((ModType)this).Mod.Name, "TideHunterEnchant").UpdateAccessory(player, hideVisual);
-            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "NagaSkinEnchant").UpdateAccessory(player, hideVisual);
-            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "CryomancerEnchant").UpdateAccessory(player, hideVisual);
+            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "NagaSkinEnchant").UpdateAccessory(player, hideVisual); //
+            ModContent.Find<ModItem>(((ModType)this).Mod.Name, "CryomancerEnchant").UpdateAccessory(player, hideVisual); //
             ModContent.Find<ModItem>(((ModType)this).Mod.Name, "TideTurnerEnchant").UpdateAccessory(player, hideVisual);
         }
 

@@ -35,16 +35,6 @@ namespace ssm
 {
     public partial class ssm : Mod
     {
-        public Dictionary<string, float> BossChecklistValues = new Dictionary<string, float>
-        {
-            {"DukeFishronEX", float.MaxValue-5},
-            {"Shtuxibus", float.MaxValue-4},
-            {"Echdeath", float.MaxValue-3},
-            {"MutantEX", float.MaxValue-2},
-            {"Chtuxlagor", float.MaxValue-1},
-            {"StarlightCatBoss", float.MaxValue}
-        };
-
         // Swarms
         public static bool PostMLSwarmActive;
         public static bool HardmodeSwarmActive;
@@ -98,7 +88,7 @@ namespace ssm
                         $"Log{type}",
                         this,
                         bossName,
-                        BossChecklistValues[bossName],
+                        int.MaxValue,
                         downed,
                         npcIDs,
                         new Dictionary<string, object>()

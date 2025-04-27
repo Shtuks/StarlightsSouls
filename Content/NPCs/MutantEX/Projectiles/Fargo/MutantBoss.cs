@@ -28,15 +28,15 @@ public class MutantBoss : ModProjectile
 
 	public override void SetStaticDefaults()
 	{
-		Main.projFrames[base.Projectile.type] = 4;
+		Main.projFrames[base.Projectile.type] = 5;
 		ProjectileID.Sets.TrailCacheLength[base.Projectile.type] = 8;
 		ProjectileID.Sets.TrailingMode[base.Projectile.type] = 2;
 	}
 
 	public override void SetDefaults()
 	{
-		base.Projectile.width = 34;
-		base.Projectile.height = 50;
+		base.Projectile.width = 70;
+		base.Projectile.height = 62;
 		base.Projectile.ignoreWater = true;
 		base.Projectile.tileCollide = false;
 		base.Projectile.GetGlobalProjectile<FargoSoulsGlobalProjectile>().TimeFreezeImmune = true;

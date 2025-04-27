@@ -49,7 +49,7 @@ namespace ssm.Thorium.Enchantments
             recipe.AddIngredient(ModContent.ItemType<LifeQuartzShield>());
             recipe.AddIngredient(ModContent.ItemType<HereticBreaker>());
 
-            recipe.AddTile(TileID.CrystalBall);
+            recipe.AddTile(TileID.DemonAltar);
             recipe.Register();
         }
     }

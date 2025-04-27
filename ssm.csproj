@@ -30,6 +30,7 @@
 	  <None Include="Calamity\Addons\DivineEnchant.cs" />
 	  <None Include="Calamity\Addons\EmptinessEnchant.cs" />
 	  <None Include="Content\Items\Weapons\Shtuxium\ShtuxiumShortsword.cs" />
+	  <None Include="MagicStorage\StorageUnits.cs" />
 	  <None Include="Reworks\StyxArmor.cs" />
 	  <None Include="Thorium\Swarm\Summons\OverloadAbyssalion.cs" />
 	</ItemGroup>
