@@ -21,6 +21,11 @@ namespace ssm.Thorium.Enchantments
     [JITWhenModsEnabled(ModCompatibility.Thorium.Name)]
     public class DurasteelEnchant : BaseEnchant
     {
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return ShtunConfig.Instance.Thorium;
+        }
+
         public override void SetDefaults()
         {
             Item.width = 20;

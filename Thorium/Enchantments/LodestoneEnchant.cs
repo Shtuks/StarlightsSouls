@@ -20,6 +20,11 @@ namespace ssm.Thorium.Enchantments
     [JITWhenModsEnabled(ModCompatibility.Thorium.Name)]
     public class LodestoneEnchant : BaseEnchant
     {
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return ShtunConfig.Instance.Thorium;
+        }
+
         private readonly Mod thorium = ModLoader.GetMod("ThoriumMod");
 
         public override void SetDefaults()

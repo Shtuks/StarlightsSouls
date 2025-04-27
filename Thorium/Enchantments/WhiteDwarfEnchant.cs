@@ -17,6 +17,11 @@ namespace ssm.Thorium.Enchantments
     [JITWhenModsEnabled(ModCompatibility.Thorium.Name)]
     public class WhiteDwarfEnchant : BaseEnchant
     {
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return ShtunConfig.Instance.Thorium;
+        }
+
         private readonly Mod thorium = ModLoader.GetMod("ThoriumMod");
 
         public override void SetDefaults()

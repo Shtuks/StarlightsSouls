@@ -7,10 +7,6 @@ using Microsoft.Xna.Framework;
 using FargowiltasSouls.Content.Items.Accessories.Enchantments;
 using FargowiltasSouls.Core.AccessoryEffectSystem;
 using ssm.Content.SoulToggles;
-using SacredTools.Content.Items.Accessories;
-using SacredTools.Content.Items.Armor.Lunar.Nebula;
-using SacredTools.Content.Items.Weapons.Asthraltite;
-using SacredTools.Items.Weapons.Lunatic;
 using SacredTools.Content.Items.Armor.Prairie;
 using SacredTools.Items.Weapons;
 using ssm.Core;
@@ -21,6 +17,11 @@ namespace ssm.SoA.Enchantments
     [JITWhenModsEnabled(ModCompatibility.SacredTools.Name)]
     public class PrairieEnchant : BaseEnchant
     {
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return ShtunConfig.Instance.SacredTools;
+        }
+
         private readonly Mod soa = ModLoader.GetMod("SacredTools");
 
         public override void SetDefaults()

@@ -18,6 +18,10 @@ namespace ssm.Thorium.Enchantments
     public class CoralEnchant : BaseEnchant
     {
         private readonly Mod thorium = ModLoader.GetMod("ThoriumMod");
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return ShtunConfig.Instance.Thorium;
+        }
 
         public override void SetDefaults()
         {

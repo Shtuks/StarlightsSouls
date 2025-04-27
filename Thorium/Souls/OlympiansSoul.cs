@@ -21,8 +21,9 @@ namespace ssm.Thorium.Souls
     {
         public override bool IsLoadingEnabled(Mod mod)
         {
-            return !ModLoader.HasMod(ModCompatibility.Calamity.Name);
+            return !ModLoader.HasMod(ModCompatibility.Calamity.Name) && ShtunConfig.Instance.Thorium;
         }
+
         public override void SetDefaults()
         {
             Item.width = 20;

@@ -8,10 +8,6 @@ using Microsoft.Xna.Framework;
 using FargowiltasSouls.Content.Items.Accessories.Enchantments;
 using FargowiltasSouls.Core.AccessoryEffectSystem;
 using ssm.Content.SoulToggles;
-using Microsoft.Xna.Framework.Graphics;
-using SacredTools.Content.Items.Armor.Lunar.Stardust;
-using SacredTools.Items.Weapons.Lunatic;
-using SacredTools.Items.Weapons;
 using SacredTools.Content.Items.Armor.Oblivion;
 using SacredTools.Items.Weapons.Special;
 using SacredTools.Items.Weapons.Oblivion;
@@ -23,6 +19,11 @@ namespace ssm.SoA.Enchantments
     [JITWhenModsEnabled(ModCompatibility.SacredTools.Name)]
     public class VoidWardenEnchant : BaseEnchant
     {
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return ShtunConfig.Instance.SacredTools;
+        }
+
         private readonly Mod soa = ModLoader.GetMod("SacredTools");
 
         public override void SetDefaults()

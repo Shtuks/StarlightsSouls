@@ -15,6 +15,11 @@ namespace ssm.SoA.Forces
     [JITWhenModsEnabled(ModCompatibility.SacredTools.Name)]
     public class SoranForce : BaseForce
     {
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return ShtunConfig.Instance.SacredTools;
+        }
+
         private readonly Mod soa = ModLoader.GetMod("SacredTools");
 
         public override void SetDefaults()

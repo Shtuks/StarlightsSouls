@@ -8,11 +8,6 @@ using Microsoft.Xna.Framework;
 using FargowiltasSouls.Content.Items.Accessories.Enchantments;
 using FargowiltasSouls.Core.AccessoryEffectSystem;
 using ssm.Content.SoulToggles;
-using Microsoft.Xna.Framework.Graphics;
-using SacredTools.Content.Items.Accessories;
-using SacredTools.Content.Items.Armor.Lapis;
-using SacredTools.Items.Weapons.Special;
-using SacredTools.Items.Weapons;
 using SacredTools.Items.Weapons.Marstech;
 using SacredTools.Content.Items.Armor.Marstech;
 using SacredTools.Items.Claymarine;
@@ -24,6 +19,11 @@ namespace ssm.SoA.Enchantments
     [JITWhenModsEnabled(ModCompatibility.SacredTools.Name)]
     public class MarstechEnchant : BaseEnchant
     {
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return ShtunConfig.Instance.SacredTools;
+        }
+
         private readonly Mod soa = ModLoader.GetMod("SacredTools");
 
         public override void SetDefaults()

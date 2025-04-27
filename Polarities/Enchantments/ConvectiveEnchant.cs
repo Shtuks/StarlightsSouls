@@ -17,6 +17,10 @@ namespace ssm.Polarities.Enchantments
     [JITWhenModsEnabled(ModCompatibility.Polarities.Name)]
     public class ConvectiveEnchant : BaseEnchant
     {
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return ShtunConfig.Instance.Polarities;
+        }
         public override void SetDefaults()
         {
             Item.width = 20;

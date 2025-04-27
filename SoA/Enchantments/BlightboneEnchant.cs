@@ -22,6 +22,11 @@ namespace ssm.SoA.Enchantments
     [JITWhenModsEnabled(ModCompatibility.SacredTools.Name)]
     public class BlightboneEnchant : BaseEnchant
     {
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return ShtunConfig.Instance.SacredTools;
+        }
+
         private readonly Mod soa = ModLoader.GetMod("SacredTools");
 
 

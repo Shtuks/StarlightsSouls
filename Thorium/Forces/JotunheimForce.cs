@@ -15,6 +15,11 @@ namespace ssm.Thorium.Forces
     [JITWhenModsEnabled(ModCompatibility.Thorium.Name)]
     public class JotunheimForce : BaseForce
     {
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return ShtunConfig.Instance.Thorium;
+        }
+
 
         public override void SetDefaults()
         {

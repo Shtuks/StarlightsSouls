@@ -21,6 +21,11 @@ namespace ssm.SoA.Enchantments
     [JITWhenModsEnabled(ModCompatibility.SacredTools.Name)]
     public class EerieEnchant : BaseEnchant
     {
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return ShtunConfig.Instance.SacredTools;
+        }
+
         private readonly Mod soa = ModLoader.GetMod("SacredTools");
 
         public override void SetDefaults()

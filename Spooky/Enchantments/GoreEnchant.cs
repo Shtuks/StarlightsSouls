@@ -20,6 +20,10 @@ namespace ssm.Spooky.Enchantments
     [JITWhenModsEnabled(ModCompatibility.Thorium.Name)]
     public class GoreEnchant : BaseEnchant
     {
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return ShtunConfig.Instance.Spooky;
+        }
         public override void SetDefaults()
         {
             Item.width = 20;

@@ -41,5 +41,46 @@ namespace ssm
         [BackgroundColor(60, 200, 60, 192)]
         [DefaultValue(false)]
         public bool ThrowerMerge { get; set; }
+
+        [Header("EnchantsLoad")]
+        [ReloadRequired]
+        [BackgroundColor(60, 200, 60, 192)]
+        [DefaultValue(true)]
+        public bool Thorium { get; set; }
+
+        [ReloadRequired]
+        [BackgroundColor(60, 200, 60, 192)]
+        [DefaultValue(true)]
+        public bool SacredTools { get; set; }
+
+        [ReloadRequired]
+        [BackgroundColor(60, 200, 60, 192)]
+        [DefaultValue(true)]
+        public bool Polarities { get; set; }
+
+        [ReloadRequired]
+        [BackgroundColor(60, 200, 60, 192)]
+        [DefaultValue(true)]
+        public bool Spirit { get; set; }
+
+        [ReloadRequired]
+        [BackgroundColor(60, 200, 60, 192)]
+        [DefaultValue(true)]
+        public bool Homeward { get; set; }
+
+        [ReloadRequired]
+        [BackgroundColor(60, 200, 60, 192)]
+        [DefaultValue(true)]
+        public bool Redemption { get; set; }
+
+        [ReloadRequired]
+        [BackgroundColor(60, 200, 60, 192)]
+        [DefaultValue(true)]
+        public bool Spooky { get; set; }
+
+        [ReloadRequired]
+        [BackgroundColor(60, 200, 60, 192)]
+        [DefaultValue(true)]
+        public bool Beekeeper { get; set; }
     }
 }

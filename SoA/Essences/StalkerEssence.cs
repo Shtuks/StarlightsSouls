@@ -19,7 +19,7 @@ namespace ssm.SoA.Essences
     {
         public override bool IsLoadingEnabled(Mod mod)
         {
-            return !ModLoader.HasMod(ModCompatibility.Calamity.Name) && !ModLoader.HasMod(ModCompatibility.Thorium.Name);
+            return !ModLoader.HasMod(ModCompatibility.Calamity.Name) && !ModLoader.HasMod(ModCompatibility.Thorium.Name) && ShtunConfig.Instance.SacredTools;
         }
         public override Color nameColor => new(100, 233, 155);
 

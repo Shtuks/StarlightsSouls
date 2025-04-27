@@ -8,9 +8,14 @@
 		
 	</PropertyGroup>
 	<ItemGroup>
+	  <AdditionalFiles Remove="Thorium\Swarm\**" />
+	  <Compile Remove="Thorium\Swarm\**" />
+	  <EmbeddedResource Remove="Thorium\Swarm\**" />
+	  <None Remove="Thorium\Swarm\**" />
+	</ItemGroup>
+	<ItemGroup>
 	  <Compile Remove="Content\Items\Weapons\Shtuxium\ShtuxiumShortsword.cs" />
 	  <Compile Remove="Reworks\StyxArmor.cs" />
-	  <Compile Remove="Thorium\Swarm\Summons\OverloadAbyssalion.cs" />
 	</ItemGroup>
 	<ItemGroup>
 	  <None Remove="Content\NPCs\StarlightCat\StarlightCatDeathray.cs.sex" />
@@ -22,8 +27,6 @@
 	  <Compile Include="Content\NPCs\StarlightCat\StarlightCatDeathray.cs.sex" />
 	  <Compile Include="Core\ModIconSystem.bak" />
 	  <Compile Include="Thorium\Enchantments\BerserkerEnchant.cs.sex" />
-	  <Compile Include="Thorium\Enchantments\DangerEnchant.cs.sex" />
-	  <Compile Include="Thorium\Enchantments\HarbingerEnchant.cs.sex" />
 	  <Compile Include="Thorium\Enchantments\MagmaEnchant.cs.sex" />
 	</ItemGroup>
 	<ItemGroup>
@@ -32,7 +35,6 @@
 	  <None Include="Content\Items\Weapons\Shtuxium\ShtuxiumShortsword.cs" />
 	  <None Include="MagicStorage\StorageUnits.cs" />
 	  <None Include="Reworks\StyxArmor.cs" />
-	  <None Include="Thorium\Swarm\Summons\OverloadAbyssalion.cs" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Reference Include="BombusApisBee">

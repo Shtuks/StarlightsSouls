@@ -14,6 +14,10 @@ namespace ssm.Thorium.Enchantments
     [JITWhenModsEnabled(ModCompatibility.Thorium.Name)]
     public class AstroEnchant : BaseEnchant
     {
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return ShtunConfig.Instance.Thorium;
+        }
 
         public override void SetDefaults()
         {

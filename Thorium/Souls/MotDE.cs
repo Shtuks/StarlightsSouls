@@ -17,6 +17,7 @@ namespace ssm.Thorium.Souls
     [JITWhenModsEnabled(ModCompatibility.Thorium.Name)]
     public class MotDE : ModItem
     {
+
         private readonly Mod FargoSoul = Terraria.ModLoader.ModLoader.GetMod("FargowiltasSouls");
         public override void SetDefaults()
         {

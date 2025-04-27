@@ -14,6 +14,10 @@ namespace ssm.ClassSouls.Beekeeper.Souls
     [JITWhenModsEnabled(ModCompatibility.BeekeeperClass.Name)]
     public class BeekeeperSoul : BaseSoul
     {
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return ShtunConfig.Instance.Beekeeper;
+        }
         public override void SetDefaults()
         {
             Item.width = 20;

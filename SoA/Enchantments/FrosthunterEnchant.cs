@@ -12,10 +12,8 @@ using Microsoft.Xna.Framework.Graphics;
 using ssm.Core;
 using SacredTools.Content.Items.Armor.Decree;
 using SacredTools.Content.Items.Accessories;
-using CalamityMod.Items.VanillaArmorChanges;
 using SacredTools.Items.Weapons.Decree;
 using SacredTools.Items.Weapons;
-using ssm.Core;
 
 namespace ssm.SoA.Enchantments
 {
@@ -23,6 +21,11 @@ namespace ssm.SoA.Enchantments
     [JITWhenModsEnabled(ModCompatibility.SacredTools.Name)]
     public class FrosthunterEnchant : BaseEnchant
     {
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return ShtunConfig.Instance.SacredTools;
+        }
+
         private readonly Mod soa = ModLoader.GetMod("SacredTools");
 
         public override void SetDefaults()

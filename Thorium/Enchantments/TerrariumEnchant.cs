@@ -19,6 +19,11 @@ namespace ssm.Thorium.Enchantments
     [JITWhenModsEnabled(ModCompatibility.Thorium.Name)]
     public class TerrariumEnchant : BaseEnchant
     {
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return ShtunConfig.Instance.Thorium;
+        }
+
         private readonly Mod thorium = ModLoader.GetMod("ThoriumMod");
 
         public override Color nameColor => (new Color(Main.DiscoR, Main.DiscoG, Main.DiscoB));

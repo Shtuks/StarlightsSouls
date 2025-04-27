@@ -20,6 +20,10 @@ namespace ssm.Thorium.Enchantments
     {
         private readonly Mod thorium = ModLoader.GetMod("ThoriumMod");
         public int timer;
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return ShtunConfig.Instance.Thorium;
+        }
 
         public override void SetDefaults()
         {

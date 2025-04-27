@@ -8,8 +8,6 @@ using ssm.Core;
 using FargowiltasSouls.Content.Items.Accessories.Enchantments;
 using FargowiltasSouls.Core.AccessoryEffectSystem;
 using ssm.Content.SoulToggles;
-using static ssm.Thorium.Enchantments.LivingWoodEnchant;
-using ThoriumMod.Projectiles.Minions;
 using ThoriumMod.Projectiles.Healer;
 
 namespace ssm.Thorium.Enchantments
@@ -18,8 +16,10 @@ namespace ssm.Thorium.Enchantments
     [JITWhenModsEnabled(ModCompatibility.Thorium.Name)]
     public class BiotechEnchant : BaseEnchant
     {
-
-        private readonly Mod thorium = ModLoader.GetMod("ThoriumMod");
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return ShtunConfig.Instance.Thorium;
+        }
 
         public override void SetDefaults()
         {

@@ -21,7 +21,7 @@ namespace ssm.SoA.Souls
     {
         public override bool IsLoadingEnabled(Mod mod)
         {
-            return !ModLoader.HasMod(ModCompatibility.Calamity.Name) && !ModLoader.HasMod(ModCompatibility.Thorium.Name);
+            return !ModLoader.HasMod(ModCompatibility.Calamity.Name) && !ModLoader.HasMod(ModCompatibility.Thorium.Name) && ShtunConfig.Instance.SacredTools;
         }
         public override void SetDefaults()
         {

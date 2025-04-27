@@ -3,17 +3,13 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using ThoriumMod;
 using ssm.Core;
-
 using Microsoft.Xna.Framework;
 using ThoriumMod.Items.SummonItems;
 using ThoriumMod.Items.Consumable;
 using FargowiltasSouls.Content.Items.Accessories.Enchantments;
-using FargowiltasSouls.Content.Projectiles.ChallengerItems;
-using SacredTools.Projectiles.Lunar;
 using ThoriumMod.Projectiles.Minions;
 using FargowiltasSouls.Core.AccessoryEffectSystem;
 using ssm.Content.SoulToggles;
-using static ssm.Thorium.Enchantments.CyberPunkEnchant;
 
 namespace ssm.Thorium.Enchantments
 {
@@ -21,6 +17,11 @@ namespace ssm.Thorium.Enchantments
     [JITWhenModsEnabled(ModCompatibility.Thorium.Name)]
     public class LivingWoodEnchant : BaseEnchant
     {
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return ShtunConfig.Instance.Thorium;
+        }
+
         private readonly Mod thorium = ModLoader.GetMod("ThoriumMod");
 
         public override void SetDefaults()
