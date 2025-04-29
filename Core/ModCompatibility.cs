@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Terraria.ModLoader;
 
 namespace ssm.Core;
@@ -156,6 +156,13 @@ public static class ModCompatibility
         public static bool Loaded => ModLoader.HasMod(Name);
         public static Mod Mod => ModLoader.GetMod(Name);
         public static bool InfernumDifficulty => Loaded && (bool)Mod.Call("GetInfernumActive");
+    }
+
+    public static class Gunrightsmod
+    {
+        public const string Name = "TerMerica";
+        public static bool Loaded => ModLoader.HasMod(Name);
+        public static Mod Mod => ModLoader.GetMod(Name);
     }
     public static class WrathoftheGods
     {
