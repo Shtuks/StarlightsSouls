@@ -151,6 +151,9 @@
 	  <Reference Include="ThoriumRework">
 	    <HintPath>lib\ThoriumRework.dll</HintPath>
 	  </Reference>
+	  <Reference Include="gunrightsmod">
+	    <HintPath>lib\gunrightsmod.dll</HintPath>
+	  </Reference>
 	</ItemGroup>
 
 	<!-- References -->
