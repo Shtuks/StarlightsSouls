@@ -158,9 +158,9 @@ public static class ModCompatibility
         public static bool InfernumDifficulty => Loaded && (bool)Mod.Call("GetInfernumActive");
     }
 
-    public static class Gunrightsmod
+    public static class TerMerica
     {
-        public const string Name = "TerMerica";
+        public const string Name = "gunrightsmod";
         public static bool Loaded => ModLoader.HasMod(Name);
         public static Mod Mod => ModLoader.GetMod(Name);
     }
