@@ -11,7 +11,7 @@ namespace ssm.gunrightsmod
     {
         public static void gunrightsmodRegisterItems()
         {
-            CaughtNPCItem.Add("Politician", ModContent.NPCType<Politician>(), "''");
+            CaughtNPCItem.Add("Politician", ModContent.NPCType<Politician>(), "'“Might be better for society to just not release this one”'");
         }
     }
 }
