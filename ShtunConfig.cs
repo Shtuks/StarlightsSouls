@@ -82,5 +82,10 @@ namespace ssm
         [BackgroundColor(60, 200, 60, 192)]
         [DefaultValue(true)]
         public bool Beekeeper { get; set; }
+
+        [ReloadRequired]
+        [BackgroundColor(60, 200, 60, 192)]
+        [DefaultValue(true)]
+        public bool gunrightsmod { get; set; }
     }
 }
