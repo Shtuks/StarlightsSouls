@@ -35,19 +35,4 @@ namespace ssm.gunrightsmod.Buffs
             }
         }
     }
-
-    public class SaltedWoundsGlobalNPC : GlobalNPC
-    {
-        public override bool InstancePerEntity => true;
-
-        public override void OnHitPlayer(NPC npc, Player player, ref int damage, ref bool crit)
-        {
-            base.OnHitPlayer(npc, player, ref damage, ref crit);
-
-            if (player.HasBuff(ModContent.BuffType<SaltedWounds>()) < 3)
-            {
-                player.AddBuff(ModContent.BuffType<SaltedWounds>(), 600);
-            }
-        }
-    }
 }
