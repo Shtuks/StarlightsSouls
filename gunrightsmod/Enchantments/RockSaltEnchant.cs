@@ -53,7 +53,7 @@ namespace ssm.gunrightmod.Enchantments
             {
                 if (rockSaltEnchantEquipped)
                 {
-                    Player.AddBuff(ModContent.BuffType<gunrightsmod.Content.Buffs.SaltedWounds>(), 600); // 5 seconds
+                    Player.AddBuff(ModContent.BuffType<ssm.gunrightsmod.Content.Buffs.SaltedWounds>(), 600);
                 }
             }
         }
