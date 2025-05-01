@@ -6,6 +6,7 @@ using ssm.Core;
 using Microsoft.Xna.Framework;
 using FargowiltasSouls.Content.Items.Accessories.Enchantments;
 using gunrightsmod.Content.Items;
+using gunrightsmod.Buffs;
 
 namespace ssm.gunrightmod.Enchantments
 {
