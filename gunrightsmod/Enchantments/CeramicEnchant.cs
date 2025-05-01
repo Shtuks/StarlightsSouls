@@ -7,7 +7,8 @@ using Microsoft.Xna.Framework;
 using FargowiltasSouls.Content.Items.Accessories.Enchantments;
 using gunrightsmod.Content.Items;
 using ssm.gunrightsmod.Projectiles;
-
+using gunrightsmod.Buffs;
+    
 namespace ssm.gunrightsmod.Enchantments
 {
     [ExtendsFromMod(ModCompatibility.gunrightsmod.Name)]
