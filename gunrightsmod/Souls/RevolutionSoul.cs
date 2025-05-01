@@ -10,13 +10,13 @@ using ssm.gunrightsmod.Forces;
 using ssm.Systems;
 using ssm.Core;
 using FargowiltasSouls.Content.Items.Materials;
-using gunrightsmod.Content.Items.Materials;
+using gunrightsmod.Content.Items;
 
 namespace ssm.gunrightsmod.Souls
 {
 	[ExtendsFromMod(ModCompatibility.SacredTools.Name)]
 	[JITWhenModsEnabled(ModCompatibility.SacredTools.Name)]
-	public class SoASoul : BaseSoul
+	public class RevolutionSoul : BaseSoul
 	{
 		public override bool IsLoadingEnabled(Mod mod)
 		{
@@ -34,7 +34,7 @@ namespace ssm.gunrightsmod.Souls
 			Item.value = 1000000;
 		}
 
-	/*	
+    /*	
  
  Once everything else is done, I will remove this
  
@@ -53,11 +53,9 @@ namespace ssm.gunrightsmod.Souls
 /*	public override void AddRecipes()
 		{
 			Recipe recipe = this.CreateRecipe();
-			recipe.AddIngredient<Force1>();
-			recipe.AddIngredient<Force2>();
-			recipe.AddIngredient<Force3>();
-			recipe.AddIngredient<Force4>();
-			recipe.AddIngredient<Item1>(__________);
+			recipe.AddIngredient<IdiocracyForce>();
+			recipe.AddIngredient<RadioactiveForce>();
+			recipe.AddIngredient<Item1>(TheSecondAmendment);
 			recipe.AddIngredient<Item2>(_____);
 			recipe.AddTile<______WhereYouCraft_____>();
 			recipe.Register();
