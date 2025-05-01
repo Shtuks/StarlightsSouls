@@ -3,9 +3,10 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using gunrightsmod.Content.Items;
+using gunrightsmod.Items;
 using ssm.Core;
 using Terraria.DataStructures;
+using gunrightsmod.Textures;
 
 namespace ssm.gunrightmod.Enchantments
 {
