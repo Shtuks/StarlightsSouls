@@ -6,12 +6,15 @@ using System.Linq;
 using MagicStorage;
 using MagicStorage.Components;
 using Microsoft.Xna.Framework;
+using ssm.Core;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 
 namespace ssm.MagicStorage;
+[ExtendsFromMod(ModCompatibility.MagicStorage.Name)]
+[JITWhenModsEnabled(ModCompatibility.MagicStorage.Name)]
 public class TEShtunStorageUnit : TEStorageUnit
 {
     internal enum NetOperations : byte

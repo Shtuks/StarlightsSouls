@@ -24,12 +24,8 @@ using Terraria.Localization;
 using FargowiltasSouls.Content.Items.Placables.Trophies;
 using ssm.Content.Items.Consumables;
 using ssm.Content.NPCs.MutantEX;
-using MonoMod.Cil;
-using System;
-using System.Reflection;
-using Humanizer;
+using ssm.Content.UI;
 using Terraria.UI;
-using Mono.Cecil.Cil;
 
 namespace ssm
 {
@@ -47,6 +43,10 @@ namespace ssm
         public static int SwarmSpawned;
 
         internal static ModKeybind dotMount;
+
+        public UserInterface _bossSummonUI;
+        public BossSummonUI _bossSummonState;
+        public bool _showBossSummonUI;
 
         internal static ssm Instance;
         public static bool debug = ShtunConfig.Instance.DebugMode;
@@ -133,6 +133,7 @@ namespace ssm
 
         public override void Load()
         {
+            _bossSummonUI = new UserInterface();
             ModIntergationSystem.BossChecklist.AdjustValues();
 
             Instance = this;
@@ -158,6 +159,22 @@ namespace ssm
             SkyManager.Instance["ssm:MutantEX"] = new MutantEXSky();
 
             ModLoader.TryGetMod("BossChecklist", out Mod bossChecklist);
+        }
+
+        public override void Unload()
+        {
+            _bossSummonUI = null;
+            Instance = null;
+        }
+
+        public void ShowBossSummonUI()
+        {
+            if (_bossSummonState == null)
+            {
+                _bossSummonState = new BossSummonUI();
+                _bossSummonUI.SetState(_bossSummonState);
+            }
+            _showBossSummonUI = true;
         }
         public override void PostSetupContent()
         {

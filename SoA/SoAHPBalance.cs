@@ -30,12 +30,12 @@ namespace ssm.SoA
                 {
                     npc.defense = 120;
                     npc.lifeMax = 2800000;
-                    npc.damage = 500;
+                    npc.damage = 400;
                 }
                 if (npc.type == ModContent.NPCType<Novaniel>())
                 {
                     npc.lifeMax = 1100000;
-                    npc.damage = 370;
+                    npc.damage = 300;
                 }
                 if (npc.type == ModContent.NPCType<Nuba>())
                 {
@@ -70,12 +70,12 @@ namespace ssm.SoA
                 if (npc.type == ModContent.NPCType<Primordia>())
                 {
                     npc.lifeMax = 120000;
-                    npc.damage = 220;
+                    npc.damage = 180;
                 }
                 if (npc.type == ModContent.NPCType<Primordia2>())
                 {
                     npc.lifeMax = 90000;
-                    npc.damage = 240;
+                    npc.damage = 170;
                 }
                 if (npc.type == ModContent.NPCType<Araneas>())
                 {
@@ -104,7 +104,7 @@ namespace ssm.SoA
                 }
                 if (npc.type == ModContent.NPCType<Nihilus>())
                 {
-                    npc.lifeMax = 6800000;
+                    npc.lifeMax = 7800000;
                     npc.damage = 680;
                 }
                 if (npc.type == ModContent.NPCType<RelicShieldNihilus>())
@@ -113,7 +113,7 @@ namespace ssm.SoA
                 }
                 if (npc.type == ModContent.NPCType<Nihilus2>())
                 {
-                    npc.lifeMax = 8800000;
+                    npc.lifeMax = 11000000;
                     npc.damage = 700;
                 }
                 if (!fullHP) { npc.life = npc.lifeMax; fullHP = true; }

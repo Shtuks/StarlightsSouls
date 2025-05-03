@@ -12,8 +12,9 @@ namespace ssm.Redemption
     [JITWhenModsEnabled(ModCompatibility.Redemption.Name)]
     public class RedemptionHPBalance : GlobalNPC
     {
+        public bool fullHP = false;
         public override bool InstancePerEntity => true;
-        public override void PostAI(NPC npc)
+        public override bool PreAI(NPC npc)
         {
             if (WorldSavingSystem.EternityMode)
             {
@@ -44,7 +45,9 @@ namespace ssm.Redemption
                     npc.life = npc.lifeMax;
                     npc.damage = 370;
                 }
+                if (!fullHP) { npc.life = npc.lifeMax; fullHP = true; }
             }
+            return base.PreAI(npc);
         }
     }
 }

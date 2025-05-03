@@ -50,13 +50,13 @@ namespace ssm.CrossMod
 
         public override void UpdateAccessory(Item Item, Player player, bool hideVisual)
         {
-            //if (Item.type == ModContent.ItemType<StatisCurse>()
-            //    || Item.type == ModContent.ItemType<Nucleogenesis>())
-            //{
-            //    player.maxMinions--;
+            if (Item.type == ModContent.ItemType<StatisCurse>()
+                || Item.type == ModContent.ItemType<Nucleogenesis>())
+            {
+                player.maxMinions--;
 
-            //    ModContent.Find<ModItem>(ModCompatibility.Thorium.Name, "NecroticSkull").UpdateAccessory(player, false);
-            //}
+                ModContent.Find<ModItem>(ModCompatibility.Thorium.Name, "NecroticSkull").UpdateAccessory(player, false);
+            }
 
             if (Item.type == ModContent.ItemType<EtherealTalisman>())
             {

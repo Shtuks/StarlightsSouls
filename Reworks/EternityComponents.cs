@@ -67,8 +67,6 @@ namespace ssm.Reworks
                 if (ModCompatibility.Crossmod.Loaded)
                 {
                     ModContent.Find<ModItem>(ModCompatibility.Crossmod.Name, "BrandoftheBrimstoneWitch").UpdateAccessory(player, hideVisual);
-                    ModContent.Find<ModItem>(ModCompatibility.Crossmod.Name, "GaleForce").UpdateAccessory(player, hideVisual);
-                    ModContent.Find<ModItem>(ModCompatibility.Crossmod.Name, "ElementsForce").UpdateAccessory(player, hideVisual);
                     ModContent.Find<ModItem>(ModCompatibility.Crossmod.Name, "TitanHeartEnchant").UpdateAccessory(player, hideVisual);
                     ModContent.Find<ModItem>(ModCompatibility.Crossmod.Name, "WulfrumEnchant").UpdateAccessory(player, hideVisual);
                 }

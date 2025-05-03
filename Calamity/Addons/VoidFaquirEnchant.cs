@@ -10,7 +10,7 @@ using CalamityEntropy.Content.Items.Armor.VoidFaquir;
 using CalamityEntropy.Content.Items.Weapons;
 using CalamityEntropy.Content.Items.Weapons.Chainsaw;
 using CalamityEntropy.Content.Items.Accessories;
-using CalamityEntropy.Util;
+using CalamityEntropy.Utilities;
 
 namespace ssm.Calamity.Addons
 {

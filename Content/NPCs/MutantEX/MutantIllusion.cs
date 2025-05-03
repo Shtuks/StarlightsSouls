@@ -20,14 +20,14 @@ namespace ssm.Content.NPCs.MutantEX.Projectiles
         public override string Texture => "ssm/Content/NPCs/MutantEX/MutantEX";
         public override void SetStaticDefaults()
         {
-            Main.npcFrameCount[base.NPC.type] = 4;
+            Main.npcFrameCount[base.NPC.type] = 5;
             NPCID.Sets.CantTakeLunchMoney[base.Type] = true;
         }
 
         public override void SetDefaults()
         {
-            NPC.width = 70;
-            NPC.height = 54;
+            NPC.width = 140;
+            NPC.height = 124;
             base.NPC.damage = 360;
             base.NPC.defense = 400;
             base.NPC.lifeMax = 700000000;

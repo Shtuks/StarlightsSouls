@@ -42,7 +42,7 @@ namespace ssm
 
                 if (!ModCompatibility.Calamity.Loaded && !ModCompatibility.Thorium.Loaded)
                 {
-                    if (recipe.HasResult<DimensionSoul>() && !recipe.HasIngredient<StalkerSoul>())
+                    if (recipe.HasResult<UniverseSoul>() && !recipe.HasIngredient<StalkerSoul>())
                     {
                         recipe.AddIngredient<StalkerSoul>();
                     }

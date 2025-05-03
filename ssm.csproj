@@ -14,7 +14,6 @@
 	  <None Remove="Thorium\Swarm\**" />
 	</ItemGroup>
 	<ItemGroup>
-	  <Compile Remove="Content\Items\Weapons\Shtuxium\ShtuxiumShortsword.cs" />
 	  <Compile Remove="Reworks\StyxArmor.cs" />
 	</ItemGroup>
 	<ItemGroup>
@@ -32,7 +31,6 @@
 	<ItemGroup>
 	  <None Include="Calamity\Addons\DivineEnchant.cs" />
 	  <None Include="Calamity\Addons\EmptinessEnchant.cs" />
-	  <None Include="Content\Items\Weapons\Shtuxium\ShtuxiumShortsword.cs" />
 	  <None Include="MagicStorage\StorageUnits.cs" />
 	  <None Include="Reworks\StyxArmor.cs" />
 	</ItemGroup>

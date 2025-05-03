@@ -2812,6 +2812,11 @@ Mods: {
 				DisplayName: Eternal Storage Unit Item
 				Tooltip: ""
 			}
+
+			Soul: {
+				Tooltip: This item have buggy animation. It will be fixed in later updates.
+				DisplayName: Soul
+			}
 		}
 
 		Buffs: {
@@ -2951,10 +2956,11 @@ Mods: {
 				}
 			}
 
-			MutantIllusion.DisplayName: Mutant EX
+			MutantIllusion.DisplayName: Monstrosity
 		}
 
 		Toggler: {
+			CosmicCommanderEffect: Very annoying effect. Turn it off.
 			SpectralFishEffect: Spectral Fishron Support
 			CuteFishEXEffect: Fishron Ritual
 			GraniteEffect: Shock Absorber
@@ -3143,131 +3149,23 @@ Mods: {
 		}
 
 		Bestiary: {
-			Monstrocity: The siblings more annoying, strange cousin, he thinks he is stronger than his cousin the mutant which makes the both of them fight a lot, he likes tacos though.
-			Echdeath: echs
+			Monstrocity: The Siblings' more annoying, strange cousin, he thinks he is stronger than his cousin the mutant which makes the both of them fight a lot, he likes tacos though.
+			Echdeath: ech
 		}
 
 		Configs: {
 			ShtunConfig: {
 				Headers: {
-					Visual: Visual
 					General: General
-					Calamity: Calamity
-					SoA: Shadows of Abaddon
-					SoACal: SoA - Calamity
-					TorCal: Thorium - Calamity
-					Thorium: Thorium
-					Redemption: Redemption
-					Crafting: Crafting Header
-					Bosses: Bosses Header
-					CrossMods: Cross Mods Header
+					CrossMods: Cross-Mods
+					EnchantsLoad: Enchantments Loading
 				}
 
-				ItemsUsedInSingularity: {
-					Tooltip: ""
-					Label: Items Used In Singularity
-				}
-
-				DisplayName: Config
-
-				ForcedFilters: {
-					Tooltip: ""
-					Label: Forced Filters
-				}
-
-				Stalin: {
-					Label: ☭
-					Tooltip: gUeSS whAt iT DoeS
-				}
-
-				CalSwarmItems: {
-					Label: Calamity Swarms
-					Tooltip: ""
-				}
-
-				CalEnchantments: {
-					Label: Calamity Enchantments
-					Tooltip: WIP
-				}
-
-				CalSingularities: {
-					Label: Calamity Singularities
-					Tooltip: ""
-				}
-
-				CalCaughtNpcs: {
-					Label: Calamity Caught NPCs
-					Tooltip: ""
-				}
-
-				SoASwarmItems: {
-					Label: SoA Swarms
-					Tooltip: ""
-				}
-
-				SoAEnchantments: {
-					Label: SoA Enchantments
-					Tooltip: ""
-				}
-
-				SoASingularities: {
-					Label: SoA Singularities
-					Tooltip: WIP
-				}
-
-				SoACaughtNpcs: {
-					Label: SoA Caught NPCs
-					Tooltip: WIP
-				}
-
-				TorSwarmItems: {
-					Label: Thorium Swarms
-					Tooltip: ""
-				}
-
-				TorEnchantments: {
-					Label: Thorium Enchantments
-					Tooltip: ""
-				}
-
-				TorSingularities: {
-					Label: Thorium Singularities
-					Tooltip: WIP
-				}
-
-				TorCaughtNpcs: {
-					Label: Thorium Caught NPCs
-					Tooltip: WIP
-				}
-
-				RedSwarmItems: {
-					Label: Redemption Swarms
-					Tooltip: WIP
-				}
-
-				RedEnchantments: {
-					Label: Redemption Enchantments
-					Tooltip: WIP
-				}
-
-				RedSingularities: {
-					Label: Redemption Singularities
-					Tooltip: WIP
-				}
-
-				RedCaughtNpcs: {
-					Label: Redemption Caught NPCs
-					Tooltip: WIP
-				}
+				DisplayName: Mod Config
 
 				WorldEnterMessage: {
 					Label: World Enter Message
 					Tooltip: ""
-				}
-
-				OldCalDlcBalance: {
-					Tooltip: ""
-					Label: Old Calamity Dlc Balance
 				}
 
 				Boots: {
@@ -3278,11 +3176,6 @@ Mods: {
 				Shields: {
 					Label: Shields
 					Tooltip: Rework of Shields Progression
-				}
-
-				SafeMode: {
-					Tooltip: SCB WIP
-					Label: Safe Mode
 				}
 
 				DebugMode: {
@@ -3298,6 +3191,46 @@ Mods: {
 				ThrowerMerge: {
 					Tooltip: ""
 					Label: Thrower Merge
+				}
+
+				Thorium: {
+					Label: Thorium
+					Tooltip: ""
+				}
+
+				SacredTools: {
+					Label: Shadows of Abaddon
+					Tooltip: ""
+				}
+
+				Polarities: {
+					Label: Polarities
+					Tooltip: ""
+				}
+
+				Spirit: {
+					Label: Spirit
+					Tooltip: ""
+				}
+
+				Homeward: {
+					Label: Homeward Journey
+					Tooltip: ""
+				}
+
+				Redemption: {
+					Label: Redemption
+					Tooltip: ""
+				}
+
+				Spooky: {
+					Label: Spooky
+					Tooltip: ""
+				}
+
+				Beekeeper: {
+					Label: Bombus Apis
+					Tooltip: ""
 				}
 			}
 		}

@@ -43,9 +43,12 @@ namespace ssm.SoA.Enchantments
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            ModdedPlayer modPlayer = player.GetModPlayer<ModdedPlayer>();
-            //set bonus
-            modPlayer.VoxaArmor = true;
+            if (player.AddEffect<CosmicCommanderEffect>(Item))
+            {
+                ModdedPlayer modPlayer = player.GetModPlayer<ModdedPlayer>();
+                //set bonus
+                modPlayer.VoxaArmor = true;
+            }
         }
 
         public class CosmicCommanderEffect : AccessoryEffect

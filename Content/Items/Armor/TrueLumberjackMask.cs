@@ -69,8 +69,7 @@ namespace ssm.Content.Items.Armor
             recipe.AddIngredient<LumberjackMask>();
 
             recipe.AddIngredient<Sadism>(100);
-            recipe.AddIngredient<EternitySoul>(4);
-            recipe.AddIngredient<EternityForce>(4);
+            recipe.AddIngredient<Soul>(4);
 
             recipe.AddTile<MutantsForgeTile>();
             recipe.Register();

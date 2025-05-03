@@ -33,7 +33,35 @@ namespace ssm
             }
             return p;
         }
+        public static float PlayerGetDistanceToNPC(Player player, NPC targetNPC)
+        {
+            if (targetNPC == null || !targetNPC.active)
+            {
+                return 99999f;
+            }
 
+            Vector2 playerPosition = player.Center;
+            Vector2 npcPosition = targetNPC.Center;
+
+            float distance = Vector2.Distance(playerPosition, npcPosition);
+
+            return distance;
+        }
+
+        public static float ProjGetDistanceToNPC(Projectile player, NPC targetNPC)
+        {
+            if (targetNPC == null || !targetNPC.active)
+            {
+                return 99999f;
+            }
+
+            Vector2 playerPosition = player.Center;
+            Vector2 npcPosition = targetNPC.Center;
+
+            float distance = Vector2.Distance(playerPosition, npcPosition);
+
+            return distance;
+        }
         public static Player ToPlayer(this int ins)
         {
             if (ins < 0 || !Main.player[ins].active)

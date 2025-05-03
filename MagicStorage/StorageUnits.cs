@@ -1,9 +1,12 @@
 ﻿using MagicStorage.Items;
+using ssm.Core;
 using Terraria;
 using Terraria.ModLoader;
 
 namespace ssm.MagicStorage
 {
+    [ExtendsFromMod(ModCompatibility.MagicStorage.Name)]
+    [JITWhenModsEnabled(ModCompatibility.MagicStorage.Name)]
     public class DeviatingStorageUnitItem : ModItem
     {
         public override void SetStaticDefaults()
@@ -36,6 +39,8 @@ namespace ssm.MagicStorage
         }
     }
 
+    [ExtendsFromMod(ModCompatibility.MagicStorage.Name)]
+    [JITWhenModsEnabled(ModCompatibility.MagicStorage.Name)]
     public class AbominableStorageUnitItem : ModItem
     {
         public override void SetStaticDefaults()
@@ -68,6 +73,8 @@ namespace ssm.MagicStorage
         }
     }
 
+    [ExtendsFromMod(ModCompatibility.MagicStorage.Name)]
+    [JITWhenModsEnabled(ModCompatibility.MagicStorage.Name)]
     public class EternalStorageUnitItem : ModItem
     {
         public override void SetStaticDefaults()

@@ -18,6 +18,13 @@ public static class ModCompatibility
         public static bool Loaded => ModLoader.HasMod(Name);
         public static Mod Mod => ModLoader.GetMod(Name);
     }
+
+    public static class Orchid
+    {
+        public const string Name = "Spooky";
+        public static bool Loaded => ModLoader.HasMod(Name);
+        public static Mod Mod => ModLoader.GetMod(Name);
+    }
     public static class BeekeeperClass
     {
         public const string Name = "BombusApisBee";

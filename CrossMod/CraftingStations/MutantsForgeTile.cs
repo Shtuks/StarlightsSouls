@@ -5,6 +5,11 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
 using Fargowiltas;
+using System.Linq;
+using Luminance.Core.Hooking;
+using MonoMod.Cil;
+using System.Reflection;
+using Mono.Cecil.Cil;
 
 namespace ssm.CrossMod.CraftingStations
 {
@@ -16,115 +21,76 @@ namespace ssm.CrossMod.CraftingStations
             Main.tileFrameImportant[(int)((ModBlockType)this).Type] = true;
             Main.tileNoAttach[(int)((ModBlockType)this).Type] = true;
             Main.tileLavaDeath[(int)((ModBlockType)this).Type] = false;
-            TileObjectData.newTile.CopyFrom(TileObjectData.Style3x3);
+            TileObjectData.newTile.CopyFrom(TileObjectData.Style5x4);
             TileObjectData.newTile.LavaDeath = false;
             TileID.Sets.CountsAsHoneySource[Type] = true;
             TileID.Sets.CountsAsLavaSource[Type] = true;
             TileID.Sets.CountsAsWaterSource[Type] = true;
+            TileObjectData.newTile.Height = 7;
+            TileObjectData.newTile.Width = 5;
+            TileObjectData.newTile.CoordinatePadding = 2;
             TileObjectData.newTile.CoordinateHeights = new int[]
             {
                 16,
                 16,
-                18
+                16,
+                16,
+                16,
+                16,
+                16
             };
             TileObjectData.newTile.Origin = new Point16(2, 1);
             TileObjectData.addTile((int)((ModBlockType)this).Type);
-            this.AddMapEntry(new Color(41, 157, 230), ((ModBlockType)this).CreateMapEntryName());
-            this.AnimationFrameHeight = 54;
+            AddMapEntry(new Color(41, 157, 230), ((ModBlockType)this).CreateMapEntryName());
+            AnimationFrameHeight = 126;
             TileID.Sets.DisableSmartCursor[(int)((ModBlockType)this).Type] = true;
             ((ModBlockType)this).DustType = 84;
 
-            #region oldSystem
-            //int[] tempTiles = new int[]
-            //{
-            //    ModContent.TileType<DemonshadeWorkbenchTile>(),
-            //    ModContent.TileType<CrucibleCosmosSheet>(),
-            //    TileID.WorkBenches,
-            //    TileID.Anvils,
-            //    TileID.Furnaces,
-            //    TileID.Hellforge,
-            //    TileID.Bookcases,
-            //    TileID.Sinks,
-            //    TileID.Solidifier,
-            //    TileID.Blendomatic,
-            //    TileID.MeatGrinder,
-            //    TileID.Loom,
-            //    TileID.LivingLoom,
-            //    TileID.FleshCloningVat,
-            //    TileID.GlassKiln,
-            //    TileID.BoneWelder,
-            //    TileID.SteampunkBoiler,
-            //    TileID.Bottles,
-            //    TileID.LihzahrdFurnace,
-            //    TileID.ImbuingStation,
-            //    TileID.DyeVat,
-            //    TileID.Kegs,
-            //    TileID.HeavyWorkBench,
-            //    TileID.Tables,
-            //    TileID.Chairs,
-            //    TileID.CookingPots,
-            //    TileID.DemonAltar,
-            //    TileID.Sawmill,
-            //    TileID.CrystalBall,
-            //    TileID.AdamantiteForge,
-            //    TileID.MythrilAnvil,
-            //    TileID.TinkerersWorkbench,
-            //    TileID.Autohammer,
-            //    TileID.IceMachine,
-            //    TileID.SkyMill,
-            //    TileID.HoneyDispenser,
-            //    TileID.AlchemyTable,
-            //    TileID.LunarCraftingStation
-            //};
-
-            //if (ModLoader.TryGetMod("CalamityMod", out Mod Calamity) && Calamity.TryFind<ModTile>("DraedonsForge", out ModTile currTile))
-            //{
-            //    Array.Resize(ref tempTiles, tempTiles.Length + 1);
-            //    tempTiles[tempTiles.Length - 1] = currTile.Type;
-            //}
-
-            //if (ModLoader.TryGetMod(ModCompatibility.SacredTools.Name, out Mod soa) && soa.TryFind<ModTile>("TiridiumInfuserTile", out ModTile currTile6) && soa.TryFind<ModTile>("FlariumInfuserTile", out ModTile currTile7) && soa.TryFind<ModTile>("NeilBrewerTile", out ModTile currTile8))
-            //{
-            //    Array.Resize(ref tempTiles, tempTiles.Length + 1);
-            //    tempTiles[tempTiles.Length - 1] = currTile6.Type;
-
-            //    Array.Resize(ref tempTiles, tempTiles.Length + 1);
-            //    tempTiles[tempTiles.Length - 1] = currTile7.Type;
-
-            //    Array.Resize(ref tempTiles, tempTiles.Length + 1);
-            //    tempTiles[tempTiles.Length - 1] = currTile8.Type;
-            //}
-
-            //if (ModLoader.TryGetMod("ThoriumMod", out Mod tor) && tor.TryFind<ModTile>("SoulForge", out ModTile currTile3) && tor.TryFind<ModTile>("ArcaneArmorFabricator", out ModTile currTile4) && tor.TryFind<ModTile>("ThoriumAnvil", out ModTile currTile5))
-            //{
-            //    Array.Resize(ref tempTiles, tempTiles.Length + 1);
-            //    tempTiles[tempTiles.Length - 1] = currTile3.Type;
-
-            //    Array.Resize(ref tempTiles, tempTiles.Length + 1);
-            //    tempTiles[tempTiles.Length - 1] = currTile4.Type;
-
-            //    Array.Resize(ref tempTiles, tempTiles.Length + 1);
-            //    tempTiles[tempTiles.Length - 1] = currTile5.Type;
-            //}
-
-            //AdjTiles = tempTiles;
-            #endregion
-
-            if (ssm.AllStationIDs != null && ssm.AllStationIDs.Length > 0)
-            {
-                AdjTiles = ssm.AllStationIDs;
-            }
-
-            AnimationFrameHeight = 74;
+            AdjTiles = Enumerable.Range(0, TileLoader.TileCount).ToArray();
+            On_Recipe.PlayerMeetsEnvironmentConditions += EnableAllEnvironmentConditions;
+            On_Recipe.PlayerMeetsTileRequirements += EnableAllTileConditions;
+            new ManagedILEdit("Remove Recipe Restrictions", Mod, e => IL_Recipe.FindRecipes += e.SubscriptionWrapper, e => IL_Recipe.FindRecipes -= e.SubscriptionWrapper, RemoveRecipeConditions).Apply();
         }
 
+        private void RemoveRecipeConditions(ILContext context, ManagedILEdit edit)
+        {
+            ILCursor cursor = new ILCursor(context);
+            MethodInfo? recipeAvailabilityMethod = typeof(RecipeLoader).GetMethod("RecipeAvailable");
 
+            if (recipeAvailabilityMethod is null || !cursor.TryGotoNext(MoveType.After, i => i.MatchCallOrCallvirt(recipeAvailabilityMethod)))
+            {
+                edit.LogFailure("Could not locate the RecipeAvailable load.");
+                return;
+            }
+            cursor.EmitDelegate(() => Main.LocalPlayer.adjTile[Type]);
+            cursor.Emit(OpCodes.Or);
+        }
+        private bool EnableAllEnvironmentConditions(On_Recipe.orig_PlayerMeetsEnvironmentConditions orig, Player player, Recipe tempRec)
+        {
+            if (player.adjTile[Type])
+                return true;
+
+            return orig(player, tempRec);
+        }
+
+        private bool EnableAllTileConditions(On_Recipe.orig_PlayerMeetsTileRequirements orig, Player player, Recipe tempRec)
+        {
+            if (player.adjTile[Type])
+                return true;
+
+            return orig(player, tempRec);
+        }
+        public override bool RightClick(int i, int j)
+        {
+            ModContent.GetInstance<ssm>().ShowBossSummonUI();
+            return true;
+        }
         public override void AnimateTile(ref int frame, ref int frameCounter)
         {
             ++frameCounter;
-            if (frameCounter < 11)
+            if (frameCounter < 8)
                 return;
-            frame = (frame + 1) % 4;
+            frame = (frame + 1) % 8;
             frameCounter = 0;
         }
 

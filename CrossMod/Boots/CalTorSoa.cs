@@ -13,6 +13,7 @@ namespace ssm.CrossMod.Boots
 {
     /*
         * Progression look like this:
+        * 
         * terraspark
         * zephyr boots
         * angel treads
@@ -23,9 +24,6 @@ namespace ssm.CrossMod.Boots
         * void spurs
         * elysean tracers
         * seraph tracers.
-        * 
-        * chtuxlagor boots?
-        * no
         * 
         * redemption?
         * no

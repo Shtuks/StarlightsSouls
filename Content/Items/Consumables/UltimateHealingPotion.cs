@@ -1,8 +1,10 @@
-using System.Collections.Generic;
-using System.Linq;
+using CalamityMod.Items.Potions;
+using FargowiltasSouls.Content.Items.Materials;
+using ssm.Content.Items.Accessories;
+using ssm.Core;
+using ssm.CrossMod.CraftingStations;
 using Terraria;
 using Terraria.ID;
-using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace ssm.Content.Items.Consumables
@@ -34,6 +36,33 @@ namespace ssm.Content.Items.Consumables
         public override void GetHealLife(Player player, bool quickHeal, ref int healValue)
         {
             healValue = player.statLifeMax2;
+        }
+
+        public override void AddRecipes()
+        {
+            Recipe recipe = CreateRecipe(50);
+
+            if (ModCompatibility.SacredTools.Loaded)
+            {
+                ModCompatibility.SacredTools.Mod.TryFind<ModItem>("AsthraltiteHealingPotion", out ModItem soa);
+                recipe.AddIngredient(soa ,50);
+            }
+
+            if (!ModCompatibility.SacredTools.Loaded && ModCompatibility.Calamity.Loaded)
+            {
+                ModCompatibility.Calamity.Mod.TryFind<ModItem>("OmegaHealingPotion", out ModItem cal);
+                recipe.AddIngredient(cal, 50);
+            }
+
+            if (!ModCompatibility.SacredTools.Loaded && !ModCompatibility.Calamity.Loaded)
+            {
+                recipe.AddIngredient(ItemID.SuperHealingPotion, 50);
+            }
+
+            recipe.AddIngredient<EternalEnergy>(1);
+
+            recipe.AddTile<MutantsForgeTile>();
+            recipe.Register();
         }
     }
 }

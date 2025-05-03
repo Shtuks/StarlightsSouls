@@ -3,6 +3,7 @@ using MagicStorage.Components;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using ReLogic.Content;
+using ssm.Core;
 using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
@@ -11,6 +12,8 @@ using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace ssm.MagicStorage;
+[ExtendsFromMod(ModCompatibility.MagicStorage.Name)]
+[JITWhenModsEnabled(ModCompatibility.MagicStorage.Name)]
 public class ShtunStorageUnit : StorageUnit
 {
     public static int storageType;

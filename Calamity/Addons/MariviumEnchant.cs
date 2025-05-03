@@ -10,8 +10,8 @@ using CalamityEntropy.Content.Items.Armor.VoidFaquir;
 using CalamityEntropy.Content.Items.Weapons;
 using CalamityEntropy.Content.Items.Weapons.Chainsaw;
 using CalamityEntropy.Content.Items.Accessories;
-using CalamityEntropy.Util;
 using CalamityEntropy.Content.Items.Armor.Marivinium;
+using CalamityEntropy.Utilities;
 
 namespace ssm.Calamity.Addons
 {
@@ -65,7 +65,7 @@ namespace ssm.Calamity.Addons
         public class HolyShieldEffect : AccessoryEffect
         {
             public override Header ToggleHeader => Header.GetHeader<AddonsForceHeader>();
-            public override int ToggleItemType => ModContent.ItemType<VoidFaquirEnchant>();
+            public override int ToggleItemType => ModContent.ItemType<MariviumEnchant>();
         }
     }
 }

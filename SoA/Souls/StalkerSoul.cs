@@ -60,7 +60,6 @@ namespace ssm.SoA.Souls
             recipe.AddIngredient<Ainfijarnar>();
             recipe.AddIngredient<TerraLance>();
             recipe.AddIngredient<TrueDecapitator>();
-            recipe.AddIngredient<StalkerEssence>();
             recipe.AddIngredient<OrbFlayer>();
 
             recipe.AddIngredient<AbomEnergy>(10);

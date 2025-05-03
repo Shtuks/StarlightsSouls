@@ -13,10 +13,10 @@ namespace ssm.CrossMod.CraftingStations
     [JITWhenModsEnabled(ModCompatibility.SacredTools.Name)]
     public class SyranCraftingStationItem : ModItem
     {
-        public override bool IsLoadingEnabled(Mod mod)
-        {
-            return ShtunConfig.Instance.ExperimentalContent;
-        }
+        //public override bool IsLoadingEnabled(Mod mod)
+        //{
+        //    return ShtunConfig.Instance.ExperimentalContent;
+        //}
         public override void SetDefaults()
         {
             Item.CloneDefaults(ItemType<OblivionBar>());

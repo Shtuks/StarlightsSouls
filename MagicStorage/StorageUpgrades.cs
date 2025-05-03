@@ -1,11 +1,14 @@
 ﻿using Fargowiltas.Items.Tiles;
 using FargowiltasSouls.Content.Items.Materials;
 using MagicStorage.Items;
+using ssm.Core;
 using Terraria;
 using Terraria.ModLoader;
 
 namespace ssm.MagicStorage
 {
+    [ExtendsFromMod(ModCompatibility.MagicStorage.Name)]
+    [JITWhenModsEnabled(ModCompatibility.MagicStorage.Name)]
     public class UpgradeDeviating : ModItem
     {
         public override void SetStaticDefaults()
@@ -32,6 +35,8 @@ namespace ssm.MagicStorage
         }
     }
 
+    [ExtendsFromMod(ModCompatibility.MagicStorage.Name)]
+    [JITWhenModsEnabled(ModCompatibility.MagicStorage.Name)]
     public class UpgradeAbominable : ModItem
     {
         public override void SetStaticDefaults()
@@ -58,6 +63,8 @@ namespace ssm.MagicStorage
         }
     }
 
+    [ExtendsFromMod(ModCompatibility.MagicStorage.Name)]
+    [JITWhenModsEnabled(ModCompatibility.MagicStorage.Name)]
     public class UpgradeEternal : ModItem
     {
         public override void SetStaticDefaults()

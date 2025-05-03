@@ -32,6 +32,9 @@ namespace ssm.Calamity.Souls
         }
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
+            ModContent.GetInstance<DemonShadeEnchant>().UpdateAccessory(player, hideVisual);
+            ModContent.GetInstance<GaleForce>().UpdateAccessory(player, hideVisual);
+            ModContent.GetInstance<ElementsForce>().UpdateAccessory(player, hideVisual);
             ModContent.GetInstance<AddonsForce>().UpdateAccessory(player, hideVisual);
             ModContent.GetInstance<ShatteredCommunity>().UpdateAccessory(player, hideVisual);
             ModContent.GetInstance<ElementalArtifact>().UpdateAccessory(player, hideVisual);

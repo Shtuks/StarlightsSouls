@@ -2,7 +2,6 @@
 using FargowiltasSouls;
 using FargowiltasSouls.Assets.ExtraTextures;
 using FargowiltasSouls.Assets.Sounds;
-using FargowiltasSouls.Content.BossBars;
 using FargowiltasSouls.Content.Buffs.Boss;
 using FargowiltasSouls.Content.Buffs.Masomode;
 using FargowiltasSouls.Content.Buffs.Souls;
@@ -4006,7 +4005,7 @@ namespace ssm.Content.NPCs.MutantEX
             if (ShouldDrawAura)
                 DrawAura(spriteBatch, auraPosition, AuraScale);
 
-            return true;
+            return false;
         }
 
         public void DrawAura(SpriteBatch spriteBatch, Vector2 position, float auraScale)

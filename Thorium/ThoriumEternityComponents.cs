@@ -1,5 +1,6 @@
 using FargowiltasSouls.Content.Items.Accessories.Souls;
 using FargowiltasSouls.Core.AccessoryEffectSystem;
+using ssm.Content.Items.Accessories;
 using ssm.Core;
 using ssm.Thorium.Toggles;
 using Terraria;
@@ -15,7 +16,7 @@ namespace ssm.SoA
 
         public override void UpdateAccessory(Item item, Player player, bool hideVisual)
         {
-			if (item.type == ModContent.ItemType<ColossusSoul>() || item.type == ModContent.ItemType<DimensionSoul>() || item.type == ModContent.ItemType<EternitySoul>())
+			if (item.type == ModContent.ItemType<ColossusSoul>() || item.type == ModContent.ItemType<DimensionSoul>() || item.type == ModContent.ItemType<EternitySoul>() || item.type == ModContent.ItemType<Soul>())
 			{
 				if (player.AddEffect<BlastShieldEffect>(item))
 				{
