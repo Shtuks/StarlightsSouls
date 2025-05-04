@@ -17,7 +17,7 @@ namespace ssm.SoA
 
         public override void UpdateAccessory(Item item, Player player, bool hideVisual)
         {
-			if (item.type == ModContent.ItemType<ColossusSoul>() || item.type == ModContent.ItemType<DimensionSoul>() || item.type == ModContent.ItemType<EternitySoul>() || item.type == ModContent.ItemType<Soul>())
+			if (item.type == ModContent.ItemType<ColossusSoul>() || item.type == ModContent.ItemType<DimensionSoul>() || item.type == ModContent.ItemType<EternitySoul>() || item.type == ModContent.ItemType<StargateSoul>())
 			{
 				if (player.AddEffect<RoyalGuardEffect>(item))
 				{
@@ -25,12 +25,12 @@ namespace ssm.SoA
 				}
 				ModContent.GetInstance<NightmareBlindfold>().UpdateAccessory(player, hideVisual);
 			}
-            if (item.type == ModContent.ItemType<WorldShaperSoul>() || item.type == ModContent.ItemType<DimensionSoul>() || item.type == ModContent.ItemType<EternitySoul>() || item.type == ModContent.ItemType<Soul>())
+            if (item.type == ModContent.ItemType<WorldShaperSoul>() || item.type == ModContent.ItemType<DimensionSoul>() || item.type == ModContent.ItemType<EternitySoul>() || item.type == ModContent.ItemType<StargateSoul>())
             {
                 ModContent.GetInstance<LunarRing>().UpdateAccessory(player, hideVisual);
                 ModContent.GetInstance<RageSuppressor>().UpdateAccessory(player, hideVisual);
             }
-            if (item.type == ModContent.ItemType<SupersonicSoul>() || item.type == ModContent.ItemType<DimensionSoul>() || item.type == ModContent.ItemType<EternitySoul>() || item.type == ModContent.ItemType<Soul>())
+            if (item.type == ModContent.ItemType<SupersonicSoul>() || item.type == ModContent.ItemType<DimensionSoul>() || item.type == ModContent.ItemType<EternitySoul>() || item.type == ModContent.ItemType<StargateSoul>())
             {
                 if (player.AddEffect<MilinticaDashEffect>(item))
                 {
@@ -41,7 +41,7 @@ namespace ssm.SoA
                     ModContent.Find<ModItem>(ModCompatibility.SacredTools.Name, "HeartOfThePlough").UpdateAccessory(player, hideVisual);
                 }
 			}
-            if (item.type == ModContent.ItemType<MasochistSoul>() || item.type == ModContent.ItemType<EternitySoul>() || item.type == ModContent.ItemType<Soul>())
+            if (item.type == ModContent.ItemType<MasochistSoul>() || item.type == ModContent.ItemType<EternitySoul>() || item.type == ModContent.ItemType<StargateSoul>())
             {
 				if (player.AddEffect<YataMirrorEffect>(item))
                 {
@@ -52,7 +52,7 @@ namespace ssm.SoA
                     ModContent.Find<ModItem>(ModCompatibility.SacredTools.Name, "PrimordialCore").UpdateAccessory(player, hideVisual);
                 }
             }
-            if (item.type == ModContent.ItemType<BerserkerSoul>() || item.type == ModContent.ItemType<UniverseSoul>() || item.type == ModContent.ItemType<EternitySoul>() || item.type == ModContent.ItemType<Soul>())
+            if (item.type == ModContent.ItemType<BerserkerSoul>() || item.type == ModContent.ItemType<UniverseSoul>() || item.type == ModContent.ItemType<EternitySoul>() || item.type == ModContent.ItemType<StargateSoul>())
             {
                 if (player.AddEffect<FloraFistEffect>(item))
                 {

@@ -3,7 +3,7 @@ The addon for Fargos's Souls. The main goal of the mod is to balance many global
 
 Source code: https://github.com/Shtuks/StarlightsSouls
 
-Discord Server: https://discord.gg/xB9s8SyQJr
+Discord Server: https://discord.gg/frUcz2dQAy
 
 Official Wiki: https://terrariamods.wiki.gg/wiki/Community_Souls_Expansion
 

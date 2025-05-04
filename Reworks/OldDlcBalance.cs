@@ -34,9 +34,9 @@ namespace ssm.Reworks
 
                 if (ModCompatibility.Thorium.Loaded && !ModCompatibility.Calamity.Loaded) {multiplier += 3;}
                 if (ModCompatibility.SacredTools.Loaded && !ModCompatibility.Calamity.Loaded) { multiplier += 3; }
-                if (ModCompatibility.Thorium.Loaded){multiplier+=3;}
-                if (ModCompatibility.Calamity.Loaded) {multiplier+=10;} 
-                if (ModCompatibility.SacredTools.Loaded) {multiplier+=5;}
+                if (ModCompatibility.Thorium.Loaded){multiplier+=2;}
+                if (ModCompatibility.Calamity.Loaded) {multiplier+=8;} 
+                if (ModCompatibility.SacredTools.Loaded) {multiplier+=4;}
                 if (ModCompatibility.Homeward.Loaded) {multiplier+=3;}
                 if (ModCompatibility.Redemption.Loaded) {multiplier++;}
                 if (ModCompatibility.Entropy.Loaded) { multiplier++; }
@@ -45,7 +45,7 @@ namespace ssm.Reworks
                 if (npc.type == ModContent.NPCType<MutantBoss>())
                 {
                     npc.damage = (int)(300 + (100 * multiplier * 0.9f));
-                    npc.defense = 300 + (100 * multiplier);
+                    npc.defense = 400 + (150 * multiplier);
                     npc.lifeMax = mutantBaseHealth + (mutantAddHealth * (!WorldSavingSystem.MasochistModeReal ? multiplier : multiplier*2));
                 }
 

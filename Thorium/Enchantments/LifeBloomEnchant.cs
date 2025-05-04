@@ -63,6 +63,7 @@ namespace ssm.Thorium.Enchantments
             recipe.AddIngredient(ModContent.ItemType<LifeBloomMail>());
             recipe.AddIngredient(ModContent.ItemType<LifeBloomLeggings>());
             recipe.AddIngredient(ModContent.ItemType<HeartOfTheJungle>());
+            recipe.AddIngredient(ModContent.ItemType<LivingWoodEnchant>());
 
             recipe.AddTile(TileID.CrystalBall);
             recipe.Register();

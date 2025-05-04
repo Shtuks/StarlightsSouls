@@ -9,7 +9,7 @@ using Fargowiltas.Items.Vanity;
 namespace ssm.Content.Items.Armor
 {
     [AutoloadEquip(EquipType.Legs)]
-    public class TrueLumberjackPants : ModItem
+    public class TrueLumberjackPants : AnticheatItem
     {
         public override void SetDefaults()
         {
@@ -34,7 +34,8 @@ namespace ssm.Content.Items.Armor
             recipe.AddIngredient<LumberjackPants>();
 
             recipe.AddIngredient<Sadism>(100);
-            recipe.AddIngredient<Soul>(4);
+            recipe.AddIngredient<StargateSoul>(4);
+            //recipe.AddIngredient<ShardOfStarlight>(30);
 
             recipe.AddTile<MutantsForgeTile>();
             recipe.Register();

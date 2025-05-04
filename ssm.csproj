@@ -24,7 +24,6 @@
 	</ItemGroup>
 	<ItemGroup>
 	  <Compile Include="Content\NPCs\StarlightCat\StarlightCatDeathray.cs.sex" />
-	  <Compile Include="Core\ModIconSystem.bak" />
 	  <Compile Include="Thorium\Enchantments\BerserkerEnchant.cs.sex" />
 	  <Compile Include="Thorium\Enchantments\MagmaEnchant.cs.sex" />
 	</ItemGroup>

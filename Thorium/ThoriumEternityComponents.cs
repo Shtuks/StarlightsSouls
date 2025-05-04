@@ -16,7 +16,7 @@ namespace ssm.SoA
 
         public override void UpdateAccessory(Item item, Player player, bool hideVisual)
         {
-			if (item.type == ModContent.ItemType<ColossusSoul>() || item.type == ModContent.ItemType<DimensionSoul>() || item.type == ModContent.ItemType<EternitySoul>() || item.type == ModContent.ItemType<Soul>())
+			if (item.type == ModContent.ItemType<ColossusSoul>() || item.type == ModContent.ItemType<DimensionSoul>() || item.type == ModContent.ItemType<EternitySoul>() || item.type == ModContent.ItemType<StargateSoul>())
 			{
 				if (player.AddEffect<BlastShieldEffect>(item))
 				{

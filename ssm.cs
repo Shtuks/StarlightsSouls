@@ -26,6 +26,8 @@ using ssm.Content.Items.Consumables;
 using ssm.Content.NPCs.MutantEX;
 using ssm.Content.UI;
 using Terraria.UI;
+using ReLogic.Content;
+using ssm.CrossMod.CraftingStations;
 
 namespace ssm
 {
@@ -82,13 +84,13 @@ namespace ssm
             {
                 static bool AllPlayersAreDead() => Main.player.All(plr => !plr.active || plr.dead);
 
-                void Add(string type, string bossName, List<int> npcIDs, Func<bool> downed, Func<bool> available, List<int> collectibles, List<int> spawnItems, bool hasKilledAllMessage, string portrait = null)
+                void Add(string type, string bossName, float priority, List<int> npcIDs, Func<bool> downed, Func<bool> available, List<int> collectibles, List<int> spawnItems, bool hasKilledAllMessage, string portrait = null)
                 {
                     bossChecklist.Call(
                         $"Log{type}",
                         this,
                         bossName,
-                        int.MaxValue,
+                        priority,
                         downed,
                         npcIDs,
                         new Dictionary<string, object>()
@@ -114,6 +116,7 @@ namespace ssm
 
                 Add("Boss",
                     "MutantEX",
+                    float.MaxValue,
                     new List<int> { ModContent.NPCType<MutantEX>() },
                     () => WorldSaveSystem.downedMutantEX,
                     () => true,
@@ -124,15 +127,44 @@ namespace ssm
                         ModContent.ItemType<SpawnSack>(),
                         ModContent.ItemType<PhantasmalEnergy>()
                     },
-                    new List<int> { ModContent.ItemType<MutantsCurseEX>() },
+                    new List<int> { ModContent.ItemType<MutantsForgeItem>() },
                     true
                 );
 
+                if (ModCompatibility.SacredTools.Loaded)
+                {
+                    ModCompatibility.SacredTools.Mod.TryFind<ModNPC>("Nihilus", out ModNPC Nihilus);
+                    ModCompatibility.SacredTools.Mod.TryFind<ModItem>("EmberOfOmen", out ModItem Ember);
+                    ModCompatibility.SacredTools.Mod.TryFind<ModItem>("NihilusObelisk", out ModItem Obelisk);
+                    
+                    Add("Boss",
+                    "Nihilus",
+                    int.MaxValue-100,
+                    new List<int> {Nihilus.Type},
+                    () => WorldSaveSystem.downedNihilus,
+                    () => true,
+                    new List<int> {
+                        Ember.Type
+                    },
+                    new List<int> { Obelisk.Type },
+                    true
+                );
+                }
             }
         }
 
         public override void Load()
         {
+            //// Load the overlay texture
+            //overlayTexture = ModContent.Request<Texture2D>("ssm/Assets/ModIcon/LifeStar", AssetRequestMode.ImmediateLoad).Value;
+
+            //// Get the UIModItem.Draw method using reflection
+            //Type uiModItemType = typeof(ModLoader).Assembly.GetType("Terraria.ModLoader.UI.UIModItem");
+            //MethodInfo drawMethod = uiModItemType.GetMethod("Draw", BindingFlags.Instance | BindingFlags.Public);
+
+            //// Add the hook with a compatible delegate
+            //MonoModHooks.Add(drawMethod, (Action<object, SpriteBatch>)DrawHook);
+
             _bossSummonUI = new UserInterface();
             ModIntergationSystem.BossChecklist.AdjustValues();
 
@@ -163,6 +195,7 @@ namespace ssm
 
         public override void Unload()
         {
+            //overlayTexture = null;
             _bossSummonUI = null;
             Instance = null;
         }

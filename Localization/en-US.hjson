@@ -64,6 +64,94 @@ Mods: {
 		}
 
 		Items: {
+			CommonGuardEnchant: {
+				DisplayName: Common Guard Enchantment
+				Tooltip:
+					'''
+					+12% increased melee speed 
+					Reduces damage taken by 6%
+					Effect of Trapped Soul Bauble
+					'''
+			}
+
+			DragonLeadEnchant: {
+				DisplayName: Dragon Lead Enchantment
+				Tooltip:
+					'''
+					20% increased Ice elemental resistance
+					33% chance for weapons to inflict Dragonblaze 
+					100% chance for all Dragon-Lead weapons to inflict Dragonblaze
+					Effect of Heart Insignia
+					- Good Route -
+					'''
+			}
+
+			PureIronEnchant: {
+				DisplayName: Pure Iron Enchantment
+				Tooltip:
+					'''
+					20% increased Fire elemental resistance 
+					33% chance for weapons to inflict Pure Chill 
+					100% chance for all Pure-Iron weapons to inflict Pure Chill
+					Effect of Erhan's Cross
+					- Bad Route -
+					'''
+			}
+
+			HardlightEnchant: {
+				DisplayName: Hardlight Enchantment
+				Tooltip:
+					'''
+					Press 'Special Ability Key' to get different effects of Hardlight Armor
+					Effects depend on what weapon class you are using and will not work if you aren't holding any
+					Melee: Summons 2 orbiting mini spaceships that fire lasers whenever you attack using a melee weapon
+					Ranged: Fires a missile barrage, targetting the enemy nearest to the cursor position
+					Magic: Summons a drone that gives a continuous feed of mana for 10 seconds
+					Summon: Summons 2 missile drones and a magnet drone
+					'''
+			}
+
+			LivingTwigEnchant: {
+				DisplayName: Living Twig Enchantment
+				Tooltip:
+					'''
+					Immunity to the Poisoned debuff 
+					3% Increased minions damage
+					'''
+			}
+
+			XeniumEnchant: {
+				DisplayName: Xenium Enchantment
+				Tooltip:
+					'''
+					+10 increased Energy regeneration 			
+					Effects of Beelzebub Concoction and Infected Thornshield
+					'''
+			}
+
+			XenomiteEnchant: {
+				DisplayName: Xenomite Enchantment
+				Tooltip:
+					'''
+					Press 'Special Ability Key' to unleash toxic gas in a radius around the player, inflicting Burning Acid
+					Effect of Necklace of Perception
+					'''
+			}
+
+			AdvancementForce: {
+				DisplayName: Force of Advancement
+				Tooltip:
+					'''
+					[i:ssm/LivingWoodEnchant2] Immunity to the Poisoned debuff 
+					[i:ssm/CommonGuardEnchant] +12% increased melee speed and reduces damage taken by 6%
+					[i:ssm/PureIronEnchant][i:ssm/DragonLeadEnchant] 33% chance for weapons to inflict Pure Chill and Dragonblaze  
+					[i:ssm/PureIronEnchant][i:ssm/DragonLeadEnchant] 100% chance for all Dragon-Lead weapons to inflict Pure Chill and Dragonblaze
+					[i:ssm/PureIronEnchant][i:ssm/DragonLeadEnchant] 20% increased Ice and Fire elemental resistance 
+					[i:ssm/HardlightEnchant] Press 'Special Ability Key' to get different effects of Hardlight Armor
+					[i:ssm/XeniumEnchant] +10 increased Energy regeneration
+					'''
+			}
+
 			AddedEffects: {
 				ThoriumColossus: Effect of Blast Shield
 				CalDefender: Effects of Asgard's Valor
@@ -2813,9 +2901,14 @@ Mods: {
 				Tooltip: ""
 			}
 
-			Soul: {
-				Tooltip: This item have buggy animation. It will be fixed in later updates.
+			StargateSoul: {
 				DisplayName: Soul
+				Tooltip: 
+				'''
+				Effects of [i:FargowiltasSouls/EternitySoul], [i:ssm/EternityForce], [i:ssm/ModdedSoE], [i:ssm/CyclonicFin]
+				Immunity to all possible debuffs.
+				'The feeling of [c/FF0000:HIS] gaze does not leave you.'
+				'''
 			}
 		}
 

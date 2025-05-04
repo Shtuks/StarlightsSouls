@@ -9,7 +9,7 @@ using ssm.Content.Items.Consumables;
 namespace ssm.Content.Items.Armor
 {
     [AutoloadEquip(EquipType.Body)]
-    public class TrueLumberjackBody : ModItem
+    public class TrueLumberjackBody : AnticheatItem
     {
         public override void SetDefaults()
         {
@@ -41,7 +41,8 @@ namespace ssm.Content.Items.Armor
             recipe.AddIngredient<LumberjackBody>();
 
             recipe.AddIngredient<Sadism>(100);
-            recipe.AddIngredient<Soul>(4);
+            recipe.AddIngredient<StargateSoul>(4);
+            //recipe.AddIngredient<ShardOfStarlight>(30);
 
             recipe.AddTile<MutantsForgeTile>();
             recipe.Register();

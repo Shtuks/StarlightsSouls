@@ -6,7 +6,7 @@ using ssm.Content.Buffs;
 
 namespace ssm.Content.Items.Consumables
 {
-    public class Sadism : ModItem
+    public class Sadism : AnticheatItem
     {
         public override void SetDefaults()
         {

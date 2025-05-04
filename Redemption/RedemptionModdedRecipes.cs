@@ -1,5 +1,7 @@
-﻿using FargowiltasCrossmod.Content.Calamity.Items.Accessories.Essences;
+﻿using CalamityMod.Items.Materials;
+using FargowiltasCrossmod.Content.Calamity.Items.Accessories.Essences;
 using FargowiltasCrossmod.Content.Calamity.Items.Accessories.Souls;
+using Redemption.Items.Materials.PostML;
 using ssm.ClassSouls.Beekeeper.Essences;
 using ssm.ClassSouls.Beekeeper.Souls;
 using ssm.Core;
@@ -30,6 +32,11 @@ namespace ssm.Redemption
                 {
                     recipe.AddIngredient<MutagenThrowingCal>();
                     recipe.RemoveIngredient(ModContent.ItemType<OutlawsEssence>());
+                }
+
+                if (recipe.HasResult<ShadowspecBar>() && !recipe.HasResult<LifeFragment>())
+                {
+                    recipe.AddIngredient<LifeFragment>();
                 }
             }
         }

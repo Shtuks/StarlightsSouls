@@ -9,6 +9,9 @@ namespace ssm.Systems
     {
         public static bool talk = false;
 
+        //i am dumb or soa don't have this
+        public static bool downedNihilus = false;
+
         public static bool downedEch = false;
         public static bool downedFish = false;
         public static bool downedMutantEX = false;
@@ -28,6 +31,10 @@ namespace ssm.Systems
             if (talk)
             {
                 tag["talk"] = true;
+            }
+            if (downedNihilus)
+            {
+                tag["downedNihilus"] = true;
             }
             if (downedFish)
             {
@@ -59,6 +66,7 @@ namespace ssm.Systems
             downedEch = tag.ContainsKey("downedEch");
             talk = tag.ContainsKey("talk");
             downedFish = tag.ContainsKey("downedFish");
+            downedNihilus = tag.ContainsKey("downedNihilus");
             enragedMutantEX = tag.ContainsKey("enragedMutantEX");
             TrueSuperChtuxlagorWrathModeOmegaEX = tag.ContainsKey("TrueSuperChtuxlagorWrathModeOmegaEX");
             trueRevEternity = tag.ContainsKey("trueRevEternity");
@@ -76,6 +84,7 @@ namespace ssm.Systems
             flags[6] = trueRevEternity;
             flags[7] = trueDeathEternity;
             flags[8] = downedMutantEX;
+            flags[9] = downedNihilus;
             writer.Write(flags);
         }
         public override void NetReceive(BinaryReader reader)
@@ -88,7 +97,8 @@ namespace ssm.Systems
             talk = flags[5];
             trueRevEternity = flags[6];
             trueDeathEternity = flags[7];
-            downedMutantEX = flags[7];
+            downedMutantEX = flags[8];
+            downedNihilus = flags[9];
         }
     }
 }

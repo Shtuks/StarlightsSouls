@@ -8,6 +8,9 @@ using ssm.Core;
 using FargowiltasSouls.Content.Items.Accessories.Forces;
 using FargowiltasSouls.Content.Items.Accessories.Essences;
 using Terraria.ID;
+using Terraria.Localization;
+using Redemption.Items.Armor.HM.Hardlight;
+using Redemption.Items.Armor.PreHM.CommonGuard;
 
 namespace ssm.Redemption
 {
@@ -17,10 +20,10 @@ namespace ssm.Redemption
     {
         public override void AddRecipeGroups()
         {
-            //RecipeGroup rec = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " Cyber Helmet", ModContent.ItemType<AsthralMage>(), ModContent.ItemType<AsthralRanged>(), ModContent.ItemType<AsthralMelee>(), ModContent.ItemType<AsthralSummon>(), ModContent.ItemType<AsthraltiteHelmetRevenant>());
-            //RecipeGroup.RegisterGroup("ssm:CyberHelms", rec);
-            //RecipeGroup rec1 = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " Hardlight Helmet", ModContent.ItemType<AsthralMage>(), ModContent.ItemType<AsthralRanged>(), ModContent.ItemType<AsthralMelee>(), ModContent.ItemType<AsthralSummon>(), ModContent.ItemType<AsthraltiteHelmetRevenant>());
-            //RecipeGroup.RegisterGroup("ssm:HardlightHelms", rec1);
+            RecipeGroup rec = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " Common Guard Helmet", ModContent.ItemType<CommonGuardHelm2>(), ModContent.ItemType<CommonGuardHelm1>());
+            RecipeGroup.RegisterGroup("ssm:CommonGuardHelms", rec);
+            RecipeGroup rec1 = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " Hardlight Helmet", ModContent.ItemType<HardlightCasque>(), ModContent.ItemType<HardlightCowl>(), ModContent.ItemType<HardlightHelm>(), ModContent.ItemType<HardlightHood>(), ModContent.ItemType<HardlightVisor>());
+            RecipeGroup.RegisterGroup("ssm:HardlightHelms", rec1);
         }
 
         public override void PostAddRecipes()

@@ -12,6 +12,7 @@ using SacredTools.Content.Items.DEV;
 using SacredTools.Content.Items.Placeable.CraftingStations;
 using FargowiltasSouls.Content.Items.Accessories.Forces;
 using SacredTools.Content.Items.Materials;
+using Terraria.ID;
 
 namespace ssm
 {
@@ -56,6 +57,11 @@ namespace ssm
                 if (recipe.HasResult<EternitySoul>() && !recipe.HasIngredient<SoASoul>())
                 {
                     recipe.AddIngredient<SoASoul>();
+                }
+
+                if (recipe.HasResult<BerserkerSoul>() && recipe.HasIngredient(ItemID.CelestialShell))
+                {
+                    recipe.RemoveIngredient(ItemID.CelestialShell);
                 }
 
                 if (recipe.HasResult<ConjuristsSoul>() && !recipe.HasIngredient<StarstreamVeil>())

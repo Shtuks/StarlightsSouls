@@ -5,6 +5,12 @@ namespace ssm.Core;
 
 public static class ModCompatibility
 {
+    public static class SoulsCompat
+    {
+        public const string Name = "FargoMoreSoulsCompat";
+        public static bool Loaded => ModLoader.HasMod(Name);
+        public static Mod Mod => ModLoader.GetMod(Name);
+    }
     public static class Entropy
     {
         public const string Name = "CalamityEntropy";

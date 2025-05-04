@@ -1,7 +1,7 @@
 displayName = Community Souls Expansion
 author = CSE Developers Team
 version = 1.1.2.4
-homepage = https://discord.gg/xB9s8SyQJr
+homepage = https://discord.gg/frUcz2dQAy
 modReferences = FargowiltasSouls, Fargowiltas, Luminance
 weakReferences = CalamityMod, Redemption, SacredTools, ThoriumMod, FargowiltasCrossmod, CalValEX, FargoMoreSoulsCompat, CatalystMod, CalamityHunt, MagicStorage, DragonLens, Clamity, CalamityEntropy, NoxusBoss, Polarities, Spooky, BombusApisBee, ClickerClass
 sortArfter = FargowiltasSouls, Fargowiltas, Luminance, FargowiltasCrossmod

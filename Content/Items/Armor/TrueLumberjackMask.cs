@@ -18,7 +18,7 @@ using ssm.Content.Projectiles;
 namespace ssm.Content.Items.Armor
 {
     [AutoloadEquip(EquipType.Head)]
-    public class TrueLumberjackMask : ModItem
+    public class TrueLumberjackMask : AnticheatItem
     {
         public override void SetDefaults()
         {
@@ -69,7 +69,8 @@ namespace ssm.Content.Items.Armor
             recipe.AddIngredient<LumberjackMask>();
 
             recipe.AddIngredient<Sadism>(100);
-            recipe.AddIngredient<Soul>(4);
+            recipe.AddIngredient<StargateSoul>(4);
+            //recipe.AddIngredient<ShardOfStarlight>(30);
 
             recipe.AddTile<MutantsForgeTile>();
             recipe.Register();
