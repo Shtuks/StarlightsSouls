@@ -1,0 +1,190 @@
+				WulfrumEnchantEx: {
+				DisplayName: Wulfrum Enchantment EX
+				Tooltip:
+					'''
+					[i:CalamityMod/TrinketOfChi] Provides 4% damage reduction after not being hit for 5 seconds, this is removed when you are hit
+					+1 HP/s life regen for you and everyone on your team
+					[i:CalamityMod/WulfrumAcrobaticsPack] Transforms equipped hooks into a wulfrum slingshot
+					The slingshot allows for advanced rope-swinging physics
+					Automatically grapples nearby walls if a lethal fall is detected
+					This safety feature won't activate if [KEY] is held
+					8% increased movement speed
+					Effects of [i:CalamityMod/WulfrumHat] Wulfrum Armor
+					'''
+				}
+
+			ExplorationForceEx: {
+				DisplayName: Force of Exploration
+				Tooltip: 
+					'''
+					[i:ssm/AerospecEnchantEx] Enemies drop a healing orb on kill
+					Gain an increase to your damage and movement speed the lower your health is, up to 20%
+					[i:ssm/AerospecEnchantEx] Periodically gain an unstable energy field that repeatedly zaps nearby enemies with arcing energy
+					The arcing energy ignores a substantial amount of enemy defense
+					[i:ssm/DesertProwlerEnchantEx] Weapons fire unique projectiles based on the damage type they have
+					Some weapons are unable to receive this bonus
+					[i:ssm/DesertProwlerEnchantEx] Summons Goldie the rogue coin to collect nearby coins and light your way
+					Provides a small amount of light in the abyss
+					'Once worthless treasure, now a relic of a thief's companionship'
+					[i:ssm/MarniteEnchantEx] Whenever your minions hit an enemy you will gain a random buff, does not stack with downgrades
+					Hallowed Power increases summon damage by 10% and makes minion hits rain stars
+					Hallowed Defense increases defense by 8 and DR by 4%
+					Hallowed Regen grants +1.5 HP/s life regeneration
+					[i:ssm/MarniteEnchantEx] Projects an energy shield that absorbs up to 20 damage
+					Halves Adrenaline lost on hit if the shield fully absorbs the hit
+					The shield grants 10 defense while active
+					After the shield is broken, it takes 10 seconds to charge back up
+					Being hit again while recharging restarts the charge timer
+					Can also be scrapped at an extractinator
+					[i:ssm/VictideEnchantEx] Summons a fungal clump to fight for you
+					The clump latches onto enemies and steals their life for you
+					[i:ssm/VictideEnchantEx] You grow mushrooms on the grass beneath you
+					Consuming mushrooms provides the Mushy buff, increasing defense by 6 and granting 1 HP/s life regen
+					All mushroom-based weapons deal 10% more damage and emit non-damaging mushrooms
+					[i:ssm/VictideEnchantEx] Increased defense by 5 when submerged in liquid
+					10% increased movement speed and +1 HP/s life regen while wearing Victide armor
+					[i:ssm/WulfrumEnchantEx] Provides 4% damage reduction after not being hit for 5 seconds, this is removed when you are hit
+					+1 HP/s life regen for you and everyone on your team
+					[i:ssm/WulfrumEnchantEx] Transforms equipped hooks into a wulfrum slingshot
+					The slingshot allows for advanced rope-swinging physics
+					Automatically grapples nearby walls if a lethal fall is detected
+					This safety feature won't activate if [KEY] is held
+					8% increased movement speed
+					[i:ssm/SulphurousEnchantEx] 5% increased movement speed
+					Press {Hotkey} to consume 10% of your maximum stealth to create a protective dust veil which damages and knocks back enemies
+					While inside the veil, you are given +6 defense and +1 HP/s life regen
+					This effect has a 30 second cooldown before it can be used again
+					[i:ssm/SulphurousEnchantEx] Periodically rains down prism shards that can briefly stun enemies
+					[i:ssm/SulphurousEnchantEx] Increases luck by 20%
+					'Lucky for you, the curse doesn't affect you. Mostly'
+					[i:ssm/SulphurousEnchantEx] Causes most ranged weapons to release acid droplets from the sky
+					Grants immunity to Irradiated
+					[i:ssm/StatigelEnchantEx] +2 max minions, does not stack with downgrades
+					7% increased summon damage
+					Minion attacks spawn astral explosions and inflict several debuffs
+					Grants immunity to Irradiated
+					[i:ssm/StatigelEnchantEx] Increases max mana by 50 and magic damage by 6%
+					-1.5 HP/s life regen if mana is above 50% of its maximum
+					Magic projectiles give lifesteal while holding a magic weapon
+					The more mana you have, the more you heal
+					[i:ssm/SnowRuffianEnchantEx] Stealth strike projectiles spawn a jewel spike when destroyed
+					Can also be broken down at an extractinator
+					[i:ssm/SnowRuffianEnchantEx] You deal 90% less damage unless stationary
+					Standing still grants buff(s) dependent on what weapon you're holding
+					Standing still provides a damaging aura around you
+					While moving, you regenerate health as if standing still
+					Provides a small amount of light in the Abyss
+					'In rest may we find victory'
+
+					Effects of [i:ssm/AerospecEnchantEx] Aerospec Armor, Effects of [i:ssm/DesertProwlerEnchantEx] Desert Prowler Suit, Effects of [i:ssm/MarniteEnchantEx] Marnite Architect Armor, Effects of [i:ssm/VictideEnchantEx] Victide Armor, Effects of [i:ssm/WulfrumEnchantEx] Wulfrum Armor, Effects of [i:ssm/SulphurousEnchantEx] Sulphurous Armor, Effects of [i:ssm/StatigelEnchantEx] Statigel Armor, and Effects of [i:ssm/SnowRuffianEnchantEx] Snow Ruffian Armor
+					'The Beginning of your Journey'
+					'''
+				}
+
+			AerospecEnchantEx: {
+				Tooltip: 
+					'''
+					[i:CalamityMod/GladiatorsLocket] Enemies drop a healing orb on kill
+					Gain an increase to your damage and movement speed the lower your health is, up to 20%
+					[i:CalamityMod/UnstableGraniteCore] Periodically gain an unstable energy field that repeatedly zaps nearby enemies with arcing energy
+					The arcing energy ignores a substantial amount of enemy defense
+					Effects of [i:CalamityMod/AerospecHelm] Aerospec Armor
+
+					'''
+				DisplayName: Aerospec Enchantment EX
+				}
+
+			DesertProwlerEnchantEx: {
+				Tooltip: 
+					'''
+					[i:CalamityMod/LuxorsGift] Weapons fire unique projectiles based on the damage type they have
+					Some weapons are unable to receive this bonus
+					[i:CalamityMod/ThiefsDime] Summons Goldie the rogue coin to collect nearby coins and light your way
+					Provides a small amount of light in the abyss
+					'Once worthless treasure, now a relic of a thief's companionship'
+					Effects of [i:CalamityMod/DesertProwlerHat] Desert Prowler Armor
+					'''
+				DisplayName: Desert Prowler Enchantment EX
+				}
+
+			MarniteEnchantEx: {
+				Tooltip: 
+					'''
+					[i:CalamityMod/HallowedRune] Whenever your minions hit an enemy you will gain a random buff, does not stack with downgrades
+					Hallowed Power increases summon damage by 10% and makes minion hits rain stars
+					Hallowed Defense increases defense by 8 and DR by 4%
+					Hallowed Regen grants +1.5 HP/s life regeneration
+					[i:CalamityMod/RoverDrive] Projects an energy shield that absorbs up to 20 damage
+					Halves Adrenaline lost on hit if the shield fully absorbs the hit
+					The shield grants 10 defense while active
+					After the shield is broken, it takes 10 seconds to charge back up
+					Being hit again while recharging restarts the charge timer
+					Can also be scrapped at an extractinator
+					Effects of [i:CalamityMod/MarniteArchitectHeadgear] Marnite Architect Armor
+					'''
+				DisplayName: Marnite Enchantment EX
+				}
+
+			VictideEnchantEx: {
+				Tooltip: 
+					'''
+					[i:CalamityMod/FungalClump] Summons a fungal clump to fight for you
+					The clump latches onto enemies and steals their life for you
+					[i:CalamityMod/FungalSymbiote] You grow mushrooms on the grass beneath you
+					Consuming mushrooms provides the Mushy buff, increasing defense by 6 and granting 1 HP/s life regen
+					All mushroom-based weapons deal 10% more damage and emit non-damaging mushrooms
+					[i:CalamityMod/ShieldoftheOcean] Increased defense by 5 when submerged in liquid
+					10% increased movement speed and +1 HP/s life regen while wearing Victide armor
+					Effects of [i:VictideShellmet] Victide Armor
+					'''
+				DisplayName: Victide Enchantment EX
+				}
+
+			SulphurousEnchantEx: {
+				Tooltip: 
+					'''
+					[i:CalamityMod/SandCloak] 5% increased movement speed
+					Press {Hotkey} to consume 10% of your maximum stealth to create a protective dust veil which damages and knocks back enemies
+					While inside the veil, you are given +6 defense and +1 HP/s life regen
+					This effect has a 30 second cooldown before it can be used again
+					[i:CalamityMod/AmidiasPendant] Periodically rains down prism shards that can briefly stun enemies
+					[i:CalamityMod/OldDie] Increases luck by 20%
+					'Lucky for you, the curse doesn't affect you. Mostly'
+					[i:CalamityMod/RustyMedallion] Causes most ranged weapons to release acid droplets from the sky
+					Grants immunity to Irradiated
+					Effects of [i:CalmityMod/SulphurousHelmet] Sulphurous Armor
+					'''
+				DisplayName: Sulphurous Enchantment EX
+				}
+
+			StatigelEnchantEx: {
+				Tooltip: 
+					'''
+					[i:CalamityMod/StarTaintedGenerator] +2 max minions, does not stack with downgrades
+					7% increased summon damage
+					Minion attacks spawn astral explosions and inflict several debuffs
+					Grants immunity to Irradiated
+					[i:CalamityMod/ManaPolarizer] Increases max mana by 50 and magic damage by 6%
+					-1.5 HP/s life regen if mana is above 50% of its maximum
+					Magic projectiles give lifesteal while holding a magic weapon
+					The more mana you have, the more you heal
+					Effects of [i:CalamityMod/StatigelHeadgear] Statigel Armor
+					'''
+				DisplayName: Statigel Enchantment EX
+				}
+
+			SnowRuffianEnchantEx: {
+				Tooltip: 
+					'''
+					[i:CalamityMod/ScuttlersJewel] Stealth strike projectiles spawn a jewel spike when destroyed
+					Can also be broken down at an extractinator
+					[i:CalamityMod/TheCamper] You deal 90% less damage unless stationary
+					Standing still grants buff(s) dependent on what weapon you're holding
+					Standing still provides a damaging aura around you
+					While moving, you regenerate health as if standing still
+					Provides a small amount of light in the Abyss
+					'In rest may we find victory'
+					Effects of [i:CalamityMod/SnowRuffianMask] Snow Ruffian Armor
+				DisplayName: Snow Ruffian Enchantment EX
+				}
+		}

@@ -28,6 +28,10 @@ namespace ssm.Calamity.Souls
                 ModContent.GetInstance<HideofAstrumDeus>().UpdateAccessory(player, hideVisual);
             if (player.AddEffect<ToxicHeartEffect>(Item))
                 ModContent.GetInstance<ToxicHeart>().UpdateAccessory(player, hideVisual);
+            if (player.AddEffect<AuricSoulEffect>(Item))
+                ModContent.GetInstance<AuricSoulArtifact>().UpdateAccessory(player, hideVisual);
+            if (player.AddEffect<SkullCrownEffect>(Item))
+                ModContent.GetInstance<OccultSkullCrown>().UpdateAccessory(player, hideVisual);
 
             ModContent.GetInstance<BloodflareCore>().UpdateAccessory(player, hideVisual);
             ModContent.GetInstance<BlazingCore>().UpdateAccessory(player, hideVisual);
@@ -35,7 +39,7 @@ namespace ssm.Calamity.Souls
             ModContent.GetInstance<TheEvolution>().UpdateAccessory(player, hideVisual);
             ModContent.GetInstance<LeviathanAmbergris>().UpdateAccessory(player, hideVisual);
             ModContent.GetInstance<Affliction>().UpdateAccessory(player, hideVisual);
-            //ModContent.GetInstance<TheCommunity>().UpdateAccessory(player, hideVisual);
+            ModContent.GetInstance<TheCommunity>().UpdateAccessory(player, hideVisual);
 
         }
 
@@ -46,12 +50,14 @@ namespace ssm.Calamity.Souls
             recipe.AddIngredient<AuricBar>(5);
 
             recipe.AddIngredient<ElementalArtifact>();
+            recipe.AddIngredient<OccultSkullCrown>();
+            recipe.AddIngredient<AuricSoulArtifact>();
             recipe.AddIngredient<BlazingCore>();
             recipe.AddIngredient<LeviathanAmbergris>();
             recipe.AddIngredient<TheEvolution>();
             recipe.AddIngredient<AquaticHeart>();
             recipe.AddIngredient<Affliction>();
-            //recipe.AddIngredient<TheCommunity>();
+            recipe.AddIngredient<TheCommunity>();
             recipe.AddIngredient<HideofAstrumDeus>();
             recipe.AddIngredient<ToxicHeart>();
             recipe.AddIngredient<BloodflareCore>();
@@ -74,6 +80,14 @@ namespace ssm.Calamity.Souls
         public class ToxicHeartEffect : CalamitySoulEffect
         {
             public override int ToggleItemType => ModContent.ItemType<ToxicHeart>();
+        }
+        public class AuricSoulEffect : CalamitySoulEffect
+        {
+            public override int ToggleItemType => ModContent.ItemType<AuricSoulArtifact>();
+        }
+        public class SkullCrownEffect : CalamitySoulEffect
+        {
+            public override int ToggleItemType => ModContent.ItemType<OccultSkullCrown>();
         }
     }
 }

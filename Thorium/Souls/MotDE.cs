@@ -6,6 +6,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using ThoriumMod.Items.BasicAccessories;
+using ThoriumMod.Items.BossFallenBeholder;
 using ThoriumMod.Items.Donate;
 using ThoriumMod.Items.Misc;
 using ThoriumMod.Items.NPCItems;
@@ -17,7 +18,6 @@ namespace ssm.Thorium.Souls
     [JITWhenModsEnabled(ModCompatibility.Thorium.Name)]
     public class MotDE : ModItem
     {
-
         private readonly Mod FargoSoul = Terraria.ModLoader.ModLoader.GetMod("FargowiltasSouls");
         public override void SetDefaults()
         {
@@ -36,6 +36,8 @@ namespace ssm.Thorium.Souls
                 ModContent.GetInstance<LihzahrdTail>().UpdateAccessory(player, hideVisual);
             if (player.AddEffect<SerpentShieldEffect>(Item))
                 ModContent.GetInstance<SerpentShield>().UpdateAccessory(player, hideVisual);
+            if (player.AddEffect<MirrorBeholderEffect>(Item))
+                ModContent.GetInstance<MirroroftheBeholder>().UpdateAccessory(player, hideVisual);
 
             ModContent.GetInstance<MetabolicPills>().UpdateAccessory(player, hideVisual);
             ModContent.GetInstance<MonsterCharm>().UpdateAccessory(player, hideVisual);
@@ -49,6 +51,7 @@ namespace ssm.Thorium.Souls
             Recipe recipe = this.CreateRecipe(1);
 
             recipe.AddIngredient<InfernoLordsFocus>();
+            recipe.AddIngredient<MirroroftheBeholder>();
             recipe.AddIngredient<PocketFusionGenerator>();
             recipe.AddIngredient<LihzahrdTail>();
             recipe.AddIngredient<SerpentShield>();
@@ -65,6 +68,13 @@ namespace ssm.Thorium.Souls
 
         [JITWhenModsEnabled(ModCompatibility.Thorium.Name)]
         [ExtendsFromMod(ModCompatibility.Thorium.Name)]
+        public class MirrorBeholderEffect : AccessoryEffect
+        {
+            public override int ToggleItemType => ModContent.ItemType<MirroroftheBeholder>();
+
+            public override Header ToggleHeader => Header.GetHeader<MotDEHeader>();
+        }
+
         public class InfernoLordsFocusEffect : AccessoryEffect
         {
             public override int ToggleItemType => ModContent.ItemType<InfernoLordsFocus>();

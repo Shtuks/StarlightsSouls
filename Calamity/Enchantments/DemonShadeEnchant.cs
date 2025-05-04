@@ -6,10 +6,10 @@ using CalamityMod.CalPlayer;
 using CalamityMod.Items.Weapons.Magic;
 using CalamityMod.Items.Accessories;
 using FargowiltasSouls.Content.Items.Accessories.Enchantments;
-using ssm.Core;
 using CalamityMod.Items.Armor.Demonshade;
 using FargowiltasSouls.Core.AccessoryEffectSystem;
 using ssm.Content.SoulToggles;
+using ssm.Core;
 
 namespace ssm.Calamity.Enchantments
 {
@@ -25,7 +25,7 @@ namespace ssm.Calamity.Enchantments
             Item.height = 20;
             Item.accessory = true;
             ItemID.Sets.ItemNoGravity[Item.type] = true;
-            Item.rare = 10;
+            Item.rare = ItemRarityID.Red;
             Item.value = 50000000;
         }
 
@@ -41,6 +41,11 @@ namespace ssm.Calamity.Enchantments
                 ModContent.Find<ModItem>(this.calamity.Name, "DemonshadeHelm").UpdateArmorSet(player);
             }
 
+            if (player.AddEffect<AngelicAllianceEffect>(Item))
+            {
+                ModContent.Find<ModItem>(this.calamity.Name, "AngelicAlliance").UpdateAccessory(player, hideVisual);
+            }
+
             if (player.AddEffect<SoulCrystal>(Item))
             {
                 ModContent.Find<ModItem>(this.calamity.Name, "ProfanedSoulCrystal").UpdateAccessory(player, hideVisual);
@@ -54,6 +59,7 @@ namespace ssm.Calamity.Enchantments
             recipe.AddIngredient(ModContent.ItemType<DemonshadeBreastplate>());
             recipe.AddIngredient(ModContent.ItemType<DemonshadeGreaves>());
             recipe.AddIngredient(ModContent.ItemType<ProfanedSoulCrystal>());
+            recipe.AddIngredient(ModContent.ItemType<AngelicAlliance>());
             recipe.AddIngredient(ModContent.ItemType<Apotheosis>());
             recipe.AddIngredient(ModContent.ItemType<Eternity>());
 
@@ -63,13 +69,19 @@ namespace ssm.Calamity.Enchantments
 
         public class RedDevil : AccessoryEffect
         {
-            public override Header ToggleHeader => Header.GetHeader<CalamitySoulHeader>();
+            public override Header ToggleHeader => Header.GetHeader<SalvationForceHeader>();
+            public override int ToggleItemType => ModContent.ItemType<DemonShadeEnchant>();
+        }
+
+        public class AngelicAllianceEffect : AccessoryEffect
+        {
+            public override Header ToggleHeader => Header.GetHeader<SalvationForceHeader>();
             public override int ToggleItemType => ModContent.ItemType<DemonShadeEnchant>();
         }
 
         public class SoulCrystal : AccessoryEffect
         {
-            public override Header ToggleHeader => Header.GetHeader<CalamitySoulHeader>();
+            public override Header ToggleHeader => Header.GetHeader<SalvationForceHeader>();
             public override int ToggleItemType => ModContent.ItemType<DemonShadeEnchant>();
         }
     }

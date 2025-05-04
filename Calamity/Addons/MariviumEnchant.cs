@@ -6,12 +6,9 @@ using FargowiltasSouls.Content.Items.Accessories.Enchantments;
 using ssm.Core;
 using FargowiltasSouls.Core.AccessoryEffectSystem;
 using ssm.Content.SoulToggles;
-using CalamityEntropy.Content.Items.Armor.VoidFaquir;
 using CalamityEntropy.Content.Items.Weapons;
-using CalamityEntropy.Content.Items.Weapons.Chainsaw;
 using CalamityEntropy.Content.Items.Accessories;
 using CalamityEntropy.Content.Items.Armor.Marivinium;
-using CalamityEntropy.Utilities;
 
 namespace ssm.Calamity.Addons
 {
@@ -33,14 +30,17 @@ namespace ssm.Calamity.Addons
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            if (player.AddEffect<MariviniumEffect>(Item))
-            {
-                player.Entropy().MariviniumSet = true;
-            }
             if (player.AddEffect<HolyShieldEffect>(Item))
             {
-                player.Entropy().holyMantle = true;
+                ModContent.Find<ModItem>(ModCompatibility.Entropy.Name, "HolyMantle").UpdateAccessory(player, false);
             }
+            if (player.AddEffect<WyrmToothEffect>(Item))
+            {
+                ModContent.Find<ModItem>(ModCompatibility.Entropy.Name, "WyrmToothNecklace").UpdateAccessory(player, false);
+            }
+            ModContent.Find<ModItem>(ModCompatibility.Entropy.Name, "MariviniumHelmet").UpdateArmorSet(player);
+            ModContent.Find<ModItem>(ModCompatibility.Entropy.Name, "MariviniumBodyArmor").UpdateArmorSet(player);
+            ModContent.Find<ModItem>(ModCompatibility.Entropy.Name, "MariviniumLeggings").UpdateArmorSet(player);
         }
 
         public override void AddRecipes()
@@ -60,9 +60,14 @@ namespace ssm.Calamity.Addons
         public class MariviniumEffect : AccessoryEffect
         {
             public override Header ToggleHeader => Header.GetHeader<AddonsForceHeader>();
-            public override int ToggleItemType => ModContent.ItemType<VoidFaquirEnchant>();
+            public override int ToggleItemType => ModContent.ItemType<MariviumEnchant>();
         }
         public class HolyShieldEffect : AccessoryEffect
+        {
+            public override Header ToggleHeader => Header.GetHeader<AddonsForceHeader>();
+            public override int ToggleItemType => ModContent.ItemType<MariviumEnchant>();
+        }
+        public class WyrmToothEffect : AccessoryEffect
         {
             public override Header ToggleHeader => Header.GetHeader<AddonsForceHeader>();
             public override int ToggleItemType => ModContent.ItemType<MariviumEnchant>();

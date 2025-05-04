@@ -196,11 +196,671 @@ Mods: {
 					'''
 				Tooltip:
 					'''
-					Effects of Shattered Community, Force of Gale, Force of Elements, Force of Addons
-					Effects of Brand of the Brimstone Witch and Pendant of the Godseeker.
+					Effects of [i:CalamityMod/ShatteredCommunity] Shattered Community, [i:CalamityMod/TheCommunity] The Community, [i:FargowiltasCrossmod/GaleForce] Force of Gale, [i:FargowiltasCrossmod/ElementsForce] Force of Elements, [i:ssm/AddonsForce] Force of Addons
+					Effects of [i:ssm/ExplorationForceEx] Force of Exploration EX, [i:ssm/DevastationForceEx] Devastation Force EX, [i:ssm/DesolationForce] Desolation Force, [i:ssm/AnnihilationForce] Annihilation Force, [i:ssm/ExaltationForce] Exaltation Force, and [i:ssm/SalvationForce] Salvation Force
+					Effects of [i:FargowiltasCrossmod/BrandoftheBrimstoneWitch] Brand of the Brimstone Witch and [i:ssm/PotJT] Pendant of the Godseeker.
 					'The land may never grow quiet again, but peace can certainly be brought upon it.'
 					'''
 			}
+
+			AerospecEnchantEx: {
+				DisplayName: Aerospec Enchantment EX
+				Tooltip:
+					'''
+					[i:CalamityMod/GladiatorsLocket] Enemies drop a healing orb on kill
+					Gain an increase to your damage and movement speed the lower your health is, up to 20%
+					[i:CalamityMod/UnstableGraniteCore] Periodically gain an unstable energy field that repeatedly zaps nearby enemies with arcing energy
+					The arcing energy ignores a substantial amount of enemy defense
+					Effects of Aerospec Armor and Enchantment
+					'''
+			}
+
+			DesertProwlerEnchantEx: {
+				DisplayName: Desert Prowler Enchantment EX
+				Tooltip:
+					'''
+					[i:CalamityMod/LuxorsGift] Weapons fire unique projectiles based on the damage type they have
+					Some weapons are unable to receive this bonus
+					[i:CalamityMod/ThiefsDime] Summons Goldie the rogue coin to collect nearby coins and light your way
+					Provides a small amount of light in the abyss
+					'Once worthless treasure, now a relic of a thief's companionship'
+					Effects of Desert Prowler Armor and Enchantment
+					'''
+			}
+
+			MarniteEnchantEx: {
+				DisplayName: Marnite Enchantment EX
+				Tooltip:
+					'''
+					[i:CalamityMod/HallowedRune] Whenever your minions hit an enemy you will gain a random buff, does not stack with downgrades
+					Hallowed Power increases summon damage by 10% and makes minion hits rain stars
+					Hallowed Defense increases defense by 8 and DR by 4%
+					Hallowed Regen grants +1.5 HP/s life regeneration
+					[i:CalamityMod/RoverDrive] Projects an energy shield that absorbs up to 20 damage
+					Halves Adrenaline lost on hit if the shield fully absorbs the hit
+					The shield grants 10 defense while active
+					After the shield is broken, it takes 10 seconds to charge back up
+					Being hit again while recharging restarts the charge timer
+					Can also be scrapped at an extractinator
+					Effects of Marnite Architect Toga and Enchantment
+					'''
+			}
+
+			SnowRuffianEnchantEx: {
+				DisplayName: Snow Ruffian Enchantment EX
+				Tooltip:
+					'''
+					[i:CalamityMod/ScuttlersJewel] Stealth strike projectiles spawn a jewel spike when destroyed
+					Can also be broken down at an extractinator
+					[i:CalamityMod/TheCamper] You deal 90% less damage unless stationary
+					Standing still grants buff(s) dependent on what weapon you're holding
+					Standing still provides a damaging aura around you
+					While moving, you regenerate health as if standing still
+					Provides a small amount of light in the Abyss
+					'In rest may we find victory'
+					Effects of Snow Ruffian Armor and Enchantment
+					'''
+			}
+
+			StatigelEnchantEx: {
+				DisplayName: Statigel Enchantment EX
+				Tooltip:
+					'''
+					[i:CalamityMod/StarTaintedGenerator] +2 max minions, does not stack with downgrades
+					7% increased summon damage
+					Minion attacks spawn astral explosions and inflict several debuffs
+					Grants immunity to Irradiated
+					[i:CalamityMod/ManaPolarizer] Increases max mana by 50 and magic damage by 6%
+					-1.5 HP/s life regen if mana is above 50% of its maximum
+					Magic projectiles give lifesteal while holding a magic weapon
+					The more mana you have, the more you heal
+					Effects of Statigel Armor and Enchantment
+					'''
+			}
+
+			SulphurousEnchantEx: {
+				DisplayName: Sulphurous Enchantment EX
+				Tooltip:
+					'''
+					[i:CalamityMod/SandCloak] 5% increased movement speed
+					Press {Hotkey} to consume 10% of your maximum stealth to create a protective dust veil which damages and knocks back enemies
+					While inside the veil, you are given +6 defense and +1 HP/s life regen
+					This effect has a 30 second cooldown before it can be used again
+					[i:CalamityMod/AmidiasPendant] Periodically rains down prism shards that can briefly stun enemies
+					[i:CalamityMod/OldDie] Increases luck by 20%
+					'Lucky for you, the curse doesn't affect you. Mostly'
+					[i:CalamityMod/RustyMedallion] Causes most ranged weapons to release acid droplets from the sky
+					Grants immunity to Irradiated
+					Effects of Sulphurous Armor and Enchantment
+					'''
+			}
+
+			VictideEnchantEx: {
+				DisplayName: Victide Enchantment EX
+				Tooltip:
+					'''
+					[i:CalamityMod/FungalClump] Summons a fungal clump to fight for you
+					The clump latches onto enemies and steals their life for you
+					[i:CalamityMod/FungalSymbiote] You grow mushrooms on the grass beneath you
+					Consuming mushrooms provides the Mushy buff, increasing defense by 6 and granting 1 HP/s life regen
+					All mushroom-based weapons deal 10% more damage and emit non-damaging mushrooms
+					[i:CalamityMod/ShieldoftheOcean] Increased defense by 5 when submerged in liquid
+					10% increased movement speed and +1 HP/s life regen while wearing Victide armor
+					Effects of Victide Armor and Enchantment
+					'''
+			}
+
+			WulfrumEnchantEx: {
+				DisplayName: Wulfrum Enchantment EX
+				Tooltip:
+					'''
+					[i:CalamityMod/TrinketofChi] Provides 4% damage reduction after not being hit for 5 seconds, this is removed when you are hit
+					+1 HP/s life regen for you and everyone on your team
+					[i:CalamityMod/WulfrumAcrobaticsPack] Transforms equipped hooks into a wulfrum slingshot
+					The slingshot allows for advanced rope-swinging physics
+					Automatically grapples nearby walls if a lethal fall is detected
+					This safety feature won't activate if [KEY] is held
+					8% increased movement speed
+					Effects of Wulfrum Armor and Enchantment
+					'''
+			}
+
+			ExplorationForceEx: {
+				DisplayName: Force of Exploration EX
+				Tooltip:
+					'''
+					[i:ssm/AerospecEnchantEx] Effects of Gladiators Locket, Unstable Granite Core, and Feather Crown
+					[i:ssm/DesertProwlerEnchantEx] Effects of Luxor's Gift and Thief's Dime
+					[i:ssm/MarniteEnchantEx] Effects of Hallowed Rune and Rover Drive
+					[i:ssm/VictideEnchantEx] Effects of Fungal Clump, Fungal Symbiote and Shield of the Ocean
+					[i:ssm/WulfrumEnchantEx] Effects of Wulfrum Acrobatics Pack and Trinket of Chi
+					[i:ssm/SulphurousEnchantEx] Effects of Sand Cloak, Amidias' Pendant, Old Die, and Rusty Medallion
+					[i:ssm/StatigelEnchantEx] Effects of Star Tainted Generator and Mana Polarizer
+					[i:ssm/SnowRuffianEnchantEx] Effects of Scuttler's Jewel and The Camper
+					Effects of Aerospec, Desert Prowler, Marnite, Victide, Wulfrum, Sulphurous, Statigel, and Snow Ruffian Armors and Enchantments
+					'The Beginning of your Journey'
+					'''
+			}
+
+			LunicCorpEnchant: {
+				Tooltip:
+					'''
+					Effects of [i:CalamityMod/LunicCorpsHelmet] Lunic Corps Armor
+					'When I joined the Corps, we didn't have any fancy-schmanzy Enchants.'
+					'''
+				DisplayName: Lunic Corp Enchantment
+			}
+
+			DaedalusEnchantEx: {
+				DisplayName: Daedalus Enchantment EX
+				Tooltip:
+					'''
+					[i:CalamityMod/OrnateShield] Allows the ability to ram dash
+					This dash can slam through enemies without taking damage
+					Grants immunity to Chilled, Frostburn, Frostbite, and Frozen
+					[i:CalamityMod/FrostFlare] All attacks and projectiles inflict Frostbite
+					Immunity to Frostburn, Chilled and Frozen
+					Being above 50% life grants 10% increased damage
+					Being below 50% life grants 20 defense and 15% increased max movement speed and acceleration
+					Grants resistance against cold attacks
+					Effects of Daedalus Armor and Enchantment
+					'''
+			}
+
+			HydrothermicEnchantEx: {
+				DisplayName: Hydrothermic Enchantment EX
+				Tooltip:
+					'''
+					[i:CalamityMod/VoidofExtinction] 13% increased critical strike chance
+					Critical strikes explode, causing nearby enemies to ignite with Brimstone Flames
+					Greatly reduces the damage taken by the Brimstone Flames debuff
+					[i:CalamityMod/EtherealExtorter] Rogue projectiles explode into homing souls on hit
+					8% increased rogue damage and +5 maximum stealth
+					Effects of Hydrothermic Armor and Enchantment
+					'''
+			}
+
+			ReaverEnchantEx: {
+				DisplayName: Reaver Enchantment EX
+				Tooltip:
+					'''
+					[i:CalamityMod/NecklaceofVexation] 20% increased damage when under 50% life
+					All attacks inflict acid venom while wearing Reaver armor
+					Revenge
+					[i:CalamityMod/LivingDew] +50 max life
+					Grants +1 HP/s life regen and an additional 1 HP/s life regen when inflicted with a damage debuff
+					Standing still in Honey grants +1.5 HP/s life regen
+					Halves how long you are afflicted with fire and sickness debuffs
+					Effects of Reaver Armor and Enchantment
+					'''
+			}
+
+			TitanHeartEnchantEx: {
+				DisplayName: Titan Heart Enchantment EX
+				Tooltip:
+					'''
+					[i:CalamityMod/MoonstoneCrown] 15% increased rogue projectile velocity
+					Stealth strikes summon lunar flares on enemy hits
+					Rogue projectiles summon homing moon sigils as they travel
+					[i:CalamityMod/InfectedJewel] +1 HP/s life regen
+					Grants 16 defense and +2 HP/s life regen while afflicted with any debuff
+					Massively boosts natural life regen while afflicted with any debuff
+					Granted defense fades away quickly when not afflicted with any debuffs
+					Each debuff beyond the first grants 5 additional defense
+					Makes the Astral Infection debuff harmless
+					'A beautiful gemstone tarnished by spaceborne rot'
+					Effects of Titan Heart Armor and Enchantment
+					'''
+			}
+
+			DevastationForceEx: {
+				DisplayName: Force of Devastation EX
+				Tooltip:
+					'''
+					[i:ssm/DaedalusEnchantEx] Effects of Ornate Shield and Frost Flare
+					[i:ssm/HydrothermicEnchantEx] Effects of Void of Extinction and Ethereal Extorter
+					[i:ssm/ReaverEnchantEx] Effects of Necklace of Vexation and Living Dew
+					[i:ssm/TitanHeartEnchantEx] Effects of Moonstone Crown and Infected Jewel
+					Effects of Daedalus, Hydrothermic, Reaver, and Titan Heart Armor and Enchantments
+					'You rise to the occasion'
+					'''
+			}
+
+			AstralEnchant: {
+				DisplayName: Astral Enchantment
+				Tooltip:
+					'''
+					[i:CalamityMod/UrsaSergeant] Decreased movement speed by 15%
+					Immune to Astral Infection and Feral Bite
+					Increased regeneration at lower health
+					[i:CalamityMod/GravistarSabaton] 20% increased jump speed
+					Grants immunity to fall damage
+					Hold {Down} to increase your maximum fall speed
+					Hold Gravistar Sabaton Hotkey for 1 second while midair to charge up a superspeed slam
+					While slamming, you ram through enemies and don't take contact damage
+					Once you reach the ground, you create an explosion at your feet
+					The explosion scales in both damage and size the longer you slam for
+					Temporary 40% increased jump speed after slamming into the ground
+					Effects of Astral Armor
+					'''
+			}
+
+			BrimflameEnchant: {
+				DisplayName: Brimflame Enchantment
+				Tooltip:
+					'''
+					[i:CalamityMod/VoidofCalamity] 12% increase to all damage
+					Brimstone fire rains down after getting hit
+					[i:CalamityMod/Abaddon] 8% increased critical strike chance
+					Critical strikes explode, causing nearby enemies to ignite with Brimstone Flames
+					Greatly reduces the damage taken by the Brimstone Flames debuff
+					[i:CalamityMod/SlagsplitterPauldron] You gain 10% damage reduction while dashing
+					Enemies you dash through are afflicted with Armor Crunch
+					Your dashes are empowered by fire, shredding enemies near you with violent explosions
+					[i:CalamityMod/SigilofCalamitas] 15% increased magic damage and 10% decreased mana usage
+					+100 max mana
+					Increases pickup range for mana stars
+					Effects of Brimflame Armor
+					'''
+			}
+
+			EmpyreanEnchant: {
+				DisplayName: Empyrean Enchantment
+				Tooltip:
+					'''
+					[i:CalamityMod/HeartofDarkness] You constantly gain rage over time
+					Rage does not fade away when out of combat
+					[i:CalamityMod/DarkMatterSheath] +10 maximum stealth
+					Mobile stealth generation accelerates while not attacking
+					Stealth strikes only expend 50% of your max stealth
+					6% increased rogue damage, and 6% increased rogue crit chance
+					Effects of Empyrean Armor
+					'''
+			}
+
+			FathomSwarmerEnchant: {
+				DisplayName: Fathom Swarmer Enchantment
+				Tooltip:
+					'''
+					[i:CalamityMod/LumenousAmulet] Attacks inflict the Crush Depth debuff
+					Grants immunity to the Riptide and Crush Depth debuffs
+					While in the abyss you gain 25% increased max life
+					Provides a moderate amount of light in the abyss
+					[i:CalamityMod/CorrosiveSpine] 5% increased movement speed
+					All rogue weapons inflict poison and spawn poisoned clouds on enemy hits
+					You release a ton of clouds everywhere on hit
+					Effects of Fathom Swarmer Armor
+					'''
+			}
+
+			FearfallenEnchant: {
+				DisplayName: Fearfallen Enchant
+				Tooltip:
+					'''
+					[i:CalamityMod/SpectralVeil] Press [KEY] to consume 25% of your maximum stealth to perform a mid-range teleport and render you momentarily invulnerable
+					If you dodge something while invulnerable, you instantly gain full stealth
+					Teleportation is disabled while Chaos State is active
+					Stealth generates 15% faster
+					'The inside of the cloak is full of teeth...'
+					Effects of Fearmonger and Nightfallen Armor
+					'''
+			}
+
+			MolluskEnchant: {
+				DisplayName: Mollusk Enchantment
+				Tooltip:
+					'''
+					[i:CalamityMod/AquaticEmblem] Most ocean enemies become friendly and provides waterbreathing
+					Being underwater slowly boosts your defense over time but also slows movement speed
+					The defense boost and movement speed reduction slowly vanish while outside of water
+					Maximum defense boost is 50, maximum movement speed reduction is 10%
+					Provides a small amount of light in the abyss
+					Moderately reduces breath loss in the abyss
+					[i:CalamityMod/GiantPearl] You have a light aura around you
+					Enemies within the aura are slowed down
+					Does not work while a boss is alive
+					Provides a small amount of light in the abyss
+					Effects of Mollusk Armor
+					'''
+			}
+
+			OmegaBlueEnchant: {
+				DisplayName: Omega Blue Enchantment
+				Tooltip:
+					'''
+					[i:CalamityMod/OldDukeScales] 10% increased damage reduction
+					10% increased max movement speed and acceleration
+					25% increased dash velocity and length
+					Gives you a stamina indicator on the cooldown rack
+					Using any dash will consume 20% of your stamina
+					Stamina will gradually recover to 100% after not dashing for 1.5 seconds
+					Stamina recovers faster when you are stationary
+					If your stamina reaches 0%, you become exhausted
+					While exhausted, this item's damage reduction and movement bonuses are negated
+					Being exhausted reduces movement speed by 30% and dash velocity by 50%
+					This debuff lasts until your stamina reaches 100% again
+					[i:CalamityMod/ReaperToothNecklace] 15% increased damage
+					Increases armor penetration by 15
+					'A grisly trophy from the ultimate predator'
+					[i:CalamityMod/MutatedTruffle] Summons a younger fishron to irradiate your foes
+					The fishron will cycle between charging, projectiles, and a typhoon
+					Requires 3 minion slots to be used
+					There can only be one minion
+					Effects of Omega Blue Armor
+					'''
+			}
+
+			PlaguebringerEnchant: {
+				DisplayName: Plaguebringer Enchantment
+				Tooltip:
+					'''
+					[i:CalamityMod/TheBee] When at full HP, your damage is increased based on your damage reduction
+					Damage taken at full HP is halved
+					If you have any energy shields, they must also be full for these effects to work
+					This has a 10 second cooldown
+					[i:CalamityMod/InfectedRemote] Summons a humanoid-hybrid Plaguebringer, codenamed 'Virili', to aid you in battle
+					Virili requires 3 minion slots to summon, and can only be summoned once
+					Virili uses a variety of attacks which she cycles through on a timer
+					All attacks spread the plague, as was her original design intention
+					'There's a single label on the back:
+					WARNING: Subject is extremely corrosive and contagious. Avoid direct contact.'
+					Effects of Plaguebringer Armor
+					'''
+			}
+
+			PlagueReaperEnchant: {
+				DisplayName: Plague Reaper Enchantment
+				Tooltip:
+					'''
+					[i:CalamityMod/AlchemicalFlask] All attacks inflict the Plague and reduces damage taken from the Plague
+					Projectiles spawn plague seekers on enemy hits
+					Releases plague bees when damaged and douses you in honey
+					[i:CalamityMod/PlaguedFuelPack] 8% increased rogue damage and 15% increased rogue projectile velocity
+					Stealth generates 10% faster
+					Press Booster Dash to consume 25% of your maximum stealth to perform a swift upwards/diagonal dash which leaves a trail of plagued clouds
+					This effect has a 1 second cooldown before it can be used again
+					Effects of Plague Reaper Armor
+					'''
+			}
+
+			UmbraphileEnchant: {
+				DisplayName: Umbraphile Enchantment
+				Tooltip:
+					'''
+					[i:CalamityMod/VampiricTalisman] Rogue projectiles give lifesteal on crits
+					12% increased rogue damage
+					[i:CalamityMod/CoinofDeceit] Stealth strikes only expend 85% [sic] of your max stealth
+					6% increased rogue crit chance
+					Effects of Umbraphile Armor
+					'''
+			}
+
+			AnnihilationForce: {
+				DisplayName: Annihilation Force
+				Tooltip:
+					'''
+					[i:ssm/EmpyreanEnchant] Effects of Heart of Darkness and Dark Matter Sheath
+					[i:ssm/PlagueReaperEnchant] Effects of Alchemical Flask and Plagued Fuel Pack
+					[i:ssm/PlaguebringerEnchant] Effects of The Bee and Summons Vrili to fight for you
+					[i:ssm/FearfallenEnchant] Effects of Spectral Veil
+					[i:ssm/BrimflameEnchant] Effects of Abaddon, Void of Calamity, Sigil of Calamitas, and Slagspitter Pauldron
+					Effects of Plaguebringer, Plague Reaper, Fearmonger, Nightfallen, Empyrean, and Brimflame Armor
+					'You wade through the underworld and jungles and the dark...'
+					'''
+			}
+
+			DesolationForce: {
+				DisplayName: Desolation Force
+				Tooltip:
+					'''
+					[i:ssm/MolluskEnchant] Effects of Giant Pearl and Aquatic Emblem
+					[i:ssm/OmegaBlueEnchant] Effects of Old Duke Scales, Reaper Tooth Necklace, and summons a mini Duke to fight for you
+					[i:ssm/FathomSwarmerEnchant] Effects of Lumenous Amulet and Corrosive Spine
+					[i:ssm/UmbraphileEnchant] Effects of Coin of Deciet and Vampiric Talisman
+					[i:ssm/AstralEnchant] Effects of Ursa Sergeant and Gravistar Sabaton
+					Effects of Mollusk, Omega Blue, Fathom Swarmer, Umbraphile, and Astral Armor
+					'''
+			}
+
+			ExaltationForce: {
+				Tooltip:
+					'''
+					[i:ssm/AuricTeslaEnchant] Effects of Dragon Scales, Daawnlight Spirit Origin, Permafrost's Concoction, The Transformer, and Yharims Jam
+					[i:ssm/BloodflareEnchant] Effects of Affliction, Phantomic Artifact, Bloodflare Core, and Sigil of a Cruel World
+					[i:ssm/GodSlayerEnchant] Effects of Omni Speakers, Universal Headset, Dimensional Soul Artifact, Venerated Locket, and summons a Mechworm to fight for you
+					[i:ssm/SilvaEnchant] Effects of Tree Whisperer Amulet, Elemental Bloom, The Absorber, Dynamo Stem Cells and Blunder Booster
+					[i:ssm/TarragonEnchant] Effects of Dark Sun Ring, Blazing Core, and Badge of Bravery
+					Effects of Auric Tesla and Auric Tesla+, Bloodflare, God Slayer, Silva, and Tarragon Armors
+					'''
+				DisplayName: Force of Exaltation
+			}
+
+			AuricTeslaEnchant: {
+				DisplayName: Auric Tesla Enchant
+				Tooltip:
+					'''
+					[i:CalamityMod/DragonScales] Rogue projectiles create slow fireballs as they travel
+					Stealth strikes create infernados where they hit
+					+10% max run speed and acceleration
+					Grants immunity to Dragonfire
+					'Only a living dragon holds true treasure'
+					[i:CalamityMod/DaawnlightSpiritOrigin] All nearby enemies and bosses are marked with bullseyes
+					Ranged attacks that strike a bullseye always critically strike and deal massive damage
+					When a bullseye is struck, it vanishes and a new one appears elsewhere
+					Explosions or large projectiles cannot strike bullseyes
+					Shots ricocheted off of tossed coins will target bullseyes, but use a lower crit multiplier
+					Converts all ranged critical strike chance boosts into extra critical strike damage
+					All ranged weapons will deal even more critical strike damage the slower they are
+					Summons a heroic spirit from another world if accessory visibility is enabled
+					The heroic spirit is also summoned when this accessory is placed in vanity slots
+					[i:CalamityMod/PermafrostsConcoction] Increases maximum mana by 50 and reduces mana cost by 15%
+					+0.5 HP/s life regen below half health, +1 HP/s when below 25% health and +2 HP/s when below 10% health
+					+3 HP/s life regen while afflicted with any fire debuff
+					You will survive fatal damage and revive with 30% life on a 3 minute cooldown
+					You are encased in an ice barrier for 3 seconds when revived
+					[i:CalamityMod/TheTransformer] Multiplies all electricity-based debuff damage by 1.5
+					Taking damage releases a blast of sparks
+					Immunity to Electrified and you resist all electrical projectile and enemy damage
+					Enemy bullets do half damage to you and are reflected back at the enemy for 800% their original damage
+					[i:CalamityBardHealer/YharimsJam] 930 symphonic damage
+					Summons three supersonic speakers that hover beside and below you
+					The speakers will shoot burning beats that tracks to the closest enemy
+					Inflicts dragonfire and tunes enemies hit
+					"We're ascending beyond the sound barrier with this one [i/s1:2701][i/s1:2701][i/s1:2701]"
+					Effects of Auric and Auric Tesla+ Armor
+					'''
+			}
+
+			BloodflareEnchant: {
+				DisplayName: Bloodflare Enchantment
+				Tooltip:
+					'''
+					[i:CalamityMod/Affliction] Gives you and all other players on your team +0.5 HP/s life regen,
+					+10% max life, 7% damage reduction, 13 defense and 10% increased damage
+					[i:CalamityMod/PhantomicArtifact] 	Whenever your minions hit an enemy you will gain a random phantomic buff, does not stack with downgrades
+					Phantomic Empowerment increases summon damage by 10% and makes minion hits spawn phantomic knives
+					Phantomic Shield increases defense by 10 and DR by 5% and spawns a phantomic bulwark which absorbs 20% of the next projectile's damage that touches it
+					Phantomic Regen grants +2 HP/s life regen and spawns a phantomic heart which grants an additional 2 HP/s life regen when touched
+					[i:CalamityMod/BloodflareCore] Taking defense damage heals you over time
+					You gain 1 health for every 1 defense damage recovered
+					Taking damage always deals at least half of your total defense in defense damage
+					[i:RagnarokMod/SigilOfACruelWorld] Increases symphonic damage by 15%
+					Increases symphonic playing speed by 8%
+					Increases symphonic regeneration rate by 8%
+					Increases maximum inspiration by 3 
+					Effects of Bloodflare Armor
+					'''
+			}
+
+			GodSlayerEnchant: {
+				DisplayName: God Slayer Enchantment
+				Tooltip:
+					'''
+					[i:CalamityBardHealer/OmniSpeaker] 15% increased symphonic damage, playing speed, and critical strike chance
+					150% increased empowerment range
+					Increases empowerment duration by 2 seconds
+					String instruments bounce three additional times
+					Your wind instrument attacks now attempt to quickly home in on enemies
+					If the attack already homes onto enemies, it does so more quickly
+					Critical strikes caused by brass instrument attacks release a spread of piercing energy
+					Percussion critical strikes will deal 10% more damage and briefly stun enemies
+					You and nearby allies have a chance to inflict god slayer inferno when attacking targets
+					"Through the power of wormhole technology, everyone in the world can jam to your music!"
+					[i:CalamityMod/VeneratedLocket] 10% increased rogue damage
+					Using a rogue weapon summons a copy of the projectile that falls from the sky
+					Stealth strikes cause a circular fan of seeking cosmilite knives to be thrown
+					You'll never be alone, no matter where you go
+					[i:CalamityMod/DimensionalSoulArtifact] Multiplies all damage by 1.2x, but at the cost of increasing damage taken by 15%
+					Power
+					[i:RagnarokMod/UniversalHeadset] Increases symphonic damage by 20%
+					Increases symphonic critical strike chance by 7%
+					Increases symphonic playing speed by 10%
+					Increases symphonic regeneration rate by 10%
+					Increases maximum inspiration by 5
+					Each unique empowerment you have increases movement speed by 2% and playing speed by 1% 
+					[i:CalamityMod/StaffoftheMechworm] Summons an aerial mechworm to fight for you
+					Effects of God Slayer Armor
+					'''
+			}
+
+			SilvaEnchant: {
+				DisplayName: Silva Enchant
+				Tooltip:
+					'''
+					[i:CalamityBardHealer/TreeWhispererAmulet] 12% increased symphonic damage, playing speed, and critical strike chance
+					String instruments bounce two additional times
+					Your wind instrument attacks now attempt to quickly home in on enemies
+					If the attack already homes onto enemies, it does so more quickly
+					Critical strikes caused by brass instrument attacks release a spread of piercing energy
+					Percussion critical strikes will deal 10% more damage and briefly stun enemies
+					"Speak for the trees, hear them out, use their ideas to compose some beats!"
+					[i:CalamityBardHealer/ElementalBloom] Maximum life increased by 40
+					Maximum mana increased by 20
+					15% increased healing speed
+					20% increased radiant damage
+					10% increased radiant casting speed
+					12% increased radiant critical strike chance
+					Healing spells will heal an additional 2 life
+					Empowers radiant attacks with elemental energy
+					Increases the strength of damage over time effects by 66%
+					"When light and dark clash, they harmonize to a final shape"
+					[i:CalamityMod/TheAbsorber] 12% increased movement and jump speed
+					Grants immunity to knockback
+					Enemies take immense damage when they touch you and are afflicted with a damaging sickness debuff that reduces damage reduction significantly
+					Using a healing potion will spawn a cleansing aura
+					Walking into the aura removes all debuffs one time
+					The aura grants +3 HP/s life regen, +8% damage, and +5% damage reduction for all players inside for 10 seconds
+					5% of the damage from enemy attacks is absorbed and converted into healing
+					[i:CalamityMod/DynamoStemCells] 10% increased ranged damage and movement speed
+					Ranged weapons fire a powerful mini swarmer every 3 seconds
+					Reduces the damage of the Dragonfire and Electrified debuff
+					[i:CalamityMod/BlunderBooster] 12% increased rogue damage and 15% increased rogue projectile velocity
+					Stealth generates 10% faster
+					Summons a red lightning aura to surround the player and electrify nearby enemies
+					Press Booster Dash to consume 25% of your maximum stealth to perform a swift upwards/diagonal dash which leaves a trail of lightning bolts
+					This effect has a 1 second cooldown before it can be used again
+					Effects of Silva Armor
+					'''
+			}
+
+			TarragonEnchant: {
+				DisplayName: Tarragon Enchantment
+				Tooltip:
+					'''
+					[i:CalamityMod/DarkSunRing] 12% increase to damage
+					+0.5 HP/s life regen and +2 max minions
+					Increased minion knockback
+					During the day, grants +2 HP/s life regen
+					During the night, grants +20 defense
+					During an eclipse, grants +1 HP/s life regen and +10 defense
+					'Contains the power of the dark sun'
+					[i:CalamityMod/BlazingCore] The searing core of the Profaned Goddess
+					Pressing Activate Accessory Parry will activate a parry, encasing you in luminous profaned crystal
+					Being hit shortly after encasement will shatter the crystal
+					Upon shattering, waves of holy stars spiral outwards and the damage you would have taken is reduced to 1
+					After shattering, this damage reduction effect goes on cooldown
+					If another encasement is shattered whilst on cooldown, healing stars will be interspersed throughout the waves of stars
+					The damage of a hit is not reduced whilst on cooldown
+					Provides a moderate amount of light in the Abyss
+					[i:CalamityMod/BadgeofBravery] Increases melee damage and melee crit by 10%
+					+5 melee armor penetration
+					Effects of Tarragon Armor
+					'''
+			}
+
+			SalvationForce: {
+				Tooltip:
+					'''
+					[i:ssm/DemonShadeEnchant] Effects of Profaned Soul Crystal and Angelic Alliance
+					[i:ssm/PrismaticEnchant] Effects of Shield of the High Ruler
+					[i:ssm/GemTechEnchant] Effects of The First Shadowflame and Dreadon's Heart
+					Effects of Demonshade, Prismatic, Gem Tech and Lunic Armors
+					'''
+				DisplayName: Force of Salvation
+			}
+
+			PrismaticEnchant: {
+				Tooltip:
+					'''
+					[i:CalamityMod/ShieldoftheHighRuler] Grants immunity to knockback
+					Immune to most debuffs
+					+10 max life
+					Grants an improved Shield of Cthulhu dash
+					Bonking an enemy reduces the delay before you can dash again by 50%
+					If you are facing a projectile when it hits you it will deal 15% less damage
+					'For the fate of the kingdom'
+					Effects of Prismatic Armor
+					'''
+				DisplayName: Prismatic Enchantment
+			}
+
+			GemTechEnchant: {
+				Tooltip:
+					'''
+					[i:CalamityMod/TheFirstShadowflame] Increases max minions by 1 and minions inflict the Shadowflame debuff on enemies
+					Grants immunity to Shadowflame
+					[i:CalamityMod/DraedonsHeart] 15% reduced contact damage from enemies
+					Replaces Adrenaline with the Nanomachines meter
+					Unlike Adrenaline, you lose no Nanomachines when you take damage, but they stop accumulating for 1 second
+					With full Nanomachines, press Adrenaline Mode to heal 360 health over 2 seconds
+					While healing you take 50% less damage
+					'Nanomachines, son.'
+					Effects of Gem Tech Armor
+					'''
+				DisplayName: Gem Tech Enchantment
+			}
+
+			DemonShadeEnchant: {
+				DisplayName: Demonshade Enchantment
+				Tooltip:
+					'''
+					[i:CalamityMod/ProfanedSoulCrystal] Transforms you into an emissary of the profaned goddess
+					Requires 10 minion slots to use in order to grant the following effects
+					All non-summon weapons are converted into powerful summon variations
+					Having no other minions will empower these attacks
+					Transforms Melee attacks into a barrage of spears
+					Transforms Magic attacks into a powerful splitting fireball
+					Transforms Ranged attacks into a flurry of fireballs and meteors
+					Transforms Rogue attacks into a deadly crystalline spiral
+					Transforms Whip attacks into an empowering profaned crystal whip
+					Summons and empowers the profaned soul guardians to fight alongside you
+					You are no longer affected by burn out when hit
+					Provides buffs depending on the time of day
+					Thinking back, it was a boring life
+					And so we burn it all in the name of purity
+					[i:CalamityMod/AngelicAlliance] Call upon the force of heaven to empower your attacks and minions
+					Courage, Enlightenment, Bliss. United in Judgement
+					+2 max minions, 15% increased summon damage, and 8% increased damage to all other classes
+					+2 HP/s life regen while airborne using wings
+					Press Angelic Alliance Blessing to grace yourself in divinity for 15 seconds
+					While under the effects of Divine Bless, for every minion you have, an archangel shall be summoned to aid you in combat
+					Each spawned angel will instantly heal you for two health
+					All minion attacks inflict Banishing Fire and you are granted a flat health boost of four health per second
+					This effect has a cooldown of 1 minute
+					Effects of Demonshade Armor
+					'''
+			}
+
 
 			NekomiEnchant: {
 				DisplayName: Nekomi Enchantment
@@ -599,7 +1259,7 @@ Mods: {
 					Cooldown depends on the action (Missed parry: 5 seconds, Taking damage: 2 seconds, Successful parry: 3 seconds, Perfect parry: 2 seconds)
 					Certain special attacks and contact damage cannot be parried
 					This ability disables shadow dodge and similar effects
-					Effects of Ring of the Fallen, Memento Mori, and Arcanum of the Caster
+					Effects of [i:SacredTools/AsthralRing] Ring of the Fallen, [i:SacredTools/MementoMori] Memento Mori, and [i:SacredTools/CasterArcanum] Arcanum of the Caster
 					'''
 			}
 
@@ -628,7 +1288,7 @@ Mods: {
 					'''
 					'Your spooks and scares will send shivers down your enemies' spines'
 					Empowers certain bone-related weapons
-					Effects of Dreadflame Emblem
+					Effects of [i:SacredTools/DreadflameEmblem] Dreadflame Emblem
 					'''
 			}
 
@@ -651,7 +1311,7 @@ Mods: {
 					Pressing [Ability] will activate 'Dreadfire Aura'.
 					'Dreadfire Aura' increases minion damage greatly for a minute. 
 					3 minute cooldown
-					Effects of Pumpkin Amulet
+					Effects of [i:SacredTools/PumpkinAmulet] Pumpkin Amulet
 					'''
 			}
 
@@ -669,7 +1329,7 @@ Mods: {
 				Tooltip:
 					'''
 					'Does something soon'TM
-					Effects of Stone of Resonance
+					Effects of [i:SacredTools/StoneOfResonance] Stone of Resonance
 					'''
 			}
 
@@ -681,7 +1341,7 @@ Mods: {
 					Hitting enemies has a chance to summon an energy blade behind you (Max of 5).
 					Every newly acquired blade increases the damage of pre-existing ones by 20%
 					Pressing [Ability] will launch the blades at nearby enemies
-					Effects of Novaniel's Resolve
+					Effects of [i:SacredTools/NovanielResolve] Novaniel's Resolve
 					'''
 			}
 
@@ -703,7 +1363,7 @@ Mods: {
 					'The hunter now hunted, the prey now predator'
 					15% increased ranged damage while in the snow biome
 					Ranged projectiles frostburn enemies
-					Effects of Frigid Pendant
+					Effects of [i:SacredTools/DecreeCharm] Decree Charm
 					'''
 			}
 
@@ -713,7 +1373,7 @@ Mods: {
 					'''
 					'Gotta go fast'
 					20% increased movement speed
-					Effects of Lapis Pendant
+					Effects of [i:SacredTools/LapisPendant] Lapis Pendant
 					'''
 			}
 
@@ -736,7 +1396,7 @@ Mods: {
 					'''
 					'Nuba would be proud'
 					Attacking enemies may sometimes release buff wisps which can be picked up for different stacking buffs
-					Effects of Nuba's Blessing
+					Effects of [i:SacredTools/NubasBlessing] Nuba's Blessing
 					'''
 			}
 
@@ -803,8 +1463,8 @@ Mods: {
 				Tooltip:
 					'''
 					':HeyMF:'
-					All armor bonuses from Prairie, Frosthunter, Lapis, and Blightbone
-					Effects of Frigid Pendant, Lapis Pendant, and Pumpkin Amulet
+					All armor bonuses from [i:SacredTools/PrairieHelmet] Prairie,[i:SacredTools/FrosthunterHeaddress] Frosthunter,[i:SacredTools/LapisHelmet] Lapis, and [i:SacredTools/BlightMask] Blightbone
+					Effects of [i:SacredTools/DecreeCharm] Decree Charm,[i:SacredTools/LapisPendant] Lapis Pendant, and [i:SacredTools/PumpkinAmulet] Pumpkin Amulet
 					'''
 			}
 
@@ -813,9 +1473,9 @@ Mods: {
 				Tooltip:
 					'''
 					Through all this world's years, none have seen anything quite like you'
-					All armor bonuses from Eerie, Bismuth, and Dreadfire
-					All armor bonuses from Space Junk and Marstech
-					Effects of Dreadflame Emblem
+					All armor bonuses from [i:SacredTools/EerieHelmet] Eerie,[i:SacredTools/BismuthHelm] Bismuth, and [i:SacredTools/DreadfireMask] Dreadfire
+					All armor bonuses from [i:SacredTools/SpaceJunkHelm] Space Junk and [i:SacredTools/MarstechHelm] Marstech
+					Effects of [i:SacredTools/DreadflameEmblem] Dreadflame Emblem
 					'''
 			}
 
@@ -824,9 +1484,9 @@ Mods: {
 				Tooltip:
 					'''
 					'The true power of the Soraniti'
-					All armor bonuses from Blazing Brute, Cosmic Commander, and Nebulous Apprentice
-					All armor bonuses from Stellar Priest, Quasar, and Fallen Prince
-					Effects of Nuba's Blessing, Novaniel's Resolve, and Celestial Ring
+					All armor bonuses from [i:SacredTools/BlazingBruteHelm] Blazing Brute,[i:SacredTools/VortexCommanderHat] Cosmic Commander, and [i:SacredTools/NubaHood] Nebulous Apprentice
+					All armor bonuses from [i:SacredTools/StellarPriestHead] Stellar Priest,[i:SacredTools/NovaHelmet] Quasar, and [i:SacredTools/FallenPrinceHelm] Fallen Prince
+					Effects of [i:SacredTools/NubasBlessing] Nuba's Blessing,[i:SacredTools/NovanielResolve] Novaniel's Resolve, and [i:SacredTools/LunarRing] Celestial Ring
 					'''
 			}
 
@@ -835,10 +1495,10 @@ Mods: {
 				Tooltip:
 					'''
 					'Dragon Rage empowers you, and encourages you to go on'
-					All armor bonuses from Void Warden, Vulcan Reaper, and Flarium
-					All armor bonuses from Asthraltite
-					Effects of Ring of the Fallen, Memento Mori, and Arcanum of the Caster
-					Effects of Stone of Resonance
+					All armor bonuses from [i:SacredTools/VoidHelm] Void Warden,[i:SacredTools/VulcanHelm] Vulcan Reaper, and [i:SacredTools/FlariumHelmet] Flarium
+					All armor bonuses from [i:SacredTools/AsthralMelee] Asthraltite
+					Effects of [i:SacredTools/AsthralRing] Ring of the Fallen,[i:SacredTools/MementoMori] Memento Mori, and [i:SacredTools/CasterArcanum] Arcanum of the Caster
+					Effects of [i:SacredTools/StoneOfResonance] Stone of Resonance
 					'''
 			}
 
@@ -847,15 +1507,15 @@ Mods: {
 				Tooltip:
 					'''
 					'Two worlds, now embodied as one'
-					All armor bonuses from Bismuth, Frosthunter, and Blightbone
-					All armor bonuses from Dreadfire, Space Junk, and Marstech
-					All armor bonuses from Blazing Brute, Cosmic Commander, and Nebulous Apprentice
-					All armor bonuses from Stellar Priest and Fallen Prince
-					All armor bonuses from Void Warden, Vulcan Reaper, and Flarium
-					All armor bonuses from Asthraltite
-					Effects of Dreadflame Emblem, Lapis Pendant, Frigid Pendant, and Pumpkin Amulet
-					Effects of Nuba's Blessing, Novaniel's Resolve, and Celestial Ring
-					Effects of Ring of the Fallen, Memento Mori, and Arcanum of the Caster
+					All armor bonuses from [i:SacredTools/BismuthHelm] Bismuth,[i:SacredTools/FrosthunterHeaddress] Frosthunter, and [i:SacredTools/BlightMask] Blightbone
+					All armor bonuses from [i:SacredTools/DreadfireMask] Dreadfire,[i:SacredTools/SpaceJunkHelm] Space Junk, and [i:SacredTools/MarstechHelm] Marstech
+					All armor bonuses from [i:SacredTools/BlazingBruteHelm] Blazing Brute,[i:SacredTools/VortexCommanderHat] Cosmic Commander, and [i:SacredTools/NubaHood] Nebulous Apprentice
+					All armor bonuses from [i:SacredTools/StellarPriestHead] Stellar Priest and [i:SacredTools/FallenPrinceHelm] Fallen Prince
+					All armor bonuses from [i:SacredTools/VoidHelm] Void Warden,[i:SacredTools/VulcanHelm] Vulcan Reaper, and [i:SacredTools/FlariumHelmet] Flarium
+					All armor bonuses from [i:SacredTools/AsthralMelee] Asthraltite
+					Effects of [i:SacredTools/DreadflameEmblem] Dreadflame Emblem,[i:SacredTools/LapisPendant] Lapis Pendant,[i:SacredTools/DecreeCharm] Decree Charm, and [i:SacredTools/PumpkinAmulet] Pumpkin Amulet
+					Effects of [i:SacredTools/NubasBlessing] Nuba's Blessing,[i:SacredTools/NovanielResolve] Novaniel's Resolve, and [i:SacredTools/LunarRing] Celestial Ring
+					Effects of [i:SacredTools/AsthralRing] Ring of the Fallen,[i:SacredTools/MementoMori] Memento Mori, and [i:SacredTools/CasterArcanum] Arcanum of the Caster
 					'''
 			}
 
@@ -2094,7 +2754,7 @@ Mods: {
 				DisplayName: Elemental Artifact
 				Tooltip:
 					'''
-					Effects of Aero, Cryo, Bloom and Chaos Stones. 
+					Effects of [i:CalamityMod/AeroStone] Aero, [i:CalamityMod/CryoStone] Cryo, [i:CalamityMod/BloomStone] Bloom and [i:CalamityMod/ChaosStone] Chaos Stones.
 					'The power of the elemental stones reside within you.'
 					'''
 			}
@@ -2103,8 +2763,8 @@ Mods: {
 				DisplayName: Pendant of the Godseeker
 				Tooltip:
 					'''
-					Effects of Aquatic Heart, Toxic Heart, Leviathan Ambergris, Hide of Astrum Deus.
-					Effects of Blazing Core, The Evolution, Affliction, Bloodflare Core and Elemental Artifact.
+					Effects of [i:CalamityMod/AquaticHeart] Aquatic Heart, [i:CalamityMod/ToxicHeart] Toxic Heart, [i:CalamityMod/LeviathanAmbergris] Leviathan Ambergris, [i:CalamityMod/HideofAstrumDeus] Hide of Astrum Deus, [i:CalamityMod/AuricSoulArtifact] Auric Soul Artifact, and [i:CalamityMod/OccultSkullCrown] Occult Skull Crown.
+					Effects of [i:CalamityMod/BlazingCore] Blazing Core, [i:CalamityMod/TheEvolution] The Evolution, [i:CalamityMod/Affliction] Affliction, [i:CalamityMod/BloodflareCore] Bloodflare Core and [i:ssm/ElementalArtifact] Elemental Artifact.
 					'It gives off a weird aura.'
 					'''
 			}
@@ -2123,8 +2783,8 @@ Mods: {
 				DisplayName: Mark of the Dream Eater
 				Tooltip:
 					'''
-					Effects of Inferno Lord’s Focus, Pocket Fusion Generator, Lihzahrd’s Tail, Serpent Shield, Metabolic Pills
-					Effects of Monster Charm, Hexing Talisman, Flawless Chrysalis and The Ring.
+					Effects of [i:ThoriumMod/InfernoLordsFocus] Inferno Lord’s Focus,[i:ThoriumMod/PocketFusionGenerator] Pocket Fusion Generator,[i:ThoriumMod/LihzahrdTail] Lihzahrd’s Tail,[i:ThoriumMod/SerpentShield] Serpent Shield,[i:ThoriumMod/MetabolicPills] Metabolic Pills
+					Effects of [i:ThoriumMod/MonsterCharm] Monster Charm,[i:ThoriumMod/HexingTalisman] Hexing Talisman,[i:ThoriumMod/FlawlessChrysalis] Flawless Chrysalis,[i:ThoriumMod/TheRing] The Ring, and [i:ThoriumMod/MirroroftheBeholder] Mirror of the Beholder.
 					'You feel pulses of energy being released from it.'
 					'''
 			}
@@ -2153,20 +2813,7 @@ Mods: {
 				DisplayName: Guide to Expert Throwing : Final Volume
 			}
 
-			DemonShadeEnchant: {
-				DisplayName: Demonshade Enchantment
-				Tooltip:
-					'''
-					'Demonic power emanates from you…'
-					All attacks inflict Demon Flames
-					Shadowbeams and Demon Scythes fall from the sky on hit
-					A friendly red devil follows you around
-					Press Y to enrage nearby enemies with a dark magic spell for 10 seconds
-					This makes them do 1.5 times more damage but they also take five times as much damage
-					Effects of Profaned Soul Crystal
-					'''
-			}
-
+			
 			AddonsForce: {
 				DisplayName: Addons Force
 				Tooltip:
@@ -2421,7 +3068,7 @@ Mods: {
 				Tooltip:
 					'''
 					Three shellfishes aid you in combat
-					Effects of Soul of Pyrogen and Hell Flare
+					Effects of [i:Clamity/SoulOfPyrogen] Soul of Pyrogen and [i:Clamity/HellFlare] Hell Flare
 					'''
 				DisplayName: Clamitas Enchant
 			}

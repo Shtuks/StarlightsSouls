@@ -10,7 +10,6 @@ using CalamityEntropy.Content.Items.Armor.VoidFaquir;
 using CalamityEntropy.Content.Items.Weapons;
 using CalamityEntropy.Content.Items.Weapons.Chainsaw;
 using CalamityEntropy.Content.Items.Accessories;
-using CalamityEntropy.Utilities;
 
 namespace ssm.Calamity.Addons
 {
@@ -32,11 +31,32 @@ namespace ssm.Calamity.Addons
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            if (player.AddEffect<VoidFaquirEffect>(Item))
+            if (player.AddEffect<VoidFaquirMelee>(Item))
             {
-                player.Entropy().VFSet = true;
+                ModContent.Find<ModItem>(ModCompatibility.Entropy.Name, "VoidFaquirDevourerHelm").UpdateArmorSet(player);
             }
-            player.Entropy().reincarnationBadge = true;
+            if (player.AddEffect<VoidFaquirRanger>(Item))
+            {
+                ModContent.Find<ModItem>(ModCompatibility.Entropy.Name, "VoidFaquirShadowHelm").UpdateArmorSet(player);
+            }
+            if (player.AddEffect<VoidFaquirMage>(Item))
+            {
+                ModContent.Find<ModItem>(ModCompatibility.Entropy.Name, "VoidFaquirLurkerMask").UpdateArmorSet(player);
+            }
+            if (player.AddEffect<VoidFaquirRogue>(Item))
+            {
+                ModContent.Find<ModItem>(ModCompatibility.Entropy.Name, "VoidFaquirCosmosHood").UpdateArmorSet(player);
+            }
+            if (player.AddEffect<VoidSymbiontEffect>(Item))
+            {
+                ModContent.Find<ModItem>(ModCompatibility.Entropy.Name, "VoidFaquirEvokerHelm").UpdateArmorSet(player);
+            }
+            if (player.AddEffect<ReincarnationBadgeEffect>(Item))
+            {
+                ModContent.Find<ModItem>(ModCompatibility.Entropy.Name, "ReincarnationBadge").UpdateAccessory(player, false);
+            }
+            ModContent.Find<ModItem>(ModCompatibility.Entropy.Name, "VoidFaquirBodyArmor").UpdateArmorSet(player);
+            ModContent.Find<ModItem>(ModCompatibility.Entropy.Name, "VoidFaquirCuises").UpdateArmorSet(player);
         }
 
         public override void AddRecipes()
@@ -54,6 +74,36 @@ namespace ssm.Calamity.Addons
         }
 
         public class VoidFaquirEffect : AccessoryEffect
+        {
+            public override Header ToggleHeader => Header.GetHeader<AddonsForceHeader>();
+            public override int ToggleItemType => ModContent.ItemType<VoidFaquirEnchant>();
+        }
+        public class VoidFaquirMelee : AccessoryEffect
+        {
+            public override Header ToggleHeader => Header.GetHeader<AddonsForceHeader>();
+            public override int ToggleItemType => ModContent.ItemType<VoidFaquirEnchant>();
+        }
+        public class VoidFaquirRanger : AccessoryEffect
+        {
+            public override Header ToggleHeader => Header.GetHeader<AddonsForceHeader>();
+            public override int ToggleItemType => ModContent.ItemType<VoidFaquirEnchant>();
+        }
+        public class VoidFaquirMage : AccessoryEffect
+        {
+            public override Header ToggleHeader => Header.GetHeader<AddonsForceHeader>();
+            public override int ToggleItemType => ModContent.ItemType<VoidFaquirEnchant>();
+        }
+        public class VoidFaquirRogue : AccessoryEffect
+        {
+            public override Header ToggleHeader => Header.GetHeader<AddonsForceHeader>();
+            public override int ToggleItemType => ModContent.ItemType<VoidFaquirEnchant>();
+        }
+        public class VoidSymbiontEffect : AccessoryEffect
+        {
+            public override Header ToggleHeader => Header.GetHeader<AddonsForceHeader>();
+            public override int ToggleItemType => ModContent.ItemType<VoidFaquirEnchant>();
+        }
+        public class ReincarnationBadgeEffect : AccessoryEffect
         {
             public override Header ToggleHeader => Header.GetHeader<AddonsForceHeader>();
             public override int ToggleItemType => ModContent.ItemType<VoidFaquirEnchant>();

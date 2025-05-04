@@ -16,7 +16,7 @@ namespace ssm.Calamity.Souls
         public override void SetDefaults()
         {
             this.Item.value = Item.buyPrice(1, 0, 0, 0);
-            this.Item.rare = 10;
+            this.Item.rare = ItemRarityID.Red;
             this.Item.accessory = true;
         }
         public override void UpdateAccessory(Player player, bool hideVisual)
@@ -51,6 +51,10 @@ namespace ssm.Calamity.Souls
         public class ChaosStoneEffect : CalamitySoulEffect
         {
             public override int ToggleItemType => ModContent.ItemType<ChaosStone>();
+        }
+        public class OldDukeEffect : CalamitySoulEffect
+        {
+            public override int ToggleItemType => ModContent.ItemType<OldDukeScales>();
         }
         public class CryoStoneEffect : CalamitySoulEffect
         {
