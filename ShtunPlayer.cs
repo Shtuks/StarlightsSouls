@@ -9,6 +9,7 @@ using ssm.Content.NPCs.MutantEX;
 using ssm.Systems;
 using FargowiltasSouls.Content.Bosses.MutantBoss;
 using ssm.Core;
+using FargowiltasSouls;
 
 namespace ssm
 {
@@ -31,7 +32,7 @@ namespace ssm
 
         public override void PreUpdate()
         {
-            if (ShtunUtils.BossIsAlive(ref ShtunNpcs.mutantEX, ModContent.NPCType<MutantBoss>()) && ModCompatibility.Calamity.Loaded)
+            if (FargoSoulsUtil.BossIsAlive(ref ShtunNpcs.mutantEX, ModContent.NPCType<MutantBoss>()) && ModCompatibility.Calamity.Loaded)
             {
                 ModLoader.GetMod("CalamityMod").TryFind("RageMode", out ModBuff rage);
                 ModLoader.GetMod("CalamityMod").TryFind("AdrenalineMode", out ModBuff adrenaline);
@@ -39,7 +40,7 @@ namespace ssm
                 Main.LocalPlayer.buffImmune[adrenaline.Type] = true;
             }
 
-            if (ShtunUtils.BossIsAlive(ref ShtunNpcs.mutantEX, ModContent.NPCType<MutantEX>()) && Main.player[Main.myPlayer].Shtun().lumberjackSet && WorldSaveSystem.enragedMutantEX)
+            if (FargoSoulsUtil.BossIsAlive(ref ShtunNpcs.mutantEX, ModContent.NPCType<MutantEX>()) && Main.player[Main.myPlayer].Shtun().lumberjackSet && WorldSaveSystem.enragedMutantEX)
             {
                 Main.LocalPlayer.statDefense*=0;
                 Main.LocalPlayer.endurance*=0;

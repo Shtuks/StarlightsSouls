@@ -62,10 +62,10 @@ namespace ssm.Thorium
 			for (int i = 0; i < Recipe.numRecipes; i++)
 			{
 				Recipe recipe = Main.recipe[i];
-				if (recipe.HasResult<EternitySoul>() && !recipe.HasIngredient<ThoriumSoul>())
-				{
-					recipe.AddIngredient<ThoriumSoul>();
-				}
+				//if (recipe.HasResult<EternitySoul>() && !recipe.HasIngredient<ThoriumSoul>())
+				//{
+				//	recipe.AddIngredient<ThoriumSoul>();
+				//}
                 if (recipe.HasResult<UniverseSoul>() && !recipe.HasIngredient<BardSoul>())
                 {
                     recipe.AddIngredient<BardSoul>();

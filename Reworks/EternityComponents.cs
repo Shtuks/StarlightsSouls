@@ -1,6 +1,7 @@
 using FargowiltasSouls.Content.Items.Accessories.Souls;
 using ssm.Calamity.Addons;
 using ssm.Calamity.Souls;
+using ssm.Content.Items.Accessories;
 using ssm.Core;
 using Terraria;
 using Terraria.ModLoader;
@@ -41,7 +42,7 @@ namespace ssm.Reworks
                     ModContent.Find<ModItem>(((ModType)this).Mod.Name, "BeekeeperSoul").UpdateAccessory(player, false);
                 }
             }
-            if (Item.type == ModContent.ItemType<TerrariaSoul>() || Item.type == ModContent.ItemType<EternitySoul>())
+            if (Item.type == ModContent.ItemType<MicroverseSoul>())
             {
                 if (ModLoader.TryGetMod("Spooky", out Mod tor) && ShtunConfig.Instance.Spooky)
                 {
@@ -54,7 +55,7 @@ namespace ssm.Reworks
                     ModContent.Find<ModItem>(((ModType)this).Mod.Name, "SpacetimeForce").UpdateAccessory(player, false);
                 }
             }
-            if (Item.type == ModContent.ItemType<EternitySoul>() || Item.type == ModContent.ItemType<CalamitySoul>())
+            if (/*Item.type == ModContent.ItemType<EternitySoul>() || */ Item.type == ModContent.ItemType<MacroverseSoul>() || Item.type == ModContent.ItemType<CalamitySoul>())
             {
                 if (ModCompatibility.Entropy.Loaded && ModCompatibility.Clamity.Loaded && ModCompatibility.Goozma.Loaded && ModCompatibility.Catalyst.Loaded)
                 {
@@ -71,13 +72,8 @@ namespace ssm.Reworks
                     ModContent.Find<ModItem>(ModCompatibility.Crossmod.Name, "WulfrumEnchant").UpdateAccessory(player, hideVisual);
                 }
             }
-            if (Item.type == ModContent.ItemType<EternitySoul>())
+            if (Item.type == ModContent.ItemType<MacroverseSoul>())
             {
-                if (ModLoader.TryGetMod("Redemption", out Mod Redemption) && ShtunConfig.Instance.Redemption)
-                {
-                    //ModContent.Find<ModItem>(((ModType)this).Mod.Name, "RedemptionSoul").UpdateAccessory(player, false);
-                }
-
                 if (ModLoader.TryGetMod("SacredTools", out Mod SoA) && ShtunConfig.Instance.SacredTools)
                 {
                     ModContent.Find<ModItem>(((ModType)this).Mod.Name, "SoASoul").UpdateAccessory(player, false);

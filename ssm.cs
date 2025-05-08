@@ -26,7 +26,6 @@ using ssm.Content.Items.Consumables;
 using ssm.Content.NPCs.MutantEX;
 using ssm.Content.UI;
 using Terraria.UI;
-using ReLogic.Content;
 using ssm.CrossMod.CraftingStations;
 
 namespace ssm
@@ -72,12 +71,6 @@ namespace ssm
                 return (int)num;
             }
         }
-
-        public override void PostAddRecipes()
-        {
-            AllStationIDs = ShtunUtils.GetAllCraftingStationTileIDs().ToArray();
-        }
-
         private void BossChecklistCompatibility()
         {
             if (ModLoader.TryGetMod("BossChecklist", out Mod bossChecklist))
@@ -196,7 +189,10 @@ namespace ssm
         public override void Unload()
         {
             //overlayTexture = null;
-            _bossSummonUI = null;
+            if (_bossSummonUI != null)
+            {
+                _bossSummonUI = null;
+            }
             Instance = null;
         }
 

@@ -45,8 +45,8 @@ namespace ssm.Reworks
 
                 if (npc.type == ModContent.NPCType<MutantBoss>())
                 {
-                    npc.damage = (int)(300 + (100 * multiplier * 0.9f));
-                    npc.defense = 400 + (150 * multiplier);
+                    npc.damage = (int)(500 + (100 * multiplier * 0.9f));
+                    npc.defense = 300 + (150 * multiplier);
                     npc.lifeMax = mutantBaseHealth + (mutantAddHealth * (!WorldSavingSystem.MasochistModeReal ? multiplier : multiplier*2));
                 }
 

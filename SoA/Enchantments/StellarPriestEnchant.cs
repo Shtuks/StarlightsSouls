@@ -20,6 +20,7 @@ using SacredTools.Items.Weapons.Lunatic;
 using SacredTools.Items.Weapons.Oblivion;
 using SacredTools.Projectiles.Minions.EternalOasis;
 using static System.Net.Mime.MediaTypeNames;
+using FargowiltasSouls;
 
 
 namespace ssm.SoA.Enchantments
@@ -56,7 +57,7 @@ namespace ssm.SoA.Enchantments
             if (player.AddEffect<StellarPriestEffect>(Item))
             {
                 if (player.ownedProjectileCounts[ModContent.ProjectileType<StellarGuardian>()] < 1)
-                    ShtunUtils.NewSummonProjectile(player.GetSource_FromThis(), player.Center, Vector2.Zero, ModContent.ProjectileType<StellarGuardian>(), 900, 8f, player.whoAmI);
+                    FargoSoulsUtil.NewSummonProjectile(player.GetSource_FromThis(), player.Center, Vector2.Zero, ModContent.ProjectileType<StellarGuardian>(), 900, 8f, player.whoAmI);
             }
         }
 

@@ -118,6 +118,7 @@ namespace ssm.Content.Items.Accessories
             }
 
             ModContent.Find<ModItem>(Mod.Name, "EternityForce").UpdateAccessory(player, false);
+            ModContent.Find<ModItem>(Mod.Name, "MacroverseSoul").UpdateAccessory(player, false);
             ModContent.Find<ModItem>(Mod.Name, "CyclonicFin").UpdateAccessory(player, false);
             ModContent.Find<ModItem>(ModCompatibility.SoulsMod.Name, "EternitySoul").UpdateAccessory(player, false);
 
@@ -200,6 +201,7 @@ namespace ssm.Content.Items.Accessories
 
             recipe.AddIngredient<EternityForce>(1);
             recipe.AddIngredient<EternitySoul>(1);
+            recipe.AddIngredient<MacroverseSoul>(1);
             recipe.AddIngredient<CyclonicFin>(1);
             //recipe.AddIngredient<ModdedSoul>(1);
 

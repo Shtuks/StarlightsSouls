@@ -2903,12 +2903,22 @@ Mods: {
 
 			StargateSoul: {
 				DisplayName: Soul
-				Tooltip: 
-				'''
-				Effects of [i:FargowiltasSouls/EternitySoul], [i:ssm/EternityForce], [i:ssm/ModdedSoE], [i:ssm/CyclonicFin]
-				Immunity to all possible debuffs.
-				'The feeling of [c/FF0000:HIS] gaze does not leave you.'
-				'''
+				Tooltip:
+					'''
+					Effects of [i:FargowiltasSouls/EternitySoul], [i:ssm/EternityForce], [i:ssm/MacroverseSoul], [i:ssm/CyclonicFin]
+					Immunity to all possible debuffs.
+					'The feeling of [c/FF0000:HIS] gaze does not leave you.'
+					'''
+			}
+
+			MicroverseSoul: {
+				Tooltip: ""
+				DisplayName: Microverse Soul
+			}
+
+			MacroverseSoul: {
+				Tooltip: ""
+				DisplayName: Macroverse Soul
 			}
 		}
 
@@ -2961,6 +2971,16 @@ Mods: {
 			NihilityPresenceBuff: {
 				DisplayName: Nihility Presence Buff
 				Description: Some of your souls effects are toggled off
+			}
+
+			DreadflameAura: {
+				DisplayName: Dreadflame Aura
+				Description: Mods.ssm.Buffs.DreadflameAura.Description
+			}
+
+			DreadflameAuraCD: {
+				DisplayName: Dreadflame Aura C D
+				Description: Mods.ssm.Buffs.DreadflameAuraCD.Description
 			}
 		}
 
@@ -3239,6 +3259,7 @@ Mods: {
 			TrueAcornProjectile.DisplayName: True Acorn Projectile
 			SquirrelMinion.DisplayName: Squirrel Minion
 			SquirrelRing.DisplayName: Squirrel Ring
+			Blightbone.DisplayName: Blightbone
 		}
 
 		Bestiary: {

@@ -10,6 +10,7 @@ using FargowiltasSouls.Content.Items.Accessories.Enchantments;
 using ThoriumMod.Projectiles.Minions;
 using FargowiltasSouls.Core.AccessoryEffectSystem;
 using ssm.Content.SoulToggles;
+using FargowiltasSouls;
 
 namespace ssm.Thorium.Enchantments
 {
@@ -50,7 +51,7 @@ namespace ssm.Thorium.Enchantments
                 {
                     const int damage = 10;
                     if (player.ownedProjectileCounts[ModContent.ProjectileType<LivingWoodAcornPro>()] < 1)
-                        ShtunUtils.NewSummonProjectile(player.GetSource_FromThis(), player.Center, Vector2.Zero, ModContent.ProjectileType<LivingWoodAcornPro>(), damage, 8f, player.whoAmI);
+                        FargoSoulsUtil.NewSummonProjectile(player.GetSource_FromThis(), player.Center, Vector2.Zero, ModContent.ProjectileType<LivingWoodAcornPro>(), damage, 8f, player.whoAmI);
                 }
             }
         }

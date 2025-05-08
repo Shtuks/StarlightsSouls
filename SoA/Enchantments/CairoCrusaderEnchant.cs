@@ -14,6 +14,7 @@ using SacredTools.Items.Weapons.Sand;
 using SacredTools.Items.Tools;
 using SacredTools.Items.Weapons;
 using SacredTools.Projectiles.Minions.EternalOasis;
+using FargowiltasSouls;
 
 namespace ssm.SoA.Enchantments
 {
@@ -52,7 +53,7 @@ namespace ssm.SoA.Enchantments
                 {
                     const int damage = 255;
                     if (player.ownedProjectileCounts[ModContent.ProjectileType<EternalOasis>()] < 1)
-                        ShtunUtils.NewSummonProjectile(player.GetSource_FromThis(), player.Center, Vector2.Zero, ModContent.ProjectileType<EternalOasis>(), damage, 8f, player.whoAmI);
+                        FargoSoulsUtil.NewSummonProjectile(player.GetSource_FromThis(), player.Center, Vector2.Zero, ModContent.ProjectileType<EternalOasis>(), damage, 8f, player.whoAmI);
                 }
             }
         }

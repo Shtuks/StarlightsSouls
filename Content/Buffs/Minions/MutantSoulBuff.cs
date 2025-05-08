@@ -29,7 +29,7 @@ namespace ssm.Content.Buffs.Minions
             {
                 const int damage = 10000;
                 if (player.ownedProjectileCounts[ModContent.ProjectileType<MutantSoul>()] < 1)
-                    ShtunUtils.NewSummonProjectile(player.GetSource_Buff(buffIndex), player.Center, Vector2.Zero, ModContent.ProjectileType<MutantSoul>(), damage, 19f, player.whoAmI);
+                    FargoSoulsUtil.NewSummonProjectile(player.GetSource_Buff(buffIndex), player.Center, Vector2.Zero, ModContent.ProjectileType<MutantSoul>(), damage, 19f, player.whoAmI);
             }
         }
     }

@@ -83,7 +83,7 @@ namespace ssm.Content.Projectiles.Minions
                 }
                 else //forget target
                 {
-                    Projectile.ai[0] = ShtunUtils.FindClosestHostileNPCPrioritizingMinionFocus(Projectile, 1500);
+                    Projectile.ai[0] = FargoSoulsUtil.FindClosestHostileNPCPrioritizingMinionFocus(Projectile, 1500);
                     Projectile.netUpdate = true;
                 }
             }
@@ -108,7 +108,7 @@ namespace ssm.Content.Projectiles.Minions
                 if (++Projectile.localAI[1] > 6)
                 {
                     Projectile.localAI[1] = 0;
-                    Projectile.ai[0] = ShtunUtils.FindClosestHostileNPCPrioritizingMinionFocus(Projectile, 1500);
+                    Projectile.ai[0] = FargoSoulsUtil.FindClosestHostileNPCPrioritizingMinionFocus(Projectile, 1500);
                     if (Projectile.ai[0] != -1)
                         Projectile.netUpdate = true;
                 }

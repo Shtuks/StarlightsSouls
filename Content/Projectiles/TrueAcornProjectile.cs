@@ -1,5 +1,4 @@
-﻿using ssm.Content.Buffs;
-using Terraria;
+﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -24,7 +23,6 @@ namespace ssm.Content.Projectiles
 
         public override void AI()
         {
-            ShtunUtils.HomeInOnNPC(Projectile, true, 100, 100, 1);
             Projectile.rotation += 0.2f;
         }
     }

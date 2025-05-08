@@ -8,22 +8,24 @@
 		
 	</PropertyGroup>
 	<ItemGroup>
+	  <AdditionalFiles Remove="Content\NPCs\StarlightCat\**" />
 	  <AdditionalFiles Remove="Thorium\Swarm\**" />
+	  <Compile Remove="Content\NPCs\StarlightCat\**" />
 	  <Compile Remove="Thorium\Swarm\**" />
+	  <EmbeddedResource Remove="Content\NPCs\StarlightCat\**" />
 	  <EmbeddedResource Remove="Thorium\Swarm\**" />
+	  <None Remove="Content\NPCs\StarlightCat\**" />
 	  <None Remove="Thorium\Swarm\**" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Compile Remove="Reworks\StyxArmor.cs" />
 	</ItemGroup>
 	<ItemGroup>
-	  <None Remove="Content\NPCs\StarlightCat\StarlightCatDeathray.cs.sex" />
 	  <None Remove="Thorium\Enchantments\BerserkerEnchant.cs.sex" />
 	  <None Remove="Thorium\Enchantments\DangerEnchant.cs.sex" />
 	  <None Remove="Thorium\Enchantments\HarbingerEnchant.cs.sex" />
 	</ItemGroup>
 	<ItemGroup>
-	  <Compile Include="Content\NPCs\StarlightCat\StarlightCatDeathray.cs.sex" />
 	  <Compile Include="Thorium\Enchantments\BerserkerEnchant.cs.sex" />
 	  <Compile Include="Thorium\Enchantments\MagmaEnchant.cs.sex" />
 	</ItemGroup>
