@@ -15,6 +15,8 @@ using SacredTools.Items.Weapons;
 using SacredTools.Content.Items.Armor.Lunar.Solar;
 using SacredTools.Items.Weapons.Lunatic;
 using ssm.Core;
+using FargowiltasSouls;
+using static ssm.SoA.Enchantments.BismuthEnchant;
 
 namespace ssm.SoA.Enchantments
 {
@@ -43,15 +45,11 @@ namespace ssm.SoA.Enchantments
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            ModdedPlayer modPlayer = player.GetModPlayer<ModdedPlayer>();
-
             if (player.AddEffect<BlazingBruteEffect>(Item))
             {
-                //set bonus
-                modPlayer.SolariusArmor = true;
+                player.GetModPlayer<SoAPlayer>().blazingBruteEnchant = player.ForceEffect<BlazingBruteEffect>() ? 2 : 1;
             }
         }
-
         public class BlazingBruteEffect : AccessoryEffect
         {
             public override Header ToggleHeader => Header.GetHeader<SoranForceHeader>();

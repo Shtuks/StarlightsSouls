@@ -61,6 +61,7 @@ namespace ssm.SoA.Enchantments
         {
             public override Header ToggleHeader => Header.GetHeader<GenerationsForceHeader>();
             public override int ToggleItemType => ModContent.ItemType<CairoCrusaderEnchant>();
+            public override bool MinionEffect => true;
         }
 
         public override void AddRecipes()

@@ -1,4 +1,5 @@
-﻿using FargowiltasSouls.Core.AccessoryEffectSystem;
+﻿using Clamity.Content.Items.Weapons.Rogue;
+using FargowiltasSouls.Core.AccessoryEffectSystem;
 using ssm.Content.Items.Accessories;
 using ssm.Content.SoulToggles;
 using ssm.Core;
@@ -9,6 +10,7 @@ using ThoriumMod.Items.BasicAccessories;
 using ThoriumMod.Items.Donate;
 using ThoriumMod.Items.Misc;
 using ThoriumMod.Items.NPCItems;
+using ThoriumMod.Items.SummonItems;
 using ThoriumMod.Items.Tracker;
 
 namespace ssm.Thorium.Souls
@@ -42,12 +44,19 @@ namespace ssm.Thorium.Souls
             ModContent.GetInstance<HexingTalisman>().UpdateAccessory(player, hideVisual);
             ModContent.GetInstance<FlawlessChrysalis>().UpdateAccessory(player, hideVisual);
             ModContent.GetInstance<TheRing>().UpdateAccessory(player, hideVisual);
+
+            ModContent.GetInstance<CapeoftheSurvivor>().UpdateAccessory(player, hideVisual);
+            ModContent.GetInstance<MonsterCharm>().UpdateAccessory(player, hideVisual);
+            ModContent.GetInstance<HexingTalisman>().UpdateAccessory(player, hideVisual);
         }
 
         public override void AddRecipes()
         {
             Recipe recipe = this.CreateRecipe(1);
 
+            recipe.AddIngredient<SteamkeeperWatch>();
+            recipe.AddIngredient<CrystalScorpion>();
+            recipe.AddIngredient<CapeoftheSurvivor>();
             recipe.AddIngredient<InfernoLordsFocus>();
             recipe.AddIngredient<PocketFusionGenerator>();
             recipe.AddIngredient<LihzahrdTail>();

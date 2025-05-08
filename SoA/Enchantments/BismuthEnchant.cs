@@ -1,21 +1,16 @@
 ﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using Terraria.Localization;
-using SacredTools;
-using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using FargowiltasSouls.Content.Items.Accessories.Enchantments;
 using FargowiltasSouls.Core.AccessoryEffectSystem;
 using ssm.Content.SoulToggles;
 using ssm.Core;
-using SacredTools.Content.Items.Accessories.Sigils;
-using SacredTools.Content.Items.Accessories;
-using SacredTools.Content.Items.Armor.Asthraltite;
 using SacredTools.Content.Items.Armor.Bismuth;
 using SacredTools.Items.Weapons.Venomite;
 using SacredTools.Items.Weapons.Herbs;
 using SacredTools.Items.Weapons;
+using FargowiltasSouls;
 
 namespace ssm.SoA.Enchantments
 {
@@ -27,8 +22,6 @@ namespace ssm.SoA.Enchantments
         {
             return ShtunConfig.Instance.SacredTools;
         }
-        private readonly Mod soa = ModLoader.GetMod("SacredTools");
-
         public override void SetDefaults()
         {
             Item.width = 20;
@@ -43,12 +36,9 @@ namespace ssm.SoA.Enchantments
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            ModdedPlayer modPlayer = player.GetModPlayer<ModdedPlayer>();
-
             if (player.AddEffect<BismuthEffect>(Item))
             {
-                //set bonus
-                modPlayer.bismuthArmor = true;
+                player.GetModPlayer<SoAPlayer>().bismuthEnchant = player.ForceEffect<BismuthEffect>() ? 2 : 1;
             }
         }
 
@@ -56,6 +46,7 @@ namespace ssm.SoA.Enchantments
         {
             public override Header ToggleHeader => Header.GetHeader<GenerationsForceHeader>();
             public override int ToggleItemType => ModContent.ItemType<BismuthEnchant>();
+
         }
 
         public override void AddRecipes()

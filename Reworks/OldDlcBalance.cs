@@ -34,8 +34,9 @@ namespace ssm.Reworks
 
                 if (ModCompatibility.Thorium.Loaded && !ModCompatibility.Calamity.Loaded) {multiplier += 3;}
                 if (ModCompatibility.SacredTools.Loaded && !ModCompatibility.Calamity.Loaded) { multiplier += 3; }
+                if (ModCompatibility.Calamity.Loaded && !ModCompatibility.Thorium.Loaded && !ModCompatibility.SacredTools.Loaded && !ModCompatibility.Homeward.Loaded) { multiplier += 5; }
                 if (ModCompatibility.Thorium.Loaded){multiplier+=2;}
-                if (ModCompatibility.Calamity.Loaded) {multiplier+=8;} 
+                if (ModCompatibility.Calamity.Loaded) {multiplier+=9;} 
                 if (ModCompatibility.SacredTools.Loaded) {multiplier+=4;}
                 if (ModCompatibility.Homeward.Loaded) {multiplier+=3;}
                 if (ModCompatibility.Redemption.Loaded) {multiplier++;}

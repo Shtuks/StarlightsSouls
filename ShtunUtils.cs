@@ -370,6 +370,16 @@ namespace ssm
             }
             return false;
         }
+
+        public static bool AnyBossAlive()
+        {
+            for (int i = 0; i < Main.maxNPCs; i++)
+            {
+                if (Main.npc[i].active && Main.npc[i].boss)
+                    return true;
+            }
+            return false;
+        }
         public static void DisplayLocalizedText(string key, Color? textColor = null)
         {
             if (!textColor.HasValue)
@@ -513,15 +523,6 @@ namespace ssm
             {
                 return false;
             }
-        }
-        public static bool AnyBossAlive()
-        {
-            if (ShtunNpcs.boss == -1)
-                return false;
-            if (Main.npc[ShtunNpcs.boss].active && (Main.npc[ShtunNpcs.boss].boss))
-                return true;
-            ShtunNpcs.boss = -1;
-            return false;
         }
         public static int FindClosestHostileNPCPrioritizingMinionFocus(Projectile projectile, float detectionRange, bool lineCheck = false, Vector2 center = default)
         {

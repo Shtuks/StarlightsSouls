@@ -1,19 +1,16 @@
 ﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using Terraria.Localization;
-using SacredTools;
-using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using FargowiltasSouls.Content.Items.Accessories.Enchantments;
 using FargowiltasSouls.Core.AccessoryEffectSystem;
 using ssm.Content.SoulToggles;
-using Microsoft.Xna.Framework.Graphics;
 using ssm.Core;
 using SacredTools.Content.Items.Armor.Decree;
 using SacredTools.Content.Items.Accessories;
 using SacredTools.Items.Weapons.Decree;
 using SacredTools.Items.Weapons;
+using FargowiltasSouls;
 
 namespace ssm.SoA.Enchantments
 {
@@ -42,22 +39,16 @@ namespace ssm.SoA.Enchantments
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            ModdedPlayer modPlayer = player.GetModPlayer<ModdedPlayer>();
-            //set bonus
-            modPlayer.frostburnRanged = true;
-            if (player.ZoneSnow)
+            if (player.AddEffect<FrosthunterEffect>(Item))
             {
-                player.GetDamage(DamageClass.Ranged) += 0.15f;
+                player.GetModPlayer<SoAPlayer>().frosthunterEnchant = player.ForceEffect<FrosthunterEffect>() ? 2 : 1;
             }
-
-            //frigid pendant
-            //ModContent.Find<ModItem>(this.soa.Name, "DecreePendant").UpdateAccessory(player, false);
         }
-
         public class FrosthunterEffect : AccessoryEffect
         {
             public override Header ToggleHeader => Header.GetHeader<FoundationsForceHeader>();
             public override int ToggleItemType => ModContent.ItemType<FrosthunterEnchant>();
+
         }
 
         public override void AddRecipes()

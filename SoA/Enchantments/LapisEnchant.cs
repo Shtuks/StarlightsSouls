@@ -1,22 +1,17 @@
 ﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using Terraria.Localization;
 using SacredTools;
-using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using FargowiltasSouls.Content.Items.Accessories.Enchantments;
-using FargowiltasSouls.Content.Items.Armor;
 using FargowiltasSouls.Core.AccessoryEffectSystem;
 using ssm.Content.SoulToggles;
-using Microsoft.Xna.Framework.Graphics;
 using SacredTools.Content.Items.Accessories;
-using SacredTools.Content.Items.Armor.Decree;
-using SacredTools.Items.Weapons.Decree;
 using SacredTools.Content.Items.Armor.Lapis;
 using SacredTools.Items.Weapons;
 using SacredTools.Items.Weapons.Special;
 using ssm.Core;
+using FargowiltasSouls;
 
 namespace ssm.SoA.Enchantments
 {
@@ -28,9 +23,6 @@ namespace ssm.SoA.Enchantments
         {
             return ShtunConfig.Instance.SacredTools;
         }
-
-        private readonly Mod soa = ModLoader.GetMod("SacredTools");
-
         public override void SetDefaults()
         {
             Item.width = 20;
@@ -45,11 +37,12 @@ namespace ssm.SoA.Enchantments
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            ModdedPlayer modPlayer = player.GetModPlayer<ModdedPlayer>();
-            //set bonus
-            player.moveSpeed += 0.2f;
+            if (player.AddEffect<LapisEffect>(Item))
+            {
+                player.moveSpeed += player.ForceEffect<LapisEffect>() ? 0.2f : 0.15f;
+            }
 
-            ModContent.Find<ModItem>(this.soa.Name, "LapisPendant").UpdateAccessory(player, false);
+            //ModContent.Find<ModItem>(ModCompatibility.SacredTools.Name, "LapisPendant").UpdateAccessory(player, false);
         }
 
         public class LapisEffect : AccessoryEffect
