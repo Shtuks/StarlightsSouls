@@ -61,7 +61,7 @@ namespace ssm
         public static string userName = Environment.UserName;
         public static string filePath = "C:/Users/" + userName + "/Documents/My Games/Terraria/tModLoader/StarlightSouls";
 
-        public override uint ExtraPlayerBuffSlots => 300u;
+        //public override uint ExtraPlayerBuffSlots => 300u;
 
         public static int SwarmMinDamage
         {

@@ -7,6 +7,7 @@ using FargowiltasSouls.Content.Items.Materials;
 using ssm.Calamity.Souls;
 using ssm.Thorium.Souls;
 using ssm.SoA.Souls;
+using Terraria.ModLoader;
 
 namespace ssm.Content.Items.Accessories
 {
@@ -25,27 +26,32 @@ namespace ssm.Content.Items.Accessories
         }
         public override void AddRecipes()
         {
-            Recipe recipe = CreateRecipe(1);
-
-            if (ModCompatibility.Calamity.Loaded)
+            if (ModCompatibility.Calamity.Loaded || ModCompatibility.Thorium.Loaded || ModCompatibility.SacredTools.Loaded)
             {
-                recipe.AddIngredient<CalamitySoul>(1);
-            }
-            if (ModCompatibility.Thorium.Loaded)
-            {
-                recipe.AddIngredient<ThoriumSoul>(1);
-            }
-            if (ModCompatibility.SacredTools.Loaded)
-            {
-                recipe.AddIngredient<SoASoul>(1);
-            }
+                Recipe recipe = CreateRecipe(1);
 
-            recipe.AddIngredient<MicroverseSoul>(1);
+                if (ModCompatibility.Calamity.Loaded && ModCompatibility.Crossmod.Loaded)
+                {
+                    ModContent.TryFind<ModItem>(Mod.Name, "CalamitySoul", out ModItem cal);
+                    recipe.AddIngredient(cal, 1);
+                }
+                if (ModCompatibility.Thorium.Loaded)
+                {
+                    ModContent.TryFind<ModItem>(Mod.Name, "ThoriumSoul", out ModItem tor);
+                    recipe.AddIngredient(tor, 1);
+                }
+                if (ModCompatibility.SacredTools.Loaded)
+                {
+                    ModContent.TryFind<ModItem>(Mod.Name, "SoASoul", out ModItem soa);
+                    recipe.AddIngredient(soa, 1);
+                }
 
-            recipe.AddIngredient<EternalEnergy>(30);
+                recipe.AddIngredient<MicroverseSoul>(1);
+                recipe.AddIngredient<EternalEnergy>(30);
 
-            recipe.AddTile<CrucibleCosmosSheet>();
-            recipe.Register();
+                recipe.AddTile<CrucibleCosmosSheet>();
+                recipe.Register();
+            }
         }
     }
 }

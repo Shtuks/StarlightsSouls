@@ -27,7 +27,7 @@ public static class ModCompatibility
 
     public static class Orchid
     {
-        public const string Name = "Spooky";
+        public const string Name = "Orchid";
         public static bool Loaded => ModLoader.HasMod(Name);
         public static Mod Mod => ModLoader.GetMod(Name);
     }
